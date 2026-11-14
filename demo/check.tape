@@ -4,9 +4,9 @@
 Output demo/check.gif
 
 Set Shell "bash"
-Set FontSize 15
-Set Width 1200
-Set Height 820
+Set FontSize 13
+Set Width 1100
+Set Height 1160
 Set Padding 20
 Set TypingSpeed 40ms
 Set Theme "Builtin Dark"
