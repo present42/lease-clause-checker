@@ -1,0 +1,110 @@
+{
+ "clause_id": "c07",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "fdf03d146f84824922f419b7d128aa98f0eff20ffe1cbe2e1c8c1ba5f3804adf",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant viewed the unit before signing and is satisfied with its condition. The Tenant will not ask the Landlord to repair any defect that was visible at the viewing.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:02:00.967498Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"20\",\n  \"quote\": \"Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.\",\n  \"reason\": \"Under section 20 of the Act, the landlord is responsible for maintaining the rental unit in a good state of repair even if the tenant knew about the defects before signing the lease. By section 4, any provision in a tenancy agreement that conflicts with this statutory obligation is void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 543,
+ "output_tokens": 137,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "CbP3aohBiODQww_ik9r4DQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:03:59 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"20\",\n  \"quote\": \"Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.\",\n  \"reason\": \"Under section 20 of the Act, the landlord is responsible for maintaining the rental unit in a good state of repair even if the tenant knew about the defects before signing the lease. By section 4, any provision in a tenancy agreement that conflicts with this statutory obligation is void.\"\n}",
+       "thought_signature": "AY89a1-svxEfe_HbNQ4F1fxB9ZH_8n47pWcap3v1ha6v65F1aB2RfvPhBw39s4FM1neuw0lm0yM5vu40EN7cKLxg3vc9s3-FxJrWNLZB8TU9CmyjVX_memfhDlhIQIFo"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:02:01.008328Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "CbP3aohBiODQww_ik9r4DQ",
+  "usage_metadata": {
+   "candidates_token_count": 137,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 137
+    }
+   ],
+   "prompt_token_count": 543,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 543
+    }
+   ],
+   "total_token_count": 680,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "20",
+   "quote": "Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.",
+   "reason": "Under section 20 of the Act, the landlord is responsible for maintaining the rental unit in a good state of repair even if the tenant knew about the defects before signing the lease. By section 4, any provision in a tenancy agreement that conflicts with this statutory obligation is void."
+  }
+ }
+}

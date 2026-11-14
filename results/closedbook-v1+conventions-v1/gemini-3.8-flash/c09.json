@@ -1,0 +1,111 @@
+{
+ "clause_id": "c09",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "946dde06653efb34fe14f5628901c393d6dd3a2b8881e7c6ce9743f1fc24939c",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf there is a fire, a flood, a burst pipe or another emergency in the unit, the Landlord may enter without notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:05.886511Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter the rental unit at any time without written notice\",\n  \"reason\": \"Section 26(1)(a) of the Residential Tenancies Act, 2006 expressly authorizes a landlord to enter a rental unit without notice in cases of emergency. Because the clause reflects this statutory right, it is valid and allowed.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 402,
+ "output_tokens": 907,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "0bL3asaKOI7v0MMPkNTyqA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:29 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter the rental unit at any time without written notice\",\n  \"reason\": \"Section 26(1)(a) of the Residential Tenancies Act, 2006 expressly authorizes a landlord to enter a rental unit without notice in cases of emergency. Because the clause reflects this statutory right, it is valid and allowed.\"\n}",
+       "thought_signature": "AY89a1_zGK5OF4P9sD0uNxlVKva9CFF0Zk273Rc0BQM81riwd9FX8XZWsGkz7u1_9SOajrDTLZV4xibqCqJSq6asi82Btz6YqD7KfQ5HI7UuZi3tzltMeABG9ipIBqIr--dhh70YLOII71olsCmmg_EDpvchTw1zpvL_Fwx5edbIPt0s5I_TzxD67t-N3FKpFs6bnyIyizJGLx0JSbUuSqlpTvs1_dDVSz8NOPG857xYjlVlfeYetB45cfS1cgUukmtl8BsQxlM0bWpNKHRXh-9dclgM61QSDt7S9T3DCSfdtkZt7JQNlTHp2nphsJPBUIAeJAthwBDONt8eQowxDCjV8_dOiF-KXJ1hmJo5Ar-tjTp8RE0rQCSeA0fWsTAhLRQi7w_tVlzICgXMm2bmBPQfsAI631qdKUGCJp_PrYyP31brtAU6BzFOc3rxUWS8hkLZbBUkQyt3wR9crRHCgFoNKelKHxwZceH2HfSOpzBgu-18ZjpZdK_xLtEMew5FJy9o7QDKJKsN4t90iE3oB4zoPZsBhz2zk1H5xSusVD8Srcdfp0RjsEJcKt_X10nevWu8yWQUz-fdoLydBHVUP8uyjbQ7TvQl0-eYsDZPt_m6uFm5GtuXt6szmx3L56xU2Fc_OG5P9LJBk1iyoqI6ukni3UZqjLTPIxNQ0zRBLYcNtm8Swpl7QB9YJp79zgMWeSZMpXOSQTCAh73i5vYSw8hRtiQBOlAJz9Gj_bFG8wUnj8uxXH3FvCUjvU_0QsRDD62Iifp1dPFStoQfO_WZqO00ZKAYC9oJuwK6d0aeiZASlgF77RUZ6GHnr99zIL7UCGIFOH8ovJV9JkG4M66MHZY-3obhAhY7Jsf74jdIEJBQYArl7N3QDJqTyqMHpaft5-3VUvxnihg1VYI_0Kop_d01MWYFhrqvNkS0vn3j_lufCY7KwTeIumKolIyhsIIbRmN_9ND45PmnB-QfW-DDmKcE7T485nMVf-kVyFffgdBIwb-BBwg2hxuaYkZl2T2UvdY23rcCTh6iSCRZk4Bsu7tp25U8ZaaY9vLFz_tRpmkJOtBI67jHx0lc-JqNdd09v92XYFYkVHBVc6UrkZE_f5iquHOegPf8Xd1VIAoQBRyhii5jvAxNnRL6Tld7__yALbCw0H52GdPyXX_BpgPrH7UXKSaPNPxwNPi74PCPIJd4gzpe8mZWJrVcdwuf4ytvTp6aj6KxfxvdPMa3hLJeE6UT5ysyzNiov1p9kB1NNslWpLhcfqiHdllPBzzffvOzsXReVj6x6HDyQ5r8Pn9otMKtFsySe7lw_ADVZhRmWxJYoS5nwkIW3P-EHnelrxvWwgyC6ByJq9V9XMx5bucU89CbDnrWLUSCxbKfjJsjBsU9TprB6TlaO-h7_70xOevoWBJbcKN0egRfziMjTul2kLOcO8qAec20D1OfJKxfvLxmDfIO5JzM86OhuJ-JuiGdwWJavgFk-rEv2HWZUpTPuHG7B2J-D5n2A6QUHE8g2i3vkPwKu1trL0Kp68Cy2F9huyyUsjtVyRhp9L3bPZ_sP_y1tdd0r1xymXVITlQfwx6Eb75dRy6Cj00N9flraXR6ePHCJvXSUAVROOpvNvHlWd51xeZPDP5Fxp1wHzlovE-KRDCysH96TL5cOIo05qBIUtiU_oWC7v_j_DYHj_HDmX46qKrannZt8097AZfyhjufRg7uHmSTvjduepwUSbWMSZspd2Re4CEvEeIc8VarPxMyl1A_14XARfagBnB6PO0sSJdeMmBhCW_wPmGEsxhF6K87Bt9781mLCfV9XdLl5XfCCd6vpPK2Nw3hYebZeDAHqX_MjyewqYWESWE-u-BEEZik14oXfL3EMshNpWtyq1e4Ovuz0qLVcEC-Fe3cHLj7_2hHWObg4q6fCWkSMGjXhnOoPG8j5u7wjpiWeAiVEayCfaJuYYRhfrh__XWTIhFZM1t4Tjcla_IGKiHQXQqrHG90XUPePVHSPI7H_DEnzv9GI569jLokMnOfviNljtPw9LQbPO4WEN_BUNFGyktJ00DdgtWGhviN6dvzXNIYF2Ow4fE51t4cGtKiIu2VfW1ghlB1gAEvzeDVheVu-Qzt3y_X3EORoQ2ZSdSKHBFJrs3fH4Lt5KGsVO2A8JtzcqeUnXUEmsVqwPYyx8nMEDLpoBb0SU0SRUKZ8MbMxa2L1xTRfS93Z383Qic2P-sxzX55JMjFsisJsAdEx1rPeak_FEcYteWuOPNrq0OXJxpOiyzbl9C8J7eD3-MhmBG3PSQ-prT6LmmS1cBBiU3IwN-7uIry5Jc3BEPKvKSV76puhArNj8SJM-yqIl3gpAHDy6P7AlGXO3UtMN5KzNYuoqTdkED1-ccdQoJItjwY5gGhJ0FRnuCWdju3OlWscA6tO4tNfrdkCZd1iY8rl3SzTE3O9jW9W-1pNw48YAKwWvKtLNbyUhwDAjVnbJUGu7Z9ye1BBGwkImpTCeqQfyyP1wLhHIGA5Pv164P-lTH-H56-qj2QD37VmxksNA-XX1BlEXpnHUBLDhFsLRgrlNmFPZ2qZ9d082LUI2FgQIiZ2pBYMGqQsZJNIhLwf1wPz475zQi9tslZ-Yu9aB5t7B1xkiU508pe3QQ-13mkSWqg39gPoYAxynUlMmtgXNpmjU9jIfrebC3DEhtiPq2Dt2LEf3-mkD2NzItvG3SZO-9z562EhDNr4MnJ6o0W5xsMEg8EbY-n9Pxs7MZp-5tKdHjNi9HUSO3zCS__FDEEjPD0y5qdz4t9CRmw8-EQ7WwXtyzyhgMbSLnOii4QPE_f7DPmk_IRXEXhQhUPZrdEESikw-H7eNPMTtP8MfHU3NDDdVZC8w-gdc5nvLRfxO3PST9z4fTqb0VgXM3b9_-Zcy6TjH6hW1HOy82ccqCKXWi0Le_nsiUbotANl_z9DFataaylGY2dMAKV9Qiv2D0jURyWUHdHgI15ivjQM8a3lAvzIkpknBmbF98tsi8teDcGcO9uSplNExsXhXIUM3m_Gr_A0u0aTh4B6IUD547UudT8Tq1vVc5n3PJpbqZv-HgqGZIl-vdX6EQWjL-6evoZQtk0S1ki_-npzTQeiNf3yNPdfbcrh7ysOePF0t2q9k2OUDxwDrOZrZE_Vw9-Uo72lafR73PMd79ha7Q8VRaRJ7PQWzWiMT5xCN4GM919T2pWNp8rhASl-9ZLQnJxgmKUyLJ2tZ4MbVzV7o2IDSASIgJXN86Sv6ql8c7k7d_-mlR0TRK1klZHT68A-JoS5Lz6JK4N_U5fnAsLPER2g4G6QXuuwV8_LKy__4jeWveS0GQRcrWzZKMjfgOMoycrD9aTLfze6BgZtXqiL576m8fAiOkvvnobrwTz2ofAaywV_GcdVNqA-u67RcMu2U54nc3kcDqAadPnMAf2meoFxLQhzkN4rZI6PEQlPLBl_zNBPHGXR3nfcuIxswAswwmMsq6n6wWZtIRqkhVvAAnmLuAajiYs3JUZqFWbh4oyFSZddNWkOInj7V2iAudCwOwoG1l8tSLuzYQ-xXht8b0-WIlwTexVrAMfYRxOClaz9RQnmkrwe-47Kxac7LE-xtijv3YMJQzuHaM537q7Jt3yrDLtbrleir1YQM9jwTcO-N_ItqttPFZwY1sljHUPRhKYDT8ChVGCeB89iEP3bjabN3cOAjStylLN2zhyZi2FX2cctKf2S2MBxNSRbwEl8kIu6gzHvkojDK5MYbs0_BuqDYCXALenFOu0eKBv_9oauJwa246YuNGwU9fN4nE2HtB8hYd3pMK8Hx13UJMeOhppotzIezcZ2osX62tuGu7kk37lmGGe74Q9PXwLkOtB2-6WXoo0jDyTeeEmt1XHNE0FZ5feaDA7PBBw_jya-P8YYaCEBn5su86JRStBswOCWIbRDB3B1entRt4fyhI4UWT32SYEH30qoCst4ZBGlqolliWHrtNxNk22RlBs_VsiR-d-dw6VcP2y81Od85GSE1sRi35EYy6YB67PaoAeRR7etDRPgjyS55pHvrDIqpfA8-Gh8U128qP4XyrPbVyyeUWrIA25_5nvcq30v9EaLgjCQaeAo2tAs5SDZj4FfUIo50R80GtZTeg5Z4-M0UJmTc_gpuoY8f7rmeX_24eat5ILjmPlPznhnfCofMOV7-bWFE3Jbp4NrwhD85Flvm8ve3Yg1h-Pq-AK0kQsDAy5sRoDXjLmLo_29pOauZdNS8y8_IJa14KfsqDK5NJ-X0NbXa6BeZm2CGHTacj32QIgnHKwKCLBAANRMwKsoKW1Hv_FR_7OYuEkwco5HHUEj9FTE17uJlbkDw=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:05.918854Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "0bL3asaKOI7v0MMPkNTyqA8",
+  "usage_metadata": {
+   "candidates_token_count": 98,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 98
+    }
+   ],
+   "prompt_token_count": 402,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 402
+    }
+   ],
+   "thoughts_token_count": 809,
+   "total_token_count": 1309,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "26",
+   "quote": "A landlord may enter the rental unit at any time without written notice",
+   "reason": "Section 26(1)(a) of the Residential Tenancies Act, 2006 expressly authorizes a landlord to enter a rental unit without notice in cases of emergency. Because the clause reflects this statutory right, it is valid and allowed."
+  }
+ }
+}

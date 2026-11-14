@@ -1,0 +1,99 @@
+{
+ "clause_id": "c27",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "b2d9f4c44798c1f97b43bcb001999bd4631be9275f9ceeb8fbe29254ee77139f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant may pay rent by post-dated cheques or by pre-authorized debit if the Tenant wishes, but is not required to use either method.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:51.661437Z",
+ "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"The clause lets the tenant choose post-dated cheques or pre-authorized debit and expressly says no method is required, which appears to fit the Act's bar on requiring particular payment methods (section 106). I cannot reliably quote that provision's exact wording from memory, so I cannot give a verified section and quote.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 675,
+ "output_tokens": 1154,
+ "raw": {
+  "id": "msg_011Ch1v3BW4XuePy3ZSELv8g",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"The clause lets the tenant choose post-dated cheques or pre-authorized debit and expressly says no method is required, which appears to fit the Act's bar on requiring particular payment methods (section 106). I cannot reliably quote that provision's exact wording from memory, so I cannot give a verified section and quote.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 675,
+   "output_tokens": 1154,
+   "output_tokens_details": {
+    "thinking_tokens": 1028
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

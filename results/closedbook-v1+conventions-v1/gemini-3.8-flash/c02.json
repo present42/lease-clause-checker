@@ -1,0 +1,111 @@
+{
+ "clause_id": "c02",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "71cae2c8d062e4f5963b3831a403a4a31bd597c27d5b3c47aa87abbfa1fdeeb0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nOut of consideration for neighbours with allergies, the Tenant agrees not to keep any animal in the unit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:01.896167Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"14\",\n  \"quote\": \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\n  \"reason\": \"Section 14 of the Act makes any lease clause prohibiting animals void, even if motivated by allergies. While severe allergic reactions can be grounds for an eviction application under specific circumstances later, a contractual no-pets clause is unenforceable from the outset.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 395,
+ "output_tokens": 310,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "zrL3as33D9_IpPIPrpqRsAk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:05 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"14\",\n  \"quote\": \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\n  \"reason\": \"Section 14 of the Act makes any lease clause prohibiting animals void, even if motivated by allergies. While severe allergic reactions can be grounds for an eviction application under specific circumstances later, a contractual no-pets clause is unenforceable from the outset.\"\n}",
+       "thought_signature": "AY89a1_s12WBwc3U2us4VdLseHJ358plfVpNn94x4BBs5YzlthG0_BcyyzpFVlCCURCc3WKeTCdo4uShgOrQPh7uYruVvhsnFG04fjpmMJMzSqaRUXwqkIhkfey0vdX6scxGMMWSZ5N4TpddhEtjnm2AcGJnItR7m7cnVTyghR0eYU3idfcLT5-nFcRWr2DeE8E_MScm5IRiOlVFmUOqS-Y0cmsLjPEixJ8jGRfY8IEUqp3CadsSBjSw36kM908ZfuXwuW0ly4j5Xgu72f3mW89fCJ3sub_NvVnKqRHXsv_iAaY260EqCmeO6y5MBQSm0VoPRupzB4WdRPen4ykDhG2e22mxPEbZ0cwCTrXMoD5CEX_KVhNbgANF6iA_4Ixm5Uds5Ld8DtaMhMG-rweUIMhRRC57VVa9QVrR9_cbA7eFmio6J8JZimuRUOIYitAgCAj8XpyPjZffmM3_WhRlxDMT0npkrn1Fl37Z8zQ_5ZeKzYbopWhYxo6PBu0m9e3CekPuZOhLUXwWbCnCaOEYnxU0yqa4XIOPBW8tG1ZM0IZiVMc2u19Jz9tqzQpDXulPMFjbco9et7-5HU5aFmhwjBmvLksIM8sbmBmx1cxmHQJ5IXNlxglJN0WIUsE6Zwz3eN-1kfkumkP-XGjOhdo7DfxEADbiPxzQ-yN1CeiBaeP8cXvh50Vywvu8qfOjarplGcMxWXL1A_9dfBNqbQ6w9TFZ-19PbQ7SmFBIlaOPY9h7zXd11Dom8i1FlnbAarbtW9OJeIqe-YVWZ_lAKDDr2ZDx9JQVCPle6UhNNBbqKRJoA_-XtZnIZaIUn5KsgAcGClATbLe4y6K-nVqH37fqjIWIPcl1DCvn2wrUep-UF43R7Lxs24KGlcnXGcLQcL8fd1Lr3Vg7bJqtcE3ecnv1rpxpGpvqUa5fKm_LVDQ9PEUAc4r2I4HfbhHsmUKZsuSn3r8DDSQpdSQN8BtXz35hPBqcGmbgIhRsCwq4U91P1KWq_71oOSFhqJbYjRyYCJPNFRo32AdTjZCNpWF5pYvmeODG6TLJtx9Q565qlE4BU8_llgf7O7FwlsnJoJl2cdZwFoyKYSbtpxhQkkMjJ-gTFUJ1g6u_HglBbpnLVutPAdpzaWdzAHsNFG7O3dStBFswCK_dFW7G5zdGV67eLQ5bgsVowO4SrW_bR4btfGsblq41LDk77SdOM2B-uqFjOcutGX85eON3Qwb8pLIQNx60JfmdyKzZ3rrubFpp5a0TRL7TG2eKr8keQp0j8LwqlbyEQFJ9vlOO9r4yqTxaffEsI-vS0lqkhpefJAPFyk8H6TlvblvLZAqbJheKM_WpT48tW0JKW3yAhRvZfe5eWcuE-PiTBufiCJEao0rKbEU="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:02.261069Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "zrL3as33D9_IpPIPrpqRsAk",
+  "usage_metadata": {
+   "candidates_token_count": 102,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 102
+    }
+   ],
+   "prompt_token_count": 395,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 395
+    }
+   ],
+   "thoughts_token_count": 208,
+   "total_token_count": 705,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "14",
+   "quote": "A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.",
+   "reason": "Section 14 of the Act makes any lease clause prohibiting animals void, even if motivated by allergies. While severe allergic reactions can be grounds for an eviction application under specific circumstances later, a contractual no-pets clause is unenforceable from the outset."
+  }
+ }
+}

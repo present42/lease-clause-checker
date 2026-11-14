@@ -8,6 +8,7 @@ from collections.abc import Callable
 from dataclasses import dataclass
 from datetime import UTC, datetime
 from pathlib import Path
+from typing import Any
 
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.conventions import CONVENTIONS, load_conventions
@@ -23,20 +24,24 @@ class Prompt:
     version: str
     """Names the prompt file and the conventions file, e.g. "baseline-v1+conventions-v1"."""
     template: str
+    schema: dict[str, Any] | None = None
+    """The JSON shape the answer must take; None for free text."""
 
     def render(self, clause_text: str) -> str:
         return string.Template(self.template).substitute(clause=clause_text)
 
     def question(self, spec: ModelSpec, clause: Clause) -> Question:
         text = self.render(clause.text)
-        return Question(spec, clause, prompt=text, saved_prompt=text)
+        return Question(spec, clause, prompt=text, saved_prompt=text, schema=self.schema)
 
 
-def load_prompt(prompts_dir: Path, name: str = BASELINE_PROMPT) -> Prompt:
+def load_prompt(
+    prompts_dir: Path, name: str = BASELINE_PROMPT, schema: dict[str, Any] | None = None
+) -> Prompt:
     """The prompt `name`, with the shared reading conventions filled in."""
     template = (prompts_dir / f"{name}.txt").read_text(encoding="utf-8")
     filled = string.Template(template).safe_substitute(conventions=load_conventions(prompts_dir))
-    return Prompt(version=f"{name}+{CONVENTIONS}", template=filled)
+    return Prompt(version=f"{name}+{CONVENTIONS}", template=filled, schema=schema)
 
 
 def load_records(

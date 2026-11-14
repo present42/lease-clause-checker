@@ -1,0 +1,99 @@
+{
+ "clause_id": "c19",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "0cf91148f9af637531f6c2156690d36f8ff7768c6092a99bdf01e680bdf944e3",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nOn signing, the Tenant shall pay a damage deposit of $500, to be returned at the end of the tenancy if the unit is left in good condition.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:44.838299Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"A landlord shall not collect a damage deposit or any other security deposit\",\"reason\":\"Ontario's Act allows only a rent deposit (capped at one month's rent) and a key deposit, so a damage deposit is prohibited and the clause is void. I am quoting section 105 from memory and could not verify the exact wording.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 675,
+ "output_tokens": 1412,
+ "raw": {
+  "id": "msg_011Ch1v2gHu12BNZK2jZV9MV",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"A landlord shall not collect a damage deposit or any other security deposit\",\"reason\":\"Ontario's Act allows only a rent deposit (capped at one month's rent) and a key deposit, so a damage deposit is prohibited and the clause is void. I am quoting section 105 from memory and could not verify the exact wording.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 675,
+   "output_tokens": 1412,
+   "output_tokens_details": {
+    "thinking_tokens": 1289
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

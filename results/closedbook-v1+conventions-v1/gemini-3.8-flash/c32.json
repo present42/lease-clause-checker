@@ -1,0 +1,111 @@
+{
+ "clause_id": "c32",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "1f47d39a6b27b8edb235105a25fc75fa209912fb294f26116aec70a2876da29f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nAny increase in rent during the tenancy will not exceed the annual rent increase guideline.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:43.354132Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"120\",\n  \"quote\": \"No landlord may increase the rent charged to a tenant, or to an assignee under section 95, by more than the guideline\",\n  \"reason\": \"The clause aligns with the statutory rule in section 120 of the Act, which establishes that rent increases cannot exceed the annual rent increase guideline unless specific statutory exceptions apply.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 391,
+ "output_tokens": 623,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "97L3ap_9F9_IpPIPrpqRsAk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:55 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"120\",\n  \"quote\": \"No landlord may increase the rent charged to a tenant, or to an assignee under section 95, by more than the guideline\",\n  \"reason\": \"The clause aligns with the statutory rule in section 120 of the Act, which establishes that rent increases cannot exceed the annual rent increase guideline unless specific statutory exceptions apply.\"\n}",
+       "thought_signature": "AY89a1_HlOwHjSZjsJxZbQGpSzAe4H6zo0hl3eWU8aj6G0wxkGYOoz4kn9L4uU_51fCLgj0snYPnAgdmxGcG-EgDMEdcewckX5WeBoRkbAevrMaOrVax1tO5EF5nWwblfz25_6_sXmJqmMksowRjCnPUxR7f1jdsU-aIDFiWaS53z0AQYz22hSWfQPQivZZs4_7evPAE-ZuUN0V_SrAVYM1t2NgeK0hqLSiTq7qX1TYx4HVx4U5bYFVoCsldqYxvLNjFzX9DgiPOSWBcebeGM7uvP_IfCXXT98M56ukPnbyvWhchSLeBIrGq8JYJveO4smihpZgMoI8oXkKlzplQ9EcIQyFRnpiURREZ4t6Vf3C-ARLMgFDi3CRAK2yQOsiq5hPHjFEtN2VHcQHMJ0ZjxGAzxf8w_AQHk-Cudj0JjYSVvnnbF1G1EK08wp9NlV3DB42XyCKSkkGV33M_83CWl3HwnI9d-4qZCdLzp9pA0Pn9NPmYPJCxoasCK35apcbpD7ZoHxDj69i1T9cFHuD8L-DulZDx-VYXwUKdG8de3eg-TfYzLETcoWFb4kHV4UhAGW-UC_Njv7Gy9Pp0akWbIGx4TZRfp5EGo3J4V8Usyc8c4sGaQHEu5eImm00oRSnkXEENgRmoZSxPf1ODlBSHv-QmOwiOLSx3v06F0j4Tc9VZBWDYDnwRk3veYDucG5mtgNR4smqxajl2RVhOqMVUxR6_x9gC4Nd9bi5-4y9hBLEQXhi2I4wUe0vEL1yxp1qDPn62MYW7fzlBhlWOcdGe9-vv9AneRIwxmLRK5tKGPLSSvkU_tHAdkxSd0ZKK-mfcuARGZAWdSzDbU3jVxvxcxcryVy7VJm4qyS9r6HkUfR2TR0nSJ_bxqf4SMsInvHliLwXEdTcuF7Xc0W-egPx2EgdKkwoBTx8UJpldv18-yUSZ3nUBXrG_5YYNCFJq-NSbGBG11jcL0fCQs0gwAxdM2CyaadHfidXJ2onORyX03AYwP--aVUmdpAIKzQcDNDG2bJlXYwr_HOi-vc4u88dWk8S6ilZ2cinp25Kn7E4dMUUqlV7JCxwTaeZgIp2iT1tYXvbZ_HjA4nphsjPUtmOEUZpAymspuSc2eWJm2dx3mF1pV2614mOPcKJbhVfcEab15ScqE8sqgdUQVYntCVgFKts2PNf2ywix1z6F7VNGCdA56ALdDFtMcjysxLGABPZlXd5-0DatGddnw6fw_kc9vCHGaRpM7cI8KRKII6THoa0isscJYV8uTcqz37B68uKMdTsZALztxCM57E5ButK-3fDC2uf5I01X9qdJbqUYnLwM_-vrEYWelxIYF9m6Vpj3GkvRqOcJRpgmPMEj3HAlJNH7i0TdZLQTZJ2nhDOGsKVybNFOEuguqAHS1DI-FMLuhj8ZEwMvX7ChNutmGgu-efOBcodIJ6qFbLxT98kpAkDA23Cih05Tgb_gsrr_xtknwlH_m9ucaDddPHQX9B144WWBUEWuqdF9el_GTKf4nu-eiD0v_iydI0JqfO1WUmGKz7TD7ZDYjLyo63iIIQfyGVKpkPf2uIKcLVxVGkOhOk-sZk0DbimhCnfcJUh9dYtKpad4JUXCcwcb2N_oTI6zwHzC9QVZDRXnq_D8DuxURhEqhdWu-xDGDfJL1Ngl35240Iok9zb5SUR-ZJbqZvWdefyPH13ACzbEjz_5GTP3aIGU3uSObC1IL7VMAhYttSaslNBddU1h2tAKvFon9AjQxiX76trosyBZjQPjmOc8KbRpDscSC1LGyX7V-L6J9PxRkWpwnctRZ-YCpTR-G1F-cWeTn2ZjXB7xccpZVTzc0xZ7Faw608oy-Uv09ZSX-PpYia39hAlLHRI68gLYifdFPll83rP9x1IL-PFp0RF2fZrn7JoYmcOluglKT6geoPUbu87Nqw5-1EUJ74VzWXDHsHZpEfzXyFMQn-E0FF5jfxs2BYnLBkBgklliCzghMfEPzuxIzRW0wDeYZtK9tR4uCXjyyGdorq2uzPb-Nq_S1zeakc9r5XsF4xvy4mrNbCqGbYO6kjlit3i5nBgH7-udiCgO_6PZX_8LIYgauKqk4oqPlFWS0s7eVNRc-IUjlzzzpevHUw0_BgJzbtoh5SSuRE2Wb_WwsTYKx03ksDn2Z2R6OcPse6ndKRxJ4DP962ZaQ9S2FC-gYeTXZVk6tcS6iWGqI-VJv-dRuoatewYJq1c2ByrHS213-slYwQvSqVTvR88nx0FiC_5GiK-6Fs71JayWCXKGhfKnK5bSWP0KNSJelfnhvDreiKyhFYjhDGbB1LQhEYIbRPzkrsWmnLobppB2kg61_AJyBC2tgWb3hZ48hDWRpPs6UXlauDjkZW7tdkWcvxP5xMZE8EOfQhTXeZPuyf-jKUaN5lPqtbqi3NXsvQAUO5Ot0xocpJ65QGVnsyR3G8eaN4PxD-jo72lZJvZrFORxoOEqTc_C8lOXEF_-TSTfTN0oYEsvrlgJjC-YHPxkBtRYM6Go2kkW7qukgaUGqB_ROHLRIiao44KxoUaabY1D3xtjkPAF_3sR5UvOYyxA_sCbXfn_6y_FdVNThVwZiCdHy82MQpuDLtzNgRxU1ukIccnlHBfmzLnguDJ3txOAatL_gmqso_N9nweyEjUi5YjHx72Vq7LcxbnsbkxVl4YQ-lGZDf73nWCQS4repg7u0Oz-BmKLZCKe1Zs-R_m2ZKdmyg=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:43.392863Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "97L3ap_9F9_IpPIPrpqRsAk",
+  "usage_metadata": {
+   "candidates_token_count": 96,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 96
+    }
+   ],
+   "prompt_token_count": 391,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 391
+    }
+   ],
+   "thoughts_token_count": 527,
+   "total_token_count": 1014,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "120",
+   "quote": "No landlord may increase the rent charged to a tenant, or to an assignee under section 95, by more than the guideline",
+   "reason": "The clause aligns with the statutory rule in section 120 of the Act, which establishes that rent increases cannot exceed the annual rent increase guideline unless specific statutory exceptions apply."
+  }
+ }
+}

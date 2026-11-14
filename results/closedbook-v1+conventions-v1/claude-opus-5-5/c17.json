@@ -1,0 +1,99 @@
+{
+ "clause_id": "c17",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "760c8c0e19926f4c1586e55dc6f83b5a357ce960ba944357d0d0e95e3b65dd56",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nAs a condition of this Agreement, the Tenant agrees that the tenancy will end, and the Tenant will move out, on the last day of the term.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:53.803162Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"A tenancy may be terminated only in accordance with this Act\",\"reason\":\"The Act allows a tenancy to end only under its own rules, and an agreement to terminate made when the lease is signed or as a condition of it is void. At the end of the term the tenancy continues month to month (s. 38), so the tenant cannot be forced to leave just because the term has expired.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 674,
+ "output_tokens": 916,
+ "raw": {
+  "id": "msg_011Ch1wLXXfxVKuCpi2TizG4",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"A tenancy may be terminated only in accordance with this Act\",\"reason\":\"The Act allows a tenancy to end only under its own rules, and an agreement to terminate made when the lease is signed or as a condition of it is void. At the end of the term the tenancy continues month to month (s. 38), so the tenant cannot be forced to leave just because the term has expired.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 674,
+   "output_tokens": 916,
+   "output_tokens_details": {
+    "thinking_tokens": 781
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

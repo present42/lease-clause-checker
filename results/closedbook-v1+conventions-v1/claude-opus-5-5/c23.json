@@ -1,0 +1,99 @@
+{
+ "clause_id": "c23",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "339615d02099a3ea2f26e691bad2f0e42b44f44e23cebcc1599d7075394c4d65",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nAt the end of the tenancy, the Landlord will apply the rent deposit to any unpaid utility bills and to the cost of cleaning the unit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:58.062563Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"The landlord shall apply a rent deposit that a person has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates.\",\"reason\":\"The Act requires a rent deposit to be applied only to rent for the last rent period, so it cannot be used for unpaid utilities or cleaning costs. A term inconsistent with the Act is void under section 4.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 676,
+ "output_tokens": 364,
+ "raw": {
+  "id": "msg_011Ch1wLqxCjggTRMUPBpxHs",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS0QkKEAgTGAI4AUIIdGhpbmtpbmcSDK9BOfMmMTZFxSsMOxoMV3a9+g1/t8mlscUGIjD4UsJn4Wai+I3tsYaSuywgeMnW0+LbTRgmZ+Bj/Gqed13Q/phe9+WqtLKXJ7jKgd4q7giaKF7RT1mOTmi48T0SWXX6a/DsIZCZRCon0gcoYhD0fpYaNClWher/higYMgapPDMzszSON3a08k9A3Ouj85ZxjHqwCqz17UpvJj7sphhQaHS/ThN7t0debU661J2mgELqmdmpHcj7c+AD3R21ZW1Ji8x0KDI4O+zOYjNwngngMBAQy17eyFtBNJOcWrMjre2wSfpd8BSiyRjp9MYUR9Ozu2ZtKkgcxNNpYztoXZGr+c94Sh3PbvxY8qToRd/orP1g0vtRunYOl6+V3DnqPBdsqtvDz4tZ8T/2i1NghoBqF3HCNRi3XJCS9n8D523WgDASO4o7sF7Kq1DphoZ3+rNDYWzAEcH8NSvFcyCTz2bHMlx85ZrAZzZ/8ZSnGSkqvDoS04lhooATu38LXKHKxc82MD87ti/TZUMtaUcINWcI+KDWaq7cuQSSeUGop6hObKRtTrZnDyXfGLFPONemDx7zFAjpRBrgGJ6OZTuRXGEqIBkCfYI6YeoJUoVsFU+QGDvnmppNwCdru4B7udM8pucHLcDaMbQfX8Wghx9fw8gt2yp1baV7wIc9JbZS54IY8kWf99gjVIoZjjfEQ67ILMy0M8/LvE/5fLw47fNkH5S8wTnE80Z/kz9mCNfRZnVh6maaKm/yuOGmmYmwTBBPL/Ix3xyZTENNP7aKBHfjjrrmW1zaOcb8Sxrdd1xgYzLH+Hfy9s4LBGRG249qpMIMPTVA32GkkR/b/+FGxotYFJm7h8Vx65awq83vU553kUBJoNXdHxJqAjbivgptC8QgVtQANbiJHwT9UxAlxB4bVWNnupOZsJl2tfyQMItmeJ9rZNGzQtb1lNb60VHq/t3uVr8X2R2SnE+V3vS9MgX7AyNBr2SIvGIKUL1NK03Ff7OaA3JqoGY79/ICSLpG3s3FdAg/8FW2nZ4nTLKUF4IGh6WibOte0P2mhT4jUXHHmOhr+3XYmMdN0GKBDH0UUKc5k1DA1xnBGXABhDuI1qOdx/3DD4DR+YD+fLdpvmsNLRb3LrnuXFXkNpHBcvmbDVp5spjIP9F3sd8+8TsgPr4I78gk8pEMUZZhoKZC3lbQWU7RkqwbM053LzHFtH2j69fyGP2LYzHnolGTNh8CzAoIR6h8jK45Pd98PmTats2Rm550M90uUJNPyMoxItaDRr3Wzm+Zo3PSfh27DpLniqQkEBuIR3QFmI1hpXRMQAUZRvcxqaXkLGG0e3gU7dnVn8HR35CZjOJMXd3BsM3rT5tyS4B4SYg1vOdzZQYMKQb0Qck6eyRvg91K1ZKZj5L60v5W6zgBwlbk+camx2Iydoa2IJErywOGgZ3NNSRifQr0wXxrNajNw6x1suXMfvQrfXg+4pO8DZ35phkqfp/+y/4JUahCEAC3V9XyD4H2ycB8hhwfnBFHo84fzQyUhJttmgkEP3Dyu/wzuotbmeHBQS1kJd5dN2S8V2hX28glJNR5Z5FQAuDrSNRBpi3iRwjyRNTZyiRyg9cZ0zWvkfs9HVAsWQwYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"The landlord shall apply a rent deposit that a person has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates.\",\"reason\":\"The Act requires a rent deposit to be applied only to rent for the last rent period, so it cannot be used for unpaid utilities or cleaning costs. A term inconsistent with the Act is void under section 4.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 676,
+   "output_tokens": 364,
+   "output_tokens_details": {
+    "thinking_tokens": 216
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

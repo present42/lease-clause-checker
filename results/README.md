@@ -18,6 +18,11 @@ The pipeline (`uv run lcc pipeline run`) saves its first answer to each clause a
 numbers and the SHA-256 of their text; `prompt_sha256` is still the hash of the exact prompt
 sent. `uv run lcc pipeline report` re-checks every quote against the cached Act.
 
+The closed-book run (`uv run lcc closedbook run`) saves one answer per clause under
+`closedbook-v1+conventions-v1/`, with no retry; its prompt contains no statute text, so the
+saved request is the full prompt. `uv run lcc closedbook report` checks each quote against the
+cached Act.
+
 The Gemini answers were served through Vertex AI's global endpoint (set by
 `GOOGLE_CLOUD_PROJECT`, see `.env.example`), not the Gemini API; the model ids are the same.
 Their costs in the reports use the Gemini API list prices in `models.py`.

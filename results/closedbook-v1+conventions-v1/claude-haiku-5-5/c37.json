@@ -1,0 +1,99 @@
+{
+ "clause_id": "c37",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "9ba4fd6735a9874221a857ca695b5b02ddc2345408f13d053f82be9bc408df1d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nAfter either party has given notice to end the tenancy, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, but before each showing will tell the Tenant, or make a reasonable effort to tell the Tenant, that it intends to enter.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:59.519885Z",
+ "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"The clause resembles the Act's rule letting a landlord show a unit to prospective tenants without written notice between 8 a.m. and 8 p.m. after notice to end the tenancy, with oral notice before each showing. I can't reliably recall the exact section number and wording without the text, so I can't quote the deciding provision.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 721,
+ "output_tokens": 1438,
+ "raw": {
+  "id": "msg_011Ch1v3m5RGLAZ9DewNRtfC",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"The clause resembles the Act's rule letting a landlord show a unit to prospective tenants without written notice between 8 a.m. and 8 p.m. after notice to end the tenancy, with oral notice before each showing. I can't reliably recall the exact section number and wording without the text, so I can't quote the deciding provision.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 721,
+   "output_tokens": 1438,
+   "output_tokens_details": {
+    "thinking_tokens": 1308
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

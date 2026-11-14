@@ -1,0 +1,110 @@
+{
+ "clause_id": "c05",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "a8ed8f761f5d19003d827d255aaa7f12bfe555589e1ac11f7873f11372ef67a0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf any instalment of rent is not paid when due, the rent for the remainder of the term shall at once become due and payable.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:02:00.370140Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"15\",\n  \"quote\": \"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\",\n  \"reason\": \"Section 15 of the Residential Tenancies Act, 2006 explicitly prohibits acceleration clauses in tenancy agreements. Therefore, a clause making the remaining rent for the term immediately due upon a missed rent payment is void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 538,
+ "output_tokens": 142,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "CLP3aqDwGI7v0MMPkNTyqA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:04:02 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"15\",\n  \"quote\": \"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\",\n  \"reason\": \"Section 15 of the Residential Tenancies Act, 2006 explicitly prohibits acceleration clauses in tenancy agreements. Therefore, a clause making the remaining rent for the term immediately due upon a missed rent payment is void.\"\n}",
+       "thought_signature": "AY89a18fsZIrKZ6db2ZumC6iCpLkFuUcN5ZeqhQQJXEYmBmnBi052uo8Uevj-wrapYES8OCxFn9_PH6qNDJ_DJsaRpR8XAm5B7aANgA7w92g4eLTfe58GvR2N3m549o="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:02:00.407584Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "CLP3aqDwGI7v0MMPkNTyqA8",
+  "usage_metadata": {
+   "candidates_token_count": 142,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 142
+    }
+   ],
+   "prompt_token_count": 538,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 538
+    }
+   ],
+   "total_token_count": 680,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "15",
+   "quote": "A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.",
+   "reason": "Section 15 of the Residential Tenancies Act, 2006 explicitly prohibits acceleration clauses in tenancy agreements. Therefore, a clause making the remaining rent for the term immediately due upon a missed rent payment is void."
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "c14",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "cc393117210fac38fd9284198c4cf56235e5b5d8f44df71d8fbd0e0cb9eea814",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf the Landlord lists the building for sale, the Landlord may show the unit to prospective buyers. The Landlord will give the Tenant written notice at least 24 hours ahead saying why, on which day, and at what time between 8 a.m. and 8 p.m. it will come.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:39.019237Z",
+ "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"I can't reliably reconstruct the exact wording of the Act's entry-to-show-prospective-purchasers provision (s. 30) or the notice rules in s. 27, so I can't quote the deciding words. The clause may exceed the limited circumstances in which the Act allows showing to buyers, which would make it void under the Act's override of conflicting agreement terms, but I can't confirm that.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 717,
+ "output_tokens": 1711,
+ "raw": {
+  "id": "msg_011Ch1v2FNhvsYTmYk9MntTa",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"I can't reliably reconstruct the exact wording of the Act's entry-to-show-prospective-purchasers provision (s. 30) or the notice rules in s. 27, so I can't quote the deciding words. The clause may exceed the limited circumstances in which the Act allows showing to buyers, which would make it void under the Act's override of conflicting agreement terms, but I can't confirm that.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 717,
+   "output_tokens": 1711,
+   "output_tokens_details": {
+    "thinking_tokens": 1557
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

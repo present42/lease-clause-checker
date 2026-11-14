@@ -1,0 +1,99 @@
+{
+ "clause_id": "c09",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "946dde06653efb34fe14f5628901c393d6dd3a2b8881e7c6ce9743f1fc24939c",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf there is a fire, a flood, a burst pipe or another emergency in the unit, the Landlord may enter without notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:49.266486Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"A landlord may enter a rental unit at any time without written notice\",\"reason\":\"Section 26(1)(a) lets a landlord enter a rental unit at any time without written notice in cases of emergency. A clause allowing entry without notice for fires, floods, burst pipes or other emergencies only restates that right.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 667,
+ "output_tokens": 371,
+ "raw": {
+  "id": "msg_011Ch1wLCE4ryxiFJGbSBHXd",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSwwoKEAgTGAI4AUIIdGhpbmtpbmcSDN7aZ2deZK+0x7HGZhoMKQvMsLpz9IjhKGC+IjAkE8KOVxxmK2lV5nS69/GIzpwyUVOwT/zUKRWoT07WUo7ZDnacR6Twot9hD3iaoTEq4AnE33sJSuRcEKHMNKu+mF/BZCdQJacR53CPKuF27TfUkElRQfkO8k/gRlxGxsjIXpRJ/f2kU7x0FoM0Ows3RCE9jqDKr4bH/tKwluJl4pPkshZi2Q1LGdo+p+oU75p6yFhFBP3IOgg+wIdULCUvSGW7CzwM3EIyEPo/TN1XgUYdrBIcf6aR54aDw4zZunMoVTlEY9kG6LccwEviBmLCkydFZN764RqgMxibMl+IxtZVnnJDVR/7jPSO4MQZhgk1ukZvvfFP1yP4PrmVm5+Wfop1ss4owbZGnAk0pM4nMm/JKpjHG1Qa/zihFtcIvE8W99AyIF/Azh32Nfk6c/vTqM4Y654SqJXB7CvsyiCsyE7vbIrjlYEAeselooJfru3CmkjH6TIHIOYjkE85l+MiQEwiA9wz4Q+CMkkecl0CsKlbW+ojm7L9+HBSgKtmsIJCD9NgzNz0ioCaG6TMjbL0VWfUThq/0Wah6MVM13wCW6uucBHj/O66kOy2Uo/QckSYZFlquZR0qviA6qVpGT76TVkwg0tC1K8jTapc6AxGpmZ/qj22/zu3P9BhJuSxxvCrP+77dtCRqGc+TuFDsJKOpn7FtbQi1wZV5lTc4nkD6ioAoaCxR6tSeqcb1eL0MY+qdZWkzk3IIlCntT01Y9smiyaB6mXEdTwpTm49Sqpy3+z/JVELCreOvUGjm9e07squbFzH52TALih4x9i+Z2Dc2N0cyUarC9JuGQd3FE0kfO/XdyBu66jRFIo5TS2qk3rndS8x1fGvDVY+TbEIMII6Tr01xB8raoFbjkNWnIrSWN1r0OEg7NPFmxySLcLnse573di87sE68qMZKEECaD7tCeTrBmNelp2RTxMjGVP6Bsk8y8lAtWzyQ0SLLk3XPUeyiHspcjQLZsZlP4tMXBcqKS5/F1HujRp4YAT6OlPOIddymWv1KizTBkkh080bkTwSx2AN5Ly3xSnECH3kDHXiWV+g05TnxfMbWJ5xcDqq6ZjaaLT5Qe9QKltkrNenfuSXcXGExwnAREZEa67bNbDhibX/Yc/UXbo9UP2JzN24j0xmqq7U7O17e0lKDrbcGqFSdQA5l/4gHyWr+tGTIhane7NjjyReMOynqKze6V2jnZx1yXcABGUBpYFSu4LhFn8TlcuP1pvi07g7Gb/lABYcuwMlu57j1ECdKlw69UnzIP66NAwU49IVXgSCzJcucSIigk6uDHdtMdiYvlBqmnGSauCbUzUmqeX5U+dwJnedlswflIfHrF7tzL8vZtSZHYx29Ro5uw+RUBzdc71RHymxO54aXM8+qLQLSR3lQLMB3KLx80FeI5hEOKZfTboCwRNMXuJpvft1J53WT0yqkjRU+ZCcyZm0AvrEH2Hpxv8P/ilb6sI4DY7nZqO4OJlWQ1FuQ4eQokTRfhH9AYezpLhgpFwj4Lz8Xb/uOzhT3sLTFoFnwthHfasU6kQlOmzcfzLS5uwNq3DHFuZfkHoP8yr6PyEoPZC2th0jP0NUpAXNmQkc5lzDlhjn/HMUzV0FGuh3SSE+GnxdT3WwlUzhMV6244qJsyvVUzuel/aXcS/WA7fohdMRYi1iB3EDEu5L8aJ2UGgL1NcD00zZBvKhYJJi0LfjB6HYzphrVpTOhL3Isrp9jlYZDM+4HHy8deQ7rFZUwG0YAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"A landlord may enter a rental unit at any time without written notice\",\"reason\":\"Section 26(1)(a) lets a landlord enter a rental unit at any time without written notice in cases of emergency. A clause allowing entry without notice for fires, floods, burst pipes or other emergencies only restates that right.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 667,
+   "output_tokens": 371,
+   "output_tokens_details": {
+    "thinking_tokens": 251
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

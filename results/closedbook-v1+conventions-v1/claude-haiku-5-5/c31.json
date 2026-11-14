@@ -1,0 +1,99 @@
+{
+ "clause_id": "c31",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "4d48b4c9f9b9c460f866a00d5e6039fa3d0c4803f8ac468f1207f407944f70bb",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe rent will not be increased during the first 24 months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:53.681980Z",
+ "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"A landlord's promise not to raise rent for 24 months is a term that favours the tenant, so it does not appear to waive a tenant right, but I cannot recall the exact wording of the Act's anti-waiver and rent-increase provisions well enough to quote the deciding section.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 650,
+ "output_tokens": 1771,
+ "raw": {
+  "id": "msg_011Ch1v3L5GH1NMdkHvxy5DD",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"A landlord's promise not to raise rent for 24 months is a term that favours the tenant, so it does not appear to waive a tenant right, but I cannot recall the exact wording of the Act's anti-waiver and rent-increase provisions well enough to quote the deciding section.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 650,
+   "output_tokens": 1771,
+   "output_tokens_details": {
+    "thinking_tokens": 1656
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

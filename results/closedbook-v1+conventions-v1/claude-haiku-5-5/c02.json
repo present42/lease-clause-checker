@@ -1,0 +1,99 @@
+{
+ "clause_id": "c02",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "71cae2c8d062e4f5963b3831a403a4a31bd597c27d5b3c47aa87abbfa1fdeeb0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nOut of consideration for neighbours with allergies, the Tenant agrees not to keep any animal in the unit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:31.607097Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"\",\"quote\":\"\",\"reason\":\"The Act does not give tenants a right to keep pets, so a no-animals clause does not waive or limit any right under the Act and is not void under section 14. Human Rights Code accommodation for disability-related assistance animals is a separate matter outside the Act.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 664,
+ "output_tokens": 1006,
+ "raw": {
+  "id": "msg_011Ch1v1iangDHqaKsj7i4mo",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS3xgKEAgTGAI4AUIIdGhpbmtpbmcSDJZUs6J6eSiA8CZTOBoMDlK7EYPMxcXGb33LIjBQXwjs6NkF0m2bKFEbCQ6P6RbH4Qh4gmfJzlr3CB1/m7Fcc+DVJIdGFBK0Dq9oQGoq/BczPs6tXpo8cBRVYk9uoeuFx2w4n+o3lXGl3TLKIOnKA8vFySFtWG8mG25cJqIY5vCbPO8f0OrECfqOQ6v/z8y6yqEwlGEZDRTV3tfYfCslJkpB/pEF8OzUpNLaWJA9vZ1GEoqXYNLnIqhL+/A5IXw2c8UMey9jsGUKkv8et+ILzlb5hfktGse5MwzlM2JjFhlI/dmXQP2tJAK4DOQn+MoqC1J362X9mtCkqsN74u8hRhDJ56DBhUs4x08Tr0AjqlEXWRrFmcUgM8WgMh3VDJ459K2Koj9HIBqYvHhcDVftDHh8QT/TlcWZmBXdrd+sH4UAuAIKWNIYqqVa2yuOaOYBCC6KorYWj1tfxuYefZu+fMix7mqM0LBRxDlKxLIs9Jf8dwFUQtizeXTXhqKqZr5dSC4fc6/EDOs60b6WAxORgJjVjyfRAGhxWGe4j4o7EajKAcIqrM33WbyDkaMEJctSebkxab+I+ROi4PbJadHZtCxezFkThoEwQAUsxIANL/VQU5KXUwzPUvzwSkRy3iqLavR4BWy7oRQnyts1YaFS4aLx96YpqsNBDzttyIU5Id0EjoBby/lFMfePT1aegEBOgB2sSHtpnm2pCTUDgoEcg3Ceqbs1cF9D43gJr8idATlJqFz7Q/EzceKUD3+beSheh1ZEOakPIpMiVDNXVYr6w0ikKxvaa3RsTIvFPaXvmqQcUC5/BIxEHw6LFVZ+mNiJgfS6/URI2+ypL0obElszSMzHAylebg13Ep3uZOPP9NJDNMzEjjgLZOasI+mysTiwJsmqXPAsiuS89iA89W1SUA5FA6+TLopUyVOFLV+5V8Jj+hneFHYTHwYTxk8UR4IPzWdOmw0FTMsI8O/DkijHg/8tlHmz8OPrzSiBicPRrxJSGORKOTOTKgDBWuYbwUqFTF+P3lMxRaLHeMSxyOLURnAKyRIJ41zBiwieho7K2+xqe7w7Ff+0xlt030xbE//6HyJxcsafNPIu3xBpTtYBJJnb1UkC3edLJsYSm8vV+4EsY4ZQ9W4qdiHx0DT4e1LAiP9K3XJuwJg7yMQ/s5Tx+yH4yxBYbLehM8qnYcVER3ghd/9vXg2f07/1/++AM6KSWah8xg4aabX6ES57lr8tw5P1KOSOFcTi75C8KOo4HTme5rRLRwbiQi+H6SYqVIqZibZnQHte2cjWT1Pi0umBlZYtibZiYt7R3Ri3oJut0nfbfU1FsuXv+3eV5/gC59azc+aaE36Je5/oKSzX+ZGHjN0WWFGC4U5rbPPyUnxKCHPDp63Scz7K8iVzBmXaC7HB8W4tzJ8cKun35apOJKhHPsx8jNkJrnR9EyK9Gvbzmy3p+mO+xFaqMk97xaXsQDMS0yvSD0NQXd27xiRVbS63gZpZ3oJ1ZnkdtohtoVowLGKNkzyJm10DivLXijoEa71JdM++vA+qZvKZYMGWdck6JoWKWu3FLsDu++mCrkANVkoWt/hru0GNa1xk1B4QrYQzddGscq3Unkh1ql6s/mjjWPzO9+/qf3qgasa38+H/hwzSo52yVN9LRFHvr2B3Tg63eOQHyOw7L/5BNvht+Yhm+enwgJXi18ONG73EZDi658JpeaB3vrSerE4RQqAKwjxPD4rnFnX359n7lFMood9/BePSvE6lXaBAmn2FWJTalXkg6v7INbvLnTHjjb9rZfC4Rirw6vUq8U6m4F+R3b/MzoycuWV8g6APKdy2/G2tbWf/c6RrCRNH0nVlj1OnmJCeS4tCNdM8jti/ujopwZCOSXCFidYIf5xc3Pye4jR+Y4B0RX9xFhP6kgqKUyCC9z3nKj8eL9Q3zrL2jeZiTS6Wj6A8lm1wskaXLaux4R24stRCvSeJhjVBhoayYuJbW40eOlVwjtlw9CuOrfu3lLH4spZyG+8eHHDRJeI8SFxxffNVfWFXt2pVQxTnrb8bbSyayrD9/yDcTXrGu3yTmM/FJzCrZtBdZWOM7DxLxxU0h4wHpt041GeTE/kHojtqsJh5t+8a6hApd1kZmRYNreFw85XdYuXh0/maEI4h1wM3RD6727YH77l/WFW2qOUcfiY0rP81YQApzaThNotOD0Qu6exDeeZjc/nUSurXF7jGqI1k5DwZ6wkU0ikfn5ik65bsE0yyV1at+RbEloBzSTtUtk216c88BlZXvSSimFGCleHsmdOosIaQGM+QAn4R6Y1tGLDn5x+/6YQqpCfwr/3GM05q3hyS5hoTl2J87QAyyJD5ydtsOcZgt6Psp/rMxNMmBaEU8R1FkSIJZ8dBvRswLw/3LtQwLThxIP6dgjnLEGH2DVaiTDEOzNgIirpyqZW04r0C+2R+IOpUvXm9VJqo886fGvfYO6aEGn0KkTJne5tuE3DnO1XBpE3dPxeyjFMHvblWyd/LFucob2yDsT8y1Ou1h+QvWSE+zk8CaXs9s7ZkrYTkSBnjn/N8Hwix4ihHRACo2NETZnm69pnsPkkoqI1YAyrVMBDt3ZGayVmIAeClc3migxRFfq+fdq5GHBG6k8DKTSVUWDoLBCs7hyGsKcffBBKQs0t+8CNIRHpy6pvVAVlIxcWwY9MICGflzWCn5ekHskqTl4HDkYCf4W8b6Nmp9lYm0xdmnBr3DxYKvVm0/mnde7MSe5yfxf9iX1/4vv0JXKfQttQPE0ykf3Dm5jLgv6DVcks2Byl0VfpmlYbmQbhBhtaIBBD07exfCylzs8Q3++uL9yamv/7EgOoaqKSVNOYlFeJfKc7KV/4TblW0/i0aMlxknUO9kZsdpKKGFHC0tcI33Hc2t9tpiJSHdA6gF5Uir2IPBqYWrgOVjMFQHzkByRcdsIZ2nMCA1EbiaCy5/LjcnJbG97YOFprbYMrybzjdRE0V8YgOl4vK+yiQSXymx6t8CUiztapb5hNo8fNIf3OBYz/j6xjn6Pc1EZxW/Hwt1YogN2jlGdoEiKDyzEdYXatXIFDa3bCVaYae+TwUPG/iXNVd1JQSBSXwkJVBuyiXhTTw2GRRKofA7/az9Y3p2MuTSFtpCYUP6xMmSIUX+8cOsm8lb5Y+hqaipyL+r3BcazSJcc4CsjkttMLGyMXTP4VvgRkclnZ5o1DY78CbDnO2Arzc4XubNHoTWbd1kAGGhU5AwlQMRZ1ngw246Bwe7k6BEbD2hkmYUgO7sb3uiAiG+dvZ+qs5JemmcnOv9h3Bi70ZxTWS1PjhqGJtGXGvqo61AVDiV0IVw6Zu/+3VvPE193ozrdM8uCJJMZe2Fey4bFHBK7zkj76hr/A6vlYSOENl92uHB1T9izPCr87oPDpg2+dKw67qaKu1iBd140YX9G4IqIPHDB7wBNy8+0WHVOawLbcsecbva+j9lgab9ClMvSnReFDdkP9ycmPpuPK7CtrktFM2gxEWqpgrSAWuzi88r24o73PYJYggbh1+OQDTgXfPi24rJV7TXfmCURY7R9IahHLm3IIKvFEhZg19lYIBDFteDLEOEmj5pJXktTH8vLW+PfpwVqJzVhtF1Uxrkw3LA5GBQ/c+yX1MRRHdzAmKw0SB+u9vaH+Bfc34pLzuzDnm9FryCfeAwaA1CIUdikAiwzzKqXY05qjtofXQ5LLJfQQhUxwd+lIsjwRzMd90pfFu1lQesa0U2pNLTC+t6q8lMClE1/HjVnKNry89b9V7RFhelWnTzphdV0njRb4Ma+OCDoteyJwMUnHdg3c41+K/UsRoCDbDHOZWOu9OIYxRUdfSe+0udzlpuZUMpbRv8SdHQ+zZhQg9U+6puhKYU4qs2n35mE7h3fuAp8jZA+7rioONPKgpHym3b6xV54ZLP28CRQ6SdC2dZeGz7nQapNmvLxf5fkKX67UHQ6PDF9gmv4OlnnXHvzhirrqa0y6SVQcCjUzYAQ+7QAfoERtnxM2H4+5XuRM7ftMyKJn3W76Rx9ujl60qRvNkLFajj1jp4oyTyLQ3jnZL6advlo2W+aGe7UFOSNYdE/fZszKD0Rdv1EarZpsW+0snQQGJj63KmBCxjEzgyMY+0S3XeaH0mSZn+sXkENN+SuwhYKrRq2Mcc/oY08nsJO6BbhQPJOWuXKLwPjPThmgxGxOc8aVK+qBoo6YFgBgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"\",\"quote\":\"\",\"reason\":\"The Act does not give tenants a right to keep pets, so a no-animals clause does not waive or limit any right under the Act and is not void under section 14. Human Rights Code accommodation for disability-related assistance animals is a separate matter outside the Act.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 664,
+   "output_tokens": 1006,
+   "output_tokens_details": {
+    "thinking_tokens": 899
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

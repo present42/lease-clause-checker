@@ -1,0 +1,99 @@
+{
+ "clause_id": "c33",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "6d22a0d9f7542f13e6250e8758245624b20985b62c744019a8567a521aa4ec81",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant shall pay rent for the month after the tenancy ends, even if the Tenant has already moved out.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:17:05.981324Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"Rent is only payable for the tenant's right to occupy the unit during the tenancy. Making the tenant pay a further month after the tenancy has lawfully ended is an extra charge the Act does not permit (s. 134 bars such charges), so the term is inconsistent with the Act and void under s. 4.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 664,
+ "output_tokens": 631,
+ "raw": {
+  "id": "msg_011Ch1wMRd19JdjA2n5jJi3v",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"Rent is only payable for the tenant's right to occupy the unit during the tenancy. Making the tenant pay a further month after the tenancy has lawfully ended is an extra charge the Act does not permit (s. 134 bars such charges), so the term is inconsistent with the Act and void under s. 4.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 664,
+   "output_tokens": 631,
+   "output_tokens_details": {
+    "thinking_tokens": 477
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

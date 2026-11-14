@@ -1,0 +1,110 @@
+{
+ "clause_id": "c18",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "570f673de067a26574a72ab99c51e6e4e176a1234661ddcd300a4298e549b85e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nFor the Landlord's records, the Tenant will sign, together with this Agreement, a notice of termination dated for the last day of the term.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:02:48.890159Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"37\",\n  \"quote\": \"A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy, unless the agreement to terminate was entered into when the tenancy agreement was entered into or as a condition of entering into the tenancy agreement, in which case the agreement to terminate is void and a landlord or a tenant shall not give a notice of termination when the tenancy agreement is entered into or as a condition of entering into the tenancy agreement and any such notice is void.\",\n  \"reason\": \"Section 37 of the Act explicitly prohibits a tenant or landlord from giving a notice of termination at the time the tenancy agreement is entered into or as a condition of entering into it. Under section 4(1), any provision in a tenancy agreement that conflicts with the Act is void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 541,
+ "output_tokens": 200,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "OLP3asr9Otrw0MMPjcjKuAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:02:56 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"37\",\n  \"quote\": \"A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy, unless the agreement to terminate was entered into when the tenancy agreement was entered into or as a condition of entering into the tenancy agreement, in which case the agreement to terminate is void and a landlord or a tenant shall not give a notice of termination when the tenancy agreement is entered into or as a condition of entering into the tenancy agreement and any such notice is void.\",\n  \"reason\": \"Section 37 of the Act explicitly prohibits a tenant or landlord from giving a notice of termination at the time the tenancy agreement is entered into or as a condition of entering into it. Under section 4(1), any provision in a tenancy agreement that conflicts with the Act is void.\"\n}",
+       "thought_signature": "AY89a1_TLnIiWIetIkOUdXz7uMH5xlYnn8wtlKJE5TkzsL65i0NIZR5v7Jp81noCrG8g9aIwZ75B5KTSc0Z8vIHz6Rp9VdJ87s05Ou3LWAR3c2GkiklZwC5CzAuBHvGM"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:02:48.966346Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "OLP3asr9Otrw0MMPjcjKuAQ",
+  "usage_metadata": {
+   "candidates_token_count": 200,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 200
+    }
+   ],
+   "prompt_token_count": 541,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 541
+    }
+   ],
+   "total_token_count": 741,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "37",
+   "quote": "A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy, unless the agreement to terminate was entered into when the tenancy agreement was entered into or as a condition of entering into the tenancy agreement, in which case the agreement to terminate is void and a landlord or a tenant shall not give a notice of termination when the tenancy agreement is entered into or as a condition of entering into the tenancy agreement and any such notice is void.",
+   "reason": "Section 37 of the Act explicitly prohibits a tenant or landlord from giving a notice of termination at the time the tenancy agreement is entered into or as a condition of entering into it. Under section 4(1), any provision in a tenancy agreement that conflicts with the Act is void."
+  }
+ }
+}

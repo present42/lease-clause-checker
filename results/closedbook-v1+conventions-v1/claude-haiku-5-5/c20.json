@@ -1,0 +1,99 @@
+{
+ "clause_id": "c20",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "b3185e8765e1bf8f5641d73eade4b0490cd7fdc0ee7acd120f09f6768f7235ed",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nPets are welcome. The Tenant shall pay a refundable pet deposit of $250, which will be returned at the end of the tenancy if there is no pet damage.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:45.696798Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"No landlord shall collect or require or accept a security deposit or any other amount in addition to the rent deposit\",\"reason\":\"Under the Act, a landlord may take only a rent deposit (capped at one month's rent under section 105) and may not collect a separate pet deposit or other security. The quoted wording is from memory and may not be exact, so check it against the Act's text.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 681,
+ "output_tokens": 1577,
+ "raw": {
+  "id": "msg_011Ch1v2jvvUna25kavcS8fw",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"No landlord shall collect or require or accept a security deposit or any other amount in addition to the rent deposit\",\"reason\":\"Under the Act, a landlord may take only a rent deposit (capped at one month's rent under section 105) and may not collect a separate pet deposit or other security. The quoted wording is from memory and may not be exact, so check it against the Act's text.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 681,
+   "output_tokens": 1577,
+   "output_tokens_details": {
+    "thinking_tokens": 1441
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

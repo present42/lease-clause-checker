@@ -1,0 +1,99 @@
+{
+ "clause_id": "c15",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "d490dbd23718a0a3c78307f9755e6639518674e7e564458d65b0af133e6d74d6",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf the Tenant, an occupant or a guest of the Tenant damages the unit on purpose or through carelessness, beyond normal wear and tear, the Tenant shall pay the reasonable cost of the repair.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:39.081163Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"A tenant is responsible for undue damage to the rental unit or residential complex caused wilfully or negligently by the tenant\",\"reason\":\"The clause makes the tenant pay for damage beyond normal wear and tear caused by the tenant, an occupant or a guest, which matches the tenant's statutory responsibility for undue damage caused wilfully or negligently, so it does not offend the Act's override of less favourable terms. The quoted wording is from memory, not checked against the text.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 697,
+ "output_tokens": 1206,
+ "raw": {
+  "id": "msg_011Ch1v2Fj2wJb17gphqedQK",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"A tenant is responsible for undue damage to the rental unit or residential complex caused wilfully or negligently by the tenant\",\"reason\":\"The clause makes the tenant pay for damage beyond normal wear and tear caused by the tenant, an occupant or a guest, which matches the tenant's statutory responsibility for undue damage caused wilfully or negligently, so it does not offend the Act's override of less favourable terms. The quoted wording is from memory, not checked against the text.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 697,
+   "output_tokens": 1206,
+   "output_tokens_details": {
+    "thinking_tokens": 1030
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

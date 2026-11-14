@@ -1,12 +1,15 @@
 """Plain-text tables of scored runs, for the terminal and for reports."""
 
+from collections import Counter
 from collections.abc import Sequence
 from dataclasses import dataclass, field
 
+from lease_clause_checker.closedbook import ClosedBookResult
 from lease_clause_checker.models import ModelSpec
 from lease_clause_checker.pipeline import Attempt, Result
 from lease_clause_checker.runs import RunRecord
 from lease_clause_checker.scoring import Score, Summary, summarize
+from lease_clause_checker.verify import QuoteCheck
 
 # Finish reasons of an answer that ended normally; anything else (hitting the token limit,
 # a refusal, a safety stop) is counted and listed, since its verdict may be missing.
@@ -37,6 +40,8 @@ class ModelRun:
     results: list[Result] = field(default_factory=list)
     """The pipeline's result per clause answered, in the order of `scores`; empty for the
     baseline."""
+    closed_book: list[ClosedBookResult] = field(default_factory=list)
+    """The closed-book result per clause answered, in the order of `scores`; empty otherwise."""
 
     @property
     def cost_usd(self) -> float:
@@ -92,6 +97,55 @@ def pipeline_table(runs: list[ModelRun], clause_count: int) -> str:
     return _table(rows)
 
 
+def closedbook_table(runs: list[ModelRun], clause_count: int) -> str:
+    """One row per model: the closed-book scores, and what the check found in each quote.
+
+    "quote verified" counts the answers with a verdict whose quote passed; the five columns
+    after it say why the others failed.
+    """
+    header = (
+        *_HEADER_START,
+        "unsure",
+        "no verdict",
+        "quote verified",
+        "not found",
+        "heading",
+        "too short",
+        "no such section",
+        "no quote",
+        "section ok",
+        "section exact",
+    )
+    rows: list[tuple[str, ...]] = [(*header, *_HEADER_END)]
+    for run in runs:
+        summary = summarize(run.scores)
+        checks = Counter(result.attempt.check for result in run.closed_book)
+        quoted = sum(checks[name] for name in QUOTE_CHECKS)
+        rows.append(
+            (
+                *_row_start(run, summary, clause_count),
+                str(summary.outcomes["unsure"]),
+                str(summary.outcomes["no_verdict"]),
+                f"{checks['verified']} of {quoted}",
+                *(str(checks[name]) for name in QUOTE_CHECKS[1:]),
+                *_section_cells(summary),
+                *_row_end(run),
+            )
+        )
+    return _table(rows)
+
+
+QUOTE_CHECKS: tuple[QuoteCheck, ...] = (
+    "verified",
+    "not_found",
+    "heading",
+    "too_short",
+    "no_such_section",
+    "no_quote",
+)
+"""The checks an answer with a verdict can get, as the closed-book table's columns."""
+
+
 _HEADER_START = ("model", "weight", "answered", "verdict right", "false alarms", "missed voids")
 _HEADER_END = ("unfinished", "cost USD")
 
@@ -127,19 +181,22 @@ def _table(rows: Sequence[Sequence[str]]) -> str:
 
 
 def error_lines(run: ModelRun) -> list[str]:
-    """One line per clause the model got wrong in verdict or section, or that the pipeline had
-    to retry, for gap analysis; then one per answer that did not finish normally."""
+    """One line per clause the model got wrong in verdict or section, that the pipeline had to
+    retry or whose closed-book quote failed, for gap analysis; then one per answer that did not
+    finish normally."""
     if not run.records:
         return ["no saved answers"]
-    results = {result.clause.id: result for result in run.results}
+    attempts = {result.clause.id: result.attempts for result in run.results}
+    attempts |= {result.clause.id: (result.attempt,) for result in run.closed_book}
     lines = []
     for item in run.scores:
         clause, answer = item.clause, item.answer
-        result = results.get(clause.id)
+        checked = attempts.get(clause.id, ())
         verdict_wrong = item.outcome != "correct"
         section_wrong = item.section_result not in ("deciding", "also_accepted")
-        retried = result is not None and len(result.attempts) > 1
-        if not (verdict_wrong or section_wrong or retried):
+        retried = len(checked) > 1
+        quote_failed = bool(run.closed_book) and not checked[0].passed
+        if not (verdict_wrong or section_wrong or retried or quote_failed):
             continue
         cited = f"s. {answer.section}" if answer.section else "none"
         verdict = OUTCOME_NAMES[item.outcome] if verdict_wrong else "verdict right"
@@ -147,8 +204,8 @@ def error_lines(run: ModelRun) -> list[str]:
             f"{clause.id} ({KIND_NAMES[clause.kind]} {clause.label}, s. {clause.section}): "
             f"{verdict}; cited {cited}, {SECTION_NAMES[item.section_result]}"
         )
-        if result is not None:
-            line += "; checks: " + ", then ".join(_check_name(a) for a in result.attempts)
+        if checked:
+            line += "; checks: " + ", then ".join(_check_name(a) for a in checked)
         lines.append(line)
     lines += [f"{r.clause_id}: answer ended with {r.finish_reason}" for r in run.unfinished]
     return lines or ["no wrong verdicts or sections"]

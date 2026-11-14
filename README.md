@@ -59,6 +59,12 @@ Work in progress. These exist:
   subsection of the cited section and has at least five words, not counting markers such as
   "(2)" or "(a)". Quoting a heading is reported separately from a quote that isn't there.
 
+- a closed-book run ([closedbook.py](src/lease_clause_checker/closedbook.py), prompt in
+  [prompts/closedbook-v1.txt](prompts/closedbook-v1.txt)): the pipeline's question and JSON
+  answer with no statute text, asked once with no retry, the quote checked by the same code.
+  It measures whether a model recalls the Act's words, and is reported apart
+  from the method comparison.
+
 - a stress set of 14 clauses chosen because Claude Haiku 5.5 got them wrong
   ([data/README.md](data/README.md#stressjsonl-the-stress-set)), reported apart from the main
   set.
@@ -78,8 +84,8 @@ make report                   # rewrites the Results section and results/scorebo
 ```
 
 To re-run a method (`run` calls paid APIs; answers already in `results/` are reused) or see
-every wrong answer: `uv run lcc baseline run`, `uv run lcc pipeline report --details`, and so
-on. Add `--clauses data/stress.jsonl` for the stress set.
+every wrong answer: `uv run lcc baseline run`, `uv run lcc pipeline report --details`,
+`uv run lcc closedbook report --details`, and so on. Add `--clauses data/stress.jsonl` for the stress set.
 
 None of the four models accepts a temperature setting, so each runs with its provider's
 default sampling; reproducibility comes from the saved answers, not from re-calling the APIs.

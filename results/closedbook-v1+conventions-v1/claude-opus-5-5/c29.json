@@ -1,0 +1,99 @@
+{
+ "clause_id": "c29",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "e89bf68eb5242069b035ec7bbd0c58c3360400a3a000b0322317a2ba1100f27d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord may increase the rent by up to the guideline amount once in any 12-month period, after giving the Tenant at least 90 days' written notice in the form approved by the Landlord and Tenant Board.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:17:02.439728Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"116\",\"quote\":\"A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord's intention to do so.\",\"reason\":\"The clause matches the Act's rules: at least 90 days' written notice in the Board-approved form (s. 116), no more than one increase per 12 months (s. 119), and no more than the guideline (s. 120). Because it gives the tenant no less protection than the Act, the Act permits it.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 694,
+ "output_tokens": 597,
+ "raw": {
+  "id": "msg_011Ch1wMAVuQGDsuzvQJjX6M",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"116\",\"quote\":\"A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord's intention to do so.\",\"reason\":\"The clause matches the Act's rules: at least 90 days' written notice in the Board-approved form (s. 116), no more than one increase per 12 months (s. 119), and no more than the guideline (s. 120). Because it gives the tenant no less protection than the Act, the Act permits it.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 694,
+   "output_tokens": 597,
+   "output_tokens_details": {
+    "thinking_tokens": 423
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "c15",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "d490dbd23718a0a3c78307f9755e6639518674e7e564458d65b0af133e6d74d6",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf the Tenant, an occupant or a guest of the Tenant damages the unit on purpose or through carelessness, beyond normal wear and tear, the Tenant shall pay the reasonable cost of the repair.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:52.581839Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\"reason\":\"The clause matches the tenant's statutory responsibility for undue damage caused wilfully or negligently by the tenant, an occupant or a guest. It does not try to shift the landlord's general maintenance obligations onto the tenant.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 697,
+ "output_tokens": 277,
+ "raw": {
+  "id": "msg_011Ch1wLSMNrsviGZwfuQLpp",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQShQcKEAgTGAI4AUIIdGhpbmtpbmcSDE1PihNszqwdB4iBpxoMJhZi6FOA533K52lYIjAkodR+2rOwBDUQACM6FgK1i3AS9gfAW+neEYMnX0PHbc/Z90wtw2+YHh+4B3ZYv5UqogbXr4l/7LSvosaiG33YgO1YEm7ozme2aLjpBxxPCPEkgCl8pzfUnSbLbek94ZjrK/SB36HuCiNILXMvp/0PpUTyKrVzV53BxQmPzMZMcKAsolY2Uo/+9gSRVTBuKLR5xI8DQu6XFnsRjMZ8dZo5+pMY0VHZNuEVwBCfHkVaOIeIZD30Tm0ne6rutl2hjG+JzkFgQU1sxRBTmS61qA/JfJPcSE9y+neYioy2NisT3afc53VzZFjdQ/WI5kZIfq+UEkad8sxw7c1+RCd/iJhWxgo3bN9cSkmksdjZ2KX63qmLZazuugMu58EdFwVibJ3Tl3XJD43O7j3RgegnTgF9vXW6AfPjtSipfKAtEU5lRF7zF1MVgtCGRAE9kuTV6GPPcaMB5I5XcClM642XvcfyhOcsdcZnvvNPCUiZIkjt2U9J9IgUz65tQOCg93f8xdyvA+HOnOmJUVoa2q3K8i4jL1QDVcuXLV3fQvXvtelD5QZl1gWKwEfsXkA2/HBD5FYNxoSCryO033iqTTGVz/2TtA1F+jMombifdp2jx3Zx6BJCT1QHvM8sUBEI1V4r5YzNsffyYgKEFF81fxLVJhYy6Go4b87GoC/fc8fozNS24jkWE1dd4tL/mmaPjXfA+rs40PaADNForWKhGUI6oAG2Sr8SLxQCV+sQKo6JBZJLgVtbFpM7nZQ1cNDwV5n1kemv1ycpV/olOOCuLZyuFuoEtZ3yFw4aEPaTRHvCFm918uNGRgj3rjGvvYTHOORvLZqFGR7mGnEAeIoG2ROz2EXz/v3Bw/TncbfTv/oOKICfsu4G6ZmTDrtE3oRHxVMayhOyZOaQioGNjKBcIZe5oYvEGvG6qBr5zYgaQz5riDwrAynY58cR1lSD9/vsrW9OqQ80GKAs+ZiFkrBCvUcf0Fx4SMh+eaVGmmWQEFp7GN0aibMJiM66HenbjCpXLIKMESKLX4fqHzT6AmCwUicBxN3VMVEL/vHW/hKeIgoE8glvgEmJKLum9wSq1Mt2LfYzchVjJqLKuC1ZBlTBQg6bM95CJ7rbVYHDz2zoMVXC9wyQ0vUgc8f0GAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\"reason\":\"The clause matches the tenant's statutory responsibility for undue damage caused wilfully or negligently by the tenant, an occupant or a guest. It does not try to shift the landlord's general maintenance obligations onto the tenant.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 697,
+   "output_tokens": 277,
+   "output_tokens_details": {
+    "thinking_tokens": 99
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

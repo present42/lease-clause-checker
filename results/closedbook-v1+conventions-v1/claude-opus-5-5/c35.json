@@ -1,0 +1,99 @@
+{
+ "clause_id": "c35",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "1b68719de3e9406ebb9141cb133c993e5e4dddbbfb94e32f05c28d0363b9b882",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord may drop in from time to time, without arranging it in advance, to see that the unit is being kept in good order. It will always knock first and, if no one answers, may let itself in with its key.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:17:07.648543Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry\",\"reason\":\"An inspection of the unit's condition is a permitted entry only with 24 hours' written notice. Section 26 allows entry without notice only in emergencies or with the tenant's consent at the time of entry, so this clause conflicts with the Act and is void under s. 4.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 688,
+ "output_tokens": 616,
+ "raw": {
+  "id": "msg_011Ch1wMYnMY8CbYg2arXX6m",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry\",\"reason\":\"An inspection of the unit's condition is a permitted entry only with 24 hours' written notice. Section 26 allows entry without notice only in emergencies or with the tenant's consent at the time of entry, so this clause conflicts with the Act and is void under s. 4.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 688,
+   "output_tokens": 616,
+   "output_tokens_details": {
+    "thinking_tokens": 466
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

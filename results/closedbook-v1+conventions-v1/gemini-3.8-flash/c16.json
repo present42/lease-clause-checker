@@ -1,0 +1,120 @@
+{
+ "clause_id": "c16",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "39d32acfbeb72e28e640edfc195ffb2413993b7b78a5344ba53cf7f21f6042ec",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf the Tenant's dog causes undue damage to the floors or doors because the Tenant was careless, the Tenant must pay to repair that damage.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:15.118552Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\"reason\":\"Under section 34 of the Act, a tenant is legally responsible for repairing undue damage resulting from their own negligent or careless conduct. Because this clause merely reflects that statutory obligation and does not prohibit animals, it is valid and allowed.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 404,
+ "output_tokens": 639,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "27L3avzGCYjg0MMP4pPa-A0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:22 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\"reason\":\"Under section 34 of the Act, a tenant is legally responsible for repairing undue damage resulting from their own negligent or careless conduct. Because this clause merely reflects that statutory obligation and does not prohibit animals, it is valid and allowed.\"}",
+       "thought_signature": "AY89a19FrQsSig7135yMbk5igvhn3G6lMG81ng2OQzXn6za6SevpXPBvpF8DhHV8mbXe6PuKPYBcLZ5pzKW6VdOocjd6nABHn_WC8hmE2LQ7sYFU3NKA4wKBKGrF9SkV-5KRy7-sQfgaq6s2ogZl45Hxo-JL0x9webR6JgOZFGjFnLCb6hW080nyujMgccgPIEHjQP4CI6Y9Za7aF1pSdg0GLnpmlwcl2Ao729FntQOCOr2TNukFOFCI-2TxlLgkTvu-FMKW3kb6OClzoXZGIMNf9Pt30awNIF9kySC79fhYu-VEDExXgJsx8RaKgnjgA1dfIFgJjS0f88dp8KWVYqvkDDKghSYZlusQznnAs4pb7c9Ka0Fax5uSiXoUJ4bfjOJxbUgpdSo5SApC10gHayjBGo26HcWi4MUIoKLb1uWqNhqgJDiH5GH7YYUUgOHlguv4Y3UuTH3_zSBEPvGz2Zxuv3Ywz_VcO4mapYXwjqo73-L_-Z1ZJ8livgTkw2TlT5exLfb0nSQ2W0cM89RRSQpm9Ps44pmZXfWfSartrXWPGlImizP1CXREIBFcrFG4aUwoRBNGrLChkpYYQqqW4rt6R9cVKLeD_SqQgF9Wg9z_jFZKf0Va1aH6begK-XJSEPGR5VdAgWA8s_ZBByA4TscAXM_SBsrFftmvi_TxkSc6POccIRlNqgmSZMkliyA083Vuuf4IVvFJqSsxLcxvKnQQFuTLPUPa2UjRjoAjkcVLhkLQH8K9A-7ziGGR7-Sx7-SBjrGu2JyOYwBUkk_OAUsMfBsdA4gFBTMJ-mpD3PChDNetnhDP49SDK4jsHkDIsO5BlBouqddEuwNcCwc7trVsBRuxThBBPTBKdd6PgDcPH3auk14lzvRJS8lPQcPall3vMW63zQmEpP3nC9KLUQyTAl5cLRHotOlQAx7H403Z6hwgHAfGE2Lu5xVmDCyBQ0QB4jG3TZbT5VQ29T4Xs0J6eXPSB9LAtkfnS1n_flehOeBqv0kXXc3kGRb4GEQjTeyD1KA2kAL6IKbzA5rNh9fwSkfxufWLkbvrfCj3_HZx7v9rNdAYQjtthY_P3a969UhXrkt8jVevLcke370Q--TbJPblEo8L2ASeXgqyU4rKUPhpEEzza7g7D0u3lQa52X9jXRr3C15WBwri1KNiSzaIv0nVo-cEoJB1_JE4tAqqA05O3GZBgR8bKFWGxZb73SM9bQxojgri_lI3kNTS-ASm0Q817rznq7TcwlL0R3qs5Alo36TwcwFGWCmo97JeBr242JAIxlYhudY8XslFjPqfm9BuU14hYb66j5nVmObECGGbcIvqKZ4mJDir_mSmDYygsSrM_OJtz_lPqy6IRdrYp-jciYEhPSB8mOiROwACyiXWVmMVIf7m5S8JE3s4vKkPgrvaHVbtRg9JrhmBkbVd3IyoastRZXXbcPdGBhshfHdVjpXsShs_fjojsALieAJS51j00yeRKC0JD9rHznQDydiP_fAcUnjUYL7XVRvcfJO6iBqLRtnDZRYAKM10zBnnYGrwlQW4yt0_pihWQJErZ9Ww1axLML8gdwNKAT0jo3S5vLoYW3twf0qaOSs7ZdhKTX8A12lNYretv76VGB50_7cenLuebyCN4fKTW75nQm8zXKOlt0AykXYhrMZtSA55NhNJZU8y8iTOsCtP0EpTO74F1UpU4axt_qT8GquY_dfOKy-Os4hcsrvJmRoWzb0p36FlNUYZvgg9WIx4xJMoRCmdiLISNQLs2wYAEW2MFw4ToNO0PcXG5FMnfJg9XdtF_ijUDtyWDll9Tngul7owRm3gZNalXV2JOHN1qDUHCUZjAWWboQ3zefzV5gsCZt-n5OzJ3Y-PJ7oXCTDoh3nIHmvL_d_gvoq2k_ChA5488BE5N5UHcD0N4VC_9G87tKJkzsO4YdR6AQEDXBYItzORBz7Q7GLshmpsfWAg_uwehIeSgrcHmGmgKT9nf0vVa8qxeZqwJOCWgcCGJOx1gn066usKxoHubq8PD4LUTjZp8_d72V9QZRKV_Y8bfRFsERrD_6ogtEuSqF1p2fSOaoB9i3tJGhcGdsKG20aeSrjWGx-P3UODlo2ccKS6I7eTp1iqW54wniC2A0ECWYbVt8we_MdUk3c0DDWdptsXA-ir_ybQ7n42ZWhj8HqJR-QDcfxx0TJ_GwIm8css8vZg3FAL1teVFeR5WNQX043oxkxvDdFQFS39lCl8Rd7N26XD8D4B_eFHbSeJDL4sH2f7sEeRh0QHJ0EZv7obkwtESiwPK0tyX53Sbt-JNp3Ug90q1DCFHVIUOziqL1EKH6vK7sltjt9Gb5EYto0yKCDfDlNeM-7WtYb_02tG6PCzWhiKxp6U8pvMDrlRxuNPmaJ6C2vZIdghczNV5Ax2hqkgrR8OyZJyJk_BzUrgW4l6-AG7as-O5UMr3FvHMjN6MOpCVNetZM0lxYpPiRslFuscYHNYiF9ZOwYjHAS2mUAo01VGjvVX4YI8-VRLmcDynGvBHwqwJpBTSUOF8mMf9Hwx8vFxfii82n6DMgSFogGqkiAmCS2uG1yVh-DebUEPmsXEyj82P4fbK_6EU0Ra1gvC8UgV9Tled-V_zfcxWie2NPbum5loS4nZMxi0AqXO-pJC-YAdigdIvht7_5Nc-igFV1Bd0RrLtUtPUALfooSzhFrx_W-Lgp_RPL4b240UDgZE8rFlFVVCnYsD4B2fDT-7IvwZYy1JErwcC1meHF9N2prP-bQGSmdwCIiOQNMPs1pmk3fZbEQFN2iVV5HfPAQTZZ07RTh79FLsHLvJ-DQuXuZeF9w-FcGTgNnqYpOXDSOPykxaElSW6zueryrylA1BxAJM4-IUDFWizJ1rMnZGaNzStg3VnEf-oJapl_H_YdjvQ5gh6IUN3xf3E-lbhcsNV3iqfdspDwIDM0km6OyLzBoTA3HxYdEDSaAtuqMjNpGYDoxwT1X4g0I0We3XjuIJPH5fPu0UJIDgq8hQJIjGq6-Gnlxhtndj4Bon44sg26DZfw2vbslrsrOANWWNJxGCKIi4UfOvP-_c4FKZuCaJCh0xQfeHmoSs2JPJtUmeEj2beLOJ6uC-wMsWhtPFSkPFnQIMgm8oMc6pOWv31YtLzvWJ1Vq2qxfNNFRqqu8KqMuO1jVGYqCZ8E16HchFVzqLhZUzgdsH2hxpTFyeR-ZNsnRx96oSh3oeBthYXnVwtLQBWLUtfeJ0rtpGgLqW2Lo9QeOxSO0f7qmevGvy4yUH8H_wao-46SMja1_s4g_QsO4M6QnPYaiQk7j5C9lIXG9dpstJdfqw1DSnvAkzA3_wcxR3M--W1J28ydXemLz2Y7lxlyifWLXNghDT4IQ7YpcQELFZmTB6"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 299,
+       "start_index": 89,
+       "uri": "http://www.isthatlegal.ca/index.php?name=rights.tenant_law_ontario"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:15.156540Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "27L3avzGCYjg0MMP4pPa-A0",
+  "usage_metadata": {
+   "candidates_token_count": 111,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 111
+    }
+   ],
+   "prompt_token_count": 404,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 404
+    }
+   ],
+   "thoughts_token_count": 528,
+   "total_token_count": 1043,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "34",
+   "quote": "The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.",
+   "reason": "Under section 34 of the Act, a tenant is legally responsible for repairing undue damage resulting from their own negligent or careless conduct. Because this clause merely reflects that statutory obligation and does not prohibit animals, it is valid and allowed."
+  }
+ }
+}

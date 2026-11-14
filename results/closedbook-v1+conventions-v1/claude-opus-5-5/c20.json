@@ -1,0 +1,99 @@
+{
+ "clause_id": "c20",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "b3185e8765e1bf8f5641d73eade4b0490cd7fdc0ee7acd120f09f6768f7235ed",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nPets are welcome. The Tenant shall pay a refundable pet deposit of $250, which will be returned at the end of the tenancy if there is no pet damage.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:56.835010Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"A landlord shall not collect or require or attempt to collect or require a security deposit from a tenant except in accordance with this section.\",\"reason\":\"The only security deposits the Act permits are a last-month's rent deposit and a refundable key deposit, so a pet damage deposit is prohibited. Under section 4, a term inconsistent with the Act is void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 681,
+ "output_tokens": 528,
+ "raw": {
+  "id": "msg_011Ch1wLkWHP6CjbBMKLbTpW",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"A landlord shall not collect or require or attempt to collect or require a security deposit from a tenant except in accordance with this section.\",\"reason\":\"The only security deposits the Act permits are a last-month's rent deposit and a refundable key deposit, so a pet damage deposit is prohibited. Under section 4, a term inconsistent with the Act is void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 681,
+   "output_tokens": 528,
+   "output_tokens_details": {
+    "thinking_tokens": 396
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

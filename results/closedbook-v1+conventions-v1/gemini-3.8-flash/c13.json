@@ -1,0 +1,120 @@
+{
+ "clause_id": "c13",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "8da2b242326af5f7e67b72aab64fb96bc8a820e36dc381ed7d2c09ef93494171",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord, with its contractor, may enter the unit to replace the kitchen cabinets on 24 hours' written notice giving the reason, the day and a time between 8 a.m. and 8 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:09.288653Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"27\",\n  \"quote\": \"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances: 1. To carry out a repair or replacement or do work in the rental unit.\",\n  \"reason\": \"Section 27 permits a landlord to enter the rental unit upon 24 hours' written notice specifying the reason, day, and time between 8 a.m. and 8 p.m. to carry out repairs, replacements, or other work.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 423,
+ "output_tokens": 1022,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "1bL3at3LE47v0MMPkNTyqA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:17 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"27\",\n  \"quote\": \"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances: 1. To carry out a repair or replacement or do work in the rental unit.\",\n  \"reason\": \"Section 27 permits a landlord to enter the rental unit upon 24 hours' written notice specifying the reason, day, and time between 8 a.m. and 8 p.m. to carry out repairs, replacements, or other work.\"\n}",
+       "thought_signature": "AY89a189DPU0qzUfNLd1owruuyzZPm96hmb_MoEcR3h7caXtfK-vylkSqp9NdCRjSIXwEhwg-X5O-NGDfsFsfIcQmD60VyBbJHALhHCnv_AHrF2wq7Dw5Qp8Rp0J2AyZHjC9KmZdypEhRJ2ZVrLvidqhy3l1V80ihZFZj5kX5UJOG1h1KWC6p1p2UOxyVCbArDWVWNpd5TWSjmBZ7FPGN6XuwAcxgEAD00od9Hgo6Tri6OmiMsCTIJwPGJa0LggI7OJj5_ZcebuUkF9mLCBQ9DRHEdDX4kXHz5EWAdPvirAlaf1KSUTUVdxFphZofHZmYY_hnwOTSmVrPvGs1pFlvG1MbArEPXgOHlbxw4DmiRH1qXOr3RNoXkBeONbtq3JLjpMJELARH49_o17SV2x54fCJfNbXAQ25A7_9HZ_6cuth0P8r_iubNrKKAb0Ey-VtZ4qLe1mBo_hpLZnjSyvqcE_y0BUbqYG0_kwEijljBdZhhUJ_QSQn1J22tn2eImXzHJYzYVWhAQvC6NVBA9-CRAmsP6uZRuSONqQ9TC7hM8gQ6m9m-b2EDydBnPeK7xkMv6Pu-rKwAKNndhDJ3A0Yy1umbP_dqQdqO_REubJweCxgjHTiAZnYq4fssfn1GkOme7A3_ZdiYktiWDNORUT0-ZPGg8XDAhoTeqQIVYhqhHfGEn0Zd3R5-UVNjfaBczAwangxm-r5JBxxxlcZkfbneQXtSQg-UflLSCgv6psTdA-dHaJ_8NjdfuDL7gDmX5Cj4k7eQFq32K-ONGa5ZnFITrQyDl3TGXryPV-VVeu08BlEk_V5uIT0XWuqViQ0IPCKA1rBlugF7CxWmDi5TlD5_eG3nu9BKcWMiqBUaOONjeNyHjOxiaZQLJW96ZxiMsWl8jlQSSfwpu7hKNjj4yBF3RTS1kFHwNpeJ8NUKbIfBpwiKGZsCGQTb9TqSy1_qyUL7TAXIyS-gy6mKgf9rl-GccM7XycZhiRPNkhzo39qlHsa4MFsZEOhIeeI2FyYxE0I-sn6mzuifAqTWkLI8XjT0RpXlcKlCBCKr0yTYtjwD-ZRdn_T2PGNq8DEYG5DgTR560gRAq19X4cS6QVDXHa4BuA11NW0zfuY3uZ96WRjcSR6DmKeyjVURPNkR45dALF1faOxylPO8LqxKfg3sVLpk7wGyvXcvA2Cd8WO50r591sJjVPrOCYhCSZkEZSM6tC59t7qMNNo76RLjz03vi9hk0G_gEUxfIScHWQUtPhhqQa5e0-xgb2EW3GrQrgt35y-JgDbUyrPrpD9fh-p-MeXgGlcFI07AlmnO26JaEINT1yDiqGmIIuycoDtaYjk2QoK1bt8UWp2ekk4G2DMSYviExwQ3jO6iK5iLfa1m3slLBkEB6Y6mUQUkk_C6cfrqwfFpZaSpSJgruieKZf6HOMJAr5SRPTRQyZPnh45ShkBmPj4-9yUcZXE42jyD1aNILqjKFDigZ3LY7f71m7X2krfQ_XwcWECq-7qNfJegyEkaLG233QcF5LjoKqMQcWDr1apRRjkUdqDly7JsuIckFyqRoB8rYeHwKgdlcmkqG9xEfiiN8Nj4ejvCkuPmNYDI-4kBGU66odnkUsJGnpQTnBjInnfvWzuSm--9tXmwUAbAH_OE4DZl0Hrdiv2XLFdSzuSaObaRJM4LchGZOeoXz2-JvgEwcn4-kYxGGH7H0Lp3d3GsVhhywCE_7iA5IeJh-gOql-jAdQoyByWM9fFX_W1CmhMBzI3KE2B66wpZwyJM_A7XePbXYwmg6vFPmxekpMYl_4PfuN7I9kub9pyHOmAzutpHmnsg2aAWAzaKt7BBb_lCj_VDN6LkuGQb4s1Zq2nG7ClweyrCuYYpHQcO3oJ2_h2h16FPEwHCN6o0CEFz0fsalB4CSaMgF5M0DygTRKvm4F7LH319yh_DI5n1aIRzysR9uh--Ndgra4Lpvnx0HyV0gI8Hz0Aii5epB-NsmCbRlzV6AZxe54IYpesuBlwLazrl3knNS-zeF9gY0cNNoxk5JtpI3Afqm39b3H5phs1f6NhVPJIizWU540_NcSQe0OWsYMJdNlfgXgVvIN85yNXxvJshJHZaqbc3nND11jhb5JjVs7bedgCFSeJzFR_NsGK5SEIic42mDgzfprSniuenahd5_JwP91HR4F4kMFm0Q_aY3Ntnox6UvYyUw_-1F9tCtNssyNTv1oKKJbFne_PsOb74BKbrjkMcIOadLwwhW_FpkMT73hLoXa8Tnw5kFrYY8j2VvQBjqdL2GTE0HQo2TgeDWoL0Ouo6d3qTQgW0EN1e1z4zD-yXTb-WA7qQkFrVt65pQLPcgSvAz2bQqHZb4QKwwRqg12_u0blJHM8Qsz5h4t7SNdHtcHBM7jUVSjR6PGemW66TkTddlB3Ej2q-3UC89suCQZmZhq0Gz7OPAZ-YcNZDQmbF5k0Uw3270QUtWt31EqCmtYK-I7T9oSAMTwCDrpqKp_mBX9FVCO2JdJRlxrayouB9ONGy6rigtaKPmWSGdX4bDh61h9el5llQmgj-5bmN89xI2-F7432AKqBe-BMnR7kvGH3KoDHpouNmuJhkXFo2Yp9N3n_CYfSu-q_WSsWLl0nOvqfE8CtSnvCet1KdNmLFt8FAJX06-z6j6UknWTvWmsWHvhY4UPDDPskax_ELEGVAf9n7YiQYCYm3V-7w95Y6YalOA-F3tO2Zf4P2kKhEbFNfuuS3QUHiAo9VoZzjgI8L7Ko0ygYGMNpVReOtSlZ8pmvRaA5fsK69XVjaUcGLmNoLNVs_ZZ_x9UEesA2k3v67Fbw2r11Fr0DM4JbDz05fOwh_sm6XT4RLHPanSLGvgDKQGQey1BsW1LdNnhZBA9-_2uMoxEmH0ulRlWITkWqycH-H-2DU31Ucfmaeukkr1srwYBdTRuFeeKD5YsksJD0IVqYiHNvmppqRHWh5KvgNqWolMLksk50oteIPwWjWNDZDdOYr6RwbJeExOmWJIHBVyM59ZXCRcFyLi9BRKSA_oDFK7V833H7PNmZ5H_nr1PYEDgXuANLe7NeiA5JusKZzdMXbnHTc3doZ0imu2L9oAjrkOwglaUzIITJogTJdkEVnnuwpvVUif3le697ha65TPQ-1pclQ7YJkQEpnqDtIQNAfw3naMxfgWZctlWPBGBmcocaDq_3gR_gKMzyY7sqyQnSD36_LDsORt6sp79h_QasSnfE6FR7lIBR-CKxpaLWJja3bZXHCp94HuBY8_XCvDdBMdyu1LZvEl6RZi7vqfh5EUZewMjxKSbpjbWI6Au0J2xB4f358LfC4tW9sug-5uhsp084807QBFWm_jFCuwrLjYXTEg00OZYFh6_hdZ63cmNooqZAYxR51ufSX1PVRChrMLO7WBG7Fezthos6Ibqv6CuIGG7MuWSZkMwlyb_wXiOOwwc2PGT5eBpDdBccbpaJm4xdvKlp6jdDOnWuZTZRR43FC9bIc79tkLySNQRMTvOucxD-k5msdpBlaTlx3dvKz4iULsDVGCVnhQsGyrddqdhQpUKHjPLs68adj6JsKgs2lcVpDNUGBHHRIfW4ZObt2pJi__ytQRGsNVbDNl4OxOttFg-we8nE0ztve4Rb1QI-ooUnD3MtGDN0sEhKvwQ_x-MgP0xlm9d1kcpvCbBgQiPq7JElw3Eu2K0BawXtjtvNKiGIxOy-j0V8Sh91mxwdZTq1wFSwDK932-56c8K4poFcl_6GL1DEc1JjP1ZBx27kZAbGcXZltcQOJTbEH1Ttfnro7JDrL3sswNuP4-Y5jREm5-eFAOI2Fk2QoQPiMEk3XDo-qgoZfXXeuN094XUZGLPG4Sxh4OhEMHh85DNfwqJUrWBDrq8Cu-UN67eSlEWF3XlKH_S3A2wPxl4e29kACX25IB2KVdVGtVDxVGwVCKef0GgmvJQ6iGLU1Kf16XQEjxlvvcsobDczN7QHt1groMhqCZkL3syt5a90_ltSe2SQCR9DO03DUdkhQ0Zf4XevFBHK1sE2Orz6dNi8aoQOGedz7dnBCmXhIBP3YCLTpQLURWlvEexwAmNbU52gtmfUWD6jdPABbdv_XlwWfFyBgOwxhUW5RU0GOQThmJcWouKo7WJKI4ZtPOB-RDLLB82rLa4nmbOFF2G1dbBC7HmUnTCTESZ4_PFfD8CjWiHWKDoSGvFYE--dLM2XznhSehRE9l8b1hYoU7Nb9FnFL8SlMta0Ty73pebw6GCDPsuRbnTS9_hYZH74keyjv5iYwxiXvjoEor5YgvlVv79uP_zHkS88rl6HE7rpssjFBctGhPRoKLsReH7tEckeAPz01AfRDRWqBv_RVKj6Mis50cojRfkK6E9R8dGUKzj9mFHKSSqqerNGpB2g8XnPG4C2bZ9XItmb_XC2lQIDDvalX8ebzURlPgJYrMv8ih2V1TBDXLma23vG-Cy4xkXffCIn0dGyPAHhf2Y4dp0XfAtzLi9Hl22pB6pGSHWJMuvWZmmi1_Ghy7WhN-RJwYHcIAt6e4U8AbsvXQB_zNtdkVrYYoRMIaDAKHWuysQO6iGEPNkArUtAGQ5xc3M3v6aMgJJlIDOJ64lI9ssdQ7oY2zxEwEzDZ0HoSGrCd-ozlbrhhG1fLQR0O27jrui22VkbakrjBdcrwz0lDpz6Qcc8PilayS9zIb6907UmrHl8FmSqOB79TmTeoNl98JQYgfF6vrxvBCRViJvWsoWFAoaf5t9i-hZAsaLPztyZaEg9YyY1tdcdgBqdD44eQe6mINIU5qJcnqXA61-qwHDkSfp8-cfVVNRjYc10XtZs4iV3CMmQp7hRY8UdJayQpjtwYcgGIahUB-siOeNHt4YLr_wkGyah5FrOXpzK0P8mtymFXz6B_EdomTjQkbot4T0bLIcSpBJGw82CYv1bE5eiI2cA4PV7FRrRTlI5lYhfHJBzOjC1Kv1074YzQTM_6d0-ZlhoQPiIcHP854-5KPTB-egWc5FsPFTFsK3QU5e0woU1VSOnfLwsVev3_JezuyeQ1GU0wb2qO4J5BhpYFJQKFxh5tt_E"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 293,
+       "start_index": 72,
+       "uri": "https://www.exclusiverental.ca/tenants/faq/"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:09.320989Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "1bL3at3LE47v0MMPkNTyqA8",
+  "usage_metadata": {
+   "candidates_token_count": 136,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 136
+    }
+   ],
+   "prompt_token_count": 423,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 423
+    }
+   ],
+   "thoughts_token_count": 886,
+   "total_token_count": 1445,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "27",
+   "quote": "A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances: 1. To carry out a repair or replacement or do work in the rental unit.",
+   "reason": "Section 27 permits a landlord to enter the rental unit upon 24 hours' written notice specifying the reason, day, and time between 8 a.m. and 8 p.m. to carry out repairs, replacements, or other work."
+  }
+ }
+}

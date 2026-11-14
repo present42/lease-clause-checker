@@ -1,0 +1,99 @@
+{
+ "clause_id": "c17",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "760c8c0e19926f4c1586e55dc6f83b5a357ce960ba944357d0d0e95e3b65dd56",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nAs a condition of this Agreement, the Tenant agrees that the tenancy will end, and the Tenant will move out, on the last day of the term.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:41.748593Z",
+ "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"A fixed-term tenancy ends at the end of its term, so a tenant's agreement to move out then is not obviously a waiver of a statutory right. Whether it conflicts with s. 5(1) or the notice rules in ss. 38 and 48 depends on details I cannot confirm from memory, so I cannot decide without the Act's text.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 674,
+ "output_tokens": 1736,
+ "raw": {
+  "id": "msg_011Ch1v2T4RXKGYf5jVtfKjH",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSnCYKEAgTGAI4AUIIdGhpbmtpbmcSDOHLQOxnkllfmOAK5BoMkq30i/D+9qdP94gKIjBOTR+fa9Q0g6oikbup8jA4AUGjCMwXW8QFdiFrkMHZLmxp6wbQNJ2OG0D2TDCA+NgquSVdpgQrVHDPWPPuKevZVsukRagEYBrnG7JBi3v0SdcpLpGiSwuIgKW/yaAVcTfcmK4gba66VgYVsw6wOjnvMw6hscB5FmsLXG9Z3+aaD49TJUsqFfNFlp8BpvfR9bbEj+CGW8ERAxTa/xYBmlV5cm+e1FSRZAlU4CBds6/YrUeNskKfEB9sSt7YTYNKndlShaZwVhMgDiMQx4JOPZidKd8dKoO787Zu+ZWM1l6Wg7O1uw8Siz6pxfm36SQSUwM2bCaAf+OvvbQocAP4lcyI/tDeCELAVmKVSTB9h19QUCdVxCOC8nymB9VQDQb5ZfWKrKY96sJmGZve9nuJnHGx8cezLeMZMmL7fJNq82eiwD/zRwTdpcIKpi/km5M7CPtfZIdk3BpVKx7ecT0t+fAO+cVoKDdC9B47x65tTRcBHo6Nk9SnczF4QoEfwVRpShoy5CksizHuxDhJDR5qqArDUEU7Kep3ePM8stQ+lu6g7xvOzBrE58TbeLAOy17Th0xbibXCGp+zG5TyvPXHxJOiunslrTg0cEgh2ChJrn5jg+h0KbLK17pk4x9xQKylRasEAUWobz4gjxjcVA/TnGJuLmv32TdkJS+727Ctmta0G3kP/IZsmLo/WFzwZ06PO/FiY40+dEVe8YFzvv1UR/cbQvrOL0Asb/p9eLN9Z0XjJHsd9weaEIeTXlu1g67Fz7HsCbfW2fuL5fuzHLnoPjim7uv4/MaCSAl2cVeWms6Gs/vAyKPhgMVF5Df3k8Q/lTEVCBvb8oXYGbwz0GFRk9jgPwo3FAgL+LOo2HQrQn1jbjCdb7+2msbRUhXSqsLFwpGZx0pKjzTRG8krlUBPgLmNETzEL4GOz1pFSJXNAGe+cbCWqtF1jkiEUJHyCIg6d7gx7uv1vgAjASVA83ygJtG/xRmzB6tnlvVwz8jZm6+S5KoJqPXfjQlnL03K3lqBC1zwkHqq7poJgYXD99MilpApwUiGI4zMcWu76iYIQubs+loSVVDZnHdIKrG71pisSyaV3ih9q+Bq5J+aA2F6doa3lyOwE1ssG+S8ZvIn5HO+NaMjF2tc/9OjypL+iY6UCNN8SSMU7Q2RTdwz/1qHxH6xzg76hg9YliO9XvDsNppqOgHkOm1isTNn92mss0P01DckIpGty74RvI7DXLrMTDPr/VGl7X9LxMI3PYfQhVbF5kFAcaqhfdb4nasNIamSP1EFJ3P3MTIHYD9abYmy9Rspdlh2LTf77So7FtjDzzzXNc0RuYjb5asJfoVv50E14T5DIkEmjW8wgXCF5xgduwcDFxlJd0eHnQWUAf7NKyfV5HHmSl/QERnnwIWtD0PhiLGoQVII9TP4eKKrkpF2FBYsQkq9tUvfAf5S8bDzq5GfAjmLqvDaTSpWWWsrctlOwCAnhW5tnIVGeLWwAQhInr2MvqdTdbcS6+3wAyzjTLUCB7CiSwfXKlPLwuoAbI1FNMGWRpwC6CZOPq9O+FTC00oYEkImJp/cGgQR+SfMZCx5mh812aK24VyAoSFkSzezpsRZaPHTxRaI0IHPhK8fAE6DM7OUpW8vb1Awuddsa0EBbVEd5RHK4WreBTp/ZCHgl7m4dWx7WLvfRminwA7GJ2xcDn0L/8qixTMy+MtrCeM/0W7FhUdncIBiMkrERdPUfWmEalEA2uUPA4C+er9jSfvU5sBl4YyUGTTQKC5yy2MxSo0SklgO6+lgmtOc783aRQyinHr6X82oRuXMmNgYgg4+UDpmNVQJP0FmF80bIe00wFocZYPXjuG6iqaBWFjvm1/Bzx5CtD3rhucw99xS5Cp2xrd3WBsf6oYNmLS81CX7bPmNuCNtl6dknNpzC/igzbh37WMKySdsfkpLpde5L5DiBgI3VN3nVTn5OfXDs3lfHx/d4fVivok1CPDxK+SzJOZWisTt5+7m2LqQ1Kjdf7fCOXZ7GXahMzo/XiYvNrh5oezOmQzPOzsV8TGucHQnY0bv3suuyeLk5WQj1qtnDCCQLL1SXXN7apLvCuxYWTb/A4TYYBzs+iKkSvp2MVYvMbI7YgpP/fJ22OvalQpLl2GMziQGjP1w5GU8VScjNRnpCqGB0YAf+j/jaSPoNBeIk3a3xjv8FPyla0t//WTnXPWG4j+7Nae8vOHQ1IOJT1h1MuFIgS4MiPH3Z4xJk1gWgNn/GvjgeYyb7iqFQQgn7cujAysXGoUNsZapWWv2WqJBhGGEQzwtGb5AWSxQ4SAAG5q8ofJZSIjyA22humqTkU65l/BPIox48B5qu8b135B0s8EcT6obDbt4ewQNqDpmrDP8mIkiqi491/hfioG/mkXI9LS9yi5fdGTEEM/0BDFiNGffC15jMabuELsJb8dmYvqnps3GXR0qeugfXMFkvDhgR0g7FtLP1HaW1VkmC3pftltD/dcYWhnkyvN5GpGvB84s8LsRYTqKO384wakt0twMvSmMJvjHA6byVgzNOXbKxZUKAc9FxSCDOtIbegFRuE7eTL9oEc3RLU5Wj+jhpo4jGhrbXSENR5XFZqcxpNj1/Sc0MSltDa6oZop4Fcfr4yIuLEeJoIosO88gkWb+CayX2Z1OV2AAZstz6PwmovRg9INxdkYvRPZ1zNDELhP0AkegXkTWap3Pa+TjpuUiaXUrZAVRac3a6HQEXTf22upmDUia+sOnABagGlVHcRefm/LF89STxtTlZLe3BUx0bZbCzeMcnujFvoj+wQLaFZeUX83KrDlZDRfklK3iVuXiwGePZln9KLfqjdsxUg+ih8EjIhVGmgORrnUJ6nfiXTJUm+sWvf9MO/dWEygMY5oJUfCgw9XYaH68PibZBry4dCDUH+e9is1w77hmSjxf6B64v7Y2qv7LimIDzNpcvkflsBfBpyGM/TndyIRatAcYy/8569SAAxubgWxuk0QPELgtpc99+Z8uOpgUB5+MZn2SWZFflliawPylbvSVqM7CCg03Lh5oynroIe/oL8uazOcEp8As7Ekz5ksHBcMFT8gXzc9N5Uc8R+WXMIQkLso4i1SJ1vQtcGDOKyjKejYcbDQn840DoCbIBi85wkFswyMvqi+peUb+wDGi/huiVhqphtQ8vcmxnRKE3EbqhRPSBnUS+IKVvaKirutLHLfZMf21fOkpy+TAoLnRfiGaBfzJ9cMyOcedNFQNLjj9fdy9VNPqcZ1YzupJPuXtNo39a3ggF38b0QY/jhdL6K5n1WP35/6gvjVXeCyBBGgPJi3OH8Ns01Oq8xtpjGtfh6FNkV/4nIFq/oPYBCed9IffbPtcfOMDmuk0os1lBw13BXYeyKM+7ouAdU1a855ebXG0PzMqU/rKpiYJI6WqppKysH9kavmKDIHWT6ctVeR1OWPZft9gPqk4c6Vshhm4oeoVw1UK7/OoyKgTb7Mqe9TyzkXzGyIFThQFuREXTctkMvDFv+FjEk1IQccr6NzpwuZBzejP60m3ROALMYG26uIUo6xdxaicFy9wxdysxhtvgF3WMja53/AhL3/ABhrrGBT91IMo7VHm2Eq+amWPpfTkkH2TQwtODcV4tw1ilhdJazfcxxVs0/Mm9snGwQ95zpwLHvpxi47yDX/87u8p+q2TCIjgmFG4e87PCdNLxd66t9xy6JV7oK+UmKv8AQQzRRck2A7ICZxrxtCJhAnRZQ9DN+yffwpVfbFqWavgcmz7/seNjO2fMRAfHi9/ouYxF55MkqMte1PfkNas+TQZBvGL5DqQIQbEbyOBw3WJi0DKxd/9VG4PRj5X85s/lfETZSx1cRa1MrcLVBNNumago5VEt0wTqlwZhkwA/H1Fq9OqHeSpivfu/tuWC0WBS3rZv9KDsRwfVQBD++MQLNO/A3j9y8fB+4hyWvH0kgL+tIFbeTgMqLCRfs3or/l6LMwIH4RULzZbg3O9Rlx8SvEbLpYYYugy1IrIsZvHfCvxcy/lELYVjbOISwDse5OtwXRJ9+9fA8GfL4Fr1jxVlQyBDUAnsyLn9jY2+LVw4DRH4e4mX+cWkxmmfZvoMsWQJdfdCKlVJonUdN0bNMPQC49wdx7vtWLPhw2IzWWXvEvAXibS4kt/peGDghAPIhC7ZOiy/3JvEAX8VhwCgamQ0pMpdreQSFkqI/xuHEMDUa5elQLSGWMhckGKSzY6NRzPRPe74VWj3BY242PnmsH6P2TsHctZ8054goQfP2N+P9o9RQ/uJNnuocYJqknv19HY6CkF//B1MGSeoodFRN2lA3B/ZHKEwt9TavpMxWDSES/WN537C3Oa2mrl5PSJmXo55+HFhP+5Ex3DqROoa6yQuvC6lufpWb8QyAWwaUjgpLjmzPw5pkL2YfamcmI/srnx7C3SvyCtSlGyf63S0w4/o8g7fwcAdtLjAyQnGZiRcmG5xCVZg/poTMorAHtIcSQEa+T+zVNie84m3wwlZ2qkOJflCACgDS1fPYgs+gI3TFIxFMIhbmv2oZebaW+ktr844PVdoP714XiUFQF+j1WowhTFTFOXbNjZu6fdWVV//oWG7SmWv8KcxEyIEp/8fsxGWC+4sIqwi4BjtrzrFk2lc9xzPN512z0cenjNmKL/rITghV98I8nwsFEAEpq56Go3ZKxVko2Gc5vtSLSGeEmHzIPv/ilGcgZ6TapLzh1CelZ+GM5HR7q2DvxEedfRU3HP1joe+YR9LzFvBsXmdw2PmskIDdKt9DvvQKfUMkNJds6HFYjyQNm1phKnDyxJiCcTmHmQPt/t8/9Uo6lkqzY2S6GcI+JQytvqz58xEWKh+sxH3QjMl8rqqFeYCJErp65DOnxLc9DAqZDGjFq/syJMRZdTBFiV1maetGpz7z1LOjG3dWmzkYUS/+9ymNjH8dHSLMAV/yjTL07oahmQ+xmDVo2pM8lKxHwL1tSuJeTN0rI69SPth49qnjF+SAbdBgGvqTQH9epPzgK3d7JeuRCSDJxeLmY7g3SofGE3rnPFGF1fsMlLqtcBaxd5ZFUSMz154Wm6lxb1MwLjHtEAn2UKnPioS8xqua/ttBtfxlndc/cxGjS75FpO4FW4EXxv7/8ryj2/RQNj3WD+654loFSBvBWeSssUE46IKXerQlOLjEmUL149bw55+flP48qkFFBI/kT7kDPT2rPlpy1hsWMHHPVoQR2mEslvcwCWq1fpqHMVWJstzKVMoPtEayL6brqUGyNyS7fXPg1ysFxJ0YS5VrQh0rklNVmsBCefhzKTn7VzPju9l4/W/ZsibodvvdiyBQx173tkpIV2izhaBxn2hOO5AhpBlWjjYrRLhz1UfK4JZURqy1NBtG19nixvAy4OySg8BVJT4imYNuqfl6mZ1IXdM4OeDxg8Z+cCFaUJDwcUd5JLPKl3GIvpzX/Onz1b48io2LWoShz7EMt6QmZqBRrF0KMx4yU9ruBeFMOhNZgViU8PCIFoWXEp0kBLvKoDldMzQdA8oXEws0XRRvO4y1o1hdnPD4PxbYmLVzkP6aLdZHlwHy8/Mc7K3e+LoMWfQtc+9t+vYMoNHCUWJzIgTSeRxZwH1HGk9IvT/R/RdgOP2Z9+wc/P8uWDk6dS7P71t/hL3sBtcWbuh4Xk1GWTZ1TE817el5JtV7nRrY56oqcvXZJAnCmSJWAxIeqWPss7Kz7cG3uQFokaQtNZb/tHqkUsseSx+iQyqZMT0tVFOJwWdTzEM7JjLrUS12qp2zjPl/U2gf4xBPWHie2WJ6lrmAdDHrQz6zAIxGz6VDAvUHSE5wd/BNrIbQXdpJUpJGa7E5pSmsrJQGUTUjyAdEE3ejiPD1Z3VXMc0DgONVx2hGwb+B/fT+qRYAExc4UsRvVIY5ZM4et6KFWXMElKo+FTZBNHoltAq2mrZBwHMOejumkq2mhglegeQftwNjUVjhY6G5GUl5yBKjbNlhnhWWN2M/9JK6p+wy95bgIR6+EEEENVhBCbQcMTIcF2upIgFGP+euWttUgtQ3C3FaTffAOMvKd8RJADA542sfaHiywbNMNLPJLUmOgAlxONDmQQUfBk38c9k9l/CgujPfr8YR9lNBJTpVb91ofFbGIE6vOsdxx/j5R4pP5WDym5hf+EtetB/xYwmkgaxmTRsPlYV3PVgnVRr0ZAUnYFqcIlh7WZoCqnpe5MuxphSSteuJn61DNNMAPwzMvZeDzj1c5wkFMQNHdvRtCFKSCX6L+eY/hN7wlU6b64yPO7F1RVh+MKE3z6c8Hx1KuDLZsmT/5oD5X6iAsfmVXtO63TsMroCphHJz1BilEnQxRdGo4JlnDyz9tQRrPim7I7XiceTU+M1rlaSVJGOvRdSr3CTAHoJd9C0AYc5cCXseJAGxQdw+WfnoyjyRNS3MjIlXckg58GQUdl3S8asu11e6n6NJswJCurLJl+6zYqTHNzXBZPShVpqZNdBuXqWVHFPBgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"A fixed-term tenancy ends at the end of its term, so a tenant's agreement to move out then is not obviously a waiver of a statutory right. Whether it conflicts with s. 5(1) or the notice rules in ss. 38 and 48 depends on details I cannot confirm from memory, so I cannot decide without the Act's text.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 674,
+   "output_tokens": 1736,
+   "output_tokens_details": {
+    "thinking_tokens": 1599
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

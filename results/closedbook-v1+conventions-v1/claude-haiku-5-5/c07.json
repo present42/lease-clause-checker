@@ -1,0 +1,99 @@
+{
+ "clause_id": "c07",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "fdf03d146f84824922f419b7d128aa98f0eff20ffe1cbe2e1c8c1ba5f3804adf",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant viewed the unit before signing and is satisfied with its condition. The Tenant will not ask the Landlord to repair any defect that was visible at the viewing.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:31.607794Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"3\",\"quote\":\"this Act applies despite any agreement, waiver or assignment to the contrary\",\"reason\":\"The clause waives the tenant's right to have visible defects repaired, which the landlord's repair duty under section 20 imposes regardless of agreement. Section 3 says the Act applies despite any contrary agreement or waiver, so the clause is void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 683,
+ "output_tokens": 1056,
+ "raw": {
+  "id": "msg_011Ch1v1iWaMbpKNFHtoYBWm",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"3\",\"quote\":\"this Act applies despite any agreement, waiver or assignment to the contrary\",\"reason\":\"The clause waives the tenant's right to have visible defects repaired, which the landlord's repair duty under section 20 imposes regardless of agreement. Section 3 says the Act applies despite any contrary agreement or waiver, so the clause is void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 683,
+   "output_tokens": 1056,
+   "output_tokens_details": {
+    "thinking_tokens": 927
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

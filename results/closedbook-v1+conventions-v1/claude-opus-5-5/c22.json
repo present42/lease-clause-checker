@@ -1,0 +1,99 @@
+{
+ "clause_id": "c22",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "75f4acb5bd58e7972ed68d3621c15473f9d87b994b8b0dbb357c77ecd42c50ba",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nRent is payable monthly. On signing, the Tenant shall pay a rent deposit equal to two months' rent, to be applied to the last two months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:57.521291Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for a period of one month.\",\"reason\":\"Rent is payable monthly, so the Act caps any rent deposit at one month's rent. A clause requiring a two-month deposit is inconsistent with the Act and void, at least as to the excess.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 682,
+ "output_tokens": 321,
+ "raw": {
+  "id": "msg_011Ch1wLoStHSmUe2Y7Gu5Vs",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS+ggKEAgTGAI4AUIIdGhpbmtpbmcSDCjU8mBqBXveksYePhoMS2SBPp0QAvqbGW3KIjB6p/frnha9dxnzKWIPi4C2trl8lnwXLQYmfQMPOSR3kP8Cs/seNcBKYJcUzcNvG7sqlwjvBLiCFGt6YAgy8n4bAc9Acx+LRDo+gDH3xIeQVib4MgUTqE3gZ6Q7FeAenY9lFH27hYBvcfwOp/kQCTmV5xORFqdy6jPrPvbtjXlx1FQCTDOETO6qQTPIcklQ0lA9mTaWG20VaCKsvUiHunqVJ55cByF8zc46Zg0y2vfSeuUiAGEdT/ht7ZLDWM2mC0c4bM5tUN/lMnj17hXhrGOSsuG5cUltpGs2s7DBOKlmDXqccdza13w7PWTSUZYAJFNlchmPBLrQsGuqPbRHqlnS5ArlqeyBSGBTbhl7a5u6ZkMUos9OfeFpml60VYwuH6IT3rVm4JLAbmPbA6JgSjO20gNPj3zcsUX12GkDU+3STt/cKWBqr404csxbhY9QZnE+b3mkEdfspoOniS+9XTT3YiEwlaAkqNG2xUNIQftXrHl2XIGCq/qrjQsfsQV4mhPOVbOe7/vQxuhNq8UhkDsBzQxNwPW5gAT7T+mk1UQ6YJlsZwePMuGO2SyulzX5Rw9/5w77tou+Chfra3tjWKGeOZyik8/d/0CsimVlgtWMhIvlIcLHy3S4dhElEYGxWx6Wv78cjM8KrioWdt+5RCoLKH1LBbNhIZ1w/DkAYcsulFKSdS42Ybtq8DhFl4LzOQv6/KDhLoY5T7+UwP9fzRljeqyzb62arsQiiqm1MdsAPphY1iOZecCCQ4mk7AsY8KZOU2l2aNP2TP2MB2U80Lz7TGKRb84jIYKNoRMYIrEGzsp2HKBAan6K87uo9dnadgBS7sBAAgAyuHLrj+hchTnm0U9QMG9ALFgEU/B+LrVKqkFv4hpHYDO4d+GPypsdFe5GxjiTGcK6b9J4G+6G1/WMW5zJ3g+sO/UR1kGhDhffqZ4ocOe+3oNXfltszmbCYDHYamQqSqrqQSUerkkBIIjGYE5hAMRC2P3mebBbYPIiwuBoauvrB5KFI5U84P8Q0IkMIyjuWE5zgnP4RbLn1wIPzg3MzPMf/Y3btbcaJjSLQ+yBm6Deg0yNyh8pR3BEmKootJhPf1DhT5EyQW7RoE5Q4YZacYY6RCVPTIQNHMpn4e6wmeaJczCIa56v9cRTd7fviqfDuoP2OPA5KJb9kZcFaYAGIZu5gSCECdcb0tDKWC0XwoS7dbeywu/OtoUn8Hm5nIeWJRY3KrMSwUTkaj9vG8TcHpHbbsftRV+LcmvgqoJJV+H3eSI4cyj/QMtwzLP++GNE9Rr7J6RAr+SWYWHB2yOKEsn22xrTqEKhUG7en3mjr8QFpIQ3yTDSV7l8i0eSvWfwb8gTSoDm/R0Dj5r7dqZxsoyW7gjSpM9zbqmKpkUT+vz+nx88ALT37GU++4OfDAnnYpk8A71snXfucUPMc1TU5ZkXjYELWop3Rc5I6D4l6sk/zOtsUmoYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for a period of one month.\",\"reason\":\"Rent is payable monthly, so the Act caps any rent deposit at one month's rent. A clause requiring a two-month deposit is inconsistent with the Act and void, at least as to the excess.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 682,
+   "output_tokens": 321,
+   "output_tokens_details": {
+    "thinking_tokens": 186
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "clause_id": "c31",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "4d48b4c9f9b9c460f866a00d5e6039fa3d0c4803f8ac468f1207f407944f70bb",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe rent will not be increased during the first 24 months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:03:37.635525Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"4\",\n  \"quote\": \"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\n  \"reason\": \"Section 119 of the Act permits a landlord to increase the rent after at least 12 months have elapsed since the day the unit was first rented to the tenant. Because this clause restricts a statutory right provided to the landlord by the Act, it is inconsistent with the Act and therefore void under subsection 4(1).\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 528,
+ "output_tokens": 133,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "abP3auGuK9_IpPIPrpqRsAk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:05:18 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"4\",\n  \"quote\": \"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\n  \"reason\": \"Section 119 of the Act permits a landlord to increase the rent after at least 12 months have elapsed since the day the unit was first rented to the tenant. Because this clause restricts a statutory right provided to the landlord by the Act, it is inconsistent with the Act and therefore void under subsection 4(1).\"\n}",
+       "thought_signature": "AY89a1_3Vdiv0sTeixqi-oR3teBI0QjhgDRjiAN8YE7K_57OG9L0UwjeUM9t8Xktxe9Z_FEWE-7Dt6OnwibiqxvNuhnSrKvJXy9xy4M-SqZ_awdSXf4vANjD2aOeJW2X"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:03:37.710497Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "abP3auGuK9_IpPIPrpqRsAk",
+  "usage_metadata": {
+   "candidates_token_count": 133,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 133
+    }
+   ],
+   "prompt_token_count": 528,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 528
+    }
+   ],
+   "total_token_count": 661,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "4",
+   "quote": "a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void",
+   "reason": "Section 119 of the Act permits a landlord to increase the rent after at least 12 months have elapsed since the day the unit was first rented to the tenant. Because this clause restricts a statutory right provided to the landlord by the Act, it is inconsistent with the Act and therefore void under subsection 4(1)."
+  }
+ }
+}

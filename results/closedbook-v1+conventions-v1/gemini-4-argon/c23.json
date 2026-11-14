@@ -1,0 +1,110 @@
+{
+ "clause_id": "c23",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "339615d02099a3ea2f26e691bad2f0e42b44f44e23cebcc1599d7075394c4d65",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nAt the end of the tenancy, the Landlord will apply the rent deposit to any unpaid utility bills and to the cost of cleaning the unit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:03:04.356718Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord shall apply a rent deposit that a tenant has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates.\",\n  \"reason\": \"Under subsection 106(10) of the Residential Tenancies Act, 2006, a rent deposit can only be applied in payment of the rent for the last rent period before the tenancy terminates. Because the clause allows the landlord to apply the deposit to utility bills and cleaning costs instead, it contradicts the Act and is void under section 4.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 539,
+ "output_tokens": 160,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "SLP3aqzJGa_t0MMPtcKUuQM",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:03:08 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord shall apply a rent deposit that a tenant has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates.\",\n  \"reason\": \"Under subsection 106(10) of the Residential Tenancies Act, 2006, a rent deposit can only be applied in payment of the rent for the last rent period before the tenancy terminates. Because the clause allows the landlord to apply the deposit to utility bills and cleaning costs instead, it contradicts the Act and is void under section 4.\"\n}",
+       "thought_signature": "AY89a19mKmZvkMXj6N4I0i85mb38nRCWcxN6Iif9v5DdlKhZYaOJ5B3lg9hI9syZdRYVwxy05rEG_hNAIIgSvLdnsO-FLRbhERpUa_OiBbilBoJlugH9D-_JlU5HmZI="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:03:04.418988Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "SLP3aqzJGa_t0MMPtcKUuQM",
+  "usage_metadata": {
+   "candidates_token_count": 160,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 160
+    }
+   ],
+   "prompt_token_count": 539,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 539
+    }
+   ],
+   "total_token_count": 699,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "106",
+   "quote": "A landlord shall apply a rent deposit that a tenant has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates.",
+   "reason": "Under subsection 106(10) of the Residential Tenancies Act, 2006, a rent deposit can only be applied in payment of the rent for the last rent period before the tenancy terminates. Because the clause allows the landlord to apply the deposit to utility bills and cleaning costs instead, it contradicts the Act and is void under section 4."
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "c26",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "adc09c2c8e36f09bca3534527a7b63641cf68a8d0f3b185a76b47c66a8f2a793",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nRent shall be paid by pre-authorized debit from the Tenant's bank account on the first day of each month.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:17:01.366924Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"108\",\"quote\":\"A landlord shall not require a tenant or prospective tenant to provide post-dated cheques or other negotiable instruments for payment of rent\",\"reason\":\"The clause makes pre-authorized debit a mandatory way of paying rent, and a landlord cannot require a particular automatic payment method; a tenant may only choose it voluntarily. As a term inconsistent with the Act, it is void, though it is debatable whether an automatic debit counts as a 'negotiable instrument' under section 108.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 663,
+ "output_tokens": 1141,
+ "raw": {
+  "id": "msg_011Ch1wM5wpZRMKNJsirnLq6",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"108\",\"quote\":\"A landlord shall not require a tenant or prospective tenant to provide post-dated cheques or other negotiable instruments for payment of rent\",\"reason\":\"The clause makes pre-authorized debit a mandatory way of paying rent, and a landlord cannot require a particular automatic payment method; a tenant may only choose it voluntarily. As a term inconsistent with the Act, it is void, though it is debatable whether an automatic debit counts as a 'negotiable instrument' under section 108.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 663,
+   "output_tokens": 1141,
+   "output_tokens_details": {
+    "thinking_tokens": 962
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "clause_id": "c22",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "75f4acb5bd58e7972ed68d3621c15473f9d87b994b8b0dbb357c77ecd42c50ba",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nRent is payable monthly. On signing, the Tenant shall pay a rent deposit equal to two months' rent, to be applied to the last two months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:24.199274Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"106\",\n  \"quote\": \"The amount of a rent deposit shall not exceed the amount of one month’s rent, where the rent is payable monthly or less frequently, or the amount of one week’s rent, where the rent is payable on a weekly basis.\",\n  \"reason\": \"Section 106 limits any required rent deposit to a maximum of one month's rent when rent is payable monthly. Requiring two months' rent as a deposit violates this limit, rendering the provision void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 409,
+ "output_tokens": 659,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "5LL3au-nDojg0MMP4pPa-A0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:36 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"106\",\n  \"quote\": \"The amount of a rent deposit shall not exceed the amount of one month’s rent, where the rent is payable monthly or less frequently, or the amount of one week’s rent, where the rent is payable on a weekly basis.\",\n  \"reason\": \"Section 106 limits any required rent deposit to a maximum of one month's rent when rent is payable monthly. Requiring two months' rent as a deposit violates this limit, rendering the provision void.\"\n}",
+       "thought_signature": "AY89a1_qnGGoKi0pZTFrA8uY4QtvRpIr7FuU5jjBOcDRUXDLfjZawIXDuB3orUiPzRKr031PMQ6W6BADewtcr5Etf3DlN3p8m5xVbyC0yKtFH0FvUASAf8tXWyGtVVrn8YUItD12rNZRbUOQXLdZBOyH-P6v3jFuo3VP0lRW_3x6qt3PNdjP5KXYXcuK0HoU0o3P1Sf6u4zRyI4Dr90sIcZ4O--3D9FW6aaxCxfkDY3q29lbdHr2FGsHId3uIGWW7q2RISbKd2mBTBLHZ_p8dJcZ0CTlsNnUvaECNVirkATsJwwO0yM9uZTgCwG65PorKT0VEcZ7R63Ra1OvS-yGWBdhHulQ6Nb-mj85hpMP52yw8MvUUgTtbSktFWgaULbZa6y6oHE-iwWfA1W1zjql1PJFVNBGoa9CowcslBSEI5OoP-welD-wmGcuDQbYTGAFXUcD2PFlDlaHfXu8cd-siCZjTcPEqx1Hu8aZj8L_26Mveu2AXGyHrOPbN9C4zblsFO4LeJyud_Ks2v_axU02zAvi4pq3jxXtPA5oP8x_OEgwNUOLmhQXTmmF5W5CEjmMZMe4eInw_wJJUrnmj3wXcFa0YecvlV7DXmNkZx5PALD56RCKsAGLQPCtbuSuAxpqlQ4ZCi79nZmFNTmVNq5JsiODzLeW-BQoYLu8aL4nOJ6Ax--BMbfounMVZ-MTgLrUGgRfR-Zj7hxs3mpHYcYOEsEEn3s2xJnX3CQzQXz1NFds1QuQwSmHcjiye-OmzA5Qeusaim_4NQlBEfjlLNuqwt3ku4aCunZA7NuyZl6y307ZPeK0530Ea4IOfeKb7bF73Fw5zCq12zPOMr_8t19OmtqOqFFqHjx32Ivkm3ZMhhL86OYWtP_JkFLcQ6ZGoAIqMUTwp4-aZcNc6ugIjacQ3JHw9mq4UZdEJwI-qoxhbybDSSpJ-5K0Sbj7sYfii1jE8IIlKDSWXtJoBjAdeT_uvGx0dHL11GfXBFT5JqEzmlWanbla0filJgBd31zFEUQsT_m26w0eiyYewVWhD_tg218Bh8PMIic3ITjbcdEkdCrkvGd_XiKwIjyi0SCKk5T12lYE1Ti3nVbCNqpXv7aA6IellYR4gznZIxAG8KORrI1uakgxiPM7HQ6aHUuNJZeQOFcT0WaPeodpca53yqVSoRo0zk7fzWzV-uyXZNTpFiLBGTSpa8haSiPMpGyMszzf4DPGvvAMBbpZ5FDo-Le4zN5UrKJBMiJumuxon2C21K73pos6yUXLkMOGyqoF7i3mev2psbKPjGGd56lN8W2NUrvg71cQEu21QNx4bW_sPVrZYW3coL13WFNpOEM5VDAYYzxaSryof3r2m_vLs9TiPR9qOAOGfiFJowNzPhZ44CgEN6V2SfjdXn3l4hnPRacy6fXjdknnjOLnGsdG16xerSjci8AnxEdiVrIzGI2JIeMHGTvvgUdhHXjuMR6A2c6mFm4cPJZBjA841dYk155vkQ-s-isqgcDolSWNrVyXjBjaGDFUsOMJJve08Se2KOMSQpHUVsOesl7D493YY78T66e1lllBcknzQJmxAL9k2Vlq9rDF6rQ7-K4aXcj0xZpeFl-a5Rxw3ftLIkdLtoB8h4EGKBYJyWBgDuLhTBYcM81GK8tKCd-Kmyo_7egLJCnX_7UuTJDNRY-D_DkHFxkQSP_okvpZl9Z0TQPASE7YUNemzk5tNj38Eg006hOrRhgonsfVSwo3vD426yt7HmZdf2yIdJNcEoT-Hvp9rlJUhdnI3qWb_P1-bjhZhTr_yNC48Wr2iid251PldXWHhmwNFJqQj4NM3K3QU356IsVPDgYw99r4Fk_-Z1omjqBRpwjJhzACXQz5cM__GOs94GfuxtJKTRDSAYWZb0xVnfypcOzZqZxfFujJ5GIDUwctAMW3msd7cl8VV1wPW-HdsGKN5bIlFOVNbeoqHhdlBbXuSW2h30pKofyDmw4-b_K8N7bpZxTLk4JVcgzvwEALOyyDdIg345j6PFPEnSOAps7wrYUN_CUzJl_qGjkoJj1lq7wDlzlNv88T8En9A2ut6Xrhwe5_BYlBmeyokggr1k0nz3BSfy7RilRQ4UVAb4LHQ60dlCFZJb6u66jJBcVgvIrCDOwP-zFAIF6zn_zStSqMFUq1wJW1Fguy_bYNioGtKFrPy6wMQE8x1q0HJ7jVUgn3HmTyEvS9Q4_gPZ4lNRiLvPugIe9sTQ3Mm2foYX-YbstpdHLlTqkgkoIJCCahGirOS7-cP_AqKvuSX2J-ccHEIQOzhYRkj0ltDoSe-SCPAfTZW1lieD0XSbvl5zyqAOozOE2NLLl6ueCnTPVpPAvnZtwwDP5Sq0pKd2g99Ie2SzEIa8rSWjb1MdKMGokiY2PWGsHra-Rp9Lq2W1cAQls-dXbp_P-ynOVRSJFgPrl8Myr4QOlqQRMICQ6gQgnQS1I00WyYuXfbvB1Io7M1jgpM3tT9QQ1U1Aftl4AL882lm2h-k7VYq1qf5knUJ9rDh0c2xyEzCweSlAm6GRLJ--x9aPhhb0Nbgm4hEfuCige2TQKXI1Sn95KGOLCS_m_p2qYee8leRjssMkHegXIb7nFmy7ouEVulma1Vv2v8kB01FVV4RHIlqG9ls7ajlqZAZVDglgqH_MOyspWhPLJM1VifueMgZB0gjs9PVkYS-SJfpJHBZzWSDvY4DORtuWfnBt88Aaqk3ThVnDuUTxg_k-Ucu9WQWidFZJIJmkggTDElfG3K-lkeK5x8HEYY8UdY9tnwrd15ZxBmZ8wYD1J2gSheCneFMebbvBiVZtnFmirKaA8c0Vmd3BYOxprPzuj7Fl1MFgMUUYG47jXwsnHWrAtWbprM01vsdUOjoTyCllxgeO5x_ZKhP_aZGd_mksWuFM1WTHAfYCpxVgqdTRiFaYb_bk_rnPCq7aiIaFYydu-L"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:24.234479Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "5LL3au-nDojg0MMP4pPa-A0",
+  "usage_metadata": {
+   "candidates_token_count": 125,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 125
+    }
+   ],
+   "prompt_token_count": 409,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 409
+    }
+   ],
+   "thoughts_token_count": 534,
+   "total_token_count": 1068,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "106",
+   "quote": "The amount of a rent deposit shall not exceed the amount of one month’s rent, where the rent is payable monthly or less frequently, or the amount of one week’s rent, where the rent is payable on a weekly basis.",
+   "reason": "Section 106 limits any required rent deposit to a maximum of one month's rent when rent is payable monthly. Requiring two months' rent as a deposit violates this limit, rendering the provision void."
+  }
+ }
+}

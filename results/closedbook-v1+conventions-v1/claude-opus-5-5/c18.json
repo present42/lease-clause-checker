@@ -1,0 +1,99 @@
+{
+ "clause_id": "c18",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "570f673de067a26574a72ab99c51e6e4e176a1234661ddcd300a4298e549b85e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nFor the Landlord's records, the Tenant will sign, together with this Agreement, a notice of termination dated for the last day of the term.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:54.819328Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"as a condition of entering into a tenancy agreement\",\"reason\":\"Section 37 voids a tenant's notice of termination, or an agreement to terminate, that is given or made when the tenancy agreement is signed or as a condition of entering into it. A notice signed together with the lease is therefore void and cannot end the tenancy.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 670,
+ "output_tokens": 909,
+ "raw": {
+  "id": "msg_011Ch1wLbsc9zX8qXdTbvx14",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"as a condition of entering into a tenancy agreement\",\"reason\":\"Section 37 voids a tenant's notice of termination, or an agreement to terminate, that is given or made when the tenancy agreement is signed or as a condition of entering into it. A notice signed together with the lease is therefore void and cannot end the tenancy.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 670,
+   "output_tokens": 909,
+   "output_tokens_details": {
+    "thinking_tokens": 785
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

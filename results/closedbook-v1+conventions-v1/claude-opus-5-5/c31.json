@@ -1,0 +1,99 @@
+{
+ "clause_id": "c31",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "4d48b4c9f9b9c460f866a00d5e6039fa3d0c4803f8ac468f1207f407944f70bb",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe rent will not be increased during the first 24 months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:17:03.055450Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"119\",\"quote\":\"may do so only if at least 12 months have elapsed\",\"reason\":\"The Act sets only a minimum 12-month interval before a rent increase and does not require a landlord to raise the rent. A promise not to increase rent for 24 months gives the tenant more protection, so it is not inconsistent with the Act.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 650,
+ "output_tokens": 538,
+ "raw": {
+  "id": "msg_011Ch1wMD9AVGtvTptAsLiPj",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"119\",\"quote\":\"may do so only if at least 12 months have elapsed\",\"reason\":\"The Act sets only a minimum 12-month interval before a rent increase and does not require a landlord to raise the rent. A promise not to increase rent for 24 months gives the tenant more protection, so it is not inconsistent with the Act.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 650,
+   "output_tokens": 538,
+   "output_tokens_details": {
+    "thinking_tokens": 419
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

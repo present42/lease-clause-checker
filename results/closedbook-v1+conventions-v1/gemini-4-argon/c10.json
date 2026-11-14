@@ -1,0 +1,110 @@
+{
+ "clause_id": "c10",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "439e3e24ce5df37cb3f3b0fd1c843d8e5d07617807eb41dd3197b8a8c226e02f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord will clean the unit every second Friday and may enter without written notice between 10 a.m. and 2 p.m. on those days for that purpose.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:02:05.819367Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals and,\",\n  \"reason\": \"Section 26(2) of the Residential Tenancies Act, 2006 explicitly permits a landlord to enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to do so at regular intervals. Because the clause specifies entry between 10 a.m. and 2 p.m. on those days, it also satisfies the statutory requirement for agreed or permitted hours of entry.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 548,
+ "output_tokens": 165,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "DbP3atz5M9rw0MMPjcjKuAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:02:48 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals and,\",\n  \"reason\": \"Section 26(2) of the Residential Tenancies Act, 2006 explicitly permits a landlord to enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to do so at regular intervals. Because the clause specifies entry between 10 a.m. and 2 p.m. on those days, it also satisfies the statutory requirement for agreed or permitted hours of entry.\"\n}",
+       "thought_signature": "AY89a1_Nv_KXTOuwisJQ9oKw9wB4mKRY3ZZe_vqarFFaaCgJDX-fzk3IOKf46WIMYoG6D7l6UQ152GYHajZuxMAkMaG4lCt7mOtHlHjN1ygnMhdQWOKiIvqDe7W9fdvI"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:02:05.851164Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "DbP3atz5M9rw0MMPjcjKuAQ",
+  "usage_metadata": {
+   "candidates_token_count": 165,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 165
+    }
+   ],
+   "prompt_token_count": 548,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 548
+    }
+   ],
+   "total_token_count": 713,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "26",
+   "quote": "A landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals and,",
+   "reason": "Section 26(2) of the Residential Tenancies Act, 2006 explicitly permits a landlord to enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to do so at regular intervals. Because the clause specifies entry between 10 a.m. and 2 p.m. on those days, it also satisfies the statutory requirement for agreed or permitted hours of entry."
+  }
+ }
+}

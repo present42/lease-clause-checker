@@ -1,0 +1,99 @@
+{
+ "clause_id": "c32",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "1f47d39a6b27b8edb235105a25fc75fa209912fb294f26116aec70a2876da29f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nAny increase in rent during the tenancy will not exceed the annual rent increase guideline.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:54.187489Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"116\",\"quote\":\"a landlord shall not increase the rent for a rental unit that is charged under a tenancy agreement or otherwise, except in accordance with this Part\",\"reason\":\"The clause restates the statutory cap on rent increases at the annual guideline, so it is consistent with the Act and does not contract out of it. The quoted wording is from memory and may not match the Act exactly.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 657,
+ "output_tokens": 1173,
+ "raw": {
+  "id": "msg_011Ch1v3NEVSj68oomzq5dba",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"116\",\"quote\":\"a landlord shall not increase the rent for a rental unit that is charged under a tenancy agreement or otherwise, except in accordance with this Part\",\"reason\":\"The clause restates the statutory cap on rent increases at the annual guideline, so it is consistent with the Act and does not contract out of it. The quoted wording is from memory and may not match the Act exactly.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 657,
+   "output_tokens": 1173,
+   "output_tokens_details": {
+    "thinking_tokens": 1035
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "c16",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "39d32acfbeb72e28e640edfc195ffb2413993b7b78a5344ba53cf7f21f6042ec",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf the Tenant's dog causes undue damage to the floors or doors because the Tenant was careless, the Tenant must pay to repair that damage.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:39.755180Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"A tenant is responsible for undue damage done to the rental unit or the residential complex by\",\"reason\":\"Section 34 makes a tenant responsible for undue damage they cause, so a clause requiring the tenant to pay to repair damage caused by their careless dog restates a duty the Act already imposes and does not contract out of any protection. The quoted wording is from memory and may not match the Act exactly.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 675,
+ "output_tokens": 1071,
+ "raw": {
+  "id": "msg_011Ch1v2JbRnZozqPpx2nK3e",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"A tenant is responsible for undue damage done to the rental unit or the residential complex by\",\"reason\":\"Section 34 makes a tenant responsible for undue damage they cause, so a clause requiring the tenant to pay to repair damage caused by their careless dog restates a duty the Act already imposes and does not contract out of any protection. The quoted wording is from memory and may not match the Act exactly.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 675,
+   "output_tokens": 1071,
+   "output_tokens_details": {
+    "thinking_tokens": 922
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

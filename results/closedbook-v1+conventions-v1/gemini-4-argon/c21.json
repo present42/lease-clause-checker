@@ -1,0 +1,110 @@
+{
+ "clause_id": "c21",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "1783a4d15eddf73c6bac34828779e370b49c95d4487788735c7437a07baeda4d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nRent is payable monthly. On signing this Agreement, the Tenant shall pay a rent deposit equal to one month's rent, which the Landlord will apply to the rent for the last month of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:03:00.564845Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord may require a tenant to pay a rent deposit with respect to a tenancy if the landlord does so on or before entering into the tenancy agreement.\",\n  \"reason\": \"Section 106 of the Residential Tenancies Act, 2006 permits a landlord to require a rent deposit upon entering into a tenancy agreement, provided it does not exceed the rent for one rental period (one month here) and is applied solely to the rent for the last period before the tenancy terminates.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 552,
+ "output_tokens": 144,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "RLP3aqTyJK_t0MMPtcKUuQM",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:03:04 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord may require a tenant to pay a rent deposit with respect to a tenancy if the landlord does so on or before entering into the tenancy agreement.\",\n  \"reason\": \"Section 106 of the Residential Tenancies Act, 2006 permits a landlord to require a rent deposit upon entering into a tenancy agreement, provided it does not exceed the rent for one rental period (one month here) and is applied solely to the rent for the last period before the tenancy terminates.\"\n}",
+       "thought_signature": "AY89a1_qkvXZkJhY6ToPsnFXzercIz2huI06z7wiRfxyyQRArE2SKdk_aW1bzYSR8kQ5t6DMIwG4vlXdPSZD7S8RXNcZ1K_DPug4r5mM8SjrKY298rdlyiP08eDstoGc"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:03:00.604452Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "RLP3aqTyJK_t0MMPtcKUuQM",
+  "usage_metadata": {
+   "candidates_token_count": 144,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 144
+    }
+   ],
+   "prompt_token_count": 552,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 552
+    }
+   ],
+   "total_token_count": 696,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "106",
+   "quote": "A landlord may require a tenant to pay a rent deposit with respect to a tenancy if the landlord does so on or before entering into the tenancy agreement.",
+   "reason": "Section 106 of the Residential Tenancies Act, 2006 permits a landlord to require a rent deposit upon entering into a tenancy agreement, provided it does not exceed the rent for one rental period (one month here) and is applied solely to the rent for the last period before the tenancy terminates."
+  }
+ }
+}

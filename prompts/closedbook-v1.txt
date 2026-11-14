@@ -1,0 +1,15 @@
+Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?
+
+$conventions
+
+You are not given the text of the Act. Answer from what you know of it.
+
+<clause>
+$clause
+</clause>
+
+Answer with:
+- verdict: "void" if the Act makes the clause void, "allowed" if the Act permits it, or "unsure" if you can't decide.
+- section: the number of the one section that decides it, such as "14", without a subsection. Empty if unsure.
+- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.
+- reason: one or two sentences.

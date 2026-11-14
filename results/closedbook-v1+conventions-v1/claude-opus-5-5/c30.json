@@ -1,0 +1,99 @@
+{
+ "clause_id": "c30",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "cbfa8b28983e43fe7decf1f2dd12229dc0d63fa07480a20e95ecc59374e95406",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord may increase the rent by up to the guideline amount every six months, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:17:02.678807Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"119\",\"quote\":\"may do so only if at least 12 months have elapsed\",\"reason\":\"The Act allows rent increases only after at least 12 months have passed since the last increase or the start of the tenancy. A clause permitting increases every six months is inconsistent with the Act and is void under section 4.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 680,
+ "output_tokens": 422,
+ "raw": {
+  "id": "msg_011Ch1wMBUho25riwknLiUdE",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSzQsKEAgTGAI4AUIIdGhpbmtpbmcSDABTBSD4l2TYSKkXFxoMBh6fBqKotJGruGr1IjBE/TytHaaS/YgEOIv2bzwcueHg0NHAeS7jzjJ5i9jf1VTBRSAcagdHDAxi+wIvaLYq6gpO5g7poLdwF+gtz7RsB8QLDhX8RbNMZfmXB9mwF9YFB0t5idZbHzIBESWm3gV2vwhChaGdXC1RR78ML1seaHSmBHWscevWo5K458/Wb7uQzj5ucAfgu1oFNQVgp4/G+qTTdz+DfmQLYNJAa2dTdNCv8sx96dZGcuJRxUnQvaHmZ2c3Vbi1Pf4cTWS4Q7fO34gkOr3T6IAuKjgktnKUmGyMK103UKzkW9AW7PmDSyerBRiHn0a54zgZjSpTVyy8BWxadNJrmb3rS/7kJCnycrNr0iJHHHXHuFj/MPR/JgYnsWVpZLKX9jpx64DT+amBW2jAfkXGuzgotXWpEbPXNC8o3D+WUrfxA3mwib+ytJEw4DbEgUfajs5R30vD62vRdM+NXIRiLENfgkpr0A+DvxEtjc9aTlUZ1d3cALTB6z+myQvQO1h3sfwDLZCRj3OP23ihLjYyvQKP8o8WeqoxOJcrjrK6P1PQflCZXm27mdll+qp8TdqMwQJ4T5wInh92Jr9t3sHCd3jTXZ5BpGiPrxd1NHZZWXoPF98Dc5q6dE5PppxBQJxhGWGFu2Upphn+F3Y/BNAaByOCKFGSsu1zsmR60vY2ACACjXjZpuZc3CQ0ZX3c7zlAaYfrlHLh/EvCHn/i4bJutCOAgoPVqCVW53s3xF3ZSaNMslGAtzD0iSoPLuDl2A/NCepHY/eAOb37TKfqebXYu8n5jRIRnlg1eqXUTq/pzV02BuF7TLTeIOmU8nVR+yPh5iUjtMWG9apOdW6ingvP/Mknb0+3FJQXG/B1H8dVzBH1so+91JQe5p84IjkeKOPiFvTTUnOGiDOG3dqlqNwpz+oESdAZ+0o4Dji86q6uvgBRh1mCGHgEFI4ACEJd+V7zKYTW4ctno5uEUBSXe4VcDoCCh+Xd+ufIeFJ+bQpuurgXwInRLCwfLV1r5DmS3c0QuB3nMhiLNIHoz8PCNPngCqus8nDyPJqvydKYPNOLvBldgnfOUOYtDhhl0LapW1+8+/0GKz1zhNriXXy6N1NcV2Kq2jOlkzkMgDZOjPTE7kYiWe16sXKuAc++1YCh86JpyHG/6AisDWbFab598o0pCbHx28k+LSeCnsaChva3dUkxNeMlgCy7+I2ANsPOUZ/HhyKHpXEvAImi5UUAz9r1ojO5QbPsCxXfcKj8HlqfaItdKiESlCLTr6hUjzm7xQy3WesOH4qvIAQRcXqMLJmrQkyI2WZO/PUJD61Z9jsKssImZFyW8rXgFXqjWbUX1gdxKNjNWE1YdbO+WQJxxaQKZsAqvmpOrcL4sgYNyN9JxNyptB6nfcaJjSdoONdoBXddvTHi+82/MJYKWPyPyS8sBq3LrM6ogK5OmlqBFBP3MgOZs+NSWBuA/9FaQJyMwET4uOllhDYZpCb6SaHYbAfCH6TLUEeT27IQVopIjcue9jA7MResU7bpqTWbawSytd+enAETcUJ6tDZ0aZiqmNZwc4DhAFLvtnqb0B5EM9Foli8MEgeaw79JSyh7p4mk/rKXNCbOyOmOOvY+Of24GkdOC3oBOSC0Fo4dQf1fJbd7Bj8qUsKpqNB0K1JQdYs60lnI6aenoDN3z17CVpzzkouzS7V1tKoPPr6DEoPJ1oMsyrFosvMm2fIxArgLBe+JuNnNEi8+WWwn8CNbjrIIy6FlJ6zIGhhJNqYy0u1NY1TaPlUzzlXvAg4tvKWIRdbUKd4zghbHhfJaP0L8cm0Z7JamLOfkkd2B+K86j12j5U1JAOWj36OULNIWqkF1xxFzY8KSmMvUX3JuvrqomTnFUJasLIJhyJdTCMsCZUERNafyAspXBWhypIrBG5IeMrBQKo7VLMp+xlEYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"119\",\"quote\":\"may do so only if at least 12 months have elapsed\",\"reason\":\"The Act allows rent increases only after at least 12 months have passed since the last increase or the start of the tenancy. A clause permitting increases every six months is inconsistent with the Act and is void under section 4.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 680,
+   "output_tokens": 422,
+   "output_tokens_details": {
+    "thinking_tokens": 316
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

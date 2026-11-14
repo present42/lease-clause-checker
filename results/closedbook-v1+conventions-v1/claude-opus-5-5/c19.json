@@ -1,0 +1,99 @@
+{
+ "clause_id": "c19",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "0cf91148f9af637531f6c2156690d36f8ff7768c6092a99bdf01e680bdf944e3",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nOn signing, the Tenant shall pay a damage deposit of $500, to be returned at the end of the tenancy if the unit is left in good condition.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:55.931342Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposits that a landlord may collect are a rent deposit collected in accordance with section 106\",\"reason\":\"A damage deposit is a security deposit that is neither a rent deposit nor a key deposit, so the Act bars the landlord from collecting it. Under section 4, a term inconsistent with the Act is void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 675,
+ "output_tokens": 461,
+ "raw": {
+  "id": "msg_011Ch1wLgeM6CJFzweE2GJKY",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposits that a landlord may collect are a rent deposit collected in accordance with section 106\",\"reason\":\"A damage deposit is a security deposit that is neither a rent deposit nor a key deposit, so the Act bars the landlord from collecting it. Under section 4, a term inconsistent with the Act is void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 675,
+   "output_tokens": 461,
+   "output_tokens_details": {
+    "thinking_tokens": 338
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

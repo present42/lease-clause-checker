@@ -1,0 +1,99 @@
+{
+ "clause_id": "c28",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "32c861ca7f0cca86eab5f1947c9daea116fda993a1e6a74061694c9ab58c6ca7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord may increase the rent by up to the guideline amount once in any 12-month period by giving the Tenant 30 days' written notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:52.803505Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"the Act applies despite any agreement, waiver or other arrangement to the contrary\",\"reason\":\"The clause's 30-day notice period conflicts with the Act's requirement of at least 90 days' written notice of a rent increase in s. 116, and s. 4 provides that the Act applies despite any contrary agreement, so the clause is void to that extent. The quoted wording is from memory and may not be exact.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 673,
+ "output_tokens": 1352,
+ "raw": {
+  "id": "msg_011Ch1v3GKHwpHnJZcb3pAYh",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"the Act applies despite any agreement, waiver or other arrangement to the contrary\",\"reason\":\"The clause's 30-day notice period conflicts with the Act's requirement of at least 90 days' written notice of a rent increase in s. 116, and s. 4 provides that the Act applies despite any contrary agreement, so the clause is void to that extent. The quoted wording is from memory and may not be exact.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 673,
+   "output_tokens": 1352,
+   "output_tokens_details": {
+    "thinking_tokens": 1202
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

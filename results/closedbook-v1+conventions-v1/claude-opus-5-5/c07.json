@@ -1,0 +1,99 @@
+{
+ "clause_id": "c07",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "fdf03d146f84824922f419b7d128aa98f0eff20ffe1cbe2e1c8c1ba5f3804adf",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant viewed the unit before signing and is satisfied with its condition. The Tenant will not ask the Landlord to repair any defect that was visible at the viewing.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:46.127775Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"apply even if the tenant was aware of a state of non-repair\",\"reason\":\"The landlord's duty to keep the unit in good repair applies even if the tenant knew of the defect before signing. A clause barring repair requests for visible defects is therefore inconsistent with the Act and void under section 4.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 683,
+ "output_tokens": 483,
+ "raw": {
+  "id": "msg_011Ch1wKyZa1LUWm9L1Sj81H",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"apply even if the tenant was aware of a state of non-repair\",\"reason\":\"The landlord's duty to keep the unit in good repair applies even if the tenant knew of the defect before signing. A clause barring repair requests for visible defects is therefore inconsistent with the Act and void under section 4.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 683,
+   "output_tokens": 483,
+   "output_tokens_details": {
+    "thinking_tokens": 369
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

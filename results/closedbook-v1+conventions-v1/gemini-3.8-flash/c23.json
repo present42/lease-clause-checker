@@ -1,0 +1,111 @@
+{
+ "clause_id": "c23",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "339615d02099a3ea2f26e691bad2f0e42b44f44e23cebcc1599d7075394c4d65",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nAt the end of the tenancy, the Landlord will apply the rent deposit to any unpaid utility bills and to the cost of cleaning the unit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:26.901650Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord shall apply a rent deposit that a tenant provides to the landlord under subsection (1) or (2) in payment of the rent for the last rent period before the tenancy terminates.\",\n  \"reason\": \"The Act requires a rent deposit to be applied exclusively toward the rent for the last rent period. It cannot be used as a security or damage deposit to cover cleaning costs or unpaid utility bills.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 404,
+ "output_tokens": 462,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "5rL3au-xOYjg0MMP4pPa-A0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:39 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord shall apply a rent deposit that a tenant provides to the landlord under subsection (1) or (2) in payment of the rent for the last rent period before the tenancy terminates.\",\n  \"reason\": \"The Act requires a rent deposit to be applied exclusively toward the rent for the last rent period. It cannot be used as a security or damage deposit to cover cleaning costs or unpaid utility bills.\"\n}",
+       "thought_signature": "AY89a1_nHSQQOS8h7-P16cMjmsTLu_6q2ZtJdYorLTilx6wRFXaJhIXyQsUchyCyKlb1qEoNb1oVXZ8NUZebffJYIT7Ovz2KivY1tBwM39dh9s77-4BecOI6S1kXztocO16_f_SlQ8Ylwx9rvXbJ2dn0MbjV8Py3oeLJNnwNlkfMzkE8UqNhe3J_VZygmbgFENlmJ4i0BZA5K6xMfQwbd9FDQunTvXgxmL3Jqncy11ZySwwj_LiOkB4kXSLnkFbC7dzHdBusDfXJGwkQR0afHuy_IXkg0Rhr7IPc0M4x2xJTS-zlcQOau_zXCXh6OzJGJBtcmz_IsFtapV5NzJ-RFa_E8j03nNEX6JnK5WBiJfI8o2Hof3aYWyJWTBCnI3zZY8DK7t1Nb0iee4B31cJvewOSe9Pq85bUORzJo9XBPWbv11r85GfkivCJOMwZ7qocpcLGWAGNPbSVFSv6GtD8UfFyS_Q9Dcyne2Z7R4bLl2eEurEAwQwNzrIzJtuPv7SMPIKY-k1ZtGkmY5Ik21jIy1ZGBWg_60dsmc1ghJfPSfakgSo-Oy5ZM919gTZVALygwjR_pHvh5uJ3RZEsYS-qLOeG6WEbheEBKSDgdUavDFmgqEaHonDBFd-7FiJDWbcWT6GnbGpKtqIi9UutXaRDXQwdcsMbgOnOIrRwWS5VbE1bjU19Su8VArMLArk_IjF1MyTxiNa4rVHvlnpwpXfgl89oR0j1TBYqO0jLNPPlrgO3w6Ao7Gm5NHbFsPQw3zizh5Qpreruxa1p_zL83xqn3toBpD1Yug5zWuYCDdHf9orxj2btwu6JM4nocbrNU07ySP0Z6V728D-XO7olnVnCI6AiE88nhxRukTHlQuth4AmYy5sOv1G1A3vAT1hNAJQWKKaqzPeQXySbEC5F4veIEKKpRvAkum9wM4NJ_nrTXdcVUw0NeDsMBzAV2t3sFGEuW_bnWR6TlK5u28UHVBjHFIhAW8VRivl4lWJ1DGvnAaUySPYjSzLE2uXQlJswF2YprvWFE_RRH02qjphzuSE-7-RLipFbr-mOeoI1FifE6swCTUweALgEft4-j_fIfCfrWZIJR7GU122LGXOC1qaUA37pRR-vCGgG9ALpRt59TZ2QVq-pVd4qVxEHnzckFEro40MQRDqYEXYsyYbRVe842U74AOOAwMKHqV3V85ROfwiTsa6eTpoTYwmRD0JnMwF5GjT2ZCaEG9443AjJrfOMe5ZT7FT19hzUhh4QF8O02wC9I6k0H-JRnRW2BBsysE_7eVVGz4_ler-CFoV1yvOadxT6Gbgi5nzTTHW4G0PTQ3Ij75JOPzYKrtQWjayqP9S5dk30tVKNaqa0RRWJV1FzIvShdkMC3JPiBc8nJG-M6gPwXOfn_s0bSajWZLzOlgr-0nqnItFC4oBBUK05vK2x2rjumrL6uAsACJj1jqyJddZS1-PCB-480zgobplcDuSpGq5VB0gHGUTg2FVeQdhG4EVgeXa-ZvvH1iPjsQqTAFQN0-t-qRWu97TS_ITmaM-xoKsVyqAdbzx4MZl1tQnc7DNYLHlgEoZ2TwEyoZIord1zqNC-odAczS5P1nl-l_cMOnkttg0_QB-9yjRYBI8XtPSrgvz2clHFOG86c3a-IRn3caA0wKSNC_OxBbMluuYYrgaILj3hubjYa6zea8t15WF7jZ7iA8nRaWaCQ_nBHwEWL1cnG470DSJqspt5vL7FGn6T66doNXkg3b7WW1_to_y7FklUh9BbDclisy0GQyxyqCZamjhdkjQYh1rGs-0fIb_Lm1sSNXKP6H5Vlx40lDaK1OJJvf9YuCsBtSKCQTotSCyR1Y4uA0mhLrZv5slaxqlHXGFxaBRkdoSoULDAwDjEQCfjUM8nj35gMFmNWKbUnkBCAqs6LG-aCRUCTZyrKGOfWXx7b4324TL4m3yAhlfifs0LtZYh9H535TeIKoIg9ls0ytbb6ZnttPIcJJ6GLYq1_QOlwcm_CBLX8GbjEQdAATrtVLe6epWnyBoXTRBvhQ=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:26.940271Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "5rL3au-xOYjg0MMP4pPa-A0",
+  "usage_metadata": {
+   "candidates_token_count": 110,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 110
+    }
+   ],
+   "prompt_token_count": 404,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 404
+    }
+   ],
+   "thoughts_token_count": 352,
+   "total_token_count": 866,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "106",
+   "quote": "A landlord shall apply a rent deposit that a tenant provides to the landlord under subsection (1) or (2) in payment of the rent for the last rent period before the tenancy terminates.",
+   "reason": "The Act requires a rent deposit to be applied exclusively toward the rent for the last rent period. It cannot be used as a security or damage deposit to cover cleaning costs or unpaid utility bills."
+  }
+ }
+}

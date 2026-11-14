@@ -1,0 +1,111 @@
+{
+ "clause_id": "c21",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "1783a4d15eddf73c6bac34828779e370b49c95d4487788735c7437a07baeda4d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nRent is payable monthly. On signing this Agreement, the Tenant shall pay a rent deposit equal to one month's rent, which the Landlord will apply to the rent for the last month of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:22.649791Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord may require a tenant to pay a rent deposit with respect to a tenancy if the landlord does so on or before entering into the tenancy agreement.\",\n  \"reason\": \"Section 106 of the Residential Tenancies Act, 2006 expressly permits a landlord to require a rent deposit of up to one month's rent on or before entering into the tenancy agreement, to be applied to the last rent period.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 417,
+ "output_tokens": 491,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "4rL3atzjKdrw0MMPjcjKuAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:27 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord may require a tenant to pay a rent deposit with respect to a tenancy if the landlord does so on or before entering into the tenancy agreement.\",\n  \"reason\": \"Section 106 of the Residential Tenancies Act, 2006 expressly permits a landlord to require a rent deposit of up to one month's rent on or before entering into the tenancy agreement, to be applied to the last rent period.\"\n}",
+       "thought_signature": "AY89a1-yqh3QzaugZFNK2lnTGhPWmNjWHfgMyiE5PW5h4-ra_jND-TYKs28tA1yqQCvTypRg9xH5LE3m9go1W2NSYfSbcX7G-DGQhNfXNT-AjMa-o9OYJ98x4QJmGAm1TiujzUg37Im4E2zC7dhwpmxtOBwRX2ZmBFPfUGPrJanUWgwQmJ5y_NX74JqRT8O3yTd9-imcbOfZiJZilSdZxVIXDZIZnDz82CeMuPFZ_rqFhwK0WhI9lhexYII9Jo3bblj-1aHI_K9VRhijShxQbSpgmeV3kZI98cG95Prm85psbMYB6Ms44BA1LwQHGaIPWO8DEXYxfs8mz0EgmYXLNwI46EZh_pPtM7xMaDKfLrBi_2lxIudmq7Z4o1cfQbWGsi9ehlzr3oEM9l7yuBdFycW055UtQjAUKXVVwj7CUpVSBuVFwzSZo7AaxGjvjQmKzrSzad6LhiB5FuFN48JPkTnJwvavyypGERmpesLsDEJcE1-4eCrImLXwFrwgG4aX-9baKWEQ7JdmukRpHn9yk2xRrJtyCd0it72HPsToRd1U4k7zTA-FRliURu2cKSCg-vXy7KmOQboVqBQ2I34CXLHiqF59KmuFYeMEjtDjGueG3kFR5dkVneF0JuMhRdFuUEvRJo7neHzxvN6LkzxO7_tG2BMW0eByrQpjk7hLKjo6aMX6ltDZVp3sdNsKXHPyGul0fIMXEfGDI1Ubx7LEGXgpftxax98SYOaV5nTMJ397lFuS_9_qrL2aHIACXHFYJup2pwkF85lmXo76LpL8UwaQkObMIbZGBisTKcXHAmj3RQeopcNDYUnQ77e0hg0ltFs9YlEXdLk4N_FVOFDfoaf17s0H6gf_7HG6dgEILiyERi8AZ2_i3YBDlogLFaMZiELOIfWqiAx35wwVgpGA3Kapbl0-t0TBknZzoCQ8Opp3O7kUFPpWKz8FrDcqYjzOUinZPV5ShXgr2ydbwfZYKr_eEZVTfoO8iWaFXIfGHQs5ULo-pun2XV1POuJAfvKlGD2gq214tImWV8h4o43jIb1bqsd-O3iE4napYRZ3kOvTCZOgGjKPZ6IouvCRSPnKxa4ZPYPgn0jARxUG4dWeBnH2-3KHq-lC0Gdj7ylJmSkOMIjotTDefL82opgzR7ksq6q207_p5x-GoR0oi-8EA537iP2bSsyLe2zQOpGmmHpECVVM3HHGKwlY3h5CapjYs4GogJTYR2YBn8ceKgontgoLc6wexp8fYIk-LMKr0CRxNWSPGkDu3z4mfV1lV3zLtG5NFB41AejVQ9r2c20HRyRXMZoXuhntSLCKIm1gCi2zKA4abKg0h8yrz4sCZR87izKJya0mCtixu7dzY-jXAv17iD8ScIQoOMf1xauZyZFsL51d-7vDSc8gQI8XmlmO4aAtS3Ahl4smrW-2X4pQK4au-qk1Dk83t_b-uOzvilYlHOkmRvyZMckMTHm24m_Ws6G-C-ewFqjRvhx3v7O2-4aC8Bw02FckQ48kRRhpPZKOQ9-Au3z3evgLVT59xVwvopD8uK-YWLk5UGtc-Z7-e0VqsxKlylmDJXmB0q4f3CfUJWq0d3V3h_I--Ktrc5Ghp1yOGEIkHaGw2JWKbjLq8kp8JqVss0UdrPOK3nQ04c-JcWogLBnPvwtO9YOD0omne5E-_mJK5JxfGU3GvtoCfhCBOJILLwwHeTmE3YzkdmXkQE057lphDrw0iBRgF_ChiAs1T3cTDwcT0nZ9PjI-iJnApdbyGzz8tzGVi_XhC7mnWd4a-SfjdglH69LT7wGLc6r-zwxwqw6P04zy0YnXzOOcx9lp49vW62UfVrH79laldjOGyt_CoNL5xvi6yxP1MtJYRyYYgllMBp8_wZcc9Yi_jVgu5DvQPNFiQfCHFjyuTjsqrISvbbn_GGBod_fJouWX2tUPfx3H2OwDHOQWmVJdqQnO2kmWPkpw90fVNZ679mKEh_QrmF00oZhUNtpKSqmXMIPhfrC6EBMvmrtSpkPkUUZQjFJbe4skpwu9SkFII7vcQkhcMjUr3eANzeEPYjTl6-2M9-ojnb8kRyMo-6BdWZWKeOpipWKZMR1tk-vieUrxAonBsFLN0c5Yx4GN"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:22.684508Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "4rL3atzjKdrw0MMPjcjKuAQ",
+  "usage_metadata": {
+   "candidates_token_count": 116,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 116
+    }
+   ],
+   "prompt_token_count": 417,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 417
+    }
+   ],
+   "thoughts_token_count": 375,
+   "total_token_count": 908,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "106",
+   "quote": "A landlord may require a tenant to pay a rent deposit with respect to a tenancy if the landlord does so on or before entering into the tenancy agreement.",
+   "reason": "Section 106 of the Residential Tenancies Act, 2006 expressly permits a landlord to require a rent deposit of up to one month's rent on or before entering into the tenancy agreement, to be applied to the last rent period."
+  }
+ }
+}

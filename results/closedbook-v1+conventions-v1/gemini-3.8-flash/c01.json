@@ -1,0 +1,111 @@
+{
+ "clause_id": "c01",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "73fc4c528393a9b77f5e52e0d10a41e6c03067ddbbd59125a68b138221fcfbd7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nNo dogs, cats, birds or other animals of any kind may be kept in the rental unit or anywhere in the building.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:01.887297Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"14\",\n  \"quote\": \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\n  \"reason\": \"Section 14 of the Residential Tenancies Act, 2006 explicitly renders void any provision in a tenancy agreement that prohibits animals in or about the residential complex.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 400,
+ "output_tokens": 328,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "zrL3apDjD9_IpPIPrpqRsAk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:06 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"14\",\n  \"quote\": \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\n  \"reason\": \"Section 14 of the Residential Tenancies Act, 2006 explicitly renders void any provision in a tenancy agreement that prohibits animals in or about the residential complex.\"\n}",
+       "thought_signature": "AY89a1-K1gjEW5RFCpsB2_HdgLiR9OweLU3ljz936wgiImMdBgFyNEtvv5BHKSz0y4JghKGpsQkZM4mm7h7NpYpbdXV9auAoGtX3SFkFriVtuoeezpgmnNzRAeuAeZrsgJeXNS4pw4ZXHsACwzBkWkmjiwdLBsebSaE5T4bZCr-kWNS7YzNfc-5KkgMzN50_WhuT7OocF4WIMkG34nodeKyNs9NEtb5-ja4IQqwSZG-QxG4BWBq6U_koPT8MWQWxlXb7_kRIrkCJ3SqE4TzrXhX54SuJvPjWeVeMGDWDVLhQ642Hns7yKJIjWM6S6lCrQR08rLWxA2OxbgXFpoTtOS_Wn2Q-7tQ5W81NBtSVoYTaSt2heMjCZsAcoiADmCFB0Akabq6lKz7iiDtGccJXgdK_8olz03BO5EebUFi0owkEjJaYZMbzDoE3qh7gE4h46fBUzq8YrXf8SEqHv8k4tgUROSjMTTWKqhPJjO4Al5n7K9uoTjWGzoVkKEmgGHdu6mojgxZjCScCpTsptqA08NwAp2LuSyFsnOwRdTvFghJY2Gilf-CJWUhsUPOJRAqEGiaRXyloH1PiI_FQ5esbRKOCIWCu22sFSBCX07YyFsTR_Cwdg4NGQyJHlcCUkgV9_gTr22Xbf2bWhhgNEU8L0X1TARQ1D8xliZUeCehJVhIxD1EevIPZ8flYhn8S-IM1FAJuEf2EsjYfTuZ0Kf7nS9jjOqHoXYIszphfdxVVlOPbOvrZh9bxj9UdJIUQcZvOuRZ8cZeuWhQ_iuwmGKTzLAUMLyC8l8UgG-M-duV5Y4rbSjWcIHi-lx29530CUoe8z0XUEoZ8dW8j8pwEs1NCsl7cd2Js7wsjZsAYDiECtJY6NXh-H7YRWGL79ymtfPi0-rZs8pJrpC0O1ulRvzDNi599_5qWhZvJXgcMFcm7LGsEo54Cb1MCF3UN_8vtGXuIJSDDblQzRo4Q8Qx4MbwfGBH9XHB0ZCmrC_ybAfTb5knUM6Balhh42JMdBRqOwErcE0UeKbPcnlvVD-vXKrwDxKYDccICKl3RsSnONpx3Ay6q4NmcqwYjYwOU8RxvqO305PNslI6T9egG5bz_BxNJ0u5WF8efQUScbGEqYoxwb54FpOF6JnSLFVF-Buqi-ZpIfCCK7Vm4IeXZVdFSDk1CRAya_qqgiLixcfZRfac2ZyXTqAsXrLpqhSea45T-onoc86twsTkvUp-zh14XwL3FjNnf6lK2tRQx2GAHfHgGjOouBU7Sw9VtL1OBUbQXg3cpejA91hY-TFLdmAwoBTk4ikya0IpwEw6IBt3UXihX7UlC7lptuKKCUTJfJykamLtQAJ7Pscu9S_Y="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:02.258448Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "zrL3apDjD9_IpPIPrpqRsAk",
+  "usage_metadata": {
+   "candidates_token_count": 88,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 88
+    }
+   ],
+   "prompt_token_count": 400,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 400
+    }
+   ],
+   "thoughts_token_count": 240,
+   "total_token_count": 728,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "14",
+   "quote": "A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.",
+   "reason": "Section 14 of the Residential Tenancies Act, 2006 explicitly renders void any provision in a tenancy agreement that prohibits animals in or about the residential complex."
+  }
+ }
+}

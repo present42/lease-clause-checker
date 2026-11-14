@@ -1,0 +1,99 @@
+{
+ "clause_id": "c21",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "1783a4d15eddf73c6bac34828779e370b49c95d4487788735c7437a07baeda4d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nRent is payable monthly. On signing this Agreement, the Tenant shall pay a rent deposit equal to one month's rent, which the Landlord will apply to the rent for the last month of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:57.174452Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"A landlord may require a tenant to pay a rent deposit with respect to a tenancy if the landlord does so on or before entering into the tenancy agreement.\",\"reason\":\"Section 106 lets a landlord require a last month's rent deposit at signing, capped at one month's rent where rent is paid monthly. It must be applied to the rent for the last rent period, which is exactly what this clause does.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 695,
+ "output_tokens": 344,
+ "raw": {
+  "id": "msg_011Ch1wLmz5croxnAidw4yga",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQShgkKEAgTGAI4AUIIdGhpbmtpbmcSDI/WEmf2KbzCLtXc8xoMECzqT60sKzkOzTFKIjCD36Zs8SBuK9Fjy9AVBbnYZEXK6XaIUzPxwKAMRNFGlz266rooc42Dj/iiyDueS/kqowjW6JpZLcdwHouK6PRImnhqVjD8u7JFToCHsIuIQeE0xorPzSGt5QH1UnUwtIG+OhmOcTkJVkDheK6YevQVAxFhiPqYZuBrGJM63lejLZBahq+tYGhBxRdgTnwXutIMbrjbco4OtYaVv2YUUl972KNPHBt2YNzuHTiOAI9IE70Bcc2LTG0Wr96E3FuTDZQfROYiOuQCzJ1Ltt/oaFqvcx1P4Q1WWqL+iW4ix2W2Y3i8m9FZBegrkAPvJjvqRd9fTALEaaeZzXSyHQ+G3TPKskGeXfDCNZUeDrbdFmE8MywLsqQtTWfYl+uFuBAy6m1BFmaU05ta7l4s/D0QBKTcNHjvyD9frYANtQWQoLQo+nncHPwexoi1xELr3gSm92PMOQ1dq0uLvdGD4j401Cyw9aZu9MSXvVTwpJdQFee1WxC4degUFC2i6i2LjYWBqrEUkJCxe5oUEwNJNBJeByIu7zlmXtiLw9aixhT8fmh7lrx8JFHk7J0uQ/6/ZvByNKSSQQmGijqpBihJoAVjypUq1N+6m0gAn4IA7IFiE/1xPfmAMX25l2VWXU+/TD4ue9xTpgeEaG8RV117eLL++eve3/O4KKAkNCbOZ/QxJZ8Il8SJYI/4iG4YYyb7yVY7YVMDMg+t6BEYu1S6xMQHN2uj8K2GAfHOo9NIfIDv0mMRxsUdeDqmSgAlj5NDpEgWvrumuPwc+bYoh+Pyibqix0a32j+jy0jpdrPRTP+uET2qmcoRajZ88ipI5HOM+x0EM+4NNQWWTZsmImk+pXlf5scieevyYfwaW6DCUpVQIbJnL6pJh0NCC8+7NHGom6zpyHbXu/QiXkMB6ApBsmjvI3ZGWw7hi1T/eRNjIKdPIXHHFulUo563gBHeCkmKKuHRed4Nv7vbBxKiU6klUyy6aWrLeNVkxQKwwq3hbaHAm3iqyrI5yjRLNeHYYtCWzWtb5n3qCF/xfjNHXhIWvGaVBVIUmlld7ksVHmVegdqxx+hepAbS9fTvzv6ONEoop7gegzZtuvni4m6/01+PtdTg05mZLXZM+JqR+KWKNTpwgbcplqTVWF5FzYW+wwOMEYxu+SjKo8mJGeTBU6w1GZsOxSfHBxEHoerEFiANztmvYZf+tN0zB6kRMNIjqIgvqPVAmAuD5TbNTbXc+G5OpXbhToKQKglqhsz0ULAvdJfxgS4GBvSAarikfjguqC/ez+Z2e6M/AysCK8yzgLCpK4uAYJ73Elgp9Meh13wUHZcGa1+zU0ewb+FaScmtN+bHiHhylXKU59F3UyXtvaJyRDEOu5ushF7Wle9ny88Ar4q1puJWIot57gxt1347v00hCmRGdxNXjIkL+eBGgZpHJqY4f+o3tsjz6ygorgVH6kOpaXht8RLhYTGKWnIRazClvt42Jy85soZ1A5EYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"A landlord may require a tenant to pay a rent deposit with respect to a tenancy if the landlord does so on or before entering into the tenancy agreement.\",\"reason\":\"Section 106 lets a landlord require a last month's rent deposit at signing, capped at one month's rent where rent is paid monthly. It must be applied to the rent for the last rent period, which is exactly what this clause does.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 695,
+   "output_tokens": 344,
+   "output_tokens_details": {
+    "thinking_tokens": 196
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

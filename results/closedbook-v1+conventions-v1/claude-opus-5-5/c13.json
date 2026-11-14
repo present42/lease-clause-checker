@@ -1,0 +1,99 @@
+{
+ "clause_id": "c13",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "8da2b242326af5f7e67b72aab64fb96bc8a820e36dc381ed7d2c09ef93494171",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord, with its contractor, may enter the unit to replace the kitchen cabinets on 24 hours' written notice giving the reason, the day and a time between 8 a.m. and 8 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:52.211169Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"To carry out a repair or replacement or do work in the rental unit.\",\"reason\":\"Section 27 lets a landlord enter on at least 24 hours' written notice to carry out a replacement, such as new kitchen cabinets. The notice must state the reason, the day and a time between 8 a.m. and 8 p.m., and the clause matches those requirements.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 695,
+ "output_tokens": 424,
+ "raw": {
+  "id": "msg_011Ch1wLQkPHRfGAs58ro55b",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS4goKEAgTGAI4AUIIdGhpbmtpbmcSDNaytS2ioQDZeES1fRoMBj/3fZKY+JZSRXZzIjAOVhYgOmBqPXsHbsd3J+4teMtl//a6ihOXa+EEGWQv3T7Jp86L5NRKAYePkudYDEIq/wnB114U3xt9stAPJc2zCgOMrznRwKbotqFFtcWGjjY6YjnuMwpnJtuy6j/77YgjSNKXUddfeEpqgmFq/IQhIWC2dmSDsDEaTgc4QzVBcfwURTpHNpwTj3NWcq5NrRt5t6x88avahjHWyGzhg+lm1bhzppWS65MoLv/Wj9wZ5FMBBGFbiup47HIxIp0FpO+abgdHhnljxzvHBfpf1wkM1D2QuPsczMlw8u7EaxLLUH4h6Qyz9fQBayAIUEA4LEGDs9ZNZJtjU3rt4V2Y3R7DZxKtTgGzlWMnjYGjWuYZ3lmvtB1oY35Jrsv5aWHnN8IxydIKBw06C5syhpRnHQkIkHaRTyUXQUaJVYlNnR+hk2XWweIQJuF9GWpll+KJzf1x48cglAbL3qW3UEtCg5BhKUw5n/v9re10zJj7g+RYxYvJoC71JAXroMfOvKNmVtLLW40sxfhyXCLmCJm22PR1Ar2Cu4gDZAbAKW1RyCkCLNgb6iQbTNc+n+WsKRPImIflRtYhzPBc+RH/jR7mXxVriV8Jy16CIhRkl8PGGm1imvAhCJETQGiYYCp3uN/WhmsVkK6Q7BWjZl7gQ2Bnez1OI1pi49puPSTD8+At9nkhhyoMd/vx3LBsCi5EzoP5DkoUenE23LC/tTjtFtE6d0bN6DQNF8MUln6TBKeuQQRlOyjYU1F2YmpJLXNhSJeV4AqwVmNFKVgiuLv+hlpV8tqrcZYlGvEMSMmXVSojR1Im2wEuuyN+rODOi+llSiG42GIbjNwZH7zeRrTrxU0jDtt1SCXZDPvOAVqNLdopKf6B1QEEsp4mrmVs9PFctiaM1iFRfKKLyr9Pq9Gn6mEpMsVryWLYLPamIZUq5VOxAYCFsdXVqkjBvukoJLh7M16yRowO4fme2l/LsVT+3kGEPh0OtZB28AnFvFR6vU0W0IL9E5e2NtbuRQhEQCAGOkLF+a2Q3LjJ4T5E5SmylJLsDYSI+TaopNQ24CC/jT7egRI/xEO4RinYfoYffygCjYiv/LDqIvwD5JkSl8WRLZERfP3qxHyJQQ1IZqD5iWcyrc1TASgOMvuplKsbgihofVkNFfcASh50tAJQiTq+zRdWE9c7VQlakWQTLQScKRzKsZ1Kifu5L1H6ctAZi/OndeCs9mqq8gQI5CsyaoXtg+WXDsdNy9h1CKYSB7JNbymvoo/k0LwC8yOHrkG3yri5LQZO7ykWg4KcfzoA14q6nL1RUAPIL/lbiFvA3a/UVnLGg8OF+3u1oqmzUJDsgFwry9/5OZT4wROoWNWMBG1LPaF+7aOiiRQjgN0MiokEHDJ+U2DVMUK8//yUOdoIFrXF/BbVjijWoOykDNWAb7/NqoAhRCiAPhZOgXlMIF7M+6FAzsDcGyZIhocn9Wu99c/JcQwr1PHXfS3uujT8sD4YDSAWk1YLVW5U1AGwXQ7/EMqZmUNbLHXKQ4+ZIte6falppFs/iEtJjadI01mpcMfX+ljuMEAafcgLtMs2rAcgUhmLI/QlZjDmgyNtMZqIwyCHvbowTcEaUXGkctutQEk0np55oT28U0u/Tm7jAgEFRHwiFZMxq4295YlY30fvpKjBBhaBtJlMFd3uuptM7VUbRRJZSWIFyzy/APTm54ztWzYjWbhUVpEejjG1zvuciiWUdphQTrl9cr17v9RrX/fzFt9XnFNBcMMYzKQx4jgChpe36yElCbh8GAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"To carry out a repair or replacement or do work in the rental unit.\",\"reason\":\"Section 27 lets a landlord enter on at least 24 hours' written notice to carry out a replacement, such as new kitchen cabinets. The notice must state the reason, the day and a time between 8 a.m. and 8 p.m., and the clause matches those requirements.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 695,
+   "output_tokens": 424,
+   "output_tokens_details": {
+    "thinking_tokens": 288
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

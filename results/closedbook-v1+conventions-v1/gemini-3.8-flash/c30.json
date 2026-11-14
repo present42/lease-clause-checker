@@ -1,0 +1,111 @@
+{
+ "clause_id": "c30",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "cbfa8b28983e43fe7decf1f2dd12229dc0d63fa07480a20e95ecc59374e95406",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord may increase the rent by up to the guideline amount every six months, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:39.054607Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"119\",\n  \"quote\": \"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed\",\n  \"reason\": \"Under section 119 of the Act, rent may only be increased if at least 12 months have elapsed since the last increase or the start of the tenancy. A clause attempting to permit rent increases every six months is contrary to the Act and therefore void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 412,
+ "output_tokens": 690,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "87L3aqaiBdrw0MMPjcjKuAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:49 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"119\",\n  \"quote\": \"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed\",\n  \"reason\": \"Under section 119 of the Act, rent may only be increased if at least 12 months have elapsed since the last increase or the start of the tenancy. A clause attempting to permit rent increases every six months is contrary to the Act and therefore void.\"\n}",
+       "thought_signature": "AY89a1_epYXTSK8YvGcKv-TZDrOCE4EuYfzHt4UxlOJdu3inLslcHVU-JlZiLYkQuTAExVO8M3j9DFxvOJkIzGrD72ipIifQYkYbiGQyHNqV2Lclu_wkfimUF-y0DSwAC7fySCY7Pyko1y2V1vl22WZdLM-PIQvZ4f6AkBg1TxP1vlQlH3wVqBf_YLpl7eOYR7bYTxlRLqB9_UG9Ln-yHQjC8Fr_c6PL2e2iBp-Ym_UN7jwB7RX4r7JZB6fOOwVdaLqJmYaZmCjhSX5bpRmfNuVhOdRXra4N9ip-paPlXLXu-gjhebTDsoHLOw8ISHDCuHk9KebkC_BYzYwzYNFfoOGM_dA7z-gGCHAH8cruGyMG8L5y-hKjrfi1CLrCuyzjJI3v0vl6Rqr0_VHNyndiLIFxEJXPAzCMUi60-ptEeQSxg9olx5_ZG751CAm62p1S8c6oS8D3oCQx6iHd_LtlXRKzc-Agr8_JFxV8F4Z1R78JJIsNuZuKFK6K-OuueSkROuDyi__sZRicyxmhofRUoJkDqjGG9pFGaTLl5xOBvWW5ErGfaDQ6IdKVCE9Dj_D3oAX6sInNNChsVJ422mxz0BHTXozf9YRLWbCplLNfM_QOXwqapJ513LNDCdmjshKpu48Q7xKnisLkWJbNC6-fKqG5atG-UAX5hl3FJhwyCw6wTKfWEzq4UDcYOOxQcYE_2HHeIzQbYT9P6KQgeSqbeqbkz8RLkTvGjDolxPMY-F7TjuaA-lOa761m31xrY95gHGRDYAZCcQE0AJytz76fsPXpzpTI7Qhw2bHKHBC7Dty4TkdeFJya65h1Vkp6zz1wt69Ku3xhjmE0sTyzcil7I6Nuq7mduQU5fC4TpqaE6qKt5g9HDM6_8OLazosHamDTmMLDYb1J-jDWbBGc2FW-UGOTDeNpcXZhBbmCQkYSBM3WqZTsxGwEoGaVZW1WkZUCRipPgbXFPk0Ff2MBtvzWvLD37EoVyUUr70tY1NSCLq0A4gsla_LydqGpf37skJVPUDILShkch1DH3nVZuq8rAnzxOry1GlnyjA71sEbTmHS4inYqLCwtHBhDOZgONAB5BcPkSQ2QJ8P7aXpc00vbbelSL-qh7NPkNHg_QY0v5d9BK2Rp155g-4aIr2WG4oXW6LqS5kPGNSIvQkuUqgYCVs2AG2AOjiQ2fzzcigdSK22cQrRTVN4aCBD-LIzPZTURu6srBRXXll-f_tJ3AMmmhjUYhN3PUSG8WuK6GdAeP3pdn-7IaEmu4BWgC8I4Wp4KzVBApkkQwWe8744hnlk5ll5vzg4HsdIpSVPE4jedT87NtDsEF82m25XxjLCYevFGPhyOs5pRGTIJMEt-CYicj9t20ywWZ--pEMn-AUwE1vIQp1X-C2iHqtmPHoOHhKaTmuo7Y_bYOMyyyWmKGVo78O2hr4MUB36Ui5RAXBUtnSn6m7MLv3zETNUhZb7dietFNheZFVbgyPh2hBvpY0GAILPCZGc7sBCpnjK2ZI8Cs7xUM5yv8pFIG9KIhlXr5V2SU0XwsyGluUV9ECbMGtMORt4aE2oRGczEAIcOZNlbmFegtQp36N7iFcv9T8UOBKF3fTj6LewUBbzplXKpTiohLDHwsASzggJrynNTObXuqXHxkHk_n_ouP7nHyNIa61U02pVo5Vl5Pux-3E02u6s1M061wD_0nqyCNYSKeioK0Gk6PJuX8W5lG0xR6IABUOOQaCWfLI9L5UTkoNvc3JEYAn_7dO7oVECS4Ms0z1xF6f3LFOg0Ut6TBwdwKIqtjEGFx3C2dG0cFaoDwt2JSiWOrH9CMiGJcQVy4P8Jn2B1TSg63ruMnobthggL04S7UpMpG-UvAg8q07QMKmXs_EtTBVfkhWaWb6MiE0VtoOR_eKrHtdqQzNKBYIC649LEONnPj2BenjZGTFR2G00zmK9Do358RSc5Msq5sopbhKQuccsf-Ua-Pb-dXPHk6-sjuvRTh83pJvplStMI6gJdXNT30i9zJk7QGwMWSgSdwanATm94w0yTZx9rWVCCygtqXBHicsFxPmbur-lLu9qXxRnogNLrZR7dUavUgrGPOnFAPiEUHQmNtH14PHXIawvfyIglSKoq8-0BM79DrghxWJP3lxgKbqLHNBu_0sBb0i7PnIc_7o9hFdlkJwbEDui2qVfF1fFzN3pI6WvA6cofadA8cB8PdIHXx69LRj6LC9H_2AT40uVhdBODzfAaYb0ydIVc4IT3zoFfBGbKmpt1RBneE3lqH7m6VRd4FXTMJuYCuvHzLBNFm5aVpFOnyCT6E2Acl89o0egm0ZZwWhqk55KvjF9ytI0bRMmQlTi8L7nySO6xxYvyZatUEtfYIpqMxGr06cRxWCFoubOwRmPV6vOREZYNajjUnOhaJV_MnlDc5xIF0q73QX7_YeM2bqU3y266bcoYTyuuujRtp2Q0dQgOkM1xNekrSU7ii8QSdzYc9ryq1JgMgYGdPfkR1rww7PQ9-MGipeHgVvocotwc-eOS12KlP5IrF11j7OtkIYzHjy7NXgL_a2mHruxGGjdxDLWPvIeIvupEgePM6HaFn73WiCAgCQ_2dFV66EE-ENWSSt3I0mlbI2xxRQhPYGyURXROqVxLbSSBiIuHOgIPhoh3s2ndMWq4gIm4oTJERABnZfO9d99dHvVngxnW8T1nI2mAI6Mf5NODULFbT7_CdsNFqWvTwmIvBotvJ6SH882C8DZ49JOzq4JI5xJeXBQSGnbmmhbY5ogF0HdSvVESuDFpcRt0aQc6-anQwRlZMepUwBckDuZwyS5QO-XZiCCPhWDW7z5dsw8bNR6GyckPniiDDy5hys0UAM701YaPtNPznjdUKU1212NlRjefulL7b6ZIuj45pqqtE06xF6XEw4aCj792uAphDC0t-vMBWjLwkP0smQXqCL7phiSnrrYTnmaHVcp-mhRCOQLgEfQwJ3r7dRpTmqhCdDiaoW5iXQ=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:39.086310Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "87L3aqaiBdrw0MMPjcjKuAQ",
+  "usage_metadata": {
+   "candidates_token_count": 120,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 120
+    }
+   ],
+   "prompt_token_count": 412,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 412
+    }
+   ],
+   "thoughts_token_count": 570,
+   "total_token_count": 1102,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "119",
+   "quote": "A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed",
+   "reason": "Under section 119 of the Act, rent may only be increased if at least 12 months have elapsed since the last increase or the start of the tenancy. A clause attempting to permit rent increases every six months is contrary to the Act and therefore void."
+  }
+ }
+}

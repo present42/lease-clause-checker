@@ -1,0 +1,99 @@
+{
+ "clause_id": "c25",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "04e356b08adb304f5de200cf907657ba37d4e1574a5125aabb28807bb50d81e5",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nBefore moving in, the Tenant shall give the Landlord twelve post-dated cheques covering the first year's rent.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:17:01.002330Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"108\",\"quote\":\"A landlord shall not require a tenant or prospective tenant to\",\"reason\":\"Section 108 bars a landlord from requiring a tenant or prospective tenant to provide post-dated cheques or other negotiable instruments for rent. A lease term making post-dated cheques mandatory is inconsistent with the Act and void under section 4, though a tenant may still choose to give them voluntarily.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 666,
+ "output_tokens": 485,
+ "raw": {
+  "id": "msg_011Ch1wM4M5HUH3WNytT97gW",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"108\",\"quote\":\"A landlord shall not require a tenant or prospective tenant to\",\"reason\":\"Section 108 bars a landlord from requiring a tenant or prospective tenant to provide post-dated cheques or other negotiable instruments for rent. A lease term making post-dated cheques mandatory is inconsistent with the Act and void under section 4, though a tenant may still choose to give them voluntarily.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 666,
+   "output_tokens": 485,
+   "output_tokens_details": {
+    "thinking_tokens": 339
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

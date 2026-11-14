@@ -1,0 +1,99 @@
+{
+ "clause_id": "c28",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "32c861ca7f0cca86eab5f1947c9daea116fda993a1e6a74061694c9ab58c6ca7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord may increase the rent by up to the guideline amount once in any 12-month period by giving the Tenant 30 days' written notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:17:01.782793Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"116\",\"quote\":\"A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord's intention to do so.\",\"reason\":\"The Act requires at least 90 days' written notice of a rent increase, so a clause allowing increases on 30 days' notice is inconsistent with the Act. It is therefore void, and an increase given on such notice is itself void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 673,
+ "output_tokens": 593,
+ "raw": {
+  "id": "msg_011Ch1wM7gzqauLpenzm581V",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"116\",\"quote\":\"A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord's intention to do so.\",\"reason\":\"The Act requires at least 90 days' written notice of a rent increase, so a clause allowing increases on 30 days' notice is inconsistent with the Act. It is therefore void, and an increase given on such notice is itself void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 673,
+   "output_tokens": 593,
+   "output_tokens_details": {
+    "thinking_tokens": 442
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

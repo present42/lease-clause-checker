@@ -1,0 +1,99 @@
+{
+ "clause_id": "c08",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "5c7b43e32b05bb37b2bb36fa4da93aebc627abc5d60c323804d240224635fecc",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant shall pay for every repair to the unit during the tenancy, whatever the cause.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:46.127898Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"A landlord is responsible for providing and maintaining a residential complex, including the rental units in it, in a good state of repair and fit for habitation\",\"reason\":\"The Act makes the landlord responsible for repair and maintenance; under s. 34 a tenant answers only for undue damage they or their guests cause. A clause making the tenant pay for every repair whatever the cause is inconsistent with the Act and therefore void under s. 4.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 659,
+ "output_tokens": 504,
+ "raw": {
+  "id": "msg_011Ch1wKyY59StkZXcDwrKzD",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"A landlord is responsible for providing and maintaining a residential complex, including the rental units in it, in a good state of repair and fit for habitation\",\"reason\":\"The Act makes the landlord responsible for repair and maintenance; under s. 34 a tenant answers only for undue damage they or their guests cause. A clause making the tenant pay for every repair whatever the cause is inconsistent with the Act and therefore void under s. 4.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 659,
+   "output_tokens": 504,
+   "output_tokens_details": {
+    "thinking_tokens": 346
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

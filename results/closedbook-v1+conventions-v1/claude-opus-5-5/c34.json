@@ -1,0 +1,99 @@
+{
+ "clause_id": "c34",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "7fcc80cb889d632edd66580debcdc9f9d941893c23cca6fe459086a16626351f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord may enter the unit at any time and for any reason without notice to the Tenant.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:17:06.754253Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"The Act allows a landlord to enter only under sections 26 and 27, which generally require 24 hours' written notice for a stated purpose, unless an exception applies such as an emergency or the tenant's consent. A term allowing entry at any time, for any reason, without notice is inconsistent with the Act and is therefore void under section 4.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 657,
+ "output_tokens": 572,
+ "raw": {
+  "id": "msg_011Ch1wMUxfdJEx3SbobmZAg",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"The Act allows a landlord to enter only under sections 26 and 27, which generally require 24 hours' written notice for a stated purpose, unless an exception applies such as an emergency or the tenant's consent. A term allowing entry at any time, for any reason, without notice is inconsistent with the Act and is therefore void under section 4.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 657,
+   "output_tokens": 572,
+   "output_tokens_details": {
+    "thinking_tokens": 410
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

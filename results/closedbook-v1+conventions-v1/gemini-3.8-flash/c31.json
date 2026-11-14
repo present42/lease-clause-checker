@@ -1,0 +1,111 @@
+{
+ "clause_id": "c31",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "4d48b4c9f9b9c460f866a00d5e6039fa3d0c4803f8ac468f1207f407944f70bb",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe rent will not be increased during the first 24 months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:39.463995Z",
+ "text": "{\"verdict\": \"allowed\", \"section\": \"119\", \"quote\": \"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed\", \"reason\": \"The Act establishes a minimum interval of at least 12 months before a landlord may increase the rent, so an agreement not to increase rent for 24 months is consistent with the legislation.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 392,
+ "output_tokens": 978,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "87L3at29Hojg0MMP4pPa-A0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:48 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\": \"allowed\", \"section\": \"119\", \"quote\": \"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed\", \"reason\": \"The Act establishes a minimum interval of at least 12 months before a landlord may increase the rent, so an agreement not to increase rent for 24 months is consistent with the legislation.\"}",
+       "thought_signature": "AY89a191aEnBs5WXW357qraFLKIbL9vsEWlAXAnsasa5YlwOManaXp0yaqrP44ijJY_9BTCmdveHfWYblehfdSep7O-c8Prez2x-yAdp6QVJ3Ihp-JSN0SsDSBrhui6Gbv1GZ7Dq-nbyKlSpfRYFsq0E-HWFc8DDv3lg6J9kNQVx9uYBS9Fv872FmWoRFrrld7zxBnNRnpfdeC1JgYyPLhsDeqERKExH-xH8KL0uWZDeTU6P4JPqX0szOePENyN1PNlMhLFUBd2RMymhCewEF0MDJ6M7atdvls2If49Ld4-3voM4suKoNIi_GBMLLz-ii2mOmM-Lq0idnnA8Tky6juCStkvmnnJojRX66dyXR_xiM0TQKU7UbXwqIQIaz99RENVPQWqAtezVw6bAY0sDoX_o1NFw6UNhi75AgT0urOBbkePhGBRi6zmjN-2NF95ScvnP41A8Wcw6YvEO547jbwzzicP_WQrSWoo_DgyZxHAdQ6KM61ISMnNgqmKblPFPOm6vUXXCshFCEmqRRUGfZIHmxIT9m8jcWUfr7wUjbR6bHYx_kf7pJFwGuqb1LRXPmo-0AwpoDNF-8hPnad95dprba6pmn_lfvQZUi2VZVpiGIOxyy3JVomrZDmVwHpNvYXNDDd-cYKR3OCgD3ECgNQS5VXLgJvPbbRGYhQIkxn7uOCoXx8zsgy9i5Mp4V64g3ebGeTyMArbH-wkg3e8uGKL4Ht3efydwydr_IPJZiIsUiHSw9GlP1e5t4_nGycutGBEFAc9p56oFAic4xglZN-kZ31_GfNTFCQwppG7iESt9SwDUQo8bWAzPw-Mz-iXd6M-oC_OUVXAjEhVjAHnLMHsP4d_KMlVhkMqb6TBAhfJ5KtWrYxEvnGuwQYmSbSss1Ftzpo9l4Fc7l66HihcqOwCFMqs0GOcoayDA2PoOMEIkDWanJMT9Hpmr4oB86-OyPEZ11-X2eY5To1RA1QddzCSL2XY531dDqoTzonCmwK04SHN8zprX1eOkwA8tWkF9kMIp0IU2SnQshOKj6vLpYgqMInI6TrElyujwdfi-mZ6-ie8PxkP90kxZBgl53Q6JYQ9DApxctLnZvyPqB5iaGyyyRnBjL3vWrE7af80Z5yQyW51iQVPq6wZoxE7OC3gdsdCASVvENmJfEhmO89GDKg_fl8Ll4B1N6JMTbrBFSyX37sLmXle-7nrUCT3k3lU8gVLP6OX2WS6i2G4JW40o8N6dIZTxEGYj647IRC2LIDdOj0fqqNvjz2a3loy6CAr0rNhCQqXunnbMSwbx-ztLpXKs8X8DVAtctGs8oWHy2FsYKEfcTaqrAQ1v7vUm4R7kVHooUVQRDS0xw16pmeoYq4iZ5hazXAz8tIgVSlDU1Rs86X67U0dmPSoybzB9Mo9ehgUFQd-OuULYl70qfSlDXbVnIgDuDCHNnVu8_TwPx9ErLmt4Ty3uk5BUZc8SU-Gf-5lleLDe-J8r7fN5LEEzd2J7RQ7YU--AIFul7HuddhhqRccF4HcNGhvYNviotNSRvdEUMnIhTmRoyW0Iq_gCQFMxAc65nQmDthELZIpl_hkTvFyR9XdR3V4c7Nct5NGTAkhxjnN7QBpvwoLBMJWShN-o-iuO5JCTWgfb5gLdyrR1c8GXwJTpFVNgvHzZDI8WG1Z_Y_q_kmD1k20viIzRsiDVdGXsTBy00ysCzgAWJ4AF6wg1zsT0CZfp4l07wVMN_vGNcYkDi5R5TDLM8Rd7d4vE8UKYfcum9Wudj6RcEgSPwqRHDFjx-uTJQt3nncasGHJBI8aJVmgulmJlagaPyQG71WUJsIma0G5tTz788ubbeVwWJNMMChXGlywiXIFw7pPMFg3NG1l8bE6JulBsWD-gB2WcW0VqJukRT7R-4Brs8iG2OC2BMzw5DoswQ63UP_xZeiLIehqgz199qkDYgfpTjUd0RqBPC1rLiCvZf-jPPhRh1Gb3pzTlkX_JPQetNAfu-1ztetP_Wp14g18lRMu9uuS-gjXTa5AxvUJWbr6poDfYUgFtnHX3VstlJA9V9mnJeXq8sgN_jSWpIZQZa_NIfzvRg1LA1InYvM2-F4JlDeUNfxP2MF8BJopifTArtiU34BrFad2OoovUfctlDTZfbksjtmUWWzbRgCzADevgOVKB-PEIBZpzbh8L-8S-ZDt0YgR4SnVVCcehme6dPZ7n03NCeX3ghxwxHAAzjY4UoNtHYNFwcM_R6LFSYEhegu2KC7VM9kfXGbl4HOBfdeV7YakNksS9F7d80955gTgCGS-aShG20-fdbKpXAF_UBEiK6sHxKDZ7SW6lpuqVQnZmXkMzCKRHp4gMtM4-kmardmtmh1ljGSZpLSZ1ig5nVnkJBeH5wxh_NRNjyPcmU6UP38qhKre_6RPf2WysBMAqESJ2BD4vt4tOnf6EWaWzEes1tAbfCXPuSKUhm_OBwBuyevbxOqG3b3PRnl1bGg1cgTxJwh_Oq132u9Ts-8tor9dlMCJLVLAH_HV3vWFJs9fRrjJdzWMPVACtDsL1OrDWyzyP2zKZC5NKONqPd9KDpzXO9BVal0TE_4UU9U_fNHa5JkFRWe8YeG2oWAPMYDV3moVhjequ-8G3ozSfsAbcMmvJebc6sHib7YsI_Rr6T59uebNVlUUHUU8z2zQomM1g52fDNIAFjAein1lvTgSRxIdlGhbhyMx6WAt6zX3dXWN1geZkyF_LDvyQwwgSz8QRN_WsVYRyBMBv4gyJ58hdkI98cWeHBNblaRoGypG9j40UnnAayKDy6CksEwsM4hrZwNXnHs5YK3Yc8R35AEDhdB82X0yF7ciY_9CVC0QeylFGy15qzvo_hkMTTu8mudu3_USvEo_BwoLJ5EXTbaktfUrFx3HGWCpevMdsRW7u0sIdoMgnzb1trHbABekA7p3vFL2SNKHmKFKLQLWkrYaBCE6e9w2anq8B7A-wHSRCHHc9ggei0UYjOWi073jTNvqfbYEmPD5QnQwL8M0akLvOwYFhb5wXOKXA_WEjHAwa0qs7ZGMshDporPEVjSC_EYHuzlhtWXAB3GBmXTS7TP3Ta-igCdHqk0V1g8TV_-9Jxn600vos4wrDGqjCSY6W7fCH4auFZWeOG8I-WaOAtUOWm3hDD8eKeRhzIR4PRs_JL7bFoKDPJyuWhkyZJVvH5i9amdL8OtFM3WK2s-6PwKIdeJQWF8JKWXRnwmcGbpBDjmclN6KQEsfsKVdRRDaWqmUy3hJBjgx6yhZEIyTK7-W4H1DkMOHP9UqyCNIDBrFjwx287vjqsMBvA0OmZoWkAs0X-u44FYk-ii0B2ojENFOxZOnJrKPvDkoBKIdikT0bbVap9ePHA0nFEJOPr3rEqhblGd81rQ9bvEoYXDIcJnFCEFAprTAWmekKjoTxC2s4h-WvRvxpQRC9mUsA-V8Lzi3v_JRnvtu6Df7hcD3gxJPaQbd74hfJvdrLH31ekux-QQWlR2IjHBnwVPCxfFDuUWB0O4p7KGAGpkRZ7SSA5k4FL8CtQMGegkhCgSEYzvZ7eaJtRfjpyPXkMUl5dtxaixNih1mFYGuubtiAlZTHrTrJP65rmK698yqDzaxrxEQmdTXvzZ-gWI_ENvGC2SgWwd-enY5zVrTcauWQKgnbwS2D6eY9p7trPmCY4kpKmD6Lng3IxxulOfK1RpDYErmmWpgNlmluDItQx5lQr9yl_7hcIZ-KXtj7zsLHPEUNxmdh2O9fOWYo_7uiIQ-9a4GU6Yzh_gWO_kUEkpCvXG6AUFvxngyu9_yytijh9oQUHl_eBm0If3U0dNwke4qvmdkQD5ThQ_-x5O-ww2gRLRFQcvS-povTzwlQE3AsIYZQfbYS28teHmIBF5cctKwYsnSDyz0fqF-MeJZKmJUGqVzAQTSKtKm9NnpTu61akUO-Keb3JrMbQQmLRg9lTSqUzQJDnjaODnAO0XphCkuwNuJ2Vj-VrkOXdEL2PXkZmQM1x3d0bRb1JhtPJm3-BX2BLeTrkuMNXix6a2jRPUOthTIKPhETLbooonjRVaZ3TXlpE5SJbPba6OiCm16PaoATElXyUxH2PVlKPjqWlVAyUuxeIFz8jdDuDMzjKg38PYa8j8898XpEc2KTUPJwVpkUGhqQzeBcRlP43l-o_paeSJP46AwXiSmXPqdK-6hSjYzgksKAhzwmaSZ8gGdsMkhB0SBZvL7sFR1w2imzOo1GjXRfpIEZ-MguS4rdTP21afDhscBPtywMRM3eLly_FMHE-r5rLwI6urUyTh0S9dAGp-H3z4IFYCkUvEOc7SAJoDXOkMPTkLJGUZpl0x8JlCRtTL96ABAlYlaEH6jtGkq03rzjieqtLteHRm7gryyumuyUBA4UtFZN6X9FURJy57uOaz2_y2AgNJvtWb2T86pwIFGNM6ootahL82VwuDepxrNnSoWLvV1E_V_Z3uYEv-zDVlgRrkI3wnuOAQA519uOn7m4tFiRP0_JBrpfhnbi0HK985HOEwcxnDlst5Pqphz7d6-ZViZr94kjBDzE4RTBqVRA-XA7k4mxoatiV66Nn9TPpE5ef9cU2q07yI9bhQ79V5JeuOQ0fEGO894COk8W5Re5zWO6tjwIk3jfvyK_QsJQlejBPbI9n9BrS2XMQljQC2ni_D9X8pQ8HUykKhRR0zz-Ic1WHHEST23uFr_w8tSxTIa1nS29IGOYoTFf5deBhRgPtRvlNF59uC-L9Y1TU_x4KzPT"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:39.499421Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "87L3at29Hojg0MMP4pPa-A0",
+  "usage_metadata": {
+   "candidates_token_count": 95,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 95
+    }
+   ],
+   "prompt_token_count": 392,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 392
+    }
+   ],
+   "thoughts_token_count": 883,
+   "total_token_count": 1370,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "119",
+   "quote": "A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed",
+   "reason": "The Act establishes a minimum interval of at least 12 months before a landlord may increase the rent, so an agreement not to increase rent for 24 months is consistent with the legislation."
+  }
+ }
+}

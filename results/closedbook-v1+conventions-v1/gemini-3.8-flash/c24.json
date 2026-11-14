@@ -1,0 +1,111 @@
+{
+ "clause_id": "c24",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "0483801a8d5d8fa6357b20cf82c059e1d10440b3843c1922bb36b48701a23ec4",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nRent is payable monthly. Whenever the rent is lawfully increased, the Landlord may require the Tenant to pay an additional amount so that the rent deposit equals the new monthly rent.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:27.732819Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"106\",\n  \"quote\": \"the landlord may require the tenant to pay an additional amount\",\n  \"reason\": \"Section 106 explicitly permits a landlord to require a tenant to pay an additional amount to increase the rent deposit when rent is increased in accordance with the Act.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 410,
+ "output_tokens": 1773,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "57L3avmSL5T50MMPnLmjyAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:43 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"106\",\n  \"quote\": \"the landlord may require the tenant to pay an additional amount\",\n  \"reason\": \"Section 106 explicitly permits a landlord to require a tenant to pay an additional amount to increase the rent deposit when rent is increased in accordance with the Act.\"\n}",
+       "thought_signature": "AY89a18b9ST-xynhupolpO0xoOsxNyClxQli01vFVqNGliZEP1bs2IoihUolHgJ2jYD7qzW3ZZNR0FCGBTBUKWmW381WHrFjlB4Hk66Tv8vPwPWlppmyUS_cNfybUgE7qleS6eGW_lD-BEk-dyv8LMJhoSPvBp8D9IuAq1rUfIEc80OevKuc7NcJ-yVgtpIioiHG8xkaBo0DbEj463omY8HUCMFu8EC9QJNkipMW5ORhrHsIu7OsnB2DHK8ErUrPemLiPwaa1fKjjW0rnYlDrJdHCJLaTFR2OZFQ_kmeJ6tZNAEMaz7W3q0SiLe6xfswwJ4iwBiU5_VppZYvqaJDnqTUeWoKmcg1Pt2SVdqpWVvyo0ouoYDWikJQS9K1mVTQ_QsjA1s8atsC6p7c9ccFQYkig2fjIohXKI9SY-5eE4KSewUEnlql1OYwU0PcSSNDFCwlLG22EcyZ7vuLDx0NKt0z3ril5iOYbU8WKiqdsQgBzK0qhVNpqdfpzzFB0X2sxsPghk5uy3pemnf3twLTPJdfu_UCbnWrfDhUJM1JL4Anq9Ztb_vp0BTaeZw-MZ_AJj7P2yiXq_RTuNSohqEIdkOFSt6QpXGUAw3_viEoucJrmf9Z8AFJ7eoATMamVKG82-MkHmmSEaECgaQzB9yhGgw7ts80_7JWnbTtIxaq5jc3buIvlpRjxcLtFhTA_kN2cRFvK-u1pwxrO3qrUQT2aXNTD77Rz9UpK0qkvie4j0GK8GT3Anyw7TfdCfKAdvmdwoLFBO-dJhC6Cb79q7-xpE3hoSUbwDzZzB5LIYGf6NhRsE3uSWjdTkrUqTsvyoTEv-A5VbzskAw2xmamZcXnt_ljUQdfkSCw_8-Xo1Zv-snx_zZHpjRBDzdDv4z0njICPN4QfdssElyXBnrp0AD3ATGsZh16nUCm90W7gIC_n61R7s0XPyPlEnE9ReqRf0VTuLGf8St8rm94DvEE6mDo16O0qc0Jz2aLJdG42lL1qP2NIUyFQPjGUmIL_OnxRbDKsSuFHAUCjh4TWtMBCSOVzqAgxxY5MBlVe2X9PWLMiwx2KJ0genkNj7bmAGB_F1mwPj79f_2R_9SQn8hAAaC_yzTfYNBWU8c5s9NONgv3X0u1dptfAtNwFKxWSR3naJBrUhZ7B3hg-8vd7qNrTnZFL_GhrFgUOH8s7NAOBCf1SL8aWLAagEE3FCq4HjnzeUukLKekO2LCYVyuubFtXf_MXHrzYg4w89Qoko2SPft3YmY2rt9iD-aA3AQDbPPNfqmFoJiYLfspJNhIDy8yi4lKAO3H0qIGyvmF-LDIhN9MYDw-S6244x4UnVEABTObclUToYj6iB0SpcSOgfERiVp4A_sCaB-yslBO8tHLAvARh4a9r6jP2vvKBREHeiMVgk5Sq9LApv7bOXeE6wPtHAkijGmVMdu47ZRckb8aSa-dMBi_jQax1L3mIKK3VInlxAgQ92i2-gM-7CNMN9SaqowifLG9REP_2I8nxQ2BD4ruj0Jy5cRxUwiqGRjhwtuQECixyxPxx79mGc1qR4BfDqRJfLQsc3A1_UtX1BptqhqMeE0U20REwhhBKfdG67SbEVnQblZgsa6XHnQU8aWSa0_Ftg__z5SVe9sNDGMBuyuxBQyigoXlFKU1c3sUJH7plEVbzkw9Jkmcroh14Um7YvUloAOSjivlHZfBXJ4Aw4o50jNmmIs6Lrh1dLxQbRP8KP-K3oyv-jjKzShmyo9WmqovKLjTEj14OOXhyoxY1tLLyz-XayLzTP-cZZCINGyEebpx1zTYDcCwDSM7z2x-lGDRZJjdhvQFhouT_A24A0rAoXOnZQ_Qa9tkPXD3Wizl3c7Q54ZR3GCcgaWpjzCGza-aoUBcUnfPwNTb05kZ52PqoQ1gZo3A5kH6OE62jJBWKq6se86oyQ52DRWtjUp8IIP0kNmKgVQl-1azf4IC1NDn2_Su4ZnItkvPPvT6lJetAEUV2AZJEaUYEwWNF0A9zsJSDiU3NpujDyuJT0bFUjRJgqTYkBiAkMgqYdqYqoFNUIBCWtM4Lxqu9pz1CaSVBTeIYmPrkWreUQCZbQmXbue_klI73v1fDRr51SC9BDcMM22M7ESev9DDcP9BicPwK1rk8y2o3Xm4xEDPVLXVE-W3Oz6544N5K2sv6KHbgxkkxtfgM9gf5TSBmRyklb_72Hk6TJZuakiTgdsDlPkDF3TiQcthZYOrRf-MCxORJcODMdxMp-g7V7Ln64t_IKDZfF3KUz1CQqhrZOIh7Ws4qdJ4zjGUCEyIAlyvFKQuAP2e6C5IXxUdGUtDjOqW91LrhxVSQ8kiCgfFXqOQBAmrtif0TlAH3MY0jzBujB9MT2tFCuye-jhYRK_O_bkekRePp1MFRvIUqiugExl0uIaQ2lqBBMzj6KtJnootIyUOFJkFIT1678jEGlSJPdPZ2qj5gOcDh2azaIJ549Nmq2xTn1YBUX-Cuzq8MCRisDFixtXBKijS7T92-OVG9DeZNbAqi318QubVSN_uOJcffIW0p4a5jmtHvfM14IYJenzcUGXR1tOvXl-PFFoDEuXulQUWoO4XxtXaeZ5cm7Xo0iLiuH6Ly522luWwGV6hh6mTu4bZOopE328FaN7TF_BfB2dwb8N2DM6EOoVSglC90FG_j4geeNP6ixres-q94ABZVbcFxNvtKdEEsbg36D2wtlI9FmVILpWD3J1THTU951suG1lkA-3y2I0OjEtYk-ZMGG4Z1QNiQ0bt9CMVPS6WzrDFUkMQmPloJ5G-HBhKHCpL8qhjwFSsfgt2SJDA4ZMrWQpaI7-k3I1kPj6CD_Jn0_IHCq7nfFR4peb0kNeJn02IVmrDyt_tbLpihY6ZDXqvjjdazBhoyntUvIjHEHVkwzHqafkQ1g_nHG071vUQZy3HsSSPC1kYF7avevDiQUbn4z0iWH6C0UnLM5b00v-IO_wLhPirLhaGlNM3zYB2pTTqH9Jm_tmCo-mAKBJjqD7IsceI2UfjExevFeCLBqvSgWGe4Gdcfv7AKdFmYEsmkwyEL6HnfoRkmx-3WNTWLpJCY6zQIQAGNWpeGHI42q_reKLfK-G8LWHKrSILyHU3Wn5i-iMWJrRrEVbwk-J5bk6ieLeLefjobrrWMrbqFo-XbZuQGVvNPb2hbbdmmYncUcoSE96h8M2LYl8jxd-ND-kzwe7fveGjG6JzI72P93FK-bSWunf7ZaDVoOfvIh-H47Zsp4mEZ_lLip0cwPi1QTsQJTXYYjRN-bBJPsVC9BylnOXlNpyS4h_542WDxkiZQfgC3ewDkJpXdZW5IJtBdWoZzPkQtdMezA50113zvaDbA0JNArjlDygnyFCizxuYkWeVbV_iVC80pfAXzTWnEPJJYP-wtckMHYaqQD7FECGPl9AoXQf35153DyOSF8qYHB_zC-03zh1JqmGYsTRCCvJ9OFeW231qPpqqzPQol11rT1qBfeXN8y7AUdV2BQVKN2fNJrxytjq6uqjkesZpo3GT91Ev448pOgS-RJQf-e40YwKIImAgVBAkhO7ribJ8LBwY38WL7EsJYLecBi8FV_YNeMjQKE-X9-mCzRCDXSWwfQ9V-woA5vmpgHAKkLOGuLEXMmXutZ_Ic5Qo60vclY3_pjCcLQ3_9BDHh1EFBrzTBLOmBSvGzf0ygWhBvJoLf-bbgOaeocRFrvG_N90hMl-TfHVnkSXxxbZA8Iptxn9TYNjE7UvyynDSgEyhM26PT7uyTH9Zj4ZfehptRUL02grO6DgccLED-3H9OJu8x0uMEiGRsTqBDYGqwbZPH-FmbMEQ8gs6V8Lwk33HuBhk3rZgW1p5GiGWmOj8Ze37juBmGHafjhNIivsiKqYuyI--YADNwhiwFpHx35p9jXSiCyM6GcFMD7LktcFwdDhXNiR_s-PqBjw2fka3R1PuY3sIeFAWd9v5_jTNZ3MBDsDV1qmWzO26c4GUGTr3EN97NDZGHOayIZ7RYaMSU49Iwv-i0HCubL2zG-i4tVtRUAv_mX6qWCorMe5R4Wxsak7QTCBXzdW-RXK4humMio4fZ2NntPNZEHsSXu6H-6nP_Nb_Z4f--oiZZf1GMHEeXq_VguYJg-q2XyBP2O10QM34HocZEh-vLmloF3DKIRuAlmORRcww8s_ScdJNI1H-Oj2gUCMZ_PrR3z1kRbQwUx3KoxIHmNjxt5Gv5ByVHkUO1UU6Te18zU5S_JRgAtN2TF4pVr2_VY56AIK2-nOVCeHZmE44511jDAZ0sowLtjjZOFMJzJmxL7fE4OTW8ekJdv8-07-rUVIWrVC1i-vIkaMltICznfWGeDharl4a-jgQP0nf1c0NNo1o4DDiYOtdjGkGs4l_alZRfIaWZTXOnsQAy4UZei_wrladK-8txR9aU8uI5H9T3sD5KQ6Li4nxrBUY_U4RsUhg5kC7AJs04iRCiNjr4fnviNwvo6W3QR9OxiDPIOpnMa2xIvCpr02dLUwZkHdtB6VrobwrP-8FxRJZ4dLvxWoI8BH6RY5Q7JfMG2twepuZoPrJReiQuS2tjjzo8JAjVw98Jqx8x6YIDsgawf3X5DcXpLe8Nu_Z4-8ElxTkN4IDO37QY9P4BFe91oa3Xpf66Gyy3HP_kJVZtr2K7pvAtOpS16B1YIUkct1Q101b2wBgI4SCbJXFFYZfAPd6Kz5yfyWgB6eKgoKrjNp25l0wAAKcVNsxZlXDK8fgu7uhx7TzstsBo0Pdrm1yRLeKhoHdubqJ1dJck-iZwky4W5MuGo1xPhLGFYMjKojthqwNK9Z9nx4M3YVmRycYndXcvjKhWvM7uxZNGTgFq8BjrQwlQTkga7eU3WeiRmE8E-fE6eNd0P2lyQsuDc85VEk2ULepUcrCMn0dAvUK_D3EWFVy_NTJSQsdBm6A-yG3rwtigmOdNZ_jvIBCzXlT6HKzLCCpJOixC7Ntsu4vaOTKX7L3zeMKdiKYDOnNXr15dVxmfJxYl7JPste8I4aWiOQ8xZEqs8R0bgXw9odnN8nwD8LQ5pD9EAhAmIUBCx9ca1z5d3QyCRkTAMGVZEAgUM5SnTCdA3JjMuMhLU7Dt9ALuMVfLNbh5jIJ-eHjMaHpp2GKZSByYwvxbF3LOOUXc2tmit4KmbchDNiwIgFAiBTohKbxJqjO_iXUr8wPPAw5q-ABhyYL-ClBryic8FMoJAb-pdpMIolc7EX3vxav0V8u2OjdcUxihbJsbRlyRCqeZR_jnrN82M29c1QTFbacEJtvKSP5h5J6Zzfa4wMtMw7p2AymM3gUnDO5Q7qhvyMZhDBP88robVl06AiRwdsHs-9uG9WhRrHALdohFDc-CJxM4kk5lkTwKmAF97GI6-ikGJisQltG41ML9VQhMbBvWUYbDPXPJy-1RdPdfn9Uj-SlBuYefZEBdDo6M7LAwRieZDh_Gx--88d7v0rjVoq4jqak08pmK2WMWeB23AJBMLBKd4q3q5N2bzB-0cS-uvBQS5YkE4GJ3G3HjP6n_roV0psdoUguGpLab-Qvpyhrp9xNuUST-vyfkk6y18uCchdaPrnfMQ0D87r9AaF3V6E2gnBnTBpI_DHOzgXzhcT14TkRQkUnJkkwYqtFGdeVpzXttw29hwYC-8arAh-PHCV-ks3F0UV0vKObaIxxY61lgHWWUGkevwbTH27wT0k6sAOJFY47AZhdIVIYZgOEWQIT11qMz8fbPMyswNGzdyrKTLUJfBuITxrXY5vExm5NYipVsdyAXH_cRumFO9w6-_g8cIVVIe8JKiGN5ehlILOPAECrcpygDE-6pW8OSGEvH2LsK88bPm2B7UxoLGjTQjvqdPSJQkSe2cTXlvzzgfNDAMmQPKPxI4TRxsnaLH7kl82t9Iux98_YECb4tlN1PopKKvWFL-ehJgfxm-38BQ_82yyrQeLKVXthkIOjPs2Ufq3ByJOAmS1yX9AKs-GzpBikzZ-22adDfbyNCNPDk7AYR7TeK9UquEoOQ7XBQ4y2eayYnJINk9UdCd_IOkUa9FI1LSsUeMao-9RkORf1CyZ2NMzt-j3ooKFfpoDmTB3lnni1IruWtA3Ef9GNKJXz23iDZJxbS8zlUNauCSukefU4QrCbTz56FdXx31JNZYF9gGoHXv7aVdOoXkQAPQe5kEZRoHMcS0WOYZRrJSc7SWnwRfQAuaYFkAk_WlElXPxEbbNwzzMSzmfvqJgTVJZkAKlnltxBLWuvb8EpKHtfY3pg6aNMhapkkbuD0V5dFRniP5EsKGhr1pJHYYTZDpX1RJy8-8YWV9ooF8fKZyHFaklyQokdKzaIDED5F_wOKfb_vEiaTHrSq3ddCy3VKVPWbuobr8fAKa8BLfp7QpGyfJ9FM5c14SqFQmiP8ApO5yiTSqHMaF_RMEvC-Px2xYg_JAfRNpZy1ZUYqdMS0GTHLf9C21Wb5-4xv9wKH_BGtIgClCiAiF7p6l8CSmZAPoAAjB7ZusaotUs_oEI_Wp7HyANtPYb67pKSZYW-3q3zSP_MbflUSSgZsUBt14g-pVYPpm9YusikFarKtI2GQcfzDPzxfV5Et5lmVslZXbYdlFCkWVtDq3ZYmC6TG9HTY-OWi2bsNZj6Xc8GRkHcLurTFH0qL3Wf-z1Wk6Ezu_2IXHtp2FtEonudbUchjWM4gIu5E_o3vQVfibVmME1IBfap7lmk7Uh1AkEzmEVbVtIikAnEu2DXYKwalyWjJtQRsRd-C1zd9c0y5geIQFeJCKrY3xVmE0brPCTB5J1bdZ7uVuThsRjUxcNKn7uiSPcAEcbecn8o5ROlZw2etnhIoIeWjPcuZOYbop7AfZ9jqj6wtWhkEFy4zfKTAOBKLrqXizLZYAGP0hXQTlM_gnBJSPFwbLUrwiA7XwTk5AKQr06kTybHwFSZ6iR4UJtFvYEXIpS5oGbqP0J-F6dXUoYfvq8WxqRJqzNHt2qK95bIfMvW6tuclN09lb8fdwsoX76btddQcuJ2z6INL0xfwocsSrItga8HDBVxv3sSjpkSuFathM3Y_gvvyhTFTBREkkzqWPs9Pz0A5HCzneUczqVh63drx5cEn0fsXnr3pi8f1neQtZtEe7pTfuIEDVfyuJ3In8Y7hdZxuubHkV9qUsH3PWke5qkv2RIfBqrnBWKiqg4l4spGLsRkC0Q6GNu9hnD9avp2N25YU3IJOnaJvx9pRJDbw9W-QYHVowyOmiXoFGCNG9PhmNU7Td8hC9K4sxU2d8fsWX-RimHKZJQNjHO0nklsDCYWeDLZ1is21xu4qC70CNCB1nQRT6Ywr0or-Bb_vANVdbggta63hV0amVBaY-bHVdUCAb8j2tDzS1SuSB0YhoiAAPxBmID5dbsSi6LUlv2Y0s1Z4yRpMolaxvpwTYCx5-ZxNxdB_6K3LO9NgkPJAJFbRJm4lwVzMvm28_OCYdgidl3aBUxl0AEIYH-MpHbEVJuK5pVZ6yOMHU0ou70PwcUKYDZlndEZVvZjotFwQRhCJw1hf0wnOlL5rl5kSfdPY-uSAUxu46LfP0ET2Ioav6yWkzt4Cd9PFQk3t46oE-Qs1qDVVLGb7kzS9RTik5Lkou7_l9rN4_rBQE36mbe0DSrq6aHsV_wiZc3cHzPbziEGLhPi06WFbUi2AFEdjywJO0DP3tOlfCaFg9T7F_iEftf7OD-Zj6ScZ0zwKs3k4b6rQqSnuVTtyGX_EcpJtX4xVd0D1MuUNJE8qRE3itfW7Psm8oWfronrau34-4Yf72ayb2vLQ1w6GYN20HaHwd4Xrqix1JvZaylMRRJWpavk6UKuuSGyp0feHTGnwWY1dsOB96nNm1mygziR1pVO1Qu1IcpxvAf3qc4TGLOuOfF_7b-7FVJnCX4QPoMn1yy0Jw05RlTlNIXJtyg3zGLS0LOC9x-kYPecnAiIBll2AoU8YtnbfaST0U2DFa6NSgrnsFFtfh2ZT3DMnMVFyzjaSk23d4loQaqto2Ael8Cl8e3p020LqYbGHSZIC-AuHHlkzrhaujkrm6FAUumAypLREDFCryTXR2M9K1IlktygTVtMGujk-oBE_3ZzD25g3MtnjxdxhGqTJaTuO0BrOpeMaLcnxEOM6wEebuNc-cg-7FvEcxzST6URBF9E2EopocllLzJYL6paw0-oxOcw_PuL8NytLo4CF9AHqMOEgcozZv8SdeHgHQuOq2O8rXcWSsZp011l3wndtmI5aqnvAGVK5RtpVLuMUxzCLuHvuk6m7VL34b4qByWGkAAs7B5R_cN0ZQ4YXc8p32_ZbTh4ytl_9UduFKXoiz_N2pFY38VLuJkrJ-wsrYqmsTujVkw5meIdc17qbMvjiASDtHwiJ7LKwm9C_Q8ctLBfFKpG8cFNtbBpMaZfZeomSbZ8WVC2Ger6OkdLVMNX_NvOopo4ELk0w229uMwhNZgVYFSXPa8oRfOy6vB3xfPM8X6qJCwAOt4QblGiSfHHf5haVAw43G0svtJJuZgjh4bHtF7Q8aEX9S9XdnoxGBGWBGsnrxPVgx7qBsn1X9oiUaSdkGXeTLXxdnjwRX5qeS1BJ_Ozo12VC1taSqmZoimYYJQSqRotQB42HoUKOLSvsgl9l1FRLXwwdwobkwwLBNAz6BaLyKpsX1AeYYVH_LsZ3gd-M0TttMB7jg_chfV0PSyg_m63iqB0bmlKPTStwHzu_k5qgPqSaPAIRuYPjHm28_RPmCftomMGIwX-Kc0FtaTBIn7C33r-mUp0Y5_7E62jl27lLGbyemPibq18tvuqQo5L7liRw0J7oBdpzOFs2qS7lm2oJFtVyDqM4lph8y91t7mOVIn_R3ZO9zFlyUvTp5I78PGIwjsx339XtAnqiureFfJTs-CQOpP9Jsf-_n0-t0UXLikHmLu_nCkeyPpB_WzsIPiFIZc7Kb58f91Dh1_oJbMmaNoQ_w5npidkraZGfRo8buyDbtrFf0lQvMrotFa_cOpVACT73zcEFL_g9f-XI3wFYqmPXY-5G7EEoC4sZ6y5Bt-M9nMVKi_ZoQ-4wEazyKSwL6kd765yvnXLH2WIFr5HF5fDrBAKO9-YkF_MWsMV4523ICvL2-SA2ELF0PLpkrrrZJoz2Ddh6hj5v70VwU8K0CBk3ErBZdTqGbbuPFno4ffy-jF2ZmQ1dzGpyRLJW9zHzizw57O2zZ9-p-c8RvVQVvC7L63ipxlnrhWa59-EOj9TgcXQUsQ8qVM="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:27.772473Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "57L3avmSL5T50MMPnLmjyAQ",
+  "usage_metadata": {
+   "candidates_token_count": 79,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 79
+    }
+   ],
+   "prompt_token_count": 410,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 410
+    }
+   ],
+   "thoughts_token_count": 1694,
+   "total_token_count": 2183,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "106",
+   "quote": "the landlord may require the tenant to pay an additional amount",
+   "reason": "Section 106 explicitly permits a landlord to require a tenant to pay an additional amount to increase the rent deposit when rent is increased in accordance with the Act."
+  }
+ }
+}

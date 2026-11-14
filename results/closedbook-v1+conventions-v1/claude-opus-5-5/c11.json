@@ -1,0 +1,99 @@
+{
+ "clause_id": "c11",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "9ce98ebc3fe22dd69a73c0575821a3f58b6307b5102511432b4795902a74fd9c",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nBy signing this Agreement, the Tenant consents to the Landlord entering the unit at any reasonable time without notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:50.522029Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"26\",\"quote\":\"if the tenant consents to the entry at the time of entry\",\"reason\":\"Without written notice, the Act lets a landlord enter only in an emergency or with the tenant's consent given at the time of entry, so blanket advance consent in the lease does not count. A lease term inconsistent with the Act is void under section 4.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 666,
+ "output_tokens": 681,
+ "raw": {
+  "id": "msg_011Ch1wLHXZTFgdfMckgGY4H",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"26\",\"quote\":\"if the tenant consents to the entry at the time of entry\",\"reason\":\"Without written notice, the Act lets a landlord enter only in an emergency or with the tenant's consent given at the time of entry, so blanket advance consent in the lease does not count. A lease term inconsistent with the Act is void under section 4.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 666,
+   "output_tokens": 681,
+   "output_tokens_details": {
+    "thinking_tokens": 562
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

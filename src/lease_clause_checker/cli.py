@@ -11,7 +11,7 @@ from pathlib import Path
 
 import httpx
 
-from lease_clause_checker import baseline, check, elaws, pipeline, scoreboard
+from lease_clause_checker import baseline, check, closedbook, elaws, pipeline, scoreboard
 from lease_clause_checker.clauses import (
     FROZEN_CLAUSES_SHA256,
     FROZEN_SETS,
@@ -23,10 +23,16 @@ from lease_clause_checker.clauses import (
     load_clauses,
 )
 from lease_clause_checker.config import Settings
-from lease_clause_checker.evaluation import baseline_run, pipeline_run
+from lease_clause_checker.evaluation import baseline_run, closedbook_run, pipeline_run
 from lease_clause_checker.models import DROPPED_MODELS, MODELS, ModelSpec, model_by_key
 from lease_clause_checker.providers import Complete, LiveModels, MissingKeyError
-from lease_clause_checker.report import ModelRun, error_lines, pipeline_table, summary_table
+from lease_clause_checker.report import (
+    ModelRun,
+    closedbook_table,
+    error_lines,
+    pipeline_table,
+    summary_table,
+)
 from lease_clause_checker.review import render_review
 from lease_clause_checker.rules import RulesFileError, check_rules, load_rules
 from lease_clause_checker.runs import RunSummary, StaleRecordError, Store
@@ -75,11 +81,15 @@ QUOTE_PROBLEMS = pipeline.PROBLEMS | {"no_quote": "The quote is empty."}
 def main(argv: Sequence[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
-        if args.command in ("baseline", "pipeline"):
+        if args.command in ("baseline", "pipeline", "closedbook"):
             specs = [model_by_key(key) for key in args.models]
+            if args.command == "closedbook":
+                if args.method_command == "run":
+                    return _ask_once(args, specs, closedbook.load_prompt(args.prompts))
+                return _report_closedbook(args, specs)
             if args.command == "baseline":
                 if args.method_command == "run":
-                    return _run_baseline(args, specs)
+                    return _ask_once(args, specs, baseline.load_prompt(args.prompts))
                 return _report_baseline(args, specs)
             if args.method_command == "run":
                 return _run_pipeline(args, specs)
@@ -198,6 +208,7 @@ def _parser() -> argparse.ArgumentParser:
     for name, description in (
         ("baseline", "the plain-prompt baseline on the test set"),
         ("pipeline", "the grounded pipeline (statute in context, checked quote) on the test set"),
+        ("closedbook", "the pipeline's question with no statute text, the quote checked, no retry"),
     ):
         method = commands.add_parser(name, help=description)
         method_commands = method.add_subparsers(dest="method_command", required=True)
@@ -269,9 +280,9 @@ def _load_clauses(args: argparse.Namespace) -> tuple[list[Clause], str, Path]:
     return load_clauses(args.clauses), digest, results
 
 
-def _run_baseline(args: argparse.Namespace, specs: list[ModelSpec]) -> int:
+def _ask_once(args: argparse.Namespace, specs: list[ModelSpec], prompt: baseline.Prompt) -> int:
+    """Ask each model about each clause once: the baseline, or the closed-book run."""
     clauses, clauses_sha256, results = _load_clauses(args)
-    prompt = baseline.load_prompt(args.prompts)
     complete = live_models(specs)
     print(f"Prompt {prompt.version}; {len(clauses)} clauses x {len(specs)} models.")
     summary = baseline.run(
@@ -283,7 +294,7 @@ def _run_baseline(args: argparse.Namespace, specs: list[ModelSpec]) -> int:
         complete,
         workers=args.workers,
     )
-    return _print_run_summary(summary, results, "baseline")
+    return _print_run_summary(summary, results, args.command)
 
 
 def _report_baseline(args: argparse.Namespace, specs: list[ModelSpec]) -> int:
@@ -296,6 +307,20 @@ def _report_baseline(args: argparse.Namespace, specs: list[ModelSpec]) -> int:
     _print_report_header(prompt.version, args.clauses, clauses, clauses_sha256)
     print()
     print(summary_table(runs, len(clauses)))
+    _print_details(args, runs)
+    return 0
+
+
+def _report_closedbook(args: argparse.Namespace, specs: list[ModelSpec]) -> int:
+    clauses, clauses_sha256, results = _load_clauses(args)
+    prompt = closedbook.load_prompt(args.prompts)
+    sections = parse_sections(elaws.load_act(elaws.cache_path(args.cache_dir)).content_html)
+    runs = [
+        closedbook_run(results, prompt, spec, clauses, clauses_sha256, sections) for spec in specs
+    ]
+    _print_report_header(prompt.version, args.clauses, clauses, clauses_sha256)
+    print("Each quote is checked against the section it cites; the verdict counts either way.\n")
+    print(closedbook_table(runs, len(clauses)))
     _print_details(args, runs)
     return 0
 

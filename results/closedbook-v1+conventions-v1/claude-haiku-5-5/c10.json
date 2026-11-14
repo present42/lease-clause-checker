@@ -1,0 +1,99 @@
+{
+ "clause_id": "c10",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "439e3e24ce5df37cb3f3b0fd1c843d8e5d07617807eb41dd3197b8a8c226e02f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord will clean the unit every second Friday and may enter without written notice between 10 a.m. and 2 p.m. on those days for that purpose.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:37.006494Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"3\",\"quote\":\"The Act applies despite any agreement, waiver or release to the contrary.\",\"reason\":\"Section 26 requires 24 hours' written notice for a landlord's entry, and the exceptions in section 27 (emergency, tenant consent at the time, and similar) do not cover a standing right to clean every second Friday without notice. Section 3 makes the Act override any contrary agreement, so the clause is void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 677,
+ "output_tokens": 1506,
+ "raw": {
+  "id": "msg_011Ch1v26n2MLchNr1q3HAFo",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"3\",\"quote\":\"The Act applies despite any agreement, waiver or release to the contrary.\",\"reason\":\"Section 26 requires 24 hours' written notice for a landlord's entry, and the exceptions in section 27 (emergency, tenant consent at the time, and similar) do not cover a standing right to clean every second Friday without notice. Section 3 makes the Act override any contrary agreement, so the clause is void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 677,
+   "output_tokens": 1506,
+   "output_tokens_details": {
+    "thinking_tokens": 1357
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

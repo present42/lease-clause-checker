@@ -1,0 +1,99 @@
+{
+ "clause_id": "c09",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "946dde06653efb34fe14f5628901c393d6dd3a2b8881e7c6ce9743f1fc24939c",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf there is a fire, a flood, a burst pipe or another emergency in the unit, the Landlord may enter without notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:37.006019Z",
+ "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"The Act appears to permit entry without notice in an emergency, which would make this clause consistent with it, but I cannot reliably quote the exact wording of the controlling subsection, so I cannot give a verified verdict.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 667,
+ "output_tokens": 977,
+ "raw": {
+  "id": "msg_011Ch1v26o1pQsPVj1TipM6N",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"The Act appears to permit entry without notice in an emergency, which would make this clause consistent with it, but I cannot reliably quote the exact wording of the controlling subsection, so I cannot give a verified verdict.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 667,
+   "output_tokens": 977,
+   "output_tokens_details": {
+    "thinking_tokens": 882
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

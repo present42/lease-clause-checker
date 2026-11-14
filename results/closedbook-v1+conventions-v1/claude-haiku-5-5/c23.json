@@ -1,0 +1,99 @@
+{
+ "clause_id": "c23",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "339615d02099a3ea2f26e691bad2f0e42b44f44e23cebcc1599d7075394c4d65",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nAt the end of the tenancy, the Landlord will apply the rent deposit to any unpaid utility bills and to the cost of cleaning the unit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:46.403973Z",
+ "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"The Act appears to restrict rent deposits to rent, which would make applying the deposit to utilities and cleaning void, but I cannot reliably recall the exact section wording needed for a verbatim quote.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 676,
+ "output_tokens": 1358,
+ "raw": {
+  "id": "msg_011Ch1v2nzUY4uep4JUSKMb6",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"The Act appears to restrict rent deposits to rent, which would make applying the deposit to utilities and cleaning void, but I cannot reliably recall the exact section wording needed for a verbatim quote.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 676,
+   "output_tokens": 1358,
+   "output_tokens_details": {
+    "thinking_tokens": 1266
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "clause_id": "c17",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "760c8c0e19926f4c1586e55dc6f83b5a357ce960ba944357d0d0e95e3b65dd56",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nAs a condition of this Agreement, the Tenant agrees that the tenancy will end, and the Tenant will move out, on the last day of the term.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:02:48.561218Z",
+ "text": "{\"verdict\": \"void\", \"section\": \"37\", \"quote\": \"A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy, but an agreement to terminate a tenancy is void if it is entered into at the time the tenancy agreement is entered into.\", \"reason\": \"Under subsection 37(5)(a) of the Residential Tenancies Act, 2006, an agreement to terminate a tenancy is void if it is entered into at the time the tenancy agreement is made, except in specific exempt situations such as certain post-secondary student housing. Furthermore, section 38 automatically renews a fixed-term tenancy into a monthly tenancy upon its expiration unless validly terminated under the Act.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 542,
+ "output_tokens": 170,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "OLP3arKOJYjg0MMP4pPa-A0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:02:54 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\": \"void\", \"section\": \"37\", \"quote\": \"A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy, but an agreement to terminate a tenancy is void if it is entered into at the time the tenancy agreement is entered into.\", \"reason\": \"Under subsection 37(5)(a) of the Residential Tenancies Act, 2006, an agreement to terminate a tenancy is void if it is entered into at the time the tenancy agreement is made, except in specific exempt situations such as certain post-secondary student housing. Furthermore, section 38 automatically renews a fixed-term tenancy into a monthly tenancy upon its expiration unless validly terminated under the Act.\"}",
+       "thought_signature": "AY89a18rsBy_2kBDnxm6qYnxHT6o750ZKSkNVXYUOu6L4OeIpDxq0UIpFpX-e5j8ThtY6AaH5-KKLz8LydCqjXbnH89oGClB46EqAwLEhHvmh9sKyIQLa5x1RJPXHkI="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:02:48.608050Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "OLP3arKOJYjg0MMP4pPa-A0",
+  "usage_metadata": {
+   "candidates_token_count": 170,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 170
+    }
+   ],
+   "prompt_token_count": 542,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 542
+    }
+   ],
+   "total_token_count": 712,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "37",
+   "quote": "A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy, but an agreement to terminate a tenancy is void if it is entered into at the time the tenancy agreement is entered into.",
+   "reason": "Under subsection 37(5)(a) of the Residential Tenancies Act, 2006, an agreement to terminate a tenancy is void if it is entered into at the time the tenancy agreement is made, except in specific exempt situations such as certain post-secondary student housing. Furthermore, section 38 automatically renews a fixed-term tenancy into a monthly tenancy upon its expiration unless validly terminated under the Act."
+  }
+ }
+}

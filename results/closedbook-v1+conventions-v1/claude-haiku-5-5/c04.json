@@ -1,0 +1,99 @@
+{
+ "clause_id": "c04",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "b3c5fbc4ecf0e98000c677c38a8378605eafc985a5fee5f362b99b65595a9fbf",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant shall not allow any animal kept in the unit to damage the unit or to disturb other residents.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:31.607388Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"14\",\"quote\":\"it purports to alter the rights, obligations or restrictions in this Act\",\"reason\":\"Section 14 voids a tenancy agreement provision only where it alters the rights, obligations or restrictions in the Act to the detriment of the tenant. This clause restates a tenant duty not to damage the unit or disturb others, which is consistent with the Act's tenant obligations, so it does not fall within that voiding rule.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 662,
+ "output_tokens": 974,
+ "raw": {
+  "id": "msg_011Ch1v1iZoDXGQTmahyLA6V",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"14\",\"quote\":\"it purports to alter the rights, obligations or restrictions in this Act\",\"reason\":\"Section 14 voids a tenancy agreement provision only where it alters the rights, obligations or restrictions in the Act to the detriment of the tenant. This clause restates a tenant duty not to damage the unit or disturb others, which is consistent with the Act's tenant obligations, so it does not fall within that voiding rule.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 662,
+   "output_tokens": 974,
+   "output_tokens_details": {
+    "thinking_tokens": 820
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

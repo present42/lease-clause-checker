@@ -1,0 +1,111 @@
+{
+ "clause_id": "c19",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "0cf91148f9af637531f6c2156690d36f8ff7768c6092a99bdf01e680bdf944e3",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nOn signing, the Tenant shall pay a damage deposit of $500, to be returned at the end of the tenancy if the unit is left in good condition.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:18.741942Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"105\",\n  \"quote\": \"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\n  \"reason\": \"The Act prohibits landlords from collecting any type of security deposit other than a lawful rent deposit. Consequently, a clause requiring a damage deposit is contrary to the Act and void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 409,
+ "output_tokens": 914,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "3rL3aoOmL4jg0MMP4pPa-A0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:29 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"105\",\n  \"quote\": \"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\n  \"reason\": \"The Act prohibits landlords from collecting any type of security deposit other than a lawful rent deposit. Consequently, a clause requiring a damage deposit is contrary to the Act and void.\"\n}",
+       "thought_signature": "AY89a19HR4UBbizaARHBWroPxV71fFOy1g2gqyaQ6TVYHIx6jQhqqUoZApFeJNrr0lHOSg1fVEjvO4m8HHpcKI3YGG8AMigMr34QEaW0TmUK9BVrXLGU4KhjAA6y53hqbVjr9MLCUBZUp5iqEdxgb0flfPoWzvMYDm_yYbhzmPv0EhoVY9pAn0tVX9SGEiSZbADBdHIQ1BwKIG84zY8hdchIf5f-AwQIEUL1xTTsWfMtWL-NOA9-mLfYLJ_kCsMZIADLhevCrJ2bZoFlfjr_l2pzfGp1Pt0u-4HvbQNcNOF1i4sbHxJC2S3pC1v6Q4F_OZl08dcoQSd1SnpNjTPyfOs3yTVD8jx1d7zKaQtaquuxULQZRTc0y6RaInuWbtr3Jtc0fqvTKrXxf0u5ttHowT8FHRufDi67MiLquJ1Z7VklmYkoUNjnab-bJR6_t4L7ApB3L2u9BJ4kxUHSaYDgAItAn4sAbxc_AY93BIUsy1ezXUav2msS0TBsWX_7tBI006dHXn5Rn9vOnKwi4tXDLs_GtG2XEzGf_s07TNpaL2qC7dJlGQzHnZ-WdM4eGQV6T19Z86THkt-t6hAIRHXxtUz14yJ-Lf6-IUJuy01XhFbrVY5d8BH2adHLLXCvLDkY-5cbnvc_iEL9tbR3J7HH_8byEQ8Gltd8D2ABlholJ5TahcGg1TQWcHwME3_YP7EFsFrug-9DOHLPXUHJ_KKfkO-ieBzskAPR6ghGxvS5dlwJkNpjiSY71cEcjAEx251I1VS6XU6CbFj_KsuEbikpyp3FZfsyzlhIal_PBaAzPccMTYMqT8sQcm6sHJGOlg7NpJJ9Pb1mWFD50eGKvUldxYq8_dffY1kNMeB7_0YH8ORyE-9CPkdohKsOknA6KRizp_epbM7o0Pt2u-KfI7ctiEY43i4MLqeZ99QgMGSB50VrEmiLi9et9pqV7ktMX6lfhyaLZucUnLm8A7nTMAJdrC5l6WK1o2hMzzz6ryRO6OY033QWREIkiPwmGWpQ_6VjHaj2QsPRQqMdDAJWrnLwoR2nTHGDCeLkbMoN6UqVKTcfDFTsYtJ9SLKU3kU53BdbttV4v7CkvYQD9WzzHDLotAACjXn0ZsY07jGSdBSODNIyNE_4J2lXQm7OO51MWFwCnb6q_JIhBllvRrfYENU6QEhk5MGgiN7cjCSNz8ucZ_QL_rnopYSmftxVGbkwZSuNIkTmsdCu8C3xCLJIrX9o3sZOXzdrUyH_TT6wpTejzSElB6zaR0vB0cmnLrWxtJY9J4S-cK4eHaMJsuFq5LjLvSPAmdJSdNodVch730da_bUGm0sb1-KW5yYgCnKkvan_DXpmfOm6T3dMY9tcRkSpjQDqxWgkT6oGRYsNn0sPCfHHtVag3kajESOgvCZ0a-19VzwrL6Nttb_MdYeoXcT4c0WbC1sBmA1pNou18Icy0hK6DhBIjasrRVYSNlNvFMzG_3ZMpa8LWewk1qD9w2CAdrE8au_DXxOpxImoQUKCeIwIQ6WJJslE5H95iFSAXJ43AYlZjoUb68U91QrcOoC12A6xrtfYC_8xzJXtUuZKpJLVuUapAGm4tCxC9fGrrNRnunpPTD0FSZ5tboX7szr4aCeqoTyB8y-HHgqL4MkXQ9ljJ6XNJad5bbq-xGbFj8AXSFycRvNUz2Gi2u-IMajX0xM5qCr_FMvt4FQrf2J8wRuntn8eEM-rESrLncq3-JTYdrQpI5DlmkkGswrAcrh6ujTWK4MwJHmvl6FUkSrkHQM2xG-c97J4_1egBNQtsYa8o3oN8dzYQzVvoplMRpimDEtq-nTLQXDjAZzJs9A2aB8_NB2W85_vYCd8W1c6V0XHYC3iLrmYVO1drqbXjKqo7pddXK1CcBcdxt-XAwIilGtSG9X1ernN1PewjGZGUcmt4xaIwtnrq4P2m0ofEoA7KKZYiFmnzHd_P0tUPIfCISSg6SDRd7upQo_Fs2JWJdycACXDH95eM9UYtjMmrDwg6E5Ta7vfqYaVBs7Jwi7KehCySCqkR20Fvh8zWKbw3B2k1YsM8yppBG-upsppsJbAT8FXShn1Vy4eTHDUi0fgemDUn_lDRQp4pELljGxDPt0U9tHVmww9YNWOwTRpCDgt3MdEEI-HapFcw3vgF0qOq-uKaKK1PhxtW9y8RcV4wzeRI6cKzOSaNwAPHQnWDxfZ_QdL0T6XnMPxPD4vAfHKVku5u1stQIoa3Pi3gxMyqLJbQzrTNyk3YRl17ySaa2dyaZKzGXh012pLg3U-G1hpwI2XJ2w-flwUL-Aa4Sc6mOlZ8PDyNzfKb5v_WTJKE631qd6NxDFN61VdSf31_5u1HtJkaXWJbwA5rkYIlHJCrY5As7IULgHpHbef6ENUGggfMXdGAbZLop89uwY_rS70MBclqDEhuCe9mtnmUG6mDrSbHa0w_x7Q9xQthtgaNIqnmA81s87FEZggmziCAk_2Q61zbsZeFOUyfPLzdPCByreu0b8TkvsnEm3aHSMd5ba8_1rT3YSO9kwffe7RXZeNrgzirATMT8uJkkwE5dQJVTCkJDMR19XQi89fjLT-fjazaPmZg_ZvIqqrMajIWf-9rRm_arFm_GpuEL7Q2m9dVz20nWjn1b4nLnSdq3_N4HhVPCQDJ3rJunE_B0pYgZwwvWDIDvMSFN777X8SgeSaHTO0ssPXJWx_hZX2b28sPV-FBoS_sjV4bJGrCQnQRAn6qKGwA7zHsZhjB_kcXYIvLUGiYeFLV20pvpSDk270tBpIUe_vooO1uO9klU7z36VQjwJa9rzVTgwBvtO-iaVU3JwCd70MlNPERf_PlNguCaB8DcjK0UqDoIDWVXZA69nFmCmua-N-eimeBTo1XanqPydPMU64Aj3VW_qzRlaPTNFWZSwUPHNfXLuywht19Z4bv_jNqebgaPBT3P7-7sgmiaop23v4XnVPhq3oP2ZLjxZyMVPPzui-x4LlmCsrIXlMRxv4q6ZQMWolNU155R7D3UuWP5pl7pLJReGx5vSdgvNFjsguexnIsPPC1T5jxiMcs9Aq7mq9uf_cxSVnqkacQWQdG2RZagHNqW5jUUVuad1RI25DBUwVslHN0jMChPiTYhppKPx7sL9rooPvfrbPv8w4R16DH6t0uCWJjxI9IHII10J8407r9SddIVeDr1OErHtHVyaHpF1Pzl2iBDThi6DeIfe0RJp1y-9y2jFEib5kESk_wbzUqsp3j9qNDJwnCJLA3wrY0RfdViZpWijz0y0oyzNq9PVtobjzPtZ815E8DjQDFXMi8uK5Mz3Fj-rxn_HI3KIpXiWDfXALM9ax0rs8SdN7xE-ErbzPiXw4AS208A_9QdElSUWAFPBErPIk_yTeRsNRDkH8Mu7Jiu2LJils7Bu3rISa8RdmGaCcZiz587Q1RkB7FBdSQDdmW_9szVIM9mF36KIFbUSIyerhC16iijDL2qPWUzvhcyQim0IRCnsyPNr82TkMrlYPg4xze7pqVnYhHvYn6tQR1eBhG0Xj05tvjEhkeulgj0vlWQHAv8mgEEhKFlJSfAxo8svbvj-8xfHM0wUm7trXkpwCOX3B93YvV87LaBIW-mNZIvYd2SJHIOKo8TJt6OdPIBXjyIahK2uvKcK1IipfwZI4CFHfT78RuxqGSOX9pBXc7KfNMDqsYs1H1RUfLF6VClEBIldADe1ESxGrGyV19g2-6pzBaNy9jexRA2v3uXJvkNhp_YxbwCj5JSyFb1pBoR0ebIbzTf8HVY1-U3INgYGGv_ks6zc9Sop0kJaD8nAGncnnIKyHy-kmQcEdegAfBOT084zN5qFW67O1q0JUMNc1Pl2lKOk28N0yC03-nfvH2ld6zPejm7Nx4BuZrpAaTP_rHtzxurPC-psnJRleVJTfKyCGpsCAEFkUWtKB-Z39HkIl9i7LVt111I2nMoegEycnj-RCqEfOAj52Me3bANIWypf9xlQb66l2nbteE4SH_pXVh0KSLwQjrpq0E_O5eYzLmx13YUzzu57bpJuAEKN4ynEM5lHw8UJ2PhTvJj6RL-NE0YsvDZFOSMGB92MsGC62j6sk1uGSAsVrMULDaxDGOMVohgJ0Sw3x_OrNtPuwqrV4oUBYL2H5t__cQKL81FQ0zfVmJSHUAbmsODX4a-TgibA5GuRU5mlyIt6Y3ZGImBbtUQfmBeYLdYOjwBhdDTqG4k-woVNaTBUTxpiP-HfCMYWEEn8UMoxJNH__qIkH_A3G7rj1Q8I9G6odFnPZUIUmaULO6bKP-g0ABYfY5bm460ZXzs6Qsf0T8bH7BNTwHa6GaI7SvebE_SYgdR0pZWDw78UQy5iIlX9cRA=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:18.774915Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "3rL3aoOmL4jg0MMP4pPa-A0",
+  "usage_metadata": {
+   "candidates_token_count": 91,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 91
+    }
+   ],
+   "prompt_token_count": 409,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 409
+    }
+   ],
+   "thoughts_token_count": 823,
+   "total_token_count": 1323,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "105",
+   "quote": "The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.",
+   "reason": "The Act prohibits landlords from collecting any type of security deposit other than a lawful rent deposit. Consequently, a clause requiring a damage deposit is contrary to the Act and void."
+  }
+ }
+}

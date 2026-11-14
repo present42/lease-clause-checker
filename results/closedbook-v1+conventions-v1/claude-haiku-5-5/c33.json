@@ -1,0 +1,99 @@
+{
+ "clause_id": "c33",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "6d22a0d9f7542f13e6250e8758245624b20985b62c744019a8567a521aa4ec81",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant shall pay rent for the month after the tenancy ends, even if the Tenant has already moved out.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:55.394013Z",
+ "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"I cannot reliably quote the exact wording of the Act's anti-waiver or tenancy-termination provisions from memory, and the clause's validity turns on those provisions, so I cannot give a verified verdict or section.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 664,
+ "output_tokens": 1085,
+ "raw": {
+  "id": "msg_011Ch1v3TPHtDwuUJJtVQt5H",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"I cannot reliably quote the exact wording of the Act's anti-waiver or tenancy-termination provisions from memory, and the clause's validity turns on those provisions, so I cannot give a verified verdict or section.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 664,
+   "output_tokens": 1085,
+   "output_tokens_details": {
+    "thinking_tokens": 988
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

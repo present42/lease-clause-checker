@@ -1,0 +1,99 @@
+{
+ "clause_id": "c25",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "04e356b08adb304f5de200cf907657ba37d4e1574a5125aabb28807bb50d81e5",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nBefore moving in, the Tenant shall give the Landlord twelve post-dated cheques covering the first year's rent.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:49.998731Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"a landlord shall not require a tenant to provide a postdated cheque\",\"reason\":\"Section 106 bars a landlord from requiring a tenant to give postdated cheques for rent, and I believe this applies despite any agreement to the contrary, so a clause requiring twelve up front is void. I'm working from memory, so the quoted wording may not be exact.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 666,
+ "output_tokens": 1589,
+ "raw": {
+  "id": "msg_011Ch1v34UegmbUmt19E7BbV",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"a landlord shall not require a tenant to provide a postdated cheque\",\"reason\":\"Section 106 bars a landlord from requiring a tenant to give postdated cheques for rent, and I believe this applies despite any agreement to the contrary, so a clause requiring twelve up front is void. I'm working from memory, so the quoted wording may not be exact.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 666,
+   "output_tokens": 1589,
+   "output_tokens_details": {
+    "thinking_tokens": 1455
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

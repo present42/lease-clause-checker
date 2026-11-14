@@ -1,0 +1,99 @@
+{
+ "clause_id": "c18",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "570f673de067a26574a72ab99c51e6e4e176a1234661ddcd300a4298e549b85e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nFor the Landlord's records, the Tenant will sign, together with this Agreement, a notice of termination dated for the last day of the term.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:44.803101Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"5\",\"quote\":\"Any waiver by a tenant or landlord of a right under this Act is void\",\"reason\":\"A tenant's advance signature on a termination notice dated for the last day of the term would waive the tenant's statutory right to proper notice and to remain in the unit, and section 5 makes such waivers void. Tenant notices under the Act must be given by the tenant at the proper time, not pre-signed in the lease.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 670,
+ "output_tokens": 1151,
+ "raw": {
+  "id": "msg_011Ch1v2g9UZCYQS7gTgTmSR",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"5\",\"quote\":\"Any waiver by a tenant or landlord of a right under this Act is void\",\"reason\":\"A tenant's advance signature on a termination notice dated for the last day of the term would waive the tenant's statutory right to proper notice and to remain in the unit, and section 5 makes such waivers void. Tenant notices under the Act must be given by the tenant at the proper time, not pre-signed in the lease.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 670,
+   "output_tokens": 1151,
+   "output_tokens_details": {
+    "thinking_tokens": 1004
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

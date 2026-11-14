@@ -1,0 +1,99 @@
+{
+ "clause_id": "c12",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "869b97124c796a715f23d8d3fb8e01730110bbaad3cc0402cfc00e68f1f636e8",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nTo carry out repairs, the Landlord may enter the unit on 24 hours' written notice stating the reason and the day, at any time between 7 a.m. and 10 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:37.838849Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"3\",\"quote\":\"Despite any agreement, waiver or other arrangement to the contrary, this Act applies\",\"reason\":\"Section 26 of the Act limits a landlord's entry to between 8 a.m. and 8 p.m. on notice, so the 7 a.m. to 10 p.m. window is an unlawful term, and section 3 makes the Act apply despite any contrary agreement. The quoted wording is from memory and may not match the Act exactly.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 685,
+ "output_tokens": 1775,
+ "raw": {
+  "id": "msg_011Ch1v2ANLHLDT59mFf9c9N",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"3\",\"quote\":\"Despite any agreement, waiver or other arrangement to the contrary, this Act applies\",\"reason\":\"Section 26 of the Act limits a landlord's entry to between 8 a.m. and 8 p.m. on notice, so the 7 a.m. to 10 p.m. window is an unlawful term, and section 3 makes the Act apply despite any contrary agreement. The quoted wording is from memory and may not match the Act exactly.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 685,
+   "output_tokens": 1775,
+   "output_tokens_details": {
+    "thinking_tokens": 1613
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

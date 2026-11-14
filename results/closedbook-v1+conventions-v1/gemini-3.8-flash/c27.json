@@ -1,0 +1,111 @@
+{
+ "clause_id": "c27",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "b2d9f4c44798c1f97b43bcb001999bd4631be9275f9ceeb8fbe29254ee77139f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant may pay rent by post-dated cheques or by pre-authorized debit if the Tenant wishes, but is not required to use either method.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:30.215009Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"108\",\n  \"quote\": \"Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to\",\n  \"reason\": \"Section 108 only prohibits requiring a tenant to provide post-dated cheques or permit automatic debits. Because the clause explicitly makes both payment methods optional and does not require either, it is permitted.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 405,
+ "output_tokens": 661,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "6rL3apiCD9rw0MMPjcjKuAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:47 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"108\",\n  \"quote\": \"Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to\",\n  \"reason\": \"Section 108 only prohibits requiring a tenant to provide post-dated cheques or permit automatic debits. Because the clause explicitly makes both payment methods optional and does not require either, it is permitted.\"\n}",
+       "thought_signature": "AY89a19grkRllRFUzMojH8YG68PtytvokRwS48uMGtuumNRNieaanbVekUAT2AaYfapr7PzXfryfoNtN2FsFYXwVxVTh6SKhz_zuBXuNnm9ixnmCYMz3fB6aGQPQIiR_XYC9B8o1YQUUtwCy6Py_cN9JPt1trQmPbLo5Kc_ayBzi3unsT67frrCZRwvnUKxMKo4K5ZVceORP_HP-k8p9KUXvaLMcNWAhedHpwrltNeBkZBem5dF-W9SK5XvbdcCzZIJRqqqqbisU5eO-BnI4rGbgnFbW-upt9IxOt5s6Hcdb-S5L_zHLsbM8Rw61tcJjE-9-zIy8g40ckLCYexvibm25xMJHphZOqTCmwPo3kmu2vh8tc6RxMpMyMOfMo8Lf6CgCuJiTt_E2-jtkRCMjRtbJNqHDIAu1V_0-BTzgTcXkmaEKEkBirRpWCbpOyiXzz2cu5LACOXtMcrXX-io0E9yajXgPAYr5g7CrGYGRBfmRzHP3IeEGl7JkNOBe7oj-08zo5IAK0KLPbJ27jRHH20-LvjQVo-kdOkUKNmv0rqt0I792cQeqREbNYrBj43x9Iz1Bk07VmzTnZzkITPHUig8-J3j2t7Kwk3d-S579sys-nVKCsf85kXxL5ygyxKAZZMMTW6p52szly6PO5L15ujuTztsn-jWyADHW6oK2B3lmAoFWw2oWAiV-_NMFtPpokKbRzMSLRw1d-R3t-36zgSVRBqlKopqB3Z1OvShpMv_kUgWz3zfrQlhOiJDrWTRvXCZX6EGC_RQeAkS1-FLlqjsGadG6zkO0A62Y1tsPaX255J4j5npwRwuLwW68HWsW7s41b3cdZQjFUuqap_d59VEvgRyZSHZCwMyTIAVPlybafuCmghR1dD-_eZSZHZS4QZWfBln2jHdc4vm6mTSzdMevmcASZGhEvX6mtgNygaEBh6kGSc5KlF4mEVAvrid4IBqWsCnX-BpuCuNjy5swtRlrJ4rRJvRMnpBvkE2Q88cg15y6MoAuWpuV3vQOiFf7AsW-xIPkk_DJEkleUfocOY6_VRoKd8kJAkIpePwBT2LKipaWo5mYmVKMJuUOTubc84UwyvVrhV1VYgkMiglU2OHHUmo2Hbjij9Ei4ri1aXyCykh5_m3HOt5ekEE584NG5K4za4k2l7hzJKh79PePsouV34AJvQ7og6cTGLZIO4peYtBz0Zphp-lFODQOF7b2Imuo8w_kYMFdr0zSv-QZzUqJMwWJ9VesKPt9cldacEkJtbiDaYc7mRfWE_IiT2Rm3xVn3qHm2qs3LEaIWNkUIpmo38o_bzcSpcJbyHsDOgARsnbRYBKD0lmZgc1EUhU637I60p-uxs9H5NMyluewFhSACRKXpVmLtH2-syu5NfvKUNRfsreZa7FU0BHTXn97eOWfNq5QlkTrh0Hm8U1JLQ8Toq7XeUpT1DPho3JiR4I9PaNAG8PsgbJxIfZVV9HJCwgnUj79ovVneOFruHdusGiJWMXM4sMBUiMBXn6fkqqB4Q-nS4iKwq1BvQw6HeNTLe042gkqyrDAOQcJLH10Yzu9T6xI7qRMw4srDWFYUH1Ta3nrja6xfR-Wald_N40wMDHZfNq01Mv_KvVFNF4Juz29jDn99A6Ao5-hLAA_f5cgNzx4yuuOL2cYI6Je-uOT4xyE8xGZktFJtqPiFeTIcO_g8RFkSx3_j_elp-5bnpcXaXy7MVDAB52N4asxrDbENvdDjNZpjo4oSMe2MfVcoarQyg5dWg7pbOtYvpon2AZFNWDXJnSqRkE2GERTR7WFTJ_mdz7Mycmym4zisPsAGiHsHhHgx5k4rPG8uiPGDNoe9xNT5QVAK9xkmOoE0qTM9KquwywNkcMrP9-OpgdRrz-DD48lvRfEfMJOYkWaa7FD_Y4aDWh9gxsCKzemOi73wuxG6YcNqv-fQsdxbBqueSjLCd8Iz22P0Uik5ZvWrbtSJZWrNIul_UH6rcWNfC5zOs1MqpAScDqbSVfjIvvA5qkfuog93Mtqr838tFNgLBK_zxJD3BjfUBXiiQl6qcOc3626MGfhIxM0QWCExD2rXxeogK8lJvO7LAFMExZHtX8Cwn8_XwfCDE4KHqiMCr2PXVN6iYUBiC1YKcBFxmwNs8JCMdmg8sMiDSGfVGAbGZv5E-RZkPbap8FXsujvH5eRWAJ2j4vrPV4D7STXs2cfwR4-_W7IIDIXFROqxrtSbcpxYfVQj1f0y6yolsEL0lyDHpSuyMK5hUpjYqbyxDZmmtEBkjnm1cLYUMUl5qXyvATBAQeCMFOkDrZGJyZqVvGPYfHJq6ow7_3hUz9jjbUukrAmwnerWtognVJrgA9viOpUpd5p69_Ddyb_4DtBxc97HAL1F_JmOnRK7rCta-Bg8SvCKXEI2cMF0hIbBN7blvsOv6hnEGHD22__0UvtHZB1uAUwUcXaL6fn3uH5jSEk-MoOqbbFgCLpRxllAwbF-l-K1VtPWjBA4Vo823fNlznOPopD-PSvLwWfnS9IrbkTF0BfQVh7eDyFnkxmOrpZbL-Ai4kL5n_tzO1c0tT0SV9rx2pWRhPmAvEOKgCVoxYt4cPb5hunZJIg_vBm_dWCOGESbyNOL64y7FFcmHeE-E-ZbNCC9y64IX5sf4dPLW1dTxpPVtPoTnO3b1EYwB2lcyjT_AMxWj89YzMqswN53SlCciVv2qIYvVVaCBn4UTd0SgiRzlF7Du5cvPXsGG5ePH2K9KDyL4P982o3vW4JZ7vST370m6V9O89V_2pZz0zD2jAHfkAuv29f2sDx9z8QiZG9YqoYaggGDSngqJcopvoEj_Xnx1jMe4lYC2jlMAz-PR8wtbkXnj7mhK-AxgdmZ2chi_289j-lIRzODSRCyeUr_DBFVUz0Z3UGQyhirofFYGhcjPntPmAGBSqtMIwhsAPTK3qydK3lGap7jruFjxDfa9dcbpkMKZb9zeoqVhlwGt1cr8plTPkiwBAyX3LVHkVvuSORjwZOHzZUBnSVLMNlbZqbS9pRWrw1ycHN_KbnKxVyqhrPza8CuPhCJcwVIqeSczJXDAeCh1OY6foSLlw23XqY66xWssEVed7ecu-IE1ULeWp225bFQWZHAhRbGsefKS_CJVh3fDiLqJBVfSjA5cvFhgZ52-RyKBaI9Ry4LQCLmES6l8KHgFMFtnzVAlwUTEpP3JNqX0nAGFoOR3qWPvDOFA3Xm4ByunT5mLenGtv_p4bgNDiy6socZplV_PICHNhK8ZQNHdY2QNS3Qcv6nMVKJgvzypuodlz2k63XDbeQ292Vjyp0IYdVEh2gSbgr4rYixIl_AFE1cL4J"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:30.246040Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "6rL3apiCD9rw0MMPjcjKuAQ",
+  "usage_metadata": {
+   "candidates_token_count": 91,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 91
+    }
+   ],
+   "prompt_token_count": 405,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 405
+    }
+   ],
+   "thoughts_token_count": 570,
+   "total_token_count": 1066,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "108",
+   "quote": "Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to",
+   "reason": "Section 108 only prohibits requiring a tenant to provide post-dated cheques or permit automatic debits. Because the clause explicitly makes both payment methods optional and does not require either, it is permitted."
+  }
+ }
+}

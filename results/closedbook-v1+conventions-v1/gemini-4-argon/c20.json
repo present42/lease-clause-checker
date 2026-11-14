@@ -1,0 +1,110 @@
+{
+ "clause_id": "c20",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "b3185e8765e1bf8f5641d73eade4b0490cd7fdc0ee7acd120f09f6768f7235ed",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nPets are welcome. The Tenant shall pay a refundable pet deposit of $250, which will be returned at the end of the tenancy if there is no pet damage.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:02:56.663907Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"105\",\n  \"quote\": \"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\n  \"reason\": \"The Residential Tenancies Act, 2006 prohibits landlords from collecting any security deposit other than a rent deposit for last month's rent. Because a pet damage deposit is not a rent deposit, a clause requiring it is inconsistent with section 105 and therefore void under section 4.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 546,
+ "output_tokens": 134,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "QLP3aq_gKojg0MMP4pPa-A0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:03:01 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"105\",\n  \"quote\": \"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\n  \"reason\": \"The Residential Tenancies Act, 2006 prohibits landlords from collecting any security deposit other than a rent deposit for last month's rent. Because a pet damage deposit is not a rent deposit, a clause requiring it is inconsistent with section 105 and therefore void under section 4.\"\n}",
+       "thought_signature": "AY89a1-xjJsJDIG-fpgGuHe36Cgx6hd3pcUiySsQuUp-zOfy9WOPNRkxNnDNi1RK1WqBlELyTWIJ9-rUKVwlGi0LhEjB1Uc_xGClxU1KIjEI7zTewST1JXId_3olHQW9"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:02:56.700463Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "QLP3aq_gKojg0MMP4pPa-A0",
+  "usage_metadata": {
+   "candidates_token_count": 134,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 134
+    }
+   ],
+   "prompt_token_count": 546,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 546
+    }
+   ],
+   "total_token_count": 680,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "105",
+   "quote": "The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.",
+   "reason": "The Residential Tenancies Act, 2006 prohibits landlords from collecting any security deposit other than a rent deposit for last month's rent. Because a pet damage deposit is not a rent deposit, a clause requiring it is inconsistent with section 105 and therefore void under section 4."
+  }
+ }
+}

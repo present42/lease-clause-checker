@@ -1,0 +1,111 @@
+{
+ "clause_id": "c37",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "9ba4fd6735a9874221a857ca695b5b02ddc2345408f13d053f82be9bc408df1d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nAfter either party has given notice to end the tenancy, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, but before each showing will tell the Tenant, or make a reasonable effort to tell the Tenant, that it intends to enter.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:50.660051Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"A landlord may enter the rental unit without written notice to show the unit to prospective tenants if\",\"reason\":\"Section 26 of the Act expressly allows the landlord to enter without written notice between 8 a.m. and 8 p.m. to show the unit to prospective tenants once notice of termination has been given, provided reasonable efforts are made to inform the tenant beforehand.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 439,
+ "output_tokens": 686,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "_rL3ao-bKt_IpPIPrpqRsAk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:55 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"A landlord may enter the rental unit without written notice to show the unit to prospective tenants if\",\"reason\":\"Section 26 of the Act expressly allows the landlord to enter without written notice between 8 a.m. and 8 p.m. to show the unit to prospective tenants once notice of termination has been given, provided reasonable efforts are made to inform the tenant beforehand.\"}",
+       "thought_signature": "AY89a1-E1wItjShetmJZ9Bfmxn0CG90Mn9aELWGQ7LKL8c7-D4fEvda1f9Yxln6zfbEFqgUf9PmO7-8xusHCjkPJrxE614jX4K5hEWs6nHpFSGSOzZOVZXJrpfjja1rOcswEyG8Tv2HoqZ0Hf4x1QGGfhlLobPkp2uAmbv8jKgp990G4eev8dGPM-mI9mcTu6p9bGfx1yv_P0bH7THvlVGx23iFE0WERadqJGbQH2aS7b_amhGyGGrr9Dm2fF46GKkpMgUSZy1y8hbSS3usoXEdcIzd60GpfeCQSm9Hg0V3Rr9icJwqoL88TsXwakOpxS_IcN5xyIfisqKVuLp_UEUmGWLEtbZYzkNLA1lVSGjizozsNuwt6S8lEThWcy43srNjPcRfKBGvWxT-riPwPm_sEIDSCdAng2nCMejKYT5yOCf10qnpb9-kobIXrLR5YoKKAwnMqi9l-45VaALSbbLkl4_d5kPvu-x9sRgJ6qw-AvKSk0pFLHOGnJkRj7OnL7V4KGmGNLFIWyg_d_IWSJRWWizQfZX9Npbm2atyH4qkQWz0i03WAM_VOKs7YssHIDBNC4R84A1nPZtJ8j20TPeXZY65vn_oAcILZh3-3IqDFpU3Xa4J1rR775EI1phy44iN6eslb3ge8NTfIPbkIGf4KK_S9ss1WVUpfFcFJ1xYdSKu5Srawi6-OzB9ex8SCKjSdVaz1Z1N0kJitYwfWnzgOmc2DoQrA95RM5goWbGiHNRyJRj0rVmBnTI_KCvqY3UOW2QxYG2gyAW7EXkxw9LuGKfsnuIYi4jwz4IjQ4qkRBiA4HbU5HhU2Eo1XH9Daex4NWk9tgRArrzbrSqHgJOG_ESyt4FDjxS5ZUip7xdTaZYiPstJopv8G5N785qki37SlMD8KUtUuv7IFQFR6OqDVLNZW5kwsu9ZPq9qTb7LVYuwdbfGUSl1HrWfotN0-EBErlm2eVvYs7e623maBYE31hL42-nvzcIP28wl9fX8jkbLeK1pyW_SlaeqeuCfgf-2-vJqOITfaDce7h8dZMr8Wt-L6mIyqhtLbBG149eKQK3iwnRPKUcl5--WnaDM4WHRA7StSe6GmVAMjH8yohmEDHG-9Zc6c0BQ079NzGRr25YumQY0jDHErnl_9bCmKR6n0kIDqwI5xfzdds7rrOtxOjQnBmwVhtbhi6d_d0bqlliLxOtUyLdlX9GKs_Qi2N6uMCpIKsalmXz0GBr0aHDK72MiRdbLtKoSJJJHwYzvQgYxEIhFKRMf4kBwdc4FGGPBeb7rP2Rdz73uzYJO8W29HV3CFRfze_ocdM8hiCbYNL_AN4BL-AtKv2VdJ2che_-tF-UNT8m9whDUDqp04ZIYAomFLSdRRljz4aKwSe8CLtt3-dr1nblD98ZWRot3yAGHax3MCSlI3leVhsCUlhbRpbSCRaLwWwasXqBRCspj8ZChSYbJ-Cjrj_eJbDQfUCbbD9UVvtKJAYRthdzDa0A1LgFzSsf84TDRrAHrSjYSvnNh3SeBAk-WZIQS7-pmvyChrEJKK0RPs7R5fIjruK1xOg5S5PjaZFAGoXlLO0ynaCkzCNhu5b-CgIAXAA5al3ldkUkEkFs-JVBbwln2646XH19slNItINa9y5cT9aCWSHxMUwGZBsoebwZfhO9ElzaCtEHVmczr8OyuAKvHxj2GOL2nTNvFjvWfAF42_cx8mTO8nhD8K723JclcJc4H1aJOq2cgfRKtE3XzbF5LGzLec1AxaeDFSLyt4-hLFfYVZfrCQ5ROLbuobphlFWFAz2iJvL820oEUzmMN8GLNxCV_hJfAH3mjDmgOjsXqw4rNQVj5R0CHpFFci6hOMCmvFG5uHFyOziSQ_82k92_WDmsj2lCTc7gWzvvrbXHTNawxCmQuOe0A4PKO7kPbI9p-Ihozb7k8_3LaE8FSdjji8ICsHshU_M5DHzRKkfC2o1U8pz3_lWuOu_E4UWhfCLV_nrxlOIb9zhXwL59yz-l6QoPEFHR6kqnaoGclJRRkcvZoMHbkbjUr1ZGAdzBUJcNFy74Ma-Gdvge-oTsrTxBYcAlp0S-SONgDgjxHcZ0T_InHgOuwkKESb2NL-hGbjOcqX_cMycstqBdMZgIwX0ct4OflmzacpaotBrpp_UcpFqD6BVSQslw5zi8n6NxGOo2q1goCfC_t0ROxSGZToKws5CcTQYp9gh0CjhMMIvSq6SP_UFbic1Wgn3CnYiTLL-itEE7Y6WBCvAdGMqCU18GddQRPeL_Co54CetB9_6MJOKrPXxVwvKI9YS1gsjN6HyvQDwc0j3GFTPDAJYi9rpB2psQHC3fM_GdjA6H7OlMTZ5Q9OARcmy0QiZHOhNixlzOT6CjRc8FDda4fVA55ouR1D0LWESxmfJPT8ahQEPTrYL7EExVnYE5axLbK7ufHg3fIjC2-pYPaQNLwINzcojNnq6D-lWCeTNtuGayCifOjAGBkj1DuqCV7GStYEG8_H1OoIK5FXeY86cRTvRF3rEOzb8dcP_17zURjbim7DFzNAFyRWnZyx94k2k44rjZwljU-to4LLygcQqNacCX3_Up7BAOcTXjosy6aSYUaYBjJmQO3jruu6SN8UJ-ns_8iY-QGlqYRD12gRIa-mfT3Mqp7caNghKxO7kWdMvE9fx8Tr9Dwt79IemCAkahCIXMe2X5QG0rT6JGF5kDcsZYGxjOaKkpp5c6uVO8o3y8y7glNksks7CgiTw3b7FZ3WXiEJpaZdFDL9eBANx0Aaps5B43V82IWZ25CLdVHI0fPvXbGuSrqRH9tJYfqTHNhNM3G4IaceGjc1EnNfoLVFg7nqlILF63Gn9JaSQW0IXrzWfPn3RaiO40Wc3eQmxgSThU6qiZBbadHSgzhBp6goMFG2HEPpfwgifyNEdPTcCKwEO8geE7JapOeJx-J1fe6ZhW337zTESCGqUuh5qaN85uFsQ1ttG3sYBpkY1qrgrzTwhJyXbCHvf_lUHxDWOaT3AgUAJx7VfjbtV9bCk04sA3-eXa0vhLCz2fGPbeOPq-F3BWVzHEuTU-trEvEIPmISx542cLNkv4spWkS8DGJnH9rD74dGEbfF_DEJavdRBHo07N9zLiLBVBOvacttI-dxgDnH9KFNc99LngqrjGwIAzS4oKg1yX-CeLk64Q49WtuOiB3PlhrC9XEFXKXJxStPaAcWQBVY1BZBPdtMWj2Iw4yhJ-urce7pEq09Uz8ZsbTJXs0wFGpBJLiMaR-HCQyubfWxmq8eTCUwekj4KBCHC0Das6W8ZyF5kXnTpaVADmxDlEqMQraVfAeIkiBkc3XbzCQqL1fCq27DJXvwepn6VVyfxL40JJP7UdHkKaLW4LdCkgbVfiVdwgebrYM6DCs3RbRnXVVfkOi4XX7mr6BLfR1XHZU3kImagGZc3X1ZxseE5XBS1L3rN8M6TWOeXS8="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:50.691599Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "_rL3ao-bKt_IpPIPrpqRsAk",
+  "usage_metadata": {
+   "candidates_token_count": 91,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 91
+    }
+   ],
+   "prompt_token_count": 439,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 439
+    }
+   ],
+   "thoughts_token_count": 595,
+   "total_token_count": 1125,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "26",
+   "quote": "A landlord may enter the rental unit without written notice to show the unit to prospective tenants if",
+   "reason": "Section 26 of the Act expressly allows the landlord to enter without written notice between 8 a.m. and 8 p.m. to show the unit to prospective tenants once notice of termination has been given, provided reasonable efforts are made to inform the tenant beforehand."
+  }
+ }
+}

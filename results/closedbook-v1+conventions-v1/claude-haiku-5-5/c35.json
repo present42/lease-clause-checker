@@ -1,0 +1,99 @@
+{
+ "clause_id": "c35",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "1b68719de3e9406ebb9141cb133c993e5e4dddbbfb94e32f05c28d0363b9b882",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord may drop in from time to time, without arranging it in advance, to see that the unit is being kept in good order. It will always knock first and, if no one answers, may let itself in with its key.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:57.591736Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit only if\",\"reason\":\"Section 27 limits a landlord's entry to a rental unit to specified circumstances, such as tenant consent, written notice, emergency, or an inspection with proper notice, so a clause letting the landlord drop in unannounced for general good-order checks and use its key is void. I am not certain of the exact wording of section 27(1), so the quoted passage should be checked against the Act.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 688,
+ "output_tokens": 1297,
+ "raw": {
+  "id": "msg_011Ch1v3coLZSqURxqRgor97",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit only if\",\"reason\":\"Section 27 limits a landlord's entry to a rental unit to specified circumstances, such as tenant consent, written notice, emergency, or an inspection with proper notice, so a clause letting the landlord drop in unannounced for general good-order checks and use its key is void. I am not certain of the exact wording of section 27(1), so the quoted passage should be checked against the Act.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 688,
+   "output_tokens": 1297,
+   "output_tokens_details": {
+    "thinking_tokens": 1137
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

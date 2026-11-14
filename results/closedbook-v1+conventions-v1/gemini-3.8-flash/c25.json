@@ -1,0 +1,111 @@
+{
+ "clause_id": "c25",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "04e356b08adb304f5de200cf907657ba37d4e1574a5125aabb28807bb50d81e5",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nBefore moving in, the Tenant shall give the Landlord twelve post-dated cheques covering the first year's rent.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:29.109623Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"108\",\n  \"quote\": \"Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to provide post-dated cheques or other negotiable instruments for payment of rent.\",\n  \"reason\": \"Section 108 explicitly prohibits a tenancy agreement or landlord from requiring a tenant to provide post-dated cheques for rent payments. Any clause imposing such a requirement is inconsistent with the Act and void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 399,
+ "output_tokens": 565,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "6bL3auDsCNrw0MMPjcjKuAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:39 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"108\",\n  \"quote\": \"Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to provide post-dated cheques or other negotiable instruments for payment of rent.\",\n  \"reason\": \"Section 108 explicitly prohibits a tenancy agreement or landlord from requiring a tenant to provide post-dated cheques for rent payments. Any clause imposing such a requirement is inconsistent with the Act and void.\"\n}",
+       "thought_signature": "AY89a1-slnKgw8FCBlfw7uF7ibxwrXuVSafVkU6o4wYZuhFg7-I7lLSjW9VJOK7Ns_CvLE-yFabGpwN7qmA9WIQYViUOOYfUVK3vepdldkMBr2ThK6l6pld-kpe7d0ooaBuhE8U7O6JjfKiMwtMTNSyfAWKJYaukolEGoo8YviUpfWY8Ql5nHDoGez2m6LFt7CfZsVLbRtlhJ7jkdmEm1u-WjGlMkBRIBNDGfVsu77hAgHwN7jXyl2qqoS2yP5VYVjp2z54DVv2TiX2TLE19DK6x7iHzMGH-QWQ71tfs8rHqewzH70wVH5PHUQVzBnVWaepyzR5wrkwaQYfY9XcNVxmuVbMzObZ1I0P5xqt0FgN8hTWWOk0iZxMX-eF-9vKNu9daZ0q2oHtGcQNUfwRWhMLSZd6m87vUjll9XOwf3Tt96mDCwjtyOVpXEer7wNltiSLRATzBWGTHN2oEkYNn3hEKuj6iWRy68qVSW3zuUnWcLTovnPYJShWx-OkMUVKOMhc_9lcHKd1aw-FZpoSYM2A3XX4-ekwu9P1r7rHiC7cPfwRA6305TyE5aj4Xyauu37TiA06PNLjBWXXKDIjEXlvGSs1C5c6pKnpPz6048xp8oIndwi1WjQL5i7CMHPOfmkPL-rp8JhJLTVBp-VWBeyFiujvq7548uZT9DFWowO3gJ2BSvOzoypXYdwNCYE0_pqFssb0kJ21Qv6gG5784llwPsw7exU0ba2WQ2Nh5gcj6fAvNvXkC9q_VI-xpCcT6GypDLLhLOr1QJkPvvSDh65jUPmgkpysV1l_6LZIBOkNt7sM9JOVY0iq4xnZKIAY3qPrG8tOUaG3KOoVR0gFHe1rkGx-9R_EQmG5FKBArKUI9SPr6Y-QAVO3-fIU6LG8U97MrG7L1kEafCvFirbBaNDDngCd5qq0ikcy4NWe9w8fgGVhGYSFmCvyi2znz1tQkzNbpRvU68S3OjxpM9KfMABomsX0fR98wskFH6R7Sa4QdQLa8JjtjrpZMxs-eD9jG1-U-8Qc5yTL4n2_3j0tCNRd_YxSE7gd0E5gmW4P36V7lvkkJTDDEQPZ3oX67RqteXNpYHNHiVMwX-yxLWaDgA7nFbkV6yF6X-Mz9tXbv5sef8aRN28Stu1MbNa5Lc8klO_e1biSUiQALrrSyu1Uh3HSNs-qtp7_2QY-vf7hhlfcUKzAT6borAFvQT_Wtbxd3DFiVirWbX__wR7RpgCnAQqCW4EkMou1VBgfVfTFIFZm1SdC4IQrNsm0znw74WFgQTTdCPs9p_4V6XlwC0JIlSkT67lpqwCVgZehx5_0oeH--0RqDrbx204VvNv9HF9ElJ-3kMa4-OaJujClcn3MYBboeI-48FAPkOYNGj74EwizPg35NzzUyQa41SroDzGeZH9bqDi5pJ-7ICCTMXfErFlw0IWHXbiPE2dTshpSkCatmzqop48iWkCwpT2B__AXEhhEHd_OU2_gREn1VmwuRLzsuGVKbBPzzsnrHjNA7MSG9UtGw5cm_5PqlRcovGYAL-EvisXibwydkGw9yO-KUreWOyXmwffMtDbKWkyk9yLGFbaaBVyJ1hI7f4plf58RItCnVoJu_40ftpkeewvQQYQYAXVhNUwLm1bC9IqAp5X87LsP9tPJFSvxYfteYfmbNdHwqwW-MCKmSzilfjCyovaGTOxKiz5Ki85dA0nhyjCFFz3jW0uRgw0L_WircKz9ZXPPKNtKNEWN7PJ8nHZ4CZ53edfjEX_mst8giS-XzcNsV0iGBFx4fyiYMu0qadqkjPhJnMvalyLRNv1gTid0TssIh2KxJ2buaPzzbFLyNdwO6cH7bxb9VJgqF7Y7n3fv3GlYxTs2uHMhH4u630-VdYypfoZA8gMyVIUsm3n_E5oqPEZatB_J5g_Q1d4GgMYTATwxt6yfXkZpvJiQ6kxQdPLTPa7baSd5LNkinguWsuKr8w-LXTFm3BGXBfIlYtc05b2VzD3eQmUowXyvc066rKizCmoeLANO7tZ-RXbMWN66DUqB2hAEQvigBtCvDcN9NWyHbkA7ouGEmN4lFo8XSnyB2sw4B0QVYSfNTl7F8wql8L3d9CpMe6Xh1KfauKigNJXmobSrVnTFC1aKyxi1bBFJhBwTInV55bV-LPplDee-3LC5fUgccn4f3juUimDhVoRPvBCHBHapY1wxZuFR0ePmNikMqDR9wg_ZrGIS7QE0Stillg2Uhslx8Z5qA-7waa1GXuIzLPvKq9aRNrKlU-r4arVcwhUQzeELAuuTC4UCmWYsXBytII95tZ2hlFOvG8PsYLS100xpXKXmc_x9nBFAf18PGLUSh1P94U5JMN_Kbsp9eaZwX_cJjPSBwdIw9A6cVREmbl3Zx-qOctrn1Nv3yeuXAkZ7PjyujD6nMYvLUMHGwxxKLK5HlY8BR0SdtvWwoj7XgcCIoshkDN42SnW8aaZ5xXh33-hwHYJEyUQOvn9OAEZ4guQ9XfE5q4KQxTO_jVpyrngOlYiHvT03jMLQES1DcmSjSCamOF3Kaq1XN2_Q_Jr1rd8RRas8JhfJvTetIFyRZVsIlEda9sXKng6ZS2O7KQiYyNT-dMvQwQ8CprnYa2wZBsjK0C5Y9kjf_PSyf1izN1sJrJTnn6cdbZDQSkSFS2ox6ZO0OzCPF7su_mWTlaCrR84n6f8NLoQS-_4rjWZXr7oCL3ket4ZhAhaABzTyZSRHNHmIDgGs9OZ9KBrHld55ezOVHtdeoxcdfEBdmwQsWtuzrf7tCFD2acap2YKBOZJMEh14Cp8gxKKo57XAxdU9VOwwMFMqcnykhAxhStN3lN75xs7-LeMNL0TFj"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:29.144992Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "6bL3auDsCNrw0MMPjcjKuAQ",
+  "usage_metadata": {
+   "candidates_token_count": 103,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 103
+    }
+   ],
+   "prompt_token_count": 399,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 399
+    }
+   ],
+   "thoughts_token_count": 462,
+   "total_token_count": 964,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "108",
+   "quote": "Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to provide post-dated cheques or other negotiable instruments for payment of rent.",
+   "reason": "Section 108 explicitly prohibits a tenancy agreement or landlord from requiring a tenant to provide post-dated cheques for rent payments. Any clause imposing such a requirement is inconsistent with the Act and void."
+  }
+ }
+}

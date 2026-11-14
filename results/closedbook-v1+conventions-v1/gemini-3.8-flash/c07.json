@@ -1,0 +1,111 @@
+{
+ "clause_id": "c07",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "fdf03d146f84824922f419b7d128aa98f0eff20ffe1cbe2e1c8c1ba5f3804adf",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant viewed the unit before signing and is satisfied with its condition. The Tenant will not ask the Landlord to repair any defect that was visible at the viewing.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:01.898433Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"20\",\n  \"quote\": \"Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.\",\n  \"reason\": \"The landlord's statutory duty to repair and maintain the rental unit applies regardless of whether the tenant was aware of any defect prior to signing the agreement. Any clause attempting to waive or contract out of this statutory responsibility conflicts with the Act and is void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 408,
+ "output_tokens": 1323,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "zrL3apXCGo7v0MMPkNTyqA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:13 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"20\",\n  \"quote\": \"Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.\",\n  \"reason\": \"The landlord's statutory duty to repair and maintain the rental unit applies regardless of whether the tenant was aware of any defect prior to signing the agreement. Any clause attempting to waive or contract out of this statutory responsibility conflicts with the Act and is void.\"\n}",
+       "thought_signature": "AY89a18iYqUwPeBP38XyckhI7_wp_qnYb3gd3w4YOgDk5cd_5JYwG3uX_QvQc_-sl3eXhvqA-8vjklP5eP68rWS1eWG1_y8a9SIvWBspGmbvdQ3KY6SgPXYTrW3pqZvXEYxbO_BmWT21N3-qX_P_sIlVswpUJqF1BWnhnDoJl5_wESkuMKGRHJHfZoZ3gU-Wts7QPFiIYchmUMUJrmp-orgpg3S_0BUXBgT-iEGnxCq8TwnYHV8owAnMqqeNGpAxh1eAE_Vzx_qtuomF6-r2CKGvA2DB78ZDzuvqI37cyZLFnZX04Zfi6yeiviTFnElNA6CmwSOrHftQ9vNBlUpTxc44utLsJaPaXE-jts-0UjFz2mXyzDtSmyr9SRVznpJikcy8StSp6uu4D7Ad0Co5pHakFw1ps9H_o4-q62pln4-5TfSGY5HCn3MTHTU4iBqVBOrSVDlZy7_I9hPtaNYJjpU9ZbrA81MZ3yymbAGzU0qMUJXIo0lNtct51A-zaA-DOJbgmALW57ieLNI5AgY6-jZ-kxhQTS19Ym-5cytHq3FYJOo9K7eSKoUVRLR5kycbkZB0GNyazJj5eioYl9QDt_u2AAhqB9lS2Ea1ec9T8wZETlnZTDRtEgZlWXEdJWrABijaphq9nYHFtlva7_hWSR_VZQW38uUmURAv3x8TA8MD-daNG8yqfTKoH1oUpPdwCiBC2X12uMETAMa4709OhSrCEBXh9CTCKcYh14k7sTMOTjfPakXWHZq2wqj3jTLzYtpSznf-ZjaUFAmRpVZ-sDarTc55wcWezPJdS0xuMOvgb4J8iV4bmBAUR_Arr7GE4eTlO3PQaadTP4l73hV-vhM1p6i1G0SK-zxKZCwjwO7R-NRpg0ckJbS2xAgmhxWdwASKvsjafK1bXCkvHcmuAzfFK1hEeW2BMPyEU6DBIeYMqW37Vh2AlJEjWA_5gv0WkmTnVWeo7h4y9nyM24X-CWnjPN0IT7RJNoCw-qcTChWY68w1BvJwejTktvG38WBDTPf04k9PYmtlGYrLVH47qzlhEx90Qd4dPQASMJfNILCZEyCwyy7KpxeGH_z46ncXns2nCVMxPT8-UhpuKkZPDaCYkxSSCbUDkhzOG4mqSRA_iT8hcFGXG10-3kcPUmeM7tAH5OGrYYuZRmWRa4BAoFjdRcxMv8RJJPgYe-Aq7s-uebCUWOaoXlRpK_8r-2XWX9ncoAWaCL66AMdd8ufF3YnPBhunTqWA_Wgan1lnfIkSyVrs3Ve9q-xVuvzK8pMDSfO-07wKfJ1Je7jjZxyvMkTAOMTVXCrFmPNeAB7OjdVV9ViKVpDxd9z57Du3Ptjk1TnoCLzxviSF85jWbcAg542Icwg-Aq-eZQxyQiCXDqsltrEmP0zIL1MVy1-pnct_i-ZIpu5u56nu4pBP_RbJRb9EhvpdycEUSYscIXl-R_6hURsomj4n1fLV1vgSpMenDZZJz7DtuLVEoD1Vm8MqyXuZwPB09AfIMq30IrXR_JzYD6-wFEOInH0G5myiiY-BCVJ_t4Db7c6DnuyFyXC_np9qbsBwAfNhCnjrNVpYnbMdH3OWlvoVoU060VELSYr4yhqAbv4YJNo7UkcUo8sU4hH51JWh0GHBFp34-e-0m8QFADHNb1n__ah1bbhypCIvcMpRuV4KSafFaoSGEPxoF0Si_AVY8TvcZvJnrpfTMXiXxy4N0lq4od7TfrWZ8_S0OxZwZGFt3K2chAiKQMGD-EfMpWomOeTkCC2v9BgZKeCoJVMcR8BAl2eyvEK2viBmQ26evmj3EK-myxhRv-tljQ-KG5z0I6BTm2At7cedCAV4NUghRxap-r2DbT28w-2BLBUpUbtRdJcdenM5bY3c4cqbAxRAnQKaqpReJElWzJ9_0g-duPAbEBIK7Jcp71khgc9oqVr7Gejr87mSzv23O5ZCDuBOlXYLtTv_WMwkWAINxw7aevbtLN3Ls6rYTkGExu3j2u2RUiml3_p8HW4V2XBKWik_tRGH_wroZtYnDX8zbUasQfkoYMgmWr9mGRb0lkj8_KZtlriolzFrnYyZgKYDNrZuyRaEIAMKDp_tK7l-zUqMSrP0QGT57G8Rpgj-YnHMAoXtr88jkCx9LboUQ7JdHA42qMGVrU6_JRR7uPYHrf5loeLOXsTntzfejr5LByI512uQqCs0dJws1NX911gbj2EJgh1nYdpSC9YqLNeRqFjuR-fNB3hSbwM0JTc4I6FCwOQ4IxAh9B9lrGltAFovx9nyZ-BV0AhrwRvl3Wfpjrc4MuP_f3zzdS43nzyL2CcxKn17czUVaTn-9K1tJz1_Q_wckaBam3GQ7VV3azNjf8ALBcWcewskYlF-YAa9G6pPxwYoHYfYsyhpwPHlEq7R7wEb2v1YeGa4bLX1IMtLi1rUEhBsg_0sWaGjsLERdHue_AJYbgxIfQGoXNw_D0uJmcjX2vHCTRfYtbCLKHqaP13wNaf5tY9JSHgPEKD_DySRsNqzFET8ddQ5L0ouA8sujBwPiWYQUEe4jttd_baBI2fZFkxx1s4prUvvh22ZJqCxfJnomPHxVVs1tzDyM-A-oHmzTyunFGY7LNeA14yvHXQppBQtzme-fgzqELD51V_eKCz_AwhIYUe1RSBZ_4Fko21RILC_iwT6zVp4bHrnByGaz6RUhA5IuUes1bzw9MU3h-COuzkd5ixC8qfz_zQQii2UWU-2aHbrKynOi-zxs9mjLu78jDaM0-wyw2DTLSg5OYEZlG3EvnjhI-BFril92RMadaP5OfoWWYSYsJVI8TB2k9CpUkmdn0R9YE5Ull8T_jdFP6-qyiC85vWJDG4Z6XfBalXC7Ce-HaSYEHkhQTA-G5-S0CsNn-z72ryA1yj93VzANueoDEuIpsH50fy84zZhOQxeWjSTysjY1PKAUZQFjpEbFRxRYn9YUHpFgboaCzNnX1PPRQ_uJk0FalMWeXxoSDv0qa9CczpG59vh_Ue9YomFJ_S8gR3q-U8EVimq28leUXnoK1xbYxOxM_cOpDTyKyKh_XXBmVZ6FkJ1kfG5tt_GkDT-r513Bk7RkboVGRBO1fI3Nm7AkP20kYX3Fhdb8ZcsVp013qHpuencpwSQQtFqYZ-2-kNk4HG3qSNZNg1ONIKXwH4Yprw5zbngE7TFEgcERDu5YZatQC7m3TIJjRlP2sYK0dPwF3tcpOzIv3XMF9OsKhXIXK2Zn-FXT6ZCCuFIDF5_nYH8hANCp6n1CpbhNgQM6XPaiUnPWKW60V9qOVBtK4vodFDSwfQcVLyWpR-44SNZUqSkKw37E0ROKNwKs-mKMsXZitBkbiHhTdC-x6i-0HrYcSeEK-xh9yYERbf-jLqfxHv0T2z0WVlL4wiNceepSt2XeLMtKjd5jXHauYF5UKmsIJWdkpcBXlp8kyuJMQmCWrSCAtKj537HRJAYMAWt1qF8SwabVsg2_HJyvjVnvocDww0u3r8vIaahqIPkGx1ZLYBYG87JAKc88Y5p_IRo1Q0fIOaQBAqB_7CeCpX3u3iIdQ4ZSSggDtPLGmpNhgbH3GkpcLz4bl20OK8ybAnDQrwGJ5rwmGEGGl4i_NXsegBVjMqVgk9l3UeJ7_iFtzrefxymDOcDe8ls-HuEmZ8euvuttr89-qKGqDD9G6BmVFBmS6QTaLjkAxJ4tgFZvIbFYiIUlwpjgi6B9Y5i3JYWY25KXOIwun8G7ir8ZYDT0tLWNJnfBmqGbUjzL0wYhLBV_b7abw3n1F0r0nMBcTOluIa89XDPvf5criWEDwcC9s_xtEpWIVY8apQD4vIFqinmeTER1yh0tQdhXms_bUlecLgx5UY8TTAM5htEjoyRUYYOafas7lH0iTChLS_56Ha8YNaX6iuitF4wxFYNlLVlfRYDAkuyL6LziftrtXI-LwnnYWe1ShKlJLIeG7w7SUU2R1hK_ubpyT_QYnhAKfc79sklTD-kR6GPyxqF_OMewIGGsV4DGt0ODjxvEsNsVUDqR6REeXCJ6dTg38OBuotySCOFqd7pNbkCD6mNOSLrqJFzvTa30s3cR3a6VukthkTUHrydH_EGKBmK-5G2gmNnstz24Lyx_8HTCJNos6zahxxhFRdq4szfRt2kR-QcI6KjijPv0YRaMZL6OLQA7ZuEpWMziNc_7PNLkfT2ji2auXmte-6p7jeDiCzqsiHzC8BF1xkg3UhfUQJ2Ig_0QkbGMcjtTHTencSd1tmyvnut0bugbmUIcY1lKm2YTAWu-a1dJvfCHlGDOs7utevgt3l0vhX7u_pNhQeG5o11t3xvr5P6fjmrTSHQf3WH5q3h1iI7qkSfJWZVoJ1VM-X-PBZtRydy2nwiijXpt46tlZ1RsFa-l48sR1q_RskiNG3r9jGXBGC9QWkcoawDcp2glioFAHLbMftlmICsLp4nz0MzFidfn684XIHWGDlF_HlsEeH6umHR9eWyb4AFIIKN8C_I_a2a1-G6rANI25HMXwGJb_OILMwIokUre9agkWtha2bNJTWzrHMWe3UWmLS8n3ZqaDbLWpcVuPQ4Dp-DYJupC2SneyJUhi8msbWjNfX0XcCE90ii1HW5pCmor_rkLev4sA4OFf-TbhbuNPr6OfxcZGLraWGqMm7kgzWm9MzGQKBY9K_vaHXXHSSKjg9wk0eVw-tVhqm_jl2fuFKfgCeLGxh6esa0KqXZ5kdtJ-KtVpNyXFl4-9L_mmz4wRP9CRSM4JKmRvt6675566oVlV-3WRAZult7RHSvvQi2RDzDshSylCb2cQjYp1zksQL8I6H4EDuk_6Ziy4yIFVGJ2g1q_8AR3888j7ubT2fpQJb0_qz141Qh665PhdKAVM0mXIDxhmmIFmqg2OYlZNuNUgxznOPGzIev04c2eqPoTMzNOWWBgddrgwg9c_3EYFSHiJphmgYfSTBom2eq1g7kxcWoJkXYU-UWgIuXBGmOg8my2rQXajIoLD5PmprDhrZ6pvLW2MWiNZOB2YHDbEsWd8mIyRy1cBTIlgJftpE4vh4fruMTIsoiL0R_DsFojy6Ye66gHWzQPmK2JsHoJ-0ew5f2L8wRhb3MpehH9TD_BElUyF2a0muUSzCNddw_IcRUPNJ0W4e1Qv_YLRAHKzA3q1KIbIXuCeZvBWMk84fUqTvvU6eXmz1yl13Hq3B0FUfcttFq-tPFH8s2_PwMexmIyaZFrbqsa1K2euS-PRsHIepxH4dkWnfq2tdq84xWUjjHihTP3kLCM0FL2ahF1SB-s4FKKtriTjCXth8ZbTZaN4DtjZj3csH7HHD3dblpnqrL37bZqymBkP-e5qYZGBb0-2Mcp63HVXNsOoOFxmbIjkFIKTSC7bLdHqC_JS64aIfB2Ho3ZNuZ_8n9ajm5krFFZfw8XnrnFIvrg-rqhtYOhZIoy0NRSkwQz_iB8f5L_o3Yp7hPnQrn9Bxf_KZtig1rFbMHSBzRisiBUAfBmXu4SIqzmHsnF5l8zeIcAVJAD_FUsMHGOb0jqZi3ehjGwylUX79PkP4xhrNs-zNeT28OVwYTDqw2tH08dQZOTkW6Bu_lYaqIKaMrMfUuehWsL5JacVyrfyMb8xjTlEUgQ12PmSnRzwtmmm1Ebt7Tt-3elVD401MJeV0j4NPdvW5dyqRMuH8z2BR1tU1W3Sf4owdLJRrcDpe9pK8A1HkSVyxbbx5sOhjEBTSIcnyqz9gF7gArE9KWICVUlJznH0NIMHF37e0riTkjW6GVVUbghTNR46I8URQEnpXOsX3XksuMUfU-fYzUYKT9ixU-p5cjwgzJDJjFiKxUwxUnsNWqJGLrzIk05kqKJ62qCpMTj6dUvDxB0hzkpIfBHFz4vNi0r5bnCKkZbKkdp2MuJhyEZGsOeXBwnS8I5AcFjqRShiX6idqrW-iFDMiVj2g_WW7g9ZuS7AZhR4IR-XYgwoYOmh0j5BnJc_GKv5LogoQcf3HsQH_mECUVSwWBRj7yyn5VBCpwqFgiOHbwrgrhGPaj8dP-cvRG5qaaGwO68DMs8J2ZEoV0Db43UwGEd7nBRM-bU7w6eWopDMdYXy47cKKtA-ygg7ZT6pBwhivgjxuansCCBtkEegr4Lqew7TafcB3LMN-Ft53az0ivEI1C0baqVEKg84uHh547Y9yDu2nrHYIGH2dsdXV1ouKo41Tv34xggpvhwLWqSzFx5Ewt5N3im8nMqGZifqDkDgRmFSmt8BMPg8yBB1LCAnyaihQg9BYGBbvj6KIDqGQeKn0xoM7GWAIVjEnePDW69zPrTpjAWxg2OIvUFEPQn4CEXi1UMIKkUoUHNQGoCPnfvI1NB-gq71AJehQhsbX2ismMjPYN-jWsxgiDx4I7JWpZYfRngI1NlKYc26vdLVg-rrria11jUr9-y4nZ1NtHp1dkviXt2xs5xGT73NDCsG-t8sBJHIHd_iWP5omtOi1p1KMyDrDcQVvkyT4In-XJkub6my47wHSbO58jwtH9DXwK--IK-g3f81aukdkNAj-bYG9FoZK0fB8yaLFhjGRW5032UvB7OO6xFi_cNFwJ2Z66WPGAOLHoc_TxsFu4b9DVRpgHzhgC_vTD4FcXO_Gp-4CFggXTkwWCrXUlX-xyiPsFOF7_Q8qXGvKu-TsiQGG5Qva_2jIa17z0ZfNqyrtvDAPtYEYC9el_N53KfS4="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:02.434453Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "zrL3apXCGo7v0MMPkNTyqA8",
+  "usage_metadata": {
+   "candidates_token_count": 115,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 115
+    }
+   ],
+   "prompt_token_count": 408,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 408
+    }
+   ],
+   "thoughts_token_count": 1208,
+   "total_token_count": 1731,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "20",
+   "quote": "Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.",
+   "reason": "The landlord's statutory duty to repair and maintain the rental unit applies regardless of whether the tenant was aware of any defect prior to signing the agreement. Any clause attempting to waive or contract out of this statutory responsibility conflicts with the Act and is void."
+  }
+ }
+}

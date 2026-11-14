@@ -1,0 +1,99 @@
+{
+ "clause_id": "c05",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "a8ed8f761f5d19003d827d255aaa7f12bfe555589e1ac11f7873f11372ef67a0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf any instalment of rent is not paid when due, the rent for the remainder of the term shall at once become due and payable.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:31.607522Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"any attempt to do so does not affect the rights under this Act\",\"reason\":\"Section 4 bars landlords and tenants from contracting out of the Act, so a clause accelerating all remaining rent on a single missed instalment conflicts with the Act's own non-payment procedure and is unenforceable. I am quoting the section from memory, so the exact wording should be checked against the statute.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 664,
+ "output_tokens": 930,
+ "raw": {
+  "id": "msg_011Ch1v1iWq4A2WGyAiu56oP",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"any attempt to do so does not affect the rights under this Act\",\"reason\":\"Section 4 bars landlords and tenants from contracting out of the Act, so a clause accelerating all remaining rent on a single missed instalment conflicts with the Act's own non-payment procedure and is unenforceable. I am quoting the section from memory, so the exact wording should be checked against the statute.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 664,
+   "output_tokens": 930,
+   "output_tokens_details": {
+    "thinking_tokens": 789
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

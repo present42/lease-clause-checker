@@ -1,0 +1,99 @@
+{
+ "clause_id": "c06",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "f2189b2e2ec95bae54652cc97617d41400ae15f05593820f9a1c80140a9aaaaf",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant accepts the unit in its present condition. The Landlord is under no obligation to make any repairs to the unit during the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:46.127671Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"A landlord is responsible for providing and maintaining a residential complex, including the rental units in it, in a good state of repair and fit for habitation and for complying with health, safety, housing and maintenance standards.\",\"reason\":\"The clause tries to relieve the landlord of the statutory duty to repair and maintain, which applies even if the tenant knew of the disrepair when signing (s. 20(2)). Because it is inconsistent with the Act, section 4 makes it void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 673,
+ "output_tokens": 657,
+ "raw": {
+  "id": "msg_011Ch1wKydHbdpw4i8yUfPL5",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"A landlord is responsible for providing and maintaining a residential complex, including the rental units in it, in a good state of repair and fit for habitation and for complying with health, safety, housing and maintenance standards.\",\"reason\":\"The clause tries to relieve the landlord of the statutory duty to repair and maintain, which applies even if the tenant knew of the disrepair when signing (s. 20(2)). Because it is inconsistent with the Act, section 4 makes it void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 673,
+   "output_tokens": 657,
+   "output_tokens_details": {
+    "thinking_tokens": 487
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

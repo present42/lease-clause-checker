@@ -1,0 +1,110 @@
+{
+ "clause_id": "c14",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "cc393117210fac38fd9284198c4cf56235e5b5d8f44df71d8fbd0e0cb9eea814",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf the Landlord lists the building for sale, the Landlord may show the unit to prospective buyers. The Landlord will give the Tenant written notice at least 24 hours ahead saying why, on which day, and at what time between 8 a.m. and 8 p.m. it will come.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:02:24.726444Z",
+ "text": "{\"verdict\": \"allowed\", \"section\": \"27\", \"quote\": \"to allow a potential purchaser to view the rental unit\", \"reason\": \"Section 27(2) of the Residential Tenancies Act, 2006 explicitly permits a landlord to enter a rental unit to allow a potential purchaser to view the unit if the landlord gives written notice at least 24 hours before the time of entry specifying the reason, day, and a time of entry between 8 a.m. and 8 p.m.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 574,
+ "output_tokens": 128,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "ILP3apyvLo7v0MMPkNTyqA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:06:44 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\": \"allowed\", \"section\": \"27\", \"quote\": \"to allow a potential purchaser to view the rental unit\", \"reason\": \"Section 27(2) of the Residential Tenancies Act, 2006 explicitly permits a landlord to enter a rental unit to allow a potential purchaser to view the unit if the landlord gives written notice at least 24 hours before the time of entry specifying the reason, day, and a time of entry between 8 a.m. and 8 p.m.\"}",
+       "thought_signature": "AY89a1_zmvIP6Ll8vMMg5WBm7KRswKNhpt4Ej1UOPHnsz8DLt-jURKlEzroYWyxLF2l5YsX8MV-KCPI36nsU1rmrlYeh2VOhEY6tUlT_qiS18QVasJYI6hzgD8i8-9OT"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:02:24.759708Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "ILP3apyvLo7v0MMPkNTyqA8",
+  "usage_metadata": {
+   "candidates_token_count": 128,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 128
+    }
+   ],
+   "prompt_token_count": 574,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 574
+    }
+   ],
+   "total_token_count": 702,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "27",
+   "quote": "to allow a potential purchaser to view the rental unit",
+   "reason": "Section 27(2) of the Residential Tenancies Act, 2006 explicitly permits a landlord to enter a rental unit to allow a potential purchaser to view the unit if the landlord gives written notice at least 24 hours before the time of entry specifying the reason, day, and a time of entry between 8 a.m. and 8 p.m."
+  }
+ }
+}

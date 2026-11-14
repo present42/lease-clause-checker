@@ -1,0 +1,99 @@
+{
+ "clause_id": "c11",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "9ce98ebc3fe22dd69a73c0575821a3f58b6307b5102511432b4795902a74fd9c",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nBy signing this Agreement, the Tenant consents to the Landlord entering the unit at any reasonable time without notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:37.072592Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit without the tenant's consent only if\",\"reason\":\"Section 27 of the Act allows a landlord to enter a rental unit without the tenant's consent only in listed circumstances, and entry without notice is not among them. A term in which the tenant agrees in advance to entry at any time without notice purports to waive that protection, and the Act's non-waiver provision (section 4) makes such a term void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 666,
+ "output_tokens": 1584,
+ "raw": {
+  "id": "msg_011Ch1v27781atfNAUcA8eVE",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit without the tenant's consent only if\",\"reason\":\"Section 27 of the Act allows a landlord to enter a rental unit without the tenant's consent only in listed circumstances, and entry without notice is not among them. A term in which the tenant agrees in advance to entry at any time without notice purports to waive that protection, and the Act's non-waiver provision (section 4) makes such a term void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 666,
+   "output_tokens": 1584,
+   "output_tokens_details": {
+    "thinking_tokens": 1429
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

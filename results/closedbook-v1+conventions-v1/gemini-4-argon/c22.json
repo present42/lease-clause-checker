@@ -1,0 +1,110 @@
+{
+ "clause_id": "c22",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "75f4acb5bd58e7972ed68d3621c15473f9d87b994b8b0dbb357c77ecd42c50ba",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nRent is payable monthly. On signing, the Tenant shall pay a rent deposit equal to two months' rent, to be applied to the last two months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:03:01.813469Z",
+ "text": "{\"verdict\": \"void\", \"section\": \"106\", \"quote\": \"The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for one month.\", \"reason\": \"Because rent is payable monthly, section 106(2) limits the rent deposit to a maximum of one month's rent. Under section 4(1), any provision in a tenancy agreement that is inconsistent with the Act is void.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 545,
+ "output_tokens": 120,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "RbP3auj-M9_IpPIPrpqRsAk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:03:11 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\": \"void\", \"section\": \"106\", \"quote\": \"The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for one month.\", \"reason\": \"Because rent is payable monthly, section 106(2) limits the rent deposit to a maximum of one month's rent. Under section 4(1), any provision in a tenancy agreement that is inconsistent with the Act is void.\"}",
+       "thought_signature": "AY89a1-zTjbW5ir1REQyWz93FKR_mHnutyDJmPaBFRP_NxYxzz7KG83PVmgX-8UEy5sJaQ_48c-huX4F1dVZgr-aWCvX6wcWk2Ut80IykcELMKKRggXgxWX6Ob26n_Yl"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:03:01.851816Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "RbP3auj-M9_IpPIPrpqRsAk",
+  "usage_metadata": {
+   "candidates_token_count": 120,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 120
+    }
+   ],
+   "prompt_token_count": 545,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 545
+    }
+   ],
+   "total_token_count": 665,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "106",
+   "quote": "The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for one month.",
+   "reason": "Because rent is payable monthly, section 106(2) limits the rent deposit to a maximum of one month's rent. Under section 4(1), any provision in a tenancy agreement that is inconsistent with the Act is void."
+  }
+ }
+}

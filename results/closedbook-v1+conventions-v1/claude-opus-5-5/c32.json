@@ -1,0 +1,99 @@
+{
+ "clause_id": "c32",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "1f47d39a6b27b8edb235105a25fc75fa209912fb294f26116aec70a2876da29f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nAny increase in rent during the tenancy will not exceed the annual rent increase guideline.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:17:03.933075Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"120\",\"quote\":\"No landlord may increase the rent charged to a tenant, or to an assignee under section 95, during the term of their tenancy by more than the guideline\",\"reason\":\"The Act itself caps rent increases during a tenancy at the annual guideline, so this clause matches or improves on the tenant's statutory protection. Giving up the landlord's limited above-guideline options only benefits the tenant, so nothing in the clause conflicts with the Act.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 657,
+ "output_tokens": 475,
+ "raw": {
+  "id": "msg_011Ch1wMGr9VELzurGn2RbCA",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"120\",\"quote\":\"No landlord may increase the rent charged to a tenant, or to an assignee under section 95, during the term of their tenancy by more than the guideline\",\"reason\":\"The Act itself caps rent increases during a tenancy at the annual guideline, so this clause matches or improves on the tenant's statutory protection. Giving up the landlord's limited above-guideline options only benefits the tenant, so nothing in the clause conflicts with the Act.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 657,
+   "output_tokens": 475,
+   "output_tokens_details": {
+    "thinking_tokens": 313
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

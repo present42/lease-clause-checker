@@ -1,0 +1,99 @@
+{
+ "clause_id": "c16",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "39d32acfbeb72e28e640edfc195ffb2413993b7b78a5344ba53cf7f21f6042ec",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf the Tenant's dog causes undue damage to the floors or doors because the Tenant was careless, the Tenant must pay to repair that damage.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:53.671429Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or its residential complex caused by the wilful or negligent conduct of the tenant\",\"reason\":\"The clause makes the tenant liable only for undue damage caused by their own carelessness, which matches the tenant's statutory repair duty. It does not ban pets, so it is not a void no-pet provision.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 675,
+ "output_tokens": 391,
+ "raw": {
+  "id": "msg_011Ch1wLWyS36CmZF2RRAPw9",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS0goKEAgTGAI4AUIIdGhpbmtpbmcSDFhk6x71TwK/IK1s0RoMODCPFWiSqFsxUva2IjBMmZe8g87WbwfzF4OP4l8xQ62xx0yp3h9AeXEKStGpDyuzf7geBqAhV+aeKn82gxgq7wll4SBQKW3e1qwhuYe9fZfvamdbg09Xm6//W+Hpzx3Wgr6ZpbuaWTmJNxjrAzRc11FOKtKO4uyG8ZJFzzkP54GHpBJVYMNdxT8mYQrpKtVwPQUqLxuUdOblJRF8HpVm+Sm7MrY0xpDw1yI/tvKKzosz1lScCvMssVfftjokffcEIrE2UQsHpVVzhLA6oIV5N5Gblhf7uJVcioThCDpzEpKuc7gX1foIlVq7H1oUjcvbjy4nPjVX7DEWVYj1+aqXqlgUkPm09IzsUecWboZpUwOSXnr+MUNKLEVWg2tK2phQs6B4NviYhU9V1Z4BDFSIebvkeXltpRCiyJl8Ma5KXfjpftvasZ13+C5z5x1Xr+SNauYuaEix5+W3me2dGw5am9UkfzzyIUzfLM+8u+Dc1HvwmXODYKubxtAns5h+nL9M+OhcCGUQ4ULxjjv3a0pWK4r7NzM2d+564P1V503Vvm+FYzq91QfzgctmBNDdsB2H6zB80eFOziEYqOO2mU4KtDrLEKcS+lsPNd4IHICydSvDdABYl5LhzyrZaBRk3khGfMmh7y2TV7yPu4q96Y5BUZYcjqJIlk+BSgHzcbeKxTNFnppzEqRlYnTAUrWyTvUC1ZicRBj7wGEytpnMTUYiGoERdPs1XTUnkjh27/Su+zrXt7TQ7f9U9wNUCp2DE8MT0rkeOtoVGNNdJ69cigem8Q3xcSP1hqVwKRnRgEz1F4yckjY2VqVsTGOxmBvLcXTmQipW6x7jqRVS0EFLjWJwHO8WUP0r4gm90Fp6S5T4tz8/zUMjmNRgC2HCP140YOKFN5ajXwfjPIifiwfygB3hg0DwDWfhQ67XDsY5qeAa/txPLBTJUdih+5fIg+WiVk1gFTEVSXWopZWwsE5CLun10tGOTQPzGE8T0UVRj5UekQnDIyzNFElSAHzfzUFGZkpexStUFAW/PjSveX372x52Dm3w+Mlh2J2FI/S3QHnTY4mTQa701SbqJdCGZkgMLzOWQmJZ7WvqsbRQSSWkWLWOR3FWCWk90dmhkhdWMvvuk1RMJ0d0prbqBY03b2l68/7dX2Ys4zI5YtSOeDSZqRIMSoKljUf8zje2lP97zdt2o2WGa52fYNU3x6ozusZQBy+zK/2hXrfQDgMyiTjilxiId0HCd66bKSnJ4y4aIgVkmXYOEECgGHiDYruDfEFsl/crsu8Pxl9/SfQbT6ybyrVEsfAuUjViPi7f+cX96ZzRFZ4YEQh9LUtnJU4JJ9GFpcSKVJehmurm48BtTe7HdCESzUetsBgUTaRtpvI779y0vYD+PYsprhtMOf+lHShq82sDEx0JgoeXauC7K7L4E1QSuuZa+yIemiEUQwpgEXHM4hyEwq9n/QIvzYPOCtrwIM0S/R3NMcX5EaBdUup0Y33UIfxND8+yjcvKO6qzdP9nk/VSFjvSn+idB+yrlIFIKrRstD8KvsdcNAqCcqs3dT+b7QgCQA+R3fx9Rlj+JWhepJ5lnkp4ANjOEyeQRIz5Y0Gd2vdxPPSJiBj4mhx8m0XSfHT9wz/yczfcYygWqW/f1J9mg+zvd1cXMAAD2zZsRCU/5ufeAA+cmt4MopMem3ms3DWvvaCZXHE5rnYvM4DKpbUrKJKYwXMxkM/dAXmoaqxGqfR7BD1H/dAca0F35HORxJIAdqOqN95EeuCywJYmGAYYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or its residential complex caused by the wilful or negligent conduct of the tenant\",\"reason\":\"The clause makes the tenant liable only for undue damage caused by their own carelessness, which matches the tenant's statutory repair duty. It does not ban pets, so it is not a void no-pet provision.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 675,
+   "output_tokens": 391,
+   "output_tokens_details": {
+    "thinking_tokens": 251
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

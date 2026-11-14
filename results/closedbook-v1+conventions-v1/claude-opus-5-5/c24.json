@@ -1,0 +1,99 @@
+{
+ "clause_id": "c24",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "0483801a8d5d8fa6357b20cf82c059e1d10440b3843c1922bb36b48701a23ec4",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nRent is payable monthly. Whenever the rent is lawfully increased, the Landlord may require the Tenant to pay an additional amount so that the rent deposit equals the new monthly rent.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:58.069797Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"the landlord may require the tenant to pay an additional amount to increase the deposit up to the lawful rent\",\"reason\":\"Section 106 expressly lets a landlord who holds a last month's rent deposit require the tenant to top it up when the lawful rent increases, so the deposit equals the new rent. The clause reflects that right.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 691,
+ "output_tokens": 320,
+ "raw": {
+  "id": "msg_011Ch1wLqoXDnhfG7c4AMSz2",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSiAkKEAgTGAI4AUIIdGhpbmtpbmcSDCSh5SlCPq+findRwRoM58CiWNurropv3sc8IjCEzWO2xqoNxh+9Yfr5hEqaikVcc49KvMCaqzfONstdPZq4R2yjQ23PUE/lbEE5Z3IqpQhwG1ysfgw91n3HmwK7+UptJJ1YSxVVD7L3WdtewutE10c2ikbkeKKPxMmEGkZfOBr8ROSJ69C2KJYt7Na/5jmr+amgg0/dY1FJlFuWq7xupnxuQ38vPSniVv58YgtffTfMTSLOhdsLAp+tpHuN5/f3KHQluhSuiX2fFqNWqU87WsIjqA9XqaXbAT4+pPoc/c2WKy82tnDrG3flJ/G8E/l985fhaaaWYW5NIowPBK1XDyH7CQ0LgJwYHY6QLDIodJi4hYDFHPeVqZ74cCvGXNq4gqgxwZYD5E4YwKJ9SHsMf2dTW+Zy+WBdogdFS02bQSnmHwp5ZtT6o1Yy+3ydtLuoYN569feDJjeUAGG0WxZD+/J9WNzNBizykUsfJlWuhDZMSapJ70MOr0YyMSAYTEUW+7M7QT1jLSQoYKdmceA0Ow6UbSpJ3zot2dHIe21JYA9a7j78D4niI07u8YnL+JlIkbKJs4qd5s5WdSNeCdq4kA/Fs10Nc5TZECCK+74csRwOdrzZH6J0gyYjjLEuO8H5oN2yoZr3G9tuJuFbiAZU2X9BOQT9VsfPB0+oGybUGDTZB9x9op8Xs5wBJmUzDqimWUox9FEVXQq5Yl0GEcUF3QER3OfDlU+sLOm1lXxxBgqHbb1NUkHINpK/taz53XQK+sOCzSy9sgiAbpcyOuAcgwMYLYEZO0yDk+GjeeelXt1TJwaPqKvxMoi2+az548lVY3NegwBYWbAhQyFAGovl4sn5Qur3KOqWaQ7Jbno8lfr9cGiHD5KuUp2tq+gxE18yqVM9iSC0GLr9YwjuBhzbONkyHIl2s1X3a9uPJWvvBJVO65Viz/Z35n8pv+twwJSQJ0gZHF1GrYfY+RZReplkmIpbomtjQ3Pbm83iNLHU2c2NuikZVnSuSVOytNrSuGpnlyrYvn3MCieMbhy+q4D1BsYJrk/uGIV3FFjtjwzAuiUieOWo2IRETq9lNyJE0sNndVzGeHz82VwTEnYoJKkqcsJhhhRYxdOSYpDbHrGzPZI6MrqXzyzB2D7b+MvNZQYK8WfxUeFD2fgnPELTVa+oQ23+txmNuQrYoPltMkwoS45o/vS2OdcMFuQDTM7Vs6mAw4Yv7uf031Xjc++DxrwHg05N11dee7quidfepdPFltEGk2Ts1eul8/YMGL94M35SPoV+S31MG1JgycLdEAzUl3+gToyKrmUTf8KJE9glAbO8uq3sI0L8X6ouGc/XO/aUcrdw1IeawTnWDAKrKgwCRpxHSxEiY/EKWeHFEQkd/TgKilXUYESuWJILb4YKeoyLuJDL0lNdhvLwz0wCCTUYXumDb94VPjaEGWgUJJwjgbd+ujn7zO8h9sQLqCfsNgbVuba8qQk1nrEnLtdQOC6ym1fNrTckUMjftdvQvfHG7xm9qYPJkhgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"the landlord may require the tenant to pay an additional amount to increase the deposit up to the lawful rent\",\"reason\":\"Section 106 expressly lets a landlord who holds a last month's rent deposit require the tenant to top it up when the lawful rent increases, so the deposit equals the new rent. The clause reflects that right.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 691,
+   "output_tokens": 320,
+   "output_tokens_details": {
+    "thinking_tokens": 193
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

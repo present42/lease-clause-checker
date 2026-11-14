@@ -1,0 +1,111 @@
+{
+ "clause_id": "c20",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "b3185e8765e1bf8f5641d73eade4b0490cd7fdc0ee7acd120f09f6768f7235ed",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nPets are welcome. The Tenant shall pay a refundable pet deposit of $250, which will be returned at the end of the tenancy if there is no pet damage.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:20.395682Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"105\",\n  \"quote\": \"A landlord shall not require or receive a security deposit from a tenant, other than a rent deposit of a kind described in section 106.\",\n  \"reason\": \"Section 105 prohibits landlords from requiring or receiving any security deposit other than the permitted rent deposit. Because a pet damage deposit is an unauthorized security deposit, the clause is contrary to the Act and void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 410,
+ "output_tokens": 815,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "4LL3arGQGt_IpPIPrpqRsAk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:26 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"105\",\n  \"quote\": \"A landlord shall not require or receive a security deposit from a tenant, other than a rent deposit of a kind described in section 106.\",\n  \"reason\": \"Section 105 prohibits landlords from requiring or receiving any security deposit other than the permitted rent deposit. Because a pet damage deposit is an unauthorized security deposit, the clause is contrary to the Act and void.\"\n}",
+       "thought_signature": "AY89a18oshbjIsqLKuaS5NxpcXbrb7Qm31Q32hmkjSNfEu8bAIbvuAj_lgLqrPTxjDSsc64dEkYPw4eHQzxTqb7CdGyEWSzGVz0FCb6jYdkySYJPq4I2gamAJwsDVlCyB0NQySM78493244gS2ZmW2sovsxLFNwnl3BAAeH9FnLoqP4PI9ikJiBc5ZU9U7zHQie6R1mpRUrrZdxZAZMiRDwiBm45fV9f0nqwUeNEtu8O9ltgUvWeNjUKbxP1wgFSbhtSCg3-ACFMdyBWQtGr6XKVJw11Os_JwZJccvBQYU8PoD7UAyVLS6TA3Ko0syizxvtZI-6kevvPTcseEe3oP8qavIwNpFIFxYthyFQXCgOhku-w-9KqsXUz3bY-ue3Ed837xUH9oXDJCdb6WeVlsT285IEY5J1_hHRFDMTmdE3FsA5B97wLnVr2G0DSoPtnzwBnJoZNUZJxQZNCaKAvXYInUIVNwnsYcxC4UMGTRm8c5ei82QeM1zjHpyJN9HYNBAUBh5liEM3qyDQmtdpWS__KHlPde9NsYoXwUkQgP4B-DsUS5j3Hg7f6jKi3EM3GzGVevk02THMXTrgPV-eWBWPrx6YcG0St-1veuc0aRVNLOjR9xi9KSSFTx_0ulo_NMq-fDze2qfs4-VutH5kGJ-X-MsM-_SEInUlm1MFqZg9fcfv3_LR0GaFdEGFmJ9Zi74BBdswjJer9Q-MuGXQloaqclcWhvy4etUynGgU52yy8ftWDFs408-RqOuy5s9nfm2B8OTlMlRrnQzFGTjrjHR_Isv80HfJpflx0btgcGjk7EKzOjigrDpDDoVt9Iw4eDJ_Ddq15qAoNFDdvift0025b4XZZCDns1ohCCrmAyod5x_ZJw0Jcr0gbK5IoZ-6Ezkq9YYgH0lT2EhhgGKq6OtdYUfhfnwOzHGKDHmCHo3PwjhPJk81xPyk9MLhyFLXAGcbUh1WNl-FdBbkXGQHElMy_Zd3iaeOcR3y5JKg_5aLXuMc7eNhO8j36Tnyk9Jjq9YSO1pAmRYDxdI4OqcSeQag9_qrdKku0s34qgyVLDAxTfy7XYOTwAcQ0SzlldAw7wWz_d3BagD0s5ahHpYWTC-klcd88nX5uInAJ_VQy43NgOYOWs3hc-n1qNtW7agJ5p2I6yhnh3GjpnMrWrlSmCsASv_avz3TcbDbiSOW2c8IOVdW2thlXAHPYj8Fr7le1NCtB01kHCEyNh_wmGLgraAtu4LS7y2WaFf6V_K3632ZoXLlbwknNT3hsVk4vb6zAzVmz1MuIK8sdy21s4DfaNalyZZ3ixWbtE8HgcCNkxTSBxjwlzBloKtFglPZY76dgrLqeNzwzBAIewU6BFHiToSe-BkVndGsoocL96bU_HN2qdEQtvdHss-CAcdRbySQ_6zuh4_NM5HoKhGyoHPJ5GtfSiwgMVr0kiOgdF2BohC_mVfM7op1f4PoJqBksq49RS-X7FZZuZabgokcPN90MtVVrTAKQ8xEFOTGzRCOzSohXXgnhCZKfrA33hQDpRsndiQKxDw8ftyefh29ocb0K5OAQonpKv8NXcETw8q4tgWqv0K65hhLgrYr1YTB1fKubzX9vZWs99o6c_niw_4sDLfyyivPEjbfZvm-YBIz8vPzKmqArkxDpfLjyzHVcNrFKI4tPLmYW8M4-qaTx65bUDNbgzJ-oDecZt77alicboWuAw-6AJdWjqy4xzYW8MLSwz1HYcY9DUBQCKTenVXrwjZPkhgZqOHquj_qJpLvf_MbfIgaNFfdGU-jkzFtEhemj6G9ECBum7_5EZotCXYw-MX4cVSr8eONDuVEK-u2vWOkjDrlYZ67i48unIUfGxiKokUK0uY6pny3o5_5L0ROTVha8zKoqxGXzE9VF1ert2WeK3GTl88ex-IKaB-3FF0ETM3lxry_pkryu3EyNX8PvNe8DG8sGQkTtYwGuWXDILMJkiB9iKcgVdOp7P6vZWHgJDPwEN3IWMF4SgdHH0zFlrAkCSDVVdjEgCgoB5mg38TYyGw55Dtybl9bBu0UEz-X2TUyrtRhVvtefB7ir2cFylOsHU3C7eKIGvyPAv0l8ChEROGZBETdJ9ggPpxx2TCFRjXxJgJ2x1fbTm31nuGPfC46Nw2Dq45791L5oURg8cGFKBqz6AgLCN6EF3FWNfQFKcIBL_bWOwezCslJNREfzSVTLEgNhfWXg-1NR5s6r2Z7XGzrR-YJGKsNqRx6j9ZaHJ4iWwYhV5X4XMWlVJyhPGROn_mi8fzqB8lDyoxKZ6Qg09nDTvUiqO0WATlgG14OnChX33Af0XXHlb_GOHJb7BImgieQtLt521FFkAeeOiblSEW38ThHOfsoqwZkzrU3n-ez6w8N0_zKMYnmJCofY8HjSi9rQnG2PGbFPSqg7-QbeOJerDMU7zrvdTFYYhJXutXahkaJk5zdOPamVupbxi7pE92dkkaWyoPT-bMUr5ZsZZre3xI-FP2gy60FDq-7LfJEvpi2i7v23TV-AczfjcOw0PrWYVuoSvGq1baW6un4rmqppNrzUnjE2CibokpCUY7YLnDB6A0OqPbj_aHdA2LyXFcWw853K71GTyoCGvC0BkDqU69xXmCZxeswhzD9qtE6vCboFSpszA7a0PEVS62RRLGjn823BwsL2Rap5mean_HomAVZmJLlM04H3Bq7jgstLNc6lHhqCy9DVlsl-3xLuWyQErgBwQmip8K0mZIAQXSKLEreVJvpku88wLjACTQdGCaHTlmV2I5MhaihoNhECOQwymFpa3A-z7X5WeUcrioCWVz8w6OY_yIvHg8hmR19sipwsP0CcjQDBiFlqvmvLP0tQ4wj-68C2UA91aBLEcFve1evUhK-kfIvAUvI9TFmbkY2fbucdnae8A0i2FdevYUze7NRRzKBzVmaESdfYzM3NDUZsJMQYJj2GfDuRvfDODdtWpeuyttr53WhekmGgp78_KAcx1z9ow76WZ-1RjXTG7OtvNXdIrhM-q7tCm89-bjZoCSMffoAttZxaAcSeAhyCDFi-9-0_Rd8wpU6e_NkoUAskxGekID9uLjLFfxtRf3JMDCZjPJwn4IoiDCAiojAdQaJoWL_jETftlw2dXCkO13vwZGDHDc9XWNy3lgBOt6kYf1P7osFqvhbZ6xgYJzSZqO213XP7oaywGWdV_BmB49qMqrbNXQaWKEy6Mhp9M7b3y0nsuaXZixSFNNfcbDnZ3O9zcXUM8psMMXo0mwZpHTj_o4gFy4PAV4aycjDXE4_emMUQrJM4Way4yEAOG2spp1gOGMYkBzb8f2ouRjZXs3DMoq2q8OJe8qiTsSc_TMUXWAgiowT34LPzCNRmsEmeSr5kdQWDvUF-37MNeJMggnUVHXGEaKXCoZ1mhgNNorMI1vnYdt4ZrmHUBUANBPLhma6cY0NTWBK5WfleZCRD1eUKYfHXQCvLlnEmw5HEkMW2TvdyOZ8xug5Vwmq7WYNDAPQZlRIC3l6JFH4dzOtzjGFu9vcXe6PJsoO6kelUm0TU7PIQrD1yNBUkuztFlmOFOkOAKhE6gLxq9p0kPY6DoELWX8mxQpLUr1SrBvs_75gFLUYFZ6Vu7c7-8LPy4E8R0jR-ZiGjHZAP84YS9sjGOBw9QCW86RmU19Agjb3vjqwMznlMhPFXlse9KW3oA7Sox2vTPCUSvCzPWL_bO3UWYFcl11_ZK8GUN5Yt5T2h4CWN3eVXlM92sq4enXEivz2VnsZuAzB3VNo="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:20.428081Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "4LL3arGQGt_IpPIPrpqRsAk",
+  "usage_metadata": {
+   "candidates_token_count": 106,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 106
+    }
+   ],
+   "prompt_token_count": 410,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 410
+    }
+   ],
+   "thoughts_token_count": 709,
+   "total_token_count": 1225,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "105",
+   "quote": "A landlord shall not require or receive a security deposit from a tenant, other than a rent deposit of a kind described in section 106.",
+   "reason": "Section 105 prohibits landlords from requiring or receiving any security deposit other than the permitted rent deposit. Because a pet damage deposit is an unauthorized security deposit, the clause is contrary to the Act and void."
+  }
+ }
+}

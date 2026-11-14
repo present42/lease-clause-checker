@@ -1,0 +1,99 @@
+{
+ "clause_id": "c22",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "75f4acb5bd58e7972ed68d3621c15473f9d87b994b8b0dbb357c77ecd42c50ba",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nRent is payable monthly. On signing, the Tenant shall pay a rent deposit equal to two months' rent, to be applied to the last two months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:46.317923Z",
+ "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"I believe section 105 of the Act caps a rent deposit at one month's rent, which would make a two-month deposit void, but I cannot reproduce that section's exact wording reliably enough to quote it.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 682,
+ "output_tokens": 1238,
+ "raw": {
+  "id": "msg_011Ch1v2ncuZ3eRoydeMUBMq",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSmx0KEAgTGAI4AUIIdGhpbmtpbmcSDCiw54d3tZaiFqw+qRoMV9MQF/1UfeUgP7nuIjDMoMJOB3TzsMaSX65Kgv02sRYOjZP55uH+aqwDiynEMy3fuvp61AYswi/V2o6/UJUquBxNUJVjnIb41KjebdsJbhxe7r07iAnW9xPL4jt3A82YJdHOQLV17hons9QsPgJxW8nmw9TquEiCwwXhIoH3uqvPiYNw5AgwsjV+c1EqK21VVefNf4aIxFql1il3y/pBbPOWSaAlx9ht/LEokyFhZARejzgY6o3xpFMvWkpQg3feTAFAJQW0n7GaTVd7PNzqoOWQAyhuwwadWxzhHhAbO/tsHzuv2FpQTErz7bHBD+XxI82ZWT1N+knY3EhwIRIVhgCFesRYNVUVVxhPKOcInW208f1Pw6TrO0rKDZu8crzQ5oHlSgrgFmSIYB7KuuOJ4C3DjW3mZFlQiBnPTpTdfFfpF61RChbNRGkMw5GQQsplMfRtguckeKuGvBjQEdLuiv+AnohCznW/8WUlGoXpuNETusExXM2kqyl6x++vzWsDK1CCCuIHKBruBiMBhhsSLFOTF7UtpMEP3YwBParyKSLGkQ2cIaTpjAtMj8k5FS26ggQEAUZKhkiIr0HPwPJm+AAFTFb1xESMlaYhjd/XFU504mAivXvZgPGSJwVhb4YaBEs8MV7jF5iLfI/pKlwnAy2Br8TF89GqWhYXneDxgoQFoLMpfYBpYv8vU643WyXvQt7HwSXB7HCZQwubQHaKAvntI7QRcB7O+JjLnrCqwYKh4koQi945ve+LqDBYMjnMeH0bD2QZPn13DXCCL9SwwERlPobLSTpi9I+dkd7e+32jgDesAtjMMvrbdfio5LhejtYsLCqcjY72LCbhbDrWCMv37OMpMhbqsLZe4Uht3YmfRAoBWgF00WmdVRULZEATyAXEv6SEdfJFp07WVW+HQLaXzBG0qZkhYft3xYHIPOfNluOzAXuF1qjWh40ZuBXQD1g1e5p6omYQgZdNFjcq1y1HyIQ/juGpQNcRSwQke6LBIlRdxr7lTUjyNEmPnvL2OpbAQ3n6F/I+0ujcpFWdwtcjJgAlwAfW9p6okF412MQj3vQqWej3KXraZ1FL2BQPgobTXnffWWkg7ZA89QyPGajomp9ue1ofDBnWdzbXsiwmiDgm2ArUyMH1843dIxH682rg9a+ySEYUspELFy2YG4qebXQVeD3DCQ2rKhQdVBS69IWElJEgQAmcMQtQVdH40LHPg5rAfo3yM6UwIcwYELasgKBP6ceknxczyyE4WFTDjgycT2kfUOUWcHJTLEX8GOwfxnhBwq+sD+kZjQxiwUmejFPU0eGKopzNaTeOr+FH6910ktNSk+aQja67uI+jLROyJnRPyqAG/oJBhuLtdsnqcaznHW+ZmT4VEuWvlMFLRgHEKW3lyBVXVEG6wR0O2MX5PqzwvSmd9yf1dyT0YzWaqcqc0PaJVL+FkiVCMy/dk30uJLoOw7Clr/gTMIOlg5t7ckUjaSyPKbqpO3+N3CfXrOjbzM+gjMpFKUIONbciiD8DgxqOqIy2DS7T4V81ehOehaO69l/1C/9l+ADaMk8OVtkMPuyB1AsQ3Aff0BrQQhM1thN2Hd484sVND/0+51zdkVuD4rI5gisC8pQsfcKs/oY3cU/GQP8nwEJL3bIPYw2nrc6+Rdy2Rnjc3uhX1sKhekovTkY0CbI2bpQtaArizdE+hlJyQPLZ6/seqAlDuEw+ulqkxt4HyEvX3KpBMeK67QfVajEPHmrchgRDRqWD0kwP3ZUOf8/gmmT8L0fXOUk5N31g7wDmlMWrpelLntPQuqoOjGG1V+8YS1IDLE8JDQi6/YILlVsnY0SpK5vPrBTWV2fGyj9EhrwDW3J++WYtqXLt7UL/X1MKrzgtUdwvNmWh+gUmfBGJXzzmgJSkq3ASzi02DLi7ja7XHFaX7DAPjyOMNoJ+s6aWqwcAcAQ/r9eRNqiWQUKdTT04aW0V69WoU0XSCThf1PMxMFEnw0o1QFCsT7CBXmZz03xFnfUjZXXTyRL68wL68u6L1xwycyZKcs7gRj+FhedJHfXHA/QjdbTXgU28B06EDBqOI8WIhU/ITeKFscaZB6RxqLkRVzolizVAT6i0yXSNR+ZBxwM2WeY2swVpGbkDtKjzr3dfkACAlBbJ1Hsv3yQQP/jbPNZeE5cwD9OaA97/+DfbbseGnN8OZP7R9cMbQZMbcbYLcaUPRRyIVM0Ld3HKvZsDXaqR9sv8tyIn6BaNt0gnf9lX91hKF6k42+AYVPaz91qlc9w9Vxu7gLYb4/+O2+Cxnjz0P6wAVR/QmBOUOSYbRfOZjSHgchzDxrYt7SBikP2WEKemG/77t9SmzTPHvVE7hwCUyi5VAXABlC7grcYhImGXMtxkYh4E3tGhNc658sB1Y/lniEGNOUe2MIy9AhyweYKN4EzdoMCiV7VfEREeWhTdKqnmC1Yw7hsv+13usQIBCfr+5GHbqbORgjJl5oDlgYHVi+WZwHu0DmiVU+BaX6nEt1QpwzM/2Y4bEGN9JXDptiRDMiKTvsc41ymQDoxWAZuQoxXGbXn/lH2ubCdIJRfSW5BObLA0EFVlVdUmHav07cE9+GmBo2k8jLnlbq/odZkbV1vRZrF/uzq0R2uA7VIEJIPl7zBOqakKGRftZYiCsZR+8SlH3O6lfWVMm8509ek1heS180/pKFV7/EhPwd1hQzdnyxxmlsHLr26sx/IU1cGpxpWKeI87fZRmDWMeQ3UE1lN6cQxfztqceaAP1ONOaFcZWA7a+vfCaRG5YgiWD3Mt07DLYzsckaJoIkuiCNkERvFkYZgz67WN45E9lfpBWD4AvN2WXshSMawnak7GtqmYZMgTwzmBdEN3+HXwu83JYbfPWFaHLgPF/EJ7R1s00t2xnUGBId5NO2V9gY/TvTFjxTREf3n2Owp4vxTdS23NWAZwrrwvUUFki5/6PDsa/Pys9xFhd0EwqOwof9hsdg7HL6x3w8I4GtauAxkgZwwVIOMHz9nQ/pyFWNzS6/lhLDOBhJKhGGOfR/vIhJ7AJnC2DV8ZQRNFuaGc9Vh3/yIO6yjWpHXyt/bSN+6G4pYk9nYesGRFSG2sCSKNtB0ZP2NTdLLf649O8lsYWfCLnfvlG2NtBECPuUpbfZcYsgsEmLL1C89JqoiqMBcPTdVxurkTujEoC/LRq1JyFvom6JC2QfE6EV14gp4hW5QVInWG1aPoKYjpxCeuRauVBQ5hTOsfag7ANB6TPoJMQGTFnAWW+V1cnEWieKEuf0CMoNzalM+sCErzwtkLtFBKrArtCKJSywRUxyo5pYf629XMA0hdc5CesOH4dFq8ygcdgebroSLGpm9Nt5u4i/SU/LHYn6ne25H1v7msglVLsfpYV86ReH9Ck0jyKXvlNn4yl6jIzwQhwY2WL9+vjidBEro/4Kok3XTMoDtBEWqGEWLxrHIKZoRPMC7GK438h7K2A3H+5fNmqRU0OQhoqFchWdqTjbkrAqT1tw5Qs563NQQLsUzm+NAFSr4n5q7zO9fcS5P/TMxTIgfTkZg5TZqYFBmkO0q/iw5tBOesG3NmJtwDKm7IMXY5WamtAaD+q27j5bBY/jCciFdGXsKKUCSHAobkWdLgil5/NtJJFnHKevyiWbdKaJUebIGgwX3V4ZGvp/k5TVVp2A/OtDTQ+tEhcQuKNPmkzerT/oVummpHELdCfPxbqfUKKaLJ1rlG8dkasU2O/EAP1pyI4UXXr3G4dX5MUvgGApnWfM4C5ozENI69ZV9UI48ha03GAixE/+gEmfX0F5Pw0dX5cCiMnETDQ5ZuGMZkObkQXLUJp9tNp6m8zAogNmTv+ZcogGzZNwiqgBBWvtoH8iS8IEJc+dxnwEunAm/Zz4Bpidvs8vrne1GWWhEuPdlw/pENbp1cVN0zO824dHCmJ40OiU2rUb4MBW407Gvq6YJBtSRBzUS2zVU/lBBEmBSnR7dExe3sTC8JiBObnl+OTuHysuYZZ98GMBN0i74kAHLD2sFQTp4Wl/89iq1MwtOcYUWBzZknNnYFsTQ10yD8BxDh3jSgb9shdyDzyiErpKmng5Q6j805QLk7RQuk4J5mvZCa7wzzCWgXJy2uq15rg+a10JLJzq9D/UgGSKXpp56GZ0ehNOeEBDm/ENjXuvF9VCxne/tPl+0a4bnYg0oCEEXPuCEexcUwBcuMHxcIjfiNfkPvGpI701u53t0yEWUMd5Esqi8LK9wDmhXgHqUdC3Dnz7GpEaXrj2GDUfa7GZQLzkxtA/3yIVIDUX8rTyacP0Vo2q6PS6OREN5x7sbRsX64BG+zKLoWA7iOqgEKPDEaImHfdb8N0Arv9aZjO8327JeeOymplMKm7kpZpa95mkJMQLPXunMgIu8qEb0W+YlX7DhmV0EEoMgHWGj7JwPHJUzQKcd4iokSwd+Nj5y97FHG0Uys0SnkYN2s/cDFhqW6jCen1Kwl/AJlsbjIZT28zvOzQOD49nOXXvmHOWLW/P8nv86o5TdWz7RuqhEIJAGna0rzJZ2u/uvyW+iQX+TnYqbaCxHdOMwT7+Ie4X52u5YRviowO6+3FBKtTcnhR5XFBtf0uMzmXKOY5QCor9f6/C48Hjsjdr1FciVFpfL14cztz/jGH/NP/a1JuRbR0I8aI1EJFTCV48xjpgE3GflD38TttyT/fmf5cfOzANS6F16RCWJP6HDGWJpZN6ADir48iphVIKkFJumtwdqP3jl1GWcXNrnlUkHq92NYrIFnWxPmZ6FwjFnZ+ggNCUF6U7mHTO6nr0EFqmBMhQIy9pF1n6YfiUfQYlg/naG7Z/K5sk4mnCSkMSyJ+jC62JwvU+HCv6hNNKG8f227LWhUPCddC47CdkMB7vWUU60CqFBV/Hh4roE59afXPR0wXI7nc7oZ+bIyRuA2cHsF4vtdVgCKMvCPSQ8PYmalYwkYXIluL+5PGAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"I believe section 105 of the Act caps a rent deposit at one month's rent, which would make a two-month deposit void, but I cannot reproduce that section's exact wording reliably enough to quote it.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 682,
+   "output_tokens": 1238,
+   "output_tokens_details": {
+    "thinking_tokens": 1147
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

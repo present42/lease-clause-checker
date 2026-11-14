@@ -1,0 +1,111 @@
+{
+ "clause_id": "c18",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "570f673de067a26574a72ab99c51e6e4e176a1234661ddcd300a4298e549b85e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nFor the Landlord's records, the Tenant will sign, together with this Agreement, a notice of termination dated for the last day of the term.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:17.181635Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"37\",\n  \"quote\": \"A notice of termination given by a tenant is void if it is given,\",\n  \"reason\": \"Under section 37(4) of the Act, any notice of termination provided by a tenant at the time a tenancy agreement is entered into or as a condition of entering into it is void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 406,
+ "output_tokens": 1048,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "3bL3auCCDdrw0MMPjcjKuAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:37 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"37\",\n  \"quote\": \"A notice of termination given by a tenant is void if it is given,\",\n  \"reason\": \"Under section 37(4) of the Act, any notice of termination provided by a tenant at the time a tenancy agreement is entered into or as a condition of entering into it is void.\"\n}",
+       "thought_signature": "AY89a1_9BNWwlIPD1LF2HKME7pVyU3aOCgVMaPMxw-IbArg6mkMyqXEL0G-Xv2FtIyEj8YggPxolAck-yO6pV9lO-7AGH2ZK901NO_nlXsUcjQVK_69lMUfvmjhfjGHq6gIhMSI42P1iaccc72xieDZov9gKpsHSeVnRkCBi1jNj-8Ax9OsBYkzR0oHtPJSACWa5nBEsb3BXUEKWeOOpMru4aiDJejYXfdp77hTTh7hsIHsao-I9CZVujYiC9-p0mUW6edyuXyOmy3tZHIjmkRf9SRGI9dgSJWLMaeJErHH6AznOdVNZkeAUZN_k-hCpfEqsKZnp6vVS1YINotEy-5mVFZ9c-KpCZAHLsl71_38m1agzg5EBLA-0chBuRrdz0yNCWTdPKnRFXdSOKuDAhv6YM4lr73N0m-PZwTMOjfd67YmvoQiPVRi7Bz97zaRgHfd7vedGZURDVB4MmScrmqJch_hnjcHq4XWJfLSROfXlkdrZZG3bjNh3CeNT-TdM8tzmktmXWUTujzUpwf9rbtV53zNl_n5etFH3jbu273Qm6YpRJGaLYqUSPywxAy8IugqCXi5xst3EsDGYBMKVklxRHOe1Ma3yU-YMj5NG_W7pGBDOOqBBfVpfYK35F3dNkBJCFEorgBTqq3Ib6Tw2iCJqflu1ycS7_R6X_K_rQLFgGUnaQ7e_HFYybsYIgTnj-zM3akRI70eblhM2N-Kot9hvhnVrnrBUM-dmMkN-JkU4vKghLWF9TewqVhXpFSiQxieHqOQyIbwZr-JFeN4hOLgCjoQItq3X3ajqlVGpwqIewx_8ku-qfAmCLfaN2Yzky5RAVACL4zkgoiJsUEtzif6L8PaGLGySnHYC0JW1EdlohBMLqvmlb81W-RNjCNJXfo0Y-esxPwshrTZKz0yW9_vwMCqY7URbsUNC6U4VOx9LGbp-D5qgBdEkrevcfhO5avYY81ekumz51Ydyq-bZlV_kjKXqdhfneZ_3FP9jd7zvD9rnhL8z3wA6YrT8DNP891R277_1IInU7zrxqOYAFJuQp03wOISvxelili-PAW6XsivOjIbhRKFp55VrPuL2KD7LJMm9MeWze-Bu1RV4aMx4pu_inbKMFdtIDF6BN-irPV15heGnikfwkQ7jN3yLdQcC-hLNFgzZvl3DKR-cYwQTqsuq1EzaPkOwA_S-r59tvaTM4C6wXVkkmveS9r5e0A8pvSSn8gNSHTJMTDIR4JUyXaTkMC1rQZqBgNRaAl2PnDF22xlh0egor6lcp3CL6dkKyJwvowAxfn9TzhcyIqSBFVNBeWm3HAW3Af9fX4AEgeg0dlU8G3B-hPTfqoNpGbwUfLJU9gtlYkMayx7Fx2zSh2jmuK9ZaJDt_ohrG0tixENwMFD6yMGLOzqUx2uqWdRwNdIT5fuSy2mKn8k5dY7JkRNikT0rIxYHpzqr-ndNUUuwa4xO9PqnXS9ZWxZuqDopFm_b5EtT9u3rJSBeLNL45SSrp0pmMscFGm9EIU0sr3YOfngJwZppdBQcB2QzRv4jL2i7Q0TkM9LTKrp4fc4lSxM1pPqbEAUpyY0PcNghtlgbZ587y5BVLAUIza-qqpNFVM8BV9aiCYrX4gkp5qn9L-PhU5R-1EHN6Ryzsv9G9--HOFFhlD6skI1iquqK2kyy1NjRoxAv8lchFKwl3tMl_DqUDG-ihkCf-A0BRP5G3AseupCHCemlX_dTP5E8vqNvebn3qew2LJYomnFjQjX8oVTuy5DZC_fUX8lQ1VsHarkc5ZFe1TocqRmRIQUEfnmTLR8OeUz45S4J-fMpWws7JZhLqjZqnnCUudz3ENDxLGJeuqsk02hFzzOihZeP0XRz-CPUNqU4jU5i1I_DfPyJKJ-S_MjvIgOztVWQW8noi0ksIdF-Rqyt-x-uliZftdWNMACggVMFJXdBd9onrBvOfocIZdyeeSGUwKcZ6pdvAh9kXCLfbyaJCEF7VSnVAJAXYgKSK2_uf6_tyXLPYvmMT7K1ayl6M7_shnRaIIQm6byl8ScRzzeXrR1kD-4Z7mOslpyRQgnXpR5ger1hM9lwgt_7iyHFuDB1iu7LhxkU2ZiVDcrxYVK84lZ93X9GpzbyRUuq9aCVguYo1vVZucGh7tT2bXbG-PZzG6etsoNXL68jWMtGfVs2kFpqes9VeIahTH_WENL_RNIXh18YO5G0WQoGC0MVILZJrNKWlUmL5CsTrV9BZjU8FvHfHkOwjhoqh2HD4nVgHxawOALYZWnwefzqGxdQyf2D0WXEOm9goToePcO_zAaD-or2IM9GzfHtIpBXvIfjgcfxsxqM5xn3f7bv70SPSkAFGFAnhVTYRDdWAsZB0arBgbAfS4vVW88kLGdna6NxgPkdVOB8DO5eNxrt7o5kGiOrkFgvNzFkjhNtpuwxmczPd7gD8bGb4m8QUfsNT3xordFa1kszIG3ry1aVAVmZ4mYnXcmj4KUzYx_EngmjQSKkIUA7Dcg-dRNhi32E_2h-4Rw5p56sZKVLphlFrei51Hd0peBiKGgWWqWPbILVA-Y-7iLuUt2hleRwQiKeHFlBEltqbeDsd47lICHQCvsMomfN-NMxUjEek1aGkB48kCWc5tHDy2fxV8ESbJD5dYAlYpi1cRXNdsHmkdhSXF-ODqcFC9Izqt3JfhuVjh75s_w0aTYO2bnzgBkfn5JKuTq9UsQsjCBdisspiF7ZcYMooL3RPgBjb-snsE2usILN77G0iYfxMSpU_WSzvRbwH4umeruu5FDDaC1v_BteXCmum8RNZnWxfeOjSafQhNl0WNcHLXHunggts1tEYkhVCd6zL8Pho3DbruDGc2gwkhaHVKblnECwKurcNoFK9Eg4eZi502Lt5JBWyOTFFnnjJ2HQnqmRwdmoO4yyFpuGHWPWEwNIHoSIct8SRnl66zT4gAjGY8F0O8VYpdrRaFRaBD7liakO-hk4VLs8ewsbpDWbDIhAwKlsBJ7vKDIZv2V5bdJ3Q5OuvkfY1gXiHry79xmo-ftBYALQW9Fb4LmGEDsxm-5Elkh3qWaStVfC6Di4HI79RAbsTIC2CWBD_AIrWcz9ujCPkQVzCTLLn2OgsJ_y6uOe8S1_bqSu8tN3rW1LfaGOgqB26C7AJ9IWd3PYar5M89kyK_Goi3RVBMQlvfxrgMGzI2lXA7IozFwB3AWbeg_wFINyLa5WxhHQAMIoNemDlUYjUM5BTpipF8iGEBrjfkltggRF2qpI5NEkHrN_5gEFTvbMqOePiiwFVpxhr_EIE0_xD3154eAdzF9sb_agOv0o22s-uF8G5yIImtBBySiUdMfHBHMPzWDWcTqrpwGM3G5SOLnzc4HJEkizVCVTwscXGXUL5NuWex7TK0XAsuYSrVCsDD-PLdSDbZbK3JUX1l_cp5QEXIuYwLWhZM28VJ1e2h_Q720Eltk57tCGtZjOAvymLkHmsYroZD7VHJQgXg-u5oeGjDyxPDqlspdCyIT7b3CIr8SFZI78Ck78hrGGp6t1_XCHw7HAHuwdX897zNaTG1P1Mr_UfMjYo2pg7bNR3SlcazUUqCC-t6D19K5qNeUpz4fkTLpxoJuHsH6f85SV6sOJvYunBPOnZLwiSp-jD1uD2mMDHdv8kBgBGuygCH3k3OKryGDbAPV2F8lD-_xm6M3_toZ8PfLKPp-D02V-puHJ1W8JgFtEA5GlvI8h4sF7WRwWzldDTuO58mEFKLybMI-mKYW6FozrCM4I0rYZgVDlrqDyXr5xhruKLI84_YciRaZSNfUErXBo_e-oxPjFmtXgEqO-lVNuXNPXko5RE97zH1w-C3M1Su_jYh0-HoqkbCoyiGjRlObemDldL4APzFl8W_Nk48IGEf0TiNNFkONjMSGV4GP1WOs-P2VunBFnuWb9n3i6zzJGDNDIL3cDiGVbnBuBlR9RRRD8eT6XsOx85iBbDsV2mw6ib0j7on5bZlrW6SMciX8slI6UXyUpNUkb1MIA9tdpA85TW1krKkRDywF0e3TohDBF83YboasS1QfQFlEfOvqe8kAsOSQYe_EH4ckMU9Q7gfoRwG5hg-3UGnWuA4CaLJkc7rsb0NEsa8wONHASkWVJFm78fKsW3jfDMRvD6NZvUFEpYel_4dRfhdTG_DOZwzRH3fUVRBrFNG7han5h8SCgca0u-ZadAr850H0fAcnVy6xLY9KB6m-Z6F2Vn7H_9vAx5q54arSIecvmnkOIEs298mfDfL63f6KPeFVeXPEnpIwXiALiMjLBtvaZtTQH7As5REQPkECmQvW9JVu27ieA3HgqDxS8eoLOHpiWTvX0gFOChaB4ne7oyMjyMSLSZx_DSWgH0Jqjcz2PzuwfsE4MHmL0axuyyhDf-d43BHG9-6BQTGokKjg89wcSJKhpMlVPxpgCg0JW3p823IZYDyebMGzomsbZS5Qbip9GPP89CUGtAN3X--JN_r--TgLRuUTh1a95nrf5VAkUpfhkM1MinmcI58vIibiKbYwn8k1-O0qwLIsWWC7jd1T1h6uC6ZnNk_CsiLyhTtCflxdq1kfTYvzfCCpPpi-PATvPwPpD_RFCmDrlg5OkJdZAtHMYt6hrCrDmT1YU1mUJzQgUDSKHSrmB0DBoKTz56jqPvhKSHo3N2Vk6fCFpU8ck54W-mfIbGbk3ew6O0TIwbLUUISFV8GNYulTeZS6TCY2kfd4mEMXVzYZAn2FNoHCecXVXQFIFP2t8JD8tGA7xHfVpBTmhOcHD8kL3TNw22cB4TOXXlIj4jEAoJKD1l2zpP5HjSMyPSSTUgM2QrsM4wg6KuCz2rEFQnSqTYvFSYpxXEKtGIwO_vJxt-v4AuYzdLLMHpBzEikyogIyIh84Frj_uBsB5UgmwgpuKzPukcDSJPYeMvDS-PxmL7hGYj6fAa1l-h8bXZKskWUbVEgWdEc1VhVv2Zgk="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:17.213344Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "3bL3auCCDdrw0MMPjcjKuAQ",
+  "usage_metadata": {
+   "candidates_token_count": 88,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 88
+    }
+   ],
+   "prompt_token_count": 406,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 406
+    }
+   ],
+   "thoughts_token_count": 960,
+   "total_token_count": 1454,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "37",
+   "quote": "A notice of termination given by a tenant is void if it is given,",
+   "reason": "Under section 37(4) of the Act, any notice of termination provided by a tenant at the time a tenancy agreement is entered into or as a condition of entering into it is void."
+  }
+ }
+}

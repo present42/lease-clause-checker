@@ -1,0 +1,99 @@
+{
+ "clause_id": "c26",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "adc09c2c8e36f09bca3534527a7b63641cf68a8d0f3b185a76b47c66a8f2a793",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nRent shall be paid by pre-authorized debit from the Tenant's bank account on the first day of each month.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:50.127824Z",
+ "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"I believe section 106 of the Act restricts landlords from requiring postdated cheques or similar payment methods, which may cover pre-authorized debit, but I cannot reliably recall the exact wording needed for a verbatim quote, so I cannot decide with confidence.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 663,
+ "output_tokens": 1142,
+ "raw": {
+  "id": "msg_011Ch1v34vgKhdigaSNzLGQR",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"I believe section 106 of the Act restricts landlords from requiring postdated cheques or similar payment methods, which may cover pre-authorized debit, but I cannot reliably recall the exact wording needed for a verbatim quote, so I cannot decide with confidence.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 663,
+   "output_tokens": 1142,
+   "output_tokens_details": {
+    "thinking_tokens": 1029
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

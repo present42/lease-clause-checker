@@ -1,0 +1,111 @@
+{
+ "clause_id": "c12",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "869b97124c796a715f23d8d3fb8e01730110bbaad3cc0402cfc00e68f1f636e8",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nTo carry out repairs, the Landlord may enter the unit on 24 hours' written notice stating the reason and the day, at any time between 7 a.m. and 10 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:07.962686Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"27\",\n  \"quote\": \"The written notice shall specify the reason for entry, the day of entry and a specific time of entry between the hours of 8 a.m. and 8 p.m.\",\n  \"reason\": \"Under the Act, lawful entry with notice must specify a specific time between 8 a.m. and 8 p.m. A lease term extending the window of entry from 7 a.m. to 10 p.m. conflicts with this requirement and is void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 420,
+ "output_tokens": 858,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "07L3auXwPIjg0MMP4pPa-A0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:15 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"27\",\n  \"quote\": \"The written notice shall specify the reason for entry, the day of entry and a specific time of entry between the hours of 8 a.m. and 8 p.m.\",\n  \"reason\": \"Under the Act, lawful entry with notice must specify a specific time between 8 a.m. and 8 p.m. A lease term extending the window of entry from 7 a.m. to 10 p.m. conflicts with this requirement and is void.\"\n}",
+       "thought_signature": "AY89a1_W5CNlr4b35bsS10i0pVmOfrbLgDSbXQ_Ulrnm93qsPCU-5Wgw2M_MdNGZ-Dx8mU0nyEYfKMaxBxsGt7fUHH5-4K0wfiGBlG7c4NQ9oTiExZ344vbpPr-jVFSZcDmr7M2LPPik4N4b0Ul_2dq1Rx6tv6PPAuMenKnSsAkoMQqbbZisQ8_CLUwtSU_3uO0zLZsSngi3qY7_vswId9EKyNx0gdZcOi1chvu8esWxcwZPbpc-0sYXrtjAy6Kbynn4eI-9QbliAe3sXwf80l-WhjNsXU2K0fg_RiUSZWKAgAmUd8JZBno2n-PM9TSAAjIID1M2qOR0M59cqNzbYWhNjOYxcjkvOF-DA7wtO0C9_sMonky1hV2Z-s4V5FRFVMMiY3XJ629cVMPAAdqwFf6plEdnimHvCQDTAiJ4qMbYhsSPbAgSaIgU5x9XFdNCtM7iDyjkATLyDKLtmLTnuWR0AmK7_GzEbtxEAZjd4cm224Cueg4rh15PI8TCFmMSvoQAzuwbmU5fvX3jKBwUCJg8rnFfbmBmLSnmp62axw3UbYKcdh_swO6ncvdh3Ot8skAqvmBtX3TIjZU-FAEB1ZsUaxni4udivhpHl-T1a368hylx6SfVFKWnrBbSJHDoZhop_Tp-oUdLc8i-YVTNGiu4g9bB_h2vTDKb8Fo1w3dw70eCnrqVpCpm2xzQtOcYVZoSCi7aE2rh8d_0XWIof1XAiiw3tk_4oGrYSDDY6oF6bIlZqViKCi36CPrICA4HmbleKZKuaYM3kA50LuvRb2RiL7CUl5olCLishuCVjHU5y25xdi-4wW8eDiYTu38fa4yvvJtZE64JoOdO32U30XMgz-EioesLDlgjAVVDQsNXSQoItP2WhiwYvnQ0VWRMHY6J7cXDj9VA44Vj29ac89neze4eER9rJ8Iu4Xue84GORh5jo9BharADhT4K9j38aN0YKvjbomEHHSKwuZ45PQUBpBppYBenjdYB-HNFm2wenXGwSWYQOG0kdCQZA8fw98kkEY-w4FEgtAtYbDiK5wVWd6Dsjqa4Er1un6pHKyQutfR2gruzoNqi8PzkBc-4KjCtZ4UOOb7khpzExGuSosZmIqxiYSJHWKoUgPpp5u07vUczf_S0ozQeUbLks68Bpc7bTvlNPFPiq3hHu41UPWeK-j-Gx7z_z9Xz4nyrdCmsaNnvLhit66ycCamQzsFLN0b3kxJVEjA0Fv987HCMc9Q2maPaJHclrlJz_-4kJKi-Jot-OOKMXyyztOLY921Xcf7fk0uWka2W7RSAYFg2VNr7xMML9RE8kgmyg2hFFbPfgCjjApK3DdNCilAPzD6GdNKxzfjW6_C-9M3Ok6BNB2DHveMpZ-YU2Po4CmE26YXP74edWvDcPCHlt5In5WEUqgC3eMMctrQ5xauD4STREApWhKTbpbJ7G8Y08EYoEFkyggluue4rxqKNDsTGUXGhe4tAhUrJZGoBgIG0bjtOCculBBBcoMp20_3p5ESM_KyQbkNYMABgdr3Bgy2HcD2llX-63pDoJlVYwZTtCycq5sC1SCJyHuXWShwVaMD1QrbkAc0aME9wYY5iAjUtQ_hUPNc71zamqZ11sG-1haY0Y_gzbeP7UZdC3K8InQnryR02eMudRI-FRt5NhIBlUoxLOxX1aQeR70HsLTW6ifx0kDZ0thci_FD9-xKEErsGsfhte48kYBiHiEkVcAGEoH1qSOg7oKwGvCpbaqNpNkXfY__vUnhgMWuQdR7l2LCpdZ3cC7xu1Af0hvV2mKkRHiUUFWAd06RO4QhO3_SbnqgbhxBYVrvxdXOBPaOrXwmO3lEkQk9iwMHPgf1h6HKmPRPRePx9z1RFbOhG4kFK8EGFaI1OpAWM0ImNGwnuvLr_4OLbiE7c9vm56uYawCjWTh8q2LPpqIQ6465yMw5AttJG0jzvr5l2PcM4Mj0TysN1uG9IXO5ElaL2bnnSP3o2q2jS-QEW65aj9GhcNR9tOOqp3KhRilXiNiB1o06F0p_i_bXqWJKTgNMUehOLlQByDS6EwCu-v4cQKLCFZEeYimue_OO6MoOKi6jQcn14zVUUDOst0yeIioIeqsIbwjfTOca12ebHAV9yIbDNleFVcUlsCblM9yZfEdJ_bwATN_yiY9JdLPqeMwOqtX3QoQUorCfYLM7QBwSUDUnH4lSJkbLM8vQXwiRoaQH_QAaRUNe_rv4QiVi3EV7-QBadZftemcCSXiKKbzArAiN7Rrk2ATAjHxxTdfmn7qvXFg2mrFhxShv7Tx838WhNTwOCbebqWkPOO7cA0jMzCALepbZZ0H-dOqoBASRpoNxuNkqJ2StrBB3yhHOL7jDb6kpu-eMpXQQCAqlKAK2EGPYXY4THspjwrfyJBIowmwWZ9gXfRI3L-0op7YVpvOtdpkYDuhpc1rfFXNjrID1aVtXA2g5IHfPICuO57IvEBf_k4kE6DQlyE7t7FAoX84xg9FRxhEJKnDzwiLwcAEmj-RnaLmprv0CW31DTxw6fs9eOXKSQs-wgk2-hsBtQ5pS7_nHV_Bia4j7UgCcY8su-Gdkfjkx8u3PlwW39ChZ84j9Hw2kOAQWJjgGiW0SJfdDMrvtHEbqvwz0_2wU_vKPf4cQmAx9_GiioLPVGp_TOqNn4D0p6OBfRMjHbNEuGaGcJF_gaETociSAnYm959hpXnA4zkptCtDNWwhS1ej51GPBgXCyQ3gX5KJvyy0IM3Dj6BLIDvFELJvPDero7WLST_YJvvLptK31aExJFU_gzhUoUnH-BRK8kAKAKknzeHf_42PnSkwqZ-Pf3Y0sJIgIOIDIe04is1AcdjQTYOfP0BlEorgvOd_4ANMCeus9IYTC2myV1dh1uf9ijFUC1ykeeUEgOf4UTBZZqCzrP65oBy9l2rhSFsLVpSywMBOFgeI5v449J3aYwUHQHHzk_zKmnF1sgj-5PeuwI2pXcK1gKLFKymqm0MnxlZ7_E6q_6-cLsI3W13poQh-sSC8g_OEKmgExaTSTHGkhMEuGkYiK27to-nMuLFgBbZsjGlfxSuoR5dShRQa8p8TXsSiihxmFV-etxsNUP0ePaKR2v_eUm29pGI3EaNIynzhQy0dEHU8l0Mx7VIf1YUwlLgMmdu2eAp-pJ_RPXfwB-1Fow2kegXgNrFegzbLBuGjOcfxOIYn5Hw1KpMfulcwu4rN3NicO6nY5aIPh4tsk2b7jh2OpQmVAkSyAhPwS-Gfk_n3j4Rps98PPTRQ0zblMIDdd-a3vBkWbzoCcb4_fKgYrTMZPVe4erDG85l8xYzQi6omFgfEDTnFa5RMqanIj8mDuief--20vOTldeoJoZ3HlLgjABmCcTCqLw761dL9QqkagWXi1UCGUOC-2KW3fScbOcApGUinSzDnN1Ofie0VRzY2KT-Sa9g0G3MZVZ7f25C1KU_gBEGPGqOcfmg_xTobBQBQ203xGpsErg1Rtk"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:07.997477Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "07L3auXwPIjg0MMP4pPa-A0",
+  "usage_metadata": {
+   "candidates_token_count": 128,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 128
+    }
+   ],
+   "prompt_token_count": 420,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 420
+    }
+   ],
+   "thoughts_token_count": 730,
+   "total_token_count": 1278,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "27",
+   "quote": "The written notice shall specify the reason for entry, the day of entry and a specific time of entry between the hours of 8 a.m. and 8 p.m.",
+   "reason": "Under the Act, lawful entry with notice must specify a specific time between 8 a.m. and 8 p.m. A lease term extending the window of entry from 7 a.m. to 10 p.m. conflicts with this requirement and is void."
+  }
+ }
+}

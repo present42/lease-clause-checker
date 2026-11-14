@@ -1,0 +1,111 @@
+{
+ "clause_id": "c05",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "a8ed8f761f5d19003d827d255aaa7f12bfe555589e1ac11f7873f11372ef67a0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf any instalment of rent is not paid when due, the rent for the remainder of the term shall at once become due and payable.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:01.897711Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"15\",\n  \"quote\": \"A provision in a tenancy agreement providing that all or any part of the remaining rent for a term or any specified period becomes due on default in payment of rent on the due date or on default of any other obligation of the tenant is void.\",\n  \"reason\": \"Section 15 explicitly invalidates rent acceleration clauses that make future rent for the remainder of a term due upon default of a rent payment or other tenant obligation.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 402,
+ "output_tokens": 545,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "zrL3arLCEt_IpPIPrpqRsAk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:07 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"15\",\n  \"quote\": \"A provision in a tenancy agreement providing that all or any part of the remaining rent for a term or any specified period becomes due on default in payment of rent on the due date or on default of any other obligation of the tenant is void.\",\n  \"reason\": \"Section 15 explicitly invalidates rent acceleration clauses that make future rent for the remainder of a term due upon default of a rent payment or other tenant obligation.\"\n}",
+       "thought_signature": "AY89a18d_d04urfIwD65vCzQcgtoNwWKqFfbPIc6gPkNGFsynQDCPL3OS1cxizhdGowPBjPO5sTkEtLjie-qDZVaJgj48AUvBNX9RAwI0y-CjFYdArNmKFLIPtMSWaQeAA2apifceiFkC0FZnZCBQoWHIPsT1zwem69RO3fN0yC5o4KStRlDcvU6jxThH4zeG5FTQ94iwX8YSpS_iLbxUY2DIT-JwVoyBy829NBuIIr6pYncnRLFs5rAJmuMK_VMj9OzRKnBoctWfXR6ZuZ2PkaVA2K3C60HJEiiK8EremMeR-qo8xj_z7hhqgs8hIb4QK4VPeAbb3D19Yf9kiOdYEkmi0xOG-CPmh-gWYNaj6bLF5QTENK6Oj55OO6URxp6xFHh6WKlLYRcNWripTMq3ZwYL3zJTqOOHxVyl5V3IYvixECh_0iWV_hg9wVzLSKox0BeYwPduNOQPFnWM9CgStfRKHOx6aJRwNvXtQDUTBjH2M9TUc693J7xn-c6NgxWzh_yEqquAgXVnIBrI5kyrzMpTlmz9UJXSHJk_Y-G4s4Yshs3_EpnImMysH8q8bhjgOGn9O55hmwT0f7CI0ltPBcJ2kRc6KT0CgnZBrpotDUri4Z0-yDR8FCNLxwvAyHbTaHoqkqs-S9VQ3yuNsKlHotQFIYBY8pYLjc-KqqMjd-3EUfQ17Lse4q6nX3_-6O2jSYKm3TBvXlzfjlPOEAw31_COUkCFQy9Jwjyq8WX0vdg-PsxMpbbXQfww8LQY0NgMb6q8H6eSrgVx8n7AqCGGHT7uJalX5ibqY6JFtqJJhsE0XhMjh72-EKm54KhmuZhjGe1KwYPAfqQbwjgdws4teeGup7QlbwN7WAtdW9cROCmpoGzzzXriD-LzpwzBSTrFhCUGE0dkjI6foOfoYaRR_puT8PZp5vPS5N1MnWekY7G_KnHBbSkEUkMRSu-gK4MaFzEpskY6aGsIk4uLOifQGL83qJW8OZcYXIHoBA3pJelNCSBnESHHMjUONavEDZlHv4KAKwvN8SQoj9Krm5VtkFVTV_UPrGkTdEcwMewptrygy5HZFlKciBtbWLiI7OzJ3tU7xAQD5EQkohIKxEIe8KmovjvTYDfkwhe_ufAUCOOkoB7qyDIF82APj6NeaiNuS_UaNsYBpw5Vy_U32gWGoi14iAV5Ostu97OelEEiBH3PZo_64P1GonJXEP30XYkZ-9xXsyFaqgWlvy4cdyWsy-EcHTuyFMDGeLryAUkNkwGinTzV-p1PqASRkVFSBJXCUgcJKFNdVz9ELybjiayDVq_aYFcEcOYJlJCi_bTNTii6MfJOvlSSKVBtjwRXMgLnT_qc5glZ1SIbheWlBiWImzWV_pqvO63EUZXpXnXegKThSmqEjLkjwO8YPJtfFxrn7kcGv9snBf9VNkJtlVPBeI-QJMrRBvcmBvXxqHMrtISoAvk9Mixza68sDBDtp5_7QRnLwrqyf2Z-Po7odk9axNJ0heldkYd_g5WEwaaVLL2QNs1cj7UYro4QCoFOQgdloLRmcuR91nf326_SdmtfdgV1O8Go79XFp8xBhkuO2XKITEpYUR8CgfSIVE53SVTLSUoM8In97PVmoz6bb5pMUe-B4n2JhXXc1fxRTIKRKavzmtBbF76Kx6I0avP8IcGUfZfr_PrWmi7VSMZdK9-zOP9oX1bqwiR7JHhJ88XGKQ0ytUWn1yNDvrBn787O_laEzzM_5tMqzWDszofXrsixyNg6M2DJQyVbAtGRmMksFGU0Du43dh-5ie_8p3W6IUe5TzAazwQyYSapoodvg8O5AVClbOEV37Lo-z53kgc3ijbdILPDSu8SwElauql1M77-uU8-r-AqWZrN08AfMSMirfTFYuxRqpxJT6f5y-kBnDp8jpPVw4CqUJ4Cr8coAGhCrEm3hu-EPjoPyqDBk5Fs2qnO6Ykr1NaOX0GZeoh5YYAzggr4S62DvID0KK_qGRFRZuqdB7WDJp1HVdFa0EUY5-HPzJopX928omvjfhiIScY8YQY1H-vGQRXaqpP09eyDrGGmdh7HJNlKXZerfP1mAhcZPYSRZtNfPZAu8Z-dKiXw5VLzCjdfgonLBW3ri6NU_SeA1094Pk6YaT3llcFGbzww5ICvrxiwQJdr6trhcCDFFoXS_CxoOtV3ho18anDpA07ebsNkZyRODXJua1mgo9Krgzydb9iO88WTCszfwp7NyJgYAxR22GNUxWzdtrGTo77iJM7hjkpS3XUzrV1LJTSVYcvPLANDErGvrxeURZnG7gINwlUC2hLLovTbUfpqsnCFUQm6rFzrnihEpSGm0KAZD_n3DxiGavj_L1SZIOxatqGif_GEDQZBLa3miEiW5n-DuDV1L-mH9SLU45wRMDKUq8Hid8vEc7EM2FbAdXETCsAiFmQgpSxLi4wQdFpY3nro8ayQ-VudH3OZOh9mm95cYPMIvOpVNmguBREgCen6lKJ0SvH8vOMxR9Q4bJXeV5vba4sU4FDnmKwFIqtpp9HWmZZLXi_93SR"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:02.303410Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "zrL3arLCEt_IpPIPrpqRsAk",
+  "usage_metadata": {
+   "candidates_token_count": 113,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 113
+    }
+   ],
+   "prompt_token_count": 402,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 402
+    }
+   ],
+   "thoughts_token_count": 432,
+   "total_token_count": 947,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "15",
+   "quote": "A provision in a tenancy agreement providing that all or any part of the remaining rent for a term or any specified period becomes due on default in payment of rent on the due date or on default of any other obligation of the tenant is void.",
+   "reason": "Section 15 explicitly invalidates rent acceleration clauses that make future rent for the remainder of a term due upon default of a rent payment or other tenant obligation."
+  }
+ }
+}

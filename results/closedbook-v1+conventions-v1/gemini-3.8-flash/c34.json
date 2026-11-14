@@ -1,0 +1,111 @@
+{
+ "clause_id": "c34",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "7fcc80cb889d632edd66580debcdc9f9d941893c23cca6fe459086a16626351f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord may enter the unit at any time and for any reason without notice to the Tenant.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:47.925319Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"4\",\n  \"quote\": \"A provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\",\n  \"reason\": \"Under section 25 of the Act, a landlord may only enter a rental unit in accordance with sections 26 or 27, which strictly limit entry without notice. Because this clause contradicts those statutory requirements, section 4 renders it void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 395,
+ "output_tokens": 672,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "-7L3asebO47v0MMPkNTyqA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:57 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"4\",\n  \"quote\": \"A provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\",\n  \"reason\": \"Under section 25 of the Act, a landlord may only enter a rental unit in accordance with sections 26 or 27, which strictly limit entry without notice. Because this clause contradicts those statutory requirements, section 4 renders it void.\"\n}",
+       "thought_signature": "AY89a19qA0MT3RQFx54Bcnx-Oq6H454fmJAjWl4PZfgC6TuGbPaRt_VV65m_htpF6Dx61QDw_zgey9ABZKLvnw8uKrp6YV55HHBtz-EXGgAoWnXtZco0LK8XpYlDZsOgLyzxcNp4a_j2yD4XJlVEHeNRmhB55vBdWSHvQGd7exDe-XM6fMjAhQLYX9H3q1AzwpQrCVWNQPO5-HDjPAzRJb4xE7UMI3FMvPT__SnLgXhY_1HZDJ7mrGZdC0EZcVQICdx8gDWQifU1SlkGBDU_G1c_O3BP5xnP_HR-gxC7EYPBb2600AaaeHlRG49Ab0s6rEdXXA-lh9bvnuwFL3Siy2uRgVDYSwnQH2B0sKxsPJ-O9gQsrJnAqCufhekKFCyteqAivTRi921rv1XuvbofxHhrCe5eyHLFYLGrVg3V3_sn54tg3jKjfL0M8nbDaDtE2rOraJF0exzYvp5gi4I13lqVpGqTPajHAJpFNl8TEYbJz57TReN8gIsewbRVF3IeTUgdVGU6d1r066qBWrqpU_Rb2SnqaY3Av4sTaECdXIGUrbGywCmm9v0Or9vEj-FlHmYozBoO2QwWLYAzz-FJGFUN61xlDu525CfR7FjCmSOPKPwtXw-bX8GG9HRrDOsTLV3l2gfU0h3QKh4wOSYRYfirAPfDyJrnpUKA-YVtErM_-isLZWdJMkovqzJhMyWyW4qLGy8hwCA3qaWBljbZR5rS1znKwdcP8R1pSpWPaBTik7uqWsjXRfBFerxNtxoau4WgceVV6AmF7lBJh45AubvvXwsJjdQfmpVwNlZUUHITc67k5d6BWDv8xmlIc24KyEL-Vik9d1myr-oCojRjcVbOa5Rh_VRc5LRdeWmSBkJWShh5Up84-4mNj_omO2qAm4PX3iRUikl7cA17_CnmgTl1WcUx24RE5pMA5t2n-w8HWXmDy9-S1_XMSLn7u3zfF_QnAyN4aDGt05oNw0CdEOZDd5TJrCDn6fdqafOuLXWfYJqYi3tJbJV1jVyfW-2S6uUW6CBQaCwxlsyCf7a9e4efz2UvWdTDYOK95KgKLrJrQmKUJzxfeFXwilq4k4Gx35JbtW_Q89QttDyeG8dC3lxBCthNX-necWnQmj_ms2YVrdnYt1d9_amAqyIm3WX_tCShx7PQt-vp5M3LflIkY_Oyx-0h5s9zxFE-AZiOi9BDuIBoxSksh2zt1HtR42yxlkc0eDUtSyBIFHyhZ5521XGVQE0bQE737pHvMNcWp_SWEfPrV8yd5oLEBkcRlLeTxPFKXD9GJNsRd607siccFI3Np1ajKHmvEQHPcGFs1rNnmsqgWk55nLxdvjWJ8y_Yp6qIed6pAlgq5IJVc5P4z6DhvzPiUcWr8qSzhgRruRhDAX6GW4zWAtSCIZag97DXL12izW19ktEGQ-2FZsWeHt59NWH6V-X41VybJtlGT-jIEmHJ4fWN6iQjGUvS8DgQMgLnrz7P5U0jY6hSczBBa9REdYd0esiCbaR-rTu6UOibMDcoC_y855nQQ2TdaCHSJktKMVYC9-kuznQaCv_Up4v698mj8Fv9LOe5Gy0paM5iFKx4OQAEm2_CZ9S7NZWAzNf719auDi4q3QhSg6MGVxuNcOUJQvzEPQBpLh0aiZB5J7hhNcgObTdWpAm7rV4ahrtcmvq0bwIf4jE_lAqW3DiqI1cl8JTRkpXXkt0DwEyzbv4ofjVwXWlywW4ZSXQDMJVE573p10wHgAwJWMnYtmXMHuT2WrtH9AVet0eETGckvc4tJ_-YceQDSYwWkFzaKOZ4K-Uq27ivwGvFXmBZ2kdp91CP-TfEormvdiNvRnocRJ1PdMta5a-XvC0W-8OeeQNEu4WUlWJ4FuLnkTHvw8ePocrCVUZpBVO2cy-uYw8RU7WwIS22_HkodsvohyEQOjzk9fnwScSMREriF0o3CdH2TuUhRBAEBFYeXOJ7jWID6jESfeR-hMyr0rAIVnvjmk7XT8y-LgahPY1DMivRC2Yf9N5L4o-koL2P3ibSGEq27MWId9GdjutJDYIT9CRwZoW13Z2zOMX5QYCBw1sGXhuWUa-xEe0B3KMP5LQInuDyXmP04Cm09Oaj8lfP5vbkZYvL6EyT-yUzfI-oFi_5cc-RJ8QZsL4l_cQWNbAKKZuyIDkh9ZetTeokL1u5q73wwPNTEwyxhq6Im8VXWs4XYvuDfd27dq922C9I4UfwVHYl7nAhwnrPtk6DsbGfmmYwmpN4yJvex3h0QLVE5NN2mUQ2spDuYbWrbJ7TaKO11cIhzdpJ1nS7Z1C0kss_qC4yDiwH6nKHEDfRpR8gJob7brKmTTpCKeiZ_tZ4-Esw3pWzSA9WWnBE9Ql0srcPfOor8s6x2jl_3J3LYviTm5MHkrZy2F6d3nbAKrFeozfKzKfJPhUZxjH9lUnilphei3ZVj_m3zDlXy7sjmXBU1p92PoR4wc2EJXwiYK_m_inP-YNRhGb7kBGbbYy51q_Mdljoo8ixLGmrOFB5EvA1ihqPwM3EN2qoqby91-R42AsuLZpQAyBni2pNUgL4t3miZZ_t7wtMLPuSKb4h1PI6N_qBcftFMT4E6jUfFJ9GhH2AnRoDemVBIrV_wjwySMhDXZzw0kLrkzsiYyoH7DUOJn_Cp24LsHHCBGqPqMmbB-gO-ODMHEBpjLGuVRK-97FDXeD6XYtVjFmwuZAWb73YPFjh5iihzdf7j55Y91lLqnrfEdx-B1BkwEVuafC79XNA4rdQDqnOZZDOGLLyzZqaDm1kgGnkJ3Wrrz-n-qgmQwkB-eKX-SEnHwuh2tXTZLYkXGBsE4JiupYLjEVh-6n2-QZWHNFBbudSRiW6arwwKmiTj0iDej2bH1QuA4qrzlZT-ZHfRdvSUVc2V8oOgBppRZEmaNi39xpdk9petFoCXs-8I-dQHo44KpSaO4zBlzGvourDJlErIwXmRDaxLi-bvOROE2Km8rHq5Nndz4_MXk8jXTDHJaSRVFqHPYLEstHQBwLryEf17RLaq1BVca5bdWGJIYYkw1gnHg6YvaNZ9wYFRdMkZyevVlECK_oep7_55aco7Y6Am_RP0yjOYU2hWMdA9Lo77Mxw39Br-O2QYWf7vHCnXwXHCw9XyPA56aMvfAU69Ww3il4We2M="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:47.970183Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "-7L3asebO47v0MMPkNTyqA8",
+  "usage_metadata": {
+   "candidates_token_count": 102,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 102
+    }
+   ],
+   "prompt_token_count": 395,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 395
+    }
+   ],
+   "thoughts_token_count": 570,
+   "total_token_count": 1067,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "4",
+   "quote": "A provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.",
+   "reason": "Under section 25 of the Act, a landlord may only enter a rental unit in accordance with sections 26 or 27, which strictly limit entry without notice. Because this clause contradicts those statutory requirements, section 4 renders it void."
+  }
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "clause_id": "c14",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "cc393117210fac38fd9284198c4cf56235e5b5d8f44df71d8fbd0e0cb9eea814",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf the Landlord lists the building for sale, the Landlord may show the unit to prospective buyers. The Landlord will give the Tenant written notice at least 24 hours ahead saying why, on which day, and at what time between 8 a.m. and 8 p.m. it will come.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:13.866340Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"27\",\n  \"quote\": \"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances:\",\n  \"reason\": \"Section 27 explicitly allows a landlord to enter a rental unit to show it to prospective purchasers, provided at least 24 hours' written notice is given specifying the date, reason, and a time of entry between 8 a.m. and 8 p.m.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 441,
+ "output_tokens": 1061,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "2bL3aqqJN5T50MMPnLmjyAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:20 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"27\",\n  \"quote\": \"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances:\",\n  \"reason\": \"Section 27 explicitly allows a landlord to enter a rental unit to show it to prospective purchasers, provided at least 24 hours' written notice is given specifying the date, reason, and a time of entry between 8 a.m. and 8 p.m.\"\n}",
+       "thought_signature": "AY89a18ux_2ihuGpF4lODD7VlTjNtFaIjoT9Hew_ZcKZApoGRgDoWaxwUA5nDCqsrq0ccm7bIalMHNrjTMY4uHrwPf6qSjG8cBEGNkp0sBpfki3sJYdRqDCI2Z9LQ1CwpiXtExhG9OImUq7KcqbHAxgM8UCvWexKIYTXQA-Xz1XSY9kz7-aaHiVv8HeAXVQyX4fwdqIEtlGmBKlvbQb9tgBOmgT64PNtnZuSQgHzCO_0yU6l1sX9yQYqkCQ-i8yF1ahGTmhQd-kAEKl_J623R4SmEjqmPvFst92HiKZ_vDZpSGGu6Pw_6N3v250QxZv8ktKiiaod3R2fieLS6RfVo2YxS1o8IAJOa5DIss6JTsituZ0kv9vo_fObs2Rr2KLeRRuA5QxJYxxrRByaX8Bhqbz7a5bJhiNt6eSuAL4KkDvcxQF3X3R9ZLDkugOlZ2x2NFmQRmY9b-uOmw2AvsE0Q8tI6j0imfLSNSfPA3nOGMu3iY_UH0q1IS45yXvjBEmgzItpe3oLtimdYQ8JvFuujO5dVZ1PzR4UE7ghS1jt5JuGtCeN52NfQlV3KBuRux5_xOrH94S0qdieK264xaBfPYccRFDVuTNRikOduxiaw55fm_MDtRic9wTqeqzxzSKgOlnTuhMrhr2niLN_79gcdB9ZyZWq0g77XMReiD5syeMzXsBRjqnqRCkxF7glL5JWjDzyk0zGG63fn0iWHU5Xj1wH-s_fGnM7Hi-T7Dtcp65eOcdNNGHSnv7l3C3yaPhy7-UXSF_6hxKQhb2jX7YWNLX91TLgpZZN4uqjskD6-2iadjcIXUd2oDsI6scpk1FqzSF_-B8c3NDqCV8QZ0wh7qZXRwdZbwU0LmB9T4P8-ofK1pGfMll1dCfFHfezsxsEW20HViuhDbxuaLk2kiMTGdeol3SEpr6N9nrTZdud8qeepJhVG7XbIULW0sBgHOgFdhFS_VPncvkzwwgBGtanKR4Y9qE8TfLYPf3XOAo1gOGj22imZ46tnuzc5oNJbMPDcPBV6wLXxMNX-T5bt_vCa5IaAwgNkPM1Ipm_12TER7bkrD_QYJl-rc01oxKIS1eK_jABm6QMzUn6ziz3NvyN7ZJPuoIUdF3pQKaRk7QORXECFbuoH09HQBWeoDrD28lnhX6Wv04U-6fQ4nrSAOvSzVhQREodBJ_-up5-xtpON-C2_XTVd8-nP7f8r6PnDLC5AbgV6kWIPD-kBSB9nXxmUYdTF5xdl24xLLeRRoWrDAIzhd3TI5GXb4Ko-eNjzSKbZr1sujTPPa1_9BYtuQChgAPGEo4ULXcDF9UB64w8RRCZoBPGAT_pmrAvhyfP-YjnpMgEqsUxjSuCoqttd8xNbg42_Oa7jBCqxz-lCdfBECj0Gm1sfKpa8AEtKBDfwHBmM5thkEAbkoNrU3swg302ltCGBapaDv-R4kVaC_C53P8aYic9Mc_uh-DhC7B_4eSrZY_J1rCHQhDTbG43_jGfx7Gf2DwiubOrSbFVFckuaKCupv_4GJZ4ZpPUpVakrh-aJttDdJ9lFmSzINRTh0lZLTNiHGtk9ThY8jCWAolpbBatUdp8skhCYmX2Ka84BPz_jCs5gcX_woxZu-dJivXnsg-B5o51nAYjjRGu6r_wqOiIc_qlmAQ8zl7ilGwbZCawQe7ObF_7fTIr4XD17FsgLow07XZhYeEpHb2N8bdOOmfzo5akGnpM-g_xWgnKlDPeHnG7-kUFaidY875TdtfhZ4Xv0aJCMAvhuNuVH4P4NtluYLV6D0lXyW8oi4R5z6wGbBT8H465GqnEq9lVyu-pgHDTNcfl5hjIhhs7ghr_ukSzcI-eZkF7lejvfcqPWF1Cu84_F8QOQKoSOLCBa2BzZudx6uMkAJCVgi95iZr-tecEIqx7fJ4tpvW7-Bd0SMuJSdV31c9Z1yP8Rke7JFUos3eCNtM0DTAgQ8yYPo_h4tLeYT0qPmLTY2P4Nq1ON4uqX_kVLHnzI9nLvYwPlyKysC15rbDwjiXYjd1q1R2CGR1A6tKCr-m4NUb_tLojzzX4lHDlOXnRax730J2cv5qslELD0fyvtXe1aw5SgvWUgV0dfuyRKhxCxSInPi_-e151GGa-osvjUWTzqoTr2BvKUZXFIUim-zk-6iMIU8dkdM49HDgfedWWbrz_BPIJn_G8bn9F3YmNZMSo4TEGJ9C5-ng2gEdkTeqVKYVDUynZC4_wfKvmrVfEMLPAxm2fml0C-NJ862hYmHGZdY2_-a2Zkp7T6qZX5Ji7I8XEqaLmPCqu6VA2bjfoF8SCx9ubYws2aRaaL2ZJEzyG5goNvPlpYxChMe1QeZm5j5l6NQJq6l3o4MG0CCy1z7j91gFUUpnBpasWM1mhKv1dNJU0NkGqRvO6AfrHMhi3F-MH0AZKjjGUEjPXygG5Bk4u7zVCceghlL3X8En4uYSLh8dza8R53-__jYwimQaZQhwLWQX-pSwjlPWnnimyN4bojwWm4XWuncJ5Mq5n5DrRtgiRH_92VJqFYw7MDAEz-bYVxUyIxjJXUyhN3txnfQNSmLvo1dn2Uw2kSYRwXXYs_A97kkpUW6Ey5cQ8N54LmgMJDt_wNeUi2mE60MjYo3Zcb06D4f-LNnO_3POS6TozUZs8Zq5Gn2JM5O-21GdYXjUOCYXXWb1Q6wGXQChRoPHJ_EqjUnQEEu-qYvlR235TX7LBWfSfXfwzGVd_lRy9zDCxLIFIvLxFqmRw10xKnivXkTc3ldqLZvhsJxpHGlFuCYazc7tK7c9jhp2agXu9vGk5fngr4x0Ng2c73_CTsqZ-rMx3j3KU5yJjvMvqvdWjTRf-zuvUZarUheW3c2-ZO1szxf53oAzqPbdhYjYdPXuEUPPKBvM56b_C3EaTjKS8u_F4fDg5tLCFGvqqY5dzJpnU0W-tPRR2jo7EymQhZaLtueuTNrUU3YOeQTNQkJ_IRIKQMO-LT3jECW-viBYJqjCHMa9q_IBgc66a3EbT0o4-CcV-mchF9cbVMWEApvvMjnTPs2LFL5HEhRMjKiYCW4jnfY0KfNFX3JfS9H5ouj7Vs_FIMaeQZzc51q1k716nRmJQGWF_bnhUb5-t1Y4aNKziGj0fFrafYOtvU5l7OEJ9UjKolA0dAm5O5KNS80eHc-lpVm7iOBXRS14FwWh_DzSZ3ARVEEGU0-ZZyw1KQ66Z_dRR89ILhtTgFPzi3Yj0mgB5f6fZDpC_bGGNdmYnFQ24EnV_xp37e3BPJJW8_X7O9AT920PK39yYU417urYeWL-eh-84bzQ6DiAVO1thgutQeJ1f3Wk2RDOon63q8c-MrjYl3jh-ZZ6j5xupDU1g3uhUYRSbWS1vOjJ5Y3lq1bxEv4Mlfa3Eh10lNsa4VSy8Z4StM8QFjlE-4cqBXqXa1Em6sgWRfaEbnll5C3LHy1iR831XemwfeTCjPAM33LgCyYkVsktdVPrQGe9V02G7IC1n5dRgV4Mk2GsLBCVacqex2lbpceSxDQp3gTDlPuWSHX-ms03eAcJDVKNFwnEnldczpi2pm9Whyb7OFACRB_kBjydfFaQkOzBCQNhFVyP55oSKO8SlNs37OroZW01chSWQZVEpFeSoDhT_SpI0MppkRHAwMJvjNVmsuMwyjrgI1LzllbF0jNAbioj-mWgPJBSj4K4EzxHr_nXAm4mXSLF5cxX_ZYYK0mHknH7wUd-8t2kDYCpXFjmH-CcablGdZRvcd9eCj0mZIm0Rt3vqfAKIqkNEyIPX_F2JYZjUWek2faMK8s_1AIrQg8OmGpA2BlKyHYAc0YdxdaiWf1HUV5foLRbdaD2aYLXHqBys2tW6rKvUwIK3eeeEoq2xSxa4MV-N9gAbhsczOX6nf8bwn6gXs8qpI39y_iezLF_tQpjJDVw1yc2_UtHm_ZQfHq4mXWILaUlGZRVYfpb9_Yh2vbNgNbAt1PWVzyRr-cXOnMwiemqfhbaJXs3QuNwJhgKdvIKUdqS8DmkZiRCUuY2ly7HN4V1DW6FOdR_TOBcJeQxxvZhkXPEJkuu8Ep0Arqlye0KLxN6vfpQ4Im6jVrKHVx8J8pY7PEcj1cMdIFDDaOkYHns7qr1s3loP4ugEVOasJLZRcrku969oEVigZg3Ct82EEoOYfmZ8zGjv1uJ8p-qf91PwPMsY3b-IJxjsmj0H7zYYE9pRr2Jlb_pwP02qLuVBWaz_mcZaWOTKvBEbITtPs6ROv-DcW6Jy-Gg9m3eRy5HKIUb5-fxUBg3O5n25KyQwNgKeKCy7G0cODR-qlLywFNvnKA1RIeMR-cBH03dnsW2Qc8N2Gbe-zon5X-v6nf57H8rlzwrLBt7jbrZEljlNqHo9omefHberKRXMXuFmulLNU2DwuC1hziVaAJA7c-uUNhrUI5rnmxH7P8_ji0qNm0A-49SL8dTyr-BfgUC-4vbnEMml28Jsj5tK1rt2U_8PgJQb1hJLfiRF3QJuKPZg7B6uJOZzJe7B_4zoKWH3n7pS9JB6c_kE3PAomPodupkmKZuPcib6tDolP9iDcWTfUIxMmDwORNeYx7OFUO4JNoASS-c9U_-diognEiNgQcQDP0KnIB8w1lujSl8Jp0J8ExHqOMXzmHhnYLAFKRwHbfPbkGSDWQO4Wt5WEadntyzZ3ddVI6hECyWUpjF43cTc_JGXR4MdpIsb32KlbqK2Kw6rF6Op9Mobh5_5uAFvHKzhAIFMdchvcnRezM28fSJxcHl6KoFvjUfkQ1ydkOHa023QK-qwzaGWhpWl2ofeAfBhRJQzQIBWexYjr63EzYHxwcEaj9H8R7iIL97F2WVpwD6t28gQbCIIers3eYcT2YRbMsY8ErFV9KIr1lnA_mpTi5TVgTeB3OakSKxikSB6L0IqTCQojj4oTlQZDyYd0nbnWNostVjUaEPqktOtM0mAhtxWIDqin-ZJP5chCYUhsRNgm15fsT8pfodr5KvpszW_ieeA-DSXRkQv0A1ydZggc8gapH9Pp3HHnbqsDQGmPxyNvHUpCNkA2K5C3hLzt8uYiwE2inQb5yJbfVvlJV-IcE_6qeub9Mr_fdY4rkhVGOaxxVY2MFlqRBFb8eNcPnRajVstOEb1mqObItCXqynB3_3po-MtcqJTP_wNYUuV4hWMgEQrZi4GxhhWRB6jAWYNNUz-_eIEhX2T1uTf0z4dTXbKJ1Cn-i4z5nb97yLI1YGXopoJRNPib6Cf_ptWxncg06adVYlYxd8ZJw5MjT76RxC5fVpslxO6N0NGX5dJbxRhSaUiiKGa2qkDzvPka10q7geLI8cvSHzULWiUxedIyBeIbgknCi4UXRKJ-Tcu8SKMTtSjNQ_S8Rz0J6H2n1JglzKiGSUZXI1EBAy8Js18iTFV4YVtjKRL8NHLEMSpa03FE7AsGaprejrsolWfuTTO5DgcrzKJBX42YMKvj1yRL-nxPkMUpsDUsKgKbWGofw=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:13.902314Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "2bL3aqqJN5T50MMPnLmjyAQ",
+  "usage_metadata": {
+   "candidates_token_count": 122,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 122
+    }
+   ],
+   "prompt_token_count": 441,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 441
+    }
+   ],
+   "thoughts_token_count": 939,
+   "total_token_count": 1502,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "27",
+   "quote": "A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances:",
+   "reason": "Section 27 explicitly allows a landlord to enter a rental unit to show it to prospective purchasers, provided at least 24 hours' written notice is given specifying the date, reason, and a time of entry between 8 a.m. and 8 p.m."
+  }
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "clause_id": "c26",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "adc09c2c8e36f09bca3534527a7b63641cf68a8d0f3b185a76b47c66a8f2a793",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nRent shall be paid by pre-authorized debit from the Tenant's bank account on the first day of each month.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:29.544110Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"108\",\n  \"quote\": \"permit automatic debiting of the tenant’s or prospective tenant’s account at a financial institution, credit union or caisse populaire for payment of rent.\",\n  \"reason\": \"Section 108 of the Act explicitly prohibits a tenancy agreement from requiring a tenant to permit automatic debiting of their account for rent payment.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 399,
+ "output_tokens": 1211,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "6bL3aoSfI4jg0MMP4pPa-A0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:44 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"108\",\n  \"quote\": \"permit automatic debiting of the tenant’s or prospective tenant’s account at a financial institution, credit union or caisse populaire for payment of rent.\",\n  \"reason\": \"Section 108 of the Act explicitly prohibits a tenancy agreement from requiring a tenant to permit automatic debiting of their account for rent payment.\"\n}",
+       "thought_signature": "AY89a1_ncT3hmBHec4a1oBe-SFTBvxdPZv1mfdCQr689ni3gtE4ijRkLjTMA6mbUguRAxVgGJFSuBUAM8qIMMUkAUnpm9E9aM6yXkJ0WJLUbPTzp1ONgAAOMOu_JDJfAwJ2uBOUC0oFtrD0RykffFLojSdkXCO83eLAQZOMaRiY5KZo0ZVTpeJ8FgBCDx2ncznmodWqKyJsCCfRElZQBQTykwOr0pL09IY8LpZ9C3J-eTenYfP7yn0CGPJsiNerJYXJ5jVQW14SH_ffgMCr3zyfxiL-ERLyltoKlz-bVBQdlYlWxaRqHvTOHw49N76647vej--huJ6u8eGsN3yRVx_y0i4umAloXwuP1slzfooAM8LHTeUMBLOMBSBIoi69EqZD1Dh2YooU9BZ3zdG7EbKdgTkSbK87LY9E8CnFbOL5m_I0WcqkapgQW2tSdsUZI9XmfndS3Et_GSnex4do_iwOd2qgajSYU82nNc5AmhXjsTxnT-BUlxw8OFZ0pXNs8F8xZKstUyWgY4zHtEoZSWUJlPBNyucIrfIO0BfSva7uagZPT8PcKOzRDnOQeq8utbboR-8V2KCcVOVzEAt6OiI8_RppIwIL162lGkxoq7oXlqZhqV6-EOIrEjZpgSZV3eHbe7Q-KJkzBgTcQ_nduoFr1Y8vq4lccDsu8RoJ3knxDO3i4ypxMLYzykYyjHC75v8BiT8ruWgaRQiHv3hFiLyAuIoFf4TIYNGYyzROiQN4Qemb-pmQAzg5QJA3wYDAHKAYNkmUUAKL4JMNpOXuWYuODAPFkmaIYW9LY9yUAeWTaxC88_4VVZy207YkLDiwbwL_bA6p8v1EGAWcMINah9nPZ3c7Vjz3G1qkNqP76QKS0Aa_8NU17-UCB7GtRetf9fPDdbyCiSKeMdHHKqwom9Mu7jl7SCcb-oLN8lxUoUXy_emFpHER8-YItvpaljY7gYBkgWdZgf5JxpB7EjOfBo5iHCveHr26xfqEUIHWyvN1hG-3IipgADHQ-GyZCwm3cnlAkSfFO8LCP2p2GtRdHBSc0A8wMv4CRVaT4IqAsBjhCmAWngx-YlayZnDOlbP7eeomfyXQyxYKRCHGqt8ibuLM4tw_b8mQW1EPWp-6xgmfYEuJj6BCTvbxNddTkqrOdOmIVeTXlnP1_LzJx1JqdD5zYzWzkZ88rMiMGbEMToMoAFW2j6njmgQ5Qh3YI43ZzQmu2XS9qXDlIARPX4llqb7C68PJPHj5K3aVV8hlDxuBAt0QSWBH7X7spQedLIRNTMDlUUij0TRIr4-AhXYKtr4_CPSAd9N1t-7OaG-2dV-jruGtuJ-oDX7Cmt-p4KSga9U1ocqVtA4x4qXHYWMnrLXo0jfTPm1Q35QF9JW-MbChRfUGeoGUH89PD0GLxdHHxuAjFu_FbcOAwS8iQbw0vwaQ2yUGrlTl_vn-65GM9urautux7DK5UK5R8T85mN_-CPtHFF3V8xkrk9NwMkQIJm48bTiYEfkFq50Y2a1-orP35_6vpg9MOTMKc6y7ua_UgFRYNxPjmjFEAV-CDrW18vWFLm4Y_LfR5K5pfX9qyrOIh9mm7NWmsBWT4PPZnyDbzmSWv15tWvfMHorH7_4ycbVoXYsNeNas-dwmSRRqNpfCLULh28OkO3N0454yGVN7t4L92vhwlannMF6A6jVqHtYbANRzdRCbhhuXItzqkyUoVJRZ03-zQx4AfZ9peUMW5Ohs-GtKE0PhUmdhSxziGkP-hGD0H089AlwPpxTaDnHqZbBHzbElysgGOrMyqxuSyTjTd054nQMdlryeeixXwbpLnSAUivcvJpD7GD-lIunOPyXX5TaXkdCJXoaV4_uTIQ1SnwFVjOXd-JS9DRyXcGVvYzrtFmaylwxpwuw62anzf7yc6VuSGkIWHrM2XWQJ8eu-mEfAkDiyMDI1g9L8Xks4kxIoBLzQdxLOOfAyecGCRnvoBKx83NTqnw8eOAL2bS9SyexFvt8JL9x9Oxx0HsqUtgIJVcYUjKo7-7U3mOXnZ-YsT6JkPJZZUkSA-9VO6k9pjy4rDzwZZXJTWCehpeMHvY41OqK71Bk11S7dlvjry5B8LqP3hKGajPkb4yAQDP04h6KWgJmR-i64N4G55hhzVdfPnCs0H7OcT1MOm5Ng-HwKqyYBUuN_Hk8Vm-AsjpxpOJcb6ajQec26EYdD13WJtAUdETIWn3M9L8kfJjhgV793HZpzBIFFn-Xj1vUkhGCqulB1W7suyZkKvCNlwx3a0dLvuJS43OleQMoZ7hvCdIuIiSLSRjHASceFz0FlAnz0EXPv54Q28rxsfFSN5XD3MRYb6h66NLN-H8a9kQDaf5N6HK6jkYnMizVyJyudCxDhhSUYENL5mOsUKn5YHrGubobmxh4WLNryy_0P_4YYmkVqRN4ch6B6yX-VFWxx3MeBHYp7KtIAygCKHvnVXuIjwJun5TG1tZdk3zGOpuktw3KC_QeNOKXD7Oeiox4yllmw_x98K7ZZEZQAfa3_Hk2FxdmhoDV1PxmbCd1rOVa5nuYwuJ8-6fwckIBsxkwjvrhz-7k9SyoNy0gey1Nlf5Q5gBexo3_4rLA4E3-IVy-7iuwxfhtfh4AMnvOKjh9fdkyu_9H64gH3olbZfa-wjaL-DaGg8Epdy8luJ_1dxCSfU77ZIoKHfTA1nMB6TWc5W3xVhJHHSmIzoo90x1A6In8ZOY3QOPTNZ1rA4LQWoImVadfs-GPp5vRlqELi9ib70Clgx1sugCgTyj-dJaGUz53izAvTvFw1PpjOU1BBCHkRjLtlIuQ6nAPoBi6NvoWcl3tYVvojlc3M4CCpW52lfQU3LTP9gg-cUj5FUk6QFJoGoOFaV3ZI06GUdaxrNwQvZ6AmkTbMkfz2jnv9HKBKEcjDfTIga01H_Pw80uq9stoeK8sgZTlIkhNaBVLQ9Yw6YE8MNROE09q6tHIjlsdH9s73aVdoXcPjsgQZF0PS9dmxWcBek0o3Rj2HjHSXQkNRqQ1_6sE7zPbHg5UN2W5RHK7VIZVhshVZbmL235ZymzJpAeL0BEoufsnjw_aYP6HEuZahf-ILnNia89l3vRCEQwl4mxWuV4frDfVt55NQBjrFHDmwCfEbyipJnlaEzrsrS7b78x8wSj7eI9r8qOQmYGv6DpklFznnlS0OFCRFO6V6Kju66IbaxlPwQiBQL35fuFY7uAWOwjSAeXoKZdf8ROJ_6qKubGxn9t1dfrJ8XJk5KZxBe0tsVfa5P_TwcUSeNdyNF_O4KJreeVyNin6LsyP5AZ_8epX3mlYERZwuZCAu5BQGu3MDWy7VSSMazp7irKCh4mJ47edPT3RigH_bPuOoHASnWGkuv1iQB5XoPx_vwKnfD-yV619pdSIXZrC0MrvTDTP43iCtPUMylAKe9w9BoVbmZ00Y5zNmR9b9q4mhriMF82sNvqaVV8XRkhLxIzu4q9Fc7dgRTrje9PwT5rnBNL1z_HJ-hh64ntxyV4YURba9TfyconLR2aBgeenfX3PJ0VKlSivn61sM-sWRIW4E-PsElpnlp4-IZsR-kDBEUrdvg9NK6RsEfX3LIs9OjCI3gB1wdLUWrgG0qRbw-KhwS54lW7JDgq9JQiPH5_wukigPAZQBlghUGJsSlx3-Xl8C4s62LS-zAGVwW3jC1Hc14wVEowBjGvsU-08-kzDxlU1oeFvyQ6kRSPjbf9aJws7sq24r8Juyarwo_iX-C13mcuyxL1_6llqyKSFiOtKj2gWrqACl3N4VGigc06EdbaGtD_jZECODWUT3sNkl1UCOlMoz9XRBzwnNeGKn7z6-L9xWLNMcDJ3IBUUF76xFC4JUqwoT1aASC3_5f4wODCYfkJiCn_vs8jW_pg4NWQbu9O25EStad8jD7f_XLlOEgmOH1YHQP5Dm-CxEAQDFhC5rYqVTZKEGBYB9-JRrim3OfwVjfU-7-sYQ84u15qUQ6QUnwbn-KjhB4btwzbQ-4jAd0qPC4F63FoKAz3NI13c08qEMP1SVFFqIGaKdC5D33voRSyUO6rO6jyF4r4IzO9NgX_VdvNDDjz3XOtvJyVXrkW16iShBPdEd7HgJkuVgMSPB8cpzvaAVENgn2RBtuuC7km2Y9t7NGCAJItGZ5vaA9HGiZWowxKvqW_jofzuz7HRH6j28SVgfySbZBED-y0kRqqfZ8OAcb8ywragoCCMaBuiATa18MCWXK_tqkzY8fdIy4BFwWQF0UqHoOzjGo0MuK3C3HcaBKiSRJQq4P6dAXeZp5isd92898iaJ2OdMCHOOotodI2FL36Dka8wWECCvSg2AUB1ftBNq21tajQ7pgMznb0fH8V2pF2I9MjbxcguorydxgjeI3LGoMeW7U82us8vmMlQcn7xWKe3F69S9m8ZLF-bXj5o7zjQS_H0bnqEtRLhHOrLbHaCRZqUUMt-P3lysaIFrn7kCfjYvn6IJhWiXOwm8A_aRQ1Q4fbF-4vC4t74BdUFQllPmhGld9-v9a93_mvHzpgo4N_6YLEjeGuaMGhyK-8ePhLBlO-jA4Y-9OLuACcGgQUR-N6IlJcr1klhgbUvpUqfhzGDQgVMdgK9zlJ06Lk3-WuCnsHBectL2AmjTDuoDcnuL_2LR-6pFVlgXt-9GWiRvzyiNPdsZ6nhC4imCcctjzd5dCOU482lpmnE-Qrl-5rKKIDJjm3P7WuP_ET4BJAMdBVzDdvpYLHrbuuH5ZwfdTDOOzepqe9Lyv5xtMuqIWRpqMdw66aTynwpnRAf9axmb-uFBJljucWrm3VBLFyobaMHX57dnGnvTB5RbGbWIBnEEkAOm5XptbdzyxO2eAFV-3dA3rZqba6PZvQL0W8l6WIUWPN-tDmYR8eFniJRw8G4SAlmGcELHl5VMrRnw-RP6zGCSxEcrt6Y4R6CMW87lJ34fhH4hof8sf0AB1QlgZbkzfvc7xWHAe8cIO-OXfyUv4T_Ravdw5TnG7PckGbSXFc2j1ghmgalH8eVWtzIUDU50IIr9jZ51U97lJc8aoZ9927JJUb2uMBCGtutIVVGub8ydmLFSduFB5YCyzmlzBW7egwA0fUV_u0dqmudhJPIZmzTaigxOa19bt1eIqRXiOPDESTlGhnhibqpR-277E-jUzBJdlJnDMFWNu_oWF5Ky_rt7ukqnIeFzrigBOgcHFXDLMCZs1cWsZaP72kj68FJVqZgvcqHXaSypC_XOdv1QQqU_pb3O6BkLBrZAlftr8BufxnJXF6oNIXn_F-lnqm3OJVrcvfBXEKMcY2HcbyBYBMlfcscvpwn2LuseRprR9_Ijv7TnNrFA9XbChrd1_7SdAch9PoXRwsKB7mFoEoae2Mo49UMFIqjBS9K4LqILSuofTayXYKGy2ZOFWQKbmFHSaBFVLhzd8rRTgefT1WP07zcswioacXU3zwnrYObC7nS1md6U38KT7PRU93vG3kaoc1yB1jGBGErIkqyU0k3K3DWFK0nLUBWHk8M3e8WFT41KmYxoKzgkhDYZyuPvXRY9k4RwoZrqRP0uNkF8FB8HIKwkXkaMJaGjfnVne9AYs2fHqIAFWiY5t7uYouRAfDue_pveKYgJtG8qBdejHLjxZ3kCGaP0kEsHdw3pp9V1cqi9CB7bWVEAJiU48DHEgCe-e_tOqzlTmhg26qTF3esyQjsUxnbP-72KpFFeJNtA71lK3F4AThCMItRthiZp19HzhF8XpLqtjkrTxYI2CpGa3KUqE1-Cdr9EfUTQGyhzKUDa_4GgLe31sc6KUaJElSOmBkZxLFXKtqozYV5W99dGw14cd340vLuQ33NABcffq5U_C-3lE5gTiVYyKNmHvrEiNFhVdC-20hXav4nu3EgFTRml1RqfbIq1pVLvOsH8mzvNgEd7oFAcQPJxrd1pkmn1roOo9dcSpcI5ZcOYwzMsk7Phk19IYqQxr4v_xIndvHFBQYfHUEK23hD0-O7eIVFTjvFjfawWG0tVHM7yu344rX5Ke0ioMiKeZhqMWbqDnHxahS5q52PU-RSpMCvPQo1VVLLwgqkB07YXQaLcrThpN6nUJ5ciwSVuXkq_9VqQQfPENBXr25KFW3PJdpKNlvfVDka2sMNTaykTjUpyEbw_UpwhM_SuQZ5cDGPWHfhA73mYTpowZLmtxCOUcap1p-4MpusxN9tVi1PSuku9THjlsLLxyY9bYLwOgP8YFEQuXtFDeTkGOv7hIOarp-dnwEGKJ2f_QO9QHfonw2EjSkw1w_2u7GfZm2loiNkhWeAMnePQxoFUhZa85QJUc9dsQP2AJSz-0mLsAxsUBi6lnDo44jI4xy49v5dUwazEwzLlJzl8Dc6qDgy8USWnILHAFhxBF-zNuFsqMBD3rsA=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:29.577412Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "6bL3aoSfI4jg0MMP4pPa-A0",
+  "usage_metadata": {
+   "candidates_token_count": 94,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 94
+    }
+   ],
+   "prompt_token_count": 399,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 399
+    }
+   ],
+   "thoughts_token_count": 1117,
+   "total_token_count": 1610,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "108",
+   "quote": "permit automatic debiting of the tenant’s or prospective tenant’s account at a financial institution, credit union or caisse populaire for payment of rent.",
+   "reason": "Section 108 of the Act explicitly prohibits a tenancy agreement from requiring a tenant to permit automatic debiting of their account for rent payment."
+  }
+ }
+}

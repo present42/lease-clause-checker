@@ -1,0 +1,99 @@
+{
+ "clause_id": "c30",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "cbfa8b28983e43fe7decf1f2dd12229dc0d63fa07480a20e95ecc59374e95406",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord may increase the rent by up to the guideline amount every six months, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:53.053445Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"116\",\"quote\":\"at least 12 months have elapsed since the last rent increase\",\"reason\":\"Section 116 of the Act bars a rent increase unless at least 12 months have passed since the last increase, so a clause allowing increases every six months conflicts with it and is void. The quoted wording is from memory and may not be exact.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 680,
+ "output_tokens": 1307,
+ "raw": {
+  "id": "msg_011Ch1v3HRFv5APFbKrjj1jC",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS8h4KEAgTGAI4AUIIdGhpbmtpbmcSDHM+GKnrb0MnLDQGyhoMVojtH9yORTDvSsV0IjDzJPZ+sBqUGoDVS8BhgYdYDDTS+gK3B4XBKQyvulgugVAp9WooFRlBOduJHYBGlMwqjx7kUfvQToKrnjy/8gyuU0yenJ0SN5PMuoOkiJ8YrXq6dwUNpQaHJ8ouxtCnVLLKQPP98yvoSTKSGsKFBdQ+AIiyx77reMRuSkWPV2YhHbEBYSKRHoTijfT8lxeAuEpSJNcq4Q2kmJpsv0QvlOWKtMBbhhPfrmhR2v+xOXKCtxsdhoQyaEx9wSnjLcRkmENVVbfmr0jA6dZDlx6GoNbQg4Rbuey1aeer8WWSqAl/6rg0xAv9nyK0xR9dFRlZ3KQ9QBzQVOgPaVz95m+s5I/S3B9FHy2oaKP0Qizjm0XV0628inc7ib8YSuZb2nyEIwm031mwt6H0bCcWoNO397xrU68AeyW0oiDetaCdOxhIqxUhNyOdi5WhhvWQbkkq7uEvr9um/wSwQVvMeURyv/Gi2wiTBSCnybRTMmC00wJBjA55d/ln0I2e5WPRn61DtBUV7IphSCwp6hgPrl2I/5BJMyflOkGdu07R2dDI/RR7iHbzbVQgYjWgujBrPWNf2VCpeLckKOuTDRwdL45bJH0ibbAU4nCkrUClgocpekRmwfesBK0egNDnk3989cZ+OIOL3sATcy8YcIWw9/tMObFZV8oCBiX5BKLLVG/gH2dN33z8EvMqYPlaSzEFMPpqxA1SQdm/+0Sp/INDbuQz8a4pw1SIKcj5qFQLO8ZZfiW3UaslzJ/eRlqstl+QI6J2fZDdhwjSBvZy8jpZcKtrxUJB7uDEbl1LhAwnaquFNOiPjo9B+3BdOUeh0H5+w9qLFt8A+HxQnk4kOXb3HKlUNijACXEF4GYOes5lMWv3EFFsL1odDwxK/gqLWj2RuJDxJ87vtWrD9nus7zd0bR4tRdpjnI/toJvBl9SvVZbtu5brcYqAwDpSCdWZGwcbFrQFuq3jOyYOqFcYqSnN/HhWjgy1drOB7C8h+WZvUtI43Xz/h1C2khbs1l34XtgDxqAZkL2DMhAi8ti/MTNr8oq+oJCerARzF7C22g0iK1cCO+yTz5ibcjD6ulX2Dv5gCtLvkZWPxgBz3vnMsh+MfsTFIgKNjf7q60hWH33bD8XOwY+z5ERhJaTVWBdQkgWU1Pzw9OwQigohsmQwA47uNSgdbr1FN8L2pH7O8EbLEXBHiPYGYrTEqt8PqFjY72mG0B0HAsQNbWVjXBxHF6Yxx3mPN7jkAO9UBjZd/tV/tjOFwMA4M7eVoZspnIsqDQmH4aIqfbhRzciKH5Js7Y4sONGQ9R751kTtsyCuVGgkYIwrzOyTOnnv4GRglq+dN+ZjHh2poTubvWdnYeeihq8c94BjneKX+G8fJz1B+D6QZdp+Q5Qa/HY5Aw/tA3YbxGLFEA+5gwb2hi4DjqyC0kPaYhRr5Pmh5un8lgrRMm4wIR2ZYtuh2z8vSslmE1nKrDNjTPex/HpOQkFafsVvq2e3S5Ps73N74wD1Xa4CXjWUYIU4qtm8Xt321bdqQ2cVdJ+6aMW0b25XF0PQoxyvfjwvyXgDgtsowlTRSmAOBoGWpJHUxEx2+Xf4jNGVsbz5xrhLoalK5vBkzmMNc2s5YOixVyO5ZNrsKLikl9bMaHj2RZGkT0P6HuF16KYmMnWXIdSG6ogU7FtS8yUnBMInzP5UVNf5YQnAJF1GAypQynEmxrhUp6tflf5CKDcCNp+caX9ZC6WtBwRIiD7yTFU6eeSE9rn7M6yQq5A5zacsPtBqoZDrd8vIqRRX6fG3UGO0j4WWxbTkd8Vo4aV2VSCPUoI1/J7+bsUVfcPk5+cMEpnw5axaswvP28XudRcsqAGvI8aYHDAjUubbActkBdHXP3tnuR8ONP8SxtmuT6KcBY7lJwAnW+CLH9Ia6nOiHMsaYhsL74VNh/Loe7iWDTn8SS/yyQQB/xrEcONzTZ76FqQ5m1pYWLu+vMyl8qFu6/pXSty4JA7KK3xtJjGP5kWGoUJVgmq8Y/jloqwDYtuiCwODzCssfQAeTF6T9X0BjATT6FVkxTkWlCK40IVNJn6q8+A5qbH/Yxur/owCcQk937c6RSuDWvHrWAWvlNA39d76R4o+EL1F3zvhL1nF1M73sS/pOL38e/2CveBJNwdKDD3aNVl7QFw4SfMWNW1z0omFKOX3HMsTdt+EkBWdd4mf5/uAMHmd6gMyyypjp33Meny8BJr0LNqrR1+7PCB+vbd9DZ22dIt21kwrwJvC5CsbF8pCh/fqqkMlzqNYl+7woHctSTbCeJ1zIO9cSVikFjsDvKkHxTSSGuK7FOm0EPX7tQtZ7P+1TP2PeuRG/6av1mZ1MdsO9VTYH2avlMur/aoOH9LwQq2QCR33jyeJqhIMro37UjO7Ea2w/SdsDAbDBjDQSM3ySzDsE6LwcAX6g0/SZiwmammnE7py3oTf8A+6lziERSRxxPAgflbavg+NpYD0YL2f4o0dzq7MQ/i6IwAnB6bPsQO6E6+D63z9xf0lfImHQFzFWjtkN674tOKUzGrdEU+GKhzSOzKrMv/ABCSWbMUP6PayXgm0u45Jv/dJ7qM1snsxp46kd4BAXo1LNaSLMBJBabo/4e1RTXHyWmcWt75jCt96zjypfBcri+WgpFNWFy5JGW6qQqsQxY3N9TzHAsNpc+5VZdKaRuatHpUm100gKW/sYMhyTPvrEFLOBFI7fVFkBtS39INr8lUgek9YARTlrD72XsEd3qXPRBqEZoZBavTK4Brl1T0Ue3jxJcDvTzyaqKYjGss9ubj2TdF5gxwARRftyPKMd+4lD6OC75iO3CbMfg6j9kaCMavJM1vNbcBxk5wpV5UYJa+Cgo/MNDSuDSXF9QE+AhMUXBgxt9txmnPlgDaueWKyhG4DnDhIzTjzkY8njDcRmDVbXCG9xQVoFXX+mxKWrZip9F6xm5jixLYFKKv7bQvAff0NeROQeNy0a2UUrlOVwiHF4l4QRLLSGAeT6R1cDbzBMuyWMEXekJlcTuBIO3jbW79ZTjnyltXBaXd5T7MSsXTmkH2a2ZsSw4v4/zfdc2vx6jyISmblKvLd2Y08OVFFmZZy9vJ6dYgIDtBrSEp/9/LBJgSGgs+ikMQno3FOJDiysm6YjG0nq/r9/wXHIwE6PeObTD6PQ/iUp0yBlQwOpd2N7s2+NVpCnGdhaYir3P/BoXEVeJ7flLr0cYdhySZ5HUKy+p1NFha0WRnJ7saQUeP0h+C7z3fReOlh/08oWWMHiwFwoYUvuZ2VLfZXDFQj8SzIyTFVUhopX4CL0ecTDxGj3MX8bE6mEr68X0ljWzOTlnEjm6J0QtCW8FQJ155fx8cMvwYt4S3tmX2JGBnP8Kfa2ohwzC7izwgVw/sNDz9RAmB8QE7S2ZOYPeUm5NliN9qWilNPaaVXZZus4u27zFIg88OP1scbEPSjICyQBxPyF6zhyjjl8mr2wWDS/6/9nqyqPKbQeeAIyEm+GCM/+2ShLZn5z5qqMImAPTqfcHvzVwKU878OGhINb9yn2ulJkMeLwFFaRstkaEhbjRAu3ru4BCcRYwYEAs8dFZinoOGu+wEy6wDeRz3xC9ObBAL/xs2P1k6ilngcpwS5OKmrLtH+afar4RlglwZUnfrJher8moim1RgBW85ydtApB5NhQBWxW/HloDkkdWUCIhZYTrTyEEeghbVkRXEwC2jtz7H++Ma6tsJKvaEHtWVccxkVJs4J1Dpv0H0UPbbitKLttnFZG9DC0VH559jT6LVPfNOSX3FGd3Thklct/M1GDHJ8JiP4FQadkprxbr/S8coLxWNvXGJNmHqpmxKUtnSdN7Ll70A0R/R6lbfhw8fGMLgJElQGR1yv1sU+f8gRAtxpoj9hJKq9o+dKxzvQNEdHxXrLnYQjso+lMZaILqv7VyFoyx6Hmht4un5/xPyyovjewlEfgmqUT8rdAtogvAetBitw/2m0V9VhbAQHJzv29rKXsvcc9nqNNl3Ba7OxzQJcmCFwdVPDExH+B4oalN2rEJTqWkqKBpXKa46mE23p6UAyA8zr63Log0k9sI/b6l0uaMUfgwk1R9t/EVmg37zrTIsx8bQrGLAAEZiJvGfISuuaxUki62frmK+/MdajSn8/czK8VqIRlSKgXzJm1+w6EhNelvzCVMFyA/+iRSZNoXRHP6/945Ny+FWHD2ANMHnPbQRFKXGaCbJ7c96DOCAxsUiO4H9huyfE9W3FFqopNJkyLWnG7x7nKA4O7ZNXtG4iScaMn8S6+/7H6P+Wh1xo41DIpyGDId/TxpTMjp930cCcHqGydza2skZAgrA6c40hQ+fypeYo21d+PJYcPvnxWx0cGBN16OLp1yPMprPHGtSMlrFpzfA+NYFbM2rvCsmv0Hb/XZ67Y2FieOByVPJfUIiTOTNkd1jKonY60aoYy18C1aWKEwVplqwr/1gUf5XhdORw9rOIcCu5X3fNnzeirSNxZFZIO7WE1Xmv8QS8zm+gr8x5XqJ4vieFLahHuQBLNyeuIFFQxhr7p0DJarUSgvFH5qpsCVNPoRL6QqsymcKQcQANvyaYhdCH+NKBHf38rxnn7hXUm+RFEH6/FqCyC2kqx6xViDWcwq/+8Vhz2y9FM4DMmvdXHhxUlAIHphjXPH4gUoFoZ4Ou2SY0ZuhK7pPIrW5JTZ3DWwUdemnTi6SfKtMVzKwyYc4+RZ+x1I6bENZ6dMl3l+VfJ3/chYPsIFw0p0Mf3BOy686Nu/XaNXo924nXenDsf6zi3I1Q30AlpfIKZrxlSkuFtEIbK9rAjcZ+2EEPmI9khj/UOacTKq0pFg1gjtuIvMBARYF//cW0MxOLwIhUWPiR0aaNIBDlURDTdpIKar0q5ouW4ieJ08LyTP7r3WD6LertiwA5SYD2vMWt1HaCXSYXXCLx0OjLw6SjvGi6OtAvve5kX4BK/uF37LiVMrFbdIGHiGvURMGLPcjAJDtef/3EiOpnK/HJiFeGuTFM0ZpsHahtlJErdmiZbEAa2F7WtI0mCHS0e0xuqGWh3MEV/+g5BSTPCsDzJio7SyrnyZXZySibFK7F7Er4msqNHGzMSbKTi3CfJrVVE3VMdnBlRTbyaYNA6nYYzxjEN0j4Ydkju8YGJKg6PR30fk/fH6XiJyTishVey3NFeCNoqvxKDrrCmOgLACaHdxtUmiSSvzZ1sGofT7kyG307870DBYNmAzunqwei9YcYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"116\",\"quote\":\"at least 12 months have elapsed since the last rent increase\",\"reason\":\"Section 116 of the Act bars a rent increase unless at least 12 months have passed since the last increase, so a clause allowing increases every six months conflicts with it and is void. The quoted wording is from memory and may not be exact.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 680,
+   "output_tokens": 1307,
+   "output_tokens_details": {
+    "thinking_tokens": 1191
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

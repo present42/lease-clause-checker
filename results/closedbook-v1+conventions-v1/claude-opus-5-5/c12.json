@@ -1,0 +1,99 @@
+{
+ "clause_id": "c12",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "869b97124c796a715f23d8d3fb8e01730110bbaad3cc0402cfc00e68f1f636e8",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nTo carry out repairs, the Landlord may enter the unit on 24 hours' written notice stating the reason and the day, at any time between 7 a.m. and 10 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:51.671586Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"27\",\"quote\":\"a time of entry between the hours of 8 a.m. and 8 p.m.\",\"reason\":\"The Act requires a notice of entry to specify an entry time between 8 a.m. and 8 p.m. A clause allowing entry from 7 a.m. to 10 p.m. is inconsistent with the Act and therefore void (s. 4).\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 685,
+ "output_tokens": 410,
+ "raw": {
+  "id": "msg_011Ch1wLNXC5NiKsfMDeQaHA",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS3woKEAgTGAI4AUIIdGhpbmtpbmcSDM57D2v3ATXVSpR48BoMgZko9cpUpLLHupYfIjBzBp4ub47lN2OsaGAJdcsdsIaqLMN/scPGvprqSN9qJpPYQ0lfP0KppI5YjY+fCvwq/AkY1XvvcBGdu5iMF357/bCYax/1lMq/iDzc3vDO9xSf47bAiD0v44cXz4fZKr8WPDV6xonigTJtfaK8Ilv/ZLtyTMFg30QAJviCSwKPgcBqRhdoX5xt/BtgTLCQ6H6gjyIFwZ2d59zjAH5X3/SYl1cgdUC/fDoSbSRX4EE3ANPfwKXwhda6pQESD/TiulE1/h6bXibvm2OJI/FWl2PKdwT9wMGuRfB7+0MxJu81wVnrGXNoW0bAI0kFEqW82WL1C5kSg+uT7IR7Tf8pFbpMYjt+YHKCJhRZBSAwmfrmlzeRYaGhuT7aZ61BourpwB+LuB8cmeEuq4QFiDzJdkEWen+gUQV8i4JTxU+is6MhQUc1D7cdBAC0OYqpLsKI3urVATP8eXzKstJbGWpH7wRrmEcpd42XXxUG4oXM5F114zo5F+Y1ZSgGmgY2SxS2E4Wrfd/GbajLAYdBwfU+tQknjtV5zxFTr9p1LyH90SVjwuhjXCPzuYZ0hXYhvUq+bKylj2anRVWWDkdXr+nHXQAvPcNTnQC74BKSsfdia/oEHlvt6pUeEp4Hx5lfHROQyCNzF8wo6hTVRnf7eotsW6yVaOzJ2SCnK8pfwo3iBWetW76V1+b9POhXJSIxRCXpdGAf2fdilTAimSKL58TkP3pBGEsmmkMLM1/sI3Url5hWejLOe296QBWy01bVgZuI/w7DTNhMfHD/Bn32LjhpuAL2DMHnRUn2mIUhK+4WW/wBzX4gAsai4wX5zdxe+b+g4rEes2FulDjf5g+KjzVRN3E1GBfUjancI1Dnfzn6+hi03WqGX9gJPmuxea27ZHMepGZ2Jdd6O4rFBHpUtkgR90smy/b6zQqyKfzMlbaT83Cum39tod+x3LhgklM20ue8SnrPKdCCWhOeHDMwitgvVDEEawcV7IMcYL637PlMy9ZKiqzvwScUwAfviKap8AGb7jApWZ0OHR9t8lPSKswNoYOkGPz5F9S1RORphntOIbIvbqIaYXv9uaiR0QWieIesbnhb/JcLIV3erWmVd49LEUDR/5kszJ90mFAKunaLDusG8IlOI4in0N7eUJBCmbAEdiT8+dm3kQiIFaDFYty44WbrAzZuR0tuWv+ZF9g+0OVFI8T9uF554S7NhzE3gFt0aGVo7umLUFfz5+BBuZJTqQA5XQ7rJ6rJ93/qHjrNF9K3xRbi3L3xmfqeJmlvz2IpicNIHBLVoykXcQDz9L4QwTj4eHqyASPcAoj06tfijfcHHLHcNWbybGmww0kFQtHzzdNhxUWYvbpRrEXKiAuu0gLyHYJRFx0MOzoKeL4SCVK9o+G3BP88SJHeZ6vHz1RgSxsUxqEYNNtVqKtNzlsN/0/PPBKGk5m05ScPY5hietYQEhODHIHyI2oUmzsgOi03GwmYuYb1iYfm20eUH7sHqFT9en3v5VC4FBc7iskPog/e/r8PxqpIwSfgjvF6n618C1fLw8/sR6ia79uIh+j8e9wpRDyHI0PyYs9nsoEvy3fzTdsIx4g+VcgoCZL4akTQgikQDNYMuleM+kEJevSdmsYzyaweLjPzZN5T7CH7mFPTqEUDomPnspvhmVNMnCj6jMtz8zCaiw5AgnCeN1Wdjnd5EKLe0meYtppHiyLo+vSJpSKt9B9tqUaZ57Wf97ZklcNRV5xk8cSsEd8kvktjayi9R2ng2G8pXvG+ylWkZi/FGAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"27\",\"quote\":\"a time of entry between the hours of 8 a.m. and 8 p.m.\",\"reason\":\"The Act requires a notice of entry to specify an entry time between 8 a.m. and 8 p.m. A clause allowing entry from 7 a.m. to 10 p.m. is inconsistent with the Act and therefore void (s. 4).\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 685,
+   "output_tokens": 410,
+   "output_tokens_details": {
+    "thinking_tokens": 279
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

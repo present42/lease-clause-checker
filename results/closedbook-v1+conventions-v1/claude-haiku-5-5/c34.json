@@ -1,0 +1,99 @@
+{
+ "clause_id": "c34",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "7fcc80cb889d632edd66580debcdc9f9d941893c23cca6fe459086a16626351f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord may enter the unit at any time and for any reason without notice to the Tenant.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:57.370437Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"3\",\"quote\":\"This Act applies despite any agreement or waiver to the contrary.\",\"reason\":\"Section 3 makes the Act apply despite any contrary agreement, so the clause cannot displace the Act's entry rules, which require notice and a permitted reason for a landlord to enter a rental unit. The clause allowing entry at any time, for any reason, without notice is therefore void. I am quoting section 3(1) from memory and have not verified the exact wording.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 657,
+ "output_tokens": 1185,
+ "raw": {
+  "id": "msg_011Ch1v3bt2E2xEDjRpu4Eo6",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"3\",\"quote\":\"This Act applies despite any agreement or waiver to the contrary.\",\"reason\":\"Section 3 makes the Act apply despite any contrary agreement, so the clause cannot displace the Act's entry rules, which require notice and a permitted reason for a landlord to enter a rental unit. The clause allowing entry at any time, for any reason, without notice is therefore void. I am quoting section 3(1) from memory and have not verified the exact wording.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 657,
+   "output_tokens": 1185,
+   "output_tokens_details": {
+    "thinking_tokens": 1022
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

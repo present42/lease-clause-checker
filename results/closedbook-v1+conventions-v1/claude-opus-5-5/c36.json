@@ -1,0 +1,99 @@
+{
+ "clause_id": "c36",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "0545db3c53b445821831f61c15c20c65ec236ae95784bf34f5c0cb3bb3687a12",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf the rent is more than 15 days in arrears, the Landlord may remove and hold any of the Tenant's belongings in the unit until the arrears are paid in full.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:17:08.125220Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"40\",\"quote\":\"No landlord shall, without legal process, seize a tenant's property for default in the payment of rent or for the breach of any other obligation of the tenant.\",\"reason\":\"Section 40 abolishes distress, so a landlord cannot seize and hold a tenant's belongings for unpaid rent without legal process. A clause allowing this conflicts with the Act and is void under section 4.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 681,
+ "output_tokens": 392,
+ "raw": {
+  "id": "msg_011Ch1wManAHT7ZioxH9iPi8",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQStwoKEAgTGAI4AUIIdGhpbmtpbmcSDBLuE4ZOQMr/EUs3GhoMF8KCn6inO0KRitfKIjBHvLNjjQlO1xRLLJdBV4Si/v8DE2EBZybuVQfOdYK66GbO1tjnq1h7nJmjuYt+QTgq1AlOXpcHBpgDnfqzuxbdjic/oMuvd4bb5L9kk00LT+hbwSal38fEGzSYpOYKco2qApub41lwyl8HHGPFnAD1H5zlR7HIuCeOTnCYi/5+RG6AT3p9wL980kkAYna4MBI/vmgJbSNoe5xvAEYClgMOSRqya/0imfVEIeKsvsgcbStfBU/+drFv2GwpNpH+7wxp5MIgQR9ye9OukZuzVSVpJ8LvizCtndiMe4AXrJ3X8V6A6Va27nMhZZXLjzXkz8qepoyr3XNP/dCIec0ZaLh3/uuaMWxtMThFrBT9Yvd9D7DRoEq3iVAjT6MU8T+9V/bo1S6gqVaKvTPlelEYNu+Y9jssIlstGQvEDvxTXUdJWoeJ9BlEDnwQgUaN7htyctnBnsQygS39SjaQ0PeDOOayUWHEvUtarNHMTw3FL1BUY31xrVQXCP5uO+OPficGdcQ4HXdo8Lekf/hwQpuMvjuW6PmazFMqq2oNp55gYPH1vP969xQhk05CZZw/CYOKGjbEVSaHiaXq6ULttFK+7FvLckXdgb4k0g3F8SUclCHLpai45viT4aRmvZHQ+evkg+w8jgoti4AWPNzrjsDQw5JBhwoqhglIJQ4gAkc7WRVQYoSd8pt3Ku6AUkW7Tv9ogUQDX32z1q/VQju3BU3/7laN4FzLIW9s1w7FumH6eu3mJrzkEfPqt2tgLE8TAyxbjgghUqnniTyH9h96agGCmWTXe40Om+FVtr+qIYbJYX5t2NePHz/k20w26/39+yUwI8bQHJo41h3/UXUp4gwUBnafsfRb4o4vCcr5bBuSFNULYH9Wfyc7c5HhgErPnj+sv314vz6DbEVHF648D8S6IUORk2ViKVSWDjy2m4l15HtNVlBhXA/U2QQPcRF68WutTwobXp3rOjBxB+AWphxvP9RTjyeZQhqPJFISpGbaO64PFpdBGuxyRhIyajUoKLbAed9Wsuz5Iy1iYTTxX571dgu3vRR7aUgYEkOFFGCWiD3EU16nc5RC+7mplBeitKuV8OChkhrk5h8Tc7wUTWzWCQgo7Iy2vtLF3wjodakClzL/b2yfWp1MMslmn7uODo1qvbsYKOp1oDJ+SzcFih2/3yIJhY+kOK5OvpEL4dP6A+HnSNWwMILBbrh4lP0O1bk9BdxFfvecAHkU+kqLhJ/Q9oyXPaaJSq4WtZvMast2coyRdgV5SSAEX2zd0rO8lg9hT1yESiCB16iQqytHIRWNFbycyC21GyXE9Qvavr6QckMb9U699fj1jScJNRuEGVYPKRYqbHxlioktPPe7ezFH2mw7ztE2aWKTBrz5wwyuTK0AYKpFHSCnFf61DukjTUyR4QHtIz6ru8txdFVSh4UaKNExJCbiGpsTjHfb+8/90vW+A9rWueibsPnfrLdoXU0LM0zs/s/pah8XVsuGupeCftBIWtGaF0FP409syFg0P3PpNleHt/xCrxFaLD3aHt09/0/FUaQ95Ci827Q7RR5RRis1a/J1e4dmElGdnMUviTI78rIv1KwM/9izYTa3opFlOEe/h5aCqP56NT4pPtlHHISWIceLpbYDnLwbpSvSi2X/PZQhe5JXFNOLrZUcxg5M1J850bfpx2W+SXywpu2iXSVRVzfShZi0f5R4cm1jXVdzyd7mp7Scr80YAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"40\",\"quote\":\"No landlord shall, without legal process, seize a tenant's property for default in the payment of rent or for the breach of any other obligation of the tenant.\",\"reason\":\"Section 40 abolishes distress, so a landlord cannot seize and hold a tenant's belongings for unpaid rent without legal process. A clause allowing this conflicts with the Act and is void under section 4.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 681,
+   "output_tokens": 392,
+   "output_tokens_details": {
+    "thinking_tokens": 252
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

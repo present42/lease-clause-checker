@@ -1,0 +1,110 @@
+{
+ "clause_id": "c30",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "cbfa8b28983e43fe7decf1f2dd12229dc0d63fa07480a20e95ecc59374e95406",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord may increase the rent by up to the guideline amount every six months, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:03:29.078407Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"119\",\n  \"quote\": \"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed\",\n  \"reason\": \"Section 119(1) of the Residential Tenancies Act, 2006 prohibits a landlord from increasing the rent unless at least 12 months have elapsed since the day of the last rent increase or the day the rental unit was first rented to the tenant. Because this clause attempts to allow rent increases every six months, it is inconsistent with section 119 and is therefore void under section 4(1) of the Act.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 546,
+ "output_tokens": 175,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "YbP3apaJC7KCnuEP8JSDuQ0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:03:37 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"119\",\n  \"quote\": \"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed\",\n  \"reason\": \"Section 119(1) of the Residential Tenancies Act, 2006 prohibits a landlord from increasing the rent unless at least 12 months have elapsed since the day of the last rent increase or the day the rental unit was first rented to the tenant. Because this clause attempts to allow rent increases every six months, it is inconsistent with section 119 and is therefore void under section 4(1) of the Act.\"\n}",
+       "thought_signature": "AY89a18Q5acIJaZoFXrEez32xPqQ0PQ0c15Lh0XGqdRKCppKZHr9bmdAZdwXzbygYTx0VgNv4ikrXWAn72dABukUEwoRQnZAxR7T8DjCK1K0BY6RhpR6S0h2t0qteB4="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:03:29.181398Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "YbP3apaJC7KCnuEP8JSDuQ0",
+  "usage_metadata": {
+   "candidates_token_count": 175,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 175
+    }
+   ],
+   "prompt_token_count": 546,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 546
+    }
+   ],
+   "total_token_count": 721,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "119",
+   "quote": "A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed",
+   "reason": "Section 119(1) of the Residential Tenancies Act, 2006 prohibits a landlord from increasing the rent unless at least 12 months have elapsed since the day of the last rent increase or the day the rental unit was first rented to the tenant. Because this clause attempts to allow rent increases every six months, it is inconsistent with section 119 and is therefore void under section 4(1) of the Act."
+  }
+ }
+}

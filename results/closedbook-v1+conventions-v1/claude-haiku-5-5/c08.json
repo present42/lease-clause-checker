@@ -1,0 +1,99 @@
+{
+ "clause_id": "c08",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "5c7b43e32b05bb37b2bb36fa4da93aebc627abc5d60c323804d240224635fecc",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant shall pay for every repair to the unit during the tenancy, whatever the cause.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:31.607900Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"3\",\"quote\":\"this Act applies despite any agreement, waiver or other arrangement to the contrary\",\"reason\":\"Section 20 places the landlord's duty to maintain the unit in good repair, and section 3 makes that duty apply despite any contrary agreement. A clause shifting every repair, whatever the cause, onto the tenant therefore conflicts with the Act and is void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 659,
+ "output_tokens": 1444,
+ "raw": {
+  "id": "msg_011Ch1v1ic2r2cAKnTb8QvtU",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"3\",\"quote\":\"this Act applies despite any agreement, waiver or other arrangement to the contrary\",\"reason\":\"Section 20 places the landlord's duty to maintain the unit in good repair, and section 3 makes that duty apply despite any contrary agreement. A clause shifting every repair, whatever the cause, onto the tenant therefore conflicts with the Act and is void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 659,
+   "output_tokens": 1444,
+   "output_tokens_details": {
+    "thinking_tokens": 1307
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

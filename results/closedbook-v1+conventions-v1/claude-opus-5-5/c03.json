@@ -1,0 +1,99 @@
+{
+ "clause_id": "c03",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "c09a0c18a0304e96d930a004f58562539be496d39a5217c07b4fbe9d6405aa5a",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nDogs must be kept on a leash in the lobby, hallways and elevators, and the Tenant shall clean up after any animal in the common areas.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:46.127333Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"14\",\"quote\":\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\"reason\":\"Section 14 voids only provisions that prohibit animals. This clause allows dogs and simply sets reasonable leash and clean-up rules for common areas, so it is not void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 675,
+ "output_tokens": 295,
+ "raw": {
+  "id": "msg_011Ch1wKyXq7RTDVwMsiztw9",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS5wgKEAgTGAI4AUIIdGhpbmtpbmcSDJNFSR0i5zrz7UkgyxoM8Fd8WQbt7GSytWpEIjBZ+0GwndqBEsv69hPG+8bbq2QNTFCywVgxmdSyKHgUAV3Kds+PmysLasEH/NgVdKcqhAiZzHDHW9eXSaG/PF3KQSlyL3QTGnFhqG9iS+BNVQAGWwvjBzPIqI51fhsga8Zq0nBEqzhr1cH9+e3rGV/InDx5+MC4T/LsZLv7Pvr1UibUJHfP5+LHWT/LXqzsGiQCShtS6Fw6O8U3AwUN33BI8LubJ5XDiz9D+CqkcXj7hJ5q9G90oB7IG7HJiyjrp7WrgNZIvKgo9Em41pbe+4dH3q2eAG+FYf6CGgFlClw+oD9RrK0GJ2TvOEVcNOs0cP3rq/1UAJFCeKxh3mq+8gt2QETYj+h7ZSAWbZVbJWy7flFQ+c7G38nSpnKOOnfbvm2dry3m2oZpjnS+XPRVOsHERJ79nN24wt2OmsRnnL4vltkplmNDTuHPp4Gdx8vUf7pjCWTp+bhqJienVwUQtEpA7ipgF9xTd3MuMhF35JFaYLDXsUGHxucfQo/aqqnKum6AECyE94ZsQC0h4TCxIyOBhkapxKp6q75G/dPkGOMKfxfVTkCZjW3fnEUmClrT2Z12zv004tzGQjZHopVbs+RBs/BXmahhOd5m3enUSBZ1GKI/+avpoZMF8DBsl9zCD0rTL0TIoaFAax0JKjF9LFyZDNHmUIc42DWor4asjczVYNkYY6nRCzLlVyUpKUSiGZ24ieEAdEJc21C5QOlu7gt5BbF9Jx6riMMYqK1P8kOpSk6Uc4z+ECxdKMa9io6Uxp5U1MPvhxD1aV/SUy7ZcNNjDch9PxvkjoeAXh2SszznvMRtdF5+l7TZLhO+mYkLZ6LtkmW12G6U9/otl9W7uMVXy8ylXjb6BWZLhrlwXt4RT3t2fmsI5U8ZbH162Vhg7z2lPkU3m0n5dYd4kIfFjP402zVgp4ETBhc+JQopq3NKMM2DD09VDFJ8bn06NgWGBzCy1GDJGc9/gy8Mkzj6cXSIDzaJO1de8pYPrrL3lzWbvIZQRChSACpCVIEkLxxKJsPtMMQlFDI3BMqCFN3wNYPuJsJdcwDwmqzl/bga3IcR0WwTph2Vqaugvpulg9jWh8Y/ocUQiSB9/IavbkmnNwcP3obgOuacTFEijcx8Jf/x+8yC+vt5980lz4ieAzn0Qp3MtmI/KHBmfxnCL/5F5MJIhQlCYWHRu/i/h13cuv8GdzVGk90hUrKCEdlv2mS7vddfrGDHhB73gR4n436dzMc6HEkEOaZdJeSKkkYYpObV+abQOzggVSuziay0/cHZnVfkr1vqSoQuB29ZE3Ypla8VGJF2/0pbOkKk7xoZni07JqTkcRsE/kmP1ZqcnxsFm1qQN2pNtEPIRTsfaJB1YvsoG6eYfDb+u6/duHOpYe/J0bHZDgvvsMI14Y9lhPYJ2YbTyRkV3ry/tX6b5HuIm46faWslDO1PKxgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"14\",\"quote\":\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\"reason\":\"Section 14 voids only provisions that prohibit animals. This clause allows dogs and simply sets reasonable leash and clean-up rules for common areas, so it is not void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 675,
+   "output_tokens": 295,
+   "output_tokens_details": {
+    "thinking_tokens": 177
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

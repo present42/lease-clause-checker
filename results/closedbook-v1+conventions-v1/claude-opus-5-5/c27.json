@@ -1,0 +1,99 @@
+{
+ "clause_id": "c27",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "b2d9f4c44798c1f97b43bcb001999bd4631be9275f9ceeb8fbe29254ee77139f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Tenant may pay rent by post-dated cheques or by pre-authorized debit if the Tenant wishes, but is not required to use either method.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:17:01.420424Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"108\",\"quote\":\"A landlord shall not require a tenant or prospective tenant\",\"reason\":\"Section 108 only bars a landlord from requiring post-dated cheques or automatic debit for rent. This clause makes both methods optional at the tenant's choice, so it is consistent with the Act.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 675,
+ "output_tokens": 389,
+ "raw": {
+  "id": "msg_011Ch1wM67VHaLokPZ4fHtjC",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSgQsKEAgTGAI4AUIIdGhpbmtpbmcSDKoYu8g3Jri2l8rzFxoMfNz0+SWJmuMqQQpmIjCJF8kzLsp6o4d3Lws82zOfB61Rg4Q+lwOF/Z/I9Sd9tflCvotFIX2RGiZVDqojjHoqngrSZFxVEJ0lJ83v32cPLtUTJ4vLOsrHuQuRarF7jZKhXvKVY3xiM7os9E1OIpykTdIp/tSMUrmy9SOGe5r/yeHgmnN0PXIt5otP6NGy3m/mFn4bTrHsHMPjCAC1A2EfDQopgmNp2b8uUdQX/OBRMYJX3295fu/2w/EewP//NUy3rh0bx/0HZSxE+gDdV/ourE2eEOI0EnkD0KDhn8OO1AOr2ZBFP7m8GulcJg1h4UPS6UqsgDPgNPYW7ZU/gLBObsU2VR7TsLdoPzgKWLY3aVBMSJSJkmXcVraqabkB91ZHjOd/jOvaNmxtOyMX1ZSdAGriiu8tGBK2nrY1HaCaCelP5vPpB82WGU5amyojqNMmeH98zpjV1ZpJ3fDvbzQfCSy6jAVglfi5xuzRyU9qCyWj6DvDnbdUSR4holUnmA0kBraU1ZKxerUD30kwcvDnhttCtJGaLAeQ50hQTWo3Isr7QHDKFP48WraCgGrMNsgNmm+DlieQ8bp4B4iq6A3u85IprxjhUb6C81jbU9SSD1y2h16JTcighjkL72qVVbUr7XM2vi4p56X06zBmpTc+SMtxeW76vMW49PgbYDicc2Vj731YBMly48lsSaFkb5m4N043lly1mqQlCdEFh3nr8+Hzfq1L9wORUA7sYQpqj+19SaC0t5H6P1kCKrMNYoirCeDDArtVmK7Nzf/0xO41nHtXjbjiI2zgC7lLVzks8qDlMAsyag9yE09V+IBkzNHsWfXIeaT5Ojj/B+VhRfRH3Whn164kIsGzMVyChsclAe31U8m0P3LUIKN6XpxIQrqcJcXdNFeQTFgJjWflL07KOGs3g0l4UNecmzknc1bSMWiEPl5uUNhiLf6cUYsQuOg4MtSKjy3ZS39/TPvibhCok9a78dy06+im1wafmSdn5cJPH8Dz3KkGP/i/oMtgeWJtzXBHm9zPbNEkYM4J4XmqwNxtYHS0mgI/TGfQW2zaaAXptEB3lnJ0FkqAJDNz80tCL2oOopSxfk7xJskWXiWOMkn2cVLk3h9mSAixCkEtmFh4T5E3myEn9uDRkRqYhK+uGiQOcdXzhHOI618E67tVvAtYgGC+gYuVLAYbur8VG4TyDRJOfz9lrHjsbVJ/2EnhmYnmKQ29c9wfXmm2cHh7joYa/FeU/WOERjzDoF2Pdn3ZvZVoYMljgSaBOKwbsaJTfr7VtnkEP656d/PsAjl7eVDLfat8FncfKlOtCyTcFoRareVAUL5qKcSy0td2MKXbKFM0pl03Fsx9X31m+4yZL3WTgi1pw19q6mGktlg4kwRmQZ5fJi2GT597MEzKt+8MJiDYOVBIdzhvHIbNGLc0RGLMaDan58Ps4h0m/Mnpym8uXeY5BtcuoYT8ibmmBRkcNcybVil/oCyuoMsZtDiQXo85ubMbjtM93UhXw9yZmnjsQHFC4A7lpGL3vFgLAoE3o6dFnvgUw0q/smV+gJjPEKn4Y4S+YsMktDuR/JxdzhwnRjOVpMfVw8JumKjEmPbLHwmQQ4cCwkGeNPiP6dOQ3Xhy8O9kWSvbU+fRPPSnw8XkxAE9Kifs3qVPwA64etU+4W0fszPVaulmytkV3vo5k9Py0S/KOKgRrzDldAhtFGw2OgaQTq2bshJLZDyLTLyoNUGWXeK9iD9+k1Dzj3crtf2XtAKcG61x0SrzbstV6pWOt0tYKHVgNBAlIju49yhcsxTnp0dz+sI3klgJRAhqogFLHv0+g4qkg5D4Y5joshgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"108\",\"quote\":\"A landlord shall not require a tenant or prospective tenant\",\"reason\":\"Section 108 only bars a landlord from requiring post-dated cheques or automatic debit for rent. This clause makes both methods optional at the tenant's choice, so it is consistent with the Act.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 675,
+   "output_tokens": 389,
+   "output_tokens_details": {
+    "thinking_tokens": 279
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

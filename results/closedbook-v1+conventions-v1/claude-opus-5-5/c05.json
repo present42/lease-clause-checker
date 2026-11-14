@@ -1,0 +1,99 @@
+{
+ "clause_id": "c05",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "a8ed8f761f5d19003d827d255aaa7f12bfe555589e1ac11f7873f11372ef67a0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf any instalment of rent is not paid when due, the rent for the remainder of the term shall at once become due and payable.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T01:16:46.127584Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"15\",\"quote\":\"all or part of the remaining rent for a term or tenancy, or a specific sum, becomes due and payable if the tenant defaults in the payment of rent due\",\"reason\":\"This is an acceleration clause: it makes the rest of the term's rent due when a rent payment is missed. Section 15 makes any such provision in a tenancy agreement void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 664,
+ "output_tokens": 566,
+ "raw": {
+  "id": "msg_011Ch1wKyaZ5EwS2bMT8Ms82",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"15\",\"quote\":\"all or part of the remaining rent for a term or tenancy, or a specific sum, becomes due and payable if the tenant defaults in the payment of rent due\",\"reason\":\"This is an acceleration clause: it makes the rest of the term's rent due when a rent payment is missed. Section 15 makes any such provision in a tenancy agreement void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 664,
+   "output_tokens": 566,
+   "output_tokens_details": {
+    "thinking_tokens": 436
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "c36",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "0545db3c53b445821831f61c15c20c65ec236ae95784bf34f5c0cb3bb3687a12",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf the rent is more than 15 days in arrears, the Landlord may remove and hold any of the Tenant's belongings in the unit until the arrears are paid in full.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:59.303123Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"Despite any agreement, waiver or other arrangement, a tenant of a rental unit cannot waive any of the rights under this Act and any such waiver is void.\",\"reason\":\"The Act bars tenants from waiving their statutory rights, and the Act's self-help rules do not let a landlord keep a tenant's belongings to force payment of rent arrears. The clause therefore attempts to override the tenant's protections and is void. I am quoting section 4 from memory, not from the text supplied, so the wording should be checked against the current Act.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 681,
+ "output_tokens": 1088,
+ "raw": {
+  "id": "msg_011Ch1v3k8ruUgJPX223vKuV",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"Despite any agreement, waiver or other arrangement, a tenant of a rental unit cannot waive any of the rights under this Act and any such waiver is void.\",\"reason\":\"The Act bars tenants from waiving their statutory rights, and the Act's self-help rules do not let a landlord keep a tenant's belongings to force payment of rent arrears. The clause therefore attempts to override the tenant's protections and is void. I am quoting section 4 from memory, not from the text supplied, so the wording should be checked against the current Act.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 681,
+   "output_tokens": 1088,
+   "output_tokens_details": {
+    "thinking_tokens": 897
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

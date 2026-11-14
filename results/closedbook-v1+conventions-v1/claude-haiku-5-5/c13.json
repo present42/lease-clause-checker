@@ -1,0 +1,99 @@
+{
+ "clause_id": "c13",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "8da2b242326af5f7e67b72aab64fb96bc8a820e36dc381ed7d2c09ef93494171",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nThe Landlord, with its contractor, may enter the unit to replace the kitchen cabinets on 24 hours' written notice giving the reason, the day and a time between 8 a.m. and 8 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:38.439117Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"between the hours of 8 a.m. and 8 p.m.\",\"reason\":\"Section 27 lets a landlord enter a rental unit to do work or repairs, including with a contractor, if it gives written notice of at least 24 hours stating the reason, date and time and enters between 8 a.m. and 8 p.m. The clause tracks those conditions and does not waive any tenant right, so it is not void. The quoted wording is from memory and may not be exact.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 695,
+ "output_tokens": 1589,
+ "raw": {
+  "id": "msg_011Ch1v2D1pJrVrX1RqEseJN",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"between the hours of 8 a.m. and 8 p.m.\",\"reason\":\"Section 27 lets a landlord enter a rental unit to do work or repairs, including with a contractor, if it gives written notice of at least 24 hours stating the reason, date and time and enters between 8 a.m. and 8 p.m. The clause tracks those conditions and does not waive any tenant right, so it is not void. The quoted wording is from memory and may not be exact.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 695,
+   "output_tokens": 1589,
+   "output_tokens_details": {
+    "thinking_tokens": 1421
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

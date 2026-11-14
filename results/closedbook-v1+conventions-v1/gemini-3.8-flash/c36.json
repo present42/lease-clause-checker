@@ -1,0 +1,111 @@
+{
+ "clause_id": "c36",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "0545db3c53b445821831f61c15c20c65ec236ae95784bf34f5c0cb3bb3687a12",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nIf the rent is more than 15 days in arrears, the Landlord may remove and hold any of the Tenant's belongings in the unit until the arrears are paid in full.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:49.498410Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"40\",\n  \"quote\": \"No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.\",\n  \"reason\": \"Section 40 of the Act abolishes the common law remedy of distress, prohibiting landlords from seizing a tenant's personal property for rent arrears without legal process. Any tenancy agreement term purporting to allow such seizure is contrary to the Act and void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 413,
+ "output_tokens": 621,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "_bL3apDfIIjg0MMP4pPa-A0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:02:05 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"40\",\n  \"quote\": \"No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.\",\n  \"reason\": \"Section 40 of the Act abolishes the common law remedy of distress, prohibiting landlords from seizing a tenant's personal property for rent arrears without legal process. Any tenancy agreement term purporting to allow such seizure is contrary to the Act and void.\"\n}",
+       "thought_signature": "AY89a19-wP14cPSA6P-atf2V6idEWuwF1Utpo_xuKJctDnn3hFrezG270OkwrbOAIFHE9c7hNyv-PQWVyZyhSGa8c90IIE4HgbJUL_Xn4gWTt55tHcsQ9cvvPdLtPEllOaXn9ODXaFAsHPAaCehjz8zPIdq4NEPVVEO4feepVEV0gZb_CT3TqLc6_gfP19cRSbjeqBLrhrCCYCI6yBSxta9cE-93Qj79upd4bMm4M7WkH9DH4C4PO1bZUnioqK5fuw414pzGbwBaG8UeUuWLE583Gf0UPdvlP6TFC0pc8MJFMnigHeXT6_ACfVIS7JCQPck2JzRWv9StcFTotrqUw_ZwOajk3ozGJEvDIy5iDVQf2PlN_Po7achhkW0JqlACXrKdXROmhBMJmhXLQkf5DeZF3jPSuFQjGksVDa_WpgA56itvP2RSEvqIS08Xl4TMA3HpYFKlS6h1D2Z-EDNf13GHgqisehxO6vJ4NLUa2HZpFTgB4bcte4Wf-zc_qpNlqhh9S-U9INKFyF7TGxY7l4x7LZK3dfy-OTie4l5y-eF3JWVBGrusirIIduQ70Ac4wxc5F_XtOCuSALMQqc7Fg39489keWPW_eXQqxr0Go3M-vkKdTTeR7jRECfwK_IzZiLgbS7ZKKOJZvkg3hZYLk7jybORBM9pK85nKXRyjQh_4P_d-Ez2dyK7toejfs0UETIqukRAaq59okP6LRTrMNbxgCZv9rGbbEywAQfboVEWYFIefCyoePekOxTuCWVYHaLNBfaDewmZk3HKBehdS6vLcPxrNSV8_v3HC8FUcqF4LWoGOeyOhSuRWiyvS1ZpKiBOdaFUoETDB6J1R-PHcaiBNA67KMhyQxJCoMmVKkzpLw7qVBBy99h5Vc1pJFbnIrOu4y_1jT7Uh-09bwfVRREJMvkcWDEpzsMF9_OPMEeSSLvskQo3lDPCqJ9WmXcZlJbiK4YYWCDkw5UcUbfByyAvznFu712EPefR1OjcRRuGm9qBZ5LY4kUa6RB1x9CrBx4YaIzEIuOvL_PDHJWfDSYCWIHzofaDPuEEWJgTvUMrtcHZ2qLc36gD7TrCXN-vmL9wzkxJgEOPYb5JeZqpadMmI2IGYJyB4e76vEwqbwfYSVOTyQLqBLrZ7ve_psB_y5v8IX4pT6bmF8NjRlgLjy5Aun7VghOCR3LSu9xXHX4LNHQAUVQT7haxlq07XEN0hAIrtSYvI_ucKMAq-ajwhqYx44qQ-eTihVXm5ZX8wVsZHD5001zsEfqvdy1EPpwEXUrxRifawtswKqOQajYXV26ZJqNetQEAVoddHrZzSrtU9kdwF_VssaRs0UH_pAReEQ8cjZV4l2714Het28G0wiNql1JGC1fu4YjCsecN3rw8SgTNnqWkjEyLcFRDqVRVASLHYq0nWxBi64o0ol3nD1WusI1b7gBf5dD5jciM7KY4ZIJrNEL0CNVfh7Jo5Sz82tZbQlt_Eh-7R4ztWMLVinmuRqTX97Zp3pc5epXLM0MK5a8kC49hum7Gg9PZXH94SMYVQgN97gHjSUDhEPBr8KUf-Nv4EsLFHfgh4jhXGoRl5HdpphCCmpW2SosWL0ZcJRU-Iz_WB3PL7UVbZP7jdzJCoMpbVWcoNcmaZtcmKv40T40WL3A3Jw15ABTvMiEJaK88csV8twvHWdrMujfWnGFXoJe4go7hgyW944RGmF6VjiUl86JhFqF6VFWXLtQRW9GAwzmeWo5CmjeTwntWHAL3qL-ptdkdJLdUU6oB9FI542dEZ_bWJ_ZDe5hx6j1fQNxxufP77ivOFs0oHnvtl5aAqz7Ku06hnAljTMwQwF95LGWEOAIWAhzPGrdhEw9kQ8q-ZkqOhsweiGvoq4NZpfk3XXQx2KJIIgRVBQCHOUnzTOqj1SaaSCjYr3RGm80xj_VcR27QQBBQiK_NVlLetk7toAtBfrub9l-kv2i4R6ZcXWMb6NAuwLmoJeaKJZyb9n1QTZRbQg_aeZlIqcNwmHykDTj_g_qdL4-DHuHgs7SN08a65LaRaRHARrwlp48pLUe36VXHFEL8HIEGTyH0Z3JvnRYR6_7K0aynwGzlrCGjlvrw0Ql5Qh6E1SxAG_p4j1Fc_PXhlK7kPh1PdUwof0RlC7zW13QMIjC5TEh1TFKRUX0YGvupq5xoRia3w6DdossZr2shb1Cvb9dtmnRJuUNdt8QtsuWeFgGqDHDAhfdjDkvXHA684GKGRxKy0SzEzP1y5MDxMk9M35bMU1_6g8ametIs9JWJ7JdV0r8JcTr7QRRW3RCZmhUdo39qgtYyqRbeDCKfpFKAYW7OMYsSxoYVb1QGBEGf_P5TB-V8ZH_vIjY9InUx1zGDfi2u2JVyxRTWtFWrTla_F-k7RV8M6p2MiaNNMrT6WocdX8rS1lO4CclBAWqZW1KIYK2IxXjo5ualri98LDNNmtQGmHEW_oiFuY-7WZKDE8NKRtgn6Csx9v6eg4L1jAperQ9vScrFXO-1p9y99U0xVx4JZaiY9CGtqZqXi897-hOgwpOAoa3hEkSzrBYxVcF1auevt4JC9OISN3g0ma4WMt0IdrNK61SPQgJ104bY5wT0ktcBKSmRn-bFXFDXMIrdS1nNsLE3PuJA4sFNd6CEAJTsN2L5fC1KSRDcs87lBJmFJULIf7Gik4AibmPfuWaS6U7GNIzoyXRfDkxAXCJmUY_7hneBCL9OwlPKn5G6o9r23D1WQtdBlx13_7GMm-2kiT_qAaTGZXJ_kxyyMmo3rrSk3Q1orXrdmSGMvOlVq1QlykKcpiRqOuQQAo0XyEmLXhRbmvQUqpUjSPIX0Z9YzUiMOuJtgmgNkKok="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:49.536464Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "_bL3apDfIIjg0MMP4pPa-A0",
+  "usage_metadata": {
+   "candidates_token_count": 116,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 116
+    }
+   ],
+   "prompt_token_count": 413,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 413
+    }
+   ],
+   "thoughts_token_count": 505,
+   "total_token_count": 1034,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "40",
+   "quote": "No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.",
+   "reason": "Section 40 of the Act abolishes the common law remedy of distress, prohibiting landlords from seizing a tenant's personal property for rent arrears without legal process. Any tenancy agreement term purporting to allow such seizure is contrary to the Act and void."
+  }
+ }
+}

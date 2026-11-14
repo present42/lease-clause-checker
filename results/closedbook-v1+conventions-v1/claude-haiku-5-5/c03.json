@@ -1,0 +1,99 @@
+{
+ "clause_id": "c03",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "c09a0c18a0304e96d930a004f58562539be496d39a5217c07b4fbe9d6405aa5a",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nDogs must be kept on a leash in the lobby, hallways and elevators, and the Tenant shall clean up after any animal in the common areas.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:59:31.607209Z",
+ "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"The leash rule and the tenant's duty to clean up after animals in common areas are not obviously a waiver of a tenant right under the Act, but I cannot confirm the exact wording of the voiding provision, and the clean-up duty could arguably conflict with the landlord's common-area maintenance obligations, so I cannot decide.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 675,
+ "output_tokens": 1252,
+ "raw": {
+  "id": "msg_011Ch1v1ibHMX62RoAWFsGEV",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"unsure\",\"section\":\"\",\"quote\":\"\",\"reason\":\"The leash rule and the tenant's duty to clean up after animals in common areas are not obviously a waiver of a tenant right under the Act, but I cannot confirm the exact wording of the voiding provision, and the clean-up duty could arguably conflict with the landlord's common-area maintenance obligations, so I cannot decide.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 675,
+   "output_tokens": 1252,
+   "output_tokens_details": {
+    "thinking_tokens": 1120
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "clause_id": "c11",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "closedbook-v1+conventions-v1",
+ "prompt_sha256": "9ce98ebc3fe22dd69a73c0575821a3f58b6307b5102511432b4795902a74fd9c",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nYou are not given the text of the Act. Answer from what you know of it.\n\n<clause>\nBy signing this Agreement, the Tenant consents to the Landlord entering the unit at any reasonable time without notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if you can't decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, exactly as they appear in the Act: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-14T01:01:07.879947Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"4\",\n  \"quote\": \"A provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\",\n  \"reason\": \"The Act strictly limits entry without notice to specific statutory circumstances under section 26 (such as emergencies or consent given at the time of entry), so a clause providing blanket advance consent to enter without notice is inconsistent with the Act and void under section 4.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 397,
+ "output_tokens": 1055,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "07L3auPdN5T50MMPnLmjyAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Sat, 14 Nov 2026 01:01:16 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"4\",\n  \"quote\": \"A provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\",\n  \"reason\": \"The Act strictly limits entry without notice to specific statutory circumstances under section 26 (such as emergencies or consent given at the time of entry), so a clause providing blanket advance consent to enter without notice is inconsistent with the Act and void under section 4.\"\n}",
+       "thought_signature": "AY89a1-cOgKndIwv8IlHKBw4Ne3uUvVUBpbqnhCNUAZBRglv0N6FcJ3R-4y5aHI7uZd__DvXbuGpCDX4ufSLLvIgEG5iuqJr8WsVQTsTmQHoZ3qXNLwejIwhYx49hOjjkSSMh8Guj-hT5nqURIEfa1nJx_PVqUBSwIV7uq8vcuXgMr5JA-hS-AChVMvJeyDjYfpkgQ5doSfhoBF0cZOOWGS2GyeP9sh91JKL4P_DH58FIvGALphXxPFHW8tHj2HO7biK4-mW-Thi4dg89q4OfIA-tHpHpNPiO34KIDAvRIo-9G3sQiEOGDp4wtHoFZ_6B8J_t_1stW76CKeEJ_iqblSfxEt7QgQr3d8TLDN4GNAYzSaPU4uPZnNJEVzZZWfO0LbbHJpfg4VgwjmObBAHzC7hwaB1kaA5x0k0MjDYoVz3qgATrUNeHiRjtgUtBRIAbbm1Z_ChIm8eabV1g92IcRJkjbI2sPYpgkueckZAu1Jyqa63Hiza1o4vmXMdmMH4eFdGT7lhr_DAZkDSaQgBteyJdcGwDHDaDuhwEU5AN0sqDX6ZE75lvzRMf1Oc1qW-esfHxE3BlWNkndY2c1aTNug0JGmPR0JExx3YV5wjozlKNYdJhLAlHNOCEGj0MQPHKdQvGaX2FRFSNNUXoKaQlr4YcGoY6LayYPiUNhlnleJu1GhEQyb6Vs_w6IhEgzskN58TG_7edig9LrLMXcmcicNi_DUzHLgPhNQIFoK3bsx6SAEqAsyM6sFy-Zr5niOQxSye0dzrGCxB4JDH4SFezo_Bdy22BgzU6YhzYUFTOi-PZOe7TSyP3gBXQKClX_2MkirTqFuGp4MZBPIaysI43QDzE1RfWVgboIYaRxYh7Sp8Kj-PBG6Wl3Is5PI-cxsaYtGN1qwf6ojItFwu9TMqbx33JFAIA5q0bKI_lM-ywfUGy54EBUPqSVcQ8LjkZpscnIx3-CZexLHOJaydzj780hr5MpDnPcAGnqKghXWYKUEECNa8x18Nq71XBV1Jb85ae5Vu12x88-CzEAIDfzBiKJLFHMNyeM5OReWio7Hxas6eJmt2ofrNX2hNHO4cePp6eEhwl_tHhohq5ZLKjkmtUiqLU-s7I3T5EL_hBoYbm623FLTwTrWdNb-ktCmwDiuc1xLxPK4Q73CDljCQpj6mF8sASVRgcCOSbsjUroyVQ4e6UcNwxQEJo3VFVSsEQ-2fFUEe4YiASFn2utXCRIlARvQ0BkKOMVo0EvuJsKF9gfhFEmXluragyPspLmSs1Z6wf7uphFDhXziKFNXx8k-vmhIY7djzTYyZx1iK12xesH4RLgsJMlEIbR2XfvH3ffqQLQjQnFejsTyOx2e4tVzfn8xeVZhOO7NHSxCdzprrHwM4kl80Z1Oj6oYEjCA9eVq6kT9OQh5nwfDGoth7gskphDZ6-G-8Mu8dNNACtpak8i6P2I6oIRyb2PAcYEMMKu6vrHrn1PV6e3qkfcispwSKtEzX98xZwa2DSnlUoOzE7SMj8kmkd44xbxveaEGQZ11Ny5YEaghL2I9Rop2XNsUS7YUiDilbn9WCUrnTc9ea90V2OtWaxHNte-W9IAcy949TSbshny3S4wfhZ4f1ztieoH-aNo3AV59J2PtQjhVn_v1w5y7pWfgpBg1q6emOCq1kDKgoETaGDs5Fx2_etihA5e6YEZHSY6EklcQUBJkzAzEwqhQtOqgwKHwdCFs75C2dPrV-oA5N4EocpMY-SDXD5WX-Cag6LSGnjTFWtYGDcq3Dp5bt-rhrfm1FLNqypn4QM79SsI5wCx_THKiBvryyqOJUiPSkunx5F1JSQMYoz6gRSSCd1NxcfBElgOJb14k5PEO0xgG8bzPb3NsB4DkrazlcJdC4F8CuQuVqQmBAleotMW4f_jLCAYmvvGAGyxI58LoiZCizqZFdBfRCF75SxsUJBnUg5iySrA_XN9OoRqYtQyUdGCbg4ZJk984OiYbsN5IWQ6m3KJckMtIuY7KTEmh9UMgtroDGRX9MaSWHm4otlI6yMuX4Q8ZuqPc_E3d2d9tiRPSIUclUzoEAZWfe4GX0Yh0TDR970IzIhS5NsAaKyueTUZfcE84jGVSQdTwzWI1ctBmO3ZmDiw2zwelFGNtuhKPXGHBJ-kdt1w5XcA6hW66MRgauXyG6sQAg8IV7-vCrIIrFJloOkG1w_JO8S5cgM8DVP6lWsrOjBBs7Y6mSaynZr-KdGXsXXlNDAaQP96kDxahJyk86wTwKBVXIPbD4eR_0I3YJEWUS7FYk0SkY47cb2F7Bmv2rlFJ99X9fytYwUHFAO95SDBXxRbXudVf8-WwCtMGGOa2dKxXhjAH0gwQBYeHP9w2_ughtD412SdHZs5yeEz1ACLhgURJDIhUXaTUdeykpuEvIPCjyR-x1-zidlhWaRsGYheg4N3mUit3drCRSN8VztwF-Oo5WlEEDh0FpsaTiFOIU-FUJ-M4r1mZsXTTzp9xs4wUFID4kXOsqXcWEK42idWWjdDu0kt6KuBdS6UYM5zVnGgctlTRCOQzmSRvLrSWgiAB75dRymSbF-JIGjrQ4nxBI87cyJulLvwvs-Azph4Uq-ed8ES2fSnpPDK3Lis7tRQodqL-U1KCI7c_WxTrYCOZ3XcGfDKzIY5XVIHMuO9pTJU4m4tLP4ursZ4udTmvNPQqxBYMJ5sAWwqla7m5-vRSQVZO9e9sIXWjWxs-m8xSift3xCjj4JTKMIxI3scdA_4PuaOX-lv36O6wMBLs-JDBUEPQruGlnrLd-Y8cH_--X76Mp3xpfqfs2Z88mnkrDZ2u7gd_oNUORkIJ9oVORyN0tXbZDp4YyCX_2KqILxAhwfp0YeJ33Ct0cVeTQJQP0Gk-zmfAFIjsLqu8jSIAS1jYAkkVot6zRM-Vsftm1AydjeCC6bUUv63NNlHWPc1vJ0I8kwip8c3JMiVc5Xq1UFT0sFn333vAdM7Wnx8Te7RrECjy-BAolaEnBREH5wSR13mfMVS2PByN17mn9C6NTpXRx_cFr5rdPpoO3BwQQOhMr7fTtickpFrd43azRlWxUN8BGXiCIYlt3pIEka_URLYBhwbBWlecpBwr4XZp7RuV9-wFKBMF2PwBtrUx_UxOnYVTy9K9gtT7P_K0E70ToKfW_3lgloOtNw6wiE5NwLuyPFJHIFtDU7CW9tC8EsYB4npJoxCkcLowDwhXzhK9QGLupRXyyqFz7DZaRswTW9iguqtVzoglL-GfyO8IuSNfAAmzoFcJJ8qB14_CdTl7ADIJnZuOaBe9viHMSjhPmtFdo6XroEvzYVmLP3Y5YyOrL39cUqog_W3gvezYFaAH8sKz5m-9_d0DoSr7rTjmI-KT9_79RvvRdLpS4oTPaaTIUXzxPXGHOfE6_aJYEN7ADy87SxVPhWz1AWfEgBVmNQqWZPhlWDxj5D2oXuH0cisVGbyX6SG73_rICWjIl4koKTqQsIgpi3LgnI1igqDSI3fz0FItn1Mjc5sr_DSOcq5S8-mU4fbWL-nJ0QQ2TObqTO-LcUbFagtqL6ukmvfIUnNj3MKn7Qw8QImERYdSaUdUawnvjmCNpE6mdlXjPO_MrziDy-3dlUSaUAsxq_Y4GH6B9tTT3ENXLNunz0f3-AaLiWONzWe6j6Zja8Vw1cG_5FjynoJkpMkvbrlTKaQiIkAPorbF5KA0pj1v6X5TvF_tI2aqQoVqw8ytXAWZd7zFFejuJf6kyDPE0WTVmVcr2xfYSNC_PvBN4Y-Zdw3mw3mWqnsVAyLxLt1zAerNzhK53jdckUUyUhXv9qBl9ibsN4bM2C-9MrP7o9pQj2gUkJSd68OKJVzMRWhqlAuEk5Zt0YjgDrVAFnyTDCxt6Ec7kbWO6_Yd4BAef58QnW8VC2_KMXV8bnNZOhZAggdwpXaDENoJXNSfsc9xCPngDDmp0NySEUHfPSwJMte8hUcwVhAS3mkSiKazTg1BaR-bgFMgdbNVjEeUIrN9a3ayTVMefMULiQ4aMRUr8TzeTkSAQp19JcXLgB3f5lCtI9RCMKrfTPXVvxEfbwEISzRzmABBoqt2nnOPsum9nIOBjqc-clgjwWMXkldQhnayRZXkxj-tUJ0aCAclAuzrR7os0GzNC6-Clmp6oDRwA4KweyqLid24i9M2u9W_bp53ynBdypYtztR26mcb6icbeaE7Gmo0OT6E070VzL6gsH2Xtou2NXC-p77iYhx8mdc6vPAMtLuUSzU-pv4QyzUMhGckcU4s9gOHfBHq5qqFYR70piv8K4-N4_Rl_JjpIYIaB595SuNn-T9lS8FHsa4vrxyLAnoQlIJr46SO9Iso_g0lf2K4e99Mtd62C81dfuGIlmFVsAHV6HLsNrn3wGNRDFw8ifC2ACL-UT4fIecfyejgEIoIbVeRVc5P0Ko5WhSc9dzPAcZbBny-weIocKtzWumFu9SOIfF0et1TGEo_OfDu2El8H9oN2aBjuwtQss6fLqAH4QF8i-xITF3eCKT02k3FVjpWmiqSDmDmSNyKEgay5WlAqnsYTnao---_rgiNpoVOQgKsOD0-Jv77nIKRgL9uANwHrlAeATl2VeAgnpjpYNLuPYkezMRTA45j1VKP2MElxtcec2uDz7YILyAAxq8fxw9DdUOaUQJVJLZESdM1tYQtyPT_P0588Mh_somfZpQ6rValSZ2R4qMg7TxUssWuApGh0VXe0Yky-wrSlS9uzJb0rekk62TUZbaBifHbyRYT29Qv7rwJufCEalo34_2HB2KMyAWAMpv_LKmSE2ut-nSInKGRk_uEbw0VfvPTjmpLHMKQDN59Xx6Haz_lqEVQohuzS4RRbJA10VvPvxtzXDqNzZ9c6NypxIBEJGNosQTCnAghicTnZ80bKI8a8zMavoO_uJUDbH88bvPAvyvxQK6DKRSrT0hDakiBgIIEG3mcDbDQ7sUrKxZW6qV26LPkSlGzAX5QHqd2TVR8gpZV69FvCJmTCppvDvoZJ48hC_GXHpTLw06vYLELzLviT3kayFz3HzGgJKgc1Ebn50rLL8e-sDosf4Kj062of5k6o8ylyXSha88uwp-2INboHNHu8VnLRwuQs1mSTk3i4aRvcubFetANOOCuREtV0fgDiKrYBm2GLeR4dbcgQUxIdlyAYGo12FwFhoIy6jsGwNgYjp7CnK7uaRiudLBhogHCMwSuQi4CbJPtKyhSnS-WR9wyYkw9NA9bY93HeVxJLrsTSgqsnTwWV4Wbl_g0Y7iXcW8n3f2IwlVZTvgbX2Qc3Sih1C4au9Js3pPZrQkKvFZRkeWNlFMOow9n5AyDijrzePTsD_uC_dz1uWqXjJXG02C2EPty96o7UjY-1TflbAovJTGy3b1Jpu9WGSlOKWDy8_wbCkPD9RSieJlwHNwBw8w=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-14T01:01:07.913123Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "07L3auPdN5T50MMPnLmjyAQ",
+  "usage_metadata": {
+   "candidates_token_count": 102,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 102
+    }
+   ],
+   "prompt_token_count": 397,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 397
+    }
+   ],
+   "thoughts_token_count": 953,
+   "total_token_count": 1452,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "4",
+   "quote": "A provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.",
+   "reason": "The Act strictly limits entry without notice to specific statutory circumstances under section 26 (such as emergencies or consent given at the time of entry), so a clause providing blanket advance consent to enter without notice is inconsistent with the Act and void under section 4."
+  }
+ }
+}
