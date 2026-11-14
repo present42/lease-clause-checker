@@ -188,3 +188,81 @@ def test_run_takes_only_current_models_and_report_also_takes_dropped_ones() -> N
     ]
     with pytest.raises(SystemExit):
         parser.parse_args(["baseline", "run", "--models", "gemini-4-carbon"])
+
+
+def test_quote_check_verifies_a_verbatim_quote(
+    cache_dir: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    quote = "The deposit shall not exceed one month’s rent."
+
+    exit_code = main(["--cache-dir", str(cache_dir), "quote", "check", "s. 2.1(2)", quote])
+
+    out = capsys.readouterr().out
+    assert exit_code == 0
+    assert out.startswith("VERIFIED: the quote appears word for word in s. 2.1(2).\nSource:")
+    assert "Not an official version" in out
+    assert "Not legal advice" in out
+
+
+def test_quote_check_names_the_first_tampered_word(
+    cache_dir: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    quote = "A landlord may require a deposit if, the tenant agrees in writing"
+
+    exit_code = main(["--cache-dir", str(cache_dir), "quote", "check", "2.1", quote])
+
+    out = capsys.readouterr().out
+    assert exit_code == 1
+    assert out.splitlines()[:2] == [
+        "NOT VERIFIED: The quote does not appear word for word in section 2.1.",
+        "The first 5 words match the Act; then the quote has “deposit” where the Act has “gadget”.",
+    ]
+    assert "Not legal advice" in out
+
+
+@pytest.mark.parametrize(
+    ("section", "quote", "says"),
+    [
+        ("9", "This Act binds the Crown.", "Section 9 is not a section of the Act."),
+        ("4", "binds the Crown", "The quote has fewer than 5 words."),
+        ("4", "", "NOT VERIFIED: The quote is empty."),
+        ("1", "Widgets are void in a tenancy", "is not in s. 1 with that capitalisation"),
+        (
+            "2.1",
+            "Gizmo deposits are allowed here",
+            "The quote's first word, “Gizmo”, is not in s. 2.1.\n",
+        ),
+        (
+            "2.1",
+            "the tenancy. (2) The deposit shall",
+            "then the quote has “(2)” where the subsection ends.",
+        ),
+    ],
+)
+def test_quote_check_explains_each_failure(
+    cache_dir: Path, capsys: pytest.CaptureFixture[str], section: str, quote: str, says: str
+) -> None:
+    exit_code = main(["--cache-dir", str(cache_dir), "quote", "check", section, quote])
+
+    assert exit_code == 1
+    assert says in capsys.readouterr().out
+
+
+@pytest.mark.parametrize(
+    ("section", "quote", "out"),
+    [
+        ("1", "A provision in a tenancy agreement prohibiting widgets", "in s. 1.\nSource:"),
+        (
+            "s. 2.1(2)",
+            "the tenant agrees in writing; and",
+            "in s. 2.1(1).\nNote: you gave s. 2.1(2); the check searches all of s. 2.1.\n",
+        ),
+    ],
+)
+def test_quote_check_names_the_subsection_it_found(
+    cache_dir: Path, capsys: pytest.CaptureFixture[str], section: str, quote: str, out: str
+) -> None:
+    exit_code = main(["--cache-dir", str(cache_dir), "quote", "check", section, quote])
+
+    assert exit_code == 0
+    assert f"VERIFIED: the quote appears word for word {out}" in capsys.readouterr().out

@@ -1,7 +1,7 @@
 import pytest
 
 from lease_clause_checker.statute import Section
-from lease_clause_checker.verify import check_quote
+from lease_clause_checker.verify import Difference, check_quote, first_difference, subsection_of
 
 # Sample Act section 2.1 (see tests/fixtures/elaws_sample.html):
 #   (1) A landlord may require a gadget deposit if,
@@ -84,3 +84,49 @@ def test_an_empty_quote_is_no_quote(sections: dict[str, Section], quote: str) ->
 
 def test_a_section_not_in_the_act_is_reported(sections: dict[str, Section]) -> None:
     assert check_quote("The deposit shall not exceed", "99", sections) == "no_such_section"
+
+
+@pytest.mark.parametrize(
+    ("quote", "difference"),
+    [
+        # A changed word: the Act's word is named.
+        ("A landlord may require a deposit if,", Difference(5, "deposit", "gadget")),
+        # Running past the end of subsection (1) into (2).
+        (
+            "the deposit is returned at the end of the tenancy. (2) The deposit",
+            Difference(10, "(2)", None),
+        ),
+        # Not even the first word.
+        ("Landlords may require a gadget deposit", Difference(0, "Landlords", None)),
+    ],
+)
+def test_first_difference_says_where_a_quote_leaves_the_act(
+    sections: dict[str, Section], quote: str, difference: Difference
+) -> None:
+    assert first_difference(quote, sections["2.1"].text) == difference
+
+
+def test_a_verbatim_quote_has_no_first_difference(sections: dict[str, Section]) -> None:
+    quote = "“The deposit shall not exceed one month's rent.”"  # straight apostrophe, curly marks
+
+    assert first_difference(quote, sections["2.1"].text) is None
+
+
+@pytest.mark.parametrize(
+    ("quote", "marker"),
+    [
+        ("The deposit shall not exceed", "(2)"),
+        ("the tenant agrees in writing", "(1)"),
+        ("not in this section at all", None),
+    ],
+)
+def test_subsection_of_names_the_subsection_holding_a_quote(
+    sections: dict[str, Section], quote: str, marker: str | None
+) -> None:
+    assert subsection_of(quote, sections["2.1"].text) == marker
+
+
+def test_a_section_without_numbered_subsections_has_an_empty_marker(
+    sections: dict[str, Section],
+) -> None:
+    assert subsection_of("prohibiting widgets is void", sections["1"].text) == ""

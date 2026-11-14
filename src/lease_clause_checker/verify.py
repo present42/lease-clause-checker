@@ -14,6 +14,7 @@ running from (a) into (c) would verify. No rule section has such a gap today.
 """
 
 import re
+from dataclasses import dataclass
 from itertools import pairwise
 from typing import Literal
 
@@ -61,6 +62,52 @@ def quote_in_text(quote: str, section_text: str, *, fold_quotation_marks: bool =
     the Act's curly one.
     """
     return any(_contains(part, quote, fold_quotation_marks) for part in _subsections(section_text))
+
+
+def subsection_of(quote: str, section_text: str) -> str | None:
+    """The marker, such as "(2)", of the first subsection that contains `quote` ("" if the
+    section has no numbered subsections); None if none does."""
+    for part in _subsections(section_text):
+        if _contains(part, quote):
+            marker = SUBSECTION_START.match(part)
+            return marker.group(0).strip() if marker else ""
+    return None
+
+
+@dataclass(frozen=True)
+class Difference:
+    """Where a quote first leaves the Act's text."""
+
+    matched: int
+    """How many of the quote's opening words appear, in order, in one subsection."""
+    quote_word: str
+    """The quote's next word."""
+    act_word: str | None
+    """The word that follows the matched words in the Act; None if they end the subsection or
+    no words matched."""
+
+
+def first_difference(quote: str, section_text: str) -> Difference | None:
+    """Where `quote` stops matching the section, word by word; None if it all matches.
+
+    The matched words are the longest opening run of the quote that appears within one
+    subsection (as `quote_in_text` finds it); the first place they appear is the one reported.
+    """
+    words = normalise(quote).strip('"').split()
+    matched = 0
+    while matched < len(words) and quote_in_text(" ".join(words[: matched + 1]), section_text):
+        matched += 1
+    if matched == len(words):
+        return None
+    act_word = None
+    if matched:
+        prefix = " ".join(words[:matched])
+        for part in _subsections(section_text):
+            found = re.search(rf"(?<!\w){re.escape(prefix)}(?!\w)\s*(\S+)?", normalise(part))
+            if found:
+                act_word = found.group(1)
+                break
+    return Difference(matched, words[matched], act_word)
 
 
 def normalise(text: str, *, fold_quotation_marks: bool = True) -> str:

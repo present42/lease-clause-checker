@@ -2,6 +2,7 @@
 
 import argparse
 import os
+import re
 import sys
 import textwrap
 import time
@@ -36,6 +37,13 @@ from lease_clause_checker.statute import (
     parse_sections,
     select_sections,
 )
+from lease_clause_checker.verify import (
+    Difference,
+    check_quote,
+    first_difference,
+    normalise,
+    subsection_of,
+)
 
 DEFAULT_CACHE_DIR = Path(".cache")
 DEFAULT_RULES_PATH = Path("data/rules.yaml")
@@ -58,6 +66,10 @@ CHECK_NOT_LEGAL_ADVICE = (
     "correctly. Ask a lawyer or a legal clinic about a real lease."
 )
 DEFAULT_CHECK_MODEL = "claude-haiku-5-5"
+# The first subsection marker in a citation such as "s. 27(2)(a)": "(2)".
+GIVEN_SUBSECTION = re.compile(r"\(\d+(?:\.\d+)?\)")
+# `pipeline.PROBLEMS` is worded for the model; this is for a person running `lcc quote check`.
+QUOTE_PROBLEMS = pipeline.PROBLEMS | {"no_quote": "The quote is empty."}
 
 
 def main(argv: Sequence[str] | None = None) -> int:
@@ -76,6 +88,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             return _write_report(args)
         if args.command == "check":
             return _check_lease(args)
+        if args.command == "quote":
+            return _check_quote(args.cache_dir, args.section, args.quote)
         if args.command == "clauses":
             return _review_clauses(args.cache_dir, args.rules, args.clauses, args.out)
         if args.statute_command == "fetch":
@@ -160,6 +174,18 @@ def _parser() -> argparse.ArgumentParser:
     lease.add_argument("--color", choices=["auto", "always", "never"], default="auto")
     lease.add_argument("--prompts", type=Path, default=DEFAULT_PROMPTS_DIR)
     lease.add_argument("--rules", type=Path, default=DEFAULT_RULES_PATH)
+
+    quote = commands.add_parser("quote", help="the quote check the pipeline uses (offline)")
+    quote_commands = quote.add_subparsers(dest="quote_command", required=True)
+    quote_check = quote_commands.add_parser(
+        "check",
+        help="check that a quote appears word for word in a section of the cached Act; "
+        "exits 1 if it doesn't",
+    )
+    quote_check.add_argument(
+        "section", help='a section number, e.g. 14 or "s. 27(2)" (the whole section is searched)'
+    )
+    quote_check.add_argument("quote", help="the words to look for, in quotation marks")
 
     report_all = commands.add_parser(
         "report", help="regenerate the README's results and chart from saved answers (offline)"
@@ -441,6 +467,48 @@ def _show_sections(cache_dir: Path, numbers: Sequence[str]) -> int:
     _print_provenance(act)
     _print_headings(select_sections(parse_sections(act.content_html), numbers))
     return 0
+
+
+def _check_quote(cache_dir: Path, section_arg: str, quote: str) -> int:
+    """The pipeline's quote check on one quote, saying where a failed quote leaves the Act."""
+    act = elaws.load_act(elaws.cache_path(cache_dir))
+    sections = parse_sections(act.content_html)
+    section = pipeline.cited_section(section_arg)
+    result = check_quote(quote, section, sections)
+    if result == "verified":
+        found = subsection_of(normalise(quote).strip('"'), sections[section].text) or ""
+        print(f"VERIFIED: the quote appears word for word in s. {section}{found}.")
+        given = GIVEN_SUBSECTION.search(section_arg)
+        if given and given.group(0) != found:
+            print(
+                f"Note: you gave s. {section}{given.group(0)}; the check searches all of s. "
+                f"{section}."
+            )
+    else:
+        print(f"NOT VERIFIED: {QUOTE_PROBLEMS[result].format(section=section)}")
+    if result == "not_found":
+        difference = first_difference(quote, sections[section].text)
+        if difference is not None:
+            print(_difference_line(difference, section, sections[section].text))
+    print(elaws.NOTICE)
+    print("Not legal advice: this checks the wording only, not what it means.")
+    return 0 if result == "verified" else 1
+
+
+def _difference_line(difference: Difference, section: str, section_text: str) -> str:
+    if difference.matched == 0:
+        line = f"The quote's first word, “{difference.quote_word}”, is not in s. {section}"
+        if difference.quote_word.lower() in normalise(section_text).lower().split():
+            return f"{line} with that capitalisation (the check is case-sensitive)."
+        return f"{line}."
+    words = "word matches" if difference.matched == 1 else "words match"
+    line = (
+        f"The first {difference.matched} {words} the Act; then the quote has "
+        f"“{difference.quote_word}”"
+    )
+    if difference.act_word is None:
+        return f"{line} where the subsection ends."
+    return f"{line} where the Act has “{difference.act_word}”."
 
 
 def _check_rules(cache_dir: Path, rules_path: Path) -> int:

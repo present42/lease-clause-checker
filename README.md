@@ -64,7 +64,8 @@ Work in progress. These exist:
   set.
 
 - a demo command, `lcc check`, that runs the pipeline on each clause of a lease
-  ([check.py](src/lease_clause_checker/check.py); see [Check a lease](#check-a-lease)).
+  ([check.py](src/lease_clause_checker/check.py); see [Check a lease](#check-a-lease)), and
+  `lcc quote check`, the quote check on its own (see [Check a quote](#check-a-quote)).
 
 Results are in [Results](#results) below.
 
@@ -115,6 +116,20 @@ may get a wrong or `unsure` answer. Two of the eight clauses, from a run on 14 N
               s. 37, Termination only in accordance with Act
               “A tenancy may be terminated only in accordance with this Act.”
               https://www.ontario.ca/laws/statute/06r17#BK47
+```
+
+### Check a quote
+
+`lcc quote check` runs the pipeline's quote check on one quote, offline, against the cached
+Act. It exits 0 if the quote verifies and 1 if it doesn't, and says where a failed quote first
+leaves the Act's wording. Changing one word of the s. 14 quote above:
+
+```text
+$ uv run lcc quote check 14 "A provision in a tenancy agreement prohibiting the presence of dogs in or about the residential complex is void."
+NOT VERIFIED: The quote does not appear word for word in section 14.
+The first 10 words match the Act; then the quote has “dogs” where the Act has “animals”.
+Source: Ontario e-Laws. Not an official version of the statute. © King's Printer for Ontario, 2006.
+Not legal advice: this checks the wording only, not what it means.
 ```
 
 ## Results

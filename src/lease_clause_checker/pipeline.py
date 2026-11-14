@@ -86,8 +86,13 @@ class PipelineAnswer(BaseModel):
 
     @property
     def cited_section(self) -> str:
-        match = CITED_SECTION.fullmatch(self.section.strip())
-        return match.group(1) if match else self.section.strip()
+        return cited_section(self.section)
+
+
+def cited_section(text: str) -> str:
+    """The section number in a citation such as "s. 14" or "27(2)"; else the text, stripped."""
+    match = CITED_SECTION.fullmatch(text.strip())
+    return match.group(1) if match else text.strip()
 
 
 @dataclass(frozen=True)
