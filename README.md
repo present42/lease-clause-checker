@@ -100,8 +100,8 @@ unless `--model` names another. Each clause costs one paid call, or two when a q
 check; the answers are saved, so checking the same lease again costs nothing. The sample's
 answers are committed in [results/check/](results/check/), so the command above replays them
 without a key. Only the 18 rule sections are in the prompt, so a clause about anything else
-may get a wrong or `unsure` answer. Two of the eight clauses, from a run on 13 November 2026
-(the first run took 5 to 6 seconds for all eight):
+may get a wrong or `unsure` answer. Two of the eight clauses, from a run on 14 November 2026
+(UTC):
 
 ```text
   2  VOID     Pets are not allowed in the apartment or the building.
@@ -110,14 +110,11 @@ may get a wrong or `unsure` answer. Two of the eight clauses, from a run on 13 N
               animals in or about the residential complex is void.”
               https://www.ontario.ca/laws/statute/06r17#BK19
 
-  6  VOID     The Tenant will pay a non-refundable $250 fee for each set of keys
-              issued at the start of the tenancy.
-              s. 134, Additional charges prohibited
-              “collect or require or attempt to collect or require from a
-              tenant, prospective tenant or former tenant of the rental unit a
-              fee, premium, commission, bonus, penalty, key deposit or other
-              like amount of money whether or not the money is refundable”
-              https://www.ontario.ca/laws/statute/06r17#BK207
+  6  VOID     This lease ends automatically when the one-year term is over, and
+              the Tenant must leave the unit on that day.
+              s. 37, Termination only in accordance with Act
+              “A tenancy may be terminated only in accordance with this Act.”
+              https://www.ontario.ca/laws/statute/06r17#BK47
 ```
 
 ## Results

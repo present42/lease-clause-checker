@@ -1,0 +1,99 @@
+{
+ "clause_id": "clause-6",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "2b2106cc6b6f62e06847af77e08cb25b717f37245a66c163387ce9ddfbf29ad5",
+ "clauses_sha256": "ed1e0fb9d7c908dfcc6f55db050df5e7b7f7046909f8cc67445aa6964b83bb2e",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThis lease ends automatically when the one-year term is over, and the Tenant must leave the unit on that day.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-14T00:48:11.898550Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"A tenancy may be terminated only in accordance with this Act.\",\"reason\":\"The clause ends the tenancy automatically at the end of the one-year term and requires the tenant to leave, without any notice under the Act. Under section 37(1), a tenancy may be terminated only in accordance with the Act, so the clause is inconsistent with the Act and void under section 4(1).\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6426,
+ "output_tokens": 583,
+ "raw": {
+  "id": "msg_011Ch1u9cfhbS9s49pMVWFF8",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"A tenancy may be terminated only in accordance with this Act.\",\"reason\":\"The clause ends the tenancy automatically at the end of the one-year term and requires the tenant to leave, without any notice under the Act. Under section 37(1), a tenancy may be terminated only in accordance with the Act, so the clause is inconsistent with the Act and void under section 4(1).\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6426,
+   "output_tokens": 583,
+   "output_tokens_details": {
+    "thinking_tokens": 443
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

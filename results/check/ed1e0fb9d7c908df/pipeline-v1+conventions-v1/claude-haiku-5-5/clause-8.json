@@ -5,7 +5,7 @@
  "served_model": "claude-haiku-5-5",
  "prompt_version": "pipeline-v1+conventions-v1",
  "prompt_sha256": "a5b05a3cfa337bbc7a1761d0d9265ff1102c0dfb9464652b99f86a66df6f498a",
- "clauses_sha256": "4785be0e862ab7d19a11c723e18bf9402a8b95d637ae290a0b8a636b2d10005b",
+ "clauses_sha256": "ed1e0fb9d7c908dfcc6f55db050df5e7b7f7046909f8cc67445aa6964b83bb2e",
  "request": {
   "model": "claude-haiku-5-5",
   "max_tokens": 16000,
@@ -51,18 +51,18 @@
    }
   ]
  },
- "requested_at": "2026-11-13T22:03:45.952675Z",
- "text": "{\"verdict\":\"void\",\"section\":\"40\",\"quote\":\"No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.\",\"reason\":\"The clause lets the landlord seize the tenant's belongings for rent default without legal process, which section 40 prohibits (distress abolished), so the clause is void under section 4(1) as inconsistent with the Act.\"}",
+ "requested_at": "2026-11-14T00:48:11.898712Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"40\",\"quote\":\"No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.\",\"reason\":\"The clause lets the landlord seize the tenant's belongings for unpaid rent without legal process, which section 40 prohibits (distress abolished), so the Act's prohibition on such seizure makes the clause void under section 4(1) as inconsistent with the Act.\"}",
  "finish_reason": "end_turn",
  "input_tokens": 6435,
- "output_tokens": 141,
+ "output_tokens": 158,
  "raw": {
-  "id": "msg_011Ch1gcMLSdEecAwbAPFjJ6",
+  "id": "msg_011Ch1u9cXWtjn8w5f2N6fsS",
   "container": null,
   "content": [
    {
     "citations": null,
-    "text": "{\"verdict\":\"void\",\"section\":\"40\",\"quote\":\"No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.\",\"reason\":\"The clause lets the landlord seize the tenant's belongings for rent default without legal process, which section 40 prohibits (distress abolished), so the clause is void under section 4(1) as inconsistent with the Act.\"}",
+    "text": "{\"verdict\":\"void\",\"section\":\"40\",\"quote\":\"No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.\",\"reason\":\"The clause lets the landlord seize the tenant's belongings for unpaid rent without legal process, which section 40 prohibits (distress abolished), so the Act's prohibition on such seizure makes the clause void under section 4(1) as inconsistent with the Act.\"}",
     "type": "text"
    }
   ],
@@ -82,7 +82,7 @@
    "cache_read_input_tokens": 0,
    "inference_geo": "global",
    "input_tokens": 6435,
-   "output_tokens": 141,
+   "output_tokens": 158,
    "output_tokens_details": {
     "thinking_tokens": 0
    },

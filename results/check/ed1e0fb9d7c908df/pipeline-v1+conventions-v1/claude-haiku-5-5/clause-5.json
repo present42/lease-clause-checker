@@ -5,7 +5,7 @@
  "served_model": "claude-haiku-5-5",
  "prompt_version": "pipeline-v1+conventions-v1",
  "prompt_sha256": "37df654f8e89fad2f663b1b64835d5c70e02bdd95dabdb252abfed25f725440a",
- "clauses_sha256": "4785be0e862ab7d19a11c723e18bf9402a8b95d637ae290a0b8a636b2d10005b",
+ "clauses_sha256": "ed1e0fb9d7c908dfcc6f55db050df5e7b7f7046909f8cc67445aa6964b83bb2e",
  "request": {
   "model": "claude-haiku-5-5",
   "max_tokens": 16000,
@@ -51,18 +51,18 @@
    }
   ]
  },
- "requested_at": "2026-11-13T22:03:45.952318Z",
- "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances:\",\"reason\":\"The clause matches section 27(1)(1) (carrying out a repair in the rental unit) with 24 hours' written notice, and section 27(3) requires the notice to specify the reason, the day, and a time between 8 a.m. and 8 p.m., so the clause is consistent with the Act and not void.\"}",
+ "requested_at": "2026-11-14T00:48:11.898442Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances:\",\"reason\":\"The clause tracks section 27(1)(1) and (3): entry for repairs on at least 24 hours' written notice, stating the reason, the day and a time between 8 a.m. and 8 p.m. is permitted, so it is not void.\"}",
  "finish_reason": "end_turn",
  "input_tokens": 6443,
- "output_tokens": 172,
+ "output_tokens": 151,
  "raw": {
-  "id": "msg_011Ch1gcMHDyjhujtWB1uqnU",
+  "id": "msg_011Ch1u9chS8PwwTncHAKe2j",
   "container": null,
   "content": [
    {
     "citations": null,
-    "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances:\",\"reason\":\"The clause matches section 27(1)(1) (carrying out a repair in the rental unit) with 24 hours' written notice, and section 27(3) requires the notice to specify the reason, the day, and a time between 8 a.m. and 8 p.m., so the clause is consistent with the Act and not void.\"}",
+    "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances:\",\"reason\":\"The clause tracks section 27(1)(1) and (3): entry for repairs on at least 24 hours' written notice, stating the reason, the day and a time between 8 a.m. and 8 p.m. is permitted, so it is not void.\"}",
     "type": "text"
    }
   ],
@@ -82,7 +82,7 @@
    "cache_read_input_tokens": 0,
    "inference_geo": "global",
    "input_tokens": 6443,
-   "output_tokens": 172,
+   "output_tokens": 151,
    "output_tokens_details": {
     "thinking_tokens": 0
    },

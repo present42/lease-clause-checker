@@ -5,7 +5,7 @@
  "served_model": "claude-haiku-5-5",
  "prompt_version": "pipeline-v1+conventions-v1",
  "prompt_sha256": "ae8ef6b54154f6959717cfdc7171c82b39309caafb5953d28bd7c7482795cd0c",
- "clauses_sha256": "4785be0e862ab7d19a11c723e18bf9402a8b95d637ae290a0b8a636b2d10005b",
+ "clauses_sha256": "ed1e0fb9d7c908dfcc6f55db050df5e7b7f7046909f8cc67445aa6964b83bb2e",
  "request": {
   "model": "claude-haiku-5-5",
   "max_tokens": 16000,
@@ -51,18 +51,18 @@
    }
   ]
  },
- "requested_at": "2026-11-13T22:03:45.952574Z",
- "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\"reason\":\"Section 34 expressly makes the tenant responsible for repairing undue damage caused by the tenant's wilful or negligent conduct or that of persons permitted by the tenant, so the clause is consistent with the Act and not void under section 4.\"}",
+ "requested_at": "2026-11-14T00:48:11.898772Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\"reason\":\"Section 34 expressly makes the tenant responsible for repairing undue damage caused by the tenant's wilful or negligent conduct or that of persons permitted by the tenant, so the clause is consistent with the Act and not inconsistent under section 4, and is not void.\"}",
  "finish_reason": "end_turn",
  "input_tokens": 6439,
- "output_tokens": 181,
+ "output_tokens": 190,
  "raw": {
-  "id": "msg_011Ch1gcMV8nDQWj8eXMzt5n",
+  "id": "msg_011Ch1u9cXGEuVqwuyV1ntg3",
   "container": null,
   "content": [
    {
     "citations": null,
-    "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\"reason\":\"Section 34 expressly makes the tenant responsible for repairing undue damage caused by the tenant's wilful or negligent conduct or that of persons permitted by the tenant, so the clause is consistent with the Act and not void under section 4.\"}",
+    "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\"reason\":\"Section 34 expressly makes the tenant responsible for repairing undue damage caused by the tenant's wilful or negligent conduct or that of persons permitted by the tenant, so the clause is consistent with the Act and not inconsistent under section 4, and is not void.\"}",
     "type": "text"
    }
   ],
@@ -82,7 +82,7 @@
    "cache_read_input_tokens": 0,
    "inference_geo": "global",
    "input_tokens": 6439,
-   "output_tokens": 181,
+   "output_tokens": 190,
    "output_tokens_details": {
     "thinking_tokens": 0
    },

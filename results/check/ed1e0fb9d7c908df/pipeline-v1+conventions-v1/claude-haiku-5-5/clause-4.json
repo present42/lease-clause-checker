@@ -5,7 +5,7 @@
  "served_model": "claude-haiku-5-5",
  "prompt_version": "pipeline-v1+conventions-v1",
  "prompt_sha256": "1720c42f3964d4fe986ff3f431a76bbce0a940054ee9842efd03f47a34c76cc0",
- "clauses_sha256": "4785be0e862ab7d19a11c723e18bf9402a8b95d637ae290a0b8a636b2d10005b",
+ "clauses_sha256": "ed1e0fb9d7c908dfcc6f55db050df5e7b7f7046909f8cc67445aa6964b83bb2e",
  "request": {
   "model": "claude-haiku-5-5",
   "max_tokens": 16000,
@@ -51,18 +51,18 @@
    }
   ]
  },
- "requested_at": "2026-11-13T22:03:45.952210Z",
- "text": "{\"verdict\":\"void\",\"section\":\"15\",\"quote\":\"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\",\"reason\":\"The clause makes all remaining rent for the term due upon a single missed rent payment, which is an acceleration clause that section 15 declares void. Section 15 is the provision that decides it, so the clause is void under the Act.\"}",
+ "requested_at": "2026-11-14T00:48:11.898319Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"15\",\"quote\":\"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\",\"reason\":\"The clause makes all remaining rent for the term due upon a missed rent payment, which is an acceleration clause that section 15 declares void. Section 4(1) would also void it as inconsistent with the Act.\"}",
  "finish_reason": "end_turn",
  "input_tokens": 6420,
- "output_tokens": 169,
+ "output_tokens": 165,
  "raw": {
-  "id": "msg_011Ch1gcMQuaVnpaQnNw3DZb",
+  "id": "msg_011Ch1u9cYWexQepWjvM78VP",
   "container": null,
   "content": [
    {
     "citations": null,
-    "text": "{\"verdict\":\"void\",\"section\":\"15\",\"quote\":\"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\",\"reason\":\"The clause makes all remaining rent for the term due upon a single missed rent payment, which is an acceleration clause that section 15 declares void. Section 15 is the provision that decides it, so the clause is void under the Act.\"}",
+    "text": "{\"verdict\":\"void\",\"section\":\"15\",\"quote\":\"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\",\"reason\":\"The clause makes all remaining rent for the term due upon a missed rent payment, which is an acceleration clause that section 15 declares void. Section 4(1) would also void it as inconsistent with the Act.\"}",
     "type": "text"
    }
   ],
@@ -82,7 +82,7 @@
    "cache_read_input_tokens": 0,
    "inference_geo": "global",
    "input_tokens": 6420,
-   "output_tokens": 169,
+   "output_tokens": 165,
    "output_tokens_details": {
     "thinking_tokens": 0
    },

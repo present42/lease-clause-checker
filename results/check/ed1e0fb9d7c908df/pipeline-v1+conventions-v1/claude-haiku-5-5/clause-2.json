@@ -5,7 +5,7 @@
  "served_model": "claude-haiku-5-5",
  "prompt_version": "pipeline-v1+conventions-v1",
  "prompt_sha256": "66f7681d0f6cb155ea4e4bad860dd68b3d2d2948a733eb4fe7564d5e045f47c8",
- "clauses_sha256": "4785be0e862ab7d19a11c723e18bf9402a8b95d637ae290a0b8a636b2d10005b",
+ "clauses_sha256": "ed1e0fb9d7c908dfcc6f55db050df5e7b7f7046909f8cc67445aa6964b83bb2e",
  "request": {
   "model": "claude-haiku-5-5",
   "max_tokens": 16000,
@@ -51,18 +51,18 @@
    }
   ]
  },
- "requested_at": "2026-11-13T22:03:45.951896Z",
- "text": "{\"verdict\":\"void\",\"section\":\"14\",\"quote\":\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\"reason\":\"The clause prohibits pets in the apartment and the building, which is a prohibition on the presence of animals in or about the residential complex; section 14 makes such a provision void.\"}",
+ "requested_at": "2026-11-14T00:48:11.898041Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"14\",\"quote\":\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\"reason\":\"The clause prohibits pets in the apartment and the building, which is a provision prohibiting the presence of animals in or about the residential complex, so section 14 makes it void.\"}",
  "finish_reason": "end_turn",
  "input_tokens": 6410,
  "output_tokens": 113,
  "raw": {
-  "id": "msg_011Ch1gcMJiVWuqHQgy11zM7",
+  "id": "msg_011Ch1u9cUJKJz6EHiutzhS6",
   "container": null,
   "content": [
    {
     "citations": null,
-    "text": "{\"verdict\":\"void\",\"section\":\"14\",\"quote\":\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\"reason\":\"The clause prohibits pets in the apartment and the building, which is a prohibition on the presence of animals in or about the residential complex; section 14 makes such a provision void.\"}",
+    "text": "{\"verdict\":\"void\",\"section\":\"14\",\"quote\":\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\"reason\":\"The clause prohibits pets in the apartment and the building, which is a provision prohibiting the presence of animals in or about the residential complex, so section 14 makes it void.\"}",
     "type": "text"
    }
   ],
