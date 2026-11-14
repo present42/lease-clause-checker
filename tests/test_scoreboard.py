@@ -10,12 +10,14 @@ import pytest
 
 from lease_clause_checker import scoreboard
 from lease_clause_checker.clauses import Clause
+from lease_clause_checker.closedbook import ClosedBookResult
 from lease_clause_checker.models import MODELS, ModelSpec, model_by_key
 from lease_clause_checker.pipeline import Attempt, PipelineAnswer, Result
 from lease_clause_checker.report import ModelRun
 from lease_clause_checker.runs import RunRecord
 from lease_clause_checker.scoring import Answer, Score, Verdict, score_answer
 from lease_clause_checker.stats import difference_interval
+from lease_clause_checker.verify import QuoteCheck
 
 HAIKU = model_by_key("claude-haiku-5-5")
 OPUS = model_by_key("claude-opus-5-5")
@@ -93,7 +95,8 @@ def baseline(
     return ModelRun(spec, records, scores)
 
 
-def pipeline_run(spec: ModelSpec, exact_misses: int = 0) -> ModelRun:
+def pipeline_run(spec: ModelSpec, exact_misses: int = 0, retry_c14: bool = True) -> ModelRun:
+    """Right on every clause with a verified quote; c14's first quote fails and is retried."""
     scores, records, results = [], [], []
     for i, c in enumerate(CLAUSES):
         section = "4" if i < exact_misses and c.label == "void" else "14"
@@ -102,7 +105,7 @@ def pipeline_run(spec: ModelSpec, exact_misses: int = 0) -> ModelRun:
         attempts: tuple[Attempt, ...] = (
             Attempt(record(spec, c.id, answer.model_dump_json()), answer, "verified"),
         )
-        if c.id == "c14":
+        if c.id == "c14" and retry_c14:
             full = quote.replace(
                 "tenancy agreement", "tenancy agreement" + scoreboard.RETRY_DROPPED
             )
@@ -230,6 +233,15 @@ def test_replace_block_keeps_the_text_around_the_markers() -> None:
         scoreboard.replace_block("no markers", "x")
 
 
+def test_replace_block_takes_other_markers() -> None:
+    start, end = scoreboard.TLDR_START, scoreboard.TLDR_END
+    readme = f"top\n{start}\nold\n{end}\n{scoreboard.START}\nkept\n{scoreboard.END}\n"
+
+    replaced = scoreboard.replace_block(readme, f"{start}\nnew\n{end}", start, end)
+
+    assert replaced == f"top\n{start}\nnew\n{end}\n{scoreboard.START}\nkept\n{scoreboard.END}\n"
+
+
 def test_chart_is_valid_svg_with_one_mark_per_complete_run_and_panel() -> None:
     svg = scoreboard.render_chart(board().main)
 
@@ -334,7 +346,7 @@ def test_the_contested_labels_note_lists_wrong_verdicts_and_unaccepted_citations
 
     header, c29_line, c32_line = scoreboard._contested_labels_note(contested_set())
 
-    assert "the frozen labels of c29 and c32." in header
+    assert "the frozen labels of c29 and c32: a label is listed here when" in header
     assert "is labelled lawful under s. 116, with s. 119 also accepted." in c29_line
     assert "Wrong verdict in the tables: none." in c29_line
     assert c29_line.endswith("Cited s. 120: Claude Opus 5.5 (baseline).")
@@ -383,8 +395,62 @@ def test_the_headline_is_recounted_without_the_contested_clauses(
     [_, line] = scoreboard._without_contested(main)
 
     assert line == (
-        "Without the contested clauses (c21, c22; see Notes), 22 clauses, verdicts right and "
+        "Without the contested clauses (c21 and c22; see Notes), 22 clauses, verdicts right and "
         "exact sections: Claude Haiku 5.5 + pipeline 22 and 19; Claude Opus 5.5 alone 22 and 21."
+    )
+
+
+@pytest.mark.parametrize(
+    ("opus_wrong", "disclosed"),
+    [
+        (
+            {"c21": "verdict"},
+            "the only ones that Claude Opus 5.5 alone (c21) got wrong or were "
+            "unsure on, so that count is perfect by construction.",
+        ),
+        ({"c03": "verdict"}, None),  # c03 isn't contested
+        ({"c21": "verdict", "c03": "verdict"}, None),  # a miss outside the contested clauses
+        ({}, None),  # no misses to account for
+    ],
+)
+def test_the_recount_says_when_the_contested_clauses_are_all_of_a_models_misses(
+    monkeypatch: pytest.MonkeyPatch,
+    opus_wrong: dict[str, Literal["verdict", "section", "both"]],
+    disclosed: str | None,
+) -> None:
+    contested = tuple(
+        scoreboard.ContestedLabel(i, "that x", ((HAIKU.key, "x"),)) for i in ("c21", "c22")
+    )
+    monkeypatch.setattr(scoreboard, "CONTESTED_LABELS", contested)
+    main = board({("baseline", OPUS.key): baseline(OPUS, opus_wrong)}).main
+
+    [_, line] = scoreboard._without_contested(main)
+
+    if disclosed is None:
+        assert "by construction" not in line
+    else:
+        assert line.endswith(f"The contested clauses are {disclosed}")
+
+
+def test_the_recount_names_every_model_its_clauses_account_for(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    contested = tuple(
+        scoreboard.ContestedLabel(i, "that x", ((HAIKU.key, "x"),)) for i in ("c21", "c22")
+    )
+    monkeypatch.setattr(scoreboard, "CONTESTED_LABELS", contested)
+    haiku = with_result(pipeline_run(HAIKU), 21, unsure_result(CLAUSES[21], HAIKU, gave_up=False))
+    haiku.scores[21] = score_answer(CLAUSES[21], Answer("unsure", None), {"4", "14"})
+    runs: dict[tuple[scoreboard.Method, str], ModelRun] = {
+        ("pipeline", HAIKU.key): haiku,
+        ("baseline", OPUS.key): baseline(OPUS, {"c21": "verdict"}),
+    }
+
+    [_, line] = scoreboard._without_contested(board(runs).main)
+
+    assert line.endswith(
+        "the only ones that Claude Haiku 5.5 + pipeline (c22) and Claude Opus 5.5 alone (c21) got "
+        "wrong or were unsure on, so those counts are perfect by construction."
     )
 
 
@@ -443,8 +509,8 @@ def test_the_report_shows_the_contested_note_and_the_recount(
 
     text = scoreboard.render(board(), "chart.svg")
 
-    assert "- **Contested labels.** Answers argue against the frozen labels of c21 and c22." in text
-    assert "Without the contested clauses (c21, c22; see Notes), 22 clauses" in text
+    assert "- **Contested labels.** Answers argue against the frozen labels of c21 and c22:" in text
+    assert "Without the contested clauses (c21 and c22; see Notes), 22 clauses" in text
 
 
 def test_the_scored_set_holds_the_current_models_only(monkeypatch: pytest.MonkeyPatch) -> None:
@@ -511,3 +577,308 @@ def test_the_late_fee_note_needs_its_clause_decided_by_section_15() -> None:
         scoreboard._late_fee_note(
             scoreboard.ScoredSet([s17.model_copy(update={"section": "134"})], {})
         )
+
+
+@pytest.mark.parametrize(
+    ("items", "joined"),
+    [
+        (["c29"], "c29"),
+        (["c29", "c32"], "c29 and c32"),
+        (["c29", "c31", "c32"], "c29, c31 and c32"),
+    ],
+)
+def test_and_list(items: list[str], joined: str) -> None:
+    assert scoreboard._and_list(items) == joined
+
+
+FLASH, ARGON = model_by_key("gemini-3.8-flash"), model_by_key("gemini-4-argon")
+
+
+def with_tokens(run: ModelRun, output: int, thinking: int) -> ModelRun:
+    """`run` with every record's output and thinking tokens set."""
+    records = [
+        r.model_copy(
+            update={
+                "output_tokens": output,
+                "raw": {"usage_metadata": {"thoughts_token_count": thinking}},
+            }
+        )
+        for r in run.records
+    ]
+    return replace(run, records=records)
+
+
+def closed_book_run(spec: ModelSpec, quotes_fail: int = 0, unsure: int = 0) -> ModelRun:
+    """Right on every clause with the deciding section; the first `unsure` clauses are unsure,
+    and the next `quotes_fail` have a quote that fails its check."""
+    results = []
+    for i, c in enumerate(CLAUSES):
+        if i < unsure:
+            answer = PipelineAnswer(verdict="unsure", section="", quote="", reason="r")
+            check: QuoteCheck | None = None
+        else:
+            answer = PipelineAnswer(verdict=c.label, section="14", quote="q", reason="r")
+            check = "not_found" if i < unsure + quotes_fail else "verified"
+        attempt = Attempt(record(spec, c.id, answer.model_dump_json()), answer, check)
+        results.append(ClosedBookResult(c, attempt))
+    return ModelRun(
+        spec,
+        [r.attempt.record for r in results],
+        [r.score({"4", "14"}) for r in results],
+        closed_book=results,
+    )
+
+
+def tldr_board(
+    overrides: dict[tuple[scoreboard.Method, str], ModelRun] | None = None,
+) -> scoreboard.Board:
+    """Every model run; only Claude Haiku 5.5's pipeline retries (c14), and closed book it is
+    unsure on 6 of the 24 main-set clauses. Haiku's baseline cites the deciding section on c01
+    with the wrong verdict. Flash's answers think: its pipeline answers have 1,000 output tokens,
+    800 of them thinking ($0.0045 each, $0.003 of it thinking), and its baseline answers 2,000
+    ($0.00825 each), against $0.003 for each of Argon's answers by either method."""
+    runs: dict[tuple[scoreboard.Method, str], ModelRun] = {
+        ("baseline", HAIKU.key): baseline(HAIKU, {"c01": "verdict"}),
+        ("pipeline", OPUS.key): pipeline_run(OPUS, retry_c14=False),
+        ("baseline", FLASH.key): with_tokens(baseline(FLASH), 2000, 1900),
+        ("pipeline", FLASH.key): with_tokens(pipeline_run(FLASH, retry_c14=False), 1000, 800),
+        ("baseline", ARGON.key): baseline(ARGON),
+        ("pipeline", ARGON.key): pipeline_run(ARGON, retry_c14=False),
+    }
+    return replace(
+        board(runs | (overrides or {})), closed_book={HAIKU.key: closed_book_run(HAIKU, unsure=6)}
+    )
+
+
+def tldr_lines(b: scoreboard.Board) -> list[str]:
+    text = scoreboard.render_tldr(b)
+    lines = text.splitlines()
+    assert (lines[0], lines[1], lines[-1]) == (
+        scoreboard.TLDR_START,
+        "**TL;DR**",
+        scoreboard.TLDR_END,
+    )
+    return [line.removeprefix("- ") for line in lines[3:-1]]
+
+
+def unsure_result(c: Clause, spec: ModelSpec, gave_up: bool) -> Result:
+    if gave_up:
+        answer = PipelineAnswer(verdict="void", section="14", quote="Not in the Act.", reason="r")
+        failed = Attempt(record(spec, c.id, answer.model_dump_json()), answer, "not_found")
+        return Result(c, (failed, failed))
+    answer = PipelineAnswer(verdict="unsure", section="", quote="", reason="r")
+    return Result(c, (Attempt(record(spec, c.id, answer.model_dump_json()), answer, None),))
+
+
+def with_result(run: ModelRun, index: int, result: Result) -> ModelRun:
+    results = list(run.results)
+    results[index] = result
+    return replace(run, results=results)
+
+
+def test_the_tldr_states_each_lesson_from_the_saved_answers() -> None:
+    checked, headline, statute, section, cost = tldr_lines(tldr_board())
+
+    # 4 models x (24 main + 4 stress clauses); every final quote is verified.
+    assert checked.endswith(
+        "Of 112 pipeline answers (4 models, 28 clauses), 112 had a checked quote. A checked quote "
+        "shows the words are in the Act, not that the section decides the clause: 0 of the 112 "
+        "cited a section the label doesn't accept."
+    )
+    assert headline == (
+        "On the 24-clause main set (synthetic clauses; the pipeline is given the text of the rule "
+        "sections), Claude Haiku 5.5 with the pipeline got 24 of 24 verdicts right for $0.004; "
+        "Claude Opus 5.5 alone got 24 of 24 for $0.14. 24 clauses can't tell them apart."
+    )
+    assert statute == (
+        "For Claude Haiku 5.5, the statute text moved the verdicts, not the quote check: closed "
+        "book, it got 18 of 24 verdicts right; with the text, 24. The check failed 1 of 112 "
+        "checked first answers (c14: Claude Haiku 5.5 dropped words from the middle of s. 14(2)), "
+        "and the retry changed no verdict."
+    )
+    assert section == (
+        "A right section is not a right answer: on c01, Claude Haiku 5.5's baseline cited s. 14, "
+        "which voids no-pet provisions, and still called the clause enforceable."
+    )
+    assert cost == (
+        "Cost followed each model's default thinking setting, not its tier: Gemini 3.8 Flash with "
+        "the pipeline cost $0.11 on the main set, 67% of it for thinking tokens, and Gemini 4 "
+        "Argon alone $0.072. By the same method, too, Gemini 3.8 Flash cost more (baseline $0.20 "
+        "vs $0.072; pipeline $0.11 vs $0.072); at its default, Gemini 4 Argon did not think on "
+        "any baseline answer."
+    )
+
+
+@pytest.mark.parametrize(
+    ("gave_up", "says"),
+    [(False, "1 was the model's own `unsure`"), (True, "1 was `unsure` after two failed quotes")],
+)
+def test_the_tldr_says_why_an_answer_is_unsure(gave_up: bool, says: str) -> None:
+    run = with_tokens(pipeline_run(FLASH, retry_c14=False), 1000, 800)
+    run = with_result(run, 5, unsure_result(CLAUSES[5], FLASH, gave_up))  # c06: main set only
+
+    checked, *_ = tldr_lines(tldr_board({("pipeline", FLASH.key): run}))
+
+    assert f"(4 models, 28 clauses), 111 had a checked quote; {says}. A checked" in checked
+
+
+def test_the_tldr_counts_checked_quotes_whose_section_the_label_does_not_accept() -> None:
+    opus = pipeline_run(OPUS, retry_c14=False)
+    c06 = CLAUSES[5]
+    opus.scores[5] = score_answer(c06, Answer(c06.label, "99"), {"4", "14", "99"})
+
+    checked, *_ = tldr_lines(tldr_board({("pipeline", OPUS.key): opus}))
+
+    assert checked.endswith("1 of the 112 cited a section the label doesn't accept.")
+
+
+def test_the_tldr_headline_only_calls_a_tie_when_the_counts_match() -> None:
+    _, headline, *_ = tldr_lines(
+        tldr_board({("baseline", OPUS.key): baseline(OPUS, {"c03": "verdict"})})
+    )
+
+    assert headline.endswith("Claude Opus 5.5 alone got 23 of 24 for $0.14.")
+
+
+def retried(c: Clause, spec: ModelSpec, first: PipelineAnswer | None) -> Result:
+    """A result whose first answer (`first`, or unreadable if None) failed and whose retry
+    verified, with the clause's own verdict."""
+    final = PipelineAnswer(verdict=c.label, section="14", quote="q", reason="r")
+    text = first.model_dump_json() if first else "not JSON"
+    return Result(
+        c,
+        (
+            Attempt(record(spec, c.id, text), first, "not_found" if first else None),
+            Attempt(record(spec, c.id, final.model_dump_json()), final, "verified"),
+        ),
+    )
+
+
+def test_the_tldr_counts_failed_checks_and_verdicts_the_retry_changed() -> None:
+    c06 = CLAUSES[5]  # void; main set only
+    wrong_first = PipelineAnswer(verdict="allowed", section="14", quote="q", reason="r")
+    opus = with_result(pipeline_run(OPUS, retry_c14=False), 5, retried(c06, OPUS, wrong_first))
+
+    _, _, statute, *_ = tldr_lines(tldr_board({("pipeline", OPUS.key): opus}))
+
+    assert statute.endswith(
+        "The check failed 2 of 112 checked first answers, and the retry changed 1 verdict."
+    )
+
+
+def test_an_unreadable_first_answer_is_not_a_failed_quote_check() -> None:
+    opus = with_result(pipeline_run(OPUS, retry_c14=False), 5, retried(CLAUSES[5], OPUS, None))
+
+    _, _, statute, *_ = tldr_lines(tldr_board({("pipeline", OPUS.key): opus}))
+
+    assert "The check failed 1 of 111 checked first answers (c14:" in statute
+
+
+@pytest.mark.parametrize(
+    ("closed_book", "error"),
+    [
+        ({}, "closed-book run is not complete"),
+        ({HAIKU.key: closed_book_run(HAIKU)}, "statute text no longer explains"),
+        (
+            {HAIKU.key: scoreboard.restrict(closed_book_run(HAIKU, unsure=6), CLAUSES[:10])},
+            "closed-book run is not complete",
+        ),
+    ],
+)
+def test_the_tldr_needs_a_closed_book_run_that_does_worse(
+    closed_book: dict[str, ModelRun], error: str
+) -> None:
+    with pytest.raises(scoreboard.ReportDataError, match=error):
+        scoreboard.render_tldr(replace(tldr_board(), closed_book=closed_book))
+
+
+def test_the_tldr_needs_its_right_section_answer_to_cite_the_deciding_section() -> None:
+    wrong_section = baseline(HAIKU, {"c01": "both"})
+
+    with pytest.raises(scoreboard.ReportDataError, match="not a right section"):
+        scoreboard.render_tldr(tldr_board({("baseline", HAIKU.key): wrong_section}))
+
+
+def test_the_tldr_right_section_answer_needs_a_verdict() -> None:
+    no_verdict = baseline(HAIKU, {"c01": "verdict"})
+    no_verdict.scores[0] = score_answer(CLAUSES[0], Answer(None, "14"), {"4", "14"})
+
+    with pytest.raises(scoreboard.ReportDataError, match="not a right section"):
+        scoreboard.render_tldr(tldr_board({("baseline", HAIKU.key): no_verdict}))
+
+
+@pytest.mark.parametrize(
+    "override",
+    [
+        ("baseline", ARGON.key, with_tokens(baseline(ARGON), 100, 10)),  # the heavy model thinks
+        ("pipeline", FLASH.key, pipeline_run(FLASH, retry_c14=False)),  # light pipeline cheaper
+        ("baseline", FLASH.key, baseline(FLASH)),  # light baseline cheaper
+    ],
+)
+def test_the_tldr_stops_when_the_thinking_cost_line_no_longer_holds(
+    override: tuple[scoreboard.Method, str, ModelRun],
+) -> None:
+    method, key, run = override
+
+    with pytest.raises(scoreboard.ReportDataError, match="thinking-cost"):
+        scoreboard.render_tldr(tldr_board({(method, key): run}))
+
+
+def test_the_tldr_needs_every_pipeline_run() -> None:
+    with pytest.raises(scoreboard.ReportDataError, match="Gemini 4 Argon pipeline not run yet"):
+        scoreboard.render_tldr(tldr_board({("pipeline", ARGON.key): empty(ARGON)}))
+
+
+def full_board(
+    overrides: dict[tuple[scoreboard.Method, str], ModelRun] | None = None,
+) -> scoreboard.Board:
+    """`tldr_board`'s runs with Haiku's baseline misses (`HAIKU_WRONG`) that the gallery needs,
+    and no closed-book run."""
+    gallery: dict[tuple[scoreboard.Method, str], ModelRun] = {
+        ("baseline", HAIKU.key): baseline(HAIKU, HAIKU_WRONG)
+    }
+    return replace(tldr_board(gallery | (overrides or {})), closed_book={})
+
+
+def test_the_closed_book_table_counts_verified_quotes_among_answers_with_a_verdict() -> None:
+    b = replace(
+        full_board(), closed_book={HAIKU.key: closed_book_run(HAIKU, quotes_fail=5, unsure=3)}
+    )
+
+    text = scoreboard.render(b, "chart.svg")
+
+    [haiku] = table_rows(text, "Claude Haiku 5.5 (light) | 21 of 24")
+    assert haiku[2:] == ["3", "16 of 21", f"21 of 24 (18{scoreboard.DASH}24)", "$0.004"]
+    [opus] = table_rows(text, "Claude Opus 5.5 (heavy) | not run yet")
+    assert opus[1] == "not run yet"
+    # Four pipelines: 24 first answers each, all with a verdict; only Haiku's c14 failed.
+    assert "the statute in the prompt, 95 of 96 first pipeline answers with a verdict" in text
+
+
+def test_the_closed_book_comparison_needs_every_main_set_pipeline_run() -> None:
+    b = replace(board(), closed_book={HAIKU.key: closed_book_run(HAIKU)})  # Gemini not run
+
+    text = scoreboard.render(b, "chart.svg")
+
+    assert "| Claude Haiku 5.5 (light) | 24 of 24" in text
+    assert "With the statute in the prompt" not in text
+
+
+def test_a_partial_closed_book_run_says_so() -> None:
+    partial = scoreboard.restrict(closed_book_run(HAIKU), CLAUSES[:10])
+    partial = replace(partial, closed_book=closed_book_run(HAIKU).closed_book[:10])
+
+    text = scoreboard.render(replace(board(), closed_book={HAIKU.key: partial}), "chart.svg")
+
+    assert "| Claude Haiku 5.5 (light) | partial: 10 of 24 answered |" in text
+
+
+def test_the_closed_book_comparison_leaves_out_unsure_pipeline_answers() -> None:
+    # Only Haiku's c14 first answer fails (see `tldr_board`); Opus is unsure on c06.
+    opus = pipeline_run(OPUS, retry_c14=False)
+    opus = with_result(opus, 5, unsure_result(CLAUSES[5], OPUS, gave_up=False))
+    b = full_board({("pipeline", OPUS.key): opus})
+
+    text = scoreboard.render(b, "chart.svg")
+
+    assert "the statute in the prompt, 94 of 95 first pipeline answers with a verdict" in text

@@ -369,13 +369,32 @@ def _write_report(args: argparse.Namespace) -> int:
         file_sha256(STRESS_CANDIDATES_PATH),
         sections,
     )
+    closed_book_prompt = closedbook.load_prompt(args.prompts)
+    closed_book = {
+        spec.key: closedbook_run(
+            RESULTS_DIRS[FROZEN_CLAUSES_SHA256],
+            closed_book_prompt,
+            spec,
+            main_set.clauses,
+            FROZEN_CLAUSES_SHA256,
+            sections,
+        )
+        for spec in MODELS
+    }
     board = scoreboard.Board(
-        main_set, stress_set, scoreboard.restrict(selection, stress_set.clauses)
+        main_set,
+        stress_set,
+        scoreboard.restrict(selection, stress_set.clauses),
+        {key: run for key, run in closed_book.items() if run.scores},
     )
     chart_link = Path(os.path.relpath(args.chart, args.readme.parent)).as_posix()
     readme = args.readme.read_text(encoding="utf-8")
     block = scoreboard.render(board, chart_link)
-    args.readme.write_text(scoreboard.replace_block(readme, block), encoding="utf-8")
+    readme = scoreboard.replace_block(readme, block)
+    readme = scoreboard.replace_block(
+        readme, scoreboard.render_tldr(board), scoreboard.TLDR_START, scoreboard.TLDR_END
+    )
+    args.readme.write_text(readme, encoding="utf-8")
     args.chart.write_text(scoreboard.render_chart(main_set), encoding="utf-8")
     print(f"Wrote the results in {args.readme} and the chart {args.chart}.")
     print(NOT_LEGAL_ADVICE)
