@@ -100,7 +100,7 @@ def pipeline_table(runs: list[ModelRun], clause_count: int) -> str:
 def closedbook_table(runs: list[ModelRun], clause_count: int) -> str:
     """One row per model: the closed-book scores, and what the check found in each quote.
 
-    "quote verified" counts the answers with a verdict whose quote passed; the five columns
+    "quote verified" counts the answers with a verdict whose quote passed; the six columns
     after it say why the others failed.
     """
     header = (
@@ -108,6 +108,7 @@ def closedbook_table(runs: list[ModelRun], clause_count: int) -> str:
         "unsure",
         "no verdict",
         "quote verified",
+        "drops negation",
         "not found",
         "heading",
         "too short",
@@ -137,6 +138,7 @@ def closedbook_table(runs: list[ModelRun], clause_count: int) -> str:
 
 QUOTE_CHECKS: tuple[QuoteCheck, ...] = (
     "verified",
+    "drops_negation",
     "not_found",
     "heading",
     "too_short",

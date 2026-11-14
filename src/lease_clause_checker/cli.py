@@ -54,6 +54,7 @@ from lease_clause_checker.statute import (
 from lease_clause_checker.verify import (
     Difference,
     check_quote,
+    dropped_negation,
     first_difference,
     normalise,
     subsection_of,
@@ -603,6 +604,9 @@ def _check_quote(cache_dir: Path, section_arg: str, quote: str) -> int:
         difference = first_difference(quote, sections[section].text)
         if difference is not None:
             print(_difference_line(difference, section, sections[section].text))
+    if result == "drops_negation":
+        word = dropped_negation(normalise(quote).strip('"'), sections[section].text)
+        print(f"The Act has “{word}” right before the quote, and the quote leaves it out.")
     print(elaws.NOTICE)
     print("Not legal advice: this checks the wording only, not what it means.")
     return 0 if result == "verified" else 1

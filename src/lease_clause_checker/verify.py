@@ -21,14 +21,28 @@ from typing import Literal
 from lease_clause_checker import wording
 from lease_clause_checker.statute import Section
 
-QuoteCheck = Literal["verified", "too_short", "heading", "not_found", "no_quote", "no_such_section"]
-"""`verified`: whole words in one subsection's operative text, long enough. `too_short`: found,
-but shorter than `MIN_QUOTE_WORDS`. `heading`: found only in a heading or headnote.
-`not_found`: not in the section. `no_quote`: empty. `no_such_section`: the cited number is not
-an in-force section of the Act."""
+QuoteCheck = Literal[
+    "verified",
+    "drops_negation",
+    "too_short",
+    "heading",
+    "not_found",
+    "no_quote",
+    "no_such_section",
+]
+"""`verified`: whole words in one subsection's operative text, long enough. `drops_negation`:
+found, but each time just after a negating word (`NEGATIONS`) that the quote leaves out, as
+"landlord shall …" quoted from "No landlord shall …". `too_short`: found, but shorter than
+`MIN_QUOTE_WORDS`. `heading`: found only in a heading or headnote. `not_found`: not in the
+section. `no_quote`: empty. `no_such_section`: the cited number is not an in-force section of
+the Act."""
 
 # Shorter quotes, such as "is void", appear in many sections and prove nothing about the clause.
 MIN_QUOTE_WORDS = 5
+# A quote that starts right after one of these and leaves it out may reverse what it quotes
+# (`negation_before`). Chosen to cover the negations that open the rule sections' provisions;
+# "nothing" and "cannot" are in the Act but not in those sections.
+NEGATIONS = frozenset({"no", "not", "neither", "nor"})
 # A subsection, clause or paragraph marker such as "(2)", "(1.1)", "(a)" or "(iv)": not a word.
 MARKER = re.compile(r"\(\w+(?:\.\w+)?\)")
 # A subsection starts a line of section text: "(1) ", "(1.1) ".
@@ -51,6 +65,8 @@ def check_quote(quote: str, section_number: str, sections: dict[str, Section]) -
     if section is None:
         return "no_such_section"
     if quote_in_text(wanted, section.text):
+        if dropped_negation(wanted, section.text) is not None:
+            return "drops_negation"
         return "verified" if word_count(wanted) >= MIN_QUOTE_WORDS else "too_short"
     if any(_contains(heading, wanted) for heading in (section.heading, *section.headnotes)):
         return "heading"
@@ -76,12 +92,14 @@ def check_quote_with_conventions(
       "tenant[s]"), the bracketed letters must be the Act's, but for case; a plural ending
       ("[s]", "[es]") may also be absent from the Act.
     - The quote's first letter may differ in case from the Act's.
+    - No piece may start right after a negating word it leaves out (`negation_before`), unless
+      the piece before it ends with that word ("shall not … change").
 
     An unmarked omission or change still fails, and so do empty brackets. Strict `check_quote`
     is what the pipeline uses; this is for reporting a quote both ways.
     """
     strict = check_quote(quote, section_number, sections)
-    if strict in ("verified", "no_quote", "no_such_section"):
+    if strict in ("verified", "drops_negation", "no_quote", "no_such_section"):
         return strict
     wanted = normalise(quote).strip('"')
     pieces = [piece.strip() for piece in ELLIPSIS.split(wanted) if piece.strip()]
@@ -107,6 +125,8 @@ class _Piece:
 
     pattern: re.Pattern[str]
     brackets: tuple[str, ...]
+    ends_negated: bool
+    """Whether the piece ends with a word in `NEGATIONS`, which then covers the next piece."""
 
     @classmethod
     def of(cls, piece: str, *, first: bool) -> "_Piece":
@@ -131,14 +151,18 @@ class _Piece:
                 brackets.append(inside)
             end = bracket.end()
         parts.append(re.escape(piece[end:]))
-        return cls(re.compile(rf"(?<!\w){''.join(parts)}(?!\w)"), tuple(brackets))
+        last = WORD.findall(piece)[-1:]
+        ends_negated = bool(last) and last[0].lower() in NEGATIONS
+        return cls(re.compile(rf"(?<!\w){''.join(parts)}(?!\w)"), tuple(brackets), ends_negated)
 
-    def find(self, text: str, start: int) -> re.Match[str] | None:
+    def find(self, text: str, start: int, *, negated_ok: bool) -> re.Match[str] | None:
         """The first match from `start` whose standalone brackets differ from the Act's words
-        only cosmetically."""
+        only cosmetically and, unless `negated_ok`, that doesn't start right after a negating
+        word."""
         found = self.pattern.search(text, start)
         while found is not None:
-            if all(
+            negated = negation_before(text, found.start()) is not None
+            if (negated_ok or not negated) and all(
                 wording.same_but_cosmetic(WORD.findall(found.group(f"b{i}")), WORD.findall(inside))
                 for i, inside in enumerate(self.brackets)
             ):
@@ -148,12 +172,12 @@ class _Piece:
 
 
 def _in_order(pieces: list[_Piece], text: str) -> bool:
-    start = 0
+    start, negated_ok = 0, False
     for piece in pieces:
-        found = piece.find(text, start)
+        found = piece.find(text, start, negated_ok=negated_ok)
         if found is None:
             return False
-        start = found.end()
+        start, negated_ok = found.end(), piece.ends_negated
     return True
 
 
@@ -238,3 +262,35 @@ def _contains(text: str, quote: str, fold_quotation_marks: bool = True) -> bool:
     quote = normalise(quote, fold_quotation_marks=fold_quotation_marks)
     text = normalise(text, fold_quotation_marks=fold_quotation_marks)
     return re.search(rf"(?<!\w){re.escape(quote)}(?!\w)", text) is not None
+
+
+def dropped_negation(quote: str, section_text: str) -> str | None:
+    """The negating word the quote leaves out, as the Act has it, if every place the quote
+    appears is right after one (`negation_before`); None if the quote appears somewhere else
+    too, or nowhere."""
+    wanted = normalise(quote)
+    words = []
+    for part in subsections(section_text):
+        text = normalise(part)
+        for found in re.finditer(rf"(?<!\w){re.escape(wanted)}(?!\w)", text):
+            word = negation_before(text, found.start())
+            if word is None:
+                return None
+            words.append(word)
+    return words[0] if words else None
+
+
+def negation_before(text: str, start: int) -> str | None:
+    """The word in `NEGATIONS` right before `start`, with only whitespace between; None if
+    there is none. "not" in "whether or not" doesn't count: it negates nothing that follows.
+
+    This is a narrow check, not a reading of a negation's scope. A quote starting after a
+    punctuation mark passes even when a negation governs it: "without legal process, seize a
+    tenant’s property" is still governed by "No landlord shall," in s. 40, and so is a
+    paragraph quoted from under "No landlord shall, (a) …"."""
+    before = re.search(r"(?:(\w+)\s+)?(\w+)\s*$", text[:start])
+    if before is None or before.group(2).lower() not in NEGATIONS:
+        return None
+    if before.group(2).lower() == "not" and (before.group(1) or "").lower() == "or":
+        return None
+    return before.group(2)

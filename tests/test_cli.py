@@ -226,6 +226,11 @@ def test_quote_check_names_the_first_tampered_word(
         ("9", "This Act binds the Crown.", "Section 9 is not a section of the Act."),
         ("4", "binds the Crown", "The quote has fewer than 5 words."),
         ("4", "", "NOT VERIFIED: The quote is empty."),
+        (
+            "2.1",
+            "exceed one month’s rent.",
+            "The Act has “not” right before the quote, and the quote leaves it out.",
+        ),
         ("1", "Widgets are void in a tenancy", "is not in s. 1 with that capitalisation"),
         (
             "2.1",

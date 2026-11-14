@@ -5,7 +5,9 @@ from lease_clause_checker.verify import (
     Difference,
     check_quote,
     check_quote_with_conventions,
+    dropped_negation,
     first_difference,
+    quote_in_text,
     subsection_of,
     subsections,
 )
@@ -202,3 +204,68 @@ def test_conventions_count_words_across_pieces() -> None:
     assert check_quote_with_conventions("A landlord … the tenant", "27", CONVENTIONS) == "too_short"
     assert check_quote_with_conventions("", "27", CONVENTIONS) == "no_quote"
     assert check_quote_with_conventions("A landlord may", "99", CONVENTIONS) == "no_such_section"
+
+
+NEGATED = {
+    "40": Section(
+        "40",
+        "Distress abolished",
+        "No landlord shall, without legal process, seize a tenant’s property for default in "
+        "the payment of rent.",
+        "BK50",
+    ),
+    "90": Section(
+        "90",
+        "Made up for the test",
+        "Neither a landlord nor a tenancy agreement shall require a tenant to provide "
+        "post-dated cheques.\nA tenancy may not be terminated without notice to the tenant.\n"
+        "A landlord shall not enter the unit and shall not change the locks of the unit.\n"
+        "This applies whether or not the tenant occupies the unit for a residential purpose.\n"
+        "No landlord shall charge a fee for keys. A landlord shall charge a fee for keys only "
+        "if the tenant agrees.",
+        "BK99",
+    ),
+}
+
+
+def _section(quote: str) -> str:
+    return "40" if "seize" in quote else "90"
+
+
+@pytest.mark.parametrize(
+    "quote",
+    [
+        "landlord shall, without legal process, seize a tenant’s property",  # after "No"
+        "a tenancy agreement shall require a tenant to provide",  # after "nor"
+        "a landlord nor a tenancy agreement shall require",  # after "Neither"
+        "be terminated without notice to the tenant",  # after "not"
+    ],
+)
+def test_a_quote_that_leaves_out_the_negation_before_it_fails(quote: str) -> None:
+    assert quote_in_text(quote, NEGATED[_section(quote)].text)
+    assert check_quote(quote, _section(quote), NEGATED) == "drops_negation"
+    assert dropped_negation(quote, NEGATED[_section(quote)].text) in ("No", "nor", "Neither", "not")
+
+
+@pytest.mark.parametrize(
+    "quote",
+    [
+        "No landlord shall, without legal process, seize",  # includes the negation
+        "without legal process, seize a tenant’s property",  # after a comma, a new phrase
+        "Neither a landlord nor a tenancy agreement shall require",
+        "the tenant occupies the unit for a residential purpose",  # after "whether or not"
+        "landlord shall charge a fee for keys",  # once after "No", once not
+    ],
+)
+def test_a_quote_that_keeps_or_does_not_follow_a_negation_passes(quote: str) -> None:
+    assert check_quote(quote, _section(quote), NEGATED) == "verified"
+
+
+def test_conventions_do_not_let_an_ellipsis_piece_drop_a_negation() -> None:
+    dropped = "A tenancy … be terminated without notice to the tenant"
+    kept = "A tenancy may not … without notice to the tenant"
+    carried = "A landlord shall not … change the locks of the unit"  # "not" ends the piece
+
+    assert check_quote_with_conventions(dropped, "90", NEGATED) == "not_found"
+    assert check_quote_with_conventions(kept, "90", NEGATED) == "verified"
+    assert check_quote_with_conventions(carried, "90", NEGATED) == "verified"

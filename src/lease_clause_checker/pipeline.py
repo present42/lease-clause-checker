@@ -12,9 +12,13 @@ An `unsure` answer is neither checked nor retried. Each call is saved as a recor
 id>.json`, then `<clause id>.retry.json`), so results are re-scored without calling any API.
 
 Which records exist depends on the quote check and on the retry note it produces, so a change
-to `verify.py`, `PROBLEMS` or `ANSWER_SCHEMA` needs a new `PIPELINE_PROMPT` version, as a
-change to the prompt files does. (A changed retry note makes saved retry records stale, which
-is caught; a looser check could make a saved retry unnecessary, which is not.)
+to `verify.py`, `PROBLEMS` or `ANSWER_SCHEMA` that alters the check or the retry note of any
+saved record needs a new `PIPELINE_PROMPT` version, as a change to the prompt files does.
+Re-check every saved answer after such a change. What shows if one is missed: a changed retry
+note makes saved retry records stale, which is caught; a stricter check that fails a saved
+first answer leaves its clause without a retry record, so `load_results` drops the clause and
+the README's tables show the run as partial; a looser check that passes a saved first answer
+makes its saved retry unnecessary, which nothing catches.
 """
 
 import re
@@ -60,6 +64,10 @@ PROBLEMS = {
     "too_short": f"The quote has fewer than {MIN_QUOTE_WORDS} words.",
     "heading": "The quote is from a heading, not the text of section {section}.",
     "not_found": "The quote does not appear word for word in section {section}.",
+    "drops_negation": (
+        "The quote leaves out the negating word just before it in section {section} "
+        '("no", "not", "neither" or "nor").'
+    ),
 }
 
 PipelineVerdict = Literal["void", "allowed", "unsure"]
