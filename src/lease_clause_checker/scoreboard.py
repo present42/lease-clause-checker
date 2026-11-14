@@ -16,7 +16,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Literal, TypeVar
 
-from lease_clause_checker import baseline, pipeline
+from lease_clause_checker import baseline, pipeline, quotereview
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.closedbook import CLOSED_BOOK_PROMPT
 from lease_clause_checker.evaluation import baseline_run, pipeline_run
@@ -81,6 +81,8 @@ class Board:
     """The selection run's baseline answers on the stress-set clauses."""
     closed_book: dict[str, ModelRun] = field(default_factory=dict)
     """The closed-book run on the main set, by model key; a model not run is left out."""
+    quote_checks: quotereview.HandChecks = field(default_factory=dict)
+    """The hand checks of the closed-book quotes that are not word for word."""
 
 
 @dataclass(frozen=True)
@@ -270,9 +272,10 @@ def replace_block(readme: str, block: str, start_marker: str = START, end_marker
 
 
 def render_tldr(board: Board) -> str:
-    """The README's TL;DR block, markers included: five lines, each from the saved answers."""
+    """The README's TL;DR block, markers included: six lines, each from the saved answers."""
     by_provider = {light.provider: (light, heavy) for light, heavy in _pairs()}
     lines = [
+        _tldr_closed_book_quotes(board),
         _tldr_checked_citations(board),
         _tldr_headline(board.main, *by_provider["anthropic"]),
         _tldr_statute_not_check(board, by_provider["anthropic"][0]),
@@ -294,6 +297,79 @@ def _pipeline_results(board: Board) -> list[tuple[Result, Score]]:
             run = scored.run("pipeline", spec)
             pairs += zip(run.results, run.scores, strict=True)
     return pairs
+
+
+def _tldr_closed_book_quotes(board: Board) -> str:
+    """The models that got every closed-book verdict right yet had quotes that failed the
+    word-for-word check, and how many; then the pipeline's first quotes, with the statute in the
+    prompt. A model whose quotes all passed is left out."""
+    n = len(board.main.clauses)
+    perfect = [
+        run
+        for run in _closed_book_runs(board)
+        if sum(_hits(run, board.main.clauses, _verdict_right)) == n
+    ]
+    failed = {
+        run.spec.name: count
+        for run in perfect
+        if (count := sum(r.attempt.check != "verified" for r in run.closed_book))
+    }
+    minor = [
+        sum(
+            r.quote is not None and r.quote.category in ("cosmetic", "conventions")
+            for r in run.closed_book
+        )
+        for run in perfect
+        if run.spec.name in failed
+    ]
+    if not failed:
+        raise ReportDataError("TL;DR: no closed-book run has right verdicts and failed quotes")
+    for spec in MODELS:
+        if board.main.missing("pipeline", spec):
+            raise ReportDataError(
+                f"TL;DR: {spec.name} pipeline {board.main.missing('pipeline', spec)}"
+            )
+    verified, checked = _first_pipeline_checks(board)
+    names, counts = _and_list(list(failed)), _and_list([str(c) for c in failed.values()])
+    if len(failed) == 1:
+        (count,) = failed.values()
+        quotes = f"{count} of its {n} quotes failed the word-for-word check"
+    else:
+        quotes = f"{counts} of their {n} quotes, respectively, failed the word-for-word check"
+    if any(minor):
+        quotes += (
+            f" ({_and_list([str(m) for m in minor])} of them differing only cosmetically or by "
+            "quoting conventions)"
+        )
+    return (
+        f"Closed book (no statute text in the prompt), {names} got all {n} verdicts right, yet "
+        f"{quotes}. With the statute in "
+        f"the prompt, {verified} of {checked} first pipeline answers with a verdict on the main "
+        f"set, from the {len(MODELS)} models, had a quote that passed."
+    )
+
+
+def _closed_book_runs(board: Board) -> list[ModelRun]:
+    """Every model's closed-book run on the main set, in MODELS order; each must be complete."""
+    runs = []
+    for spec in MODELS:
+        run = board.closed_book.get(spec.key)
+        if run is None or len(run.scores) != len(board.main.clauses):
+            raise ReportDataError(f"TL;DR: {spec.name}'s closed-book run is not complete")
+        runs.append(run)
+    return runs
+
+
+def _first_pipeline_checks(board: Board) -> tuple[int, int]:
+    """(verified, checked) over every model's first pipeline answer with a verdict on the main
+    set."""
+    first = [
+        result.attempts[0]
+        for spec in MODELS
+        for result in board.main.run("pipeline", spec).results
+        if result.attempts[0].check is not None
+    ]
+    return sum(attempt.check == "verified" for attempt in first), len(first)
 
 
 def _tldr_checked_citations(board: Board) -> str:
@@ -342,9 +418,7 @@ def _tldr_statute_not_check(board: Board, light: ModelSpec) -> str:
     """What moved the light model's verdicts: the statute text (closed book vs pipeline), and
     how little the quote check did."""
     n = len(board.main.clauses)
-    closed = board.closed_book.get(light.key)
-    if closed is None or len(closed.scores) != n:
-        raise ReportDataError(f"TL;DR: {light.name}'s closed-book run is not complete")
+    closed = _one((r for r in _closed_book_runs(board) if r.spec == light), light.name)
     closed_right = sum(_hits(closed, board.main.clauses, _verdict_right))
     with_text = sum(_hits(board.main.run("pipeline", light), board.main.clauses, _verdict_right))
     if closed_right >= with_text:
@@ -781,18 +855,44 @@ def _closed_book_table(board: Board) -> str:
         "- **quote verified**: of the answers with a verdict, those whose quote passed the check.",
     ]
     if not any(board.main.missing("pipeline", spec) for spec in MODELS):
-        first = [
-            result.attempts[0]
-            for spec in MODELS
-            for result in board.main.run("pipeline", spec).results
-            if result.attempts[0].check is not None
-        ]
+        verified, checked = _first_pipeline_checks(board)
         lines.append(
-            f"- With the statute in the prompt, {sum(a.check == 'verified' for a in first)} of "
-            f"{len(first)} first pipeline answers with a verdict on the main set had a quote "
-            "that passed."
+            f"- With the statute in the prompt, {verified} of {checked} first pipeline answers "
+            "with a verdict on the main set had a quote that passed."
         )
+    runs = [board.closed_book.get(spec.key) for spec in MODELS]
+    complete = [run for run in runs if run is not None and len(run.scores) == n]
+    if len(complete) == len(MODELS):
+        lines += ["", _failed_quotes(complete, board.quote_checks)]
     return "\n".join(lines)
+
+
+def _failed_quotes(runs: list[ModelRun], checks: quotereview.HandChecks) -> str:
+    review = f"results/{runs[0].records[0].prompt_version}/{quotereview.REVIEW_FILE}"
+    return "\n".join(
+        [
+            "#### How the quotes that are not word for word differ from the Act",
+            "",
+            "Each closed-book quote that is not word for word in the section it cites, sorted by "
+            "code ([quotediff.py](src/lease_clause_checker/quotediff.py)) into the first "
+            "category that fits. **Passes with quoting conventions**: word for word once an "
+            "ellipsis, brackets around a cosmetic change, or a changed first capital are read "
+            "as the marks of a quotation. **Cosmetic**: lines up with the cited section and "
+            "differs only in articles, punctuation, case, grammatical number (a plural and its "
+            "verb) or paragraph markers. **Wrong section cited**: a version of another section, "
+            "not of the cited one. **Meaning changed**: lines up with the cited section, but a "
+            "content word is changed, added or dropped. **Not in the Act**: lines up with no "
+            "subsection of the Act. A quote lines up with a subsection when at least half its "
+            "words match it in order and they make up at least a quarter of the Act's words "
+            "they span. The categories describe wording, not law: a cosmetic difference is not "
+            "a wrong statement of the law, and whether a changed word changes the meaning is a "
+            "question for a reader. Every quote, with its difference from the Act, is in "
+            f"[{quotereview.REVIEW_FILE}]({review}) (`uv run lcc closedbook quotes`). "
+            + quotereview.hand_check_line(runs, checks),
+            "",
+            quotereview.summary_table(runs),
+        ]
+    )
 
 
 def _gallery(board: Board) -> str:

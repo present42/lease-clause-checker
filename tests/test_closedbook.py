@@ -3,7 +3,7 @@ import re
 from pathlib import Path
 from typing import Any
 
-from lease_clause_checker import closedbook, pipeline
+from lease_clause_checker import closedbook, pipeline, quotereview
 from lease_clause_checker.baseline import run
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.evaluation import closedbook_run
@@ -122,6 +122,23 @@ def test_the_verdict_counts_whether_or_not_the_quote_passes(
     assert cells["quote verified"] == "1 of 4"
     assert (cells["not found"], cells["heading"], cells["too short"]) == ("1", "1", "0")
     assert (cells["no such section"], cells["no quote"]) == ("0", "1")
+
+    categories = {r.clause.id: r.quote and r.quote.category for r in model_run.closed_book}
+    assert categories == {
+        "c01": "verbatim",
+        "c02": "meaning_changed",
+        "c03": "heading",
+        "c04": None,  # unsure: no quote to sort
+        "c05": "no_quote",
+    }
+    page = quotereview.review_page([model_run], {}, "NOTICE", prompt.version)
+    rows = [line for line in page.splitlines() if line.startswith("| c0")]
+    assert [row.split(" | ")[0] for row in rows] == ["| c02", "| c03", "| c05"]
+    assert "| right | s. 1 | meaning changed | s. 1 |" in rows[0]
+    assert "| A provision [-in a tenancy agreement-] prohibiting widgets is void. |" in rows[0]
+    assert "Statute words in this file: NOTICE" in page
+    [summary] = [line for line in page.splitlines() if line.startswith("| Claude Haiku")]
+    assert summary.split(" | ")[1:4] == ["4", "3", "0"]  # with a verdict, failed, conventions
 
     details = error_lines(model_run)
     assert details[0].startswith("c02 (clear void, s. 1): verdict right")

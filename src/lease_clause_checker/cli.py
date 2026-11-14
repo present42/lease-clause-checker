@@ -11,7 +11,15 @@ from pathlib import Path
 
 import httpx
 
-from lease_clause_checker import baseline, check, closedbook, elaws, pipeline, scoreboard
+from lease_clause_checker import (
+    baseline,
+    check,
+    closedbook,
+    elaws,
+    pipeline,
+    quotereview,
+    scoreboard,
+)
 from lease_clause_checker.clauses import (
     FROZEN_CLAUSES_SHA256,
     FROZEN_SETS,
@@ -81,6 +89,8 @@ QUOTE_PROBLEMS = pipeline.PROBLEMS | {"no_quote": "The quote is empty."}
 def main(argv: Sequence[str] | None = None) -> int:
     args = _parser().parse_args(argv)
     try:
+        if args.command == "closedbook" and args.method_command == "quotes":
+            return _write_quote_review(args)
         if args.command in ("baseline", "pipeline", "closedbook"):
             specs = [model_by_key(key) for key in args.models]
             if args.command == "closedbook":
@@ -120,6 +130,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         UnfrozenClausesError,
         scoreboard.ReportDataError,
         scoreboard.MissingMarkersError,
+        quotereview.HandCheckError,
         check.LeaseFormatError,
     ) as error:
         print(f"lcc: error: {error}", file=sys.stderr)
@@ -252,6 +263,13 @@ def _parser() -> argparse.ArgumentParser:
             )
             if name == "pipeline":  # the rule sections are the statute text it is given
                 command.add_argument("--rules", type=Path, default=DEFAULT_RULES_PATH)
+        if name == "closedbook":
+            quotes = method_commands.add_parser(
+                "quotes",
+                help="write the table of failed quotes, sorted by how they differ from the Act, "
+                "for a hand check (offline; main set)",
+            )
+            quotes.add_argument("--prompts", type=Path, default=DEFAULT_PROMPTS_DIR)
     return parser
 
 
@@ -325,6 +343,34 @@ def _report_closedbook(args: argparse.Namespace, specs: list[ModelSpec]) -> int:
     return 0
 
 
+def _write_quote_review(args: argparse.Namespace) -> int:
+    """The closed-book quotes that are not word for word, sorted and diffed, with their hand
+    checks."""
+    prompt = closedbook.load_prompt(args.prompts)
+    sections = parse_sections(elaws.load_act(elaws.cache_path(args.cache_dir)).content_html)
+    if file_sha256(DEFAULT_CLAUSES_PATH) != FROZEN_CLAUSES_SHA256:
+        raise UnfrozenClausesError(f"{DEFAULT_CLAUSES_PATH} is not the frozen main set")
+    clauses = load_clauses(DEFAULT_CLAUSES_PATH)
+    runs = [
+        closedbook_run(
+            RESULTS_DIRS[FROZEN_CLAUSES_SHA256],
+            prompt,
+            spec,
+            clauses,
+            FROZEN_CLAUSES_SHA256,
+            sections,
+        )
+        for spec in MODELS
+    ]
+    folder = RESULTS_DIRS[FROZEN_CLAUSES_SHA256] / prompt.version
+    checks = quotereview.write_review(runs, folder, elaws.NOTICE, prompt.version)
+    print(quotereview.summary_table(runs))
+    print(f"\n{quotereview.hand_check_line(runs, checks)}")
+    print(f"Wrote {folder / quotereview.REVIEW_FILE}; hand checks in {quotereview.CHECKS_FILE}.")
+    print(NOT_LEGAL_ADVICE)
+    return 0
+
+
 def _run_pipeline(args: argparse.Namespace, specs: list[ModelSpec]) -> int:
     clauses, clauses_sha256, results = _load_clauses(args)
     prompt, sections = _pipeline_prompt(args)
@@ -349,6 +395,25 @@ def _report_pipeline(args: argparse.Namespace, specs: list[ModelSpec]) -> int:
 
 def _write_report(args: argparse.Namespace) -> int:
     """Score every saved answer and rewrite the README's results block and the chart."""
+    board, _, _ = _load_board(args)
+    chart_link = Path(os.path.relpath(args.chart, args.readme.parent)).as_posix()
+    readme = args.readme.read_text(encoding="utf-8")
+    block = scoreboard.render(board, chart_link)
+    readme = scoreboard.replace_block(readme, block)
+    readme = scoreboard.replace_block(
+        readme, scoreboard.render_tldr(board), scoreboard.TLDR_START, scoreboard.TLDR_END
+    )
+    args.readme.write_text(readme, encoding="utf-8")
+    args.chart.write_text(scoreboard.render_chart(board.main), encoding="utf-8")
+    print(f"Wrote the results in {args.readme} and the chart {args.chart}.")
+    print(NOT_LEGAL_ADVICE)
+    return 0
+
+
+def _load_board(
+    args: argparse.Namespace,
+) -> tuple[scoreboard.Board, dict[str, Section], dict[str, str]]:
+    """Every saved answer, scored; the Act's sections; and each method's prompt version."""
     pipeline_prompt, sections = _pipeline_prompt(args)
     prompts = (baseline.load_prompt(args.prompts), pipeline_prompt)
 
@@ -381,24 +446,28 @@ def _write_report(args: argparse.Namespace) -> int:
         )
         for spec in MODELS
     }
+    closed_book_runs = {key: run for key, run in closed_book.items() if run.scores}
+    checks: quotereview.HandChecks = {}
+    if len(closed_book_runs) == len(MODELS):
+        checks = quotereview.write_review(
+            list(closed_book_runs.values()),
+            RESULTS_DIRS[FROZEN_CLAUSES_SHA256] / closed_book_prompt.version,
+            elaws.NOTICE,
+            closed_book_prompt.version,
+        )
     board = scoreboard.Board(
         main_set,
         stress_set,
         scoreboard.restrict(selection, stress_set.clauses),
-        {key: run for key, run in closed_book.items() if run.scores},
+        closed_book_runs,
+        checks,
     )
-    chart_link = Path(os.path.relpath(args.chart, args.readme.parent)).as_posix()
-    readme = args.readme.read_text(encoding="utf-8")
-    block = scoreboard.render(board, chart_link)
-    readme = scoreboard.replace_block(readme, block)
-    readme = scoreboard.replace_block(
-        readme, scoreboard.render_tldr(board), scoreboard.TLDR_START, scoreboard.TLDR_END
-    )
-    args.readme.write_text(readme, encoding="utf-8")
-    args.chart.write_text(scoreboard.render_chart(main_set), encoding="utf-8")
-    print(f"Wrote the results in {args.readme} and the chart {args.chart}.")
-    print(NOT_LEGAL_ADVICE)
-    return 0
+    versions = {
+        "baseline": prompts[0].version,
+        "pipeline": pipeline_prompt.version,
+        "closedbook": closed_book_prompt.version,
+    }
+    return board, sections, versions
 
 
 def _check_lease(args: argparse.Namespace) -> int:
