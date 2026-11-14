@@ -88,6 +88,10 @@ Work in progress. These exist:
   ([check.py](src/lease_clause_checker/check.py); see [Check a lease](#check-a-lease)), and
   `lcc quote check`, the quote check on its own (see [Check a quote](#check-a-quote)).
 
+- an MCP server, `lcc mcp`, that gives a model the Act's sections and checks its quotes
+  ([mcp_server.py](src/lease_clause_checker/mcp_server.py); see
+  [Use the quote check from Claude](#use-the-quote-check-from-claude-mcp)).
+
 Results are in [Results](#results) below.
 
 To re-score everything and regenerate the results below, offline:
@@ -151,6 +155,46 @@ NOT VERIFIED: The quote does not appear word for word in section 14.
 The first 10 words match the Act; then the quote has “dogs” where the Act has “animals”.
 Source: Ontario e-Laws. Not an official version of the statute. © King's Printer for Ontario, 2006.
 Not legal advice: this checks the wording only, not what it means.
+```
+
+### Use the quote check from Claude (MCP)
+
+`lcc mcp` runs an MCP server over stdio with two read-only tools on the cached e-Laws copy of
+the Act (not an official version):
+
+- `get_section(act, section)`: a section's in-force text, with its heading, e-Laws link,
+  consolidation period, retrieval date and the King's Printer notice. A subsection in the
+  citation ("s. 27(2)") is also returned on its own (a paragraph such as "(a)" is not).
+- `verify_quote(act, section, quote)`: the strict check and the check with quoting
+  conventions, the quote's category (verbatim, drops a negation, passes with quoting
+  conventions, cosmetic, wrong section cited, content words differ, not in the Act), a one-line
+  summary and a word-level diff against the Act. The whole cited section is searched; the
+  summary says if the quote is in another subsection than the one cited.
+
+`act` is `"RTA"`; the server has only the Residential Tenancies Act, 2006. The tools read the
+cache under the repository's `.cache/` and call no network or model. They check wording, not
+legal meaning, and are not legal advice.
+
+First, in the repository: `uv sync` and `uv run lcc statute fetch`. Then, to add the server to
+Claude Code for every project (`--scope user`; leave it out to add it to the current project
+only):
+
+```sh
+claude mcp add --scope user lease-clause-checker -- uv --directory /path/to/lease-clause-checker run lcc mcp
+```
+
+For Claude Desktop, add this to `claude_desktop_config.json` and restart it. Desktop apps may
+not see your shell's `PATH`, so give the full path to `uv` (from `which uv`):
+
+```json
+{
+  "mcpServers": {
+    "lease-clause-checker": {
+      "command": "/full/path/to/uv",
+      "args": ["--directory", "/path/to/lease-clause-checker", "run", "lcc", "mcp"]
+    }
+  }
+}
 ```
 
 ## Results
@@ -395,8 +439,9 @@ to a language model. Work this project sits beside:
 What this project adds to these: statute text taken from Ontario's own e-Laws service, recorded
 with its consolidation and retrieval date; an open, deterministic quote check whose code anyone
 can read and re-run, with each difference labelled as cosmetic or as a change in content words;
-and an evaluation of how often four models' quotes of the Residential Tenancies Act pass it,
-with and without the statute in the prompt.
+also available as an MCP tool; and an evaluation of how often four
+models' quotes of the Residential Tenancies Act pass it, with and without the statute in the
+prompt.
 
 ## Limitations
 

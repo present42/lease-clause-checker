@@ -17,6 +17,7 @@ from collections.abc import Sequence
 from dataclasses import dataclass
 from pathlib import Path
 
+from lease_clause_checker import quotediff
 from lease_clause_checker.closedbook import ClosedBookResult
 from lease_clause_checker.quotediff import Category, Classified
 from lease_clause_checker.report import ModelRun
@@ -24,17 +25,7 @@ from lease_clause_checker.report import ModelRun
 REVIEW_FILE = "quote-review.md"
 CHECKS_FILE = "quote-hand-check.csv"
 CHECKS_COLUMNS = ("model", "clause", "category", "hand_check", "meaning_changed", "note")
-LABELS: dict[Category, str] = {
-    "drops_negation": "drops a negation",
-    "conventions": "passes with quoting conventions",
-    "cosmetic": "cosmetic",
-    "wrong_cite": "wrong section cited",
-    "content_words_differ": "content words differ",
-    "not_in_act": "not in the Act",
-    "no_quote": "no quote",
-    "too_short": "too short",
-    "heading": "heading only",
-}
+LABELS: dict[Category, str] = {c: label for c, label in quotediff.LABELS.items() if c != "verbatim"}
 """Every category but `verbatim`, as the table's columns."""
 ALWAYS_SHOWN: tuple[Category, ...] = (
     "conventions",

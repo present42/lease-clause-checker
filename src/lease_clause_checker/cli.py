@@ -2,7 +2,6 @@
 
 import argparse
 import os
-import re
 import sys
 import textwrap
 import time
@@ -51,6 +50,7 @@ from lease_clause_checker.statute import (
     parse_sections,
     select_sections,
 )
+from lease_clause_checker.statute_tools import Statutes, UnknownSectionError, split_citation
 from lease_clause_checker.verify import (
     Difference,
     check_quote,
@@ -81,8 +81,6 @@ CHECK_NOT_LEGAL_ADVICE = (
     "correctly. Ask a lawyer or a legal clinic about a real lease."
 )
 DEFAULT_CHECK_MODEL = "claude-haiku-5-5"
-# The first subsection marker in a citation such as "s. 27(2)(a)": "(2)".
-GIVEN_SUBSECTION = re.compile(r"\(\d+(?:\.\d+)?\)")
 # `pipeline.PROBLEMS` is worded for the model; this is for a person running `lcc quote check`.
 QUOTE_PROBLEMS = pipeline.PROBLEMS | {"no_quote": "The quote is empty."}
 
@@ -107,6 +105,12 @@ def main(argv: Sequence[str] | None = None) -> int:
             return _report_pipeline(args, specs)
         if args.command == "report":
             return _write_report(args)
+        if args.command == "mcp":
+            # Imported here: the MCP SDK takes a moment to load, and only this command needs it.
+            from lease_clause_checker.mcp_server import build_server
+
+            build_server(Statutes.load(args.cache_dir)).run("stdio")
+            return 0
         if args.command == "check":
             return _check_lease(args)
         if args.command == "quote":
@@ -133,6 +137,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         scoreboard.MissingMarkersError,
         quotereview.HandCheckError,
         check.LeaseFormatError,
+        UnknownSectionError,
     ) as error:
         print(f"lcc: error: {error}", file=sys.stderr)
         return 1
@@ -216,6 +221,11 @@ def _parser() -> argparse.ArgumentParser:
     report_all.add_argument("--chart", type=Path, default=DEFAULT_CHART)
     report_all.add_argument("--prompts", type=Path, default=DEFAULT_PROMPTS_DIR)
     report_all.add_argument("--rules", type=Path, default=DEFAULT_RULES_PATH)
+
+    commands.add_parser(
+        "mcp",
+        help="run the MCP server (stdio): get_section and verify_quote on the cached Act (offline)",
+    )
 
     for name, description in (
         ("baseline", "the plain-prompt baseline on the test set"),
@@ -587,17 +597,13 @@ def _check_quote(cache_dir: Path, section_arg: str, quote: str) -> int:
     """The pipeline's quote check on one quote, saying where a failed quote leaves the Act."""
     act = elaws.load_act(elaws.cache_path(cache_dir))
     sections = parse_sections(act.content_html)
-    section = pipeline.cited_section(section_arg)
+    section, given = split_citation(section_arg)
     result = check_quote(quote, section, sections)
     if result == "verified":
         found = subsection_of(normalise(quote).strip('"'), sections[section].text) or ""
         print(f"VERIFIED: the quote appears word for word in s. {section}{found}.")
-        given = GIVEN_SUBSECTION.search(section_arg)
-        if given and given.group(0) != found:
-            print(
-                f"Note: you gave s. {section}{given.group(0)}; the check searches all of s. "
-                f"{section}."
-            )
+        if given and given != found:
+            print(f"Note: you gave s. {section}{given}; the check searches all of s. {section}.")
     else:
         print(f"NOT VERIFIED: {QUOTE_PROBLEMS[result].format(section=section)}")
     if result == "not_found":

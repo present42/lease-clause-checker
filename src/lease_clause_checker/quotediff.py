@@ -50,6 +50,19 @@ Category = Literal[
     "content_words_differ",
     "not_in_act",
 ]
+LABELS: dict[Category, str] = {
+    "verbatim": "verbatim",
+    "drops_negation": "drops a negation",
+    "conventions": "passes with quoting conventions",
+    "cosmetic": "cosmetic",
+    "wrong_cite": "wrong section cited",
+    "content_words_differ": "content words differ",
+    "not_in_act": "not in the Act",
+    "no_quote": "no quote",
+    "too_short": "too short",
+    "heading": "heading only",
+}
+"""Each category as a reader sees it."""
 # A word or one punctuation mark, so "void." matches "void". An apostrophe is a token of its own,
 # as it is a word boundary to `verify` ("tenant" is a whole word in "tenant’s").
 TOKEN = re.compile(r"\w+|[^\w\s]")
@@ -238,6 +251,8 @@ class Classified:
     content words differ there too)."""
     words_changed: bool = False
     """For `wrong_cite`: content words also differ from the other section's."""
+    dropped_negation: str | None = None
+    """For `drops_negation`: the negating word the quote leaves out, as the Act has it."""
 
     @property
     def critical(self) -> tuple[str, ...]:
@@ -298,7 +313,8 @@ def classify(quote: str, cited: str, sections: dict[str, Section]) -> Classified
     if strict == "verified":
         return Classified("verbatim", strict, marked, here)
     if strict == "drops_negation":
-        return Classified("drops_negation", strict, marked, here)
+        word = verify.dropped_negation(verify.normalise(quote).strip('"'), sections[cited].text)
+        return Classified("drops_negation", strict, marked, here, dropped_negation=word)
     if strict == "heading":
         return Classified("heading", strict, marked, here)
     if strict == "too_short" or verify.word_count(quote) < verify.MIN_QUOTE_WORDS:
@@ -307,7 +323,9 @@ def classify(quote: str, cited: str, sections: dict[str, Section]) -> Classified
         return Classified("conventions", strict, marked, here)
     if here is not None and here.lined_up and here.cosmetic:
         if here.dropped_negation is not None:
-            return Classified("drops_negation", strict, marked, here)
+            return Classified(
+                "drops_negation", strict, marked, here, dropped_negation=here.dropped_negation
+            )
         return Classified("cosmetic", strict, marked, here)
     elsewhere = {
         number: align(quote, section) for number, section in sections.items() if number != cited
