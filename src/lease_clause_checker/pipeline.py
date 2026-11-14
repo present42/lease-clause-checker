@@ -55,7 +55,7 @@ RETRY_SUFFIX = ".retry"
 # The section field should be a bare number, but "s. 14", "ss 14", "Section 14", "RTA s. 14",
 # "14(1)(a)", "14 (1)" and "14." also read as 14.
 CITED_SECTION = re.compile(
-    r"(?:(?:RTA|the Act),?\s*)?(?:ss?\.?|sections?)?\s*(\d+(?:\.\d+)?)(?:\s*\(\w+\))*\.?",
+    r"(?:(?:RTA|the Act),?\s*)?(?:ss?\.?|sections?)?\s*(\d+(?:\.\d+)?)(?:\s*\(\w+(?:\.\w+)?\))*\.?",
     re.IGNORECASE,
 )
 PROBLEMS = {

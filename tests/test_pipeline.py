@@ -292,6 +292,7 @@ def test_a_stale_retry_record_stops_the_run(
         ("Section 14", "14"),
         ("RTA s. 14", "14"),
         ("14(1)(a)", "14"),
+        ("s. 3(1.1)", "3"),  # a subsection added between (1) and (2)
         ("14 (1)", "14"),
         ("14.", "14"),
         ("8.1", "8.1"),
