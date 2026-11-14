@@ -1,0 +1,74 @@
+{
+ "clause_id": "c12",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "3ba5f21514e24494d67489c15d14b95f4c9bb84a06dc568dc35305b264eed0e9",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: To carry out repairs, the Landlord may enter the unit on 24 hours' written notice stating the reason and the day, at any time between 7 a.m. and 10 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:24.561098Z",
+ "text": "This clause is not enforceable because it contradicts the statutory rules governing a landlord's right of entry with notice under the *Residential Tenancies Act, 2006* (RTA). \n\nUnder the RTA, any clause in a tenancy agreement that conflicts with the Act is void (per section 4). Section 27 of the RTA sets out the strict requirements for a landlord entering a rental unit with 24 hours' written notice to carry out repairs:\n\n1. **Permitted Hours:** Section 27(1) and 27(3) restrict the time of entry strictly to between the hours of **8 a.m. and 8 p.m.** The lease clause improperly expands this window to between 7 a.m. and 10 p.m.\n2. **Specificity of Notice:** Section 27(3) requires the written notice to specify the reason for entry, the day of entry, and **a time of entry** between 8 a.m. and 8 p.m. The lease clause states the notice only needs to state the reason and the day, permitting entry \"at any time\" during the day, which fails the statutory requirement to specify a time or reasonable window of time.\n\nVerdict: not enforceable\nSection: 27",
+ "finish_reason": "STOP",
+ "input_tokens": 205,
+ "output_tokens": 276,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "EHj3aouCJ8Hkw8cP4ZGT6Qo",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:31 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is not enforceable because it contradicts the statutory rules governing a landlord's right of entry with notice under the *Residential Tenancies Act, 2006* (RTA). \n\nUnder the RTA, any clause in a tenancy agreement that conflicts with the Act is void (per section 4). Section 27 of the RTA sets out the strict requirements for a landlord entering a rental unit with 24 hours' written notice to carry out repairs:\n\n1. **Permitted Hours:** Section 27(1) and 27(3) restrict the time of entry strictly to between the hours of **8 a.m. and 8 p.m.** The lease clause improperly expands this window to between 7 a.m. and 10 p.m.\n2. **Specificity of Notice:** Section 27(3) requires the written notice to specify the reason for entry, the day of entry, and **a time of entry** between 8 a.m. and 8 p.m. The lease clause states the notice only needs to state the reason and the day, permitting entry \"at any time\" during the day, which fails the statutory requirement to specify a time or reasonable window of time.\n\nVerdict: not enforceable\nSection: 27",
+       "thought_signature": "AY89a19xo1rwiy4TOpGrzlaaRmS_XC-SJ20aDRnuKK9EySrBdxlcUxKKYplyzh8ysOaV9XzcCk91XQukm6saLhRgrFQOjsF-lp3ROlH4SxvKUydPa1fFdbjbtlfSeO-a"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:24.639243Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "EHj3aouCJ8Hkw8cP4ZGT6Qo",
+  "usage_metadata": {
+   "candidates_token_count": 276,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 276
+    }
+   ],
+   "prompt_token_count": 205,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 205
+    }
+   ],
+   "total_token_count": 481,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

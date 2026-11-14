@@ -1,0 +1,67 @@
+{
+ "clause_id": "s29",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1d501c62c83de9b31f4c9ebe81f0192f0fb16a27399160697885aca72cb2e30f",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent once in any 12-month period; the first increase may take effect six months after the tenancy begins, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:30.690873Z",
+ "text": "The clause is **partly enforceable**. Its once-per-12-months limit and its 90-day notice requirement match the Act. Its six-month first-increase term does not. Under s. 116 of the *Residential Tenancies Act, 2006*, a landlord may not increase rent unless at least 12 months have passed since the last increase or, if there has been none, since the tenancy began. A first increase at six months therefore breaches the statute. Because a lease cannot override the Act's protections (s. 4), that term is void. The landlord would have to wait 12 months from the start of the tenancy before the first increase, and the increase would still be subject to the guideline and the other rules in Part IX.\n\nVerdict: not enforceable\nSection: 116",
+ "finish_reason": "end_turn",
+ "input_tokens": 264,
+ "output_tokens": 1397,
+ "raw": {
+  "id": "msg_011CgycnuxJMPpG6ptubGZK4",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **partly enforceable**. Its once-per-12-months limit and its 90-day notice requirement match the Act. Its six-month first-increase term does not. Under s. 116 of the *Residential Tenancies Act, 2006*, a landlord may not increase rent unless at least 12 months have passed since the last increase or, if there has been none, since the tenancy began. A first increase at six months therefore breaches the statute. Because a lease cannot override the Act's protections (s. 4), that term is void. The landlord would have to wait 12 months from the start of the tenancy before the first increase, and the increase would still be subject to the guideline and the other rules in Part IX.\n\nVerdict: not enforceable\nSection: 116",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 264,
+   "output_tokens": 1397,
+   "output_tokens_details": {
+    "thinking_tokens": 1161
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

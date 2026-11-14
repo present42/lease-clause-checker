@@ -1,0 +1,99 @@
+{
+ "clause_id": "s05",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "d2f3e152d3b9e129e2d87060e1c6817f2bff6557a57c8c53d4a24df3c02265b7",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nOnce the Landlord and the Tenant have agreed that the tenancy will end, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, after informing the Tenant, or making a reasonable effort to inform the Tenant, before each visit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:52.069445Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"A landlord may enter the rental unit without written notice to show the unit to prospective tenants if,\",\"reason\":\"Section 26(3) permits a landlord to show a unit to prospective tenants without written notice once the tenancy has been agreed to end or notice of termination has been given, between 8 a.m. and 8 p.m., and after informing or making a reasonable effort to inform the tenant before entering. The clause sets out these same conditions, so it is not void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6489,
+ "output_tokens": 566,
+ "raw": {
+  "id": "msg_011Ch1HyDULGkr9sWRMBwyxq",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"A landlord may enter the rental unit without written notice to show the unit to prospective tenants if,\",\"reason\":\"Section 26(3) permits a landlord to show a unit to prospective tenants without written notice once the tenancy has been agreed to end or notice of termination has been given, between 8 a.m. and 8 p.m., and after informing or making a reasonable effort to inform the tenant before entering. The clause sets out these same conditions, so it is not void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6489,
+   "output_tokens": 566,
+   "output_tokens_details": {
+    "thinking_tokens": 398
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

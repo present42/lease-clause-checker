@@ -1,0 +1,75 @@
+{
+ "clause_id": "c02",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ca067addf33b890bbd9907fef58e5ed5db51a86026a19f3199841c6560abef63",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Out of consideration for neighbours with allergies, the Tenant agrees not to keep any animal in the unit.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:24.595311Z",
+ "text": "Under section 14 of the *Residential Tenancies Act, 2006*, any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void. While a landlord may later apply to the Landlord and Tenant Board to terminate a tenancy if an animal actually causes another occupant to suffer a severe allergic reaction (pursuant to section 76), a blanket clause in a lease prohibiting animals is automatically void and of no effect from the outset.\n\nVerdict: not enforceable\nSection: 14",
+ "finish_reason": "STOP",
+ "input_tokens": 149,
+ "output_tokens": 311,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "OG73aoubN7f0yOgPv8nc8Q8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:29 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under section 14 of the *Residential Tenancies Act, 2006*, any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void. While a landlord may later apply to the Landlord and Tenant Board to terminate a tenancy if an animal actually causes another occupant to suffer a severe allergic reaction (pursuant to section 76), a blanket clause in a lease prohibiting animals is automatically void and of no effect from the outset.\n\nVerdict: not enforceable\nSection: 14",
+       "thought_signature": "AY89a1_cyOZOaC0jst0ELPSLPUwzj0m8-pEO_wVd77tYz7YYb6PjcpSqKZcq8BfwQUttu3JNjKqJ3nkWHbGVkvvuRd-wmpqc5OnqYV-GxJt7JdjE5jXVw7ecSt6-25KnfTF9ABpKq-4pu4hlRUyat369hv3SPCa39Itfe8EeXzlgVbNVWyMd72EKBShqQJ9dxXkv5Po1_MT-_p7pICcEsKDbAX9So4tIk_6Tx9ONWn4XrLHzBL02sbjuvcnbok2a0nfS9IsGJ4hXhNaSsqfe7P3DGGCyDHGvNSHOSXi5ZWm2DG9By6bDX3yVpeSHN6GjNGbyeZ5C_QiN0Dg_qNuZuVdjhVvf_Yk1Si1AV-pm6SI1ztJmXUX_Q3vUuukutYRdLMTzmlXWhzj_DtNgBUdZZmv0Sj5zfSLJmHyVfByDNX9F6zCX3LcDiDAZkGfajZRLHGRoeka-xWLlIyoWTPCvQmqCiTs6IH9q3ZVRD_x7e5BX3VmF22qqfb8VHHf805Oyw0vjSIvKkUDp5An0lsW6d142zbFCrk2xlR0-wq7R7QCZ7zgGJDFBZUXQA7YWUXgG3g0eQXWk6zHN_VqCpXhDmMJymHsNJktpPKiDc_gftty3CTr7Yz1fThj58tpX2EPxYQVO8IVzhP1E83Ip1mA1KQp6zGFhRf6k1XEy3yxwBpzYzazLpmO7ZGtISp4psFDHaZToBHiy0a9_zoPcyIijpkDgLjziF1wftz0Ioh88r-b40tPOCjEbGFHFADuw1m6gkv_WrHWom1Zoqt90MFw3B5srumv_zQO79UVL8yoP9_9cmIN16puv5a7ANWNSyBIMUYVXgSffPf-iQRxgDUqM5DAUSBQwkEhFcdZ4mPytFdfDCEsvDP1TfiHastUlAYPBtKpa2ln0mNUUH2dT5ouIOReOgw3A30tokMIIppR5KkgB_hEDLU3QX1Lag3zPv9DINRL5hHiocOcbTwSPvggt01hEBGphHJqaZDB8HNZ4I5XSLf25VrfZ3TbRuSumlagrV0yk_ER5OK-xw5bglmxT5yVjgP47oxIPUw49ZfCRvWyDQ4tSsexdn4h00OAv-fPqvq66ghnG5Y5Aa0N7r5tAbriDOWTtiBST5CLO8ejjM9QtOwXBHps4cZ6Ati1Se8gSipG4rkL7X00ydDjEQhpr7uh0u4p1HD01zH9L9IXn5sZEtthEgk0INHC8TCMJqrHIDW0_KyfYNIboEFRzk3Q-2o-T8EK653Jv8XfW0HTR9MfvVXO1lkswjocf7LCxosPTuaqA1tR-aaU8mIQhNqmDNGZebtocoogGUhXKLajRN3E3uu3bP0P8pDOIr8SPjCq-Wfwl"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:24.904587Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "OG73aoubN7f0yOgPv8nc8Q8",
+  "usage_metadata": {
+   "candidates_token_count": 109,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 109
+    }
+   ],
+   "prompt_token_count": 149,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 149
+    }
+   ],
+   "thoughts_token_count": 202,
+   "total_token_count": 460,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

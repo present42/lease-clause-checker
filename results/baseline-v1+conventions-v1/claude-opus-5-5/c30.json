@@ -1,0 +1,67 @@
+{
+ "clause_id": "c30",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ffffbc321162db9a484ebb6986c87ab7979d1669d7a6e7243165c7c301c09cc6",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent by up to the guideline amount every six months, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:44.597624Z",
+ "text": "**Not enforceable.** The clause lets the landlord raise the rent every six months, which the Act forbids.\n\n**Section 119 (the 12-month rule)** says a landlord may raise the rent charged to a tenant only if at least 12 months have passed since:\n- the last rent increase for that tenant in that unit, or\n- the day the tenant first occupied the unit (if there has been no increase yet).\n\nThe clause's other terms are lawful:\n- 90 days' written notice in the Board's approved form matches **section 116**.\n- Capping increases at the guideline matches **section 120**. The guideline applies here because you said the unit has no section 6.1 exemption.\n\nBut neither of those cures the six-month interval. **Section 4** makes any lease term inconsistent with the Act void. **Section 3** says the Act applies despite any agreement to the contrary, so the tenant cannot waive the 12-month rule by signing the lease.\n\nIn practice, the landlord can still raise the rent by up to the guideline once every 12 months with proper notice under section 116. That right comes from the Act itself, not from this clause. A tenant who paid an increase taken earlier than section 119 allows could apply to the Landlord and Tenant Board to recover the money.\n\nVerdict: not enforceable\nSection: 119",
+ "finish_reason": "end_turn",
+ "input_tokens": 249,
+ "output_tokens": 730,
+ "raw": {
+  "id": "msg_011CgwREVZBRyfP59JLGjzMW",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSvAsKEAgTGAI4AUIIdGhpbmtpbmcSDNtmhrSsJUIknM/lPhoMgQfzOeU+AfxFC4uwIjA/Wj+zPL1StAk02Vdqvx7YPcGUy5W7mdyvUvUzKhIcBoV/EpSlTeZx/PF1DgH9GQ4q2QqQ6KYepyY0CfwAMeKHgjtbgkO1loNcjUHojj4oI9o7y+gLj4qKYh1Sj6HQJueiyzpXsvsqpVzoTCidg3ZhqjUScezaDwn7QZFcD+opw3r3rLn95njNQ5lban/Mktbbt9w8frXla1KUioyjGjayEuP0DXJINW0Ps7KirLQw+fle/ysrgWikrsWZvwWyvccHcNYbw3P6cKqkE1uQxDpSYdohS7CSx3jL0NGxsZRnRAs2o3e5kltMS7HJVj8B5U/fsMhC5bpHhDIrllsMjKx9yZMr139ZV1NZeLZUcOYIY54wXf9cfYJhXvXz1a27C7YLifH4iIZmIHErIoxxlo6MgiW8DI+2+lo1eqKVUCWLkbujT1/Eu8wEdAC5fUqDwoWdhb5ZiCkrTcw3MuJfZnZtHOdnOciycF1GFrwhn6NsbMkmTpyVtv5FAZZE8s6+LKAxhRyydwJaIAJhG+U1UluQPWo/KyqtcoBG1RQncPcz+jysBihPHh49IuK2vCOexixaot8wsAhWVPYVKlQdSQwtIvMc+tkp4nYiWvPf7qBrEEN7gfGyw/QYI0CDUoHJRtWjyqivQEyUlFDgUakIiqq4DPrn07xAWAOm7L1MxbZWJag/INcFGwvRka7o5qxc90+eZi2J+iImYc+lgk6wHZiLC0tO0zugQC/LLkoMejcIpGoAYBQKlWTMJKAQp7D6+9nJYCwYUHCggWjHsrn0JK2nsvBMuDvSPaHK424fop6CH02cQut9HdR2vH7ajVOGX4C4ApkNU37MwGyup/SA+nNZNUCj0fQHMVp8d7QpJEwC6CFiSXAMqHFpCTKWldUZXROQ3MmxSfmXmW1EFlmECrhsGtxzzxWs2aywIlV4i0Kj04uEWCZrZEX+V/DVG0mr18SvILwPGRia4I7TslWO5ZCOsB+zCda9mXtzu1MAMP/jrtkHCy6NPEz0ZJZIAdinuN/THYTyiVVR0xVDNM4SvMhjo8DsNlPntX4YgkuO5hEYcf1WRCOTlPKTaN8+ZeKW7u9Cakjq2fUI/HpSg5vAe34B+vxbqcxFbfHFUeTrBy58ULd2jMfKo52IGneB0KOmdZTnh6dClvHY3HvNq19Hj1nrXy3QnW+OK/Mfi/flPPXtVRlln6ost13o1UX5OaoWHL6lZ/qavcR1Hv8YDRI0aUHtK/CduJ1sdHUPYTDfY1XQcFDY82uUiMgiUiE+Rb+Fi5F3FeQYKCpnzauDOIKxB6CnlJ2svU/VzK8oaSiM2o54lKUqbKQ3sI8sJOS4WjFwfPqX5TpiSCwj/lsvdYoBbLpbnCmRIVwrcIAlz9iM+L1VynLZndLjAtXTZY34HxMciU/xUAhaZfSQAQT9b/IpnZNOlpggo4t0VYetW5MI4+Ka3PWv2FjKSK5jK4K9QEkAyHxIOqKppNdKrwcnctn3MsmuoFRC8dsc9sPBmqM6TVSKXWnQMXRChGFspHx391eM6myKOp3ZKnvDKbS3VkBR0+A0WdvNGXVFQMiiFnxsKY83iX7oz9QE6mKGt0aDY8AxnF9UyOVrRo0bv7UasHds5lzfnXekalnm2geSApv1ttFW0949J0WubAPheyqufa8zCfiz0WlrflKTGtfnQbiY2DDVAjz/DhP7oRACu6NcSkYcB7ErxQGAj1ykeV9NUvPHDa+CLj/RKWezeo0pFscvCmpcHBEaAfJJjydRlaiaQXN2b2xrBTx4ZmayJW5xEAaHgY3vCqn0Lcbn8Q/ulczEYpUy+DzUQ8aomIcQEsCGuCHVBH2wtdYVdy1JCKjOVsSP2Sv3XwfcWLIyo7B+vbiPc9b/ZT96cG031U7UTnEeGAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.** The clause lets the landlord raise the rent every six months, which the Act forbids.\n\n**Section 119 (the 12-month rule)** says a landlord may raise the rent charged to a tenant only if at least 12 months have passed since:\n- the last rent increase for that tenant in that unit, or\n- the day the tenant first occupied the unit (if there has been no increase yet).\n\nThe clause's other terms are lawful:\n- 90 days' written notice in the Board's approved form matches **section 116**.\n- Capping increases at the guideline matches **section 120**. The guideline applies here because you said the unit has no section 6.1 exemption.\n\nBut neither of those cures the six-month interval. **Section 4** makes any lease term inconsistent with the Act void. **Section 3** says the Act applies despite any agreement to the contrary, so the tenant cannot waive the 12-month rule by signing the lease.\n\nIn practice, the landlord can still raise the rent by up to the guideline once every 12 months with proper notice under section 116. That right comes from the Act itself, not from this clause. A tenant who paid an increase taken earlier than section 119 allows could apply to the Landlord and Tenant Board to recover the money.\n\nVerdict: not enforceable\nSection: 119",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 249,
+   "output_tokens": 730,
+   "output_tokens_details": {
+    "thinking_tokens": 313
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

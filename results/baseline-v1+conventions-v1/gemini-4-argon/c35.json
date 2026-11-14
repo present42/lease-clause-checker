@@ -1,0 +1,74 @@
+{
+ "clause_id": "c35",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "41cd7bd523e6c407a0f44696f70d953c0ae1c8bd5f318736d4150f2772ccaa8b",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may drop in from time to time, without arranging it in advance, to see that the unit is being kept in good order. It will always knock first and, if no one answers, may let itself in with its key.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:52:51.440174Z",
+ "text": "No, this clause is not enforceable. Under the *Residential Tenancies Act, 2006* (RTA), a landlord cannot enter a rental unit simply to inspect its condition without providing written notice at least 24 hours in advance. \n\nSpecifically, section 27 of the RTA mandates that a landlord may only enter a rental unit to carry out an inspection to determine whether the unit is in a good state of repair and fit for habitation if they have given written notice to the tenant at least 24 hours before the time of entry (specifying the reason, day, and a time of entry between 8 a.m. and 8 p.m.). Furthermore, entering without prior notice is strictly limited by section 26 to cases of emergency, where the tenant consents at the time of entry, or where the lease requires the landlord to clean the unit. Because the clause attempts to grant the landlord a right to enter for routine inspections without 24 hours' written notice (and even when the tenant is not home to consent at the door), it conflicts with the statutory rules of entry and is void under section 4 of the Act.\n\nVerdict: not enforceable\nSection: 27",
+ "finish_reason": "STOP",
+ "input_tokens": 209,
+ "output_tokens": 254,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "o3j3aqDlJcCJyOgPhteoiAc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:56:20 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. Under the *Residential Tenancies Act, 2006* (RTA), a landlord cannot enter a rental unit simply to inspect its condition without providing written notice at least 24 hours in advance. \n\nSpecifically, section 27 of the RTA mandates that a landlord may only enter a rental unit to carry out an inspection to determine whether the unit is in a good state of repair and fit for habitation if they have given written notice to the tenant at least 24 hours before the time of entry (specifying the reason, day, and a time of entry between 8 a.m. and 8 p.m.). Furthermore, entering without prior notice is strictly limited by section 26 to cases of emergency, where the tenant consents at the time of entry, or where the lease requires the landlord to clean the unit. Because the clause attempts to grant the landlord a right to enter for routine inspections without 24 hours' written notice (and even when the tenant is not home to consent at the door), it conflicts with the statutory rules of entry and is void under section 4 of the Act.\n\nVerdict: not enforceable\nSection: 27",
+       "thought_signature": "AY89a1_od8xgHQFraevM7Ojmc6qQ1cCgB2ie9HhlzxdRoTNbiT9eih7zErNEOmaDmbKhdolLikPtsgC4-BcvQNdrVOxrkfSWGeprC6fpfbs1YlabxmQdCM3lhHU1vAQ="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:52:51.619168Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "o3j3aqDlJcCJyOgPhteoiAc",
+  "usage_metadata": {
+   "candidates_token_count": 254,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 254
+    }
+   ],
+   "prompt_token_count": 209,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 209
+    }
+   ],
+   "total_token_count": 463,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

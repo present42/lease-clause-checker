@@ -1,0 +1,75 @@
+{
+ "clause_id": "c05",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2e8879177fb49d1da349094fb4aeff40b4c49da3701b696993753187a0953047",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If any instalment of rent is not paid when due, the rent for the remainder of the term shall at once become due and payable.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:24.596555Z",
+ "text": "This clause is an acceleration clause, which makes future rent immediately due upon a default in paying rent. Under the *Residential Tenancies Act, 2006*, such clauses are expressly prohibited and void.\n\nVerdict: not enforceable\nSection: 15",
+ "finish_reason": "STOP",
+ "input_tokens": 156,
+ "output_tokens": 303,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "OW73aoXhCbKbnuEPhqml2AQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:30 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is an acceleration clause, which makes future rent immediately due upon a default in paying rent. Under the *Residential Tenancies Act, 2006*, such clauses are expressly prohibited and void.\n\nVerdict: not enforceable\nSection: 15",
+       "thought_signature": "AY89a19rt80_nhTaf4rBBP2rtWLP2NBeEtuQOxX8f3cfstCPtkEwpwLZ1FZVrqbHCy1JjhU7QT-UbEMbCUnAE31y_mL-l1XAovhcmVgTrGrt31I5ZvA2gos4bE1Tqbu_RrbH77YjKJFcn1xMVEY8ttG_bho7yJ4SaHP3Ls2u-M56RZitZBnHUj2oD0TuoDQJ0D9N1GKXtE9E8I5l3TwATQevxdXvjRJeVv7GcNOpALTm7ro-UDyrcDQcSaUkRPfUdnRQZESEKpIC4OruqJFd7Y7bnJjxMeDk9y-bsTqJxKAic5ibuD0ear9_6UE8-Qcf69Q_i-yk9oHHQv6r8bKu4zDgNI6kjP4GOpNRpv4TnMKtwDoF0_ApT8bLomZVVywLTd6k0tQqONfUwCdc91_ACius1kqp58I1Y7z8__m3kMl6mdaatHbHMwF2zZNx3BiWHP6JtDREcNckL5RA0GQTT3GilZd3muqYV5Fv4uy-lT7t1YxO65u3qoWZxJP4RQW-HqR5F_HWV8vLj5CRFaxzNs0QnV-_IZSkNdy-KPqfgE-5mOAq0Efp4aAfxu0r9QwKH1qcAX7Y9ImMYu8IZM5-pyh8hsrJS6P1XGgwFpmnrlowmsqdvjWdpe-_uJ5QrPOD9k9RulDDVN3-3T_rUZXYmB5XTERaDhn-e_BIpXLLb5A16TY18yT2LIkyaKtHxLqLoZqRYVK6xlR4ydE4KhcypaHCIca4t6aj5YJZM_BHRNcftMq3ldZ6d4p-vx4rpP_vXRkZpsRWhItE0Y0gykvZBf4onAnHjXPtfP13hJrAWLEElKD_SElX18J5EZPEjBYtO1IIemuM34PplJBY2CheV26Sm9hfHPRJJPORXtwh_v_VTa2h-VmP6wcqPKo3x656pbmtjkuGTj1GGoOJhyK6v90ScQ7UQNP6NblpgrYCehcRhTH-aWxpo_hGnhZo5T4k9N_yM3zY9A7_mJFsZpwmx4rDRWay0zKtM8M4DW8RSB6VgouCiosF_d8ydVvnNCxtY6eIpHRBjnWPy-w2r3OWXA8U2APgH-x29Huaky0b8_c6awTSoPjqwiMQXaoSpTuTZuYgoM1saj8Jvo5K5DVc92W3Dr0DlLWEwS3rgh3f2SFNsydczJzmmLaMUYrjaKbYVjAD7qt5xM4i8oDTvCAdF5H8Qh8gmJJFO_LmbL9n1C12V3csV1ml7-nZvOP38JUZbZucjZ_Nc_UkxdooEJ-CpbDVxUz8fg42PozjtgnkNaYZwsaQk47_jxtDj-D79XJAPFDWFpJ-duhs7TITTfaD3NYCCcRixEwCvYqZMSlphOb_gxTgw41_DqzN1fThQ_LtLFK1RpnBMAJLZqHr_Tp3V3nbmE5hwolYMKiMj9teaJfOybp0HzmDCpMQmiq49Y3iFDhbEfKKiFyr1iAT7ciQNh5Awaw16vpYMwe43EeCwcALqz634XhPhfdEYQ=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:25.159877Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "OW73aoXhCbKbnuEPhqml2AQ",
+  "usage_metadata": {
+   "candidates_token_count": 53,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 53
+    }
+   ],
+   "prompt_token_count": 156,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 156
+    }
+   ],
+   "thoughts_token_count": 250,
+   "total_token_count": 459,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "clause_id": "c16",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "70db5f03107b1fcc9ebfca1c1ffd85251e41ce79309c423f8f83eeea33a1f0be",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant's dog causes undue damage to the floors or doors because the Tenant was careless, the Tenant must pay to repair that damage.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:39.341268Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a tenant is legally responsible for repairing undue damage to the rental unit resulting from their own wilful or negligent conduct (or that of persons/animals they permit on the premises). A clause requiring the tenant to pay for undue damage caused by their carelessness (negligence) aligns directly with the tenant's statutory obligations.\n\nVerdict: enforceable\nSection: 34",
+ "finish_reason": "STOP",
+ "input_tokens": 158,
+ "output_tokens": 939,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "R273as3oGdyryOgPjpCe4AQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:47 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a tenant is legally responsible for repairing undue damage to the rental unit resulting from their own wilful or negligent conduct (or that of persons/animals they permit on the premises). A clause requiring the tenant to pay for undue damage caused by their carelessness (negligence) aligns directly with the tenant's statutory obligations.\n\nVerdict: enforceable\nSection: 34",
+       "thought_signature": "AY89a185hKbbJ24aLFndasCbDcg4W0DGEiABkjbzQJ_CJ72ds9j9Z5plm6LIMxtNbiV11FqIaaq-9X8giNjuZoHt_kOGQIOjl6UFcexi590vzRL_aBZHZZmOtnZqhheftNxJlZx7pIoTDxTh5nq_4uRgLm8qyKaIZ3XdA6h96TkD6jttHV38YMOyOHCVnvrrOKsRZN4skqrXLLIkNmN-rNyuqjCyzQvFmkQ5wx5fEpx9Qt--_igmFg5lsGR8-TXjjExX9QePRIYvICUk8QQz8FoKeCmsEWa9v6I810Ocp1rpEFgU6KQV3b1xdA8kncma6ZVkH-pVsxGGHIWAFWqmbvm9PGPdxiHsvi4M5C7gawn5iMzGuNafYmPWC5JQU2r5J0_TL5MEugq-7ovN-FJfaL-CvKjXiR41ouK598UjPXA1Mv4fs5xZwsYSrJR8FTmqSHeSsqmph9cPgnTdNLEcEOuSUui9Fpc2kDf6e1D03NKmKPkg1fxLsQChs1Z1YIAiKXbmyjWyopG0LxO8_ZgTSiJi_viUu87432yelA_ImfrnMDbvH32xroORlkpbAsFMvoEPSSmHEVeRs4o66ab4gtwxZrcOczJBlvmH26fGfFV-T8MEDhCToCsIDq_wY7oRQAuDDtBrPghc-Tc80aIvA132du2oixWNmV5Yl67120hFfwT0sKyqxzCYAJHUEVVTfwjfRkQYcvHqWBT7Uhpulcl4V7SenKreM7Ost7JkxSgZvS6i6N5JjFdZxLe5gBOSVuGIko8WrfGeRg6w9Uvw7gYVqCVbWvg0M0JikJ-345pEin2wsqmo34jW1bBL44lGOMM--sGSu2ulJxALoCFq1oq2ZYqQ7cJNy2VEm3kIfn8Opc3HdYtBOTRmoI6xmQlHVkdffCeargeKWK1VGpPf39iIfxjrshy31AnyudkE_oCTxpyK2RepzFl7niB-GfhXoEnos__N2FDvL57A2BT9lehMZ-PNUhuk9_MOkS6HU8LBTvNr76ZgmWXZPuXA7my79Kw7c_KoBclzE4_cG8IPuhXloQLnXf54N1gsnxVmtVyjWI95qzbzqUo9cSY8mqJfufGC4BjRipzX5_FuyVBSVV5T5IfkeWbfFhq_1TlnNRfde29u3EoS089t-ARmN4KgqK47QpJVRkD-2c1FDF6EQzT7yZEwhm2vlHrfCKVw1WixoThDEwYKpJHf8nIZREa--5U2H_8898b_cXxl9lfonnWeGJnSr4WREVB1NLQax8fsCgLF7i4vWD7lM8yhBQYESO82qtmztZHTxaW-VVoAZMcvXv3UzwBBPgdifmPqjUk3Eo2CK0iKMA8cjeX4Lo5e77kLFZgRbShgMDRkCtRuJV_O1x7XTiA7KKukj_FbhAELdYGqdkgOhiaLeJ8Q9FRpeqS6ek0HSwJ9C0iyE_AaAyZdjUKf_iaV2lLrn3iACPT7kCPcmFV4XGvZ66sd65ivpqVANVNbRuOQ3iX3DPLe1h1eB2CDDBNzwB7Gf4jnL0mdI3F0fU_M1ISgIYGbH7g1qew2re2F-Thltg0bVTS6T5Tx4R7PPhbWlCVecL5ePRGjskZGnG5SlMNWnalt3jI4EpgbJb7MBgOBmvUC2JvQOEh2f55WL_mg-sPE4_SkzoQJHq0AuJLFsONAXgE-1Yp06dB4SuPjAPJ8KtTdIWZFmo6qcz03GPYo3IunSQ-hWkJILCSeLHdnb7AqpBaOZVpHaOVuSmkfSjnwiBjypkcipmjKm2KRL-sx9H5AbXO9coOqvsoF6BpymaQqx-TbGgVQGvj1XSu7V4muv2pWOB7lc0BG4B2GI7gdZWSWkQNJizARgvXD8YHA4cMbdkW--kdlluJlisNKlhtjyLWTvi4Z6KhlmeG0VCLeueJK7Us8wB6OcQzxxZNxSx653KLQbQi3_SNm1eFbvx5KVALzSucflP5PJ9pwcxfZODKCCwSfh4GFRRmOtkIN8-rBh2o65SHWBjWNKM3uZj9CEAhsNwQtV8Pcgd3bLhtQ3ZCrwH9pLXxqVY0zLNiNlo3gtOrbtF2h7KUTmrz2bnt9kBmrzxyxW-xRoR6NyK5KNaywXWSy0QexvVG7XTHKgy1AlARtx5fllb7qcoZZH6ZUSSf1cHC3BXc-pKyfSQU_hCPLL74VE0PaGjgWQJ3jvSnoJAtaO0bq17iAgGzPRDW1yKNi5a1Ik6JKuRCZYCUBJLRT6P1lvTjeRx_7dWVO0MP_V7B6By5k9-QohzE-BBxtYwGsFva_P28ceZ5PC7g_ALAeMwQ05OUSuKoSpjOQhX7dQS_T-NBtLhJEPIoeUQxzprIGSD-xJ-VgvKyzbpaKe_WNiFFiO_HW73r7GUDtq-Boy2MJsUC03l3Ot7Vnhe4Sp8NJe-7PdCcW7NkThKeGdmGrVjKDwRIbAVB0NBXsudm0FJRHbwUZPINV6pyzUZvpkVlZy9buBKhQdqB6x-umfyaiUOyUADEb9mmCNw2Jpf1E6rQvc1Tqgbxv6icz1kFLLFAwT2Jzl4HdN-1-tmIfxPDaOKCTkqvruagR20YL7skMcA5E4CWQrwN8okiEL-aTJVB92IfMHcnIkpsKEcIpRmnb2yFp1JTkdVUccKrJmOl0qJCq_6YiVNDT00w6HxCCTY3wJoN6HfjPgHlwLvjKQPBVKNbafnAu_3c8TgSIqMSV0rodjXwQ2ex20NSP5Z2H7WCoDZ7eTwJOZokI3_tSxs9pL5TvyRXzUTqFj_EwiYQaREtKHBh0cHKo5AUf7CqFcYC5BklA0aeEJcYDkCE8-f8ts3pvsfRJOFRZpFgZOHyc3Siz2KI_LW69ebJYJM-3cs4DqaUhKMAPwrH4rxj6UDh80B-y3loXqHxCKQgD7aAGtedycoNpvh-QStezYv66BUwen61jaxj07eOw189uBqJ_aQuiZoPUi_GZeiGK7wW00ZgCs43LhLuCs6Qbbod7cybjAMnsv1jBaL_E0bqhWkwgdoJsdBaeF04qxFPXB6b6MNcHzmCIX7MVRPYV5q2Y39cif__vnCH53Bone2ZFcSwUaABebJg9byceHGYKM_vX_rGfOL__sbSJzyYKdsDL-YRALj7YNLBUFUxGzrYek-Mm2ETRpDf59dr-pXxNHS4cUMUvEM0z26w9vYmoe80mfTfgqV9L43u32MRsR-HSk4EdJQZfR2xcbuAUqHJURDjxH3cUeuKIxFD0w_25JEP1_gCplyFwZl7xHL8HGpJDUTwGYrA-DJSkysh-4CoGIMNV6e5xO2MbIVDfR2nZaivlUcV0EfP9cLIZ9voljCtbYHdPsP86BfWFP5lztLSd7zqSjzEkgsvsF9dEqNh0-HGYyEOa0jMegjUYg1jKXolkr8oV6d_ui9x6RDEZxg6YcKo9pEbjs7HlDlok7XP0quqi-sf_B2K2mZ_LO5dAojuFtyeVcsCjTG3-ZsDGi1aJT24MRbA9CmA8I3ieCBfBsuvQqzp-iHDj0DKYmyva3wwwIkgB8WbuzmlaXi7M5DjkkHonftMB2NORf91tC_3PV82BknDZQMK7OwmDRcKNH7J_TmHX5p-0JNL7viu02hEhIS_x7LRrRo120JlHPP-of83_eIxxrFroLdm8Ji-Xv_EsV86YXk-R6N3_w4pTxYSo1Is3lDmRpLz_8dSbD-lHy3F5XEHlLfMGWiuYZituk8syEEao2uitgwgb9Rrcd5agwzcQqiSAcivta6hv3V1bVUSAsnOVlIRh6B-rGckB9cfbIU3AyzT1Y2IikF_SQ9aRdiEh8a1HhSeGZAKW4LM-AE3ce7lxuzHlihzcuO7bdA_YQlNchuULqm7dFtvWtHboULvZTODglHjfdisK7TN6Yb3klA_hlEq_mKp2XSz_2OwzPcPybYi8V4E2GVniu69QvLn5FgQcYJnNKz6eHj24LRFvQ9FuBqkW7Prf0KXqCdmFb63PdSAtwHzxQqnsjyW3Fvg2ligP3LQujPu7HHfoIx7otYL441VZXn-So99_ks1jg6XOvlHWm_9ckvPFAxGdfRY_FVRbq8FBdluarKIHm6wn7LToaVJDkIZpVN-rcBeXoEnBMBYcknHwGsyrrmYTxDQRMN0ggeK3K4XljAugyizoPC5IeASZ-XJ09RVCq1igU6zUR3QTj37U8SUUH-Z68BIQm1_iO0tqYxeBC8AWAseD74jALtE0uJ2XtQ04KGJ4rlU21GXeuWuWZwRBY0QgxZcwsn52VTzCl2qs7Vj7uGzue1Q5TS6OQl8GAKoD9lPPfWh_bS7U2sdBSGTPSjM05aUFGkO_2-wxqtUyAshNuTRy_d6OPSuRl-HvpzHal3x27TIhfe9vLDSSc-YyMIkR26FeRHvGrLu3WgsunZ6moz6dzS0CRt5eQ_9rD5f4uRrbkcht5-Ydgk8DZM6kgo2qLAcnTpgvbUE_aVfZFtO4nuJbieCFRdTwXG-pGFHM7g3hurpSQjJI8hpApTriy7UOUvH7hatkJXG_VreW3vSHDuVn-bWmqfdnPw192QihpnWVeqosB5Cr1Euh9l9iFUzZFe96ZIlxQT6r0atUaTPN9A5VF13Xe-DMsfSTH2N7MN9vB8bREsCUR6ZfWThv4Gnm5Zr9wJnPDfySgSoXQBebTYkBkWnHrEd2Wtx-YkJ9DLqmSgF6_VzQUoDnIoWBjybr-gDee4oj_zJn9VM6XH2VUZ1hVKZ5-280WOdBnnSQ8s1otJtATPOeha6HPI2Jb20qq2IxJyGUQC3DfV5-dZZRpxJ9DvDHDIQYz68qpYxsbtYBbbnnMfjWyuPHeT8wXHkdq_uAAKr1zchU8ZScu4_SYG6iiQZ-kYoiRBF-kRk_9odsMj_bvTEa7xhCkMAtZRuK4aN6oWhWbsUau_5YuUrmYHC5vg1XNesrIqq8blBA6wXN3bmlVJ5COz_k7j0sfmPFq0ziSbZioGkHSuTlP7_gMmVwFtXEQXZlK5P8zZPYxtIQknisei4T2k3R7BqN4HNjk4pUeV-v_4jyLYPltnqfb0CgoSTJjZDhYLNbDl-fYNl1SAZ2tmANMSMCNhVIQWIKC-p6JLw4iJQJ_eUib0t37AXhvIRgbO7etfAFtwEIixA8523RhVksiaEjFuwcjiZd9rIrh74mIL8qm-6haWHXwe6m3vDmsI9FP85KLd_pRyU="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:39.422989Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "R273as3oGdyryOgPjpCe4AQ",
+  "usage_metadata": {
+   "candidates_token_count": 87,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 87
+    }
+   ],
+   "prompt_token_count": 158,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 158
+    }
+   ],
+   "thoughts_token_count": 852,
+   "total_token_count": 1097,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

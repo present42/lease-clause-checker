@@ -1,0 +1,74 @@
+{
+ "clause_id": "c04",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "4a8fda30fdee05564d7fccc283f7fabf46c877a8bd137251b3a3ec6162798aa0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant shall not allow any animal kept in the unit to damage the unit or to disturb other residents.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:16.622263Z",
+ "text": "While section 14 of the *Residential Tenancies Act, 2006* makes \"no pet\" provisions void, it does not prohibit clauses requiring tenants to control the pets they do keep. A clause requiring a tenant to ensure their animal does not damage the rental unit or disturb other residents aligns directly with the statutory obligations and grounds for eviction regarding animals under the Act. Specifically, section 76 provides that a landlord may apply for an order terminating a tenancy and evicting a tenant if the presence of an animal kept by the tenant causes the landlord or another tenant to suffer a serious allergic reaction, is inherently dangerous, or if the behaviour of the animal has substantially interfered with the reasonable enjoyment of the residential complex by the landlord or other tenants (and note also section 34 regarding a tenant's responsibility for wilful or negligent damage). Because the clause merely reflects these enforceable statutory standards rather than prohibiting the presence of an animal, it does not contravene the Act under section 4 and is valid.\n\nVerdict: enforceable\nSection: 76",
+ "finish_reason": "STOP",
+ "input_tokens": 182,
+ "output_tokens": 219,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "CHj3auezOLnoptQPi8HxqQE",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:23 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "While section 14 of the *Residential Tenancies Act, 2006* makes \"no pet\" provisions void, it does not prohibit clauses requiring tenants to control the pets they do keep. A clause requiring a tenant to ensure their animal does not damage the rental unit or disturb other residents aligns directly with the statutory obligations and grounds for eviction regarding animals under the Act. Specifically, section 76 provides that a landlord may apply for an order terminating a tenancy and evicting a tenant if the presence of an animal kept by the tenant causes the landlord or another tenant to suffer a serious allergic reaction, is inherently dangerous, or if the behaviour of the animal has substantially interfered with the reasonable enjoyment of the residential complex by the landlord or other tenants (and note also section 34 regarding a tenant's responsibility for wilful or negligent damage). Because the clause merely reflects these enforceable statutory standards rather than prohibiting the presence of an animal, it does not contravene the Act under section 4 and is valid.\n\nVerdict: enforceable\nSection: 76",
+       "thought_signature": "AY89a18ZrwFtgddQ3UD1oeJMzZRj4CayElXWfa8Av0L3aD-Sr3cEtjq8TdkHzUWEbfnjrjm0og5X18MpFOLKKzIw9svr03l7fVOnN5vk4MTvMAEtknKbhYxWhf-RPQo="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:16.924135Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "CHj3auezOLnoptQPi8HxqQE",
+  "usage_metadata": {
+   "candidates_token_count": 219,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 219
+    }
+   ],
+   "prompt_token_count": 182,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 182
+    }
+   ],
+   "total_token_count": 401,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

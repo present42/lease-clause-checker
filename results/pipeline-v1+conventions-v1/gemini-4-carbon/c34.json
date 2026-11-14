@@ -1,0 +1,111 @@
+{
+ "clause_id": "c34",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "4bf37f39a36e59648376fa15b1ae90bbc51986ab5a5b9b9af7c5f9479a3c72dd",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may enter the unit at any time and for any reason without notice to the Tenant.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:09.286015Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"25\",\"quote\":\"A landlord may enter a rental unit only in accordance with section 26 or 27.\",\"reason\":\"Section 25 restricts a landlord's entry into a rental unit to the specific circumstances and notice requirements set out in sections 26 and 27, which do not allow entry at any time and for any reason without notice. Because this clause is inconsistent with section 25, it is void under subsection 4 (1) of the Act.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4528,
+ "output_tokens": 323,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "vXD3auyaFL7Mw-UP1o7noAE",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:35 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"void\",\"section\":\"25\",\"quote\":\"A landlord may enter a rental unit only in accordance with section 26 or 27.\",\"reason\":\"Section 25 restricts a landlord's entry into a rental unit to the specific circumstances and notice requirements set out in sections 26 and 27, which do not allow entry at any time and for any reason without notice. Because this clause is inconsistent with section 25, it is void under subsection 4 (1) of the Act.\"}",
+       "thought_signature": "AY89a184RkDptADfEMWVyV7WFB4xbkg-If-e2jZf1BpkFYDhrB7FS0EsDRRsH4UwPfRDWEcwqb5ta1TM6wLsQW-dHaj797682XabG5M1VnUk_2EVdL9wqNSQtIuffbOaOUpg7XipObKKiX50wk9Yom4NRYraMoxF_l3oM-JPd4jQQ8uP4_zgmjeDsFOsU0nbkt35_zbe89-EXO4tWFrC4uO-CEjPC82d-XhA_RwvCEHp_OveHYeTwitRQSiY3J3VrJ75do74CUF8SkTU6gaAWv4NzY5DeoCSYdGpFlNUtGyDgMZUATHdSc53gRgIzu87nw0W_Jo6-UX4zZeF33c-ogM6zL8gkaBKkM8aOGv3WWCncvqxP67MoDjrUwAsgKb5E26_mUspRhjJ58QLiMtOxMpkkbd0uftK6TdMBsINlXU3ScezOTbLyR0j1x1umnKQVaXIgQoVipo6SkPEd8lyJ9d363__b8yfMn6e2AWhp12EBF5xApCxTjzzadcofatLfjZzJ5WAYhVKvy5Lz0gM_0R4hh1buwduQ6FTspvDgwq-haPOcDiiu2McfQctUQ1FCsIdVX83U1gQrfoe-aYavwocuq5j5TfVBRZMNQX7AJfix-Tf0ZBgYP9ndcsMzEw_sVtERdu_-mkx1E5fqXBh2dyK_pib07T_MnNCPHr5eSShKT3XK6nLqKWDptloR_71czOep1KXnwUjEz0rC1sJZo4l1TDqQTpgWrJg1n2v-u3CoNnxL2pbkPyHUKLQnKVQrsQp113n3XKDUqdBfLiNoZuuP1mG0A-O8PYwIQhS0rsd8qkQu5Ku-BGRW7nuGs2rXMwh0JH5sHGMKTInOZZABAMTrAHGv7fp4VFEOiK1k90-vNj2BEID7dStHBrzzLvXXqx3zTMb1WFh2Birj3SEGqyqJcOZ7X4QXLadaTsfGmN35B2bCVpMp9qIN1XkkL8VMjkWRCiPGqxr-VMk1qY5ggo21fsn_z4P89q7bnRZrYCwAV6iscJp_CTi9zJ64kZa5uYTK3KTDIUk4D7_vF2mg8D9g7fGOmFLWOr3Y87r8jz4JJGQU9rRUiUPhKDrN4gH-2FEzIrSQ_AILK7oMbmLFwjBWre0S5kDvdMrPkJRqIazx4cirSUyQzoypcSgeG6mxf8T-SBwMl2ZVU3WWc_TuTWyPe9ZisNR"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:09.331116Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "vXD3auyaFL7Mw-UP1o7noAE",
+  "usage_metadata": {
+   "candidates_token_count": 124,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 124
+    }
+   ],
+   "prompt_token_count": 4528,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4528
+    }
+   ],
+   "thoughts_token_count": 199,
+   "total_token_count": 4851,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "25",
+   "quote": "A landlord may enter a rental unit only in accordance with section 26 or 27.",
+   "reason": "Section 25 restricts a landlord's entry into a rental unit to the specific circumstances and notice requirements set out in sections 26 and 27, which do not allow entry at any time and for any reason without notice. Because this clause is inconsistent with section 25, it is void under subsection 4 (1) of the Act."
+  }
+ }
+}

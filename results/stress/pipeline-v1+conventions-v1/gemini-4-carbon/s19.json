@@ -1,0 +1,111 @@
+{
+ "clause_id": "s19",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "33c0b1adfeae2d3c1c4638d8291abfc23a877d99ed9b83fb8c739e6cddf6a7aa",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant has seen that the bathroom window does not close and agrees that the Landlord will not have to fix it.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:20:23.278541Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.\",\"reason\":\"Under section 20, the landlord remains responsible for maintaining the rental unit in a good state of repair even if the tenant knew about the disrepair beforehand. Because the clause attempts to waive this statutory obligation, it is inconsistent with the Act and therefore void under section 4(1).\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4532,
+ "output_tokens": 496,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "B3H3asi3FPzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:33 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.\",\"reason\":\"Under section 20, the landlord remains responsible for maintaining the rental unit in a good state of repair even if the tenant knew about the disrepair beforehand. Because the clause attempts to waive this statutory obligation, it is inconsistent with the Act and therefore void under section 4(1).\"}",
+       "thought_signature": "AY89a19ce-YMvwlzXskVf0LOUrw4nGesfjrjZEoIcyjya2uS6bus3Nveu7GcpyGoMFEKj20SeoBumaW4-xqD0wyiLdb64OKIjA-7mkgh9XwvrzhxvThJa22s3S8G_hBkKnWBXt1lS3GmVLVrKW4pYJ8gB78u2U1JQFylHasuKSrSkuaEl4euwu-CCrBoF2cK9DElKvpP7LncTkHtw0rsY0fuoUdXb1k0oGnmw4ZdYacBLmK7_NT4bAhVU50ooEX5oT1Z75uemoDwzBmNqRkaGYmLy-x-yB3y0lp6FfqvlYoUXgZzyMCGFMziJ2QtULGEh_uU6ecA_rPKokZpaa0zoHlWqIlN3QlpKflValYIjbnsrLDSUoXtJr1PBerZa-oqxP2pfbK5bSlQTgLRfRt-OMfsZh4dJVT_cwHGQtXokRT7AdjapLcGLo0O_qyWzqYsdt7zQzx_zyZ0RHWOKL3iH8P6lLrVNh5YbdRMOdQzrLcjlgHXErA1uLwxyDZLK5DS4Mfjcw-qM61_IhyV0CdqzBAeJqWIz0rpYW2UqbtZAwbyUfwgHuydUnOtbJ95Snzh_V8Bti1ai0VIoD8-G5KqyRdnWK4SxjKtCvx9sQeK3EfnUQRyLEstjihxs1yMq_kgHsFBeszgnhZt7IpLWwtWO__dLSfVGXLegeKEHnrl2YKeJLBZRiNVejwkgyCxR63R4hlZg-JtYfL-Db_s3OE1p_hxwHAKKvTTbO5sRwLvUKDp2jPPPShUKYUg-CMCQVWzm2WB_2uX7EKU6X8VGpxesRowvIaD4FDzq3PyZ639LqxZMiJQFo_aDpPmIC3t_cL5rvkWIYbyvOnlVBv06xz1-DkZmVq69yyzIzd4J1Ssxjh-zzjATfaia61oJZ1guIwe-wT0RPLWVY7gUhZMGhT_Vp5qqQ-4jMiHFkiSbYY3iOXXb-Zj_IRdt1JIvPL4qJxxyPxH8o_KEW1oS1w0uPrnCW5vaxqisVPXXZTLizW8HcQKeEXMrt7agRXMkyN7sXeDOWSCfJ4TH8VBC1lSjFmvqNYSBuWV91crdB4TEY_dqwG28-PVbzn762lc54AKTFHYH69Bz4ceOYKAiiEZJFqHQ4j4Fs8MbtGmnhZ0a29GbvFka5GLMZuyQ2Cv9VutKY1ks_Ho6-49nDKIOv68-6NrqKQlEwKma3fNn8uDJU2BZyguu3N9efj1YImIekn0ws1X_otnHKFcbA3UHKyPjzk6cwR4LuWDtArxd9kQ6BpXexLqAx2D2TV9Bf9PKLo5KQWRMwHiNp5ZExLHzF-5nUroq-oYGV0lAsbMmQUiN4C-DXgj3Owm7OFto3sNkhMxV1l-Rx_Hb7M57UAsCxPDzUGSzHx3Ld-wgm16xZZu5W6Vm3NffzV5ydokUFoktwE_gAgMxBvVUi0_fqLOQdV3tfQniPvzO6HDdHqXCSHcQFQMBmZk9yJGzApBCJTCeVkO10IcQTEd8ejX0O3tjqJNKgzz8Hmj3FYkonNz34t0mPs0lpBLYAqWM-Pgygdk51zn4SCxDWg5W74Pp_gZY9UD7WSixhVIEOk-ueVU71swfEbRX3iNaqku-heRaITfrsYtli2YPEtCeDWLTS1gtwDehmJgYJ7xGQYcZtPR6TDoDrVIelfN1JCgd0VQXELSgWxQbByMUkY-3y6RuwMNg7mjcwxx1A88dZCLq2BYMhQG-NIuZ8jHwxgCLAOUet4S5RTiz6r_NbWHV4N8KL_c-dUgFrTqTw4SC_7LD7J4g7X4eMGGJlMifMh9E92YN9louo0Mt8aD_zSv5xq7NgrXIr-iIzkHf4l-ENxLXwuJ5MU0t6pv9fYUSFgf8hR19kvsFlieKukKcNVrOX4wuWkysGVQ8hilLlIO6Tv5jsFQiCSFNHmFlk_PdXZMj2sXypcQ7z36ZWTyA-SJ36cFXavKd4wU2S0KRSHjS0s5umzlEuWRM_FB0Qz5wad6RaXevBXBwLKsjaSlwlj_x9JrX9PoZ3CXfN7sxyedzNcYjNY89Gu6g7dAlUDDl8ywo33o-rb4P6Ue8BuQfcfOK2dcVUnf0zqPUafjNxBc4xLE5A-i2KTFaHqrzW7tWnbAeVMKAro9iI4h8sErP3nXIzLMQzJP5yeowdifmYUzQS1rDi43b4lkxWNRhTeZulCxUX50kxLuJhwB48dDyotm-ZSXnkgWSJ60mCWSJAUz"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:20:23.334792Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "B3H3asi3FPzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 121,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 121
+    }
+   ],
+   "prompt_token_count": 4532,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4532
+    }
+   ],
+   "thoughts_token_count": 375,
+   "total_token_count": 5028,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "20",
+   "quote": "Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.",
+   "reason": "Under section 20, the landlord remains responsible for maintaining the rental unit in a good state of repair even if the tenant knew about the disrepair beforehand. Because the clause attempts to waive this statutory obligation, it is inconsistent with the Act and therefore void under section 4(1)."
+  }
+ }
+}

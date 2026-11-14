@@ -1,0 +1,67 @@
+{
+ "clause_id": "s16",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "0c3d5ee9483e05f1ecf008ac4a139ec956c855f3e8286838c1df84487372835a",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant breaks any term of this Agreement, the rent for the following three months becomes payable at once.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:15.300498Z",
+ "text": "The clause is **not enforceable**. It is a rent-acceleration term, and the RTA voids terms that displace the Act's tenancy rules.\n\nSection 3 provides that the Act prevails over conflicting terms in a tenancy agreement. Section 4 makes void any term that purports to waive or vary a right or obligation under the Act. This clause does that in two ways:\n\n- **It changes the tenant's payment obligation.** Under the Act, rent is due on the dates the tenancy agreement sets, and the landlord's remedy for unpaid rent is the statutory process, not a rule that future rent falls due upon any breach.\n- **It bypasses the statutory eviction process.** A landlord can end a tenancy for non-payment only by giving proper notice (e.g., under s. 59) and applying to the Landlord and Tenant Board, which controls whether and when a tenant must leave and can grant relief. Making three months' rent payable \"at once\" on any breach, whether or not it is serious or relates to rent, is an attempt to vary that scheme. Any amount actually owing is recoverable only through the Act's processes.\n\nThis analysis is from my general knowledge of the RTA, not a check against the current consolidated text. Confirm the wording of section 4 and the Board's approach before relying on it.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 231,
+ "output_tokens": 1589,
+ "raw": {
+  "id": "msg_011Cgycmmo8ooxG7yAoPvRpQ",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSuh0KEAgTGAI4AUIIdGhpbmtpbmcSDIV3Bv4KebbcASITCxoMdRvpN3Sc/PxaNCK9IjDPQWID8VAkCxA9cce0V5Fg9Qt6orcGKMgta4DGdzKsCQR3p/Sht14hHtAqs0cPBD8q1xzdCGGG1Nc+J2pbZuhiGBWhekNHrYkONgNnICS2ALDWDCdJcAbFRwrhhTwEOVo4FOTN5NcVi8FH1YUBkhZlZJW9S5a1+us+d+47uZfG1robKhXgn01v2F3Ie0AUikht5V/vKufl52Wd1odT7J4pa6qYEw5TNCZ7EwK1jBRELK7uQO4JT+qpcFEJ3dF3BNM+kWRB84vfE3bQ0DNLx11dBHvwlV2suJyGpeE+YuDnGw9AI19vkSz46n1Q98Q/oIbbqiZ5OO42ojFDsGs9yPFe4gpJ/mEVkIN4ErKZRw5Sy7CZteAqi8/DRshjrmo4k8gNt2obfG9nAQNvv8o84h7W+XzPrelZ4dI7UOyecDG4kLgiRis7OE2YdnheydWpTcEqwGmY9fz5Y5znxCCJbxMVCmjo6zpi1smjnVe8FPTE+FjQDXhi5vVYMDJZrFkCWxbp0GCAWpf0AmKINZYzyne//FS754SyvmTK4mDH9aA+iLMZE0jl+0iq+P3Ji5pAyQ4ecrqbugzB4jzuFPvbcfiC0Cz4ZDJBiTKFSgHBl8Afy07Ci0i0SmPtNKsoFnEcqxWJPy32JbOI+3QgnbMJPEbkv070zix9iwPU8HIx4RKeQoHQ3Bl6H8bk70b5iRTzJQy/lL0mxSSwM/mRcYqMnVGNEWsxJPBkmmvMQH9EI+qf+aqwFSIhjV4JvwMDVcQO0YI7AfI2StrEs9m+7LDlI06kwD5uHGKI0oqvZ33N707FG/ybU+dNzd/KnAtXO36rQ7f9rpmuR7UxawwFBznYC+zw2jRMFpJ8sYve7uoIMBjqWMEaV+mGPXbahmiwn+r3/dzRyxEQPWCczO3C2aFz5cdgcFpVjeN2TgOhxJvGjcRB3ZuvPqFA66rgwX1LyWBx7lIFOzprynZ7061QgU2/N2c4BJ+qFe126TA5LwhLxgGKAjuqEoz0sjDN5PdmImV+/WnoHgl9Kbhz5+fTYTKnbG7PX8C+346UJ5NL20wVAK3natjEm5fo8ErnLeHxan82zUyjttPiTLT5svM5YZ41mJt3wV+zU0H6lWWlrAsrvc7NQNDnundCvMOkZmfkbK3woECcqZ3bQoHzAKR/LEGf5CZAt4YS3FjqpQQnJEvtAxVcg80LqJTecBkBMC4uv3vKUdhtXi85/0v63+YrVc9+53b+zXJymSVOc3YivPJ++D52bjHEQjWBifuQXqv1F08UHlFhgAZ65cNZ+1yhNwCBRJiBXtv9Y2OrrFvNUMdSfNHyGoTigIFFSg0GIZhaJIkqMT42jL4xBAPkfo7buHRVTALg1Iyvkr3kRX9XeV41/p2viSs7FXP1EY9rhhd+Mot8T6uGnRmIajchs83stsImy3WUeHZNfS8oAeu/679Xo/wcpzOh8QgJW9zFe/L/E8DydMKu1DHASb6BJnqCEz/N0Mz0j7tcd5PdvkSKztNMU6+NMqrU15qFW8ibQYhz/Ly0BQvPQfDvPwDvfSVZ/+T8bqpbAbyRftz81+W5YoaGND2+aM+aEwSesgjBc+bi4WwNTqf1eYLiq4GbR+k8lWu0aj2q3jmgHj/tbjqEzHeLHKbOsnxCt70C6SzqM0JFc98NSmzuOcwhj/fyleVjD4ebVDSINNxlsSbv9HHE8SlYv0r0XsDEtxbR6dG+56g2E0KL1ypLeAEeF9+RM2AKiSnqrF6zcL1isvWWME4DjRg4iXwisjrqqML76DCVEuCQ/tXMPwpgciFMoXnj/sbHDws0xWCfHvzV08aAn5p1x6NdiZkkl8WV3ergTa/nduUolNIja9T7MydrBIeYUiO3dtm8yAJaP/0g9MzMKGvkLOcRJVM+8rluG6FF6Ioiqt33FsaEtsSGPdiLUwMD3JHMi+l1yX6BoJADgwwggb61L3I88jGnuOeT4L/3Qg5gCXWRJa1gT8/2vptkB/L18CyvjChACU+xv9J5CWQp4Y7HPSNjYuw4dpYlTo/yCskJXfaET5Owa0LS86y5rBECQgirn/ItjwYkpDtEC1Nhienu1bkz/WLAbe/RGRVmmrzweAcLkIw5QtyAnI6HFcG4D0JGae77KkyU6/3tyrSu5fPLeHFmNW7YOU/o6wlqhjXhpnEM7Wsfqo5VUZ1dcCDf+ry5yYKROn24iLPxEI4tm4Q2k6rV7I+GZ7BCnGd95g8HwddcY55qoa55BVzHWB+xiRN5Qp6MPnFBRYtPEA940J/sWwxROCl+splc3N2O1/mgzwlitkLUmAFALPRykRS/8tzg7zlJio3YK16YLccwyAbBrzvtRSrO0qLSgEZNFdoVYz29YYmpBbHhqHvWVc4hTi7b4jpcjXaDTW4Vsgl54LryjXSbrftdfB4f0VNg57Jy9nr+sBTZIbhiEPQaOROXk/UEI+WFsgp4SXbJztXSw9x41wjUffPJGq/GATP/aMNc4xdkh9QTMp0R7eVWUDSbTtdyoGH5m5b2UHVH9xDPJ2hdOpTVjG5OF+Y0yGsT4aMMu/TjukLOYygTFfGx2qON+aMV53+uBsFBUDlh89mU6isqG85L05k7oPsH5akLN+KQZgkXwxi87AYTD896jALyaeWLTGVXF06CeIwwarLx1D0BBDgfmNT3lkX+09Wp+Zu0xEnQxUu1UjF4ooxY+2x1F8p+ncu2/7WYohlqTYhAo69+Yj7gAsWRpBoo/gbxfkkM15BsgyGR+1RGqvhki8YOOlySH0AkchfvMZsstVdIaZzO4GaOLfX7JA0X9jMqXoT9hioFeD8LxHu8YCy2f33bw1gVFJKsc/tmAAA+a7+u3GAJ4aJu2kiOY4q87ooq6fUFAeRs0iIBj2CqSIKxcGl92o3QgucAxGdDQr7TR9rWakxbVdr4lfXmBW4oYX24Cbk18dSyVgOF3BkfrNPKW898cXuk3zrIQXOcLVbB7SiyxueYKt8pkacXWkNDW+QLeHDpUdO6iRvk9CSroy5wjgl6TDNbx5kSJYNBvlz9c5iqdIb/nkEw6vm1OwsW8toQBNXvSv0no3lI5kxvuyTI3XXWiZTih8TATI4zAEJrVrLvQERYADL9YWB8XV1FXBwmSZZvmVjjto8htlBkv8/TZrmZ7yGJY4StG6WqFEFbi+fxsDwojcf0+JS4B5bOKRuc5AgbWpwiLbrRkY3hQj/aKV2iI1aaDhDNVRvuv4nCu54AQTyZOGuvvqJmula4kUTryn0FMkmCdumxW22TSd8ZXsLgUTICDHWSj+MPfZyM4Y2EHhhREzbOTXJPW+KpNi3k6DmIBYfjGTGVQ2o6k+Xf524aexMeSBSDc2ax0lebfoQyFxG6HWlW/w03QTdqEdPcE25tFO1ea6H0aCNBL4X6pppTjxzR7NK0/68hSrAPz8s7NrLelDUTyimYs+1o04JS1inPGbCcCUa4ts5E/AXXtJUd/uz2FJTLVbtYje+kPowSZWug52Mk7Gc+/sxiyqUOgWAgsAyI4mi6UB8XiU21hyetFiBRtox4mt4Z12dK6QKIXUFpy7WM9RJnqdsLmXDG7/1I4tuksTvrw06N978sAqinGf5MGwnjFFq8Edq2ahWCnFzKUc48JJUF3+3C72duhTvE0LdL8sOEa9mFLv1SxAvWUTaoLp3ZDk2ee6Oe1NyDODdgQ20Kol+PcCG0gPUk7ZIrDWbeo31DC7Prjh+dMZNN2jqDkpobPGX6U0ZtsPFTeIVPmRICrQ98761DiNCz9wRnvW7HI3iPxxJgTqJT9LTagd9mwW8CHlJSXEZ8LYC8u1EYzBqtYlM7JAubaTtNRpaR6uxOc4RjIesZXMaQG4jKBzsLiD1gVQbGStYZxub6h1Wlrfbcmtkr8tFg1lie9GZkoLdX2c9yFNVvongW1lC+D5IzDFFuNt0ZCRk0oCL2zO/+YZTsEgx7SY8nuv+LO8M4qPvvFUt1AvfhdZzIqg+USiT3VWtgy99nKw+ei6c5fDeuLAjLKZGtWk7BL8dvIyTPn3J0mAy5MJI2tbVnAg8kId7ajwugqOX7mT8CI4uVrDXMvXsj2Z28a7y6iF/lX5tTzHtNbIY0/O2bUsxXxzZ2NF7x8zDbQX4Jg6xrzsLKCM4WpupWdo12Fwx7m1jaaSs2Ms+MpmC7ansxfHL9a0rdQ8W06BmKRaHFQcStezIKSc7mIkmdjXbMop1R6m/wPi40AR8tBY7HjStZyG0HLjJkV8RW8UplcTma9H+1Pj0zSGhhlPn+gLQCuQ+Fwno6Jgb9MduXPT3Idq3DTjRsJftAEhthwSzYRGvKpcoQcqRL066Gq2tYGDs6ug2kmVBgWs9GPbNsVQZErd+6sGeVnz440WlfACEop4YvQwAodLyiQjNY9wfxIjU/RwfaBknHJUGli3p9vQmqjjZFiWx+NSq636rZ0L6/QT9R0WQXr8+kVq2F6tzDStYyjNQKYaF1kc0MpG+6dXk7EkVc+rtdhisKYRw1xc4H9CfRk+0UaSRdNJr0Y76WaptY8OGIVLst7M96LSXKFIQMARfkGJSoe6+eJ5J1AzouT3WcWZOAefMwGtb29fmcQw21H78DPXgfQjlZZCRnPzog8kOE5rDI/kXK7+JHomOJLiBEmHlHLDtZtbRo/AKdzLJyn235WlcRC8iwdp3BrLxEwi0rUh+cWbtDLwKR8RNZTqtQiEBZ4mEjd0HSTAMxgK6v1J4LpybiGthlNE2uho3OroMfDLNtGwh+uhQ1s9EfJqIIHJkhtMwFrHLHCqIKaQorgxsQJuWbhzOV0qbYD7XuhkSbWSMYPjdvvS+71ZKsyKjDZHqr5RG0wejljJ0yM3ONHcJBIDG/SP56C/cM/jN5vnZLQTC+pn8HsMExU0bqWV8HNE1EAVsYU+mmoNtKy/XinuVsc98QWzlIrhFZoaID2Etktumjb+Xl3m/pk0oelSlh3rZFvKUN5hj3mhgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable**. It is a rent-acceleration term, and the RTA voids terms that displace the Act's tenancy rules.\n\nSection 3 provides that the Act prevails over conflicting terms in a tenancy agreement. Section 4 makes void any term that purports to waive or vary a right or obligation under the Act. This clause does that in two ways:\n\n- **It changes the tenant's payment obligation.** Under the Act, rent is due on the dates the tenancy agreement sets, and the landlord's remedy for unpaid rent is the statutory process, not a rule that future rent falls due upon any breach.\n- **It bypasses the statutory eviction process.** A landlord can end a tenancy for non-payment only by giving proper notice (e.g., under s. 59) and applying to the Landlord and Tenant Board, which controls whether and when a tenant must leave and can grant relief. Making three months' rent payable \"at once\" on any breach, whether or not it is serious or relates to rent, is an attempt to vary that scheme. Any amount actually owing is recoverable only through the Act's processes.\n\nThis analysis is from my general knowledge of the RTA, not a check against the current consolidated text. Confirm the wording of section 4 and the Board's approach before relying on it.\n\nVerdict: not enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 231,
+   "output_tokens": 1589,
+   "output_tokens_details": {
+    "thinking_tokens": 1153
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

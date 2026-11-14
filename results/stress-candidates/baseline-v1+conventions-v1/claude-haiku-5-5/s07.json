@@ -1,0 +1,67 @@
+{
+ "clause_id": "s07",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "a9af30102a51bc916ed99b462579d1f2cb19cc5e618b9dff9cfb27341dcda6b3",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant shall pay the rent each month by Interac e-Transfer sent to the Landlord's email address.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:04.283623Z",
+ "text": "**Short answer:** The clause is very likely enforceable. The Residential Tenancies Act, 2006 (RTA) does not prohibit a landlord from specifying how rent is paid, so an Interac e-Transfer requirement is an ordinary payment term.\n\n**Analysis:**\n\n- **The Act governs the tenancy.** Under the stated facts, the RTA applies to this ordinary residential tenancy and no exemption or excluded category is in play.\n- **Parties cannot contract out of the Act.** Section 4 provides that a tenant cannot waive or agree to waive a right under the Act, and any such provision is void. The clause does not ask the tenant to give up any statutory right. It only says how rent is to be paid, so section 4 does not void it.\n- **The Act does not regulate payment method.** Nothing in the RTA that I can identify limits a landlord to particular payment methods, so the clause is not prohibited.\n\n**Caveats:**\n\n- Enforceability would be affected if the clause also imposed a fee on the tenant for using e-Transfer. Charges of that kind are restricted by the Act, so a fee would need separate analysis.\n- The clause also does not stop the tenant from paying by another reasonable method if the landlord accepts it, and a landlord's refusal to accept rent in other forms could raise separate issues.\n- I cannot check the statute text from here, so verify the section number and wording against e-Laws (ontario.ca/laws) before relying on this.\n\nVerdict: enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 233,
+ "output_tokens": 1908,
+ "raw": {
+  "id": "msg_011CgyckyR7Ywd7UgTwduC43",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Short answer:** The clause is very likely enforceable. The Residential Tenancies Act, 2006 (RTA) does not prohibit a landlord from specifying how rent is paid, so an Interac e-Transfer requirement is an ordinary payment term.\n\n**Analysis:**\n\n- **The Act governs the tenancy.** Under the stated facts, the RTA applies to this ordinary residential tenancy and no exemption or excluded category is in play.\n- **Parties cannot contract out of the Act.** Section 4 provides that a tenant cannot waive or agree to waive a right under the Act, and any such provision is void. The clause does not ask the tenant to give up any statutory right. It only says how rent is to be paid, so section 4 does not void it.\n- **The Act does not regulate payment method.** Nothing in the RTA that I can identify limits a landlord to particular payment methods, so the clause is not prohibited.\n\n**Caveats:**\n\n- Enforceability would be affected if the clause also imposed a fee on the tenant for using e-Transfer. Charges of that kind are restricted by the Act, so a fee would need separate analysis.\n- The clause also does not stop the tenant from paying by another reasonable method if the landlord accepts it, and a landlord's refusal to accept rent in other forms could raise separate issues.\n- I cannot check the statute text from here, so verify the section number and wording against e-Laws (ontario.ca/laws) before relying on this.\n\nVerdict: enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 233,
+   "output_tokens": 1908,
+   "output_tokens_details": {
+    "thinking_tokens": 1411
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

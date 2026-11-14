@@ -1,0 +1,67 @@
+{
+ "clause_id": "s05",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1bb09cf0e5b00154cc8e928487d3fdb443a23ea4d3e64dbf3520da035c894d62",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Once the Landlord and the Tenant have agreed that the tenancy will end, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, after informing the Tenant, or making a reasonable effort to inform the Tenant, before each visit.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:13.240959Z",
+ "text": "The clause is enforceable. It restates the entry right that section 26 of the *Residential Tenancies Act, 2006* (Ontario) gives landlords. Section 26 allows a landlord to enter a rental unit without written notice, between 8 a.m. and 8 p.m., to show it to prospective tenants once the tenancy has been agreed to end, provided the landlord has informed the tenant, or made a reasonable effort to inform them, before each visit. The clause tracks those conditions, so it does not reduce any right the tenant has under the Act.\n\nSection 3 would void any term that gave the landlord less protection for the tenant than the Act provides, but this clause grants nothing beyond what section 26 already permits. Since the clause adds no entry right beyond the statutory one, it stands.\n\nThis is a general statutory reading, not legal advice. Because the section 26 wording is paraphrased from memory, check the current text on e-Laws (ontario.ca/laws) before relying on it.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "end_turn",
+ "input_tokens": 293,
+ "output_tokens": 2237,
+ "raw": {
+  "id": "msg_011Ch1HvMjb1XErdUivaBxR8",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. It restates the entry right that section 26 of the *Residential Tenancies Act, 2006* (Ontario) gives landlords. Section 26 allows a landlord to enter a rental unit without written notice, between 8 a.m. and 8 p.m., to show it to prospective tenants once the tenancy has been agreed to end, provided the landlord has informed the tenant, or made a reasonable effort to inform them, before each visit. The clause tracks those conditions, so it does not reduce any right the tenant has under the Act.\n\nSection 3 would void any term that gave the landlord less protection for the tenant than the Act provides, but this clause grants nothing beyond what section 26 already permits. Since the clause adds no entry right beyond the statutory one, it stands.\n\nThis is a general statutory reading, not legal advice. Because the section 26 wording is paraphrased from memory, check the current text on e-Laws (ontario.ca/laws) before relying on it.\n\nVerdict: enforceable\nSection: 26",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 293,
+   "output_tokens": 2237,
+   "output_tokens_details": {
+    "thinking_tokens": 1901
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

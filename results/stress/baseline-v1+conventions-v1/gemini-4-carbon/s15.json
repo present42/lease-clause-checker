@@ -1,0 +1,75 @@
+{
+ "clause_id": "s15",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "e5f15b15438f03a87db0d91da95785ec9fcfc1c006441f4ebd3668d3102a2f0f",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant may keep fish in an aquarium, but no other animals.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:15:17.578274Z",
+ "text": "No, this clause is not enforceable. Under section 14 of the *Residential Tenancies Act, 2006*, any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void. This rule applies equally to partial \"no-pet\" clauses that permit one type of animal (such as fish) while prohibiting all others.\n\nVerdict: not enforceable\nSection: 14",
+ "finish_reason": "STOP",
+ "input_tokens": 175,
+ "output_tokens": 783,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "1W_3ao7yJtW9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:30 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. Under section 14 of the *Residential Tenancies Act, 2006*, any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void. This rule applies equally to partial \"no-pet\" clauses that permit one type of animal (such as fish) while prohibiting all others.\n\nVerdict: not enforceable\nSection: 14",
+       "thought_signature": "AY89a19apT6mEUJMCO9j5Wm8PqGmlu1eQEi835cG1dd_GaT-TZoMxzT5NlXkEZHNr_hlUEfyPJyrQ1xpArfNyNgx8VMQw2wEfAqRqiox-097R-8_mg1Yqao_A3nLTWrY3a2b-wjx261sao7_diwiFN3cUKf_uJAnVOMmxJAUd-pDpquYT1waOXXSoy056QwmKaNx8P4Nd_woUamZoNJkgANxT5g3cEgdh0hA3F6fFIGuf0VC0IkA2VNsgmNytxFiAOcSq4K3kX31rfDXGalO2pFpFMTR3Hbog3_8KjHpbIYC03Iw-e_xg72ZTma_wfuBdrbjAPYESl6hLaWD4JpR9GMbT8IXwDjcrhvPO7Q19p31Wt02Qzj59XbVYWg3zZmqr1hMnQ47iSEVHxvGOjPhLiLP5Birj02iRajd23l-ETXG9RBI-8us4RH90RZhIZ-PrNC_akp90cTU0aMXmN7SeRXX5X5OeV13_WNDtx7QZcuC4f8dm5QAOaU4LosMDI29gcc0UAI_kkPp0qBwzLhuEkCFW0wGGDCXNONNchIkCsBiz0UWl39hT8QLjUs_JgEMWsn5SMvyle0wbdz8kbkPNhqPHxOe44976kPFB6P5DbUPWn-jASAresjV5asKmuRoTjccte0ke-nGo_jo6vfc4RFsM2JxzgFajsSX5sOIK162kHQ6P9b8jL5-cjzpsiVpGqvjnB3HKvdw8CRmPGGt3sAtZzuR4FAbns_-fB2640q0OhoS64PPH5yngeJA8rL-vxATBrwB4Wgz2epXFvSdz4ZRsCppmLDr6PAhIkGrI8-LvepbDCQrmhWtnK27zFUwWHQLSnM68PjpcG1ipOzXzMDGIrqCjALyYVZ2rJW64XX-tAQOSaDY0WPmX0kz5boHOMkAIU_0mKnfRbhtOdajkTd60a5Ujm5R6j6lipHA0PQpuzXCQeOXsZCz3f-IJj5FDaZSMwQJPE_k1j7Jlplv2YaKmw73oRRf1UIhkjtB2s7C0dL-RM1d1WcKnFnkIG2wbeGcZep-7nxxF4STJnqUtd3LkoIpQ8L24g0ikfbmNwTlPfy9D_9Kr1rsBLN6t3BJvknNv1AfqCmsw4YQpvyFVK8-iGlitsHkl80PZYs-gyzzfYP75U-Qyz-FUwl4B9KC9jESkGO_D1eHRcuWpmSR6NqyJFDpA5r13_-V6OmS8AMrvBMDsgNL8rnwVthcqZVVnakJlC2GpZaknzy1PJYR4QFmofFXKgCaNUWO7X2Q_AwtJmCbaqoZh7dmnT8pRwIeRprD8ykMSALz5WKdg7uDM4dk9E9Xqag2pGoUd20QDV7OVhiIvrSvtHqDBEPQoifZDs92b43iO5dptHwDXwEVhFLcs5xqlIY9vbN0OSK6l0YgD76qzJi7D9_NXH1DZmWpuqn9NeVZHvE4H3W4rAZzJKQC8uqfYH5xrMGOCknsZaeHeRW5J1tEOYUcgHzIGxhbnw5PboQjo6bhp_-8fy1j-Txqu3McaAGEDtkDws0gUAERY0RZ4jyiaQmxLER_kpsoNvL4sh-jqLhdpKpBV5gmj6zH3cd6AUQBDrOlpo_BbNN0VeusvCZ2wMxyCfbw_E8v8SRUkp722bfcfgZ2MBG-FiO8bKtDiZrrs1rQaVUquVznfkVE9Xqe8GtoKUjuboSn9G1MjxO2wh2g3p_aMkl9aH5TnmDuqSP5x0lDVDlk3SxZsyv1ZJq12U0ozQ918QLQUGiycvYZH-kLhE78BBie4J5P9vDSeHLAFhwu52767iktB75KxQiLFenzb_efZrBfjOBBlt6u6SgVgafq70YkXlayjIwomAefv6POPEKFrf8tw7vCC4283B7-GRu4yF2yoc6cWJNJVFxTAYCFxWMcnrQN2CaI5ndl3YcWgHTU1XYtpAl5jUAQ6gONoHXcxgMNXUZzVPGXFOT8_KKGJ6Sh4AAgKgMaq5Gm6A29a0Sh39Xv7XYWI51ECrIydYxsafwDnurqu5AtUkBJgs_03yod_hRqCiTcPtcpyUj_D2rnSb5IzFlr-dEZKFNLIt9nXaBnyKkTWowJgFMEE8e0sLWvjy6vQyuLW4PCijhkgylvWllJBSxM5on131kEn9RQvCtRU8jowqK6YbyspTeqA7DfyDNfy5UOdPi7t3jGG3XzFG9KNsSeYxvNnz0rNm33OO_Kq03z2zbq02oJH5xKAmuc8taTFaf0i1Tu7ezPQuyOXZTd_0RWsxaFaq2zFkia01ztmip0DksOybFU1Pj41FiM_3N6rjX3mCv6V6DLN4u4IJ6yjSb0pVm1p0bLhm-7Ho7z1F7IXSYrmwd6a6XFOPPGVQ-B-KJnhOPY5flSi3yyADwIIPIKkD_16Z33YBA2-xucMbwnHmnzvG4db2Y0V1MS2qhmQeH2bGVcLAcoA1tipnufl3Y5DIdetY05KsounJSvfZEr7ybfbq9La78YqWabXrt3f0ZlaOngaLhjhU04Lbc7aRMEJT-VqF8gyajXVXXoPTDuwP9tpxI4gSfz2_xsTvg1-BpxoFjQyd1CM0Eqz3iFW_98b-rOGEJ96icWmZPCy_aLcydwgAuNneKX4ocYYuiaGevh4fxBHh5_wQZFckNRVR2fCuAlxHYu4PPrT6TYcpWC4YHnjb1MfRubhCOXoEa-RfTBU4dpX1IFuSp61li_Dd3t2zCOJ3YMOe6E_1vUxBGORBk1B5kFRMLtiWDkAlUi9DuksuqaIE_IBSZGpnSilX4cD1UvUpDsnnE3fZ_QWmkNM7qxH_apOpyK65ipF-VHlELW5W2MACUWKl9m9O9Tk1Jouqxo5f7P1i367zA4irI4fz-8Q2iMFutI8qBaU1FXpVc7tc78BbVGCQ2611k58XtbOMpRPCjg920bED4Ogjo325LDpU5mIVi0a5D7QRxQQUvED6BxkyI5hqbGRTOyGPGcG_Ub54FWEYP097hIlgZY5mspe5Q0PNAlCurfcZVGlHjNij0l1zr0amECv4gMkGDWi4U8WUcQ9f0oz9YucZrZg9CKcHN646IvNj9fuERz98SAgopJJz7fSYZYHQ4fT5jdZnQByLd4WwOxmFEAMDPbwxyoZqlSOltBHyIsRvyM2o6KIyFsbHmUemF5osRdeg5P2ipVY5f9hPU-go4Ak3IaVE5G4MHbZMleQxi6jnlDDGSG9FRMyFnPdqZhVUf80u1jcXFcwNjod6cm9ynMZUCGh5FhJKBs9NGI42m6Ngr2SbKwOFZq20Dw6MoC5uqsWNcO4ensRYX07pSUZ3ywH5KRmnXHMZII12GngNTKqL9mdT3Jx_Cz7PwIldqa2wXbOnETRjBE2mbKQ5PQZBkUjw5pQotSR_iLy7VNMK0BLf8NLH6syFlg7dFarClnhv9i2tjAr7nbi3gjrTd2pIgvlEGdEbdDQW0uFD8wEqOMIH8N_JJ0r7ZCsggh7RgxsLJdGFdcRD94vmdwsJP-DRXOpCgkendycl4y1qBZtyzdZdVkGW_oVX0EIaBGdIsGETKuj1GBsKuJiRqZ5v0IX9jBEXxx4N0ozduPxu8BaUmxYyIEXYu29Gto0LWkOAfWvrydXFYFcTDOBLNi1zr7_BlrXMpFnOxChhCzUuuz1FxpfunOMTBwnh41QP8bpSmcfFb-w50ao8CPIn3g586rYw1kpn9UERDRTCKEXn5zUfgu_KoKSn3TfTXx4dOy1YLiBfdPHlWHZ8T4k8Cs96Yi4G12bRK4X-F9g6g1Zmwwqxkqki917A49SqUj3v2esqtIQS6a36pJx_WS1kEVSBdmP5D8uFh7WWjYeHymS-xbxHizcVBqYd2Kec3hShchAverHi9ZrRCKXKGX5g=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:15:17.637198Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "1W_3ao7yJtW9w-UPidKMiQw",
+  "usage_metadata": {
+   "candidates_token_count": 92,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 92
+    }
+   ],
+   "prompt_token_count": 175,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 175
+    }
+   ],
+   "thoughts_token_count": 691,
+   "total_token_count": 958,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "clause_id": "c28",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "c0a6333a24a6d2653ab18192c65ecbab9a5d042a05c8f2725ca82f3b3e017650",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent by up to the guideline amount once in any 12-month period by giving the Tenant 30 days' written notice.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:43.262768Z",
+ "text": "**No. The clause is not enforceable as written, because it allows only 30 days' notice of a rent increase.**\n\n**The notice period is the defect.** Section 116(1) of the Residential Tenancies Act, 2006 requires a landlord to give the tenant **at least 90 days' written notice** of a rent increase. Section 116(3) requires the notice to be in the approved form, which is LTB Form N1. Section 116(4) states that an increase made without proper notice is **void**. A clause permitting an increase on 30 days' notice, in any written form, falls short of that minimum.\n\n**The tenant cannot agree to less.** Under section 3(1), the Act applies despite any agreement to the contrary. Under section 4, a provision in a tenancy agreement that is inconsistent with the Act is void. Signing the lease therefore does not waive the 90-day requirement.\n\n**The other parts of the clause are lawful:**\n- **Once in any 12-month period** matches section 119. No increase is allowed within 12 months of the tenancy starting or of the last increase.\n- **Up to the guideline amount** matches section 120. Because the unit has no exemption under section 6.1, the annual guideline cap applies.\n\nSo if the landlord gives 90 days' notice in the approved form, a guideline increase once every 12 months is lawful, because the Act itself allows it. The 30-day mechanism in the clause cannot be enforced. A tenant who received only 30 days' notice would not owe the increased rent, since section 116(4) makes such an increase void.\n\nVerdict: not enforceable\nSection: 116",
+ "finish_reason": "end_turn",
+ "input_tokens": 242,
+ "output_tokens": 819,
+ "raw": {
+  "id": "msg_011CgwREPu79oV1kxQKSFLh9",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS+AoKEAgTGAI4AUIIdGhpbmtpbmcSDO7fdX1J+rG4aGuQpBoM5E03bMiF3Hn+H+oVIjC+nT1/gGn/f/zV8zxIWRCcXtaHLLTZiiZf8Lop4fqxKGKaA4eJOr8qcGWM0pWhzW8qlQp6VR8H1Eti0xxKd9axajY59qNFGsg9uFjtcPN6pQ8SIGqvqBsnJWuzZY9XuQKpDIXYtfxBAhiJ9qhB//m113zL69yFMzANh4vvSlltHu9ozIlyIa2vYc4EKzKbRCHQE6nBB2SHlyMhV9cxlhJjipguIMQoF0rzXttQt+ZEYYw2QPul35fyMBk7bVc37nqS9ohP1PpAd/0Dmv3dKMgGejTaXULZeldidiblS3r9978ZHuu+G7hjcjBmR1UUK7CgvwjI2Rj1fYlDvvZgA1DiQ+WD+GracFwp79nGRxm4SyvMvFoqz1PQsWjuXZk+o6XYb65DH5TXF9nDltcTAPKrSH7VnUelPUMMFHHb32gHj8f2PDmZ0eAUUbjiZ7Oq1Eqag993i6AoS7WfQFPiWZgXJ9BS1Z+dYHc4UOyus6gE2TCbTvwI8JPlTaPQkHI00ZFQMKrZ7wY0zp+GlsMSXc2K0StWraa6DyyzjaYP0z+fr1pac8RCRzGhsmuxLoXWNqiuuFX6wBWv4KmSzys0H3M1PDmloJ1HJQYV4YjtkJIH28/61VErhw5bYPTl1+Uk9EXGiVrizXA6L1WJh3o16bzoDUSBwL9t6gx7Ebx2H2M1qjkH5dofYhtLP7/0HhQKnC5wfUa3jYBuQ8P+6VvZ66ehP2MsRKDyau4qWAHODqvuMJchWheMCbMRYGjC1cY8ndF+cwCBO6AhxzaXuq5RhmjMLL3tErpp6d2D8mqMYmRW6ITmuOlJNcF7pbOpQXx5GdHqLJoCih8pbHFl/a+M0fkC6sZnpLbj/YgSOIvA2jBPLfP1eUgIStVm8qDChmTFIyHpZxEjFTD8TlQHt5cl9wUW5MFylW/qRvLJAGMxVUPqU7j6s4dcXvpXnK2okA1bwlq4zp65JMrPTQpEwwP/Rgfv8D/Bo6NK867Vcf7U28V2nzko0QgWhp645+jVduwjk1f9YvPSFAzOmQsXEfLwrHW+c3UF2VImlhOK6TH74fU2PUJFgC9z4Kya7Q3QexfxiKZvqBBNQDD3rSdl1ewiAewEp2r4RW3kQ6JiCdzoG2sQ27j2qJLxSJYZTXqRNMasj+3wNqbJLR2QY6htLlvrdqqOwU7AaWgwwoig9ySxnVJtER47/9CsdQMA9jfdmJklvKuF7cNu7/fnZ9qfxJYcHTw/zqbZLaQg86YHAgc7WZoCC+4FTpKLuQ5poBV5lMQHRA4Yziwln45AXqEaONU3ZY7JmDNPgftq4FDRnAuOqd0KYmHNiSUYSx16DdWtmD/GWrVkZY44xsfAmOc4pXzGufxkySWI7OHZyievQQThto94xq3P2GpmG6LTl4HKDAOLTtP9c71rPu5j1463ubznOUR39N8opK2DfagukL4zilhnyYILcLfG5OiCcw+5tnGvjQvdTHAMCKxCDVVNH4S4naMcXx0reCk9y77TBXurl6n6JhvL8AuEwSfJWL8XgDqEA2N6erXE5GgI9GUP6xtsQUVlYgpdQgl2I7Vk3ZrKqK0Q986dOjwI/v6fHvMcpQ8yy5Tv/hf3CQYjwdIMIvbA04bTk/DsoJDOhndbYF3CvbjvEfOCe4UJ8u1oZGfKcccVDs0NxrB/Dlvboo+tr4MoqbP7GCsH/J572IFDpjbsLW/6C8VTRfQj0vc1dOWpZuKr7BRmXdgGO0OhfY3a7o0QBdEOx0LHHLagtj9YubD/gKN99kHrmhNvRohJqR4PEBfcueoA9xkMthTihRgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**No. The clause is not enforceable as written, because it allows only 30 days' notice of a rent increase.**\n\n**The notice period is the defect.** Section 116(1) of the Residential Tenancies Act, 2006 requires a landlord to give the tenant **at least 90 days' written notice** of a rent increase. Section 116(3) requires the notice to be in the approved form, which is LTB Form N1. Section 116(4) states that an increase made without proper notice is **void**. A clause permitting an increase on 30 days' notice, in any written form, falls short of that minimum.\n\n**The tenant cannot agree to less.** Under section 3(1), the Act applies despite any agreement to the contrary. Under section 4, a provision in a tenancy agreement that is inconsistent with the Act is void. Signing the lease therefore does not waive the 90-day requirement.\n\n**The other parts of the clause are lawful:**\n- **Once in any 12-month period** matches section 119. No increase is allowed within 12 months of the tenancy starting or of the last increase.\n- **Up to the guideline amount** matches section 120. Because the unit has no exemption under section 6.1, the annual guideline cap applies.\n\nSo if the landlord gives 90 days' notice in the approved form, a guideline increase once every 12 months is lawful, because the Act itself allows it. The 30-day mechanism in the clause cannot be enforced. A tenant who received only 30 days' notice would not owe the increased rent, since section 116(4) makes such an increase void.\n\nVerdict: not enforceable\nSection: 116",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 242,
+   "output_tokens": 819,
+   "output_tokens_details": {
+    "thinking_tokens": 301
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

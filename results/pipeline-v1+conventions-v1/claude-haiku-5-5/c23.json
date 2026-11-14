@@ -1,0 +1,99 @@
+{
+ "clause_id": "c23",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "c6a3646850ff727377eaa41789f73dd458533688fb92fc601fa741c5c7a1fdf9",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nAt the end of the tenancy, the Landlord will apply the rent deposit to any unpaid utility bills and to the cost of cleaning the unit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:27.438810Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"A landlord shall apply a rent deposit that a tenant has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates.\",\"reason\":\"Section 106(10) requires the landlord to apply the rent deposit only to rent for the last rent period, so applying it to unpaid utility bills and cleaning costs is inconsistent with the Act and void under section 4(1). Section 105(1) also limits the landlord to collecting only a rent deposit, which is not a separate security for those costs.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6441,
+ "output_tokens": 666,
+ "raw": {
+  "id": "msg_011CgyJ74cVeVfG5kJ4Yx7Jw",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"A landlord shall apply a rent deposit that a tenant has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates.\",\"reason\":\"Section 106(10) requires the landlord to apply the rent deposit only to rent for the last rent period, so applying it to unpaid utility bills and cleaning costs is inconsistent with the Act and void under section 4(1). Section 105(1) also limits the landlord to collecting only a rent deposit, which is not a separate security for those costs.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6441,
+   "output_tokens": 666,
+   "output_tokens_details": {
+    "thinking_tokens": 473
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

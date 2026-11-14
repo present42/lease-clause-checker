@@ -1,0 +1,111 @@
+{
+ "clause_id": "c04",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "b97e8785d0729931790508419f0224e76ccad2deedd6c8f31bd8bd76bd46f10e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant shall not allow any animal kept in the unit to damage the unit or to disturb other residents.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:16:00.193454Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"14\",\n  \"quote\": \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\n  \"reason\": \"Section 14 only invalidates provisions that prohibit the presence of animals in or about the residential complex. It does not prohibit clauses that require a tenant to prevent kept animals from causing damage or disturbing other residents.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4406,
+ "output_tokens": 2335,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "AHD3apvwKvmew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:16:17 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"14\",\n  \"quote\": \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\n  \"reason\": \"Section 14 only invalidates provisions that prohibit the presence of animals in or about the residential complex. It does not prohibit clauses that require a tenant to prevent kept animals from causing damage or disturbing other residents.\"\n}",
+       "thought_signature": "AY89a191YAwwjPtyRrWzEMtvRV9mmKsoEnI3RMhR-vBfwW65of3_x4jjej8uUjkc5XrlEWR5JMb9H9zwcnEMLRoXFUDxwonZn2qPiNmxc_W_jsYHw_xDFpAWXNBdQ2tHocJETmpyoyUxa2TvfQfjVSSECe0Z5G6KtRP-TfGY3GDCENuW0xzuWB-bQGomooZeVTQAAeI45Cl7J05ZsEeiaRe1qL-earD5RkSRVUD8pfln1fMoY0c2KKEttV2sHP3-_R8nyoj9EwGwda43WNIRK3OxqyJPVADbvFdYtlu007l8fSQIivBDKw4JTtoU2G_T4Vroi6VbtclWG7QSTbNQ7G6SemZcE_sSOWqr8nLP4gsxiecN4egnCqm9OE---P0i5iTTfoL6LR0qBe3rTIpo-FFpeHU-XIjmEUJT04XxnrV_FgcTpYZpyYizvZeyHZasfrogS44-B0FkDd_OAVh7Xu89ukTOGY_bRR6ii4Z1cqg68M7nY9pwCVeCFGnhcr4mK-FXz0QwaV34xiYqG3Q7vv9KnCaEOcaHiz8eULoCQnimfQIGlvwjndZ2m7HefSF8GK_3ynzBBcmf5B3vRpIpv23VQsjlhPhlx4cP9VY_5SGlN_wET9Wtn8_PrHnbeboKwOAaZta_FlXRE3APSnCAofKCbw0FR65WIbH1IlV1H9kl3mW9FmfoD6FqGlQMkAHxTxU5rQG4cPcZHj3Ir1AnrwxRLJU_mA65sQEA9pdfjTytwMk1NZqfXhhw2yc0m9vPkYf2s9GimWbW2DrCnG4t_JAiRGgjuSp5uvmzxnJQf38IHvs4ikJUngCnHUdoyUt8lbyqobgU00erhHpA0ETyB9tGvmTvWpgHKvNdl7a7R5rZxG448BGnAUpjVDu0_OvOcwf9abfQlA2bFT8XBsRzsWZkQgGXKHnh4m-muc0PCbLxhNhi5uCHFW7Yy9fC07Q2T5qploknNRGkgQkLcApTeZJYqiFXmCXSglED6DchLr8JwjHg4pAmq9sX3ku_-niuNMA9Nxc6qZsreDCoq8gnYJQtBeeyThLz-2leJmL2EXM0RzygdKpp92lRSJ4Hh6tLQsJ3_EPzkAKRTLOCdQ-ckuptREBTMLN92vd6mFCevZ9P26HjrHEvKs3V0u6xBI_pPIyLHjXeQ_XvIaDQt_-LFMMjRXMrWOlG-PQRhVSuE9BSOxPhHavEnEmUVWcBrellJg_m9GgkHALievVVi7Lzz2jfrzKgMnBBCznfyzuJOs4mRU0VEeSofaHNvsj-bjDfqqhINrrAks1JyenOOs1Sd0J4tjDUM36HQWfNxurgqkHvpSajZFg8-LjxmfVMqNH7i6DkbCI3bu6pFrWe3nyDBk-zcYZSzNFNW0W4_rqgDLHspIeDYnvQeEja2xlEQg8yXw11xtR0RRyB1T5_qP-XOx8ViGMsly7g2Q9_V8aCjoHatwpu4zFvAXvCglM9upMdbUAR_qQ1tPSnf0_2IPtBJKkOKJDy_51xeknke38eOVQ38jQ5Z2HUeWASNud2CyFGzBHiO1OyCE_rq7MNXQG6UTWYXYOZShFRF06y9u939yz1zlT8mZRbrvxqNmchT1ORKzW-rf0j203YJJp7sI7fBxceLwwdxQwyRm5CZp4zixQBQzu-9beqQ9ZPfz8l3WlPwxp1tSQp5ZkAmTfzWsrZm5KjJpBZFDwz78206hdw-qKAgmcHtO3v2a69ulhYCFVsWjBB7AASEdQmRMguMl922nGL6l3aV5H1tXM73lCRL9ez3Ad5zCM6cKEijAIvlXHxCE9XpXrgXyFKua4bccdQgbHews_aD7Laxphx69bEDzoWeHcfg9J9kvyOR4njZNzlIjPOqiLPqaCFmVqiasrh0Y910w8lIo1pDMN844lFo218PP43Z__HgdT6cxu4DU_KV38vV7d53VOzOniluN5Wg8PpJalNEfrat_FKnoe_ewXvaELeMWmR3slx-NcwgDrikuT_Ke5XwY8VT13XE7swiyvLZ-IZt-DPQeTGAA0J10xHsIX7YgT5GACSa0Szs5XFiN02kwOcLI9P2a9CVI6M-tBEzNsCvDZFSo4X5C5p-rYZRE3keScTLz5zWCGIsdzPxxxu0TvbwkVIfhTmYALXm0x73f5eMA4BxFaPIs0yB5Xc-2sWMk7H7dAv_TVYoBJV9eaDU_9hUOiICkCvVTgo9zV9w7mONPReRUsIn-thNTPvOT3KKaCphIZOfQLhcyyFRW_3qfUr6XeFo0hyTk635LVu6td2VFa8DOrtoiJylNmR1_DPdLQhqMT13SV0kjSQWU0sKu8RMK7uror1GaD0JZA-hDf27X7euk-IJuEi8d_2ZLZWKujbmAZqHazIOI1n9zsKEm-REE27JXFgV4kQLQFoB2PhVd3L-WtwPfBEFKloBOmtbytwVJzfFakVio9cOW5eeDys-RjCs3fLzMIJ2xwrU_pBOKXeQdIFH_I8hNAl6wvjY2vbtpjNVE02vKdLv5qW-4zvh7dTBnS7d5a4DZXbL1LIq8h-GtfzyWaaNPgnmln7_kgm9J3xHF7M5khNLhUxrSvn-OKKtgXSK5ZYbwzknc1G80V-eU4Okwc5P0xuicIjyNPROWDnZx0roalVX1qvV2pT7pwafIdKrQBwkLjftCWzEgV7wm3eB5MiuarauvPZh34LcXIHOInJ2eOZoDPRv0HkdRdfZDwrfnNPwXbUu_SA5eqhwFRsnXKdYun5cqXZ35HVm9eSpJAYPzrDWw5qr_BbgR38gYcKykQXpiErSBBmqac108mfcEsd-39JNpa9KN9GvhSEexC37Aju1Ho-u9nEa8qX4A2UIfnoSGUWlJOG1oHYrfw2TjdRHqwY9ixqLH8o1v55zxjSadFdyyn6Y-IDuatW3LYjLBTgkSe_Kpx3WT287XOd8pHSYuB68JAt54ez9zNYQK7MDJq1MkjXc1iX_Qh_mkEiNtaMWijFZwAEsNZOF-fgfQQRC1_XUMID3j6X2k2JxtJ5V_xn1UByxNWkUr5kdTLoaeShDqmewNOGx5oLGEvzC1uJJHQbmmFmet8-g3o2TihH48MbQxllLddCKxFrFPw32I5kjzOyn3MpLGVbqLGCRFmpdsymO58452lWftqBi-g-4I9OLmfVPzrpplBs9KIZvjx5uXP85Ido4xhyFHqTjqgkPlZ1m_HXCzXTuYLl4sA-_-grwr2WEk_-q9K8YqHaFZRBfbJbEXfnV7HNcic35y6z92PvCl7b7cx4fwK7A18DY_R68FB73U-VqIoxxOgiJOqWHmCWkYxYbVvMDc615cRNWAj8EUdltbSGRwVkUMGosLrBUYbJhoNOvoTEpU9K0NLap3iQX76qQ9dEDTu1TZh-3HQYkumDc2QxivkMnLKSt6PGKgl1lPXtVz1TlY-TOGt8iMgSWqE9rAoF7-Cu5BxIyMeUnLeOzlNAdnshRgk5gABK2Dred1p-fbuFSjfJ87PaTGatgDOqJjgEn1eddr6GDCnspD7iJWOdNhJq8ZIdgDsNwg9qxsgoaAct8WYJk1tYF9rrSE2QyVxfGAn7TC-YIrsOdtAa7Suko1k--mui9_-GrCx6F5GvdnUXp8xZnE3T7cnS9MaqhJDFiBJH-V29n8omM1DSRhbzJAJpqxKnw7BOA_AaaIoeQpyJqYxAw2P2fJnvaXUh3oK-ji1-oqwUDyLUBcm1yjZsnw2bUgT88rkVRV7NUfmLwYqo4wV7qlbo61pXCdTc4kyluUhus6WdGfTuhY-nWrSpVklHAgqgK3xMf58FJ91j4-bjHVbnwc6Dj6Cd-V--4LwtuNGoW84alwYjaBxdzpHrbyApnRDM23sabeHOF3BvnpmyIpXLG8lBUgHq-ZggfEiBqgJ8RrXTjY2M90Gl-iPIxRq7XxEf1COMTyvbHkZGfI-utw1qfd4SvBbAdRnQFdlkYA920_lmbqeAz50ZAtiR7Gf-JpO2oJNtO_OuMX82QNSLqG9LVZokQCAhjd6HN6gSihsSTBdm2Q7zJXJIvragRK6TBI5HbOhhi0xymlRtPQLOfW4GxSPTJYpskmJkVgTXfb8lfbMgjC6ukS1z46KO-lNp1uF1um7jI92z_wrjG8eBXGMT2qWhP6RomxBlRMeMOYupLKJYqohhNRaY4p1B15RY3snSuFR2wzGSjQ_ROFJ9o_ZpY1PfzVOyFkF3GK2Ky4I2kpBt1JFFp-d4GOsk4StsCQoBjjQ724MPL-Pd2rm6lNIwQXcqBsfpPKIkOPyhJFscVE4LsTja6s2e6arYE8_so4wW79P7BZxd1AM6ZihlHYDYCBqH2PFXiLfbS8ttImfzz8GZycru3oM4TfLQGlTzTsllzHahgGykdhGf3TKeNKnlWEV7_ZgxkTHBpDJtwqlXfOLo5M8NF9GPXqKH2p3yW3O9aWd-lsNCFCYNpxmcT6g8KI5VJhQlL4Ej1-DedLlm6ngMIfK_Rhv81_lortG5bko2aM_pSEEwBc2PJLtdlJgzmJ6KizkJKfuRGvSGHOaqiHWfUI0f28aoa5Xw9cI29_s8h66L1ycNbwySEAuV5WdrnuKWkd0a0_dcJ_TtYffV7vBqTXzjb8Ck-Q9BcF174MWOXU2IqAiwhaA3rdT1iEW_8lU00yp0_9pjPiLHF21f9mbkZO86GOBuK4NV2ozKU7Kckdjb2hwK7obag0wz8-xxC2xznMqXJ-fpGfRP81xQVdBvhAx0qD8aK_1qrK3OCaGtwaBWk4UDvRYP27lZuwgokgiU1OyEHoxgSnrLktC8ujr4gnB6YmjKcdcHkSX4O65WY_Ycpq1IK9hvw4X4Op49I7T8FCD6cQ-9WgZk5XNm_wTMOAIZ_mCe-2od6DmrhB98oiFVvRcBI042aKL_ErZgtODS-Lx3_YjUqhlGOCn8tWtZkD39BIdz1MmOEB4bcvndfH9-mdRO2d3cTc5-Q2gXLrFRFCBKi2KfOBAg20mDAeDspwQszibni9BN7zhjcyGbTl-AvLlAb2CEy_Xr0yFhmahTyy3k5EJ_wKWZXc6qrbb3f_H2gTQrSGiJ4bybY_V5x28QU4_aCHdU4M3ks__sJ6bbtKxrv7p1MoJElJmw9LKxuU_I9t_O_aQ0y2kj2cB-oN5K34BMh9SQV2ylackyxmHFiIg9-iAOHKmRyfpDPq2Jg51oayKn4hoIIE5kpUI0pMm5cqVI1DuZshWBy-hMC53zO7Y_7Modz-IjdutOcyCQqY_SASPLLt2mdtXfhsoiEVCESC1c0q69jMunp3C0tV425gSG04rFIDHyr5xkF-aRy-fvVvLbl5CCU8iupUALJOiUUB0vXRtb1f7sTjUR51p0NCEe8fAa64T8rlOtg4QYd7cFsz1XM71JErLXvwgvB1jQBvftGLKfj84cA570EP1ISVAJxvUOF0hIHfiQ5AylgaHqs7RJoI---diismSSALRYObCB-Pw3qhra5idmX25g2E7ULeXSxEEZrYN0aX8SDmmjyfB0NwuiWvA8rik3CyeV-zuNzOTjThDkf1hW2Fl5cU6qOOUeiWyFwbxhduTSfaEtA4Vz-kkJ53FXJHjWiNurBDx8C7jLFxEyCg19dkvgZqsbzecAlbxnKik61GsrHr44Epa-os5vkXH0ha8Wc7TecohdmctO57-knxFSgV11punYb6b8ZTK9KyQFaC8JjVTiz72blO7ywRWnW0sE5WKHYk_yONSBy2gxTWadKH4QXCUReGQbk4pySkVE9t65JlUPhGsFxmTp9_UL_TNmGui4FdVuFgyp8_4Eof1c9hZoJltC7__Mrz_Ai5kl_LxMkmOht4D0ATToEN0DZTXwIbQP2ck2npkF5GOmbT_hvG_EjLOWFIk6pMRI-T38hG8vawmATrPcxRF_aQQmRsMOt04FtSUkjPRNLT0b3u9YN_zLUAPc2Pf0Ox_vuSyS4A2AF5aV5wa3rHVw2JImK-u2tlUOYFf_Di9ZzjOv3jTkUgy4Y4g14lzZurUK0-0aLXTIVzzps_YINAa-OH9_iHEjogKjp_fVd1Jwgp24qX0Nz2sHZ6lQtSgHebSPSi5iOltquU3W7r9r0VTrH_nuqNhRSHc902qeqyf_Z2XjsFQQX2Pxk4Y7vqLJn38LQFxPNRd4h5IZbuezrwICL0maYy5Ruu8b7EO5_RRBDZaQ9L24pscs_DYYHHhucn-WtOPE_EJxXlcRN0bKBN5o3jj-HG1Gc_ojTBYnFmVYPcJ_YCLPbnZ0LDN_qQD5uMx4yApVpOUNmudBZIpW0xygV6ptaQKu58A_f65Ja23Du3YA82vmwS74R3j5dZ0RFVRHsCe7UpH7WJC6c5cnmQQB8EE5A82RFVFykzCM4Br5QtajaTbp3Hx3hEQvB-K-VHHEseZCRhfPooFE7IL8NbnjGWynCdc_VEFVvoCQo9yRUTUBYff5Q8pc8GHXoJssVDHXhfwPs4doz98aA4vFWyGaP2eoU-nNlBtVdE5s262ZoMuixQbg1F3o_fXnrsDnLKrR3m7_GDPXZHyNmmGq4FJ-ZoUtLeU-uHJqdttGaZqS_6kzfn_ud-58VdoSCZYhB069J_uKrHxKkQx8Lnf4xBiyjbfaSe3tLZTW0KCulC-4AovJ7MpC9lDGsRggEhJD0M652_5MGE7sriLg9kIsVcREjIa27UyO6y0G-8FOn5huwtSmqeCoI2DUWIsXogaMZX4B5-dHfaZEoGBzEBQnSXplb-H9H69iKBmDAEETdabl6H03lLkcrhOHheFft9milwdOSx9O41muQaFsOeEAaeOJCYLJqkZdl_f_x4KzkTHmZrzlcyymuSlhsZ8ZEfrT0SmNFx1-bUKdkd2Udp63l9G3TL5h9ugWuuRBRq0giBEI6md0nqTvbUQxNs3kdkWFC_OoXIcLghBO5McHREYeEEUzuNImDKeweC8qM6avz4F_0n89rCwHYjy-XogC9tooh2RGhStJ0JJ95J6kerd07xDz7r1mh2XvDJu0zb2PecgRcwSy7KTsT957I6jki8jvlNvheu28D-IxfSP11w34rZIbNtQRbqHhbnMeLrC7Nn2uvUL7dGGr_CMflkSro8jhXh2Xr4qBBBdtvrG1KUAnU_5EuTdDIi-l0-poX-eZy5pm2LpPxj-S34YQDYPDfSUcYZkGX6liK8N-es8fL3FCizLVxdnH44odZIO56otxmlx9Zx30LBZ_HqiFvvSgefWndL_c-hmwtDaV2GogA8NrIjS4xk05BZQ0Fc6bsmmtH_Fpr-P8XziHQCvGZVgwiPC6Y_r2P7wuuQyGpfZMOA6xqsRTkF1J50CG6yk71SDWebQ6fMhitVNGYYr1jTTguW_isp8WkiiGJ_FjE0G9_nv65GSBakEg2hZpKqIhD5djCeTuSz6LGfXvWLejggvg3s70XIOYU96qnXHAYIxe9XjUf8OWFYERRxRiz85LXSz1YxXQDr9smUfZKePedoNWXzLXE0BJw1hvNroDBNOvDCmCmGUyFjrSzMTWAfvPJikJQY0cO4n-mCwhxQMUJ4Kz0NdTMm3Lj2zGHRO0SNmTLQB3As0Het82FDDNItowdsmuHa1LXontqjNsBZqqedxhXaD_xDGHgYx4BnxcXJcM5em0hTkh15JfA01sRWZ9mZRxOkShyEvE6RgNg6W-LRjPkpW13oXIPiDEqxRkaTqlLtc_LvttuDYtNSzgtpakqyE1gxLsdJcXnDkfi4BoK3n8g-zKJuA5BTjELP8btMVL-5qqW-qiquT1ZywJAfs1Yw2M9Wotq7sxrljhUD1j_avRm-bU8w_wxQJsAMotM6m_BA-waaiomha8YhY6tGWKmv4bIlwWMOfpuIJISG4S3Wbcq0Q7hVqMV_23jvES7GNDUF5n1yMeemxzW3iaBEajHUh3YluAuRGO1cnOzfPH8teDH4uhNj4KByMBlOqV_Sjn9Cwjs12gUVjEp1yfvpTUK2qCzcsi9Jw7Z90F96-p1ee_gb-oEelnxXLUGgBRlBNxmv_0YfT29FCapmnYHeNNDn_SbElGP8l59UBGmqYYlH1rnRkYuSxfoK_DPvXbtQDrTYXhwFpYBgQJ3A9eOgZZhkQALzUOCJMLdSr9bOZ0RjRMyZJIglvgeujabp25bhxa1jfyHlqQyKrJEe6tT3PnwQ5s8Y-V34uQ5BkaIwhDqp1YcZ1nNPWBejaTGALVz6Wga7hnW5aBWeb7jQX90FVmWSBbxSX43vPQTX1oYameYY0EE45-BNCByeae-Vp0MJ1X60w0cQ0Y_UynAxETQtlKLO0bxxEoUWzB4M1_aa8HVMxzvSj-DOp-ZMyrDztGrENjmIafL0br-6tsKH9p9zJKWqmfCu5PMPAe_QJlTQDxFP3Zbb-aciP68K-BFhHmvlrWSuRzLy1kuGNbbZe5aTtT-xGXz21yBnKv632EqDJvF26MONT-De8Qrr5d2PsupJXwYVn8BDpOE65zRsSCKP_iVNEFdAiVay4JMZQ1dQmX17_Rs3Z5PA9g8a_dQnRQGjvhrzJToXPLpuLWU-CmEukp7ZzBV61rKcXEX0zGA-tvhRvqm4WWUYPBy0bBO2hiSRiwdkITOusIeXML3D0Oz6sBpJw6TUf47YEXwYVJ0mITMjEqY8mhEMw-LZlEsS76yRfiurbOHvHUb56A7gwamhrSoJcE5j-42Ri2WmoYc-oClKnMvOioUVTW5gIgUkXCgy5N6Wz1Zqo-kfkvtdvtk9wGrtV9yWg0Pm1O2t-c2k-BkfMVoDDICIVZ1mNdJuIb54a71TfjMU3rrFL1OqyVrI5aZGwdLarPNEsx2YBv4vQDSuhMa-VwkOhuFlZtPH672O2GDiJrvc3qSJDZSmTfSC7EBHvAfSV_xawIucWwoL_zWhgfjMO3ydSmKt6zX2yI073_dnPItOM7xwIH7rDeSC_hezRFA1if2cPyK1CNY22L2RUYr9roGWH_hyIB1yX8REHl5MpPpXzMLwZcKIqM_jV5m1UvD25cIuE4fKykJzl9l7lcQOJAYy8DilNJcgd3UVdRB--GlvIrRmojTSp-nwXC6NTEwYvSPc7dKU6tQukgTtSmntCseoYELm_q7S3qQgf36gMjWkuqo7q9z9b20F_IVSSQTGTHlb_5qEqWRwhfzYKgpMyn3fx-Fasys_k4H03hydVnhudaE3rjY6XCQ2S47t6uQ58yqI6sfxPOL0jSqn44u01ypMcsmzX1NNGDd2_FxedfpO2o-ZkaFNnqOXdbp03cmhReO7dWooER6pAPP4F6fhsMq-gZgq31OG2wOjTdyYdIBN3Ual55VU4z5NlVtVrZvId_uEJcvFid8pn3aWDVW9HY0YmCIucuTb6OlrGIHIwnzp5MvaeKmWmprCP83hamou9ImUHprty8aKUEnEPtCdMGv80xtQKYP93ChxYxZbwYR4SjBVhSuFpnZT_c954ec3D0_V-bjPs70flF4QjAHt9n9FJuj1Td9KiAdACDAPCPdmD_Sy6awnot7Wcgl0SySgjRyYagmbSvy6ZrStpaaqNG0OioPRKEiXJqc2RJi2KOEuFPDiSFCnIco8EvtN2qd_Yk9KNF8RSu_uVkrTS_fMvQ7N9HLbVtvA3V6Uehza1_pxqRj-F2ugSg797-_XDQEwV2blSDxLtWHdFZTrq-xxP-TJEviQ4WjVNdisOx0kNCrSCQZPKYGtYGkN2fLCUcp45VCVN4w7x6I4dOtKpJbELvu6CiC7Gutj2a7xVokVvgN_N_UfBH1BLHFLlMEYV8DxSx3IygQ5QOOzL08V5Pl3tDk8riYjYZ7WJYu4NVIWKcQELlSej8hQ47FDi5xAwdzD9Md2N7nH3eGcTEG_33Hxws4I2NeIt9-kiveNcohflis36hDyLSIfYaQ90F3GIZYwupJG6BmzYkjEoEMxWF-W3RqVDLvfVEfWpOE9O5Wlc__uyMlHjaePq2WNW4zy6Yqe_KwldBqe8b5fnmfM9lhDyLqiCqTC2yoqGp9C9GV3ozJSMkAOnkHlp9nJww51v4kjbXH8mwa9pfTIxcuaJP4G-m0Mq4M_KQ2snFRhGxMXZqsbdieoEzCsesNYQ3jeAbH5p2ViMPsEYp8iLA7a9Rta5dKwiRKwk_4HK8Yqh0E_gYuZohoKz0zBtxrZvu05dQD2Bw-rwoOpMBhW48DMu19dkMmYFDri-esKZiCq32A9m5_YO8DjHyR6CniUUbRmEv8eao8ZSBMF0KoffQMHKsMPa3jp0eJAS5Q1tK1MXFdbmVpn1Iu34wwVzIXVDSlAQEkvFM45OD-eVGK6Buaw60IZ_kRJobavjoukWa_cNAD1b0cMg3aN3YSnTc9xCrIw8bG5tYlu8SWWpeoDIfn0XF7Jr4xq9U8gZ58NZX071vANVp-XjddymfHXNmsB1AG2XZ3gP1DXLWHa_Wqkzbf3DKZ7KQ0ftAsjFkMiHjzYsZNfGiVSh88OmF4H0eGqmY1eZpBDdojeuQnmfhrqtH1j8ihkyL4MaGW3XwPCvAtgD3450FMwLfo2hT_MEY0BfbzwYQiO3zWbVI4Hyrx8ztIb2b_EHOHw2Kl6K6UWJ8RUPGtpi0SAVT1i9UWkdYYkSzRRkF9vWyTVX0wdLXQRbKOMTkCT3YUuPSzbsXnrH9PAWePLCUwk01t1J_PYZFsqrrg9EZ3BvSsN9hSeTKI0V2CVL-T7A2sTmspbC3Y_o5Jmd_I-KfxkwJpE2w1w54E5W9QLZw74qkzo00m0UOzHZhaEJtgITdsTie2kmz9nYMdwyxEzc62d2gyrKqWhtyYPT1ZrYAIFkZ0Pzpk4oTQgjzLRzfEume_TX-JqRFtL2bGeHY0cvLPPg_ORjaCVCHrXlVjbU756cv_OkHuQH90lSxStedyDYS8M4viGVcHFYngXXa-W5YHzgDWTKV3qqLTB5VMIaHsEWQU25KF4DD6n73s0ZoMZETsE3BfLo-R3h1uiYkRvIc03nUOgts8zYU9zL56zf9xzrKbSK5HHkXR3BBIg7-RwjT0yVgC-PvMjCP3QALS8D3QyCqD3uAJTQFIGjYuCPuDyXZ-uVoDoDA7g5zIhhb-usQP5bFOMwsLE3AbHpMLfMy80wa01_pcRbA45fIQnfaxomE9KadnMyjvAuc5JY_IpVoBUFIxRTuCz5WP9sGoBPIQxMKn2e8NL_erYdCTvI8GggIrowEZ5S_JBZBC8w_ypER0nBXTSj9y0VcQMP9GDOfQxo1Kcfi2ILFAl0cFjg5e3YlLE2mAqLxFPsWOvVznaBp0sSlSO1oGBarZtQGrp47-6DN4PWHFBO9YFRXNUp-sUCIIpFuCuLe_Qm0mEReNS9xhKAZV1bmeQ8fGZ9UJmOTVFDN7NLPfwNftgPGdMgeMfc_ZaILJUoHCx1BqI4uXR4MZ772pz8hLlGCqvu-ccZFy7iQMcXVUXrhj_vFuHUIGz3ctdtD_dFP9MorVtktTxoBBlrfY03ag7ze5j1YDyQST5NVSpyEVR6yGSzJDaYXH3P4KHBySIPz5yIa1Rb3UYOMpYC2OG4gxnX7Y6P7ZwuMAqM3mcMBu0WQGo60wLl9UN8RLhMCYQhTaPQPKD-yEM_nM8nR3AnXYUp1AsagggAoz7cFEOfZ4w28eLEJ-caV_9iH_diitg7uA7ABLH8M3JLlPXcE5EX6IAFZRLbp10DpAIdulljpE4nNFS3IKmTcGqw7OFaBUDNmg4yvaVMRKOL51JbOsCmNm6sfsHeihCcEssgjJvrJ2GfuX_XGKqBU-EH04Rskzs6UPi0x2WfRCT1yXN2MGbW2hIsm2R3MhhCQj9D7PpRdv0i007TJ0bggIpjil5LUVCF4EBaZR9_hf5RY3Off-_XmRrcxaANcyMSEC0O_YF0UusLQRtYHYQ2vOfnaZsfapYiHohWURdA7POgN4dU0rTqNN65cFNPYLCJPMyUz5miolvGQpEZOCSP0juUXwHqhCBrGO4M_pfWjyrT3YKIrlpwM4oebJtYu9H8ugtAvPo6j7qX5Wrz_1_8ERGXjGM_XPlMMUqI2PVTb2qw8qcKTKp6ttx02wiKplGL0kmklx90dMkiEWoHONx5fySfcqY-_uuTP7NsgHVcZgOEjm-RoWyZeO27Haxf-dmtCjdC4gGJG4fItkacE-2OfQZ60UQF32ZpTkTzvSboBxNNkI6p1OvRwc8GqjyXVe5YoeQack4720yy2u7xMOMb3gWUim56qHKKkIxeJbYVBz8lWGDz9e3t2_7rYW8NXKChu7EMIwpJ1oETZP9xyyTHyA3DDirZtJVS64Zx-TvwyLY4x3XTIBqOyzM4SWry582y0r44c-LbAABZ5WThy3I_MQc7F5u4TWvvrzJVK1ri4V8LfVxHEJhoVZS5wEPwOS4FlWs3ZZYmZVSSyvO2_HAG3eQC6AQVH5Ur1llPvWVJMCVsHbuwuPSyQHgkMkvYm1yvJkrH83HJguKy7DWNhj_p10ywGrUNsebSvCIYMxDc2TNK4svKJrf5k3vuDFY2Om0NirafrqJAlKVtY0tmppT3YClYSgddIcPjzTj4be0zrDAHnukM_sZTQizp387AjXb6ZFSr8dv74550pJzajWU0A55icyyL7rHsMHkjk9_ZjSHHyj3lDA08SZdW7ZuHzX5gjvxKcbHcgDGL0JzafaEtDYVSiWVoGA8LNgAi1hJ-3JnFnmcrQFKICPIFAQFlRPcQGQArV3nKV1fZGJBRx4uHmmUkHDfjZbQm8VrW-DiI6O4j3S90OV2ty060j9l7Cbs1s65WLWrKsn1b3VMmIq3gyRBO3YW60Gc348LCOwp55vJm3MPAb7YnB_OCq-wB82edNILZuH_fTullddv8nWT42IUY="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:16:00.702491Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "AHD3apvwKvmew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 95,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 95
+    }
+   ],
+   "prompt_token_count": 4406,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4406
+    }
+   ],
+   "thoughts_token_count": 2240,
+   "total_token_count": 6741,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "14",
+   "quote": "A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.",
+   "reason": "Section 14 only invalidates provisions that prohibit the presence of animals in or about the residential complex. It does not prohibit clauses that require a tenant to prevent kept animals from causing damage or disturbing other residents."
+  }
+ }
+}

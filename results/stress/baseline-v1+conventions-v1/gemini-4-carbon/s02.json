@@ -1,0 +1,75 @@
+{
+ "clause_id": "s02",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "3d8675bfffaf254010fa3c35a2590a6c7dbd88b6b44b0a626b2db90784a16efa",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord will vacuum and dust the unit once a week and may let itself in for that purpose, without written notice, between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:15:08.679299Z",
+ "text": "Yes, this clause is enforceable. \n\nWhile the *Residential Tenancies Act, 2006* generally prohibits a landlord from entering a rental unit without 24 hours' written notice, **subsection 26(2)** provides a specific exception for regular housekeeping. Under that provision, a landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the unit at regular intervals and the landlord enters either at the times specified in the agreement or, if no times are specified, between 8 a.m. and 8 p.m. \n\nBecause this lease clause obligates the landlord to clean at regular intervals (\"once a week\") and restricts entry to the statutorily permitted hours (\"between 8 a.m. and 8 p.m.\"), it complies directly with the Act and is valid.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 199,
+ "output_tokens": 1269,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "zG_3apOCLPzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:33 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. \n\nWhile the *Residential Tenancies Act, 2006* generally prohibits a landlord from entering a rental unit without 24 hours' written notice, **subsection 26(2)** provides a specific exception for regular housekeeping. Under that provision, a landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the unit at regular intervals and the landlord enters either at the times specified in the agreement or, if no times are specified, between 8 a.m. and 8 p.m. \n\nBecause this lease clause obligates the landlord to clean at regular intervals (\"once a week\") and restricts entry to the statutorily permitted hours (\"between 8 a.m. and 8 p.m.\"), it complies directly with the Act and is valid.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a1-bksrk1Ofvxvxpm7dUkgbMbqjcPRv6BrlPHekKNAYUMiYEMyBknC2crAXWsOQkEdQcM__3WcN3esPcPqL04NJJ5AgROxT4UcPchszzX-8s2PctSc_2Kmv0O6axYicGDCkTJyBlLid1B9P2E2WlF6mGCXHDWHO5ZmBGsBg-TwTm3o-AAQiyImcnQloEvx33VqxUuL-GRGaxW-trUe0TuymOX66KH_NLWTt-3YUBpLHrPEyV8Wund4T8_BW_O7NBCy8IE16xJdZDP6cVMyEhcDGzNFzClyk5mdyShHns4skLnvsO8L0KTrLu8DMJytaaDD8Ok3hNASgAE2LvxpNOwF3jjIz2HcCJWEX2Kr_V2AGyzCEPZewThiGtxiwXo3AHVf7WmXcbVSn_xyBselKIDhy8d_KqG5jheZF4-uiraxkxzhinQWmAcCAEj3CfKasP46QSIGeg-9xak7c94kLLn4ymfR40RGclcTJ4NAVH9xUksZqvnAu5zdZp69bSoWZBg6zWyMiB5mOI4dA7LZzpfxlzRt8tLq4X9AGwT2NJWXz9D61SOrZ33NVKX5gYItYgAaC5-c4cICfHX8yDWOvQ4rurbu1rFBtk2wyrdHd5f0tzMLbuxoOMKgabe_u8w9rTMY7WIkNPDWxM4qA1xWjndXvkhO2aG01Q206j7zEeqSidjH6XqCNkRL629riks4Tc4sScrFFlcCOImYVYvU7uDFdyESynBKUwIGh6Aq-qjXlLfWBCQN4v9xJGAOP13TTWzdV9SbcuL-NwYqO4bt8hoVN21cWFZWQaEWaqpIXiZR8_zZQGZqy0senjHZSgGGaPMYnC0slHBRhNi7BoEdQm7N_-NVJJzy3rbrj4eXBZpAmC0CVSaK7L1mmdpk9ia7TtbRISC0x2FNSKeOMhQpaIbwju9JJLzoJUOC1BqDdNXpRTUmid6sD9ccrY_yJgwqU2d5cMttlvepxoC-irPcmYJyB7m-HaaM3oI8B5UwDLNXfcHidLZJbjSi5mGVWwvwYuxZB7mW-2owluf4B1SLTCuanphoW3hr2L9NR_KTGwkjzjN5Jyobw7P9xTk34MqmQf59pAv8Vtl4BUftMUwb6-QQbKne3vS8Bz9Cv4q8GCEa1tL1GplPTQQzF_eiU5ej-w9azjNG3sPR0YehiWMWoxeaY4Ib4u52eZIU9RBl9tEpWHYLeB_ykw4TyQDKwaKFXu46oL67TXI7XPzyYQsI7oJeu3xgCXoA2fPf2bB4_Jw0ZcKm0sjnDtGsDqivZnC20Km6sPehFMLxlkfXf4EBCDBsUPFnXWIcuhuStmFt9g5xV4ygizA61_GmeKTesk19nODVzFKnENhtJcqzQ3fkTT_KxZ01Z-qGSURHNwf9NzZswrAFV8PolbZSoOJzfX6HBavVZiqnz0Ej-HbPzS6kBKaR0W2RQpLaWK12Ac7u2l7heYbfnkGXqzlqi6baJDjNXoS3eAFXouj9trMmHsI-vIiInsB2922BPA6kzC7EnR4yXmbMtfXmkvW3H8rZQCUdlESeTQRlPRKuJZtzhqQVMCPT23o5xfG0l5id8uYM_PUstnj5LAN_aNth_rgzhlpVa7qNSOkVjVMKy9r2Ns0MB5jh3qqUgrULWtoMZp4p5a1-S_ZlaFezS2i-ZEarLqddnnXRkiRNqlVEnNWdywrddhXK9l63Wl1Dv9Axg_DR5pDThxMrqcvF505ZX7tnuo38lMfWetymevHBG54SoKCbg8tilj6aHoealq-M086GObSqQnq2xxIDKrAjHXyhOHLuI73n4Fx21ld1TZxJaBIylsPMxccu-4j3xWbypwnjPNHpQ7bB_LWDi-PDuaSgDW6HUb17GV73sh8ny7w4UWEUhQ37dlTalrTpCrNKquoIfEKkj3lKQIV67lliukj8a3Yf4OdLZoG5TqwdIPEjb04mWO_TnnTkGsdkQgh5DEudB33j8zF6yoIdGjjYTPaMu3FAOTbcN5fq2DJ1_fIv3XqKBsa8sJJX4qfW2UvYHtGFpvdx1IGUFCdYqAKjwcSqtU-2V-oSwXgLyfeGubUyIW9p6PGoqvYbZf-XMO88trd34h9hjOxBT8b37yCednw_TslGbioQaY7HjsUe35bq7GoDu32x_F6r5tx7Fwh0ueO959ZlwZpgmIHEKuJLrHtXkahzCkFJi5kFL2nqiMC_2OCB1bKdkXon1j7xNq9oLOcCFyofM9CaIAOsy_1LSNjHRUnYcpNW5LcSPMokrROk_t6vf2_yCSBIpP9d99_5YmmqiI_3yGvkVPUqDWwFCcgPJ411O2o9z8byckuJbRGI7_Hz9hMvLKibvFwpIPnDCzVou1GQiXQQ6PRqn1WdXv7ogWaRaTe1-T0_GCQwCanKPQpfGoqqulshgcsU8eWX7Vvp8yyfGrM_LOYJI9B4TPQxJbKGqek6cTQhzDicRnMVPUDL9k4f835u_GV6an93KVl1gc8H8eskj8FsPDxgBHd1sgVUKHognOWor7chBt17G5GMNaSuYV7iplhJ2orq2S7InG9VP20chMvhNTWjtKbCpF382-axzYqbUXsL1ssEp7a6alLZNROjKbiQAl4kYG1kFF5EhYCSBsg5ydjFwPWXjkBz75Ms-81QEmFDPFD9OwwRu0XqxVQuxFev80URaKku8TI8MRk--JU9cQ13rdFpik5QdaqwzgldNQlWAD7AcCn4fHsxZ-YxMECv7byY7rFj1TJ1tuwPes2-4lbhMiV6GZ78SXOzHB3xR1kOy5umMpiFbLisacQHTuHBnnGNNM8pxbfyv6ZFJEJicUDh3l9USmslKOL0BC7pb5oTn9srpSh1U65Go9ixY6wOLLeStJF1T4WjTez1yVtpRMYH1iph9aWHPAQynB8_CEFWippa-FHYjveyvNwSkoaY5o8nRz-uo-bmKWMJEiqhSVSCfSm2OgkHqyNM9Z08xqmHewOEfkoRMx4__6U20ZVf5WAg7oHck7l0F0vFXYQup5O2--W8fq-OTWQnqGgL6jy-0g2xquleIWUTPOOVHWsPfvZMpVYkSyTU7AZToIRJuI49v4SmkPigdRl8M2yUzN54XfQvlC1gTVT9xvGPqjYM50Ki5X8kRirjS3fgxeOTP8GBN4GzJTya_RVIyHYpeycmHQG38-SGSheDfyG9PJswEEGEcuybEcDZn7dDDhZeHWzvxktScMJ8Yo0WPIDeB0mGw0g2BYLy7jl0JpPtSjfzKn9WX6ybCe09sFASgkmA5J9-F6WoOVQ7dLQYl_DunhQo7PSZNCUCI5Ag7UTSQkmK2nMJNkBFBq-00ljHtTWc0_1W338OT6dyPBLy86YyP4ElQ0k_EdhkfkEDTxTHerigWet5d5jEWXrz1hPI2iXekHGtgj5fZ3tutQPezVVKekaTepKnGJeKf_LIjxoZivMi5223UjlRtk1spT8dtCAAFg6ZVFa-qdj9ZwZsyK_MqzygZmyKGViYdajQxoHT_tvzp-REb4GEEQr3XNROK9F8u77lkbxPZ7EfjoJEpkKdNjkLuq3ThxtMqDu3yV06yEfkd-xeNHQELKr4JVzeUYxDJ-5dknw9tuKzwjQMwCO0Chx2Uh76jeSbzB4ldoinlb08blAJu1pda-l3gAfQjaseS8S-7XoJHzzxdxzQX3dnB8q-yf981Mb3IBfEfw5PT_yd8Y1HnvVIgolLuiG35K_wfcWi5FWf1YEXat6qlZ5sZqR2zeAXLBIv3iYiV6vTGHfIYgrtDhXWtlXgZ-aIezVDTDAA2kskWL26t6NVsRgHp3xK7MQqeGJ74SircbAnMJHh3xdyBZO-d3i3XENwjPjU-zqhSXVNhBh--pd-iUrUa8LpcXfBPizmeu3Hds41Ntg0nzRlf25D6apGumMJR_4JSQiJxYEPMMYs81DCLV2dGqHBCBL3V3AnZDZrpQWdocOxngFbACz7bMYI3cjFkoMUloedbZtYlon_MKNMlUtfwAqBsDfowoEj6DXVqmhqjfEKteXxTlgHmT1NjM-2aFAnQzH7cVPr8JUWIIoPp8S5oFHSlMehKnrwpJtezS7BV8B23bWCJpagxkvcQRcyqppP6WGIsX0u6NJTDbmZ_lG8MrFaxh67MsquTDqGeOTMbPwH3ssFxHSxX6H8y7aRfo3UTnB4YuWKs6wXAorISSOJU5MnOFXJWmZ2V8Fm8efXH5Bf8XWedTTJoqsp_mVdRmLow9_edyQGDCR8cq891oN060fZICqK8okjmVK1mZPJqZdS5L978Dbg3knnarl90ohubXlZpDvoWJQum9ch7qtGBqol4EXPdPEs8QtopAiWF9uSu3VNmGNNAR8u5T-hUQE-CAyiCYsEi7STHiRQRkNiZ5YQ3iQbsKb97oZPWRA6D42XU5olMjjVJg3iTtYl0SjUmsZx2xszi5TiGPTC-5qrDcIkOENpa_6b2i2iLlVEWecV9Y7iTHLN_3y9Ur70IwUlSs9_rkfu80dDBHxWMJ0G15trEsU5BYpfRJu9k49-O3pC0rqn1NGqPi8195GCwepmruAy0lu3qgb11KWR-Uq5INX4XwhTn09DK-0OwU7nzYwvlXBBUkwibAcCigsCqRddxmtP5oHgw-_EDRM208P3QIMx5gonnZAJGttEW23_X6fW9yo0sZXJS8zA56WxyHb0-OIS6Zb_XeE-DKpOnVVAxhUXsZtTnhqiZ5zqcBI7iHEcgE12hN-hmtO5kyDJqCWWp6ZnBn1QNeCw5ipmuZ7o8GdmOHvryBhWFNq6WEnTA__l2fX4OeGxKim6RJ0p2suyCmI-ZjaW_Kke3Y5qgQaAYnHEAKmYiuG-NmUB14luhwpJ3zZmsaPNMv1ylvP9Y36TW-9NCkIqYkTGwBknCzvISnNxHdtCPm1rxazcIujEMJ7-z_a9IWUsmtD-v-tfBl_B13x674DaM51ilhLF2_SpXlHfgo2tpgAEUhWKlglNoradMpYTBvBHZqR_I8Syd9fBclg3Iv2lR3M7hhlXNCUMg60K2oefATB95cSSZ1MYBnnOxIXMeRLdaUEZhfpqwTI7YFSMRmtnI0Q6M6lx8xaR3N0wlNNzTxtGroxUKqIulM3wsHIZ7msRP8itHbV0OXoFy3ffwhBBcvRDbDWCB4VTJZWfunS16NhKHtux9sfzQiCVM4KHWWqR9iOMw-JgoGdtzOotWAKek9-xkTcqPVC2Vo_AxJA3H3aqpnPsdhfUIjawo8OgaHO_pgZcZ220M-1BUgLyfKeoSI-uhMNzJ_4PTeJRYhyEwshJdmwAOOpZTEb6Pfhnf41fSm1Iu06PQs2IfGbu94Z4Z5AdUom2TwraOEaM2zU0zGtwhBPWpz8GqIk3EJynCLhZncquwlpkmxiaBT78ys9Toa52DrArCQ9CJlMETbYZhXjdHJgFdI04JXXSUriK307Q=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:15:08.721171Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "zG_3apOCLPzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 192,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 192
+    }
+   ],
+   "prompt_token_count": 199,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 199
+    }
+   ],
+   "thoughts_token_count": 1077,
+   "total_token_count": 1468,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

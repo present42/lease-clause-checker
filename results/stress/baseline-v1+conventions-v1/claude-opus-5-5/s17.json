@@ -1,0 +1,67 @@
+{
+ "clause_id": "s17",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "0cdca4e3dd908b3e8333391ec503fe43cd82dec6ecbfe5f50307208c4ec36fa9",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the rent is paid after the 5th of the month, a late charge of $50 becomes due.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:33.138009Z",
+ "text": "**No, this clause is not enforceable.**\n\n**Why:** Section 134(1) of the *Residential Tenancies Act, 2006* says that, unless the regulations allow it, a landlord may not directly or indirectly \"collect or require or attempt to collect or require\" from a tenant \"a fee, premium, commission, bonus, penalty, key deposit or other like amount of money.\" A $50 charge for paying rent after the 5th is a penalty or \"like amount,\" so it falls within this prohibition.\n\nNo regulation permits a late-payment fee. The exceptions in O. Reg. 516/06, s. 17 cover things like:\n- refundable key deposits\n- a maximum $20 administration charge for an NSF (bounced) cheque, plus the landlord's actual bank charges\n\nLateness alone is not on that list.\n\n**How the rest of the Act applies:**\n- **Section 4** makes any lease term that is inconsistent with the Act void. The clause therefore has no effect even if the tenant signed it.\n- **Section 135** lets a tenant apply to the Landlord and Tenant Board to recover any late fees already paid.\n- **Section 59 (Form N4)** gives the landlord's actual remedy for late or unpaid rent: a notice of termination for non-payment and an application to the Board. Persistent late payment can also ground a termination application under s. 58(1)1 (Form N8). Neither allows a financial penalty.\n\nVerdict: not enforceable\nSection: 134",
+ "finish_reason": "end_turn",
+ "input_tokens": 226,
+ "output_tokens": 1047,
+ "raw": {
+  "id": "msg_011Ch1HwozgGDFdxMsHsUT39",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**No, this clause is not enforceable.**\n\n**Why:** Section 134(1) of the *Residential Tenancies Act, 2006* says that, unless the regulations allow it, a landlord may not directly or indirectly \"collect or require or attempt to collect or require\" from a tenant \"a fee, premium, commission, bonus, penalty, key deposit or other like amount of money.\" A $50 charge for paying rent after the 5th is a penalty or \"like amount,\" so it falls within this prohibition.\n\nNo regulation permits a late-payment fee. The exceptions in O. Reg. 516/06, s. 17 cover things like:\n- refundable key deposits\n- a maximum $20 administration charge for an NSF (bounced) cheque, plus the landlord's actual bank charges\n\nLateness alone is not on that list.\n\n**How the rest of the Act applies:**\n- **Section 4** makes any lease term that is inconsistent with the Act void. The clause therefore has no effect even if the tenant signed it.\n- **Section 135** lets a tenant apply to the Landlord and Tenant Board to recover any late fees already paid.\n- **Section 59 (Form N4)** gives the landlord's actual remedy for late or unpaid rent: a notice of termination for non-payment and an application to the Board. Persistent late payment can also ground a termination application under s. 58(1)1 (Form N8). Neither allows a financial penalty.\n\nVerdict: not enforceable\nSection: 134",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 226,
+   "output_tokens": 1047,
+   "output_tokens_details": {
+    "thinking_tokens": 564
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

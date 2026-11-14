@@ -1,0 +1,67 @@
+{
+ "clause_id": "c33",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "eef39db290b94aee735f8ffef6f399e82859af4e6f56d5a6789e756dab826d47",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant shall pay rent for the month after the tenancy ends, even if the Tenant has already moved out.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:01.183100Z",
+ "text": "The clause is **not enforceable** to the extent it makes the tenant pay rent for a period after the tenancy has validly ended.\n\nUnder the *Residential Tenancies Act, 2006* (RTA), a tenancy ends on the termination date set by the Act's notice rules, such as a tenant's notice under s. 44. Rent is payable for the period the tenant is entitled to occupy the unit. Once the tenancy has ended, no rent accrues for later months, and the clause cannot create that obligation. Section 4 of the RTA prevents a tenancy agreement from overriding these statutory rights and obligations. The clause would require the tenant to pay for a period after the tenancy has ended, which the lease cannot impose.\n\nThe clause could still have some effect in one situation: if the tenant leaves without giving proper notice under the Act, the tenancy has not validly ended. The landlord may then pursue rent or other remedies for that continuing tenancy. That result comes from the Act's termination rules, not from the clause itself.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 233,
+ "output_tokens": 2095,
+ "raw": {
+  "id": "msg_011CgwRBHzpUwqdNkdNW3WFu",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable** to the extent it makes the tenant pay rent for a period after the tenancy has validly ended.\n\nUnder the *Residential Tenancies Act, 2006* (RTA), a tenancy ends on the termination date set by the Act's notice rules, such as a tenant's notice under s. 44. Rent is payable for the period the tenant is entitled to occupy the unit. Once the tenancy has ended, no rent accrues for later months, and the clause cannot create that obligation. Section 4 of the RTA prevents a tenancy agreement from overriding these statutory rights and obligations. The clause would require the tenant to pay for a period after the tenancy has ended, which the lease cannot impose.\n\nThe clause could still have some effect in one situation: if the tenant leaves without giving proper notice under the Act, the tenancy has not validly ended. The landlord may then pursue rent or other remedies for that continuing tenancy. That result comes from the Act's termination rules, not from the clause itself.\n\nVerdict: not enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 233,
+   "output_tokens": 2095,
+   "output_tokens_details": {
+    "thinking_tokens": 1747
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

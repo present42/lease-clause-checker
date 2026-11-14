@@ -1,0 +1,67 @@
+{
+ "clause_id": "c11",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "848c9d23bc2c623aa49a1b16bab0aa83c6a33c8d98c9456a192765013d664d6d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: By signing this Agreement, the Tenant consents to the Landlord entering the unit at any reasonable time without notice.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:38.828758Z",
+ "text": "The clause is **not enforceable**.\n\nUnder s. 26 of the *Residential Tenancies Act, 2006*, a landlord who wants to enter a rental unit must give the tenant written notice at least 24 hours in advance, state the reason for entry, and enter between 8 a.m. and 8 p.m. (unless the tenant agrees to a different time). Section 27 sets out the limited situations where notice can be dispensed with, including where the tenant consents to the entry *at the time of entry*. A tenant's blanket consent signed in advance in the lease does not meet that requirement, because the consent must be given when the entry occurs. The clause therefore tries to do what s. 27 does not allow: remove the notice requirement in advance.\n\nThe clause would also conflict with s. 4, which makes void any term in a tenancy agreement that purports to waive or limit a tenant's rights under the Act. A landlord cannot contract out of the notice protection.\n\nThe clause could be read more narrowly. A landlord and tenant can agree in the moment to a specific entry, or the tenant can consent in writing to a particular visit at a particular time. Those arrangements may satisfy s. 27. A general advance consent to entry \"at any reasonable time without notice\" does not.\n\nVerdict: not enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 235,
+ "output_tokens": 1672,
+ "raw": {
+  "id": "msg_011CgwR9eV4AsYAaQdLDbAMS",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable**.\n\nUnder s. 26 of the *Residential Tenancies Act, 2006*, a landlord who wants to enter a rental unit must give the tenant written notice at least 24 hours in advance, state the reason for entry, and enter between 8 a.m. and 8 p.m. (unless the tenant agrees to a different time). Section 27 sets out the limited situations where notice can be dispensed with, including where the tenant consents to the entry *at the time of entry*. A tenant's blanket consent signed in advance in the lease does not meet that requirement, because the consent must be given when the entry occurs. The clause therefore tries to do what s. 27 does not allow: remove the notice requirement in advance.\n\nThe clause would also conflict with s. 4, which makes void any term in a tenancy agreement that purports to waive or limit a tenant's rights under the Act. A landlord cannot contract out of the notice protection.\n\nThe clause could be read more narrowly. A landlord and tenant can agree in the moment to a specific entry, or the tenant can consent in writing to a particular visit at a particular time. Those arrangements may satisfy s. 27. A general advance consent to entry \"at any reasonable time without notice\" does not.\n\nVerdict: not enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 235,
+   "output_tokens": 1672,
+   "output_tokens_details": {
+    "thinking_tokens": 1250
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

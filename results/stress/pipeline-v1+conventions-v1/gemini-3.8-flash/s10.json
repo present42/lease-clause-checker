@@ -1,0 +1,111 @@
+{
+ "clause_id": "s10",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "73286e74564b2e26c8ef3e20509afc082fb6b34a01966c81d60b47a74b5ec518",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nBefore any rent increase, the Landlord will give the Tenant at least 90 days' written notice, in the form approved by the Landlord and Tenant Board, setting out the new rent.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:44.503084Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"116\",\n  \"quote\": \"A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord’s intention to do so.\",\n  \"reason\": \"The clause is consistent with and reflects the statutory notice requirements for rent increases under section 116, so it is valid and allowed.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4425,
+ "output_tokens": 768,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "4HD3auaxLdW9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:49 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"116\",\n  \"quote\": \"A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord’s intention to do so.\",\n  \"reason\": \"The clause is consistent with and reflects the statutory notice requirements for rent increases under section 116, so it is valid and allowed.\"\n}",
+       "thought_signature": "AY89a1_zOhvOsjoNVUwnl0aR7hK0ybSTV2S_KEmOhJSWbORXYvJbL7_kRvWA3FNXEioz-ejGDOO7aBdvAY5o_Zg4BfTKhmkUt0jZyoPAwOX2_J1qytEDMSqQxodoWXng5Xs8i3Mk259xbKEeLUl4RWa40sk2xj72ClFrb8y-nEJ3o447EX2V6rZzgO4RIMfSXaze6sla46flXp1y0A9bVhb3hQsI__x2oZwPOkkVTRWzXxj6TBFXdqCUUrprK_xlC-5f-RAHcqYIYoF_TVZ-uP7aVzksy_NE6yZ2aC-GbDcpDjmv0j04o0TUvWXmx0rO01WIAA8vwZxVWg__6LxE3uQ76xVAzuBQaHs1KcuQMkCBTO3IZgWuoSc1TjyaBMQjaVl_Zz7UKNVRbbTrPvo6ZRKWKalsLXSJyQ0f6MXHQcMjuQ40Axq_7szpa_UwW6zua3IKH5fwkGD8VOje1Rn3_JI1zJOi08Y6wS2HvhabhRCf6Ne0gZ_Sw8RpcaNomJQo01A3k39vccnDu21WwbRtV1GWYuP1hIPJVAnwviOfEV-3odpJPAHcqHQ1pbwGComXN2cDH-4-KfnKEVIHBy03mPT1ZmnvDetDm-AGJlLNuN0WsCU5uHf-PE0S66r-AYOFSW2CNOaMgejepRWQkfugU2F5XW0zoQGrI_APpjGvd0S470kS_W85VaNMyvqlwi5lvraI9YVKmrh4oTgniLHW_kYMvTGDzkLronzVlWenbIR0Bl45s1pNJm56lwZ_QlK1srO1lHZ2-n6ZhU0uNBI0Y7OFy360iIamgs4bntUDg4MtgEaMab1hU3n4QywGB2i2qu6ujs-5yI68QJJC9XorSmTvLlinyZHEyzbzqzUgtGkIJzK7tT3h1GlKC4xIwbB9nutL2r-vjw1MW2vDYP5yN18PccqCyzYgr_kpMWL7FhGNbheu1lqKHYNuztiVNbzs50tGUIi5UmWVhVrQvDWGOF4UU_fqv0sSWIFpSt9-iXw5gGVcxbvE3lK9mlaH9dq3ApJM8fR9eV3PxV9XTWyc64oeiK3p2Rig0_viKAK99R4s65TnejOqyDSl2i6scQZt6AAMw6F-JtgzhajZkIIbtYf_078TyY7m46912CvIbFDHQ9_uc9ibgtTnjJcOOdglEWTV48H6X_BHQZYMVi9suowOxN_10JdxqHtWUXjDrIRNe2jOR8foA3qnjT9_Kq55kYU0Dv9k4S5DGO4iV6bUYCmhUNmD-4ACYOp3AMJvXJAlK-cUN4PfzOPt8h30jYZTbtRbJCzgXVOsslMYpDcDeH78gTWBNUUXD2k2BO1m6nXrS-115tDlz16egXKnTrKgrvYPPA6XW7QDp7_f8XwB76JrLJs9o_CO6mhY67A61Dk4LZ02XuvLujSbGquq2-Ak5DMwgp5YYrknVbsrwplE0lMNoVcMMMKDEuHW8i9wU95HtRmHl9n1I1EdhcJvnXVEImXMgZTYZ5i5WKraMuaR1IQSeTkVQGQt9VItC3MROriUHQYnfIiW5fqkwuVtpDFGQlzdkbS_LR6TqH4L7qDRjzecpLfiJAJE4fhut8CCsRdaB6yUHgs3Y5QuysQWaC1TVV-DVN9KAbHrO_Xijm8FhaouV1fwXJ7XmJGcgvj8iTG25SzE3ro0zX0XPTbnKg-G1ZgLBJMT2PemSyeOG8XBDzsAZHiPMSTH2YnTS-CwcrKb4PGZSVCRqZ5dJm2G-sozpZPW8vdKWNXD5ZdBTV1gbMQndAlkabgAj0b_u7o-yX3aLORuqF7YSvNA9pGhfbnPojqvzlaGk7DbGLle2_MT6uhe29dfuHmdxjFwM0z2wv_iwD3Xp2Kt0oQh_8T8tkUVq6H4_ztRO7zsmwCCmBV8dUfqgWkl9UqT5nAjfRHBSPkInDIus2GbGMF5L5qSjGD2kj3CtdrsE_Zvt9Q_hESUwLW_gA-THqsFGytSQs9137W8RwuiC-LL12okv2iDqoxi9TSb2TVqH0KgqqfUZhMxM_T7Xl3wmO3E7iFVoChKOB2BhhRv0eUMMrxvZFmQN0KmCPNYT4GZCbh9XUxi2Ilf4SEoZAPUB2cv_b9tQqErCDni5YknzcBw_T5QnmCpu_SEEUm4CkdRd4VBNH41BNnsG8d0iZXqakeqntVw8Kb3oIJz1zj7RHMoTZn5IoVNuQAuvQdp5_SH15NkBdWFcOT3biHqIm1qevFXWzZMpVbypUQeFy3mM7EKvXf0KnghfJ-9LwAQRjdqEWnm3nJZldOrcL8_ExJ_LFHfB3AhsGduy0BZUUPWITlOfiCa40hQIF-yx73NO5pMRo4BgxfR2aaq_w8rZxJrSEGehb66qhtwuGFWvzCcFyP6-EKDcpTEOqJZd3lfKgRzdfQxOmsnHPX8iedXu2MnnfbFo9noNyi2fw-NIJ8OwvVJ39Dpq4-or14U0POWzIpVCjVcKTN737Ke40CH4qMUq-BwIEmxZybhIfQ8iXBz3enyBLIL52oZpXkCIhu3tZs4g3UMX5J3jzZmL3dA5As-1Pan9xaqm57E1YE4ZyUQwwcuyuuwOtLV42hJmn-iJha3IT-YVbctWWwSm3DPmIm6PZcZ47QjtgQBtdekRfsGcQDrvIZkx7hS35pKe4m4ymKcglFRqwS9QAaxxNB7_fstxnURW2xpxe-pbicUaOjlj1Eempd49Nio1m-YuCeTAjp0szEuP2jxdmhu41VJnEFGSj7qOOgIucvg4j9Hlz7WE4-cXAUE0Tm8GN0704XjKzhV8PoQJW9lWaL7T3-mH27sS59HXEaaKOfiaWxMUD1TI0VZyufWumxtUzK4U46SpBQk6zKFQCiaM-sC4qCt5DSnWDbNradug5ir1nq4L4I4e_fRC7Tze9B9pZb_yfnqBfGonobHf9hKGszsN1day6o4uelXT0RsyDAgZrRxjcnjQSi6QTpHFu2O4dAQv9XsaDzVLORdWKxOXIGThNiS6RN4ja9hRtAVhTgpNuTM4MqC_LocS615Sg0Joq9aHrB3X33MneKWxgpldI7kkH6caSZvexoUne8EXpXSFScXhhugKbMlYGwOoL3CEecoWyI3B5XNcHqwHSGx4ytrAhAxh2qWufuxJD829Jtq4Qo_924ZqfrAcp14XEfoTXlG99YYj9Z5QvK6nQcr9wfJGR2SfZvpJ1YLzvCxXzUC-xNqeeOvbVee-7Dg0zKp5oXYKXGdXmRk6rn4duaM31v-7oBxaCIAuq-kQnm06anvTEKSy9TNKxwvhjqvBruPYXumHI4_qSPyJQNZspzv0ro2f9sPAWswAt3ePElc_FyQVd2qDyj4xMsW3CtcZ-6ef6PSlGwktH2e_bevTfWMA2gv9KLanS-nR5n0MuQQFdND7l3lWCn8K6uxcxC2VxSIowofuNegovWqhoDfpv5SKqOi9K3MKacCE1D036wuIPUKCG2efa03cdRPbFc8BFf3kMCZHJ0cHjQBCT3OSzcxvZs7bV1-MQkOiNuslId6uRqV3iRaNr0J9ugEs68nt0S0R6AFBHzHEDRVrJ16Ib_CYxTK1_lXxMaFq0CC3v0O6xkno4JcHRgM3NXvxawf3BG13FZ7RRcoMGJrAP3NYNgEzfP-1GLCLkaFMO5PPvHSLa28t5OHkAJMbnaDfudA7SrGhiyK0jv5c68CtdkPJHpporpA5kH31tvjEF4YgQtPAN8tzjrPEbo4TG3RvcDMEpSMRhBTaxxNolnJ3EU7A8NHGWwjTyTK6WUx5KAY8h45pDipvKZZFkFlZGvWtoBWaS8WJFl31Glhi1Oie00qynTOxCy6KshXjWjka-ND40GVby2yEA=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:44.743654Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "4HD3auaxLdW9w-UPidKMiQw",
+  "usage_metadata": {
+   "candidates_token_count": 100,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 100
+    }
+   ],
+   "prompt_token_count": 4425,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4425
+    }
+   ],
+   "thoughts_token_count": 668,
+   "total_token_count": 5193,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "116",
+   "quote": "A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord’s intention to do so.",
+   "reason": "The clause is consistent with and reflects the statutory notice requirements for rent increases under section 116, so it is valid and allowed."
+  }
+ }
+}

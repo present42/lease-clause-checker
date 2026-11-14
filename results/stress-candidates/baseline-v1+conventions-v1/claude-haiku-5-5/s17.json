@@ -1,0 +1,67 @@
+{
+ "clause_id": "s17",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "0cdca4e3dd908b3e8333391ec503fe43cd82dec6ecbfe5f50307208c4ec36fa9",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the rent is paid after the 5th of the month, a late charge of $50 becomes due.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:20.943270Z",
+ "text": "The clause is **not enforceable**. The RTA does not allow a landlord to charge a late fee for rent. A $50 late charge is a prohibited charge, regardless of what the lease says. The landlord's remedy for late rent is the statutory process for nonpayment of rent, which runs through a notice of termination (Form N4) and an application to the Landlord and Tenant Board. It does not include a penalty charge.\n\nSection 133 is the provision that decides this. I'm citing it from memory, so please confirm the wording against the current consolidation of the Act on e-Laws before relying on it.\n\nVerdict: not enforceable\nSection: 133",
+ "finish_reason": "end_turn",
+ "input_tokens": 226,
+ "output_tokens": 1259,
+ "raw": {
+  "id": "msg_011CgycnBpm1er1Anewarugd",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable**. The RTA does not allow a landlord to charge a late fee for rent. A $50 late charge is a prohibited charge, regardless of what the lease says. The landlord's remedy for late rent is the statutory process for nonpayment of rent, which runs through a notice of termination (Form N4) and an application to the Landlord and Tenant Board. It does not include a penalty charge.\n\nSection 133 is the provision that decides this. I'm citing it from memory, so please confirm the wording against the current consolidation of the Act on e-Laws before relying on it.\n\nVerdict: not enforceable\nSection: 133",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 226,
+   "output_tokens": 1259,
+   "output_tokens_details": {
+    "thinking_tokens": 1051
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

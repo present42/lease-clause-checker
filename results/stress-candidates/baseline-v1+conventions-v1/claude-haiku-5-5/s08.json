@@ -1,0 +1,67 @@
+{
+ "clause_id": "s08",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "365fd8ce9ace5b8b16868a9c4945a488c97b6c8777e790da33ff86709374a660",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant shall keep any dog or cat in the unit licensed and vaccinated as the municipality requires.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:04.283710Z",
+ "text": "The clause is **enforceable**. It requires the tenant to do only what municipal law already requires of any dog or cat owner, and nothing in the Residential Tenancies Act, 2006 conflicts with that.\n\nUnder the Act, a tenancy agreement term is void only where it conflicts with the Act or its regulations, for example by altering the rights, responsibilities or obligations the Act sets out. The clause does neither. It adds no new obligation beyond the municipal licensing and vaccination rules, and it does not reduce any protection the Act gives the tenant. The Act does not itself regulate pet licensing or vaccination, so the municipal bylaw supplies the requirement.\n\nTwo caveats:\n- The clause could not be enforced to bar a pet that is an assistance animal. The Human Rights Code overrides lease terms on that point, though it does not make this licensing requirement unenforceable.\n- I'm citing from memory and could not check the current consolidated text of the Act. Please confirm the section number against e-Laws (ontario.ca/laws) before relying on it.\n\nVerdict: enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 233,
+ "output_tokens": 1754,
+ "raw": {
+  "id": "msg_011CgyckyNdEN2TxHgkHws9W",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **enforceable**. It requires the tenant to do only what municipal law already requires of any dog or cat owner, and nothing in the Residential Tenancies Act, 2006 conflicts with that.\n\nUnder the Act, a tenancy agreement term is void only where it conflicts with the Act or its regulations, for example by altering the rights, responsibilities or obligations the Act sets out. The clause does neither. It adds no new obligation beyond the municipal licensing and vaccination rules, and it does not reduce any protection the Act gives the tenant. The Act does not itself regulate pet licensing or vaccination, so the municipal bylaw supplies the requirement.\n\nTwo caveats:\n- The clause could not be enforced to bar a pet that is an assistance animal. The Human Rights Code overrides lease terms on that point, though it does not make this licensing requirement unenforceable.\n- I'm citing from memory and could not check the current consolidated text of the Act. Please confirm the section number against e-Laws (ontario.ca/laws) before relying on it.\n\nVerdict: enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 233,
+   "output_tokens": 1754,
+   "output_tokens_details": {
+    "thinking_tokens": 1391
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

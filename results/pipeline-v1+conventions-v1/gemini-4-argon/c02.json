@@ -1,0 +1,110 @@
+{
+ "clause_id": "c02",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "cb95c044eb4f58b06f058eb07b351505ad35549e6371163d654e7df220d186de",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nOut of consideration for neighbours with allergies, the Tenant agrees not to keep any animal in the unit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:19:04.812351Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"14\",\n  \"quote\": \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\n  \"reason\": \"The clause prohibits the tenant from keeping any animal in the rental unit. Under Section 14 of the Act, any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4529,
+ "output_tokens": 113,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "yX73atzWCcmkyOgP2qHD-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:21:04 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"14\",\n  \"quote\": \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\n  \"reason\": \"The clause prohibits the tenant from keeping any animal in the rental unit. Under Section 14 of the Act, any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void.\"\n}",
+       "thought_signature": "AY89a1-5Ey_82AWsyJF_4yNZl8OihfeCZ8Bavf49-e8LXa4fFMpeBrXFoBhtsjNKH4vGpiCZ9WYAF4OobOB7MCIKHrNqGR34pwFp3TONTw06If7xpyIlW0p6srNBwd4="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:19:05.158556Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "yX73atzWCcmkyOgP2qHD-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 113,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 113
+    }
+   ],
+   "prompt_token_count": 4529,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4529
+    }
+   ],
+   "total_token_count": 4642,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "14",
+   "quote": "A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.",
+   "reason": "The clause prohibits the tenant from keeping any animal in the rental unit. Under Section 14 of the Act, any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void."
+  }
+ }
+}

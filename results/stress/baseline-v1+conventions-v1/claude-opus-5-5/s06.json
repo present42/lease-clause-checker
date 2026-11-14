@@ -1,0 +1,67 @@
+{
+ "clause_id": "s06",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "bab55fdcbb96cb7ea4d7625544b657bcbc0ee06a73be3ec854fc916674b852ca",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Each year the Landlord will pay the Tenant interest on the rent deposit at the rate of the rent increase guideline in effect when the payment is due.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:29.631683Z",
+ "text": "**Yes, it is enforceable.** The clause restates an obligation the Act already imposes on the landlord.\n\n**Section 106(6)** of the *Residential Tenancies Act, 2006* says the landlord must pay the tenant interest on the rent deposit every year. The rate must equal the rent increase guideline under section 120 that is in effect when the payment is due. The clause uses that same rate and timing, so it gives the tenant exactly what the statute requires.\n\nSection 4 voids lease terms that conflict with the Act or try to waive tenant rights. This clause does neither, so section 4 does not affect it.\n\nSection 106 also lets the landlord use the interest to top up the deposit when the rent goes up, so it keeps matching the new rent. The clause doesn't mention this, but because the Act allows it, the lease wording would not stop the landlord from doing it.\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 245,
+ "output_tokens": 820,
+ "raw": {
+  "id": "msg_011Ch1HwYy3j82E3wvVUgBXv",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, it is enforceable.** The clause restates an obligation the Act already imposes on the landlord.\n\n**Section 106(6)** of the *Residential Tenancies Act, 2006* says the landlord must pay the tenant interest on the rent deposit every year. The rate must equal the rent increase guideline under section 120 that is in effect when the payment is due. The clause uses that same rate and timing, so it gives the tenant exactly what the statute requires.\n\nSection 4 voids lease terms that conflict with the Act or try to waive tenant rights. This clause does neither, so section 4 does not affect it.\n\nSection 106 also lets the landlord use the interest to top up the deposit when the rent goes up, so it keeps matching the new rent. The clause doesn't mention this, but because the Act allows it, the lease wording would not stop the landlord from doing it.\n\nVerdict: enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 245,
+   "output_tokens": 820,
+   "output_tokens_details": {
+    "thinking_tokens": 522
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

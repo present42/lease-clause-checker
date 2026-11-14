@@ -1,0 +1,111 @@
+{
+ "clause_id": "s24",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "44225d1d0716ccd92bc0f686fb29d40457e67c7e611d4987c4c24f9a2d48cc13",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the Tenant takes a job outside Ontario, the tenancy will end on the Tenant's last day of work in Ontario, and the Tenant will move out that day.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:51.860265Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"37\",\n  \"quote\": \"An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into,\",\n  \"reason\": \"An agreement to terminate a tenancy is void if made at the time the tenancy agreement is entered into, meaning conditional termination clauses included in the lease are unenforceable.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4419,
+ "output_tokens": 975,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "53D3av35Nvmew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:03 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"37\",\n  \"quote\": \"An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into,\",\n  \"reason\": \"An agreement to terminate a tenancy is void if made at the time the tenancy agreement is entered into, meaning conditional termination clauses included in the lease are unenforceable.\"\n}",
+       "thought_signature": "AY89a18TXSxMnrI_d0DZ_g3rgqDDHHrRIYpqDMFaQs0mVgH3SpNuVHBTXZqjAYdDb7IEPAGt0uKVm5PHpCZxHyG2uzm9Npsiqgg_m_KdLkUZzAkUlVp6i9s_15cVDS13_U6UaTmzAfEi28d4hKVX89R8LC4iLqG_y8NX41un9r2pWEG1OUQJrV6tW08AqvpLx1ce5-CqJ4Y1zWBIVqnUVh_zIdLibaB_I1gdfcUO4qgGm4A6CgQT07cvRz3RMIwVqZkV7qCjsCAMS_Lh6qh-lACjgYHb_vgbk3B50eST6vEzzU9Ct0jCYnRzu_aG5AA8kHDttfgfgkm6pjgkOD7DG76rbGRT9UdsUuqgrgYwWYYFhJQN-T00DwVMynxBi1i8O7iR17PKd9cnXaNxJeomiUH0xbZa0WL2gnqof1rf51AwY1U3SRkykZu4eSAc2Vol71kGSRpG6i9LhNzYax-z4uIwJrdIskfjIf_k7Lt1sX7tv5nFpXsoqUTWWbo4moK_IwKTijZ_WniYmqAAu-_Rywgtv7leRl4FkDusv-E2z6vvsiN0I1X-cIox4cx_AW_V_j7cjAhcdjYj5iGWfmVqaf1pC1OkVKvh5Aa3kMHoXfXMSjTwm04rA_2JyND4kd3kLoBVc4yHa9i_R00S1AIuXwCJMgoEgB1OGIge1Zek6Q0tTmt28AsRYBOQERS0emwRoCT7_YSq5wXyMX9SuVQfgE_RX1FR-LJKrO7cSInLrAArd30k49imQTpfC-A05j_PMbJjzFW_i8ncP7gLs3K-RLhk31hxiBku8pGMmOjNsSoeQFmj6-4wz0C393ADGY_QSrwoROoEpM_Rwq7JDMmF06o2UEXAHfDrJ5PGE4pHISWxs8GkYbM4BcUYjUp9XMi2r2FZJTaKRTkiffGqGzyvv6-UjwhihN_zpnc2_Z3GR5K5cjALikaTAaSMyPW4Yqq15BGH7JQ0Xy8XUPBULXJHWechC2_iaP8IfmmFIcdPLonCkG24lD79TiruewCBSCdN_SQia57xmczwySP6d6ZMxWMRakOcovQl2-M7qpzmu9IYeLu_cJo1e0m95qxB7X92z_y3sRFeLyFJV6scGgPyhBvSG6zIskoSZUl6EuVxctMwo_B9lSKbjM-l2b6a8cL2vtmpNFYBPUGR0iSzJwxhjbuA8FIqkUrWkDK3nFi2YWzbQC-T4ieSLlIJiGYcn-fGzerw6Ou4q4-ODKhAqZhxrI6V1FE2ta7sjqiEE_ETNVuuygb4FQiRR4uQ-8EztHv24lof7gMhye6EgSCEqpgJKkm0Zm24v6E4gFmVpepHlZXHn46vCNXZbUxNgvLl4yhoaPK0_zfFzSSy0t2XsqMIOw1WbtVgD190JooRct5EPL9bnKWV0pThCRr0eyLPIk2dXY0yR8-l7nuzeqoNrW5HZeYrxeiZ4hxlrFEvN7b3iDS-fWqKWU7qAA9nDa_m-xP8_OGJoQ_4Ja7zYAsQw7kiAdvo_OgTqYmdcEkaxvq-IOV2GzoQlFb47SiGRTo1-p8NYAcH8Q5E9FpBgw5XHCx_pzFJEfNLewykliE9Wu0sHAqbAxh0j7GmKEJVuqSqpicRyOWoErdRv7HZmJvAVNcPRLU3DKq9tP_sr_QdXf5uCQeGvEmwodVy6YvrBZiXFn3oMGShpObdkDGSi5HHJd1HPKWkjrcjbpj-_VBIGaBeYqkCRUyMKjtFip4eVGSXKUJXT3U1hcHGfsZSSHPHICL93Gcphx89tNTuTgMpAsGYQNgwauJLndPcmNMlhYJYJymwBIuDUYoThgCSTMTD7FrGUalvhi7PtEqYTMS4QeuyV7j_fI-DF65oOt2kpHiizMd4a5ECjqJJdK9XjpVuyF9XGkwCqo8doZ_imajdwsR-Up1qrTtts2GXgTG1TUPOtgqKt8bFmmiYUoiD-d831myn1Vy5M5SYCGVIeebtTe7txGiEYs10MT5Ht_cqONrJn4fUa_kkcTg3pxEL_C-TCZDpIjq_qCk_owQaZpDuH9Nl3e4wOrqvDg-wkzigj4IO7O1NjxSHEKn9axpYec_AEYAWzfv766891SkO6wPNsdP5XE0N0k_-9hW3JnS5QrIoxIZp6sxge5z3xKomb_lTHI_hWh3g9Gb4V04-nFu-JzyqzdJMdDYLR0Ty84sqcB0OMDAkngEpHAX_F7qQO7ZpwQhCtJ0YGSXsI_BF5PbFAURtZKMoURoTtR1sRuPuacgDCQQLGgxp2H0ixMNXl4GmIxJ4UEKuETf2kheoHPHdGAz0JcEV1f5unCdOPAu88oda26ceYqGd3veD4FYdO9T28JLtVsbD5GfE-j2W8jJ18kOV3_8mqbxlQuIfLHukihVp6EOroSvcKB_wSvE7VlgysoflMpmFtzKbbH4G9PvhxXCxx6p2CjVJEfRqBdZO0ndfSj18Rou5sijH1IKsqQ73dQr1fLuqINOJ8SNDS1_FkbxsuUOawNW55xpJK-vsDwc7MwfYwj3PdTQPDUdy7oJeJa1WYDAlPqHz45XTwnEItlnDPPo9JgunFZJ-RIidpmX7Z1kbEjWK946toZ39_klP03h4Pscp8sry-rVhcbBjD15OuvErYfHWPZXeJ4HyDWLQ-aA_17juD6Rbd8qv5yUfbWjSVTo5Xboj0qN-oAn_wCS7AwCyI8SmDZh3dBmiAMAllmxN4_WWsg99U5QRDYxaWl_Bgi3jKz3SclPBZ45Lv7shYREcYR-Jrr3SWJmjLpYZ6UMu7DpgkMpFXZfGcgeKLlAG0lN1WWQW8V-BBwm9xbqj9Rk3_gAkwFS7PwPtZMJqFZRd5MVtCNlCeIBfFTPZXQHmVa_pZOeq7Ra66CjJutTTdxdetW1iUpR0WVNBkozESE13r03wJcKDSRHJUJHbR_IdKpjFK54qUzOzPJ9Rq2LOSGfXQGYkAwMbrXNhLBN7BLW57dO4Qj0fsOM7AksYFu8b9W_cWF6-Jg30vcgGBjS8PSrJbJkXJRR2XPANPFnOVdJ8Oz7VY_YFdKbNAAfONqiyVXiRBZc75ravAc8KqWvOKLm5PwKhnf8ycLiCbkcrM46HnG4uILV1P1X5kRTmEMmh-eG-DuKr6nQ29B1iqzJ6n38dFMXSt-xG9M8e0640ppdarM3vTMghCFubiVaXZDMj_JjOJyxwkyq9ZSqdFC4RwXFGczBpVCvc8zsir03ge3ddRHQj5hTde7VNSVIKS3EhLy688mhdq_PA-wqCKgvLvGAfSZBAFkuJgEppqTsc1LHLGdaqIQanh0CMyta1_Uyoave7CLm5ineIKzahhkKuTyJ3gXCZPXjIPvAzk7Ns4sKpOzZDed_--eoSnX-BPLAhoxoabUyltR7zT9z7YYcvWBFO9a5F-llm8vKmV5Q8j4KXxvJyx3rC9Kb1qOC06WWyIggve3AFNa3LnU29QmM_8G6XexGuFswENnV3FKUiKoprWNd7F0WjttExPQCC6oog6xJW2eQInY-zLQcIdF9sklcDzRzg5VaFH8U92MT9Ng41J9ZL_732YFOnlDWV08GJ3mB9Y03lch2RlJjvQYuuFL_JAzHPTOYSwB8xUxc0JzmqU-aHDtrlTZoeDMF9EbzSomOxbfMd7pv-lWpdkaeBGtItr6z-eqp2OKr_IY82wpqUSoFx0YZ_FVN_lRoem0ZGgDNQ9dN68thwzeCrKA10l94k_0Vv7dMblXuMqAu6HQ-QngxsOO4rLjLjmgoVnAWlBmZlgDL97zusHASo5sxmn7uWzY11HhXkQdLk0LAfH6De-anCFp2nXjqkDUalglnGOGdUHe4jT3dhmxWRWdKlUWbr9Cf_gsJNTTVqWIbUsdL_xFXFSIJVJoviyHHdW6CVf11Uc8N4DmzLD35t51Q91lQ3hha5m3CXsbFOB6JhN42DPfg-UgCxHrdIdNb3Hj5UUFnTqieyw1rDUOd3_uYtnkD4hG_eYjdziuuKwCBoDJJBMn4ETzEAycUo1WEjiknNKhS4QzY97_QlfSzT5Dx_mkt7oZbvW8gIwEiOp-96HYwjaIHnCGyUw2BopY7yUgSuB9vN6d4flU1WqpYsC60Fhuoh_IJZjra0ru98ko-9cJVTxyvcVEIudg5a_4QHseAe5L172WWIrl6UipgXdrOAfqOyJoCTK7qVIRA1vgEnkHIZUpVFlPaBsC4XfTx_Ay3AW-ih5ujFEUzFZ5Y9atBLK_vKuYL2Pg_V_ajXSUe7qbYb8w2kyt7ODbeDL72cqnFMtlsgjfB5AJ4r_8JCDCHCKBoFq5jWI5L9P-IdHWKV8jN3vfeK-Z5CQVithYaOdbCchsRklq8bxwo2-mjTlXI5Q-KN2z33AGza7fFkEQuir-0q56wdYA99sNHPv0Q7wE035j2fpheWjr_43MWXFGnDeHvJI4Rb7l7G6V4dFnbXuvqEMyvE7iFfosf4s46jCFqx9xEBFTum4DRsLYBuimGASK2xf2prFeI382__3uuk2imKSvhjDzGAbg4iNTNsiFbpKbZhGfXpYSYtstcVQy8aMoZEN8tITc4DvI5DT8RyuyzVvNhZ2Cu6uWoyyf3ry4LvU7saqeRcM5iOnBlF5Plh84b1y_AAwfdrgpHHRleOjKtjZW_JB3FOxpzz-GK3JvBX7wIcdjr2IvTOjLNKJj5OFStz-l8dBolEmRq5oHr2JVAaUdJJrZu13eF6iwacC66glGrupyC5sBaA4N4m0EZFoPaN8gBQOdHJFw5lxmV0L4zkzaMtjW9IGj2oxoKIhkpBENCUV0VGhTYRf7bDmAIiqDh9ODW43ufCwczMsTyyqRzusQr83pGu9oQ5xapyy8h2T4vhMbw3O1BxQh7i0m4OO37_o9FxXZpgjF7do_SomxRCcVeWgYnBHhM_bA30HtH1RNOFpLyNqDIZoMg1z9m9gOLCfalQfVUdO4-qxihTfONashtiUc4I83w1s7KZCDtWwg9u1dk_o8nYVldagzEZMCEyaUhH3ssh7lbfvahCdrKTCWM_OkTAGFSx-j4E1ty2f--BE_hQrBbA7SlREa5mn6DdD9B1WDRMsQ0FBwHjyW3bsHIA9bDObz-_-3zBx2mbvY_urch6ycE8EE-JV9n8sKuBaqx6tiqm2iCPT2ziOYwh2DdLTsCSLZ19XMcqcKHiU19cQr99J1UnSsx1YJ0eqZbz53IC2AQ="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:51.900349Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "53D3av35Nvmew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 83,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 83
+    }
+   ],
+   "prompt_token_count": 4419,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4419
+    }
+   ],
+   "thoughts_token_count": 892,
+   "total_token_count": 5394,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "37",
+   "quote": "An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into,",
+   "reason": "An agreement to terminate a tenancy is void if made at the time the tenancy agreement is entered into, meaning conditional termination clauses included in the lease are unenforceable."
+  }
+ }
+}

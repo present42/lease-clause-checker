@@ -1,0 +1,67 @@
+{
+ "clause_id": "s27",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "5450a1b44b525ce02ef60163746690af00f58874b2b3eaf7bfb8de94219d8fe1",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: On signing, the Tenant shall give the Landlord a signed blank cheque, to be kept as security and returned uncashed when the tenancy ends.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:39.307961Z",
+ "text": "**Not enforceable.** The clause requires an illegal security deposit, so it is void.\n\n**Why section 105 applies**\n\nSection 105 of the *Residential Tenancies Act, 2006* says:\n\n- **s. 105(1):** A landlord shall not collect or require, or attempt to collect or require, a security deposit except as this section allows.\n- **s. 105(2):** The only security deposit a landlord may collect is a rent deposit under s. 106.\n- **s. 105(3):** A \"security deposit\" includes money, **property or a right** given by a tenant to a landlord to be held as security for the tenant's obligations or liabilities, or to be returned when a condition occurs.\n\nA signed blank cheque fits that definition. It is a negotiable instrument, which is property or a right. The landlord holds it as security, and it is to be returned when a condition occurs (the tenancy ends). It is not a rent deposit under s. 106, which is capped at one rent period and applied to the last rent period. So requiring it breaches s. 105(1).\n\n**Other provisions that reinforce this**\n\n- **s. 4:** A lease term that conflicts with the Act is void.\n- **s. 108:** A landlord cannot require post-dated cheques or other negotiable instruments for paying rent.\n- **s. 134:** Additional charges are prohibited.\n- **s. 135:** A tenant can apply to the Landlord and Tenant Board to recover money collected illegally. That would include any amount the landlord cashed on the cheque.\n\nSection 105 is the provision that decides the question.\n\nVerdict: not enforceable\nSection: 105",
+ "finish_reason": "end_turn",
+ "input_tokens": 245,
+ "output_tokens": 1168,
+ "raw": {
+  "id": "msg_011Ch1HxGLCicTw15rMrfx7T",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.** The clause requires an illegal security deposit, so it is void.\n\n**Why section 105 applies**\n\nSection 105 of the *Residential Tenancies Act, 2006* says:\n\n- **s. 105(1):** A landlord shall not collect or require, or attempt to collect or require, a security deposit except as this section allows.\n- **s. 105(2):** The only security deposit a landlord may collect is a rent deposit under s. 106.\n- **s. 105(3):** A \"security deposit\" includes money, **property or a right** given by a tenant to a landlord to be held as security for the tenant's obligations or liabilities, or to be returned when a condition occurs.\n\nA signed blank cheque fits that definition. It is a negotiable instrument, which is property or a right. The landlord holds it as security, and it is to be returned when a condition occurs (the tenancy ends). It is not a rent deposit under s. 106, which is capped at one rent period and applied to the last rent period. So requiring it breaches s. 105(1).\n\n**Other provisions that reinforce this**\n\n- **s. 4:** A lease term that conflicts with the Act is void.\n- **s. 108:** A landlord cannot require post-dated cheques or other negotiable instruments for paying rent.\n- **s. 134:** Additional charges are prohibited.\n- **s. 135:** A tenant can apply to the Landlord and Tenant Board to recover money collected illegally. That would include any amount the landlord cashed on the cheque.\n\nSection 105 is the provision that decides the question.\n\nVerdict: not enforceable\nSection: 105",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 245,
+   "output_tokens": 1168,
+   "output_tokens_details": {
+    "thinking_tokens": 643
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

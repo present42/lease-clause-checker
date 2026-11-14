@@ -1,0 +1,67 @@
+{
+ "clause_id": "s01",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "8ba06eb1c84a4c6117d6b5a4b94d15bd88cb4fd1b41041be1e9495040ba5cea4",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may come into the unit without written notice whenever the Tenant, at that time, agrees to let the Landlord in.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:04.282592Z",
+ "text": "**Verdict: enforceable, as drafted.**\n\nSection 27 of the *Residential Tenancies Act, 2006* governs a landlord's right to enter a rental unit. It generally requires written notice before entry, but it allows entry without notice where the tenant consents at the time of entry. The clause follows that route: it permits entry without notice only when the tenant, \"at that time,\" agrees. It does not purport to authorize entry on advance or standing consent, and it does not override any statutory protection, so it does not offend the rule in section 3 against contracting out of the Act.\n\nThe clause would be unenforceable in practice if the \"agreement\" were not genuine, for example if it were obtained through pressure or was really just a landlord's assertion that the tenant had agreed. Enforceability also depends on the entry being for a purpose the landlord can lawfully pursue under the Act.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 237,
+ "output_tokens": 1596,
+ "raw": {
+  "id": "msg_011CgyckyPNP74mEoiBtAX4e",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Verdict: enforceable, as drafted.**\n\nSection 27 of the *Residential Tenancies Act, 2006* governs a landlord's right to enter a rental unit. It generally requires written notice before entry, but it allows entry without notice where the tenant consents at the time of entry. The clause follows that route: it permits entry without notice only when the tenant, \"at that time,\" agrees. It does not purport to authorize entry on advance or standing consent, and it does not override any statutory protection, so it does not offend the rule in section 3 against contracting out of the Act.\n\nThe clause would be unenforceable in practice if the \"agreement\" were not genuine, for example if it were obtained through pressure or was really just a landlord's assertion that the tenant had agreed. Enforceability also depends on the entry being for a purpose the landlord can lawfully pursue under the Act.\n\nVerdict: enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 237,
+   "output_tokens": 1596,
+   "output_tokens_details": {
+    "thinking_tokens": 1301
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "c38",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "6077213965bef5054524bed7ff9a1aed7080fe352b3071bda7984b47a4e530b9",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf, after the tenancy has begun, the Landlord and the Tenant agree to end it on a date they both choose, neither of them needs to give a notice of termination.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:34.239455Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"37\",\"quote\":\"A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy.\",\"reason\":\"Section 37(3) says no notice of termination is needed where landlord and tenant have agreed to end a tenancy. Section 37(5) voids such agreements only when made at the start of the tenancy or as a condition of entering it, and this clause applies after the tenancy has begun, so it is not void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6444,
+ "output_tokens": 407,
+ "raw": {
+  "id": "msg_011CgyJ7ZpethwtSveDt1jHd",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSyAoKEAgTGAI4AUIIdGhpbmtpbmcSDLtzvjsTw6KWuUkg7xoMxIzlXIbPqoYWMgi8IjApYZH/xB3c391S3FIeHS3aOZB4mmByzqb02mrAYn/dkooGwMP8TGUEF+xCiFbwvPIq5Qm1Ehus8c6l0S/CUgbOTuC4GR/X6QSB9KlumDYEjGDyGsgf8TzNClvbqajGptstprAYlnddP6lb81qIzgFExwCDEVNG8ZiFv7okrmAVvr1j9+9cJzAcxAcIe67otKQFvaw3Ps14iX0mfS2zRF0KT8i09twW8fAEv6jhaXuLv6JrIsGtQ8xUUFWMSifr98ppWm6YJahg+6n5owSoZPtb0u3UrpNwdvCDVVqm22FV8CY0fZo2XmZ29Ji6kQBbhq41iYWhDVQC7SV3GxlS3X3KNx21bwbTS8URwvTL/5n4CaoVwrzonj8CCjI35HJAupLxBWENdD6WfaEwXfVOYDojuLKTgdlrXLPUMR4d1ld8i8sT/UgotYdfdaIcJszA1fEcAfxBwxP8kFQ228p/33pK26pv/MiQrlKw9E7LFYsKwKWAg2Af3dE6cLNOT9LviALl+jPw8eCvDRLYErqVRXrjC1w2hVFTBSTNVnA2tAhXTJt/kLtgMnL/XIA7594Och8XMDx8Ubx/YqzGeR2gtVM8RzTxCaNzNytYUE1E4nXBkVGer75BjOVS+BH9wBPsW3GjV6sMvGiTrldhEdi4ZEbcFyCNVmIkOfukRM0TMdQWsRL39DkjM8ORZEsiaR3cfjHOZCZBwN4soedjSbxwd9mdaZZiW+vZZexnc3jSqcYC4ZXe7Us+1PRS/I0RNsSLHFTWywXNcQxRZ1SkNYJkVQIgr+8Lo92xe9djwr7ng200fFvM5TIvmksJe/ioOcf/7aMoY3w1Mg38IhS0KMYHr/t1TKD95Q81APHQTqPHuKKYIY4C1LzTnaOk02k1GDGPCmO1LGtB6uAldj/BEGr/PAHdZofuiBMjbyxLaZJPLYsF40lJ2O/BjDtl4FUvM9YxDNCmmFrIpKyLnf2/Q1AsB5Fk1fJJ34jebtNZsVm4BtZ93BQLOuf3wcljHORfI25PsTxJaMM/7LsIBEnRm2peNnmsG5ZSXqIo7DLn8zWq2jcg8MU+KRZ0k9q8SfZ2fVE09H2QbvBlSnQaWZOg7Qgxons7Nupov8d7V+awqKyGk6TWmmHn7eGawNDdpi8UFz7JAxh01O6psgopUmYIk4xbh9JLNbkzLVg+KqLI2QpkwCQWkGdiWL/2j5C9Zd5Orz0+xkcUqZuOePNeHELG1Za5SNGN9GMht7slLVRPHWi65ZFG5iJ7aW5cCi49vwsmBFHIOcpg0I3k0OfIk9IHjD292uatry0S2kz6ei9duhFZvIiK/kK1xW/UgDuIDwhTS8I+BMt1lf32M4x0c7DA1GN5DfEiIEi4OEKpQe/UL3oftlq4lInHlbda6PjFhCJiaYLf1MI2IduE6qBU/tXsy5UaU0DyehMN+LqSy4ykcQdSizogfipdO3Sq1NzWKnw0pkzl2rXN7eGLeEDmRhom+TptwQxC3+xV27v1irgkLpiUiQRUCA+TeSZHt7XsCavI21zpyKtxel2rKmfLyujKyX6G3ADDrROxZomHLZIekQeG0VHwMx0Tbj3wePIs3ULjVM4DjtrlEvvgRyRmxJB3aGggnzc41+K/uD+CcUMkZEVJL875K3AEFsOz58rYiAOTahc2i8ImJWD04a4eosuzOMzLzeETr/HF0C1DKT+f1JHY9Y1EhuIrfEAXrUjFmaq8wszDwtnwozdcW4xmoBgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"37\",\"quote\":\"A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy.\",\"reason\":\"Section 37(3) says no notice of termination is needed where landlord and tenant have agreed to end a tenancy. Section 37(5) voids such agreements only when made at the start of the tenancy or as a condition of entering it, and this clause applies after the tenancy has begun, so it is not void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6444,
+   "output_tokens": 407,
+   "output_tokens_details": {
+    "thinking_tokens": 251
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

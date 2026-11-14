@@ -1,0 +1,67 @@
+{
+ "clause_id": "c10",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "23346ae996a5b5aeb182d2da4c8d35e6c612256848775f48539ef9dc0c5b1c06",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord will clean the unit every second Friday and may enter without written notice between 10 a.m. and 2 p.m. on those days for that purpose.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:38.627539Z",
+ "text": "**Not enforceable** as written, because it allows entry without the written notice that the Act requires.\n\nUnder section 27 of the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit only in limited circumstances. Otherwise, the landlord must give the tenant written notice at least 24 hours before entry, stating the reason for entry and the date and time. The exceptions include an emergency, the tenant's consent at the time of entry, and the tenant's unreasonable refusal of access. A clause that schedules recurring cleaning and permits entry \"without written notice\" does not fall within any of these exceptions. Under section 4, a lease term that purports to waive or contract out of the Act's protections is void to that extent.\n\nThe cleaning promise itself is not unlawful. The landlord may agree to clean, and the tenant may consent to a specific visit. But the landlord cannot rely on this clause to enter without the notice section 27 requires. Entry is lawful only if the landlord gives proper written notice or the tenant consents at the time of entry.\n\nVerdict: not enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 246,
+ "output_tokens": 1566,
+ "raw": {
+  "id": "msg_011CgwR9daVuB4KEAKVsfrSo",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS8h0KEAgTGAI4AUIIdGhpbmtpbmcSDAO3XXHc3XHUVTC57xoMWXESPXBwz5/K3phSIjBDzx41gTt+U1hmoWpkK3DCQZUJXX8L/Xufn8Fu9z4kTX2xonJqN8TgKYlDByIVFf0qjx2xheX6d+p8FbkuHVkDR898V8oI7H9jKGivdCdk38VdXG3j8470ZKtLYn9ekyPu0WS6A6CpjQOoV2590bw9fFJ4/eWZSNBRQUZeUzh5LwPW6JqZSNeA0AvOrQycpbOz3dKkKfajrChNrggvHfTT5z2xWLyrxzUCOh9EbOqZvwfZfdCP0SFI3qBEhAjbPhSDoW9Jx6hFRfvNYp9StXBGfHr3stIHu6hJ/hUUyNzyU+qnwL8Vk0Qsll+ShcB1zwz8ZauJKcraFx3/I0HKamWJeRtBLF5uxe7f8bimOtKdYC1b9u/IQa3OjgFXlEs10eppGjM47y3OgQqR/8oS6um2qm8TW3kzfAuygmzdWFZrcas1k2iF8D0mBXOACKXklfjANJrrK4fteOw9ZwwLJcUGTjIlEE5vnlFqFP6GuYo9sZPRhHvTUNRh2tQDwD6pX1CzzPDur6FCqMepCiTA/uPDazwYL/fE+D5ChhjXPCw/l2qGCux7GXphgKl9WWQCG7Xzs3MsvG5c1J8Tk4bjun/JHaufSPp2hcmaV3MLq2Xultd6uTxH0SSPLnUeRkZJtBEnQJ6p316AJYwsDLV1yFJKi36lZKu0y0Y2cffAeB1OI72i7SZgEfzhudP9Ey22sxvniYNOILtB+Cz9kUl88LEt5PXAc0xZiYf2m3l2x8irXMN5ggpzJ3l1fNcaKWtZkHIKc1j3yAnxuYsmQFbRmZAyeJP260zcZtY42d+rZn852a3KyDvTXPzKn8taWOjntIrhdMnbej79IutvS2fKCT9+HG2I6SDGE5u9/OwOznWHOtqGGk59W9JCD+1Cg7RSosovNHY9HTgvUdD3BkqihKCNqy2Cunq5SOGAX7S6zHEQq1L+amGExGrfE2csuGpxkGj1iJq4Ws8UN1hrd47+zYD8XsOd0QhRTlqNtP0aiz8YVcGxXQ7crvR1GzdbUWBJmTSZp18v6w1oblQtOpH2Ed41RVdp0olqvBxD2DCuCL2Eb9anuiZpVuTz9frSV7xjXIQmq3SYrSx8m1iuDXpF9VPCjIKBjrfa8XPVaYUAjSWdZSgs6PFeWDu6mDveSiMQn5P1oCBB398up4R3qXTOv2CgJLlyO6/nBLZMTz7RalIBlSFM8IYmLIJbSTnCD/0bcBVGgardt7A7QmMqaxBGlLGJ9KWuBCbL0i0AUQvYRdhqBudT4NOfgBiNnKyqnAbyqCRLrdD3Oanf2gQQHBloXi1JAY5T+n8VOqhVi+lfum0VTXrKU9Q9GRUYXcj/lvtZPPg52mKIBI+2aLmNntJoyRACo8pFJ5KfBNsQoAN2o9qu16F2bcAsc96qIgTH7oKMTvJoJiDe6whhLpa9xQ5hRr+J/4cckE5zR7+TGuQyrZ4KEbDGQbpDKFn65Hb2p1x4X+hjBZS7cK6czClPnqSjtTwZhB/GEuvqCPXKfAtD75bSrC7z4x3T9uCL+9VZ/8zZbBfQ2fzYbOL3FNOfsj3MWEwOEyPvRYT8qnNOZilIMrBBz//fx3jLK2sjUtNmYujA8Re3lOb/SlZaRAbcD8gjEDDboMGMt+yodn1GyBM6WHPVEigL70Elq7B0xI04ap2vrB0V1p+d7Vc8LL8PS72SYiyiPnFZJXxTEzrmR1llgYud+kmsYDLfnz3IPSjDSfZ+XeTqxwE5mTUrNsga0FB0GQUYUQP6dRB3ddK1zYgIC6sH93lgV5KpjPaK+FNnL9ecye2I4ErF6nrsqzV7o/0oPaOQZAaVxLGnB6TQteabM7+xv/gtUuaY63ClZoAcSKjCjL8UJ89VVfLvy1w6osRZx2u7MccX2ZZlNiKfAX2klPfwo7FnpoHXb726aWeBMSGi6gl74pwY3607Vfro2f8Xar2xAeKDRmNOIWGKR4WXRA3SvJYB2qf5fMIUvrad6es9ipMwcS1Oo7736Smcm3zM4Ql1r+sA0k625WYJJhZri2NUsBCwQ5gtd/mzdFC6OJK0l6mPIiZ0xkXpsfWh7Ekvd2kGcqr3gdzR94AJQTLO16rTxJ7k8pzG8VsPJImerzNTn+A4dwv844ZblGh4D8hukFX8OwcTCIRj1d/UkmoRFC+qMI+qnrBuu3MVdYqUKBhxdPb4c7ooUUXZuhJqF9vdlWYm/jlWIYWsHEV79UEkiII/eyQGWajMk2jUZzyqAisnh25NbzZcOnEQ+OAb5lmfEQ4gC4ZLDg1zUQdPQWeqT8vPEy/Q5F+QJAEANRNfAets/VKmtXkO9CqudbV5pNz/3CfbtkSxp9pltISbtdicy9OswudNDoNCjNIVFAVaduyn3uRxdoYvAgw+eMFcsq5cWQwD9kznKNqrIAsUcUXRfxvcG7cd9SLC2QC/9D3Inlo5NWVZuQ0K11pNr0LgoKNSzFFcR+4i/HFmHNnkjg7usNvy/gU42++PVw2IrUIpKTa5H3FENBNN+FpPDji2e+8EKBeRl78dJxg2wUWxo0BT5L5tTyiBwZUBbQkvaZvNyz15aBpBj7IXqNYGY4FKXxl1gGfFc/RBNTfnafzXwUmXqlkvNXns9JwYO54pFj+XM7Wk5gi3z5jfcuujeNjOzzcwyQGjqWCWgKxIT0o9sHK7DcG/XO4VIV+M2pxn+RvA5e5CapznWYGrF1JeRpD6zaO2v3In5xJSz/2P6NRSXyOp/cTGRA8LpfJ+J9gcuMqMUlIVyuPqB3idXcMGSsZ7sCuCMBnKKIxAXl3Hu13ZFdfXkNAKp1/b7zehOCR2zQlvB2LntFc8nkltzsLKY6VS658Bzh0Xu4K+XP7bmXhrSj/sKRx5y9jeb1vtyt+IPMP1oHEdCapjwqzGTE1k7ZSy96SEHWS06L1DqMzMhZrHZtfpffz3UbVzJVd52/QlZDEvKvwU6C7ohP+q/zCfXtdw4uu+aZmHxZwIYnIpokY1e+Mz1r0RGO7WgnX+Tf0rv1oSDoU101rufBDPmKjracPZKiWQhyx/ZFx/erbEQnZvRcZYVN7jvNSPNgAIgLWpuwkL29EWrJM0TcQ664R37GGVWnmOCKkJh4wbiZQYRnolIbkBqdiEKcs1gH8ckb3eCahU14sp0bcUh7lbDbyHeIE/iVpOHz2hT3+yc7iugT+z5UjhYr12CVKN38wKCezwKeAWgGclYkRSta+aht23rx6PjtWhiK1Snbp3+YiVSXFK73aPmr8tB00/MFYzzsT5xxWCcGBjEj82ifJ4iDZYsLbLMOwGvP2+BV7z8J6xmL9WBRtpFGOqc4QZg9tP6VnxPNwygeYHQWU3WUKX4/OPiJwBXK2ECMn1DAZ4JZ0K5zfTzPXlULINMmZWI7Qy+jmszEdOWrIft6TwkUg7iCpPDKq0a4iwfoS+VWU873d2OiG8opAwMd4uDWf/HrQ1Cp16P9BWm5609MW4uAJGo+DUb0VG0Upgzis20Wssx5QRy3lM3n+h83aRDhO5Y1KVQXbKhHcdKx8E8BCI3ldXk2c6t6mvRtMFhS22WPCsMUkzC4VtFJ01GiLtGeCoG/K4Xn2fGt+ytMfiQlt8Fty7iXX4Ca7eq+TYzMJL/xgZvIy8UNdin6+gNRXv+EifZ0o4+2wXDNAA0agAFVKvFnH2a2NnoChDFzWK9nT8iLBgCd2ERFNPXi1S4H9mc6dhvqmYudrSkMo8acRaEICt+8axI2STUUK9g1M8wW7LBdYsC9+A6OUDKY3q6hVxlZGLxHQ73ePY1+2EfFPVXQKpFIsmbqWwkabI+1SxKcz64H24a8ezmdONbXpHMTUWYeCEauQ81Z4JBoQkJZEJhxjb0BJR/H58LkXkEorw4lChO/OjoDN8MLHmcMZJC97M1Hcy3JTO9XO/pT9MHsflzaOe5Q2wn+m9feBFKfdmAP7Z/8IHAAch+DHBc1WsNde03f/hAKr0rAQ4LJ9bDc3kXN5mkBTL5obNb2KX5R9oW1gB5C3/+9mCTX488Sjr2XwFSF3hIFS4Kmt5U7mmf6rC/mAFlghAHsV5bv8B5/90LscbRfTqgNj/E1y8bHGK1jA/WdyWeKBJ+s0rwJXIkUpBhSq0usTq2nzZFGyZ5LWy8YlmhYz1DXHe4blKrrhxwqD9VU6D83j7TWlWK+O08qzwVX+6ms8zfQ2TUbtK9IAknrtcQwgK/MKIXkiaV51WvsnbHrv3WLdz+5AIAuUh9dktkQKZC/00uBk7NpqwTIRd/gbDNr7XO/hFydXv+Zo+zxWoX/03aU7m/Hj3E2l/SQfUbHMbVTEJGa7x4HY27JTMSdKkgfn7h7irRYFBubGPpaQatla9zBLtAlGWjbadk9f5e7JtZuhA67Ky8Bza7Kf/jTIeWC7Gj5xZc+v7qTNOUyDFuDIiBlROqXbohmPG01JV6oXPrtGkEMWqIH9J8Cu7gwxO28I48cJDAcHQRPwXNFVfRqke7O7UzG+kI3HH0XP6RBfyUZxKJ1I+yIsiKC776siEQVlvlgpq5gy/4DjJDASkxYFzXg2Xs+jRWIihF3k8xAKf+h0vX2lD7X5//1rXWJgWyyJMzdtUfyLhmuiW+nfP2bTqLYhP9v2zEt0aBjshuTTYEHOlTD6TGhbHRRlB9GtNXZz9TY9CnCTzjpMzvgGBMbLEl8ffbgyMCSou2zHsiQX459VhKf9jSZ+c6nx5f/lRrz6utETMw5OELlC3/fjRQGmcmpWxzxgO4xXy5KkcbbJVsO4uX+aqAhhOpXF3yPpayQtqxHfqgPj6xh1msgVbCaQktc/+vCVYOL1Ew2tioX+V1FdIoXVAS+ENjVA4F+0rejBxk2WW6QPD6gytjAz2dpoTghVZ7Didiw5L8NIk78j6Bc8TQ2jZfJLJ9NPz9e1NrxekOZWbUfOYORfohZUlKcU4cj66Glzj2Nz5UHTHAM/Kv8fCflFZ3/nE2JpBW8JXxMf0paKqV1Hejy5NxcMHfBhJ43NRPP/eUdJdYvs9MQOR/UgBt16DFgb36Q7nQyPSJowJHy/f1bIz8iadwn+sWv0DGAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable** as written, because it allows entry without the written notice that the Act requires.\n\nUnder section 27 of the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit only in limited circumstances. Otherwise, the landlord must give the tenant written notice at least 24 hours before entry, stating the reason for entry and the date and time. The exceptions include an emergency, the tenant's consent at the time of entry, and the tenant's unreasonable refusal of access. A clause that schedules recurring cleaning and permits entry \"without written notice\" does not fall within any of these exceptions. Under section 4, a lease term that purports to waive or contract out of the Act's protections is void to that extent.\n\nThe cleaning promise itself is not unlawful. The landlord may agree to clean, and the tenant may consent to a specific visit. But the landlord cannot rely on this clause to enter without the notice section 27 requires. Entry is lawful only if the landlord gives proper written notice or the tenant consents at the time of entry.\n\nVerdict: not enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 246,
+   "output_tokens": 1566,
+   "output_tokens_details": {
+    "thinking_tokens": 1208
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

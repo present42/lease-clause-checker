@@ -1,0 +1,74 @@
+{
+ "clause_id": "s02",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "3d8675bfffaf254010fa3c35a2590a6c7dbd88b6b44b0a626b2db90784a16efa",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord will vacuum and dust the unit once a week and may let itself in for that purpose, without written notice, between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T21:00:52.443505Z",
+ "text": "This clause is enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a landlord is generally prohibited from entering a rental unit without providing 24 hours' written notice (except in cases of emergency or with the tenant's consent at the time of entry). However, Section 26(2) provides a specific exception to the notice requirement: a landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals. If the agreement does not specify the times for this entry, the Act permits the landlord to enter between the hours of 8 a.m. and 8 p.m. \n\nBecause the clause establishes a regular cleaning obligation (vacuuming and dusting once a week) and adheres to the statutory hours of 8 a.m. to 8 p.m., it complies with the Act and is valid.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 199,
+ "output_tokens": 205,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "hHr3asiVN7KbnuEPhqml2AQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:03:07 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a landlord is generally prohibited from entering a rental unit without providing 24 hours' written notice (except in cases of emergency or with the tenant's consent at the time of entry). However, Section 26(2) provides a specific exception to the notice requirement: a landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals. If the agreement does not specify the times for this entry, the Act permits the landlord to enter between the hours of 8 a.m. and 8 p.m. \n\nBecause the clause establishes a regular cleaning obligation (vacuuming and dusting once a week) and adheres to the statutory hours of 8 a.m. to 8 p.m., it complies with the Act and is valid.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a18k9dFeSWRojzaa4EEgiaO5Rlq4p-t7HGzGUhiYXYv0YQR1XWKj0T49cpWbtA4n6A7TebHNj4Ya4dJChvd1S7VN2dfRFmSBaxyPypz5eIwskKpfnj0McStgJPt2"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:00:52.903880Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "hHr3asiVN7KbnuEPhqml2AQ",
+  "usage_metadata": {
+   "candidates_token_count": 205,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 205
+    }
+   ],
+   "prompt_token_count": 199,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 199
+    }
+   ],
+   "total_token_count": 404,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

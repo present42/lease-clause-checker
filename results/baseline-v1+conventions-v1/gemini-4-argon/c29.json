@@ -1,0 +1,74 @@
+{
+ "clause_id": "c29",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "6fdc26a60187f372ba4be8c2f91cf709f075c9fdeb0a312e2d6cfabd28ab7318",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent by up to the guideline amount once in any 12-month period, after giving the Tenant at least 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:51:45.076589Z",
+ "text": "This clause is not enforceable as written because its phrasing (\"once in any 12-month period\") is broader than the statutory rule and could permit a rent increase less than 12 months after the start of the tenancy or a previous increase (for example, an increase in month 11 of Year 1, followed by an increase in month 12 of Year 2). \n\nUnder the *Residential Tenancies Act, 2006*, a landlord can only increase the rent if at least 12 months have elapsed since the day the last rent increase took effect, or since the day the rental unit was first rented to that tenant. Any lease provision that is inconsistent with this strict 12-month waiting period is void under section 4 of the Act, as the timing restriction is directly governed by section 119.\n\nVerdict: not enforceable\nSection: 119",
+ "finish_reason": "STOP",
+ "input_tokens": 207,
+ "output_tokens": 192,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "YXj3arLTEKnXyOgPrajYgAM",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:53:52 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is not enforceable as written because its phrasing (\"once in any 12-month period\") is broader than the statutory rule and could permit a rent increase less than 12 months after the start of the tenancy or a previous increase (for example, an increase in month 11 of Year 1, followed by an increase in month 12 of Year 2). \n\nUnder the *Residential Tenancies Act, 2006*, a landlord can only increase the rent if at least 12 months have elapsed since the day the last rent increase took effect, or since the day the rental unit was first rented to that tenant. Any lease provision that is inconsistent with this strict 12-month waiting period is void under section 4 of the Act, as the timing restriction is directly governed by section 119.\n\nVerdict: not enforceable\nSection: 119",
+       "thought_signature": "AY89a18pDKoCcbIlMttY6MgERmORRSfx3qvuvG_61LqwPV3wjtWPNIlyz4LeR3Hg_5D9I-WAuH3hmcW9mfHLJEN0DjBNyVa01H2pcOWxKUyxSwj-L56fG3aKJ_m-eTZd"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:51:45.272818Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "YXj3arLTEKnXyOgPrajYgAM",
+  "usage_metadata": {
+   "candidates_token_count": 192,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 192
+    }
+   ],
+   "prompt_token_count": 207,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 207
+    }
+   ],
+   "total_token_count": 399,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

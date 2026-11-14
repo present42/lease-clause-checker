@@ -1,0 +1,67 @@
+{
+ "clause_id": "c06",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "cd12687371afd569e1072569a954820edc094e332e6353200afda7701918dbfd",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant accepts the unit in its present condition. The Landlord is under no obligation to make any repairs to the unit during the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:30.905109Z",
+ "text": "The clause is **not enforceable**. The second sentence, which says the landlord has no obligation to repair, conflicts with the landlord's statutory duty and is void. The first sentence, that the tenant accepts the unit \"in its present condition,\" does not by itself waive the statutory standard, so it is not what decides the question.\n\n- **Landlord's duty:** Under s. 20(1) of the *Residential Tenancies Act, 2006*, a landlord must maintain the rental unit, including its plumbing, heating and electrical systems, in a state of repair that complies with health, safety, housing and maintenance standards, and must comply with those standards during the tenancy.\n- **Waiver is void:** Section 4 provides that, despite any agreement or waiver, the Act's rights and obligations apply and a tenant cannot contract out of them. A term purporting to remove the landlord's repair obligation is therefore void. Section 14 reinforces this by voiding tenancy agreement provisions that conflict with the Act.\n\nThe clause is also no defence to a repair application before the Landlord and Tenant Board.\n\nI'm citing these section numbers from memory, so please confirm the exact wording of ss. 4, 14 and 20 on e-Laws (ontario.ca/laws) before relying on them.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 242,
+ "output_tokens": 1874,
+ "raw": {
+  "id": "msg_011CgwR94zgHeNabKN44rdKU",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable**. The second sentence, which says the landlord has no obligation to repair, conflicts with the landlord's statutory duty and is void. The first sentence, that the tenant accepts the unit \"in its present condition,\" does not by itself waive the statutory standard, so it is not what decides the question.\n\n- **Landlord's duty:** Under s. 20(1) of the *Residential Tenancies Act, 2006*, a landlord must maintain the rental unit, including its plumbing, heating and electrical systems, in a state of repair that complies with health, safety, housing and maintenance standards, and must comply with those standards during the tenancy.\n- **Waiver is void:** Section 4 provides that, despite any agreement or waiver, the Act's rights and obligations apply and a tenant cannot contract out of them. A term purporting to remove the landlord's repair obligation is therefore void. Section 14 reinforces this by voiding tenancy agreement provisions that conflict with the Act.\n\nThe clause is also no defence to a repair application before the Landlord and Tenant Board.\n\nI'm citing these section numbers from memory, so please confirm the exact wording of ss. 4, 14 and 20 on e-Laws (ontario.ca/laws) before relying on them.\n\nVerdict: not enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 242,
+   "output_tokens": 1874,
+   "output_tokens_details": {
+    "thinking_tokens": 1441
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

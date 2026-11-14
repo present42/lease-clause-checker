@@ -1,0 +1,111 @@
+{
+ "clause_id": "s26",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "3c22ebed238be06ff28b231e63528a3971fa40d0c0ca33114cc9a93dae27fd73",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant's guarantor will pay the Landlord $1,000 on signing as security for the Tenant's obligations under this Agreement, to be returned when the tenancy ends.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:20:24.092927Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\"reason\":\"Money paid on a tenant's behalf by a guarantor to be held as security for the tenant's obligations and returned at the end of the tenancy is a security deposit as defined in section 105(2), not a rent deposit applied to the last rent period under section 106. Because section 105(1) prohibits collecting any security deposit other than a lawful rent deposit, this clause is inconsistent with the Act and void under section 4(1).\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4546,
+ "output_tokens": 735,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "CHH3aobDCL7Mw-UP1o7noAE",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:37 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\"reason\":\"Money paid on a tenant's behalf by a guarantor to be held as security for the tenant's obligations and returned at the end of the tenancy is a security deposit as defined in section 105(2), not a rent deposit applied to the last rent period under section 106. Because section 105(1) prohibits collecting any security deposit other than a lawful rent deposit, this clause is inconsistent with the Act and void under section 4(1).\"}",
+       "thought_signature": "AY89a1_GT7-RAc8_34A1JA3dtSlwxJ0S2ExBaE-bpwgYTne65Pxs_24kd5exEccwnxodK9eN0oTcHswFFpHU00swEndR70ZggVxwftDUxgpW9Tqq2iewDYsjKdftRqjs6qot8yPCkrr5JjEtHC-vUyW75x2AT67uHyZjNYMl0sUyJ64nCI8tsOrHpMyka4j4DUNAw7jx16BjmEsZWzErmIhI_UuRkgBGuNu6xpRYmW4vCQx8NNPYuN4iSh4qL3S2FDujew7JtMNgrOVnCZSkagLpaoqR97NOhp_SoIx8joUumrIoay-TD5aB7UPAIlcR6BJe627b50ZkHjkV0ENMEMFZzEH3OkUnm6goIQrN16ldfPaje5DcWIYWS4H35q2fnK6L7TON-W-BJlfaAb-ASlBz4XCJ2_uYvgGInIW4mIfS4DN_0dEH6e8coTvjhYFYvgFSFYZq3TpBVNdN_e3XHXwjrWosvMU0fUZmcHhMk8Fq6lsqnh8-fHvvqSCGqTd8WcXPYevC8Pdwd8lBQ6rFvSQLD4ebHXquOaFceWD_1a2oz9UPucimgzc77UmXxvmRBTiJ9h_swJfMbZ6MXgEliHYlGPYO9OeCj_u_ImCWsp6TIQyzGQwVHRgcwQzz4mWwqQVgEnlVSGz3qi5chPBioCdbKVNpESWJq3sLOWqTMpu0_RtC21BHO2r1B68KNf-17Ls_sPlClHvFh_81OTNiVhg6q2cMKTvzA-M0ge92YlLhwoIvAOFb4bgcyvUXi5wIOmz7s97OFgo_v1i_Gix7xpmjDpsDLMSgdVnubxr49jzVo9sT9ai2PaLTtpCHSexCiYI-7-mRyki_IOp5O9uoJ18AIpX9NBIwSZIgqxVaWg8p4eQFIjNuJIQows7Iev89Jx8Sv8P2qil_wpZ02yzEyTehcEzWsk-0OUOKHZYM_a_ou3L2PB_lcZcRN4yTqDJQPCNy8CPsyhuPMjv4A4dW0lPg8o1tORK3WKiLXEJEsLwIYD-MFwNg-BfPRYMUI8sP2VKHmm9PwkHVT5o7pJEvbe2-hy5Z5HDRtOoHbwRVqrICt6D5of74Ee5owI1RzZkHifr-79BLuczNXProykjdcbH8sEImFKTf1071964yD_68OdM0mZ87jBOyJjttNHNfc90GYbBKoyuAq5-RfoWp2ndHG9KRB5b2ptnnLIGs2gxdkvVa7z43_vLXNaxycIsh6TkSQQ_bI42BnplbO4i5ceY7OK0OSXeMtkiSAxNSJw-ntcgDP_ad-FCSpm0AGXCz8-gJ19q4gLsKkNLKlisRu6Jka6PQfMRtj-0A5Jr2yoMDUCVeO0vgv8Ovpcdyg0AUkzxC1LAWqX9mTvkWtgl862QRcZEKWacbP9s44ij8FQeeBYkF2R-xojbyv_rYviqi-VmMjz-XQrvY4OaT2a27cEW-BMWmqGRlkkO-7IsCjBONV0lozKBA3NR2qRyE8QB1szeAgfDcLr90Wq5cUuC-Sx9hedTvDppY6s6xnHc0T1hxi53l2_PiHADAu_L8akG5-y61qGcvw54dZY8jOur358dbC6WXJVM1dl_HyNmT8WV2vlPF9aCxReOakk0fiamFxZl58m-2ho0W1EPRpCKDZdYgrasdIW4Zht1gUpU2x8wDSN3ncODvpbG0IzNDThr15dw8232KCc9OtFBcb5V61nympp7FwbTVuxrOIO5WyxwZtSicGP1U7GPc5VmdJK56cS5-6nKZrl3WoFk5dTLow4lpjLpYpDZhNuPQ2PiZTwYfpRrrPWBrJVMTicVaq3-vZVezjcXmCzP2Icmy-5YrrZ8N4MULyosHzEDcGh4lTG43lk3ppJ1WHhrQ632kGCwykSrQ-xnhd0euhRkRuyG_TZeAoOkqc6OjuwcPaFxz0oOkj3HK19dVVe0KjSOyIKpcW70SauHWq4PfP3Bu10XRltm31DELhHjdhGJMLXesxfC8gZw9tCx4Hras46TmYWH2_1rB6caMVQblbzgmla7WJOZMUZXbKnIPCJcCNCgskwq86NXRaReWVUh5lZtk-SVOfxY1fLaOb4AjWBFGlR1WTxQUO86ASx1-s7fLsmVisABOUnD2Vpz4t5YqxZfoe7X3F-PLDf_v_C83Ou9N7NDTw3MZqAwGzYt0Ug4FhtNMJhgfKQYjO161WTsAwYsRw3vTqG0kC-F56vhNzobDnPHm8ydcHaiSOqpxkOvL5_AVdMDoXqJ4Mbl6DGmDEK9GkqWntMNGKz765SrCsx1yZ0QNds9cZAZgL4CklakDFr1oZr2yOQhFNoOjjYMOy_cAQ8aDI0KeEkQFNfdkcMkqqdxk3U20zZ_9UultjBVyI3dGMJZOKHTMRvl-doDDRWv67KYbUvD__2Eze8FqSGim8MR3TcAJ-jAfGJzq4akMzQjFkJBORNxTaJSM31X3_PSoxHomDMO9PbIA5dEQV0Z-_uV0eHO7-IghcHKr5UCZDOEcahGTBghHWozaI_pwCGGS0bdanfSUZZaTU-WEciPTV83U-1CWEsmIXiBVgID9DbpC8jPH7ITbyS1ULWIgXwTp85j3M0gCSyw6hUp2PCdPKla0Ihg3sHPWPRaHikyMcnA7k8bth5ulAHernlvh6yvfND_OD8L4Iy1HtD7mYvrrcuJkcUpOKqN8alVykTYTNm_3Ganpwrd1XDhrPeCm2maH-fMjZI2utydUwTHSsVoHSb79g6dbo1qIc1obLf-Mnif0H1nmJqnSiwAhbIzVwJ_uIg2Qdet6rJw0BjIXJ44wj_Db8-YO-jbInNohxioZ7WpLDu4i23ksrsqxk1tWBiQo_kMzGJq5E4Fb800lpVXSn2sBjx7tH93CJiqPUObSkpGDNgrtPW2Gp_0h5kZPfE0y0Dk5y_7xkMGAxPYJh0yc69cyiknxkkNB1dHQLOWolGxdrJeg562vI-TdoZ4S8xgJMeWzjKMBY7xaCk9gIqp7QKtT2nBzyI_04deq3QCrjlLfBmyiQx3pfaoNS__v1HNKR_cgQ2bZM93Z-Xfwnw7rYicF3ZezSbVsS5Zowri1r03ELm47KvBcFVUjQK0zLE-iV8n-uY3TSKFDfHWO31CSMW7FQ6ak4ZJ2RX0h-i8JuP8RYUzLUBaNH9xxKJik9HON1kqigVYWLSHvjl2i0CQu4dYRZAdo1S217aKELyY="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:20:24.139654Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "CHH3aobDCL7Mw-UP1o7noAE",
+  "usage_metadata": {
+   "candidates_token_count": 156,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 156
+    }
+   ],
+   "prompt_token_count": 4546,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4546
+    }
+   ],
+   "thoughts_token_count": 579,
+   "total_token_count": 5281,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "105",
+   "quote": "The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.",
+   "reason": "Money paid on a tenant's behalf by a guarantor to be held as security for the tenant's obligations and returned at the end of the tenancy is a security deposit as defined in section 105(2), not a rent deposit applied to the last rent period under section 106. Because section 105(1) prohibits collecting any security deposit other than a lawful rent deposit, this clause is inconsistent with the Act and void under section 4(1)."
+  }
+ }
+}

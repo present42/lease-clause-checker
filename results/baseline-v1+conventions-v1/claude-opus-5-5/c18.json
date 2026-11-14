@@ -1,0 +1,67 @@
+{
+ "clause_id": "c18",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ceb7c51cf194970e90fc475cc7cb6b21857699b318243d3036e5ce290fa148b7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: For the Landlord's records, the Tenant will sign, together with this Agreement, a notice of termination dated for the last day of the term.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:31.891327Z",
+ "text": "# Not enforceable\n\n**Why the clause fails:** The Residential Tenancies Act, 2006 (RTA), **section 37**, makes this term void. Under s. 37(4), a tenant's notice of termination, or an agreement to terminate a tenancy, is void if it is given or entered into **at the time the tenancy agreement is entered into, or as a condition of entering into it**.\n\nThis clause asks the tenant to sign a notice of termination \"together with this Agreement.\" That is exactly what the provision targets. Calling it \"for the Landlord's records\" does not change its legal character. The narrow exceptions in s. 37 apply only to student residences and care homes, and you've excluded both.\n\n**Supporting points:**\n- **s. 37(1)**: A tenancy may be terminated only in accordance with the Act.\n- **s. 3(1)**: The Act applies despite any agreement to the contrary.\n- **s. 4**: Any provision in a tenancy agreement that is inconsistent with the Act is void.\n- **s. 38**: If no valid notice or agreement exists when the term ends, the tenancy automatically continues month-to-month on the same terms.\n\n**Practical effect:** The landlord cannot rely on the pre-signed notice to end the tenancy or to apply to the Landlord and Tenant Board for eviction. To end the tenancy at the end of the term, there must be one of the following:\n- a valid notice given later by the tenant,\n- an agreement to terminate (Form N11) made after the lease starts, or\n- a landlord's notice based on a ground permitted by the Act.\n\nVerdict: not enforceable\nSection: 37",
+ "finish_reason": "end_turn",
+ "input_tokens": 239,
+ "output_tokens": 1281,
+ "raw": {
+  "id": "msg_011CgwRDZEex3f2NmNwz9osx",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "# Not enforceable\n\n**Why the clause fails:** The Residential Tenancies Act, 2006 (RTA), **section 37**, makes this term void. Under s. 37(4), a tenant's notice of termination, or an agreement to terminate a tenancy, is void if it is given or entered into **at the time the tenancy agreement is entered into, or as a condition of entering into it**.\n\nThis clause asks the tenant to sign a notice of termination \"together with this Agreement.\" That is exactly what the provision targets. Calling it \"for the Landlord's records\" does not change its legal character. The narrow exceptions in s. 37 apply only to student residences and care homes, and you've excluded both.\n\n**Supporting points:**\n- **s. 37(1)**: A tenancy may be terminated only in accordance with the Act.\n- **s. 3(1)**: The Act applies despite any agreement to the contrary.\n- **s. 4**: Any provision in a tenancy agreement that is inconsistent with the Act is void.\n- **s. 38**: If no valid notice or agreement exists when the term ends, the tenancy automatically continues month-to-month on the same terms.\n\n**Practical effect:** The landlord cannot rely on the pre-signed notice to end the tenancy or to apply to the Landlord and Tenant Board for eviction. To end the tenancy at the end of the term, there must be one of the following:\n- a valid notice given later by the tenant,\n- an agreement to terminate (Form N11) made after the lease starts, or\n- a landlord's notice based on a ground permitted by the Act.\n\nVerdict: not enforceable\nSection: 37",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 239,
+   "output_tokens": 1281,
+   "output_tokens_details": {
+    "thinking_tokens": 747
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

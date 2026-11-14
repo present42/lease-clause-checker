@@ -1,0 +1,67 @@
+{
+ "clause_id": "s19",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "42ab157b31b1053907086bd2ab3304629e5a61bc1fb56fd53350dc85dd74b3fc",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant has seen that the bathroom window does not close and agrees that the Landlord will not have to fix it.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:20.745365Z",
+ "text": "The clause is not enforceable. A tenant cannot waive the landlord's repair obligation under the *Residential Tenancies Act, 2006* (RTA). Under s. 20(1), the landlord must maintain the residential complex, including the rental unit, in a good state of repair and fit for habitation, and must comply with health, safety, housing and maintenance standards. The tenant's acknowledgment that the window doesn't close does not change that duty.\n\nSection 4 makes the clause void. It provides that a term in a tenancy agreement by which a tenant purports to waive or agree to waive a right, privilege, obligation or responsibility under the Act is void. Here the tenant agrees that the landlord \"will not have to fix\" the window, which is a purported waiver of the landlord's s. 20(1) obligation. Because s. 4 voids the term, the landlord remains bound to repair the window, and the tenant may still apply to the Landlord and Tenant Board (LTB) for a repair order if the landlord does not act.\n\nThis is a general statement of the law based on the facts given, not legal advice. The RTA is amended from time to time, so check the current text on e-Laws or consult a tenant legal clinic if the dispute is live.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 233,
+ "output_tokens": 1349,
+ "raw": {
+  "id": "msg_011Ch1Hvu22JoN9dCumPgMYQ",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable. A tenant cannot waive the landlord's repair obligation under the *Residential Tenancies Act, 2006* (RTA). Under s. 20(1), the landlord must maintain the residential complex, including the rental unit, in a good state of repair and fit for habitation, and must comply with health, safety, housing and maintenance standards. The tenant's acknowledgment that the window doesn't close does not change that duty.\n\nSection 4 makes the clause void. It provides that a term in a tenancy agreement by which a tenant purports to waive or agree to waive a right, privilege, obligation or responsibility under the Act is void. Here the tenant agrees that the landlord \"will not have to fix\" the window, which is a purported waiver of the landlord's s. 20(1) obligation. Because s. 4 voids the term, the landlord remains bound to repair the window, and the tenant may still apply to the Landlord and Tenant Board (LTB) for a repair order if the landlord does not act.\n\nThis is a general statement of the law based on the facts given, not legal advice. The RTA is amended from time to time, so check the current text on e-Laws or consult a tenant legal clinic if the dispute is live.\n\nVerdict: not enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 233,
+   "output_tokens": 1349,
+   "output_tokens_details": {
+    "thinking_tokens": 937
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

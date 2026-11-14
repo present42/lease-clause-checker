@@ -1,0 +1,67 @@
+{
+ "clause_id": "c19",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "7ad28ea3e8e026a0f75240c9ecae3680ce66cc48ac1919bf04573dd986d97811",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: On signing, the Tenant shall pay a damage deposit of $500, to be returned at the end of the tenancy if the unit is left in good condition.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:32.376829Z",
+ "text": "**Not enforceable.** Ontario's Residential Tenancies Act, 2006 prohibits damage deposits.\n\n**Section 105** limits the deposits a landlord may collect to:\n\n1. **A rent deposit** (commonly \"last month's rent\"), governed by section 106. It must be no more than one month's rent (or one rental period, if shorter), and it can only be applied to rent for the last rental period of the tenancy.\n2. **A refundable key deposit**, permitted by section 105 and the regulations. It must be no more than the expected cost of replacement keys, remotes or cards.\n\nA $500 deposit held against damage is neither, so the landlord cannot collect it.\n\n**Related provisions:**\n- **Section 4:** A lease term that conflicts with the Act is void, even if the tenant agreed to it.\n- **Section 135:** A tenant who has paid an illegal deposit can apply to the Landlord and Tenant Board to get the money back.\n- **Sections 34 and 89:** A landlord's remedy for damage the tenant causes is to apply to the Board for compensation, not to withhold a deposit.\n- **Section 5:** This is where the Act's exemptions are listed. The question mentions section 6.1, but on your stated facts no exemption applies either way.\n\nVerdict: not enforceable\nSection: 105",
+ "finish_reason": "end_turn",
+ "input_tokens": 244,
+ "output_tokens": 854,
+ "raw": {
+  "id": "msg_011CgwRDbJgVTDAXrY5LdBMf",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.** Ontario's Residential Tenancies Act, 2006 prohibits damage deposits.\n\n**Section 105** limits the deposits a landlord may collect to:\n\n1. **A rent deposit** (commonly \"last month's rent\"), governed by section 106. It must be no more than one month's rent (or one rental period, if shorter), and it can only be applied to rent for the last rental period of the tenancy.\n2. **A refundable key deposit**, permitted by section 105 and the regulations. It must be no more than the expected cost of replacement keys, remotes or cards.\n\nA $500 deposit held against damage is neither, so the landlord cannot collect it.\n\n**Related provisions:**\n- **Section 4:** A lease term that conflicts with the Act is void, even if the tenant agreed to it.\n- **Section 135:** A tenant who has paid an illegal deposit can apply to the Landlord and Tenant Board to get the money back.\n- **Sections 34 and 89:** A landlord's remedy for damage the tenant causes is to apply to the Board for compensation, not to withhold a deposit.\n- **Section 5:** This is where the Act's exemptions are listed. The question mentions section 6.1, but on your stated facts no exemption applies either way.\n\nVerdict: not enforceable\nSection: 105",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 244,
+   "output_tokens": 854,
+   "output_tokens_details": {
+    "thinking_tokens": 420
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

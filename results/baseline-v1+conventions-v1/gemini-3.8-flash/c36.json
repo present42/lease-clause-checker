@@ -1,0 +1,75 @@
+{
+ "clause_id": "c36",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2af16dc807b6b0d992984b0a5c73ea4dddef619770b3677e023a972b73d67124",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the rent is more than 15 days in arrears, the Landlord may remove and hold any of the Tenant's belongings in the unit until the arrears are paid in full.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:57.613146Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, the common-law remedy of distress (seizing a tenant's personal property to recover unpaid rent) is abolished. A landlord cannot seize, remove, or hold a tenant's belongings due to rent arrears. Any provision in a tenancy agreement attempting to grant the landlord this power is void and unenforceable.\n\nVerdict: not enforceable\nSection: 40",
+ "finish_reason": "STOP",
+ "input_tokens": 167,
+ "output_tokens": 877,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "WW73aqHAKaLXyOgPnqy3kA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:09:06 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, the common-law remedy of distress (seizing a tenant's personal property to recover unpaid rent) is abolished. A landlord cannot seize, remove, or hold a tenant's belongings due to rent arrears. Any provision in a tenancy agreement attempting to grant the landlord this power is void and unenforceable.\n\nVerdict: not enforceable\nSection: 40",
+       "thought_signature": "AY89a1_Xw5ahokSxyBvsiAJFiCcF1chJzmAxoVZycLRKjp1j1X39QH9whjAM8d9w-EAeCDk0cmgzvMBDhmvK0nNZe5uH8UljdVr2idvyaERS78nPsBfftmpqHLtCPWuqX1GqC8FO5RWBgfdX2WverDrqRxtbh0iSyvqoV4FrdBpAaa6xmUnrwHrTm7QHfugGHT0X-CCl5Fa9pxl8ZZW3fU6CnXYANhZwyhhukGw-9ClHTf8SCicjfbC-tuBjceoESSE8ytT7yCPVBt7cHDWDHoSI6Ewd_a6nPScqeLsVGHrDkra0mzemxntUvGKY1b8-AHvi7h9fWKVSc-WZao0t8yRnEy7iXpDlsNl5iRkSnDulLSrUAPp1NyTUME55c5Ddi0vZ5W8eg6XGGJlX-Yi-7pKfVh91TPHbgfVqDlevk0xc99bO-Tnfb28PhaeL0advQKFdLXGrLCzCHIiPALP9WH1NJojChMLW6n0dVbQzVGRDKzYM06I4LApRPE18bGkEsfzfb6oZuxWiTia0sQZumli9aHHYuUF7IwNq_YsVSqvGrxk6MkRESzWjJhyxqW7BsYWob9Crz4hDq-8l71jH8PHcvL6Cu2DB6ke9tOvErIPMPAaRPfhoIIWLvdiBB43IFNzQrfVdiDBxIhGXWpJFjPPgEiqGyRI5Rkl2qyxtcYOmH9aMBnZu7wGEJBUGISTOU1-TkDn4j5UNFGgKPZ5JFEpSkptwxH04KgLRb_ne3smS4jpkPd6CMf20N5E8Ih2uSUbzPp9ROhy7gh9XYaAxzQXiBfr_GTasEUshaOTjgglcBezXiEj7Zk2rd5K0XhmjLDHSR-Dvu1RPiFEG5gKZPmAvHz9423sPnfyC2Hy1BaHD5sjEiDfSE-PrLGTwskdBp3e3xSxSBdfEExTIzqbJqYNSFmDfnBn0gIKV8tBTV8yp6A1Um6K4A9Phh8vc6cG4hx7kpC7D1lvkHWF9tfe5nO1SdJhr9FE5Ztel5RgBnJQyFADe7biO63xgMME7MmOumTF05Jgg4Dtnarq4x0w0za8s5lsSbg7ahcve7QF1NYwatzOMapwmqEmJcb6k2W62GNioaf6_S5pGjCxwrp3EF-ZKEEU1z-y7bB2_iw7P2wB-NZM5YVxKdvB8i6PglxrCI_rZvdHdG_M4YpiemzRFyVNNrCrDe_0w1woHdAsQ1aYB_xwIdEb4pJHjAnsFN7NFS1Z-dlttTC1-BkEIcYpTX9N7JQ01H6QDpva-1Ak_Gm1yD47FaDOsSWUhejOAFz81Rj801APp8wVoR6wFosU9sleDKmAdXpHNkpa-yNqeu7pmsO2vFI0x5jnGtgriFGOb8P0DjEd33sWJ5GC89pkl-jBkA9pqLmkNh1HIfkwFA-sRVlEG1epxVQHx07Stld5byetvWMu7ywf-5N8ksFZna-IbpMG0XTG9fLiDsy6dOHCyoez9IcevwJS8lX3PEI-wEapCJO5UjAtweFerXQ6YYX_Ss_aXDuinqaELp60Ipgit-Gj_DRhbeuFO5uO3-229MNN36sX0pj1bOf1ZrTYSXTxmtPAsCCX7NFa6e7-kDFIhhWHBa7UKZHieppC018mB4CIcO6nlSbh-vF53UV6WUDgMKA3Et20USJFIdlWLkkFknk-X6UbnR3wI_Andzylc-RP-INBJPk_CeFa6YwSCJBfwLGsko-Uh0otfRdg3HXPbjn01xirQytMJ6iMO3NyJO_xmYrLUBD4MzTO-JhaP7F_KilHfYdzdKGCCfMHU828Z2ar7iIKJcz0K2C12qmH7ZBpxUX1xrUQD1lxAcxivbX5D0Cwz-DT7rkNaHulUEw-w5hBp3aRgZzEM2NPT2L8cXWc-CwcINh3PYLFbJ4eXScIgXoQTeanWhRpadYxTvqAxHj6U4yoPZjShXcli3XKzQTCZ1E2ulGj_TqS9hy5wXoyWVHw_ZZWsQGFq1Fe1we_u6qAR1SXXhmEQlpmDn6YTv9STpQXN-sS8Sz0PL4-LF26wSOF1R_cH5hE6XXTnFm1Gz4Cxt6vF324CAuTc_hw_kEmew7QM55mcXUIaYqnCqbt6DVNC9FpsboX3EAj2QiAfzybj6X_S6I1G2jkqw4phVh9EB1WKV5e6V3LHOrUj5JAmxSFweKEVM2EGLrNTD4QRj_xPik1kOhGRJwOI5XEE0bApaO47PhOprMLpQWKrfMq9XU4SyXTO1FAaBfwJz2vWoS6OLXODHEJXY6mfIllteOxSr9QEy7xeRNElerXp_JA64gry4pg31rnqpq-I4gtaY-OfeCQJ5SH6p1s1HqX6Q9diIiQj5_-eBwVH5yH2D_Cwpab79lOqSU-Awm9ZlNhplTow8rSNpjTnLTCOZPeN4vXdn0eexGaCK5Gj03Arz0ApiU0-gE8HhbWbQ3GbEnvnkhZMaZWT_3OrIIqr-vaiMAUzkAjbxLCJ3NSnqSKSZK5baq2HGULJU8olWz9LFBRureo0tpMfdyH24PI4Zg0OMNP29jQhqgFX-AiBXuMyk_w8IT0dfppidZAk960uDpkW6xxJN3JdL5ljMsF5kzFJY_rxhEoNk8WcvhsXAeen7z5wgltHbTiiSWE07higzMIE58PMpYZKapX8Imih9BJmDJvF8Q51a2dwrBZtnhULZmn4hWmHF2x6-oI2s9tQ9OASjI9-XGXn0dDAlRGDOqUQCGnuvfw5H2Sy0N-MW8gges_-MJl32gWOpzgSSlCYmmNzAGvYp2SHcHsAlux0B6pGrAaroaG2ZHaNkzVQSt7tkJ8VIJgQW5uXXZMDtFkyAaq_x5nlJm8qAC-3zJmldINoxPMbOSTOrsBT-LSEbHKWOJ1wISSNKPTAaeMaeKmD_IBydOBRCGi43ABjnu3X6CwzcE4K0PdBkZ_ZJ8j1dGm5xMDkDOzZT_W_e6Un111H8HKhiuzN8nqJElvV3GFHvTp3zjCGHR2togKFb8PDjmQV5qH_A5MdSLOATvf_V0tBo1P70GSxxcHGQYtXTCD0VcJsveshrGAai9f6XaP42iaoboyxtWpOS6q6HVbsvT68bekjj3lq5JZDvCEWpBI4zfAYPK5a837tmxWd8oA_n2fEhyx7t9RgLUpPwxdgYY37Ytz9s5vEuVMCw0goJ5ECrqV_LnNA0lDjLu2wfsSxkbJtvjuZLmThQk41JGDGiy41WxxtO05s7r0Lxw4xSqtdeOK7T9rQMZxPH-NcKQTzore1AEFvqWc4oiOlV02Q-BBqHVSb1iZNojopX6tCBCCJH56OOwn6juae_FcoSK0KTabAG3lV0xsTgUl3bLA-bPJScWQHf5t8Hp7srZJe9KtGoseYnM7xymbE0hTYjdOxqAkPeb9Qwt_oExu_9wBkxyLNI5HrtjnpF_yy_R5af6jUFYp1Qp6ROgIWsWBDlNLpkySlSNf5ngh563aRn9VHUrc1GKnEz-plSMHZKMLpcRLZJPqtLQy_ktvCeBak3hIouhG3-Gv7ULWOT0LQIM2fyvLv-hv-byc2M4Q5dp9_yQVFtuO8ObuiTXqDdbLl0S722kiMDnVwrwgpAO68gweGLzrGDEHlbRPhALUdDL-z0KczNcE_62nU_IfKGBTJ3RgiOz6b-vfi029B-_2U37Qvjn7rWwXJB29iQ_a4PXnOC8WbolLPsixc3j2isQpuRMU05ctf1LwUQRMB13RsAUGSxjCi9TjBQxmfINUc3wSJ5j75Z6KnQ694XsgfHFi50FyNv2bhcY9aS-jepd7DA3heb4KlFvUmCed56jisT3BkKQaLBQtVSpFijJ0WSJrUHeNRqC3vM9o0jiuBjnrRPQh4hqV9U8UzELvd4R9np0UYfnLO_cdA6TlLdq4dgh0Bq3uIJXmb2ZAtLxc_oXWpd6ZJqNNtXADUzK2mWlyZk8gAu4f515kW_gASrPfAbckCNAdVtVLwcSnKYcqrxoRHmhlfs4wz9KCjf9ldwcEH6hbGIDYRZ5ZlPbQBVDlgsv5DKG8yAlJom5oEogBFywDdGhI6ZelkgcObKmqVvvRk3c8GUzx_suwcQVh0wvUwMscv7NmNvho5GcN45clRLOp6ArFXy8M0e9nFHFJEUEjKPpOk0mfnFOctUhrYro0VXts1fPbhuohSIdOCEfwR90RhBRrL5R0V9nmLgw6qOda0j51INorXRQ=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:57.679969Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "WW73aqHAKaLXyOgPnqy3kA8",
+  "usage_metadata": {
+   "candidates_token_count": 86,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 86
+    }
+   ],
+   "prompt_token_count": 167,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 167
+    }
+   ],
+   "thoughts_token_count": 791,
+   "total_token_count": 1044,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

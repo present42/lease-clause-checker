@@ -1,0 +1,99 @@
+{
+ "clause_id": "clause-6",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "8427ce08fa561f33677a80561353bacd888a1001595a31a1abfe13093387212b",
+ "clauses_sha256": "4785be0e862ab7d19a11c723e18bf9402a8b95d637ae290a0b8a636b2d10005b",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant will pay a non-refundable $250 fee for each set of keys issued at the start of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T22:03:45.952483Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"134\",\"quote\":\"collect or require or attempt to collect or require from a tenant, prospective tenant or former tenant of the rental unit a fee, premium, commission, bonus, penalty, key deposit or other like amount of money whether or not the money is refundable\",\"reason\":\"The clause requires the tenant to pay a $250 key fee, which is a fee or other like amount of money, and section 134(1)(a) bars landlords from requiring it whether or not it is refundable, so under section 4(1) the inconsistent clause is void. The prohibition is subject to 'unless otherwise prescribed', but no regulation is in the excerpt provided.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6430,
+ "output_tokens": 788,
+ "raw": {
+  "id": "msg_011Ch1gcMGE6dpX3vj9DsbPf",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"134\",\"quote\":\"collect or require or attempt to collect or require from a tenant, prospective tenant or former tenant of the rental unit a fee, premium, commission, bonus, penalty, key deposit or other like amount of money whether or not the money is refundable\",\"reason\":\"The clause requires the tenant to pay a $250 key fee, which is a fee or other like amount of money, and section 134(1)(a) bars landlords from requiring it whether or not it is refundable, so under section 4(1) the inconsistent clause is void. The prohibition is subject to 'unless otherwise prescribed', but no regulation is in the excerpt provided.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6430,
+   "output_tokens": 788,
+   "output_tokens_details": {
+    "thinking_tokens": 568
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "clause_id": "c24",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1f02763500505833b2adcae883acbecea1e858e6716558a39401fcbbac1333cf",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. Whenever the rent is lawfully increased, the Landlord may require the Tenant to pay an additional amount so that the rent deposit equals the new monthly rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:10:30.309376Z",
+ "text": "Yes, this clause is enforceable. \n\nUnder subsection 106(2) of the *Residential Tenancies Act, 2006*, the maximum permitted rent deposit for a monthly tenancy is one month's rent. Subsection 106(3) explicitly provides that if the lawful rent increases after a tenant has paid a rent deposit, the landlord may require the tenant to pay an additional amount to increase the rent deposit up to that maximum permitted amount (the new monthly rent). Note that in practice, landlords often apply the mandatory annual interest owed to the tenant on the rent deposit toward this top-up amount under subsection 106(7), rather than collecting a separate payment, unless there is a shortfall (such as with an above-guideline rent increase or when interest was already paid out directly).\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 195,
+ "output_tokens": 815,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "tm73aubOIrCkw8cP_Oe5iAs",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:10:46 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. \n\nUnder subsection 106(2) of the *Residential Tenancies Act, 2006*, the maximum permitted rent deposit for a monthly tenancy is one month's rent. Subsection 106(3) explicitly provides that if the lawful rent increases after a tenant has paid a rent deposit, the landlord may require the tenant to pay an additional amount to increase the rent deposit up to that maximum permitted amount (the new monthly rent). Note that in practice, landlords often apply the mandatory annual interest owed to the tenant on the rent deposit toward this top-up amount under subsection 106(7), rather than collecting a separate payment, unless there is a shortfall (such as with an above-guideline rent increase or when interest was already paid out directly).\n\nVerdict: enforceable\nSection: 106",
+       "thought_signature": "AY89a18sJh6zOVxaMsZXG587MxhdTnXOfwjeGCjfShG8lVKphAr-VXaz-92yTqMbphCxZZOMcLEaSYdLVC8LBdUeAK8OdaQyy9XF1WoZz7cP0yL8IE1-SOW9FajzfIZLVfJLjnc1oGKnEH7qODZ-uwQVhm4yDlMHb4H3Mxy5WB_7MZwf57vKRY8LhQT12eGfAjQC72CBhS_HKpglv9LoagXT2ps3OuR0i2iLZCLqrdeDRoFPQwia1KI8L5OT7IACArTSotKWiprPM3fK1RQUyOUuFAbTIATWHBPGRbup1k-BEAC9F3wWeqtfXwYcnI90rz1PAeZz90Bp0vTuRA7AGsfowUrwn0xsI5Jk7bzMGK7a3ZTdQyZoYGwm4wXhAMHU3nuWNcNkjH4lX_VNzoWh0RpQ4TD5yakhL--uNd7UOP-JbwRrK52_05C7g6Tp0ulsabKmNmTg1i8wRbyrg6XKuMNGygv_rDuuTKI4p6725XMFZJG1wSXptqpFJQ2IbcHeFgjpO0pKUOliYCrD04QeQlg-ZlcuL4Wz4b8wbkxFH9WjX3OA9R3tTzSBl_ihc7k4oENfCpWezRLMt8h60V6Gwq3rOglII88FTmET9AefpDVFehAiaiLYsS_7ZQSVPJ0MqBAzVXHeVDFlN8a6LQ2A00Rf0zyE5Vd3Mlkzr--YgoUTx71Y4HC0kkBEjh_pRFuTCHq4mR90lYgENCseAt-UGW7MohmgVpjU4zy8VwucQQs1PETk-LQT-m0SfThA_NG38SZkOgocKGFXbBC0DiF5vdG51sWFj7605Jegzu66l5xZlAQoPvJLW7_MFqG_n8fWqv0rJLKQaj38J9Ee0upNdoQAnIk0taXM7LWOYy-YO29Pe3lFHn5olx6PYWHaWTOJ5Sbjv5gd5lvlQjxLT7Ae8mImQggKE-M00JOLIE23R8_Gj18kiuMrF4FScgxNtqeFZCbzzQe9E0fcaR4nXUIBlUvt3tgB9FBMWgOYoWVg1zJiER9wAzmOkMilHC_mXp7SlaxU_lCtwIUI_npqvzxhsHXRTt5x2W4eYXwlIU_cTb2zK5tHx0Qid06yj9nfUMJFO0plAAEpAmOxWPzNaBtCsQmOJ8BzRPr_Dm1yZMa28uwR6zpjtvpU9aq1c8kUBr6O2p7OoDPUWrOvPBCXh-t9rL-o1LYFwy8dGANS4d89rvyDkDOisMxxN9VlH9RmyXdhYHmsrUxDKRmAPl32zDkTWrqJ2cDBp_1q2BHf2BFHuUYVKsdUM7xEMwpO1iu3CqmhLkYBjEv2Pr3PZZZOidLltNpGfr-wQzA-4hbLWoTw47jNrvC1o19KBnywb_PYzNx1whcBwntfJko4O33_6jusbmMT4MIzaaVWb1G0Fpk1rTp8jnAX1JUHYjl_iMAOTz0L2-uTbGcYBo8kgwB1Qyg7JmgeoKi_8cXXuypKpO9w7RRTcpCsB4Kh-mNJ_UgLIqZ2SFWZw7yE9mPPU7P0lUDy3RluU21dagaIl07k6YMBChEwZvJIP5-rfspWL0ASgEfPPk-myxkxjdyaWRvSBDQ6TsWcAGNFgmrUVDLTBLrrlklx9cNV4WFkiNCy2q4nU9MWIMfKIeUuyDG6dDl1MGvXGDs4_OWnGUSa4Z9NtTVhBAU_-QeGePvKCzwqn44gXZ8a-5LDkifk9K1H8m-_2TrFUpmKoxlQGbLBr1ZAPeXzZ8BWPNjEo7ypIUwGCjiOhf98iyrDn8GrtPSvPR75FYt35hrdq-b1-ZHNEgiQraU40tF7vFVQeNIDAubNrCA_nel28NBQVdJXEfOwlAz4kL5Gx0lU6hvODa9_0D0jeKs_yEC5cb6MlaUrLeVG_rdBdqwy3zmtI9xuwqOhBSI7QMFXeypAq7BRA7KQQoD1x22gvMOdXOs2cOHxltHliFPMTEKM2a9PNWXgQPDLMaQf2FV4v4EI898rwp-QGDsXxQhwLYEy_edx1VUHKjfaGilXI9s14BzcxalYQYIvnWJP87LQ_lWu35_5HttDZ2Bb2qlluotfG5kgsmtMe37zSCRjAeUrYHg-Wp7_KHyy3C2DRwvuhBKZGwUQFJU1-xa_WnWqqGzEFjS0hqBeXPtIVUzmsEwTcCP0-gppYqwrZzV2IyLm7qeTxFMVSsDzhWRZUXVrPsWv9QlNT0lL8wJH1kiMh8heh19ZmoMueyxlin0WJld7EypgaJN3T6H9FvdT8FwmkbE-ngSA188OEpPbj2vvl6N_qO_T-b--DZLBjy5EVm6TpPuDyCBW9IeXCu-18WbvLmtQ1v7ISMhgxAQ_S8bAyUDMV8B1HKY5MjMQrd0V1X4FUtyDgRgzcuH6sgDrkgPQS2diwhAhQmm8aANmoj3saHvVKw7CZeYLf1X12DzabKXcqG7JNaiTguLD9fllsiBtLYCj4V8Jn0uXv-JoEf7kLVcQRlt4hcl3Prz8rUBikIHM3wCDR1k8U5BjboS4bh5ktvzyosl18zEVSXzSkX_L3lnt29T1CF31YHaqOhqstPLnzzYvyDiLPP60DbDFdV8of_Kwwnf5cLcQ97brHm31M7mlWHhFDCtbW6UmuMxqvbKwiW_AXJGYpqeJ4hR6ppTLi6P31HBLVznj8OHsHCHuaNH-NeCOqQTv0f2e6HyNpPLwrKaAftyRZ9dZA8DGz1udfbhCcUxKf9m5pCbS6O-zzrAJnkeZ9C6PR6qglclSvj5WPolQSFxSyUrvcm53dSqd3PXYg4ZsnX27PoTLYcRZC_oCme_xB4PeGNGhqiySFxj7KCQPbdPgbGNcskMpLQRZTMWvOgxMyH5DKXlbbTkOK0C805_2Qz_T08knoPzgxTNnPi_NF6kxlbJ4_U_sOMP8eqVRShp4O50e2EBKg1PN_zOHb27cbSt7LtV0I-_y4Fw1XgrkqV3ydocRNV3i8Y3EuCBoec2fPwE-80elETJDregD2jmM_bK4WQhVhyJEpxtiXwvw51sbwdLiPzeUYYFy0UBe5LpPuqR9fTBPNx16f9z63sRs4qWwDwTgWmAkE_MqpW2gg2J3cryNCwajETGdxeSPzEf1yGKiQNJ28SDAbO3-Fm4o2BgY3gZ_Ld_6Y3hXCyTea5FIOR1QdxhEm4w8TAp0II7iihr7zkipbr0r1PkATU3bgDytwDCZYdHcbYBPKJUV_xSnL7_iIgUvres8RSQhyXXGKQA8jWVArOHjMF0zbFgou2DS4OLvRxTyAyHvs8COYsz0yCtjDZkAIBi-Lg6ORM20yEzjCpgNJOGuHWvUKlXGMJFANQ-wFZJ9pChJXsFcGJQzLV2sQVjJZlEGHbR7M7pFUpppyCLxXqylh3tCNirYFgE_8qGDY4APhw=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:10:30.567142Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "tm73aubOIrCkw8cP_Oe5iAs",
+  "usage_metadata": {
+   "candidates_token_count": 184,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 184
+    }
+   ],
+   "prompt_token_count": 195,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 195
+    }
+   ],
+   "thoughts_token_count": 631,
+   "total_token_count": 1010,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

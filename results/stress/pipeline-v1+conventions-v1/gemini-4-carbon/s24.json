@@ -1,0 +1,120 @@
+{
+ "clause_id": "s24",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "44225d1d0716ccd92bc0f686fb29d40457e67c7e611d4987c4c24f9a2d48cc13",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the Tenant takes a job outside Ontario, the tenancy will end on the Tenant's last day of work in Ontario, and the Tenant will move out that day.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:20:23.707098Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into, (a) at the time the tenancy agreement is entered into; or (b) as a condition of entering into the tenancy agreement.\",\"reason\":\"As a term of the tenancy agreement, this clause is an agreement between the landlord and tenant to terminate the tenancy entered into at the time the tenancy agreement is entered into. Under section 37(5) (and section 37(1), which allows termination only in accordance with the Act), such a pre-agreed termination provision is void.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4543,
+ "output_tokens": 1133,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "B3H3asnwLdW9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:44 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into, (a) at the time the tenancy agreement is entered into; or (b) as a condition of entering into the tenancy agreement.\",\"reason\":\"As a term of the tenancy agreement, this clause is an agreement between the landlord and tenant to terminate the tenancy entered into at the time the tenancy agreement is entered into. Under section 37(5) (and section 37(1), which allows termination only in accordance with the Act), such a pre-agreed termination provision is void.\"}",
+       "thought_signature": "AY89a1_pN1DoL_kkDwBwlnjwvDc0I17B2vE55Nxzqc0sGNnUNn331y-4GG-S1aHpqLPgKvlPKtCvvt3nYq4i56TxAslWTHTVoCZo3sd0c1cPrdy1iGIhRke5ZbfWN7Jjs_2iJaB7unVDk-zG9yGafR2rjQsstgnMMzrbRdV9LfE3YctfvYL_jcMoBLuY7qQd03kPpWPUUv4tJJs23rtHpGGixIWp-XUDZpaTvI9rMSr2xi8lULxqZFttpJbkLhczsIlOTIl9oZ9rILl7PW9KueBqrpxIpoQxlEvVOdO9e5f95JrvNpKcN0u7jvCYw-skeUUCZTByT3wCx-7melPAXTPi-vsigdyktTHAy4gk0WWqwex00-J21mjQQ60lBwbix9WuUST-6OED9h6cfuMa_N0L4nEXizsZrDEx7e_eEaaCtvmFFZYDu1RO24lBNWY_Tf018ORPNesX97ET-F67S6EYrV-54dt4ta-13q2adfgrq-W7KFtFSMD0vAiviQKk0bQm4EO7idjEvUIJneTVUqPWmu1oypzFpB4_4DSSDKxFPvLAgpK3VCfgboPte47gsV9mvlXuGgXz9Excgp3NYUvgUqXceVwrW5axyepmRQbqFo9uaI4UjcYpOS5eLJCxvgN9Kp-owtRIqlduW0MC5RXRMs-Wl-WD_sTElp-1MREEfCzL7zYxDwxqWvEnJhTveHPok_EM92flZ9lTG1NBtUnUjt0NiIF9ez55mZ-rCLbotJH_XmMD3GEjEF7BnrSscFQr0esoq0KD8XeBzleZ2tVvVg0Xow6KFtEckT5WY9069-wPk_3BJq0CwWdlNlbHYk8LXtUB7NTWkiDQfu4DCidzZn2XbPuagTYZHKbvY_Gr2KhFexS-5ozbDqGYhoxeBO1do_fQjQV56rwsLHExiQfQbZ7IiLWLuS3DSEF7uPQ1Sa02sEiY_RFmR-S28D84M7HBOHng8vhuuDNmU8ZgLHnX1L3dcR-mDkfsIgL6qPitwJNjrN1w0IH8hoyoCWsphiKZI5Lf5bFNFQacOW-NSqFc-eGdfK_9d2LmEHn3NrA6Uk_kJ3L_D-92qjiG2NYxUmWadTLFyjd2pb1NVLIOLngb3tDCKnY0ULLFrq5j0G9Jt7VTuyf70WlJqirE3nSNPUk8g1askAAMM5hRXTws8H0evbhRAuyBTqf1JsmRTCxsBceSq-2RZWJbNgZ7zfW0XYrygC8JZ52nIZTtJDurPM5AkqLP_FgaAzRc7XNbaFKeiAtyQfg3dwAmSFfL6e4oSDvWAq3lPTpn-fsTZdnUct2G2f3Iv59UgFNEwihbHZ553T5Li5Dj4DZUbSIogVBOEGuYiw9BfN5o43nyRm6jnyJdO1wx0mgPmeqYS2CC9bPEiRnpRDSYUrGFvrdHRGPKOICsLB3-21JdKWNqcTh_hH7Bkh8GTf8qZ6oPxYAbwrBbp8nHr3neFIKLCD4mRIiq6eEHTpoGGZ8oYNySh4FxXRG0Ks2yKBxSc7HXkWFEkgQWAHaFirKRrJ05Zu_295MOUXshmKY7rLU3ghQJ5PE4zj0scw9MqKSaES8dnVgjM7bt8dm2whZP6ZJjd19cHydvbL99XRRNpseXTQR7LkyXiOEP0qhm1kF2VPun02L780_NJj7Lo0xDb_PDjsi0O3sU0mYkaq1LhDQx64UQbzRlZC0UbTvVxmey9yw3i7uukPVidHk1W5_qTTsqH0kLTHs0lpcaAFKJljISMFbvSLeJteV1H8DZj3XXVQ9AW95FO7ImtMEQelOFuJ2I9U-RLTZpv1U3hmydQ0BfY1D5b6mBS-U7Jbwn1gNdQGzSkY3Sw_SkRoRraDbFRlvTZt_qGl6T3mTug8byZt8h44vTUrXYnDIbFronvYqkm9WPaCk-xgVF5iBUMR3qNQkmG8mgg9kshP2t9fWZXOPvYpn1U2L1btzAuhkCfBYkry7ttIia991VhsnIleKDuzWlGK0Ql3ESoKmMggG7LOtfPXBIzlUMG22RC8gz9YXigZP7c1V7L5iZXHcjD5XJs5LXdKy2VRyoATJ5egeqSSMQJvmPa5gsLm7xa8J_LWSZht6ZHb0q_Oz8OYIIL4bWRGy5wh7be0xTgirR9Z-eWqxPAYb-Rl1L45eYPbGnz-1b9YSR8lQTKFOJE8jPWdowSo8x_SWiBcsbv5RlQO9FFPRLahnoRXPt2ZtrBHgzLOutECZAYj_IeUZgYBMgcucyCBezRagxHNN3kFPQBfeaKWiyJqfQhzWoFyvCc25WD-92ZUCeIPTZxw7AlcSacVDsNOTsCJd076yADbROMQhvRW3Lic4VZnWzs1z9UUORb2C6R-Alg8TIPYWdGO2Txl8VgTxC9dVDHF6kPpG1eXYQ23o3pwC_UOBEHt_Fc0J8lHkhJv71oRCZNSKP3s7kdaVBrb6cIOFPppqmw5LTAmgIX74j4FJdjQQWPRXgnkoddj-myqTl2dPRGVKTV1zb8XBGz6K7BciXc1cvDNAASRqS7fYdMNecq0BZeXk-i_GXbe7iXE7N1VmmDU0zFDgEIt6-9S4GTzdXQfkl9k8kB5XWRd1HbCFRoN3PhSZUshySfDdDtzRcvv6LpF_Uq4hYSPblGtW339RCMa1ADFnfCljBMlPb7NkymqV4hi8YsXr6K7sWhUE1U_QLzAdjvmeb524oyVQmK4I6zTPZlU009ZFT6fXORGzRfVpReiAog01uX62tpOmcZENrKx77OeKg848FkmpgTyP8lQaOwpzMaphjs0FEaE6nmX4tb_zdeEtrr1W27DVNhcjiySgG_Mpa5wuiEY6mnFY0qUvgQdjt4jIivWrpNS-6rBA6vlBMPPCbU7Z_0dJVKKA7gCEODa0i2MTKeoRifTcGisEHHHbobV3zTSaR5bah4PHpGQ0EK34ZRJu1TWsVEDRrwvGshz5InVw0Q-YMv4-ARSn5ytFuBriRS2HzxZhc3ZVA2qHTRnKLVBtqWmizwelaXetE15TYUxUgYrbswxgLNROmcCwJN3HrKmdCLXgkqKGqHSrzaiM4OhxBjRCG85OC01hJJZw_wYROsjVWI6ojViRld8ukjq0Vyzbq90SvSHKLIt51uIvz4v_4ehzliF8C-ZzKYjpPwQXlT_LRdftcTA_8JhGmhxnVnSxcDrocaxNzrFPe5DBKKgUZqq0rFuzaQC5Jxeu8sWcfSqflwdaat1zJEqAjwZl48MJ6XCwjZXW93yYbOfuwTf0pkQiulDUaZD2zhgtehzAmme3ZiryXGld9kGoIDyuZ30HObHx7Jdxm8H4TAwYf08zSedqXlytzuTpG-oUABBjGHY4tsKHWLho6cVGouUcxT4WckWr9LX8WCkbbDoZPIpYpvOdT6Kh9L9DNXqjppPf07jga6pn0456pWdp_yfLxl08ELZXl9xgkJ2bq5ogznwu_q9-TT9IxI40O5gh80jLhujBqXyvntVOs-soPOgjJQcr3lNpzqfNceAqdMjnslIbFzgpFJvxz9GTG_-_dI9hd0OVBQ64Dz-EUskRxlUnIIyykIfpLXhAl-Sb1__PCloR0sxGCxGbEYcBCtS6rYjI4D6VoZ6XhLC33T1NFIIJWKmzIMG4mLQTlN7M22nJ5w7jdMqmLm0MLdGORL8lUEV0rSvp9X-serbOYXa-q9F7vn6mPgfAGlBcLqAdVMziQEllCXRABqSvmvrM9QMxdANjEL34kEa8Dd8lqtt8jcF_MIvH-TRRT6mgPLeQD6dPrWm--Qwyn2KyZpn5fuIqWsK8Kdx3GqcSx3_n8XQ9XNoBCG8Yxo-SsGqnYTu15Tft8luMYm_q8drzKcH7KyklTphpi6KWJi6LvjtRY8fpiH9wRs2VrDqBPPy-q4LSYpgsI45A-8QXM9o17PcZoTjXq68L2q2f4X6dyCOrS2iuqGxvOGE8cm_Q4VVwNx6MN6u3Us8EwcJ_feZqeC_oll8in-OLr0Qgaojvmr9fWe1WILYgd7Rjm-4t2_XH1j2MucbNqkQQGLEWbUsmVMpiCAR61PNdLI17XfuX_SkuxseJq6aLHX5cJXdL6uW3lz-HfC9xbRAO72vn3pEpRsztepeSHZk7g6DigeM25TVNyCmD3YQz1uW30B4im5ZCkAszfWhBU5zoBA7_jmhF8Ym8MPBdL7WDZmCOcbHwX-pj8XGn4yh3iQgROP5OfUa3iFpEFz41NTcQX4CtDiyh9YBJzDQisWQ_EPI3lVhMx0VjHWKe4ZnFPiDcIq3tpcE4qse4p-oPw5cfEZZSORZMJ4whBU53mqjsJY40SQKB06ei63_wT3RR1iJMf97DAomCi_OsxpO9tcsjVR3QmTf3TVrx9FkcyxjHYR0ULmP7wE5v5-2r3YPZwL2jcR9CCq-bnXu3syIAcTbeIGIMhiFBzphkAc1Cvw-W_SLR4CMKMVITjDKqJnEWemq6zvuNjAENNhjTV_b8CFhLzikMgngrqsfB6J-BVOZZRLpeELIf3xzG291peZ9ESJTFxyIw4dAHWXOcCliA7aTP_AlXYD2mclfdQasxXBPTPk1Rf-AHXxf6Pmj6rzuZmC7oNCQNbBy2_XHJupqSSQY5DRUGbedm6YmTxsL3Yh0FjLMUoQ47yt9IrR29kukQ3RNJ20Q7x0s_XTAapUD2uMF1Q1InOnUHAtRwC6eSH1qKVD8V2SF5VSQM-c9Peci85oMe22haobI7_CiEo793-5Td3j-DOVYEqIT9NOp6hexb5syf-p9_gdTNoeZSmQDpLIgGeCKGYwY8e9ZoWT53pE_idThxGAxQu79cN17JxFwfDlH00KxPOTgVhpfDMqr60jHOOTqQqYspo6_XMhi3wtB7ZnjTaCEkbWXIZbeepq7ZZBl13bOcil8O1tnB8sEArfw03ymLREslH_E-BTnSzAYdRI3ue8y5khIUV-h9KjJklWpMK-pXAyCxXOIqx7TH7TmUhuDySDD5B8rVNPmDsyQIV7UHjhJi_MiT3Wxr-sZoQaTdaxRSkqxJrTgv31lZFHz9Gp5stPauDr8d1Fhr_Z5kTYtFojjKGljSGux2upysYSf2LFvFQIZeilrD62ZjfrmANcOkXHS5i3frPFw_mORg2t2lZfYVQlyTWUIXrcj335rb1Ut-o0shDszoFA4mhh6ZmnKKbWPMn6VgH0vjSEy2hmEKx_tgUrGJuek_tTADcIbSamyM_6ppdM5_Bl0lUpDZwWd4DZKERTO3OKKLpU8JNUfaIIH-ZbnIu-dE54yZ-fXUFhShDbNgRQRDH1GzQjreiLzxjwCmKQTLmQ6-RcH7QjEqAVYYB_M50i208Tf6qBrAJSQJM7HjuD5a9fp2sLjAxxUFxPQ74GYhhNeGmn-CpnEOXUNWWb9By46CxhLoPOokCwPWlIlo-ZiRSJIFhO2MuE6K2QEGlwFL2_w54HSBfP8EV9cCB0t8tRsjjbK-Dlx_7sOfDjXZGmAHowaTb0yR8Q1w_5ohVdty7"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 251,
+       "start_index": 42,
+       "uri": "https://www.reddit.com/r/OntarioLandlord/comments/1ccy4zx"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:20:23.751689Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "B3H3asnwLdW9w-UPidKMiQw",
+  "usage_metadata": {
+   "candidates_token_count": 148,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 148
+    }
+   ],
+   "prompt_token_count": 4543,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4543
+    }
+   ],
+   "thoughts_token_count": 985,
+   "total_token_count": 5676,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "37",
+   "quote": "An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into, (a) at the time the tenancy agreement is entered into; or (b) as a condition of entering into the tenancy agreement.",
+   "reason": "As a term of the tenancy agreement, this clause is an agreement between the landlord and tenant to terminate the tenancy entered into at the time the tenancy agreement is entered into. Under section 37(5) (and section 37(1), which allows termination only in accordance with the Act), such a pre-agreed termination provision is void."
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "c14",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "c67b7a96f010338c9fa1a40295436be2d63f6f13daa6717c1dd03938761398dc",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the Landlord lists the building for sale, the Landlord may show the unit to prospective buyers. The Landlord will give the Tenant written notice at least 24 hours ahead saying why, on which day, and at what time between 8 a.m. and 8 p.m. it will come.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n\n\nYour previous answer was:\n{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry to allow a potential purchaser to view the rental unit.\",\"reason\":\"The clause permits entry to show the unit to a potential purchaser on 24 hours written notice, and it specifies the reason, day and a time between 8 a.m. and 8 p.m. as subsection 27(3) requires, so it conforms to the Act and is not void.\"}\n\nIt failed a check: The quote does not appear word for word in section 27. Answer again. Copy the quote exactly from the section you cite, or answer \"unsure\" if none of the sections above decides the clause.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:24.776310Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"A landlord or, with the written authorization of a landlord, a broker or salesperson registered under the Trust in Real Estate Services Act, 2002, may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry to allow a potential purchaser to view the rental unit.\",\"reason\":\"Subsection 27(2) lets a landlord enter to let a potential purchaser view the unit on written notice given at least 24 hours before entry, and the clause's notice content (reason, day, and a time between 8 a.m. and 8 p.m.) matches subsection 27(3), so the clause is not void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6724,
+ "output_tokens": 824,
+ "raw": {
+  "id": "msg_011CgyJ6sJ6aF91MT32JcuTn",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"A landlord or, with the written authorization of a landlord, a broker or salesperson registered under the Trust in Real Estate Services Act, 2002, may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry to allow a potential purchaser to view the rental unit.\",\"reason\":\"Subsection 27(2) lets a landlord enter to let a potential purchaser view the unit on written notice given at least 24 hours before entry, and the clause's notice content (reason, day, and a time between 8 a.m. and 8 p.m.) matches subsection 27(3), so the clause is not void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6724,
+   "output_tokens": 824,
+   "output_tokens_details": {
+    "thinking_tokens": 597
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

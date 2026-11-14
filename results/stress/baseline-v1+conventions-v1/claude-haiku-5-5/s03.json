@@ -1,0 +1,67 @@
+{
+ "clause_id": "s03",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "9fac44bad34050e6453e2742c030bf9013ec4054c7844d85fccce16233e3bd42",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: A prospective insurer of the building may view the unit. The Landlord will give the Tenant written notice at least 24 hours ahead stating the reason, the day and a time between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:13.240828Z",
+ "text": "The clause is enforceable. Section 27 of the *Residential Tenancies Act, 2006* allows a landlord to enter a rental unit without the tenant's consent to show it to a prospective insurer of the building, provided the landlord gives written notice at least 24 hours in advance that states the reason, the day, and a time between 8 a.m. and 8 p.m. The clause repeats those conditions, so it grants nothing beyond the statute. Under section 3, a lease term cannot take away a tenant's rights under the Act, and this clause does not try to.\n\nI'm working from memory of the Act's wording, so check the current text of s. 27 on e-Laws before relying on the specific paragraph and notice language.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 265,
+ "output_tokens": 2006,
+ "raw": {
+  "id": "msg_011Ch1HvMhc3JdyfZK11swcL",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS+icKEAgTGAI4AUIIdGhpbmtpbmcSDE2UFghV4B0uLw3QsBoM6+b1OzPTTvMcKve/IjCmvlF27wSdA0RAuOADcFpSqA0aLtaEBUvUH2Ksrqb9bCkJgsq4VTvYUt2hPRNdNDkqlyc5SWSm23Xcfhmzb8dex9ryzwIwwHw0AU6JvemXlt82rrpiK3QjA5/C75djrBV3EyVso6sAdBX32PhX1KHb6xAgU2k06W05nT5SEZOHIYtNruCvQRlWW9qLjGybDqHzk2mjFhyLfwzQQaulLgeXDwy2vHC2boM7bnSHh2T3suHW30H8am/akLmag2TLXMqU9mhqpZaJNf6LJxMb50n9AmWyH2VQEajzoga4BgEIA50w7nYMcFitPvYAJXzWUibf/A+IWv30bOqvBBDLTtmiF+zT1zn7Hk1Kd/psoSZ8r1Xl88uPgG3tEGSWRN7xZ99uUifM4D9jFcI1eZGupIjN706847gjJa9altrJTetwcV5ZvuuUGxzBIJlumMx1fgBLmra4k2kToyzAxtgJr6FpsFJrpuIdsKldkjsBLwTk1fqB9Gy0sLdN6yLxuvUqLoAploY4kWhazm2dUiIHubS6kQYSJJCsmIYgT8+Jqx5/+AvxA35xQd6WSx1xkYLNGat9UDz6rCSlw75eIWzcJigIYBvgxxsVFDqrIGsCfWzuxqrlXPPGoXUaeyySpZZ6hPOS7764Xa3C564AgMPJVKFntibS2Jag7zseZTeTAv7pxS1SJJ/S3Fb35CwxFaHVk34sueaHYHWgdlQCiwzFORU29w6iSh15pM9LnmumAV8FN5VN12T5wHQ/uVJe+J/YcG/bqNKRvg2flD1hRqo60DKYPLQ4Z9vyxo1sK4q9l/efNJ4C5lLX1uM7+1IIWxxPHqXLW/REPaWeXsZ5fqYXz0CxHPjG0kjFDCmEeTvQ/mUPWPu97u8bgvRIoGaohxbk0sX6DUUsSyUCthrVoIQ8vYq9fRTBMDDzot0FMDeQ2dMfMb6127iFhRmvwzIFYKKYjBmRqaBNJA9BuKQPjcWczVjqaXHGdHF+1oinAgOf3FNf/71IRW5IWka2s8I2EK5qGLv2EoAyuUrreuN3ZA3JZA7lO2aDZdHBBmdPHeQ9IRY5bR1qrE8rxbLWOxbLWw9dC2quU1WOLuh7XXB/EntXWfLNp5b9Oax5Aq0dACpyoOcxcfGgXTlR1hBjZeGKSaVvi6V4GeDijmhr5OILKue+bS181InuaPR5tBrmsUwY6FQPfz59SBsMeRKzeHjVyZfJA84+FL/GkuRZErkkjVBWFggpSMVrvjHHMgpaWth62qvC+Ay0QI+WcDFcNHYhjDkmPQCGbLsMvmVgL68/ZpQPvrebta0Czpv6LTJIlfYImStHkTEJJuXRSMrUnVzVgGbAabHS1ObWIZ2gDF/enXkQX68Cx05/AoJk5IdYaPOT7kk0J1rP67EiiwaoXKu6AprHrbHKbmeLWZsAblMYUtvgFCr+c4BCNTJGP8ynKhiYG2/pUpv7okzAGiWjvmj+HVWt8UdYYXwXuugPStJvjQcQ8xX6fg9FOjcNjvluK/m6RTDoq8KX/ANKi4dFo349kR/L1kcCZ3gUQD0uLSOIuH5W7W5QT8a3N8ogdK0Xavqk7G9T3xuEk9uS4gQ5ER+v4uPTQ8lP/f0GBV8Toske03qr917749YPZrT63vi7ISXbbBwZeAMvh44iBMQrE64h2rMaNmlyJKMlNvaV68Tb1BHht6o28JS8VfhEU7+MjIiBuMdyFiggSdvJi42cFQagPioQAMq/IW8J+LZ0a8VMI6K9UAPTYM9ayT+7XUzbpWPMFWjviq6TFmB6TXChlp2tN6d06vfWeXEcKpy2s1aS2FyGa24R7DptlThAcYesbYQPV7Ss4f99JtbLbNpJCJPqT1woVmQaSMLuTyJPYFOwXThWCLExonXKq4QsYuIXPb0sgI/pK3uD4DT59SahQI+UQobe0Ytor+f3DMQQlvdnd4QA8EhVx3WHNswH/P4NNaVC6QjHoTZAA/nlIXqSr8KR7oZPdGFYZ7GUAmevVkH+fPFjB6ElleoglT/Dq7y6OlSe5OPJaNr1nWy1Kq+62dUUvxVpafu8/vFm7zUS2yqYv4fj1cr0nrV2kerZICeyh1m7bjF9lyDq8lEFdimE3tCNkoO2lEoGWMAYEBGpDukUCHqyWP8Txui3Gq6RpnwnUOuWVHCw5QDstKseP0Ue1AmGSpm56HvoiwFR1SZFTlZQLsS8ovq/NQaRx6MvTq0UaCh4SM8eV9cfYJjo4y1kiv4d42FFkVa9+rHOZklK5ZlE40eXWLGuheHYFq81jWNzULIMyrxGOGKhOPMfINQBHpAS0WiKSCXmgFs3YeOKHJ2TpUN64cE7q2MZcKgSZHNvwcBwfYShsI7uYE5WLFrnfFJjKgNCw95VELl0zIutLnAxKvaPd/0wIxV9r+EObTI3j/HnCWpA9sjd/xsV3EwiQKN62cakHzp6MDFp5pxAfmbq902qrLshaQFwtT2jbmqeeBmmhiqXvLkGstgrUQo3FJA5fVZlIBaR9sFkdbMHsTc83/w27CKweqZxOEzLIXbjk2U2QN0+uFGd95H4RuCFarJEtMf+5bfRdh/XBhXJ/a69T1YYSpSi3CS3IFikkl0ephjZOLFTZbeg+llvrWsxsMW2MT4/anG9R/p4ZdHO7IS8AxHb3KzdcUbnu++VZworRaZoC+b9J7HcAWo4tr4dgAdbbqlmaX4WYWv76EdflCD5WNCHsif2c/tAqeDkXxrJTC0JZrsil6npxDKLTiyk0nh+Ak8RSga+EwcES9App2zBz+7V84ci3Md2ATadIZMLnO2cqCYqAIB0T6aNpjiVPlOfReiN2P2VniFPLwgBb7uySPNNZwmGzr9LJfHYgS8jOTVsH+4g6UQihZEYtXMqGnvdO/lCEZbxr0Lllf7pfOxgy65V8y9AOW2pLbag5al6a6CTQ5+q4KFJaYBzEiFuppZGgRBIrX4aBDZTMQNO5D3MHJd5LUUjKuuuW/wTThp0L4iBv+IwheMEk/dm4PYEmlGffkdivwxNn1sA3IV6HDVYDP0YERX/hCNUJOsAptKzjsOu7AFhBckxsT+Bq6FgM+mssSt7cSXr6CKkfuaFRJa+Wlum9ngbsYYv+AQtu1/qm49cwRYqQB/Ivln+vnBIIHAOY4tmbIk5oGsrOsA6HNodYyhFHxFwT0KabsdnNIm8HT7sR4kdRf2eCRt6ThF3l5KSMDJJBR5RRO6MlKE+6X4pOyIeIOOGOidA5qdXbrXd67EyS3P3t9NrRZvd/W41AbBVEpuKbON6RwQy4YABvWs1FW4/xohN5DM2d2ZVH6Sj+KY3Vg18bum3FWEfjL1A4AIaQNqzWc0u68Z0ljxixRtxaX+4yTcczHr/UCUsD6LoUCThNmyQNdur1n4eh12CELnOegqzx8B44Bz2t+OGdu5WAfvsTKyogiBanhgALpokbdSs8qrbPFwstuyw4ef9KnOU9lR/E7qJR2bTCmD5VvY7APcxkjJW22lZGcJgjSqrcMg0qz7V+gtwcvXKOuPgVKr3fN+tFmbI6aHIPYdoDj1it5J5GWxfPawhRv5Q83ECCpFlGqxq8B8dvid1mlmuo3OTdl8pwrkY3uNvTPtBdhdpANnb79t40QPGk7C5hEpL679d6dvy3ZfOT1LIsrlQxMwaa3j6E9KBDuAD1Jq3xYzJZMrvsBNoTnXurZqH62horqgp3ilY4M3LsZKZ/Skt1vRLG8VaJTUMRUhRCk0OwRNUqqBh/avDEjLNltzIWbyCf9PXkP29EVnoVf+o3xptrLz/St5Na4mHsLiVVWe670hR1sjUDMWR4MKb6fDFHhG1KKqRxbcrn9LEy+YgXXMbMn8jIh+DmJYeUe6FkUWBc/5QhPLv7W7BP5usEKkNd4yAR3Av/mJkm3X7iz5Yk25qvSgvpAayF7UotrHrF9FS8VzgDr+0mJ1t3+Ry194jOIlT86M/BZqTVLlBbFsLIWDck7XarRoGv2XkmYKgrPYQiPJGd8v4Q/Oq46PFDDprR7VCTHc8oNJURMxUknkQaPLpZXxeKFWdP8hrhooCiF/W5RwjusKliqPHp4sjHqurBpspIWPHev5gvMgQNHA5dTGzhojZSteQsQUBXFsr/7oL15DIpjDFM/yhBJ63wO3/OoZe+IP67kPPWpQcDFfkZ4CUBKRrKqtyC4uUMw7FUc/UGq4EBj2Y+iI2rZ9GXbHEdlXVrtnluvPHjNvxrKLP1q3HhbGClzorWZ10y8pr8cP3QXzdAnLzdtBe4w2KqOCBJo6v37stG6rKxhZrJxuGYS91PYafpm3VfS50gC2hS3oRyTMarl1yAMOLqPT6Hq3r4U8Qy3LNtDLG7Ln6vS+ijwjA1oSykPqtncsnsPf8lPii3quNfjrliV1wG5F2llmIOgw3ZwIZ4GFisos+gRpMZ7FOnZXmW9drO4p+T00qNYtiYv5rliGNFI6fORTc5yxE3Wub0reKru6o0nedP23p8sJP86oJj3MMDZ3TFNy9e3Z0begW4OOiechsUEfINFgWk4Pi8dkIXJflGfEIUDsssvSFaakZcgKUBm0f+kCebZ8F55eJV71BXrojXV2Xvz1EyRbw7PTkXAei2INJVHMrM0Cq/g5IPHIwEQUZj3WCE6yRPIBGG64hy7gBjKNtbt7tpTiOXg/+svV7ZFcqrXYy2hHwCEYLLZAt6yzUeAlxsFC+4r0Evglt+9rP84IFmHfHj2Q+usAqKvd2AeMscFVe6pVnpyfUMyxSEzrzBfR2KKFqOQFC8CmSZMRQgY0waLVDO2yMZgvUDfJKmTPLIWoj5fS+F26/GMyXhhIzYJ1IUdvQSSxJ6LkwVyFAliFoSLX7dCp737WZwkfYDXarFBrTuwwjcurhzS3Anm02WDKJoVEUVFPD3XXIsdLWZdcCT5W9ix+MsKfUzA17LWWWfKdKo+qcnhfoWCkSnsz4lotgu3vqxapfecQwdwJ/ocqQiO3K2dli6LpwV1DBHq9rj/19iW+fk2vqBUDOdjQSKdduxMYQQSyw2r/1VxydD7CeseG0kWe6xaZx7JvAlej3umGgAoEZ4priRpe++kno4OccdIcg/jTUTBjRZPScR9W9xuzXcOqla6yo4dG7Jos/bobXjIBcT6zXkF44W5IFpQ9K/fZV5lL8pwCNPNyfL7tmn3bX+h1s1VT+Ck/sNvFpw0mKdMuJkGWAK+N9JvnNo04n8QzJqMnvOvaabE4DUzucecPgfH85y8zN6bCz/4crmQAaS02A9aFxWbY69RiY4DOI9SAkPj8HK8xlNHYHctnDGhSd3RHUZaM8rPBh55GjsvDpMYaMMViYGEDcujvit3eCHIKEF01zEkod59FaRxBA/fqHNdyfBK+UmrLOBvg6OGNcNVuco/Ev8utXxKzUpHkir1IhWAvlQcOmYWMujYjcbj1d+CId/9rsinsxPPgMO0HnrDJJ4Q0u0LxnCGaYGs7ahezhmlvzdFagxpcdRcC5hREYSthMv4BAwyTwahRD3VYGmdloGcNzZ+M4RG9WC/O9E9O7Sp8rGgFGYtEpSGXmlYSSYLFvhksTq4rpUMHe2+002o/ni9vq0ra4LpEtBMxe0tpNWHdLqwMsNCigeGH4f+lEo1mphiQfTeItAyfGvip9WkkSwWKnjANQg3/wFAhjRcMQ83mX5PPYlw7M7DlfD1KPBf1dVhUDNucIWzLxakRnT8osOflnU5y9ONW4FBWAC/vFb9IdHa41Qjlb2dUaDZaLJMokTui3oeK9+EYnVwS5EXClVqJy07IaS8Q2/vvON5sjGUYj1VSPtegRhiPROwy45lDASObx3plTWGU7i3Ywf4NA0hRBMfQq4fGUOplcaaZEvCZmgp7bLm7Lz4v18cfL0jeoJWAV9sVxkaFyOnCvup/7YvZG48kQ0G+jHH2u9gFYwFOwVj98TGYusAvb3U09BJQh3YqsKl9w8hWU2kQG6hvC9TYxHxs+No7DJK0H1IbXYmRr489K17nV14cDKj5jxwxzpccSRb9nfyTcinvzXFSeZrmkjhm5c6shMByhWQ6D2rvgoE8YV8mRnNlkxYaCM3ba+AVl9/05UibGwm5XliAry6sDCQtDKEmOZe2EFeAs537fP8Q1cBy+7Vi4LMpDzWveUz4OY0ajK7+sLAL5KolBym3KGWbkmsqxtUvkvWIEO36k4B0Cl9qaMj48AilSP4G6KRCEjDGpRKPpzDtvWueU/G2XiuEYuZERS4fLRZVowhr/nkI6t+qBytRcNDhqs2EJwqOUXnACilyZY+Y2czg3EwIG4yfdD/XgSG8a9NQpiOgC/yXoiaRypHcmuqMhlKCR5R1atWf5USrU+1CnaPdM3ei9bwzm+NrtEz/D3ipfWbof8nluqSYo9atYD4zGEc4EfiTsd593Pv92vdDClxaPszqycSUwjaUZomtgM3PW2d5Sh/3eZT/cUNrcXbtbbZldv1nur++/kZ6PvlIR5eJFVWgwVNq6KbdXXqxvW/viEbAA4NRMwIuQcKy8zKRHJLTzorDspEit2xUTBzWjJZFWfC5Z4/DrGtlzhtwUlIZDAmAT8HPH4H16hGOiEW543tRVfi4n53/HBmPGLQ3avrpD8w68xdP2//mPOpoBwjJZnDZKCJXOAnq38vObYyabPeR0eVREQhj8hSFTIg79qMT6MI8rY8nHZEHNCobvXk8irdk58nsbeQSGiRgh1nj22O0BUAPZYqK3GkGGIj7iWNi/W0mT3TCLTs+Iq7C2T6FRCdj+/Itbq1vYj0bAyyt+FF9yyhgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. Section 27 of the *Residential Tenancies Act, 2006* allows a landlord to enter a rental unit without the tenant's consent to show it to a prospective insurer of the building, provided the landlord gives written notice at least 24 hours in advance that states the reason, the day, and a time between 8 a.m. and 8 p.m. The clause repeats those conditions, so it grants nothing beyond the statute. Under section 3, a lease term cannot take away a tenant's rights under the Act, and this clause does not try to.\n\nI'm working from memory of the Act's wording, so check the current text of s. 27 on e-Laws before relying on the specific paragraph and notice language.\n\nVerdict: enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 265,
+   "output_tokens": 2006,
+   "output_tokens_details": {
+    "thinking_tokens": 1760
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "clause_id": "c34",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ce6cb540d7b1e3736377948e8c7037499f2c6f3fa8be7482f95f5bd5c7b4ad5b",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may enter the unit at any time and for any reason without notice to the Tenant.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:02.676209Z",
+ "text": "The clause is **not enforceable**. Section 26 of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) generally requires a landlord to give written notice before entering a rental unit, and it limits entry to specified purposes and hours. A clause allowing entry \"at any time and for any reason without notice\" contradicts that rule. Section 4 also provides that the Act applies despite any agreement or waiver to the contrary, so the clause cannot override the statutory protection. The narrow exceptions, such as a genuine emergency or the tenant's consent at the time of entry, are not what the clause grants, since it is a blanket right to enter whenever the landlord likes.\n\nThis is a general summary, not legal advice. Check the current text of s. 26 on e-Laws (ontario.ca/laws), since the exact notice periods and permitted purposes should be confirmed there.\n\nVerdict: not enforceable\nSection: 26",
+ "finish_reason": "end_turn",
+ "input_tokens": 226,
+ "output_tokens": 1798,
+ "raw": {
+  "id": "msg_011CgwRBQTG3LUyfXcyhjrDD",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable**. Section 26 of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) generally requires a landlord to give written notice before entering a rental unit, and it limits entry to specified purposes and hours. A clause allowing entry \"at any time and for any reason without notice\" contradicts that rule. Section 4 also provides that the Act applies despite any agreement or waiver to the contrary, so the clause cannot override the statutory protection. The narrow exceptions, such as a genuine emergency or the tenant's consent at the time of entry, are not what the clause grants, since it is a blanket right to enter whenever the landlord likes.\n\nThis is a general summary, not legal advice. Check the current text of s. 26 on e-Laws (ontario.ca/laws), since the exact notice periods and permitted purposes should be confirmed there.\n\nVerdict: not enforceable\nSection: 26",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 226,
+   "output_tokens": 1798,
+   "output_tokens_details": {
+    "thinking_tokens": 1490
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

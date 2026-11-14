@@ -1,0 +1,75 @@
+{
+ "clause_id": "s06",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "bab55fdcbb96cb7ea4d7625544b657bcbc0ee06a73be3ec854fc916674b852ca",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Each year the Landlord will pay the Tenant interest on the rent deposit at the rate of the rent increase guideline in effect when the payment is due.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:14:56.549548Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord who collects a rent deposit is required by law to pay the tenant interest on the deposit annually at a rate equal to the rent increase guideline in effect when the payment becomes due. Because this clause directly reflects and complies with the landlord's statutory obligation, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 159,
+ "output_tokens": 544,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "wG_3aqboM-_r_dQP553DoAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:01 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord who collects a rent deposit is required by law to pay the tenant interest on the deposit annually at a rate equal to the rent increase guideline in effect when the payment becomes due. Because this clause directly reflects and complies with the landlord's statutory obligation, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 106",
+       "thought_signature": "AY89a1-UmsogLDpspJtqWk3acSeOxfrHx82YxcLnJk0TkK97LWVFusNrVWePjIhJeG-cx8hjth534eur1gqW3PtZa7EImrW3JBIWqajUxm_idrYa18Bq46pu20HtVcNArPC5IopQ4tYMQIAs7KBFjIM7boYDzlJhfNfIs_mEwVKVVSfsAkEx6ZTSIlIHFkHOI70djWzxh0x4xj4R-XLyLow-s_z--84jo-gmWR_mD6cXgxCe9CDqIRHEZWfRz91KzcoMAEZcc-sXnEMcoh6u3X0GYnqQU2hm3iSL9EHolpI-NLhKuWsMuBDz3PQKAho80XJS8JXWrcYwXHWUMfug_jwTpb6hMM3rZ-twIppHJE4RH7gmd7SnGM1mbmuUQEuNa3Wrm957yN62JgfifGoR-AgngjfAkBPgJdpGCyt2CSt0n2ZQredSlbADn5YLYZCq29_8e2C-CdQKt7fnTcvCJ6kaQdeq5GzWK6MvwhtKDhuyA27z5gw-_rthOYmD9qAKPSPlWCooFsm1Z7qeBXG_xIIJZiHaiYZdRIurPSh9JfTdMItbDULRjPs5ve4HKRmnIZGZfmlHh2uR3FD-2SmXJw5xb7_9zUzQjVTqp3W0LtHPASnkF7tu7sZ_Pm9bF8eD8kyyl2JVdzrSZr2Z7OYB9mhPvB_GBsiEm_MFm08yJ4ky9hFdvltkPcZScDKqv8_Mpk55t1iGnzd23RajYg5TR7_GEdW7G9vanC9nXidpkjPRcfNLpKflyRKU_1VJ1s11EYw8b1Qu9chpU32xXEvVGEu4bycPT5xtX0Hdm0wX_J_3aj1c_TnIEPzUl4KJtkoYG3kX0H6JSq1zk_PkoKTXm3gqzq971JnMIFkzrsAnz0DclUmKRSQ6oIomIlsH7dDuHGIQ4izm8L6wxwIImdMaSsau4hXhHxpNPyZgguoObq8FMyOTmSmNmLu7jGdDDcYs1hRsgZHJaOB0_2AFtL4AiJd_ToaZvL1GEHNQglQf4PKCoxW32-s0-9UJcj5ZCYbreBitaUutZUCZfei2e36SK74Qxm25XRvv4zYjBBKntEF9GBHd7ymtWaqFlkNaGe5h1jetjiabN_oSO157bq5YoFzBg40_mArvk34quxpEH58zF-n-VQDanFJEZfcCzQ1gxf55J4lHWfM6BnhQ4okNZqI6P_J7b7_4Dgy8qqU9699ccd1a-V8338tkenIksX6UNUpVq7ddCmc16xXx3F2CY2wg94ZHIkGdyHaUQWwa1dxIXaiUYjamoHaD_2cuP82REB93TM2Ph76LTXiZywqQyWrcrV-EH7XYyW7PUVYKUOiJQ-zpfMQjzu6vDknr1rO_CNhyz463GBZUXH3hIlXuYmOE95UbBZRQDBNm_0WIeM13Ia1fwAfAYGXcelM_RX_0VkJc4hQDbRatpnwsRxvK2MOYtP_jqvW2PPMiTZ0AlXwLfLhm0LiFy3n9dEHAufx5kwA98VTwmPQXUKNni1cVmICcnCaXh-wA9YFfPSLXi3u-wc7FSlunHO48IuqA7bVVfGeB_yIPO5TtYrw1dSQQsYj79ZCVpuq7eXtUqUpKHxqRQ7upBy3HvUvM7LVH7AbLJbl34ql7ap6T2AgDjJl0lBWxJCzdTA7QPgnYvFQPHv9jS1pr-BJ2mlaLYxeTzZQC4buu5j3nnJ8P8o7sJWuukwLIe9rcj1ArBM64Df-kot6z6JfBq23twx4A3VwTrO5eIrwMZKo19kHwXg41NbwrhmM5SuxMAUme45OBkBOPFHRDLTR3vFIKymaHgRTCUgwuMKhAFzqGvvkiNhZefLb11o-7tb9rADnjUY7daEIxA3bASzbFyxgsR4w_DPTklvieErYTLzXdXoJNmfxiyQsU5xeYukrNpLGNKbpauu9La2aMO064XFMuVi3mH-o9gkwR6DPDHbylYQTK5f_JFy3W2xi3tobMae0oyt3Zz5YRutfMYuuoydNHo5PK-2A79B3fBwCFt4HA6mJaPugwAcEA_qxjNSrx7CkfG32LPH4qiGt7I_4olbfLRckm_HxKA9fmZ5DjbMTw5-4DljPB7HlZ6CWsLzP_9hMSiFqE_ftyOrW3lfkFgf6nj6hM54c7gniDD34GfNL1v-UOQCWg1TPiI1VA3DD3prXnxhTDqBcS15fdgT7wba2CWyCLkUn-Sg6sI1BilyCrPvF4XZ2l_bzHCBik7yH6kdDhHAW6d13hS29BJm0Ob9bFWJVED5QndUE18xxNttC_qynWMSKgGoD382Edh6707LOLL8AOxZ3kQVACYmCSJk6OYK1Ld4vqa1nx4byKxjwxheDWYXGVtSIlnhqO2xvmeaiqzTUlvjemJEno9biR0ew6nHPcL9g4-a9875L3qEAxPiDgrrUgzSx4Lqyrur74qmit2bgWTKthB7L7TILJzv6_NvtvoA=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:14:56.848934Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "wG_3aqboM-_r_dQP553DoAU",
+  "usage_metadata": {
+   "candidates_token_count": 83,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 83
+    }
+   ],
+   "prompt_token_count": 159,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 159
+    }
+   ],
+   "thoughts_token_count": 461,
+   "total_token_count": 703,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

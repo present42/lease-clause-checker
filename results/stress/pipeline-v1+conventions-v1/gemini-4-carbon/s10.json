@@ -1,0 +1,111 @@
+{
+ "clause_id": "s10",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "73286e74564b2e26c8ef3e20509afc082fb6b34a01966c81d60b47a74b5ec518",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nBefore any rent increase, the Landlord will give the Tenant at least 90 days' written notice, in the form approved by the Landlord and Tenant Board, setting out the new rent.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:20:11.139221Z",
+ "text": "{\"verdict\": \"allowed\", \"section\": \"116\", \"quote\": \"A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord’s intention to do so.\", \"reason\": \"The clause accurately reflects the statutory requirements under section 116 for giving at least 90 days' written notice of a rent increase in the Board-approved form setting out the new rent. Because it is consistent with the Act, it is not void under section 4.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4547,
+ "output_tokens": 782,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "-3D3arOMC6jIw-UPqcvykAg",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:23 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\": \"allowed\", \"section\": \"116\", \"quote\": \"A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord’s intention to do so.\", \"reason\": \"The clause accurately reflects the statutory requirements under section 116 for giving at least 90 days' written notice of a rent increase in the Board-approved form setting out the new rent. Because it is consistent with the Act, it is not void under section 4.\"}",
+       "thought_signature": "AY89a1_Kl4ZHFun--yi8GnZr-RKoWg5VxaLUeVXhH1Cgb5HUmAWhvJIli_Y60XkuoP3MNdP5R3xvro6ghNUU4N7wfjatKvsXyY8tAv4Q48uRwxnr4ZDejqrdOhyODAILQIG9D8ruUXXd_FL2CZ65Un5dYZJDuiCEUb2vhApJ9X6JB0r2Y8dv9O5Npp51HOf8Vn7MKMRzTPZ114iXOccEP5pk9ssFnGwhT3r7XY4iChd3JPjMmWFj771Br9odvtubwjInv0plzJE0ancrqageuPapWEyF-KSa9Vh_bX6Evgf6DJSE93iVkWVKLJa6wWjb0IQVsDq-2rt4F9lkQN20geddhWD_0acYc0_2IRop5jUioQaGTYA6J3r--rj3aYXjlUf1NjW8czvRwi2G7mAQRyAUcWdOmE8RlrTlPoO7EUp6WklKEeOWkcOPkpU8uqb-qJUcH3mVUA1Z9npnr_OMEHSCDt0v5YZJt6DvLP_ocWwDtCegFGwewVnKTrgMXgQGQO4TAnjmaYQmKKylRfWzBrTVKTIATlZp2GslFCgnPhZLtVAn5lMzSURDfsLQyycqfh8g_tU1H-TTkug5yRULe5fnUJVSoqi7EsNZUudCzoC--bUIrX9Ka1ngdYX_o0G4XH7dTIDcK3LkBwBx0l16NNQY7m2NOZ0_TFJ2IDYzZYUX9c7gpVqeHdePu6_lQUbo5a8iprk7O96rNF0Cstl1_PSHadt81XMY-F9pRJOkmTnXg-Ag6PwQx29VHBMddDISjdMDtC_Z70bhOHhXD7-CNgyan6tSJNrj88tk63qtXr587tu_OSBKitueF1tiwzX3GM3guQB68JYRf9VhentXASEufGj3SuvfafnouiskS3LhWmG-7QDxpNE2xsnvR5WTKnkLWv5PPzyFMHzDxHP07opNXKDnFBsUTd_ju9lhKQGJnqPRhYXwvEAObX0AkqOlUQfHwdml5yw2Z43FpGu9D7Iae90QH12wOJkRhseewQl-YdBjVxk5OKRzKwZ8ARro8jO3QzUaPg7QWs0hOKpohqRqYP0RzYFOnhmWofhU87onU0iskhl3e9BEsMixO73fe4iroF-0_NSp2uRis_X45buSW68RB7y1_o4JwhmLHHPTz2Phc5IY05NR10cMr4vBn80dmD2shEgAPF6wsmnRYk-Z_HyM4XQ5VsNW25ARs2E-Rj5NZ9spPxiA2HqqQvh_VYn8NxaaFucFrfMisCXF0l6n1W4liI2z3Ckov36Q_PT-PIPZ08-8Bxz8d2g4y5UD5ERAChFwU6uMd2IpBK0ZD-Rx5QGXdtUbT_elwnj59JHONVMu9-3JZetfgZ6fgyGN3wdb8892yQo3FdVYymTcpW5mI7HWtW-qyMWONhn9t8qHnEZv27GhjmQqOhfWFXBC7kpwTce9XpzdSRwngV92OMtBDIih4BjhvRbORELlKRicRBPDVfZYDza_URXe2ZmeSR8VxEdyM8MWGqnN5Ap4qtwJA5-3gCGVi_NhTmlT_ohUwcGFp6KkHThKgwddIZPJxJi_6Au34s1ok6rPTgTf5kKShOAszEf7M-RDYXlrGVVMstpAv0EWPVRLFxT8gHD19vuJL_1MO4PFRCRHWh6pihyAHz85PD9aUczaCaFQ2yLuOXnzeZw-0t5jHayGOBXDlOleNnfCkPC42YihkAb5NSQgtI4zfRZpVCYx8akUXzwmSVBqIL2Kyvg_6Lh_3k_0kg0dQDkjvxG6uAJ8cahWMPy1Zvkp1PurnMp95s0J1JvWHugs_CH8_mMtVkOXB4svYdzMFPGIOV8bs-LYE7qec-rnzmEXG5gfVhP328KUFupyHkLzQOnPt6KpkX1hxNH7k_1qlGjv3ZsfO73tJcsQYOUWSM9wocELZ_DN-EPPDyDULMTJIcj5puUCNPfK9BiPLzQGVIM_26rP97UroZCtR-EgTy36rMV1WpWBJq6DvtOuQNQEpxSQr791Xja0UFiLL3XnP9RzwydzfrSZ9i1dmYTWTMtbVvGgkIvtSKMN0y900mrerIQ7fWDWzeaIraaYR4SLFsl6JHzJyseOWG4VZOS4KfQqP2PeUlomE3PYqPFx-IdYy4EC4o1sNhYcwyzrlxGUgexSvgNw2eD_ZlpetQYliZ20yCZvDc7HosAhD8x-QOoLd4rutN2LN0XJBQxR8aPm_hSgs77P1trRwnbKTOHEHgSygWiAhifYV_ZfQfDIedoMQBHclRM5cP6aCamRi4SrXQta5hyVf4gOk7j8NSKI9yViOW6akF_4B1iP-9s6WXifFL5ogut32Dcbr6DgqlYXFfoOpmRLUOksmA2hJJz1iGb0asGuaEbJXj2MNLSemxQk5hMNwSp0IK7sqwDpzBooMHIA8FGg_iTNQ3NciCZsAqSr1n0DkwRk28eDmxmGMq75Nhp1tM8Xr5DwmblJiLJrorZU5Dnzx0Dl0yvCskr1LUh0JEDrQxsXM-PugAF6PoinjkTbBDiXb7LFU_OQrRCVT68i3tNL3tvEyhn2XqQQzETqRmFChqPz0Xe2BwZ-YEVK8DBckvV8_zsK1ybc-Lw-SvTgdHuNEBa13fr-G2cnZweVThrr3BR3jYxTUj51f-QR2Bi6-34qKlhE8N6d9rFxpAtBcvyrtmXxyDYH9XDeInqWNvyaRf2qUrCH_T9PtWengX8FHMfmYfc78EPMR9GhhmYxLLMozkNpfALuYDjQQn9_pzh3BLKoqtBkAnASaZYb8Z3e-nI6t7LoK0utj6YSdMTU9OM-7aJcnS4askVuOxQfBJ4kKQELzbx7Fm6BqydfF-tkDAlQ8sNzD-rE7yXvzqlvcAOMblmilVqw8yZZdZ-UxSsjwBVO0pCxb6snXxIivvqBhvZx2KkQxc3wTQMYHfn_22bPdPaeUnVcr8NQL28z8r0ldtFU88pevh2iMHc7gaXZzFcq9Q_B-QGht03TJCP1_1ZzooFvQnwydwB9YDE14a1mNWtyFVb9s_j87GA_x8GwBxPkFbkK-resUomfkwbaNzqA3YBsvubobcvEQle1E55kDlTC1Coe57yWPvrwa1Ti1ge5P7xu1kUeSxumJcFYPNufwWj1dT4O558X6a6qenbzNLcUlNM4rNVF3oU4kCTixBh2cOrSNEEwJ5psJ6vtUAKnx1yz0CWl8U6Gmy76wGn-r0fUMy_mg-JHdjU1aDdnECyzq49Ej8G7o1cnjnHIpAJqv4-L632EwAbuiIRAyFHe8LSc5W866EYqlh8XF2MplTh_j9ye0vW94vClb18Vxm6yQJcMSIem4jVoMVzjBMqxihzsUZLWIb9Kmjz88C75gaYfyeCyntMjWzthhadBezMTqranAb_WxQGxbJQ6vsDSv1UGOEYWIptiGYs-0CM50Tl5UhB6xdYvzW59fITMAG8C5YXd4bnfOCpiQW5nwm9RWxqdsC-dAKim3oqjYoMKbeHDrJ8sft_e"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:20:11.181811Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "-3D3arOMC6jIw-UPqcvykAg",
+  "usage_metadata": {
+   "candidates_token_count": 134,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 134
+    }
+   ],
+   "prompt_token_count": 4547,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4547
+    }
+   ],
+   "thoughts_token_count": 648,
+   "total_token_count": 5329,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "116",
+   "quote": "A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord’s intention to do so.",
+   "reason": "The clause accurately reflects the statutory requirements under section 116 for giving at least 90 days' written notice of a rent increase in the Board-approved form setting out the new rent. Because it is consistent with the Act, it is not void under section 4."
+  }
+ }
+}

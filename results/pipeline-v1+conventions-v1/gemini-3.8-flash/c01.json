@@ -1,0 +1,111 @@
+{
+ "clause_id": "c01",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "1df6f66fe7d29fdd6bba308ded2e51cbdf0ce86469a8e23d5f30bb2f7bb589c9",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nNo dogs, cats, birds or other animals of any kind may be kept in the rental unit or anywhere in the building.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:16:00.183663Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"14\",\n  \"quote\": \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\n  \"reason\": \"Section 14 explicitly provides that any clause in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4410,
+ "output_tokens": 279,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "AHD3aoPWIO_r_dQP553DoAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:16:03 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"14\",\n  \"quote\": \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\n  \"reason\": \"Section 14 explicitly provides that any clause in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\"\n}",
+       "thought_signature": "AY89a1_hIASJQJHvFsloX7r1kDSjWljK3fCK5oFhw889cO_DWiiZUGBsLKHSgYI_CNhwTWslxot-uG9s5E4T6L4Yj8enIgpnlUPKz84hPORFpHheWjuA3vjSQjFsAWAWW8RSy91a_-KSgOa3FWGSYVb2oeAw5hLCQqEgyKRKQUrgnNy87vVzJteXmKBO5R8oypcSGIxtwGkwzscth-l1OaUPTHFOIviEJuxEynzKl4ewUwUxCAKJVUCFXr7zOgit0W_DVMnoQSYlA-AFccl1djLEvTjxtA021faexsdxtDgy5wxhOUM8auso1cUeDjj3R8M7wzqnNvYlsmiHmeOIqdTuGzABykYYS6sLqcWN3YlH4qQx220aMv2PeArJ0TeYjkitAiI7JEojbeRMWyPvKDjQM8ZSt3UshlXoJPetVW4HQ4V9ewgdyzCI0ChmgFufSJ4MJRTwvNYqvQbmQ_Ne2XY2VWdFkJVB6TesvSPqJuXu3lxty6BnAFEG0niZRdHVyfeDYLs6s4AESHlGc44DaNo8oWbWmQrJTkb-Aiq4tItUJpwh57wCBDabeTaUyEUn9_gqb1ruaNROI1z8KWUDdySTiP7akxILdRLFE-cYzAqqYnZrAn7C406AXrzPt-sv8Ab_yQCs9TzLirssf3ODUa3p7wDEkv6uw7gNxVZFNGzn-5Vu4LvRauqOtFEQ8Kq3BWwCM-JSSZxXjWjjDmALOR8TIjsPp0G0KDFNMQ_fY0DKNcGErDrlKADbICsNssNIKh3YUjOl32d62zxVEyQJgeKmvvqdD0cEoSH9yiydA1PNUbx0-3XpySPtMCoz_hbT5yY88XU0a2BQ70XsOkoDv6VZoyW1OFwATaxE0Q0pl1K5ifMIgqrLNPJZWbTpfcZdDz81h1TS6-CyZxyUTz-RT_XWM4J2gir6DeS5CPkM0bwrWdUIxOcNE6-6p6rd-vPjA5jshZ5u1OHXHzefLmW_5S2g8KGKwhUY5iYmwT4yzbsC_YhRwvdkwxelIqpRJnrc7xFR0iIS0TUwvoARNsNNL49gDfBDW7xe0S2PSnzmc7yq81w5Gi8NgWPeBAFR4b9xKPswYk95CHuC5tyE1E9z4okZxd-KBgdI-Of2YMlaoeYglcAzZevsYhniqripQI7n-uYec5y-7R9FikzXSiHXE6R9dIq2uDJp1UwGQHygqYhBlIVjuZ8QdyB8iduYCXYNHLGzF5Y8vxnu_q2oDnLGuSjJkFZtNXK-rim1c5CSuJz-Xt6y1tMdl6K-4mduhNvOr2mHXnv2fytm5NSUdBZiRDaqbrDh_wEk4e9yAbh-Ao4="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:16:00.535299Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "AHD3aoPWIO_r_dQP553DoAU",
+  "usage_metadata": {
+   "candidates_token_count": 80,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 80
+    }
+   ],
+   "prompt_token_count": 4410,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4410
+    }
+   ],
+   "thoughts_token_count": 199,
+   "total_token_count": 4689,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "14",
+   "quote": "A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.",
+   "reason": "Section 14 explicitly provides that any clause in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void."
+  }
+ }
+}

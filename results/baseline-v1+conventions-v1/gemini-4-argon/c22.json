@@ -1,0 +1,74 @@
+{
+ "clause_id": "c22",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "f7fe038a85530764bd5b73c776176291e020cb20cf47f66d54608ba2513b4b25",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. On signing, the Tenant shall pay a rent deposit equal to two months' rent, to be applied to the last two months of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:43.866932Z",
+ "text": "This clause is not enforceable. Under the *Residential Tenancies Act, 2006*, a landlord is only permitted to require a rent deposit that is less than or equal to the rent for one rental period (in this case, one month) and it may only be applied to the very last rental period of the tenancy. Because the clause requires a deposit equal to two months' rent to be applied to the last two months, it violates the statutory limits on rent deposits (and is therefore void under section 4 of the Act).\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 195,
+ "output_tokens": 126,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "I3j3aqaSOoaow8cP8-iGiAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:52:33 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is not enforceable. Under the *Residential Tenancies Act, 2006*, a landlord is only permitted to require a rent deposit that is less than or equal to the rent for one rental period (in this case, one month) and it may only be applied to the very last rental period of the tenancy. Because the clause requires a deposit equal to two months' rent to be applied to the last two months, it violates the statutory limits on rent deposits (and is therefore void under section 4 of the Act).\n\nVerdict: not enforceable\nSection: 106",
+       "thought_signature": "AY89a19juG9z2L3_i76cJjh94GYTJ2gDOoT1p6Rlo3fPdNQPnO2UuOWmY40mbDJHNKuYjKA7oJLEFDRECbQoQaWNfsQD9CRqdwG5mRlsW5365aK7RWo_vc1HM3lKXNo="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:43.952614Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "I3j3aqaSOoaow8cP8-iGiAQ",
+  "usage_metadata": {
+   "candidates_token_count": 126,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 126
+    }
+   ],
+   "prompt_token_count": 195,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 195
+    }
+   ],
+   "total_token_count": 321,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

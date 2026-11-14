@@ -1,0 +1,120 @@
+{
+ "clause_id": "c06",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "1dd399006273ee8c4358b806959ac6a8db088e4c54504f6c910353b860877269",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant accepts the unit in its present condition. The Landlord is under no obligation to make any repairs to the unit during the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:02.684862Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"20\",\n  \"quote\": \"A landlord is responsible for providing and maintaining a residential complex, including the rental units in it, in a good state of repair and fit for habitation and for complying with health, safety, housing and maintenance standards.\",\n  \"reason\": \"Section 20 requires a landlord to maintain the rental unit in a good state of repair, even if the tenant was aware of a state of non-repair before entering into the tenancy agreement. Because the clause attempts to relieve the landlord of all repair obligations, it is inconsistent with section 20 and therefore void under section 4(1).\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4536,
+ "output_tokens": 553,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "enD3aurGLfmew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:15 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"20\",\n  \"quote\": \"A landlord is responsible for providing and maintaining a residential complex, including the rental units in it, in a good state of repair and fit for habitation and for complying with health, safety, housing and maintenance standards.\",\n  \"reason\": \"Section 20 requires a landlord to maintain the rental unit in a good state of repair, even if the tenant was aware of a state of non-repair before entering into the tenancy agreement. Because the clause attempts to relieve the landlord of all repair obligations, it is inconsistent with section 20 and therefore void under section 4(1).\"\n}",
+       "thought_signature": "AY89a1-SzkpUCx27JtmcsH28pTKlB0wnQabBf_LWTxIKQxO0PLkN0baaejQ-h_HtVWYDnDqbCe3aK06QpckRQoE14AFoLU8si46VZUxPTfHkIk_zzN35u7Lx7vWbVDdzPkRbWiu6eHKq91hwe9GQwMTjhW_k-XTGSkfkQnT0bQfTnANtAt_vCk6DKupR8XJtH8d_EGewAKB6lscqMRtJWjxo2qBo-LyLG4OHTyUi09DdGYwFEZSLo6-Ff-NuQawIC8XBgs9myicA6jT50safaVloOEAs6yumQsyN4rQoRUYqN1OWkP0aoLwbtNDg5h3b40I8lGyV6-dsBtETpmoZy7fjeB1U2nGAvyE3pxocn0i9KIbWQ7c3DgWY9mp_t_jVOFYh1tZbYo6UWLAvKqnn1RD26WbgfpIcc9uOK-89av-1kyixqbQ3gamwdkRHDKD1M_AsVy7Qj62LrhE0IXO3s6xCz_HrvC_1iWfLm6Z_2wSqbTAsayUGYV5Z6KZrEnVQd0L5UL0b4EfK7eAVWxuB8pMOsQaZhBKlQlt1w-mZ1Ss5Td5YtUVLgxKev_QjsRZHaY77LnNMgUE7_2Rc9VdYnzXDx-9BlLFINZFr6p9QkktqOehCyl7CKgMlTRN5ywNe76rpmROpFoy18cZyC0nPfRzabnfH1-FW0Zj_pAgv-qkPHGseFOjUG0OS501ewKDNfFHtCzY9ke-WD-VjePVCfrG8zXM5CPxw12mtUefTsjswnnL2SvRjZa6TyUEyVHdkRv6fMsVbONHnUvmAAn-GJRwNbc088uddAVvkeBsQFqjuC4higzyFN2zuEaiV65pHxZkpLt5cAQW3dipqL-RH9HjjOK1KYfv86D_FUZe_rb8sTTjXBssY75MsODOuxMfCbYTLPn4fgTJktfDOlfyt4Lpp6BSyzyhql-xJwYT7WVtmcoSRCKNn-RtryugwvZEwBwZt39uQnaDyn_VmjzvLKxVZKEUQx-ALJUCb34veZSlghbPjv4H9R_EjvJMf9HHvvd7tBMyp0Mqyvun-dGJ11pp0ime31raoSAx60B9ox9IpzWbWCj6XwQol-vapDRKw3P7eK6kIE3ixoU02t4aJaK_ff3RB2rZqlYoKBguoCwWmc-ila2aD5JsLWYnajn0F7JG_ORiXxsAGs15YzZxPzQGmrPuh533kPJoOW0g5CxdNwIZ-3kk3PW7Ol9WaK3NNuGuW72rXx-KFW2PA_vNxH9E9DQl6ys91898h6-MfPoXaNQYDnqFGqLXMn85gvrknFEe3ki5mrfEbThgU1BRUZHl1uufDjrdU7HlLzdHVZ3EIIUFK1i1wisjWwZ-CV6ECaMrcErN4xZbzGC4Rm3X-LxcJisiDpPsuk7-ahUMi9qJ9_hivLAdyJ4jaW2ZAJzWwslp1dQoBxH6fmzstMRI4ggfQf6Smz-bc_OW_TTY2WqVKhI9LNxVQSv8_GeR7VEXZ_61_ByRSQuw9_MF4w20uNOEA7P_yclT7Hki6S2lxbuCFXC5Jwt-W9znOHt000XMKmev10YAyFXDZP72RSO1_BUEsEP6QNvc6Zd2tRjKYyGYZ-igz0seInS_UbB3u9jI50kQqA9KWxU2Tpw4ELdt-YneRXBJEcPlpAOTuht2D0bVhIyS8VdtrDvvSNKnUUatMJzz4vFh7JtfR1cok37M1s-HuMlIlWBwoxgUq-G303pItsKqCHqqH2NEoYxV6ra7AZh7hk7_SvDhMW8Z7qj1-DmgXwfUag-hwiXouF1kjv72Znktpun1vkAnwO9hp8t1sgIt8KrwcA40U2gVAekgp_w4ahy3f0tZIJRYRLOfTIdJJLLzYZSH6yOjDDj68PAtdqFP0BMnPG96MBGMTayWErCpSE8try7oldEXiyCRK6WRR09diLV6MiRgZXDY_ggghF5rmoIyWEEnERuNtWkfmk52X-WeJGYB-hBN2m801q1_2zU7aDrC60x47JbbbIliMZVsSfTPyIlVqEcKjSYpAN6He0I55h2qvSsBLhpFiW6AS2z-OfeL4tMy7sr0AtsM3wAb4NHLAjP2J5FPSFLOk72MbGmW8uGaGRomSmbJ6pCWCeHYcoUbpe9-n6dLE-JYY8m4wodBc9mKrz39FCPCcaATLnTzxAqoTOExHVL6uC8gwSHJz5L0Ef0Ad0BvjI_1c2F6ZvumeI0JN0bm-5BrZj50z7XDzjNT5PUjkxNUKepY8zwbmy79wscz2mUdvm4zWqrLAm3bwLJuFhz2GUKceCB-HrcFLBgXU7UZZUi432w35qofWSzVFLnRt-cPIjF0ebXao3aj-flZKuyqBSSgtEpc4s5M4DOWlYmm9rEriVRSYCvEPvXWmumxS_mKfdKLR2bggKGsL6DuN83Q8P1aF7XHnGE1_JoVrMkH8lbomTZMfk2cihsLSRp8qnTFjE9MA3et6tv_YcbphWG1ynfEvH5aiLAf2IxKSFrGp8ndPAmrRTz6t6z1EfjvMs9uuLOiHxjeW"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 295,
+       "start_index": 54,
+       "uri": "http://m.yorkbbs.ca/forum/chat/4349450.aspx"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:02.746346Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "enD3aurGLfmew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 161,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 161
+    }
+   ],
+   "prompt_token_count": 4536,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4536
+    }
+   ],
+   "thoughts_token_count": 392,
+   "total_token_count": 5089,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "20",
+   "quote": "A landlord is responsible for providing and maintaining a residential complex, including the rental units in it, in a good state of repair and fit for habitation and for complying with health, safety, housing and maintenance standards.",
+   "reason": "Section 20 requires a landlord to maintain the rental unit in a good state of repair, even if the tenant was aware of a state of non-repair before entering into the tenancy agreement. Because the clause attempts to relieve the landlord of all repair obligations, it is inconsistent with section 20 and therefore void under section 4(1)."
+  }
+ }
+}

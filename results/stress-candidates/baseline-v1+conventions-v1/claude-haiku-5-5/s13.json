@@ -1,0 +1,67 @@
+{
+ "clause_id": "s13",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "add0f8d43919cc134987386e02fdc777e3147f1cd61b102c1ede8456056a8c65",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant pays the rent late more than twice, the Landlord may then require the Tenant to pay a rent deposit equal to one month's rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:14.452142Z",
+ "text": "The clause is **not enforceable**. Section 106 of the *Residential Tenancies Act, 2006* prohibits a landlord from directly or indirectly requiring a tenant to pay any amount other than rent for the rental unit, except as the Act permits. Nothing in the Act allows a landlord to demand a new rent deposit during the tenancy as a penalty for late rent. Section 4 also voids any term of a tenancy agreement that conflicts with the Act, so the landlord cannot rely on the clause even though the tenant agreed to it.\n\nLate payment has its own remedies under the Act, such as an N8 notice of termination for persistent late payment, but those are not a deposit demand.\n\nI cite these sections from memory, so check the current wording of s. 106 on e-Laws before relying on it.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 245,
+ "output_tokens": 1961,
+ "raw": {
+  "id": "msg_011Cgycmi6tBbisRZrk85Qoq",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable**. Section 106 of the *Residential Tenancies Act, 2006* prohibits a landlord from directly or indirectly requiring a tenant to pay any amount other than rent for the rental unit, except as the Act permits. Nothing in the Act allows a landlord to demand a new rent deposit during the tenancy as a penalty for late rent. Section 4 also voids any term of a tenancy agreement that conflicts with the Act, so the landlord cannot rely on the clause even though the tenant agreed to it.\n\nLate payment has its own remedies under the Act, such as an N8 notice of termination for persistent late payment, but those are not a deposit demand.\n\nI cite these sections from memory, so check the current wording of s. 106 on e-Laws before relying on it.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 245,
+   "output_tokens": 1961,
+   "output_tokens_details": {
+    "thinking_tokens": 1683
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

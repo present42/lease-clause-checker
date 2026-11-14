@@ -1,0 +1,74 @@
+{
+ "clause_id": "c16",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "70db5f03107b1fcc9ebfca1c1ffd85251e41ce79309c423f8f83eeea33a1f0be",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant's dog causes undue damage to the floors or doors because the Tenant was careless, the Tenant must pay to repair that damage.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:32.370155Z",
+ "text": "Under the *Residential Tenancies Act, 2006* (RTA), a tenant is responsible for the repair of undue damage to the rental unit or residential complex that is caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit, or a person permitted in the residential complex by the tenant. \n\nBecause carelessness equates to negligence, holding the tenant financially responsible to repair undue damage caused by their dog due to the tenant's carelessness aligns directly with the tenant's statutory obligations under the Act, rather than contradicting it. Therefore, the clause is enforceable.\n\nVerdict: enforceable\nSection: 34",
+ "finish_reason": "STOP",
+ "input_tokens": 190,
+ "output_tokens": 135,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "GHj3atf9Gfqiw8cPovuTgAc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:37 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006* (RTA), a tenant is responsible for the repair of undue damage to the rental unit or residential complex that is caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit, or a person permitted in the residential complex by the tenant. \n\nBecause carelessness equates to negligence, holding the tenant financially responsible to repair undue damage caused by their dog due to the tenant's carelessness aligns directly with the tenant's statutory obligations under the Act, rather than contradicting it. Therefore, the clause is enforceable.\n\nVerdict: enforceable\nSection: 34",
+       "thought_signature": "AY89a1-eHknjhcM1bPbgbk0j8nv2S6rpH2H_pqDYP9gVyBhya6bSPdZTa4yrClR36Yi0qNFOmgIrHwidAPjzDY3vHiGgAbuawcMX0W_Dpim9CiUdzzG1l0SjM_8Vjkph"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:32.425687Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "GHj3atf9Gfqiw8cPovuTgAc",
+  "usage_metadata": {
+   "candidates_token_count": 135,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 135
+    }
+   ],
+   "prompt_token_count": 190,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 190
+    }
+   ],
+   "total_token_count": 325,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

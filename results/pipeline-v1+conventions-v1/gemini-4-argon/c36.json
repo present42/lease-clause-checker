@@ -1,0 +1,110 @@
+{
+ "clause_id": "c36",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "2a09aa266cbd204ec4aaab9d011f1c781985a7547486ebac4a7e098970970d80",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the rent is more than 15 days in arrears, the Landlord may remove and hold any of the Tenant's belongings in the unit until the arrears are paid in full.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:20:53.890909Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"40\",\n  \"quote\": \"No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.\",\n  \"reason\": \"Section 40 prohibits a landlord from seizing a tenant's property without legal process for default in rent payment. Under section 4(1), any provision in a tenancy agreement that is inconsistent with the Act is void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4546,
+ "output_tokens": 127,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Nn_3ap3rA-2RyOgP4b-s2Ao",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:20:59 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"40\",\n  \"quote\": \"No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.\",\n  \"reason\": \"Section 40 prohibits a landlord from seizing a tenant's property without legal process for default in rent payment. Under section 4(1), any provision in a tenancy agreement that is inconsistent with the Act is void.\"\n}",
+       "thought_signature": "AY89a1-0O2ryX74qUXf0zM1P111vTpg76oIYQbnQEUTqWhjxXjCtw7wySSCWTssai6nwGMzOj0Z-TWI3g6e-PD0xAv5RruzjdKuBed6xXHtZVcxQ7_pqMiX0K70K5IQ="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:20:54.062877Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "Nn_3ap3rA-2RyOgP4b-s2Ao",
+  "usage_metadata": {
+   "candidates_token_count": 127,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 127
+    }
+   ],
+   "prompt_token_count": 4546,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4546
+    }
+   ],
+   "total_token_count": 4673,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "40",
+   "quote": "No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.",
+   "reason": "Section 40 prohibits a landlord from seizing a tenant's property without legal process for default in rent payment. Under section 4(1), any provision in a tenancy agreement that is inconsistent with the Act is void."
+  }
+ }
+}

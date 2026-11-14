@@ -1,0 +1,67 @@
+{
+ "clause_id": "s01",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "8ba06eb1c84a4c6117d6b5a4b94d15bd88cb4fd1b41041be1e9495040ba5cea4",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may come into the unit without written notice whenever the Tenant, at that time, agrees to let the Landlord in.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:23.217335Z",
+ "text": "**Yes, this clause is enforceable.** It restates a right the Residential Tenancies Act, 2006 already gives the landlord.\n\n**Section 26(1)(b)** says a landlord may enter a rental unit at any time without written notice if the tenant consents to the entry at the time of entry. The clause matches this exactly. It does not require consent in advance or in general. It lets the landlord in only when the tenant agrees at that moment.\n\nBecause the clause is consistent with the Act, **section 4** does not void it. Section 4 voids only lease terms that are inconsistent with the Act or the regulations.\n\nSome limits worth noting:\n\n- **Consent must be real and current.** The tenant can refuse on any occasion. The lease cannot be read as giving consent ahead of time, because that would be inconsistent with s. 26(1)(b) and void under s. 4.\n- **Other entry rules still apply.** Entry for other purposes is governed elsewhere. Emergency entry falls under s. 26(1)(a). Entry with 24 hours' written notice, for purposes such as repairs or showing the unit, falls under s. 27.\n- **Abuse can be challenged.** If the landlord uses entries to harass the tenant or interfere with reasonable enjoyment, the tenant can apply to the Landlord and Tenant Board under s. 29, citing ss. 22 and 25.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "end_turn",
+ "input_tokens": 237,
+ "output_tokens": 764,
+ "raw": {
+  "id": "msg_011Ch1Hw5ZmqoRNgPJpvjnDy",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS8goKEAgTGAI4AUIIdGhpbmtpbmcSDERQB/vyu1Y9RSwhQxoMpEtD5r313fJLot8vIjAHw1ebDZBmKS7+FDmkn+V+Pe1jyWfEbrIlcr/qxoROEnhOvsA5wcecfT39cVvV7NUqjwoGnxw2gn0QHBtSWObn/dQJgvXsCcvfUCCPNGfXcKuPdvs97F0o+MbOOX6D9rmxdKcx2SOsb0iZDfKgLaEsI1w82bKYJvdeE+vjng2E6RqTNAniC/BaxHFYhme3reDagGdtIjOhgOIdwewtLYEKOA568KUnofHVOHOU5cAp6FUyB3Tght5xqDgiXC6QA+PGngUUuZ91pPyq3k5aAlXJnFmKVvEdsXDEaRxyrQSoM3n33iJXmSuUiMSv5XXn8ZGzjAfVI+dkqz3+9XLge5vgmJ7Cr18GW6qVaZ4JSdW/CFN0SSaa3/s9J1EopzyY5ZYV9tCk2Fg3UucCLH9tNLqIPplCrE+RmZhUxzTK0dt/ow4Ul/Stmq5/HGt40VCXXwmQEu4XrhBduZJ1nHtAXXrOSfKNw9qCgU3dicUoBM67U1Ovt3rzO8HypLyVxZDk/ldx7KrCnO3xwtkBgtFH7+tWAC81SW3iXw6ofaMVBJR2Zqd1NmETIWEq4f7xjDykty5WdubO5vzC4qlZXCku/x9XqxgLFf9OFL74BeGnSZ/QcTmVX24FkIDPx/dOhhFdqCVsTFAI02RX+BY9ukuy6/HWRll9fQZVSx/3DS/wq7J/b4kVFWgJBSCLYMDz3fg6nqPCLXyvWk7MzyDjLYKUG2SRN8gS6TXhBUhHLMYKvvlIy4dKOKJlgVnllpHjDxtuzyw1K+f7/z4IwF9JQKBcCmXSQOL5jFRWYEp+JFNxNpKg97PPPxJ8/yI1Roh0DeWCXv+ESh6tWsPBxgA/kiCJpsYIigFmY52msyS/FTy09O3DmalZvm7lsejesomW7kiaO16WZF3kSI+jqVryHJ6e65h/piKlIiVBcYyV/SDujuqX5SXfGP3lXQHQe71wL9J932vKeobJPcsWbGSJ9wNUQsmfl5hzA60+Scnj7MbpgXxHCqpUZ5jptbmjhNCgr2klA0Bk2yr2+Dc8WGeuKpV6+LV/oWvi8K+dgio2F8D7GgPxjeuZfdYjCs7el31zN4q6vK1JuKi3KOjhI7QYImxLLAfy3sWrr8PUYBPq05ic5czOJfhMYa7pdpQr8LkSjaTVPyB6lnGGMPFLfRuGhcepCKKJX5rSH5ySQZJ/QGBLXIUa6UAL0IvhocQCyfwJTHLVBFnGDbICCgHY/0yJCBledvV8E3ztMt+A9+bNrZfL8l/yuPVWJ/aDH4VBuc/nRZU2IyrFsj+l6mgNUF9YPm6F3/AZs5kztcUIaHkUVgCA1xDIwP1rziaRLtxogKT5fSPrN1gjEWHM3K/Xvj6jM69CtLOXOE7k9fshYmm9d6wJ4HQ1s1mTQMsJVPvIRcxOJlsSawmeRr3vhR5u3Z0Ache2UuJH88ZJ71/2koE0+UfM94MCVXltM+S7Gz47oNy4JJ7X0btS7qLcSt9wEiHkgHwgrKd36ON2cr+5c9IBqFgUSO+9Z6WGJ3J0PpCfwiEqJMMlChntrb6usVPiupHczIrsdQZdBdcaV/+HcPIWxkfXFYYPcBoETNATJ4e1FJSZkQz6aTbsyBHierdU0mGebSxzenGhIVKDjKiYutDmEvXEb9oISAiLjli7aHdVU/vcdJ+609uhq5dVvBPc4kS9aTI+t/E/+Zgs9IlinFv+o5tkcFnLbnDMwzkUoZI5xk7FZMBLAkoiTdaVFJFdQ3sS6v/o1RIGzpU8NU5PaFzwzPNM8eJdLkd/L+2SAMl/GkF06m8ruYsZqRgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, this clause is enforceable.** It restates a right the Residential Tenancies Act, 2006 already gives the landlord.\n\n**Section 26(1)(b)** says a landlord may enter a rental unit at any time without written notice if the tenant consents to the entry at the time of entry. The clause matches this exactly. It does not require consent in advance or in general. It lets the landlord in only when the tenant agrees at that moment.\n\nBecause the clause is consistent with the Act, **section 4** does not void it. Section 4 voids only lease terms that are inconsistent with the Act or the regulations.\n\nSome limits worth noting:\n\n- **Consent must be real and current.** The tenant can refuse on any occasion. The lease cannot be read as giving consent ahead of time, because that would be inconsistent with s. 26(1)(b) and void under s. 4.\n- **Other entry rules still apply.** Entry for other purposes is governed elsewhere. Emergency entry falls under s. 26(1)(a). Entry with 24 hours' written notice, for purposes such as repairs or showing the unit, falls under s. 27.\n- **Abuse can be challenged.** If the landlord uses entries to harass the tenant or interfere with reasonable enjoyment, the tenant can apply to the Landlord and Tenant Board under s. 29, citing ss. 22 and 25.\n\nVerdict: enforceable\nSection: 26",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 237,
+   "output_tokens": 764,
+   "output_tokens_details": {
+    "thinking_tokens": 297
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

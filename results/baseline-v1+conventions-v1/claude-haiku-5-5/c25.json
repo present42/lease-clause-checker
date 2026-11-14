@@ -1,0 +1,67 @@
+{
+ "clause_id": "c25",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "500763517bfad967364738c7b306d1cedde21e512de47ab8eee2010c88dea969",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Before moving in, the Tenant shall give the Landlord twelve post-dated cheques covering the first year's rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:52.972585Z",
+ "text": "**Verdict: not enforceable.**\n\nThe clause requires the tenant to give twelve post-dated cheques covering a year's rent before moving in. Under the *Residential Tenancies Act, 2006*, a landlord cannot require a tenant to pay rent in advance beyond what the Act allows, and a tenancy agreement term that does so is void. Ontario limits advance payment to the rent for the first period (typically first and last month's rent, with a rent deposit capped at one month's rent under s. 106's related rules). The Act also overrides any contrary agreement (s. 4), so the parties cannot contract around it.\n\nI'm relying on my recollection of s. 106 and have not checked its exact wording against the current consolidation. Confirm the text on e-Laws before relying on this in a dispute.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 235,
+ "output_tokens": 1673,
+ "raw": {
+  "id": "msg_011CgwRAgtx8JgVfBVNhAHwG",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Verdict: not enforceable.**\n\nThe clause requires the tenant to give twelve post-dated cheques covering a year's rent before moving in. Under the *Residential Tenancies Act, 2006*, a landlord cannot require a tenant to pay rent in advance beyond what the Act allows, and a tenancy agreement term that does so is void. Ontario limits advance payment to the rent for the first period (typically first and last month's rent, with a rent deposit capped at one month's rent under s. 106's related rules). The Act also overrides any contrary agreement (s. 4), so the parties cannot contract around it.\n\nI'm relying on my recollection of s. 106 and have not checked its exact wording against the current consolidation. Confirm the text on e-Laws before relying on this in a dispute.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 235,
+   "output_tokens": 1673,
+   "output_tokens_details": {
+    "thinking_tokens": 1397
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

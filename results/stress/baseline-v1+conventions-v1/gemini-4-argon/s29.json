@@ -1,0 +1,74 @@
+{
+ "clause_id": "s29",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1d501c62c83de9b31f4c9ebe81f0192f0fb16a27399160697885aca72cb2e30f",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent once in any 12-month period; the first increase may take effect six months after the tenancy begins, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T21:01:14.428870Z",
+ "text": "This clause is not enforceable. Under section 119(1) of the *Residential Tenancies Act, 2006*, a landlord cannot increase the rent for a rental unit until at least 12 months have elapsed since the day the rental unit was first rented to that tenant (or since the day of the last rent increase). Because the clause attempts to allow the first rent increase to take effect only six months after the tenancy begins, it is inconsistent with the Act and is therefore void under section 4.\n\nVerdict: not enforceable\nSection: 119",
+ "finish_reason": "STOP",
+ "input_tokens": 209,
+ "output_tokens": 124,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "mnr3auvsHcmkyOgP2qHD-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:01:18 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is not enforceable. Under section 119(1) of the *Residential Tenancies Act, 2006*, a landlord cannot increase the rent for a rental unit until at least 12 months have elapsed since the day the rental unit was first rented to that tenant (or since the day of the last rent increase). Because the clause attempts to allow the first rent increase to take effect only six months after the tenancy begins, it is inconsistent with the Act and is therefore void under section 4.\n\nVerdict: not enforceable\nSection: 119",
+       "thought_signature": "AY89a198Isvso1pjhUYW-1wZ_IxEfcy9VwdikfI7NAF7HloAz4o2GMwnhrnddTyFWhP85lX48fcAe-5jefCfWCUpF6JLi4a_PbOljYx3xV7DnDMz4zpplkzLba925A=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:01:14.489067Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "mnr3auvsHcmkyOgP2qHD-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 124,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 124
+    }
+   ],
+   "prompt_token_count": 209,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 209
+    }
+   ],
+   "total_token_count": 333,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

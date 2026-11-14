@@ -1,0 +1,99 @@
+{
+ "clause_id": "c10",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "bb70dbbb527cd8d103e95f8d52d538cb19915d824b00f27d785377b2aa3ea0fd",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord will clean the unit every second Friday and may enter without written notice between 10 a.m. and 2 p.m. on those days for that purpose.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:21.741500Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"the landlord enters the unit at the times specified in the tenancy agreement\",\"reason\":\"Section 26(2) permits entry without written notice to clean where the agreement requires cleaning at regular intervals and the entry is at times specified in the agreement. The clause's every-second-Friday cleaning and its 10 a.m. to 2 p.m. window fall within that exception, so it does not conflict with the Act and section 4 does not void it.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6442,
+ "output_tokens": 650,
+ "raw": {
+  "id": "msg_011CgyJ6eHGuCZ4dBHeYBAZP",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"the landlord enters the unit at the times specified in the tenancy agreement\",\"reason\":\"Section 26(2) permits entry without written notice to clean where the agreement requires cleaning at regular intervals and the entry is at times specified in the agreement. The clause's every-second-Friday cleaning and its 10 a.m. to 2 p.m. window fall within that exception, so it does not conflict with the Act and section 4 does not void it.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6442,
+   "output_tokens": 650,
+   "output_tokens_details": {
+    "thinking_tokens": 488
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

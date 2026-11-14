@@ -1,0 +1,99 @@
+{
+ "clause_id": "c16",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "4938d774e186dfd34f104e35388742542d1838b07501bfc42da66e5c056d874d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the Tenant's dog causes undue damage to the floors or doors because the Tenant was careless, the Tenant must pay to repair that damage.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:24.780072Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant\",\"reason\":\"Section 34 expressly makes the tenant responsible for repairing undue damage caused by the tenant's wilful or negligent conduct, which matches the clause's carelessness-based repair obligation. The clause does not prohibit animals, so section 14 does not apply, and nothing else in the selected sections makes it inconsistent with the Act.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6440,
+ "output_tokens": 475,
+ "raw": {
+  "id": "msg_011CgyJ6sKqMEUiA9qvrSKzp",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSvgsKEAgTGAI4AUIIdGhpbmtpbmcSDBdSHs7s60gr9dl4VhoMED37xQcI0dLhyz/HIjAGDGetTAJEKXTMiTWySIbiJU8HUyypwus0H15lDX9CcsVqElLCHmQ3MeTBve42+WIq2wpj8pXSI27PIL4ebaa8aVDdcWWlwVElq8++XbHHt4LBjs+r65YyxemWSmO8TEtK17P2e9jRIrc6Dgiiyr0TqGVCm6OTWVXI5/qvnbAbDSFICAl8jbvVXqYEmdKrKZF/GzqzsGWE+4mH4e2c1VRJXsTGaVM22nrm8PmhVlqWu1l0SVt/AIopDY24STdHO/oUipeqnRfgJLp+OeM5GyCgXgVdJ68nMvXQaj8arj9v8QyC68XhfopBtQz6BKfWlja9KfAbWYnc7i/11H08NtWdiT8kaD48BFvxK+mRYbCi9SKbT042xLugpiwCcvaFu7yZhKBpDs0cQ86GCrg5SXBqCWlsfmg9kmQWdAHySnJb4JDYgmKAg8H+mLP+zxgJNckbPZ1SmyGTWvpDXTx4qDE32Yk/d6BbkmZwaWsXA6P7ulX5m5ToENy8y/Wsa9aIyhIBb+05cP/aNTRi/GfRLhAXic2mrRsl+Vp3BvRkUzPUCocd7k9GdIcL4vbIi+zI2AJ3yoK8yN7TC0Ur+tXy/up+NPlOrK3KixzV2pp07QdQFiDXQw0RrTOH2dZKglMulmz79kBUGBaX5LX6isgiAURwL1YOj2EE0kU7MerZj/MAjIjOg4QJf+CnKGb0XB6jdE/1/+gHSnxyIGQenYRzF7lKx1neMsWEn2o0jNdsf1k3xSz4bpz/mwyHkYHr2S4al1pr2DIsbfEo+T1P1pzIZRrOJJon/62ipirkx846Np7oT3zw+hzxYsonZihVtmnHyrXFIGovma15ldI26tvhDyXNxyooi3m7+iQMu0wBEE6eKbOEYfTh71KIyC8wI0B6HLI7n+feAvzTT7tM6ftwC5wEtVPKqrrNAZecWrq75UHx41fk0XXh2CWETRrFvC9J0CSFJBo4H8PT2sQJbt/HM87wDMfQZ6NkGt97bS0MyryQsGvZBy4zawBD7YLtlW8Ua6nbQ6nWPjI/0B2MIa6FmJUKbLN0Sn66RWFjUMjQ3X6kZh2LHCVUAFyDRosRvCCegeuRgQAiZEU5xecKXmNpPiUCmUje7tgt+rXzMHBPKI/elnybqEBWpCp8WDlu+hTCYunA0i2aMj9M6X+1CXT/tWP5GcEU6YpN+LA0iotmm9/9osgre4ELUlG0EP4QtDDs2T35fTZbKqt5obRcI2TSJG9o6NbbI8ac9e/sJmBz1nOMITROAzuL3kjtdtFDW8W3tcL8r2yqy/YgFjBMcgUsi4LTp0DobkC2Uv4lJZW64pzIc5N3n6vCWF8jyCuf97+4C/PHuTnBjhXVMXfRNZBEwNnCizE2x4mhc4Sf4AshWOLcVZLy1iCjawWPj6vAbSQ5tUlMN9yK85AJ09u8VJWvseVr77/uyz77AgYCpSGdg09Y7/a8AQr2p4Ya/q7xijpN7B1gh17SIgVQDPIGRgJD6eiBmgGEcHoFI7iPae5ySUUL9TmSHhH/IZfa3TanqjbxUtr2Udn1J/1G9tXtc3YXTUMTVhQOZ7n7Nsw/HaZU96Kw8oVy5UatjsyiEWQo7g+KEPbbx8LU5WjyG6lmCu4cAks9xigsSBeM4EH0kJ2rlgFFnx3hMTwzxsuFTTeDgZ1TW1Xw+XwAtXsuZ5VFvZH4ENeCR4YhiTQNZEm6deJP7m7qSLMBa8F7WEJ9FhBGAePE/lYz0oxSYXTJF02FP4JZv/5UwzP3xtm5MUVJt55UBvFuEO4hn+09yfkqhlR2qT8JC5HH1pM6Et5uRiOfdYZ6hTQOjnCaVsXfcc3kJoWyV8kpUR13trtb/73LXsTsG1HbF0YJ1qhcC5oqX7iU/hCxma0mZ/svljErSfWpa71c8lkYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant\",\"reason\":\"Section 34 expressly makes the tenant responsible for repairing undue damage caused by the tenant's wilful or negligent conduct, which matches the clause's carelessness-based repair obligation. The clause does not prohibit animals, so section 14 does not apply, and nothing else in the selected sections makes it inconsistent with the Act.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6440,
+   "output_tokens": 475,
+   "output_tokens_details": {
+    "thinking_tokens": 291
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

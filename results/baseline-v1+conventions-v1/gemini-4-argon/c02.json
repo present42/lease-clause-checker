@@ -1,0 +1,74 @@
+{
+ "clause_id": "c02",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ca067addf33b890bbd9907fef58e5ed5db51a86026a19f3199841c6560abef63",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Out of consideration for neighbours with allergies, the Tenant agrees not to keep any animal in the unit.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:16.621032Z",
+ "text": "Under the Ontario *Residential Tenancies Act, 2006*, a provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void, regardless of whether the tenant agreed to it or the reason stated for the prohibition (unless the prohibition is mandated by condominium corporation rules, which does not apply through the lease clause itself). Note that if a pet later causes a severe allergic reaction to another tenant or the landlord, the landlord may apply to the Landlord and Tenant Board to evict the tenant under section 76, but the prospective \"no pets\" lease clause itself remains unenforceable.\n\nVerdict: not enforceable\nSection: 14",
+ "finish_reason": "STOP",
+ "input_tokens": 181,
+ "output_tokens": 140,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "CHj3apP-OaLNptQP1Py2yAw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:55 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the Ontario *Residential Tenancies Act, 2006*, a provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void, regardless of whether the tenant agreed to it or the reason stated for the prohibition (unless the prohibition is mandated by condominium corporation rules, which does not apply through the lease clause itself). Note that if a pet later causes a severe allergic reaction to another tenant or the landlord, the landlord may apply to the Landlord and Tenant Board to evict the tenant under section 76, but the prospective \"no pets\" lease clause itself remains unenforceable.\n\nVerdict: not enforceable\nSection: 14",
+       "thought_signature": "AY89a1_fG6zjd1pzUsvKHupHa7AdOf8Cnibvt0W6D19BzvgvK3f0IeAmjFAm7DwGuGvvtkaAw6siSBP-D7A8ZUNDVWY4-zwBI8kMAbnJsKWmw8afKLoNAqXCx81q3OIq"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:16.950035Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "CHj3apP-OaLNptQP1Py2yAw",
+  "usage_metadata": {
+   "candidates_token_count": 140,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 140
+    }
+   ],
+   "prompt_token_count": 181,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 181
+    }
+   ],
+   "total_token_count": 321,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

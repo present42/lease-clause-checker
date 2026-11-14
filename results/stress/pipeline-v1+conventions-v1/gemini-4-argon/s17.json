@@ -1,0 +1,110 @@
+{
+ "clause_id": "s17",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "3743c5f39c5c1a1be4283562c367edea1ffc8eb97d9432d42be3b5bfc51a65b1",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the rent is paid after the 5th of the month, a late charge of $50 becomes due.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:25:15.232625Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"15\",\n  \"quote\": \"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\",\n  \"reason\": \"The clause makes a specific sum of $50 due upon the tenant's default in paying rent on time. Section 15 explicitly makes any provision void if it requires a specific sum to become due upon a default in paying rent.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4533,
+ "output_tokens": 145,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "O4D3atKxEbDWyOgPr4jfmA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:25:32 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"15\",\n  \"quote\": \"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\",\n  \"reason\": \"The clause makes a specific sum of $50 due upon the tenant's default in paying rent on time. Section 15 explicitly makes any provision void if it requires a specific sum to become due upon a default in paying rent.\"\n}",
+       "thought_signature": "AY89a18Z_vQ4XmjgdOFkZfEOCJEBArhnsAktBNAU0kSuhrBF7PZXiYZVznMrgYIQv62FpeN9UWtWBFt9y5b8Z5AJ_4MswX2ibH7LNH9O0KNiNYrbtPc4UbWQ2LptQyUu"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:25:15.284882Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "O4D3atKxEbDWyOgPr4jfmA8",
+  "usage_metadata": {
+   "candidates_token_count": 145,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 145
+    }
+   ],
+   "prompt_token_count": 4533,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4533
+    }
+   ],
+   "total_token_count": 4678,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "15",
+   "quote": "A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.",
+   "reason": "The clause makes a specific sum of $50 due upon the tenant's default in paying rent on time. Section 15 explicitly makes any provision void if it requires a specific sum to become due upon a default in paying rent."
+  }
+ }
+}

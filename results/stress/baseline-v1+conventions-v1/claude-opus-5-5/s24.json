@@ -1,0 +1,67 @@
+{
+ "clause_id": "s24",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "a240ee0c0d3ea5c399a233591caac11f27f0be6fbdbdf406458f84a227e977de",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant takes a job outside Ontario, the tenancy will end on the Tenant's last day of work in Ontario, and the Tenant will move out that day.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:34.084399Z",
+ "text": "**Not enforceable.**\n\nThe clause makes the tenancy end automatically when the tenant takes a job outside Ontario. In substance, it is an agreement to terminate the tenancy, made at the same time as the lease itself.\n\n- **Section 37(1)** of the *Residential Tenancies Act, 2006* says a tenancy may be terminated only in accordance with the Act. The Act sets out the ways a tenancy can end: proper notice, a valid agreement, or an order of the Landlord and Tenant Board. A contractual \"automatic ending\" when some event happens is not one of them.\n- **Section 37(5)** says an agreement to terminate is void if it is entered into at the time the tenancy agreement is made, or as a condition of entering into it. This clause is exactly that kind of agreement.\n- **Section 37(6)** creates exceptions, mainly for certain student housing. They don't apply here.\n- **Section 4** is consistent with this result: any lease term that conflicts with the Act is void.\n\nWhat this means in practice:\n- The tenant does not have to move out on their last day of work in Ontario.\n- If the tenant wants to leave, they must give proper notice under the Act. For a monthly tenancy, that is at least 60 days, ending at the end of a rental period. Alternatively, they can sign a separate termination agreement (Form N11) at the time they decide to leave.\n- The landlord cannot enforce the clause or treat the tenancy as over because of it. The landlord would need a valid ground and a Board order to end the tenancy.\n\nVerdict: not enforceable\nSection: 37",
+ "finish_reason": "end_turn",
+ "input_tokens": 250,
+ "output_tokens": 1137,
+ "raw": {
+  "id": "msg_011Ch1Hwt8TwbXxQvCTi8qjH",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.**\n\nThe clause makes the tenancy end automatically when the tenant takes a job outside Ontario. In substance, it is an agreement to terminate the tenancy, made at the same time as the lease itself.\n\n- **Section 37(1)** of the *Residential Tenancies Act, 2006* says a tenancy may be terminated only in accordance with the Act. The Act sets out the ways a tenancy can end: proper notice, a valid agreement, or an order of the Landlord and Tenant Board. A contractual \"automatic ending\" when some event happens is not one of them.\n- **Section 37(5)** says an agreement to terminate is void if it is entered into at the time the tenancy agreement is made, or as a condition of entering into it. This clause is exactly that kind of agreement.\n- **Section 37(6)** creates exceptions, mainly for certain student housing. They don't apply here.\n- **Section 4** is consistent with this result: any lease term that conflicts with the Act is void.\n\nWhat this means in practice:\n- The tenant does not have to move out on their last day of work in Ontario.\n- If the tenant wants to leave, they must give proper notice under the Act. For a monthly tenancy, that is at least 60 days, ending at the end of a rental period. Alternatively, they can sign a separate termination agreement (Form N11) at the time they decide to leave.\n- The landlord cannot enforce the clause or treat the tenancy as over because of it. The landlord would need a valid ground and a Board order to end the tenancy.\n\nVerdict: not enforceable\nSection: 37",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 250,
+   "output_tokens": 1137,
+   "output_tokens_details": {
+    "thinking_tokens": 619
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

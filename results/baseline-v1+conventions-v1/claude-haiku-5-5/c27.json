@@ -1,0 +1,67 @@
+{
+ "clause_id": "c27",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "e1fc42b9d4bded219e543cfd570e9466460bc11f9b16bc7314034f5828568a6c",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant may pay rent by post-dated cheques or by pre-authorized debit if the Tenant wishes, but is not required to use either method.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:55.745498Z",
+ "text": "The clause is enforceable. It gives the tenant an option and does not require the tenant to pay by post-dated cheque or pre-authorized debit. Section 106 of the *Residential Tenancies Act, 2006* restricts a landlord from requiring those payment methods, so a term that leaves the choice with the tenant is consistent with the Act. Section 3 also means a lease cannot waive tenant rights under the Act, but this clause does not attempt to do that.\n\nI'm working from memory of the Act's numbering, so please confirm the section against the current consolidation on e-Laws before relying on it.\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 244,
+ "output_tokens": 1627,
+ "raw": {
+  "id": "msg_011CgwRAth7py57KwGMERDMn",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. It gives the tenant an option and does not require the tenant to pay by post-dated cheque or pre-authorized debit. Section 106 of the *Residential Tenancies Act, 2006* restricts a landlord from requiring those payment methods, so a term that leaves the choice with the tenant is consistent with the Act. Section 3 also means a lease cannot waive tenant rights under the Act, but this clause does not attempt to do that.\n\nI'm working from memory of the Act's numbering, so please confirm the section against the current consolidation on e-Laws before relying on it.\n\nVerdict: enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 244,
+   "output_tokens": 1627,
+   "output_tokens_details": {
+    "thinking_tokens": 1417
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

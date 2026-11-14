@@ -1,0 +1,120 @@
+{
+ "clause_id": "c33",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "1be5d8e7bf532e718c60db31a0118f46d99e9cd2cd728b880d5c2c69c049dd4e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant shall pay rent for the month after the tenancy ends, even if the Tenant has already moved out.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:04.932607Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"134\",\"quote\":\"No landlord shall, directly or indirectly, with respect to any rental unit, collect or require or attempt to collect or require from a former tenant of the rental unit any amount of money purporting to be rent in respect of, (a) any period after the tenancy has terminated and the tenant has vacated the rental unit;\",\"reason\":\"Section 134(1.1)(a) prohibits a landlord from requiring a former tenant to pay any amount purporting to be rent for any period after the tenancy has terminated and the tenant has vacated the unit. Because this clause requires rent for the month after the tenancy ends even after the tenant has moved out, it is inconsistent with the Act and void under section 4(1).\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4531,
+ "output_tokens": 890,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "uHD3ao-vO-_r_dQP553DoAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:19 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"void\",\"section\":\"134\",\"quote\":\"No landlord shall, directly or indirectly, with respect to any rental unit, collect or require or attempt to collect or require from a former tenant of the rental unit any amount of money purporting to be rent in respect of, (a) any period after the tenancy has terminated and the tenant has vacated the rental unit;\",\"reason\":\"Section 134(1.1)(a) prohibits a landlord from requiring a former tenant to pay any amount purporting to be rent for any period after the tenancy has terminated and the tenant has vacated the unit. Because this clause requires rent for the month after the tenancy ends even after the tenant has moved out, it is inconsistent with the Act and void under section 4(1).\"}",
+       "thought_signature": "AY89a1_9JOP3XtmG637ApMEKAV1zJE6-y0_AwgsM3oCbbgrR07O3E3dXgj3_-sFUphPimTaTNYtlww1WoyVp7Zk4jCKQGA_Dcj16HPE9GA_t53d-3CO37jatYydCX3rwcy9oHWjOeLqxzpwlaUYy2CSv_AI4oERzCLcP1fDQwG0q6hpabgGgr101P0nueRCaA8Hmgckufh_gW8hrNWBmH5-4GoqEFxnpBRNLh4zbi4lJpbsxzPC3FEFn13E8lRyb77YnvGY8V4AkA93dPQrnOV-1psBeSuGgsV-Md7FxcHdbeJx9CQ1G3Oxpl5nRr5LVd8Q_b0oV8e9xJjSBNIvpzSrSJQRajokoeheBu23_8_-bPy1DTKS60CsoISb2GvLLeP5zArlp-y5PRSUClENzlENs-LjJzfDSmGGVo1kL7Mp_csl5y5eA0tEN0-tDgRN7Gx-BzEn2VTRTXXLQEW2HrX7_UqD3JSvsXHIqhgJASMUihvpGEnlf3lws3OyNykBJdabS7RxKsfpW_8BtiXtlsihotwEZZZpzBajGWfYUybaHmmAF9M885a3zS8K_YLfR0ZHdhoiG9JNcvxi5iya9lY6MlovZPAFSzMg4E02_cWMhtNAs4y9IaDJeByrMBQIgw5jM2NKz0aiSTDqO2uBkZ6Qrgt5oWqV_d3EASGKPWIF6BfYNyYEb9d-M2-JruEDHIJr6rcy62Zmkg_ray4pOK9bxNG2p9trRPhBhP65u2xzc0xeq43_K3dFR1uWLTI9fpwhDWOwvUg8dfL9sKIvOKrnFauEujYjXo7Ck2n8Kym3m3ncuYlTijuAhlNKFHNKF45QdFDg_kVmUVUXBu4g7kAOHDktm2asjx-eqtozmtbRvptSCIbIIBwf9R0IoMpKAV_VfwEA3OUFQOqW0nSksJHZsbR1efP8d19JGGlB1wwjAsXVu6IvGIsl0O2k13yYgjLClV9o05wDcvkGUsvRuh7SNwXHcOAMVGkDrfqFBb8djWavrDoBxULZKIs0go3eiL1zsFa_6Ke-4jCGP2W8iIMaxPrIWMcOFBtFhDEYZKDR86UTwlya1mPDqC9EbFh2yK9vHE2m3W5ALGnC8VziP9cDZ2mV9T1irAWDOyzjapUtULtgFExq-ZwTknuRlZQY23ZCTfYSCKVTMl1fDu5UIunNgZlj4fH-S4SG2dsxPmWbKBPyX25sObUN0v6gHQ1LOJ_OiQ4sYbMKQbnJK0WQA1n3qCKqNBM4rOvzGukCMmDedYGKjlZLS7M55hAkDVmkwZH3Fvn6i43o0wu0wR19kLmvgf7FIn1kYT61RY9iC6J_Ej14Soqpzl3IyYjf5a_dumJkiExNDQMCTG2rempdsiSldhKsN2J9DqNmIp1UbWIChItRPo7mekvK9cQg0QaHIXcwIYvUDvnSp-KYjOauWEDEcBe_0n1rlfRHQgGY5mxc6rnZhNW4rccFbSTd-NjNGVjtOPo8sYNPqB-IfLDsRPwwXzWXCw5ViA2K4SJrznXdDh561lcaY05zW25FDsURjObliDZYYaK_dnrhuf6lZ5rPoFAnp29ZuKVEhyxYQGz5U6XsrTa_xEVGoZmDZlvfV7ogLlIIFws53JO-Tor4VQlpHZqOWn3geRv2MfFaSRPJBO8ZzPji_OvZOwYMXfT6qkikt1DjNmyqboRWRUra4dKo6rG_SmrD40r7Zv9VD2Z40AOiM5vbMDV8_2FFP39FyX55VYSKXwp3ZljtKzkrGEtwwq5YXfAiQTrbGO0zrFXG-SMpIl9-gt2bEceEeOnXM3udQORsPsAMQFYaCJobxQ8TWzykP0pAxa8BgfPazMUH6xQczGK-i4f4qrAd-HIvgWsxzTcL4msSuU29i7_XYg-Zx8lfhNlSl3MTBZOJhFt57ldizy-UIk8lwo_QGUQm_7Ore_Vs1yIdXPw2P96hAnN8w2Xe0YgecdJ-rjUlDuUzaVPnZynVXleZK1sKLhHZHSXHMpNrkpFpCP1RfjnUlHBrudwnfOaz9jY8xxkO5Q_T5bvGy77FhLdGr-gtHp1YpdO-5lGPW4OTwan_z9oKcTPA4JuZ1IVovglDCebNXTIlrTrC5TVJFLoAjBFYtFdTsX7ycJdJyp0tfsQQZqwoZ2kBgs3zRNgXcqN9yFEH6Flikkh9rlMQ0kN-ekCvlpJkog0Edz_rpTOnXAdS4Z0wpdvBJNcVIDQijbG0RSFDeFpAYkYpQgMmbgjKWjRyDw9nG9jUXRxFLuSm8kTI9IbJ3mGJ3g2nI-fgHeSAxjY-KrzfFtApGiIVl-11RR5Lne1vXxZBGizS1ShmlnDO8BWGebEeg5iERI6igAB1NU_24FHBFpCjtlk4IYigd_pPVTBvNrapdxYr149VXwhKZCdZoaUwAKUbtRSJBdFLSniDiJRJHeZJAfeFjizHYosRAPXUbQj-iJuJRmJ9OBNWWzFAMzSums_TvtwMzN8X-laKsCFRv8q1XdsO7gtUxCGBAyGc4-EMXsi52QGHpYO2zbkuvDFHvmO2f_iSfK0EfXYPr0lpMmkJhINtPN9UnehyMYbdI3BFhobW9p-Pe58iBlc5JElcVZAPxb3dznc_BpzMbvF__vMal1PXO4Z-y4Pe39G_BWMa-KrABKrEhyda27kCpfscCuiBMkOYzmyD1jKz0QOA0G1e4_Ck2NtWYZl6V-YwESca3_6Q_-PzzMOx6GrbaVjVboA5Cqvgu444MVvQlIeZvdKf41AoEo0ozuM-OcGXezOYHmAEUjYlsNiPn9JGNU6aKT3VWdzePpZyiXsD91pPtsrzkum7QQbywczvloFOtdtEeptmHOFVXw_GuKtjUmJuxieS7_HTfefS_DIksTfKKlfoiSSzecrRiL0koWrDUMlWwx5hnuMYBrT5CU4zHA-Qhp7rgwreNpKJi2dVW_InOymIiDxA2_OWUStPbsfqXWoN3v5U2q1a-zGUZZ7Bqouv0tMEb8cr_LOob4LVdv8r-TK-M94MBrerfDSPaGB2aH_reZqAYW6nLmdzTDBwVUR8m12bjWxDz8o87wOjEOnwPCgyLBf71dxiyOpefXMF6dCWZrfDDQNdTSmS7Wj8052TINKSszg8MkJAbVD_fb8UcN-yd6s45ZbbMPLRMpmnDJizV8wECGIhWyUOMmtQkLZcmXy28_7jD6rm99OCOn56CbQQEDPsRUQTulB5gajLytkIaJMQeHpvJrmmQvnTBriu6NToMsHqC2dFmXTR90Q2mb3RA6K8xKIA__Lw_EtRdqvtB2LzdWkAjZ_W1Kcq47ZYTWRZTWmucY6rDT7oh6br18uDGVFBHzDQvlnFmduhHagvHhfCNv5AnII-0Qi6SwlsYLjmgTWhclU6DFHlnVN0gAs3BX9nMn4t1_uePM1MXPL4pvcH3MDUGaeaPywqjCFaprUvrosGXBfT-CD4pIOoQdc3rE3gGwJ1qmtGvYBI7S2NnkmNJNGKpKfbeIKEe-a2DJ1UcjfULnRlq6YOn3VCqX-_rc42kMIZIxaTZbRb-ZGWA_8fD2wj1OaxSqXlJjUozuGNJrojJMqIHeGe8FdoFauA4rpLIEYWW5pOHlb2-pWHdiqBGmh5KhGSmsfudQZ3Va88L3-cwlBeDykHuLW48MIUnopRcvbFnhKCA6LGwwcymJ-e02yQmEWpGyxWrjHj1YuC4Zug9R3_3EzsTEskqEbqP_Mj6EJxRLXajSVJkE1_nolqTnYNmMIwNdFvOqQ4RJskiBT5wttYJNHLI90PRlCOTl4tqG55znKggK43TjhULzPG2tOLSDFH8GDQ0Vspvqcpp0dJWtONqgMzBakoaV7T_8lG7ELivFNJkvQNFIfEqqGbRbNsyeQI8KkywxkFbeW7HeahNnYGYvOA8Eeua5xfQ2l6oUcZdZN9NFJksGHLQbHkAHKxq1PGPnbl2-7YT1FZPKe5DELpapPKelQROyFimdENLwbnbiYAF57USL5XEWp_tuSkOT6cLWy_wac005hHfx1vE5cGoPfY6Vm782bSXikn0zOGbh7vQ0eQNuDdymOfyAdaZKiaVabK9AgKzwR-V3jXhi8LFU1hQKGVt8klcpcpD4fbDyh2neUN36Zkodim0BTbU0sRx2uhQSS63-BfBvQUxXnJwjiU7k4szTLLDTMGAEzRKk2UVDJ_gbQqWuo_l2w5wp9EX_aEASPXsKc5lhACHilnLZszB22lNHvBw0kJFww=="
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 354,
+       "start_index": 43,
+       "uri": "https://albertalandlords.ca/forum/viewtopic.php?f=127&t=15041&sid=8b69e2769184fe95ddd772bcba443a79&view=print"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:04.972687Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "uHD3ao-vO-_r_dQP553DoAU",
+  "usage_metadata": {
+   "candidates_token_count": 176,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 176
+    }
+   ],
+   "prompt_token_count": 4531,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4531
+    }
+   ],
+   "thoughts_token_count": 714,
+   "total_token_count": 5421,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "134",
+   "quote": "No landlord shall, directly or indirectly, with respect to any rental unit, collect or require or attempt to collect or require from a former tenant of the rental unit any amount of money purporting to be rent in respect of, (a) any period after the tenancy has terminated and the tenant has vacated the rental unit;",
+   "reason": "Section 134(1.1)(a) prohibits a landlord from requiring a former tenant to pay any amount purporting to be rent for any period after the tenancy has terminated and the tenant has vacated the unit. Because this clause requires rent for the month after the tenancy ends even after the tenant has moved out, it is inconsistent with the Act and void under section 4(1)."
+  }
+ }
+}

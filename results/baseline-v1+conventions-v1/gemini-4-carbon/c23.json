@@ -1,0 +1,75 @@
+{
+ "clause_id": "c23",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "011f735274d1600edb5b07c5de3aad7a319d00bdacc015216edd4d8fdcd0c397",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: At the end of the tenancy, the Landlord will apply the rent deposit to any unpaid utility bills and to the cost of cleaning the unit.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:10:15.530176Z",
+ "text": "No, this clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a rent deposit can only be used for one specific purpose. Subsection 106(10) strictly requires the landlord to apply a rent deposit solely in payment of the rent for the last rental period before the tenancy terminates. A landlord cannot repurpose the last month's rent deposit to cover other expenses such as unpaid utility bills, damages, or cleaning costs, and any lease term that attempts to override this rule is void.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 189,
+ "output_tokens": 1119,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "p273asjzKd_IpPIPrpqRsAk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:10:30 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a rent deposit can only be used for one specific purpose. Subsection 106(10) strictly requires the landlord to apply a rent deposit solely in payment of the rent for the last rental period before the tenancy terminates. A landlord cannot repurpose the last month's rent deposit to cover other expenses such as unpaid utility bills, damages, or cleaning costs, and any lease term that attempts to override this rule is void.\n\nVerdict: not enforceable\nSection: 106",
+       "thought_signature": "AY89a1_JUvYutZcoRsvxUq_ClOK3HWLi5VOx3I9dDtmFacVVpdDnn6W1JDmWpYXB54_sq6V5cFonenHs37OVFCDwEWaFjjZm-5JnWw2pzx9Fup62cZlZG6CzvuzrPuIWAd0Q9Zx9fJvAVmQctAZbkjrmK1G78SzBmCkN2hdi3wdJ2KnO-ygVqaP4gpWtMebA6vk0jft8s80ExtX8g9mK7jb17lpQGHBVo2e5V5mv4dA8Pizr3uGbIabOOwIRWn_JXHrP_dCGKdkICZb6fh2eo3yUcFVGALAVpWtBFDUBj3y2LW072cbHov-Ibl07wafoBjtHtv9hahn1Yd1S7ZRWl61lxMlOdgjYZQkxabjoT8DhKEiVYtX3U8v1tzWrRmV2XNerjeSbNrIQY83l9sQX49nF7eLmafA2V-NrzD5EQxD7nQxsS_5uaFrl5TStKJXGwjuvwFxrBcmIy_Dvgcc5vpH-Yk1AJWUntrd9coqLl0254QbWmrfdR-uPPFQSJzJYGxgV4QqM-Z_uLsVjVKpMk99i7Kn3OWtbx5qajQ-qe7LKj669WWGieyvJW_iyfGiQ2HIjdd--4P8cImSzs6iizRjb1R5IbHOZmVt3qyJTwxhz9-g-sdpju-mUfhRAHdtg3KYjAXHJkoGjKwcqaQjowONrUps8Lo2S3nV9kpZvoWlxkUGHlgHvpJoG_67bSfWkeXoxCVS0NkIfjzOBaidBCyUZhpUWzoDLbKUXUnZ7c8yJPVw_4mPWCmflQj08rysa0riOQ7O_xdL-g0HHKWUesixzCvJCDTCa-8cOzb-bRu1mLnlBIJrkQy-qd4WRRLdfveEnN5vlUxvLBL_bQ4BuAcyGUtkoKdWB-5yyQnrdg3YsaGSCh9LYncbi7NulDrJoUbhitlkLfKjWYDZF1NlFbHcc2LqIi2TNCwBCGYuUPX0v6DBS8zM8VnZIrbDYzl8kNmqL3l8XEfzHXZ79MVVT8xBdQ3E2zXgUAY2l4KxBn87bVmCFP2q96ExRpVxRf4KpE6yuMYFpvXm1N0fSj0WC7FroyMy_vmds6Q9kDFUpPVptJ1Hcdh_MQUaXaaRyzrGM6cOjZKAHfYWtxT9w3tC9OmFc8K5V0xSsIzRQmSsJljmNtjcHqqG-plvLXPCLekHeMGJ_8ERfWGDuHKeL3kZ7Ae1s7bATAzG-dlR_klC6Oc_OfbrwNZCXelJL3AtVk8NF5gx19hCe_ykpom1JClV7ov3gpqBeVo2jmdHfh9OS-9bMjQkAQiMVDuuVCz1zRuBWMfQBO-6y8YUvo5tQFUdyrLfjyPWXUC0WD3fCJamwSUp2WpJjPwyFNRfNwF2BFnQ_7v8yUbLY-xxc61H2wE0Ze9bS3hkRhtb_p2dGRQTI9lyB-bEGxbhIbIQKNtiWBwtWtRaVVaUsGpxNkQxZFVl1_ZkOd8EdHS8roWOt4CxILCWQTlOvgYJDwkz2LiQGCYPoZjbM-L82kCiGwYGw50OyGFbc1TqwU5ZnNZKVMw7XFlfeSpZxcwXEUIhu8-4FgNQ45QLA-ddPOEWFHG1ODd-auaDdB_9tzStTbtnwOnaz4me1iqWQ5s14EVK2DF9mYn5SosvIbTtX-BRK_JQmjQfrs0-UzO6nmtxYAgAjL-5ebLq9voJXhrBjwhOY3fT0aZVz6Hp95U3Kvcq9NuFhua-J740GO_kqwpSel3xQ7lg2i7-hzTOVx6WCb1x0rVpDpXD_bsvcOpB1WNkA2PnMDfUlGZFqc0MUQ6680A3CJaQ6m3W6WWFEamT2GiRq_b0K6HUsWTi6vl5zNlG2YgsrS7pcgkHvqM2eGMhS7FsUe1JHNLCv2E0WIvoR64eSjZTa95lRL_-2Zc3W8apklIK3zDMxntuNTbbh75Yg8fIEc3uMXVOjzaf8tHisOzfhO3muOf0LU2nhNlVd0FOC4YZVYeUQuOETcwiZ-5Geaws7O9GsqfATY3xps-Dsczt2LYdAcObE_fRHI8RdV0l6ztLnkgX7ONRlf57WaE6i8lS7xsMVUsSoAn1sGqtGiSZtqopGGQDVkydOIQGzA2_h4IY22ts38wAKD3D0wzZG6AZYepCBZE4gdN8Kpvgt-GFR_skIkf9CdPxBbzWOtWgG1Edd5KYd0z2mq-J5kNe4Fi8cNloXxXlswwQUqnfPgxaBsLRPNQIyWBps0sZzcBt3Ti2m8FpYCC-kioFubWFIo0LQzmInEvQ7YavVAEk_VlQuaTDP3s6Km29hacxncH9XgJzakWK_KjdYnV5xy1rBesr_Y9tWxphh81DQfEf5XTijn8wKMNGoyx5StxGhbcYS0YXYCcciYESOVdYTksbMUYDnfkK2A6ovbQ8sXNwpu_if6N8kGaEg-azKPlml-CjeqZRZIgfzqxb30ocOsDrWTLGXOUDhZLZlFHzquXihsbNle3QnZuf-2X20kN6bmbDSUdNqEtbPWylBDIBPyzoLT8_WR-1R_aF5OJr_cRd5i8nhiJAwcXaB1h8mNwpoo1ZZeOdYP-sHlaMP8NTLUIj4YmwUFwYPrwOpk47NOZl9xDfOGAgivHBKnPnK_6tjaX95FYFLEAPN3rDx9gQsEQmCJVutuA8F6irT34tHubcsmHw0Q3qpl1rKdOMzoen4y8gYmyr7yHHtTXSFIkByalIJqB06mlXwWOaZetJmUIVWUluk7hBUW6XPvFbb0CMHMM_L-8vWs537lKJRtjYY8hgiiLWOnsgHh32EjLaid121ibP9VA7YOY2lYUmtpaJU2SOS7DSQ7WgRb416-YC62juVRQZeJHEk4x4vX1jcnzLK1gxNqU3J11oftmsY04Zp_dYC9U_wfzuUlnpmVnCnVbXBJcmL1C42vpJdbsAzkJsabipow6FlwVsa9eKaEqjxpyjBWl36b4mXLAMPxYvOVM2UI5Ke4-uFAAzMCcY25qKvYDUS36TZfXB98QPXPgs1HAXXFom21KzZikghiWAE9Yuo9j57YOugfdEKm46xZCr72DSNWvLjSvUP0_voRT4DIRqIGlLMtpOwpQ19ld_R6SosaDUtmpQsS3SHVuo_VwGyaJVcDqidwyWQWZSkdaj3IOBDq6k5-buV4TnkX3geHeF2vrFjF5qkc-l319GN0liXk-XNnOq0BinvY_hH2yVpRuFvngn1iQY-g8GyG96r3Vj9Ur8pPxGrF5oVRqO3c7A-APeoNod_IowRwKKa4oXTuyWFSh6IlaheWG3Z6FJX9JsiFLhKWNALx2Sx_Yz6xpsQ_h-2QIkNdj9qVfWbi1YzcEO7-zEY7uOj-dXlw_6hDMq0LJVKOAr3e2cHmUsxDTRWYhRg4ANtHA9a8_Tbguw2b_BX0Ox6imcDSy4fA1fMUZFXpmlNcLKpP9Rgchs2mFKQEbBwVj4gbLYxL5F1bopPP-HBaq9Bu9NSCRAnv6iT6a3K95Q8PhjmdwgPL4CsgtZiM06OboyI0y7oCPZu0mnyx0i2SCtxPSn5U2VCSlXi7lpMc3C5vk6JqiIaRCr6pevYoCTw9nuHKWpuQOxUhl0ibf18V2atpwSKf_tWeZRL006sa5Dio6K2R4S6y8RswNQZa8Jje-J4iTE_GXSgH5tCdl7v0NKeWVG5Xt16_kKkvSPbVXhD9BymBlR6DuHZf4bNPNQ2LCcZEKnai77o-4P9ZAMVbt4aXhENRvWn7xf_VyOVB3tDpmQmiGUXnvZtnb8o17VC_Dz3c8jwhBcQgSlzTk7ceKJktpmyZOw1Db876hScjEooqoJmLaUIW3xSeveVkkL65kmEjTJUc8oco__8anvoZWdag5YuB-VtNSg0r06ZcwFwfYqzsKwvMG5rDXsXRVgrTzcBV7ftX6ZzWNDK9O40E3J3XIffAxNuynrrfQLLND8YG1wMxfOIxJxRokG39H19_ACWJGIHAtV6M4zZ1IfuWXMbLcgjygBxpJ3PNc4vnvpnit5hqfp_FzTMj2fviMdLssjDWtczFD7l5C_Y8HGbmSzgP1qjs7-oZhKM0PXoOs9BpLms-i9RXCa1q7qw2w3pJASmRXusGLjclUlY3g65UMSaMotCwOF9ZpSGGAuGnz21WLOWWVxj5aKWfRofY7U8jGwedO2MNtM74Qpo6eux6Sq-GyB05Suf0udq8ewgPVNoPktsgZsijsU8xTyU7Qyu9Od1zPHNRmOrmwGPYwe2K6iRdMinkN7xmVB3V2xh0nTo7rgGKeDPHlcuVuMHb8smCtmgV-wPbYE-D9Cq4PRF5WB_pRPJe9zm0-7ObZbOifrrccbNkfc7ne81Ids-TmRx-gW_ZXLej3PPrHeyHuBA05PVAMfYOr3-6oBYRqI2fpycF0StkcMpB-tXGeCDR9Qfp9e-a0Ws8txrK-v3kXWk5znjqNP85DNCEJDWrvMf2Vo2mzQ5-1C9WDmvbGvRh9dWn6iw3DqwnFgGS70_ms8D6Su7Y44qKc5Y4lYfHwvZryKophkS_ujwMSW9PKuSg41WeHnskJCC4phXsshlN_3mhjm2tS3-2jtkkviIHBJ2LaGxpyhphMsjrISEXx_9o-3ViZf8FM11FML0tZ9zVmC45IgX1dlRuwLgmtTqC0VHXhhywQSNKkmObFo5gthLI2nz9t9l5OQeJo5zXO59uD09a6HMYeQeXdwlZgt01RMoU9vAvqd3AUauqK4t38IkjTmH1dDWq-FBs1x4rP3umqCHOclPlcCy_2gQxOn7PDoH1L_sBcJR4s7gC405EGH2cK-2qvLOBhyODPA_bGaqRSDr2Tho8lwr8TKI2FYaEKl30rI1dgHc0qVcHar95WeLHce-pP1kubizIGATokllYjl7gtmWYeNxBN2fvw32nmVbc3E-2NKSA1HkIjNMkKO3OarSy_FfoOG92lptbFiH1oZo0tWxvZhWIjCzC4CB8hG2jGbNvDUCCD1Svz3NgHzdCfd6QD1yat0VbfOfmujvN7nVek1MsgOcQFT4xDA4vIyEak02PuK96EeCi-SLrF4hz1a3mtn_RCP-LoVJgTcfQ0JHckVZKsXUH22ypOgjazvcyxzTtNLdGWzBNxTCXRP3f3lIgHkeW7vYUeahwKGZ2P6dHFHF9y_o-w3H-vehgebyEhuMo_wlHrmPWtkevPydHeU="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:10:15.686536Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "p273asjzKd_IpPIPrpqRsAk",
+  "usage_metadata": {
+   "candidates_token_count": 128,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 128
+    }
+   ],
+   "prompt_token_count": 189,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 189
+    }
+   ],
+   "thoughts_token_count": 991,
+   "total_token_count": 1308,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "clause_id": "c13",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "6d77381cc627436c7fa85647cd7a20348ccdde1d11224c05a1d4ced0b74f0025",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord, with its contractor, may enter the unit to replace the kitchen cabinets on 24 hours' written notice giving the reason, the day and a time between 8 a.m. and 8 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:22.168825Z",
+ "text": "{\"verdict\": \"allowed\", \"section\": \"27\", \"quote\": \"To carry out a repair or replacement or do work in the rental unit.\", \"reason\": \"Section 27 allows a landlord to enter a rental unit to carry out a replacement or do work after giving at least 24 hours' written notice specifying the reason, the day, and a time of entry between 8 a.m. and 8 p.m. Because the clause follows these statutory entry requirements, it is consistent with the Act and permitted.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4556,
+ "output_tokens": 1093,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "jnD3arPKDfzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:41 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\": \"allowed\", \"section\": \"27\", \"quote\": \"To carry out a repair or replacement or do work in the rental unit.\", \"reason\": \"Section 27 allows a landlord to enter a rental unit to carry out a replacement or do work after giving at least 24 hours' written notice specifying the reason, the day, and a time of entry between 8 a.m. and 8 p.m. Because the clause follows these statutory entry requirements, it is consistent with the Act and permitted.\"}",
+       "thought_signature": "AY89a19NrsWPERbDGokVEo3DERyxYS_7SUayR9IKX-_bkzsldgFY8KymMTumGGTymivWPQjcCn6DOnuWbChvW708bJ6W6dVL79N-UTEXU8nc1pAUpjX6ytg7O0qiRjYPaEV5-kwHtQ1RbG4R5-5_uO6d0E_XfoDvOfVFgIaY-vHusXUeeYugE7DLbotuY26FCjpj_zDQ88wY_LseQmlPur8_zFsYLFUcpl6iCRsJVIJCzWMKr2VoB7Ab53QGzcPBD47D2jCr57KKsF2yNSmVwXYNg3t69_b_vAtIhA9yfEfC-MGIU6ZLwSfZLwPOyF0RR8tZMlR8Z_SAfIwnS3DDpsf8LRo2vMqRHXN4mqxAEG2DctD6-_j_-Wts2sZ4VF1bvSbVqt-w6sPjKvYIt5fcC6gfXp7Yg7TI6Xg2Wu0s4roKewNcqx18Wx9fzsmTM1r45M9GhUS9qefnAdOWmWCmymCZMcnHvhn7o5goIOBcjMJ7rv4MszWe36hZAziO6O4UFqQLQiPiveuYSdYLgc8HRp1uqTA2RI2YsBR1PVbumWYAtXjH6xBz9vNmC6sT6fy6OcotN5LMPZXfJcFkkCEYHDRDiWj0qLuterEyiBII5Xlc16pmc8ur72qfmowvgkGz6e0kUlogbo5KMT_PuhAfNhW4AMl_BUkopYVYZZA3c2w9iUk-3S2Bd8xoj8P6-IokGfQKcbFkNRm9d89HcP_DA8isE1NwmpPnn-l-rxY47TC-apHNjUQDO82CQG0-2gIDGSbsakQckUpteR7hRDa_l3YSXc6_cdPPhd-w1SSg7GPqjuIyAbdsPJGQR6RExKfFgQXlrA97_n21kdaqyE2XZAdKUhbaBTBmaAM6BJvPvRQhZ9BNqsfF_VQQi9pKrJMGnvrOwPMD4LV6d6f8R5ln6h013mJF4-c5p6R5PVW6jJ8bBW6aTQYDxdgSNSIISG72ZIJAvbnhINKviXggkXNAKlUKb53FUSU4OL79nHGrsBqcsay9alQ_Y3IcmWkywc2N8q0XINr4nKiDWzAgdt8061FuLfuFr9DQYufPJdQZsxbfznw7H_dqol5QlfQgQ_s8ewDbBgjh_ySUdmBLcIxWE3b50BBL1WO5UIpzW-jOkGu-V-fWJavoe_gmtR99_LyefRrTS8PQTc1wIJJzCGpSQZmSsHkIN1dBlXgMgQrUQpcTP4zG0PWpb0Xwz3NzvbmlwRRA7ib8UKc0jTHcf5W8Rix3Plc0PXQOVdqUSyHrEhWjKU4gtL2OKCi_FWaxtO9W9bZG9jcjnbrb1nvuuKyhZI80GylA-wSePMZQ3zXXrCm2mOEmHHcAyZ7RuSHyfMBu0eDqkHPMC8nGw81XUPvQQpFJI66dx3YMFqrFJNuTgQPKY6c7DqK9uocKOay404nYHSNGbrUPe-monSrRpGf72EttHCAlsQM4yJWtOyWWSGPkkUu8LbJnQaI-k6yyGhZVXbTeXWXFvEe1JC-HRcmNCQUF9gm_GIgcZVWU4I0S7csdqpOtqPfoHb_0LJJOLD_X6SHFUN8aLKvt-e6Jv2m2vPQ4mkGFhilDQo4ZWr1y7BU1hEzdCzO_w9-QkS5-f05SB3z2LJnzgnw_f-gQXJ5zJaMhxvySqoYlCKqLnqRBdVtUBB4TNN_giGhJ5kQK8rsoKWyMdrSGgkf9O6KqU_OsIVZZCuZUyKGVLwbp3XEhWQ1NZH6BmLq_3gkK9go9Gcdj6bb0g_8X_m9eo-sJ7a9HsYuIm-WBDpO2TY2wviHy5zfHvH0XOo9KebvC5i0kHEogwyMppNNLy1XR22defFTOgL63Ypyl0N_AuS-XzOxlQxXxL6Ev8OvCeaiSZKS7VI2y6HtA0WX6RwgWE-ehO43u49SepblNYe93GVzP6Z1CWfJbx_BNSttK4xIqI3xyVP9O8wM0IJ_To3cNnn8Pu7D78epCt89g5F2F7Nj2kFv73Ltow2UYD25U_N6V8KMnQTlkdl3HPqJV8d67Nn94FgguVPyOrW_Y-fhhzf04LhDTS2ZgkiQ00ErXgxPLwDX-e_HUETiI9g3xZtDrJu_ZCdwAOKPpyeo_f2aK1t9YoIa1m8qkR70rmIHj8s4o9Ez-HnpKb-653A8N7xs3MgJi47BztfxGKpWqX-00kcopsZzfiuw7sbTodzLJ7DBpzn-H33gTYZ2-7NFIfx8w4RjQe3bm6vlcJ3QnJeM8PiFdbjmdDB71tlgy6Za1rwfv1FliYm65E1Ccnec3PuvGXe93DN31DGRq2cfpc97mjzMyXucC8DksR38JL-6UX_c3GV9DCAaGDZuDpnxVm9-B1aDpRqVIQ_JtoJRc5TMR2M29TV_Wuk9BFwe3BoMOlq3J8Vjbxa-m4pxhPb_GuQxlEWO1iJ2BVVAwq-PG1nHkXpeG5e0_k-ugt2kXeOGUu7YAeBzgY9Iq5Epif2H8mVqR0NhBqCNnAX3ok7UijZAj7Rl2YA2-_7LvE8qrEpHBYMVNWG_ZARvtm8CIXgf8b0iQS4ZINE9lKG0qlnsmAK47kbIbXu_S2rkwWPQXIBn-4XC93K8EfS5TiB_FrBI65j0E-YNJOuk_JTjIX9lHcwaMwvUvgkrnpSI0x8aV9L2Ts0bu2GfAgTIWEZqUhG7BVH-U1JrqpscswrsYvHbD2Nw4MS0S8UZ58IqFcGvIBvUqX83z_bK_rdB6v6IQJcBJd5PURuyIeoWrg2t0E1gKgmG-U9Jlj0XEhhyPDkkN8PcGLwazt3_wk0wux5z8YNx1h1vEv5jrZlWvy_CIwT1SQparhSAH1WRmQgRQFl1ndgmTgveQx46c55s-rILOOFazyup2h_oiF-i_7oiiD09QURUeFelVixlK0FUXVtROaPFFtrR5yDUJCDRSQSQG6nNHeHZx-tHAi0RZZ11zpz50PfUFn3aTyow_pCdYvySLvwiLdgs2z8LwtrxEjYR9hyLetk3xkmyC5LHeQystiV6uXlVQl4REftX5M8d5Tz36g-1cbNJ3-9FKe3WHCUW-OSRkl4CF70xgrvLPoOVpgfEtYIZkHm1Yopeydf5kmcokyiC0vxWh_PiwbfZqVZEm6vsMkqZF1ABs84SBwGhaqR7KMwbnhZ_Z3vxuCbQL38_AOl9tY6HiKZLVC7DqVLAM6iR0DwAH2TvH95LwFwXwt9i50yeIKDrgpj5ythMoUoTndrqMmnWMNemh0eNLXkedUsJLy1wkl9OGJoFoekY-cEXkMkYVO01Y6awsazUmSnVn-qUcCCj3G2TqahrVykPI_9j2OP4dsNa1M2rwEYnfCRHIQYLNwySqrGYc7tzmY_-pt8oAPkligehQ-hHBqVQZLPh5yPgjkjJ6vLruHPEF1W0RUYm_BAzfh9A3n8TnhfRQ2xQzo8uzpHoV-G5X2M1S5GKpFiuDGwrk5GPlhKfBbaaqn5p803CcXI37q_2fvXjWtbDFHdT517FOskNS22c3a8_lTZ3D0rOtTyvIuQjHU6fBptzt_ZJXTMi4Gt7tvg1WnfQGSmbMnMIgSonRnV7C2_Bv5g0uzzqfFm09Agu-Us-_QlwRTa00bARMnHbGO8YZ5g6EILDwDfz7wHK6ce25USjTBtkFhHwr_nGHcjujrvhfCCcGhn6t5XHF2Hs-KKvobVqHkhJx0eM65hLF1cHuucOMRjK1yCc9UER5T6d181rtf8khSv5Rxyiou9rWhvn3w1w9N_BrLvaIEI7qf00UyKcHpUz7FKkXCgUfVhV237q_vQYj7fKoxPxqogcBrXEWKkG9-dK7Tp6UdK66s-gipqTvl0V9oFKS7j4a03yju8xXT_WSmXMRg1k0qK-aCvxAS7sdt6BdDzrSZwgtFeeeC5XO5W8vgzqsnMZTacgUIRT5hACBh4nZTaWq6MT8g5sczMf5dlDWcKjh4lj532EEjBwvoht9f1VQ1RH2GNe0IeFbVjv1DJhUcrI_m4MbG2lzdX9elVwCGHzoMBZ6I3SPpiO-ZwhXZm3KharJSliLnKrzcr8B6WSaKv9Vhr60lpDRZDIUy0bIxT0mRh9yb5_fAEri9U-VSKsG3Gz_uY4v21rEZKL1My09y6GNJqT6rNgz42yeJXR6_QQL1pz3jeKzRYxYfzaFiSyBxdIYBgcw2rOXhqWRYamgpVRuQa5CpFy8eAdCEqp_68O5HDF7JTrwxSqu320u41wI3W3PzmSrCSjNuL-sJ8juJUe3BzVdYnbrwvtk9xI_s-4TfEltxyWwMzuS_1pCubtEsH89goQGix-LAqlK4awu9FytgEpJdKXRiUtfkWdycs82l-tYxk7GL-B5SrCTTQKcqqZH8t3GcfLa4H5e7FEsbbzY08OC-vY7CPmIQ33okblnUSEvX5QmBwRgqjMOn1sjCTgQJ9xaKs9a07Wsdi6MrIl9rgj-FymAmKznyrHyF1LK_InUqhz8uWOeCRaJPc1FbitgEV4pj0uawNhaY-ehZ9GB9khN_8Cc0qrcI4pdYeVi5SjjYO4yB0K4jP2PH6ObGmW4x-jqGDs9WR-ZRl6f5lf3G_JmZhF_2QrY7VV4Siq_pztsZS6FXIasUbyEqFnWi2Zq9iX7C2KdVUzsL8y95SljgQguiC11MQnsZdOQfoC-SVbY5KPsBojnon8FezCdI_j4Bk33uOWRn6BxqVk01Z75pDew1a187wUqh-kWUSs8eIPToS808au0EZQkYBBgwM4LEOCR6Gm0tV5-PVpYzOKkB0e3Po5b3CUG2T_o2ctE1vlEogjF5M9Ungr_xatuEJ1GL-aQ0UrjiV54LoJHyDYPS7h5rJapOhmyHag6D_1lm0HshdUWi_W432o_eTLgflH-PE-3dR-epc0SD1MDeO5Q1sn2j1BEA-PnAhgtpCA4FkpZa5Dc--aCNigabkKi7V50zwJv3OeyoScHS6xVwjHWUZ1MjYC3Dhy9u6FfmFSD7UpqY8tt67PUm4UbnZDeYjVQ2LkB8CqKz9WGuL7fd1x7XIWVBK6azdXg6A=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:22.222515Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "jnD3arPKDfzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 129,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 129
+    }
+   ],
+   "prompt_token_count": 4556,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4556
+    }
+   ],
+   "thoughts_token_count": 964,
+   "total_token_count": 5649,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "27",
+   "quote": "To carry out a repair or replacement or do work in the rental unit.",
+   "reason": "Section 27 allows a landlord to enter a rental unit to carry out a replacement or do work after giving at least 24 hours' written notice specifying the reason, the day, and a time of entry between 8 a.m. and 8 p.m. Because the clause follows these statutory entry requirements, it is consistent with the Act and permitted."
+  }
+ }
+}

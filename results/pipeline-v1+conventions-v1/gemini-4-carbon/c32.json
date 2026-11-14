@@ -1,0 +1,120 @@
+{
+ "clause_id": "c32",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "be8ad14f66382eb96fd05d28c0330290b063561c57645fd0d58fdb75db5324aa",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nAny increase in rent during the tenancy will not exceed the annual rent increase guideline.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:04.628949Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"120\",\"quote\":\"No landlord may increase the rent charged to a tenant, or to an assignee under section 95, during the term of their tenancy by more than the guideline, except in accordance with section 126 or 127 or an agreement under section 121 or 123.\",\"reason\":\"The clause is consistent with section 120(1), which prohibits a landlord from increasing rent during a tenancy by more than the annual guideline unless a statutory exception applies. Nothing in the provided sections prevents a tenancy agreement from capping rent increases at the guideline.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4525,
+ "output_tokens": 2633,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "uHD3aqfyKPmew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:42 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"120\",\"quote\":\"No landlord may increase the rent charged to a tenant, or to an assignee under section 95, during the term of their tenancy by more than the guideline, except in accordance with section 126 or 127 or an agreement under section 121 or 123.\",\"reason\":\"The clause is consistent with section 120(1), which prohibits a landlord from increasing rent during a tenancy by more than the annual guideline unless a statutory exception applies. Nothing in the provided sections prevents a tenancy agreement from capping rent increases at the guideline.\"}",
+       "thought_signature": "AY89a1_ziKBltq5YTd6lZTmBi08jCRz1ZfXbGMB8rSsHWyt246grpHcuw9YSygi_BGH2hSAFMaRoyX4RQqo1clMlTYmo7ygf9WsFZMNxNkXWWxpFz-maoO_D2vMdfLc1fwbOJhLUwv9ZFam52x_5oux7gTJzAvoAoD7rIZHTSySlF51fOna-pKiDQbOorA4T1IpYgERj7WzIiRJFDQiEt_EcIYEHK9j9bsSt84EjVaIvhPTxT5V50A_Q3jKRIq-V6B9e5dwPtdW-snC3d3vGtmDGQjo7g-kitUkarU2DExK74H0SFw9kbwdWZ1rNk9DeQi8bpNry7139qF3ORnz-it0GAgB5atdZDdD0NvIQe18uqvUenzI8DPr4ujnKein173iV7uqhotnIqjJ8P7HX-EAPiia_B04Jkt9HOXzJlt4P-K7IpFCLrvCNyBQYSyDI8QCeVptT10qprLo7L6HuQNfd1Sul8CLlnKfKVct40mrzlit44_H1yH9MGkd1jsD4aoDhwLHQm8TSh7zqh7i_c6gxPkY4lb69FZRczcDpJCXOl8Vff3NO8Kl6vYYobde_2Hf23gEF75Egy88G1noAB3F63VY9k6LalBOOlB-hv3D2VyowmxMJ4SNcZ_D0YOu0IeMeDg75jCbzisX1F0L5VimQokR4j202iyUjdPQ8bgyDwxoR1Ncvl8gbO1BLzqj2J3LBrD30gS9kOeR__LjBx2_AbBzJ-nPCOfXVdDUVSVq1LNXqJ_M4re3Cgspj0fWqcqrK3_FKdIkz12ton7HN9XioIwCav_6ZqQS9s8MBDSMz-u1jBiLPgoEddms_nJeJZUgTBDTyjcMLU-zYCCIHOrE4BTpKPwomrDY5uoVgbJRAfhEoo4moVSFER7-brAbUcJ_TV9xfnwddaWzW14CP-F0BNTxrNNL0_ZRr3wm4PZef8bWdCjjke1cUvrYsNdQemo6oC2JqFupLH5Xtk3dcNr4cofFEah-8u4evDCQ6B0yBIsTzWlsXbunWnWp6zT85ReIv4BZUpqxTsVolpst9io2I2SsxAGyeyjODec3YiFjig8EWsaURu1jYng4mdiRe1COl3tayiFvBvi2IPKhpCrNp2hFmFSAJ0THyIK9TjNDSxBSY6VYe59XYv-6sYCitJYJ7osfYzTS9A8YW4jYuhSh3X55FeqLxYcja9IYy4Ka3OKDR4-vdLZHDdlXsSiTrdzHUpcWjy1JjorP3iU0OnIpd85zaxS4jXwK3hK8sw3biJktzQW4O4pSCc2YuY4T5doPtUb2O9qXJkWJE_TmKyjTGCORPE0utYO3gCA-CRfN3B6q8pjlYQ-WT7P7B_8we5DVkoLwygIek7gs-c-NYbY-c33PkbzykK0gQe4TvFJOs8hfif0Xn2UhqGvdZ7VMN6w0pw0QWvQpIm7gtji8h5ozWw85trUlne8k_Yc9Q2QHBXmtKgvVJ_gL8f80x5AMOGerIzc3oWq3pxEGzhp6Nekj3xcuXG4uyG56_gOuRiRWswYziKF82-Ns5KUOcbmPa0-qQe8a5ssIQzueB-a00dhsVnVkC9-AcLs4pM1DhGQiZiwP414A1Oy5x1nY3iFL8HV5tmjb0eMy9O-4bdlftuLbjADN4GcJVtWuOspBQX79oL929qW9ruNp8VI81nmosNdgJdyFAxLybeX15Y45gbpqQoei50G8wFXaYRHtKfIFB8tQIjWpDWrEo9JSBwu-x9UJQqH8YtmM2Z6lLs3X_B45JdAWGt2qpKeRTdLXdR1dbPjYB9xlndPfXYLCRCXVMKHU3N2zj9rH0MuIF0KgEssBBwqjxi2MghTT1JzLWVaZ0gmpAUSdVsWcB0s4h-3aKEsA0VMcqxqPjvbkEOzBtzz-lN-AXyphEqpZhvR9Vz6MiWANuNICCgDPvouHPu4vx4Dw_0J5DwX268FHVMcRqfnK5CSbWq3WqIvxwEqQrp2gd9jK4BhOY9v7u2RjV2ADzpuL9yCiyMjEyJUQXJsvyp5mCdXIWBn7ClBgMzZS05Vb0VQfxw2AoFxUFTXytlj2IwgvNnTO4Grj51rI-AVLb53fa5cS6Owzch29DUB1fkA_E-Y3t4-EpaumbmOy2LLj95ZLHIVC2xPaI4TtG3cOywSTE78HPpag-Q6rtjcLZrkVoN3w_WPd4e9yBrUY9fppSCpg_t6q5HqPR-wY0IMdUhxyeJbt5Djmmeh7NrSuzVqTb-qlzYrQ_WmQRKllUWzF4eCwstggjGkTENbzFefxqrTgIVztbImglY1waOqbZfX0LhMtOoVRGmVHp83aK6yVesxeEY7v_9NN3xZ5F7B91uB91qfnbaMxdl7zAjLoGrBI0Wlv6OJ77gkhY6T-diI6Y_m9O3wcuBAXCkOBeSplQFcSn_yQOcMQyFqf19njRXhzbgj-HOv37C2rZL36wB5oark7rwqB80sSX_mq28zFQ2iVGjiChK7lYshZZ6yiXlCg2k8w5E8kXwoIWSPqcHrSVKyBdQM3gpnHGa0Le0BElv51Gc17zTZNTuW26PKGklkafsdUyev5XNnUjhHcmv2ok7wBV5NWHTSuJ6mT0qOlin5ZDWpNGR-1RqaaYx6sXPf-09HnhuB-NkMlfVUq9Bv1978FQ25Go28GWy7fWZ-p6ch9hXr7D65ELK0YjCNvgMhQ1JOwQd1PaKsH1K3gNTP8vosge0CN03Uyg_YXIkuiSnicFpk2k4r16JRav2_FSCLoXIbG0TUs8S-Jqn92rc3GFPUdOLywWCF_UKoospSucR5QGZgk9rkEmRDkI2XxXmO0CR4_-9vytNe6IypkvaBc3W4qtZvshrjg2YvItSiOLitDnH7seY-kZRWwnw6PWZpIin4xR8u5lFZnHQemBVRU4epioE68ZDNE5Z7psCD0KxWSUmSmvLTcr7Z1QaMwfQhLnPDQy5JPMOyVLYnlEkhTGINVjDVVRhtSXtgoJkOcuu9Mtm_qqK-q_dcmaI4-pXqNgacGlINiin5u-twhz7vGJ3WLFndBxxQTwHwVMBJgwAX2CgvFbIMGfFoh3xvHW_EHS0BRULtFwIDTq99_FnahWevZEJvFyQTAkMKHWYwXIR_5bnGk_7tyN49VC6v7D1oR_tVT0Q6bFpH8NyMu5rRH2kL9eWbwUSHVfuYUmCBX5sVQdPfiUNqVvvVkW2SlQuNwiR7ljbA2VkHnWCEK-clRDXNKCXshFuVsjF01wx5Qm0daWZ4QIjEWTkXfkLDczNYaUMdzl4aWJk_MuVHRlaDJdchDrgMoneCrLDkCTe0l2LhS14ATaZVD6TpwHO-c2nwdTROx0xo_HfiFrPBLmJLGEHwG4PpGErCKuO_DZM4AV7Brkm61MTCYQWynuMmylFf7eYc0kDgQ90-6Rt-inOXq3pe2_IRJz5ma882hScB2zZafx2PKjVqMBkcST8Lhlr8S_YqLmnQFvKfpy7snd6Udyl4fn_i1f4noblJqNd6lJhyhewJBmdO_eur6LhgHRyZxfJNbz3_tYcOPauFsd5QsU57MtoQasIeUydf8Xkm2Z8LKXURYcrZtReLvRPOvldXcKiM8bX89Ifl_IwxC_s3A3LsIUiFW3LiuUb-0VCVpITPAP5clyM4PN74a99yq3f2F1SWn7vorqNqfAf7u7TVJpQb7fGjG6Lozb9D0Kt6lMWd2igZa7nP3GDX-jcFfGNjwh0c8plnkLmSZuWXS4jU_ODtPB8HiTQisRFBspBz-H1gLe4hbNu1-k7Twp1CILHIs4jTUftjsNpig8B7YavZFuAVKm4_ipQVg9rOZntpq38KZlY-bwlb86wROqsjg16ijIEbCh9hNzPAuRXfBVBsqG3oiyOXn25CLk4TEJRiIRtUdmRiaxiDOolGhoTo4S7rlJ-CIVj1rtS6RMhVW8LOtRIrXOSUCtFPMW6FI-r0rHwlNwokoCgidihiYsIyw4rY08OZRozYO8IQmOpKUAPRszqFZHpbc60eSE92PbSx3s6hWpnEX_n6FAlRadQBgSo_friAxd6aVGN0sPnDxABxoBy1iGouBHteAAP0mnecf3aT_7eqawgmHFynwHP2JLXyLj9ZdQvxjjqBLDzOYT_Vx6ObvP6x2gjy9ztZzWD23Bhv4FyNXmwbPNG0nPnI4zI5NziFWto-GS5tcgGII9SiT9SV-N-86OZ8NeBpaGrg-zNY4CZa_ZlLNpBjO77FiE4spYcVCmDeC7j3QXw38iVJX1CbIvlje5--dgh3WJatRhkCNiTPo-JpAXhh4lC2welddPkgVFslWnuKHQ2JHAoHHMKFgx-EXPwjr2LCcISkUEjFjIiA2HC9x5imL7HNDTksgJFJt8jPOO_A7qkQhY0iORFuBF6sjTlIvlWhzV00rFu3d3FvTvAj6ILeJK_pfYQYITJaPCq3MVYgb5-9aEwljAFm9fwHFnS1Pn5vQ6BUWvTZfclnN2zLU2w2yPtTg9IvLR2KD51fIqeVPdWVqMr4hBqKTg6XeON0TFP2ctmXeiknen_GEhEVQ4mrG-3XWKxTG4A75i9aAQjc4ybFJ98rMdE5bnI566SBWscK8LB00V1HN04JCok5Y1HkAuAQce3XI4V5RKrc4o4cWFTlzLTSnC2tiOxmDJEAWY6JxRgW7pIrj6V3tr3KvR2a4nVivNQbVWA6A7A6ru5oobxo9o7On3Ky2wAEBdyT-Lligus-59DWZN60oya3oZAA0v25D1bBZYx5FIqrlrRwW-CMQQ4gmj5O78aFdHX4u1NMGN2pNc-wHQv7bighPIOEK5Js9c7fTlRr_re_BKig8UtfwOsd0GLrjYQVhhKbdtXOIFb8SBZxvwC1M-Mfpz_gfOiQamSkR6Xwd0QpvshZU0S5t0oSemn_ywqxM4d9ppKmMMXTLZEtCbnw66r7Uon-pjkg3NCeCo_yE8Gkx-WD7IcVcy60QEBqIi86VPB-Vq4dtZORa6XRZQH4IsSAr49V-6oxg7WUweV3o5liHz53xNkV02fhlPTD98_IgNOvenF1AljztUMDUe5lU2jgGXLhyGFeCtYItD-RxffqHS5gwhuILECp20e-wjwiKwIIayi4B-qzjRVpNfs44OTa5WGElR-Gh_AxWcNAUiXyOBLHy3L1KmtcsTLhO_jzBTQvsC3MJlPLOkg6HQ2an0OnEIC0s3XT43EsUmiUtIU0gMYZ394tUxg4vib7q8u94eaqQZfou5USoNy2QsfpG9RVfpUfiGVitA55TSIsJn_TsmlA7uKUKP-8IB59gVG1flyQRW3zgJnh2KkqkaTRjuJYhknyEMv4cyDAmIfVkoFso1VsXByxNpQx8zb67mDmEkotMmgpMz2e4W4TLpt7NpKCKEq6lk_RP8dRFVRc1nvpAvYOH4Y39pcn4r9-4pjd3TzeIqHE5GxvR_se5zTz1PF1p4AVWpZx78-x59rdAuWLFeWs_ZN1hdheckqWiaU2U4Jk-Sl29oXznlPi-v-aZjk7gvOnOoN0ud1st7ca8K_TnKkqApbEIx2ktr6X7ZRVBzSNKIeZvZ0mYr3M-Rti-Gh2p5xB9ZCf2l3Shg4s6CvnO4TtJP5L7j5HdoZCFSt70n7Pgw3NU6bJMad3mukgVFhwiD8QONjKNVgGl1qE_P4UnldNNWtYFyG89Ryd2otcBS2F_OMz39ZrgOwr3Ptr8pbDOkgMDAJF6H6aOwk1VjMFCat33uZBCqflTNNbMPRyrGmYytLFglYdwVsDwP_r8GG_QnhhkrAAZYpRKp4tyE25-NL7u11N2racV0fCuk74uAOrY200U-TFS8vrhwQw1tc-icodi8orVBt9qBTqqyevZuNUz8QmhLbo6Ll_zshuH6VWy_P9ZjRE7ybb8525RufyGL71y1X-GBrP_pRFFW-Qsmez9ljpWxciHiWYDOJx6v-5BN4safD265u7ldIhjTnT5vT61usQn-WIiFtgu-q4VtNbAZd5QtRE3L9cttthCLm0wY2lIR13lTfog17g0XG92DpmrEHOZZbrRS-8SqvdZpf6g4ayXI7mwnpQ-NORV5oau8QnLXyl4A92mtebmzTbQcciN6I1GlWDNk7DVwIsqetbA93v9tVpvRWM7X5qCsrV_LVOqpYgXvvGfniYJKmiXFrccZpBJWG0oxYD4s27ELQAJ1XnfGVXwI4GHaMSeM-csdXKsIB2PoP0PCxRMPAuvRfqSZ-2JKHSOF6dqmTf92eLmc0ypBDd6lef6CGKxYmIlrDP62aDnnUN5YaMCpNGr4bWUmCm4in4m93y5vZzaL6BIOxDp3oldj2RMmZMoHqeb6NMfQN62COpouyyFSZ-ou3DkmIHpIRf6GgBm4s97nDQLk9ABvgyYa9FVLb7sZfSIqbQxGJA-EKnD4dOeEPIWGnJjti5scmA9_42k1HFXV3ZGNwl3SpGoTykCwzS50cNeGa5uehGWVrFDvUD7DCbHafgBl94YF4n-Spp2F8Snc4ijmhGRSRPprXAfp6S9uSD0R9t8Xv-bAt2eRgy-PYp5N4EcxQ3n9nmG3tFbUxSXisNQHnNpyIgKNeI0ELnp2PN8ExpUTNQEU5DxKTHnCgQQkXxuuns3NCYBg8VLWar3WNpZ8PMUnRwbuk45ey9uk71U9obC6KY8gJRJud0heoUn_FR35SYW6WPWISJZm0YplH6cApNSdL9kPhZDiaKFNWp0UP_dtDj4IjQUx27iM2NUgWDuPABb27qGFI4T6ASdSe85yLMWKxpr6rcos5tavWJthFOk_qHe2u3QUyY8ZrybYDdBVze-vSw1YoiJKOUXWEbOe8_Ev-zAOKeYMnXN0TmDFY059iSPDDfNUXqTE2VWRZmehw0PoH9tTHGhfsDeZbSwXp7G2Pw32IDcHmxg-mLVc12DioW8AM2FGVYHOqnyr6g5sadbsi78Naj0w53DZBjz1PA1cnpCuCnMPP_zZbfu1H9NCWOHIfw5Xn9hfhxOmcIyw4HU_fjbsLMOfSM33KxMR2eijSmgEV-WbfbzwrCg-1FdZMGA6VxWp2AvxlzkPek0yhS2nfkutHPP5EoyjkR11m3-1w6ZaDDYCernZTvGridx62uPaRSPNWx7TI8ojkI8OmDf17pmrAhTK00wUWgaKc8f-l-TpMqiBC77GNLWBB1LHRWg9mYzZOaB0xndCJKDFHnW4c4_ee-8U0zhdSKyyjLwS12guoP4KTvjPels4UdnnFNWnfOHTlcFeg97aERwX-5V1Gh5zpCyTOpYMgl6FE8-iESC-sYKOp5-MJDhNFkB2QVSv3FBgL-SmfEFeRJzG8ZGNLs_1tq-dYO_vX0cC5sujv7LIZ8_2t7uVPfOrs7RnDGCtM4wnS4E44ovTax_Uikh6KUc2Sv9SEo3P0pWyXW9QjlYl_CzL6SM40Ct69DBS1Ysp8zrQGcqKQBQtY5_udpCoUfZrfbIh8Gu7FSMfdX8jUExN92zaBW7ReAaynDuLqQYcPYJZttd7b2-_CdevaBvwPegOHiNM7JUZvGBBGHmGWPfVEj7WGZILnIv3MX2nRrFI7QWwEtdz9hZVBnpfcRTtBgW21G5MD8o0EI5hLecOR1y8mNhvtEj8ZWDx_LNlerCZ-HDpmNUQuTBOLfk9mVyHAgCIDnwPVUKoPBzo0mu0lQJY4598y_qD5nTnU8mCCqvIabXPSLSuorEFZ_AXk1BNq4KMmPJWCyFXuIIG600bb9bmxKTUVk3Ur2CjeeaPRsAI_42hsXki8YK1qi-1RrJhLYGC8GYLgEEzu_0ax5x2_DGy1IMFJRuAC7TlZT1H_q5-xUtGVzlduTb1ytCT7iAkG-EJ26DOIG7s4c5apZ5Huu7LQhkhZRPbfkdoD6B2EayAw-jJVTQT9Y0VDRB8VvWgQqN83AbQ3krHHdWJi8638Cb8bJoF0hf5attN2iDNtE0C88N5_OiLoydp2VSWI6leEddN0f974YBIEBb5yB0s66QJg5SAEBztkFySvjCfQR_7PcSNIQun_Bsjz2mE9YZLrUQ4KD6Z7N0A_gFMZmyp1e9r6HiqDZUVeqvZ-JmDGvnjIITmoZLshDCkuI6aigSifIZGWTXIsMqN5Va5eZi5A0dStfTBeIYQ7lTk4d9J5QiwF1i2WzAxmb_7Gj1Z7KSm7An_wZVH5JrTwAI7z-x6Btvj37liiptifatKBWPxRWCeJyKRKxfQMGCzvQnx8hAvJX7esUO260UM3jMKOYt1KgEmCIHKqzKekvpDqBxKa8NmYSXlEQLf7WIKGZAsDO1isV-wYlLMwibM0Ohc8RueaVuMXQPOs96AZ8l3Zz0-rLA_1r-Hum45wi_HJnvdG6VeEemXCoDvrhpePhkkSw1y7NRRnFRglHoWcDvkbv5Kcxe60EGa6yBtEPaKwFzPNkNMl3E4Pmrxe1rMmvuioRLL8Y9IKWQiyj1_1RXNaC98lWYM3-EYymuz6f2bHnmpHIzmmN0dQohw_pRLQWNYTYV9QYVuaCaK7x-gMUMI9x9EFnjrLBdQXuqXUoPDStj4GBnMVRy214SYBWhrChffkl56KTZe1v7oHBnee-MvCSHAEdtbOIfx0w7ptq1A-e2iSSYfVAXccvgid2pN47Aq_lWHq40T8vbSG5Qp_5zjSe-GpElFTNTgG1PyLEyO40UTniSqcQglfVoZBtU014Uk1Im2oHgBD31zznAjGjnXXSa9Crr5XniPV0v7YBjmuiUbb-uspojOF8JZU4zx0V83w6MbCHWSuelDtfpAywM5Rw0vshm_J25kj02uH8kOSjLhuZrM93DaG6Ny3ndo53Rx7st6FeY9bOd2qryfgxepRYqUT3pIvOJrVXV6KPupAe23tX8voZzu-lGmaV-CrXblxw4zp9Lr1AauExoryuRba77B4iwHxIjKqILsBEVLELKHTsXct5AmdM7y3EJjZXvn82Bak-vswYHqS1Jbo2CCEj3g6Tsp97Y_5HBvSA_9_RktlIUmKMsXxHdnYZ7QuU-1TufMtONifiPXVWKqS2ts8WshcZXAv9E852bhFgKx0poNnZYm-pMM5lEugKWVent6wHN87PpnyTAWu0eE9dXprYkojjIo3ZSYwJpwbyu4OgB9k37Z60JPh-raPDFJUAAM9wFqcx7qkovP1DaLqm83_eqrLo2goPtXaRq9RGYgshEw0VDEzIjvg-6DMe07MZ5eJF6Dyg-JXdKGb0lAWo689gg11aMfAjUpIc0qVeaZ3zSI0rPyLCho0V5aDBi88Z6csJAXu5x1PoY_q1qf5VImRub36YoADDbMTXQZ2LIQgCVQ21ftsKvvQIgUeIOnFnJuJCdMD3hQAGiP-jUcvaXxjm5UhE7nOMrW5_slDbWSFfs6KVB4nmwH8_hQbLseE3T1SJg17IGTQ3n0nBq2lB0zvciWhOc_lVyIUxtABcz2ek5BjIu4G7WaUnopo3ioAfTW0XvUsJiaV4u_lh536A0ezRt53thYxgw1SH-_6WCGdH520T3VkA41JD4iIk_Y3PTbiHnM2NoWbQX5qttAjveX1zr0gK5Vvri-LhoTRKwCQANgg0_ItQTqveYf1oG3wunFWiLbzMvpK2WosnIUNpgkNuoaGUUZkIYrcTuIQLlGLjaBoxpkD13kyfAB5aR7BgqsduWyNbIkyHNYhIvjigRS5J659DaOVYkgoK7tnDnWFCAlF4SpBrtj9GeogNeTAGPDyqTbFINPb6Ih-OQkDYrkrTjPU8XginLP9YVSafUDb19jmMb-rkf6rPvCcS4LcoBhURlFSMuOCxYc-xQ53ccnveZufJkvVVYJAkjCxkVoxjQJZAwidM5q0XYTih6JuBeHJp4zhNiKo3sWj2yv3NGCDuHJa2QCCUwRZBIy9mDpXHGhOMqSFLmU0-B0HQ31-rRr7vTK_uKxDF6XChr5WwJtmYDEYq30-2YkFg3xOIHuOvPJUoFIrjxvEtHRlwuwvvTND1DGfbSqmO0-gPWq519AyIZmqGD4enGFXuT4s-ienpOOF8b8Sk_Gs75ztbZrW33L7P_frrYAVenFBuZQlZKJ80PrMbkLqYh8x5LlFaJNA3MgaZul51Heqqb6L6LDZ039CkvdRw4jz1fNBn5vaEkq6eHvpHvykoWD1dBr2OTSPM__mkRwxblwGDpiS-obTytsyh27NcXTArlrlA10OlxxzxxNuwF0zj_ddp2abi8ufoAtAiKwvNDS-38dP-dzn7tU-xcmMkLPikHDJZeUHD-_YvDD_6iZwx9gOyBRYnr7zCLaxjGE5OexyE7dg7xdciltDTWSMS495sgE3PGydUrjdnduKZbohKVVrsHQoZH0Qvrrnqg3Sv4-J7_QlNd1LQTaV3dXc-Z6G0lzYPC1uJ70zHOzEewdLiKD8p30sinopykxyXsZrP5Sqm7jbb_eG4iG_VBrCA9zvgH6wbtEORpTOvqTsh8xZL7xDK8E0kxUBObpJV1h0xsmmRI6XJbOmLb3WmR5dZ3xCyThofEcJ-n6_qsH-lbidC6SHWSVVhJ8mwpGIo1Us9XKlqUNE1XedVArmgazkgpaN4nixfR_AWG9r68KtHa_DFTOLQswwQ-69UvwshDVhVwgYf81BKBnwXbRzwp6abFXaNbe1F6D5EaMjHLLIkx36P1wGB7dQ3XR3rmBCiTNa2RUAN1h-GOcty3uJpPQ0KAboF4_Wq8M1yKQyMyfXUH5vr93iYryOXLUnk8mZh96udsbTP6UY0Y8qEz3fJ_xT1aPlv0pPexo7OZCRcA5YEk0DBm036A_PKvRX3YyJL92g1R8Y6FjYoVqdEJxWOet5lGy2iHAj8ISNcwZnosdDjPd7yhECUj0sNnLK_u6sfBB2cXW2aTeo_SS7FiIuDoilq3h67rju4aZ61zHf2ujI70O-4JSBpoMu7AtFc6DQFg4ToMD2QnthivR_9GP49DHcv7pVCfRiqdVodUbH7hAEqgejBZIs95OsP_6mVMFzPe2OYqBHn4s2uWPpAXSBorM0-uRs_L-RO9P8HBZzLt6Whme2nMvIhMv_lBKUpjIL6sgUN4TNfHWqStqLV6Val_lVStM6YodeDV_aBC_IbSnaDiM4dh3CUgOaIj4dUVySH6Ldq3-_FsRo0tZiLOXBqA1ycuMIdXVSe0t1hxOKHdjZuvOxu4ZTrie9Mj03pVimt5qbzGHJvW6AveQwVU93jNmwTiiWutgf9JyX_lUXA_HHLMB4F36SWcvUAULVK-_VEUF0uAzwkCvpNIQAnAQmSV0JtSJW06dQ8XNN6ukL_gFK1U9OM8G6byQbzP4geVUmOjz1_f4rKhOMHB3a7IJdHU_avglJymPFNk7tVxxj12GRv9uwQ-oeosTscGct0c2vzMo7AjESR2z0Tha5FEK70tgW0Qj7LZe5kpWIdqNzAXsZQkllp1nvgxbN92xlhck7v0Ow9x_Td9lSkJhS1shUSU36r5WrONyCjJSTwZNU4tFYpt42_gh1m_BQni6Xtw7DXL8JEl7m4FFwpmwU_q6g_mdUPBMznJq-rKNEzxeyRRuBQeA8foJaknLSU41uXbvaK7Hv1zR70wlctqz8a69BPYrACWY6RkuUt7TnQL3r_s9cFZmG04wP6H4YM4k7sTr0KYonWKZ-8lpSto0XBAuMT_c5HXt_pfBi1jjjvQ4hZNE6TFwRvsquVWo3tupHWZNArU4YcagXnjmO-8GB15COm0JE39fizhr4etDmBYjne5vMb3moYydWY1mwmJMCF3CrRm58-tnIgROlKqRGe-5dxwmgNr8ooxu727gaQTCizPlFTXfrxGexG7y8xsUNb_omSZ6o6QHuppadUX9u6LdJ-M3qjmX14SFm1gaXlA2Do-1gxJwQp0kqwUJXYiDdlXLechXRM1zK9gLY_1VMJE5M0fm41DioR2Xu3BxQ2285MJrRETB6i-DIgk7XXs5flaug5exRpgaMH-g2P6mSo01F_dAzFZ-dO8LndZp2wuiA9WS-JuahtWVDYbYePZ_uQn3AMXSdFzk9goInduRIpLM8oum214b0z0zkgobGTwZnFtstoQp6oKc1KfCWLNKTNy5lHZpVD5ZpN5-oyzfVuwqv55inU4qwcClwRb_DDsBv0_bwQ4c9Bxces83x1D1FyulEq5aV3TQS0J5Bsk7XtkChXJHWBNGJ9OmaWrPaRcJFASN4O42vh3gey415wr3YvkYEAGwADcjYvxw9r4FmPcJnJ-racsHxMuP4daKCzC8bSJqs-9yA40-LIprHWlPJELs9cSuZRmtM-TdhQhVi9YHSR-6uLaucoY0R9Fv6wgmseYeg3g21eSgmdkefwBvXP3dHRAIzi448Rxu0N9zQseVpoLHBWa4qvpud06fjk7Jpb7RyGKOAjnDWY3T6ixp9mttDOXGmBmN2QORcRFdBIKjcv7FQleTYHr_LYYwZZK1QEvHRfd-Z7PI5Dp0OFQsQXieNIAdKn8KwKsHEuBs8IHTMWH2Pu8Up161Sy6LKTdTpKkPOHRhbkZ9XaNumabkRHXKlRVZQQtLaaQ3siq1quFs0yG68Hjmpla1_NyqTt531_1TREOTUrqFKfbyGs7SVKmmEgmv"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 283,
+       "start_index": 46,
+       "uri": "https://newbloommag.net/2021/02/04/toronto-tenant-organizing/"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:04.669991Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "uHD3aqfyKPmew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 146,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 146
+    }
+   ],
+   "prompt_token_count": 4525,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4525
+    }
+   ],
+   "thoughts_token_count": 2487,
+   "total_token_count": 7158,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "120",
+   "quote": "No landlord may increase the rent charged to a tenant, or to an assignee under section 95, during the term of their tenancy by more than the guideline, except in accordance with section 126 or 127 or an agreement under section 121 or 123.",
+   "reason": "The clause is consistent with section 120(1), which prohibits a landlord from increasing rent during a tenancy by more than the annual guideline unless a statutory exception applies. Nothing in the provided sections prevents a tenancy agreement from capping rent increases at the guideline."
+  }
+ }
+}

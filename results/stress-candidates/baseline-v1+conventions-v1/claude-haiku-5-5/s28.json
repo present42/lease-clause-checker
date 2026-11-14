@@ -1,0 +1,67 @@
+{
+ "clause_id": "s28",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "b642f07ef5bac903de7bde8fb935f49dcfc05c774e7b9aeaec49385f4faf30cd",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The rent will increase by 2% on each anniversary of the start of the tenancy, without further notice to the Tenant.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:30.258389Z",
+ "text": "The clause is not enforceable as written. Under Ontario law, a landlord cannot increase rent unless the increase complies with Part IX of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17). That means the increase must be at least 12 months after the tenancy began or after the last increase, and the landlord must give the tenant written notice on the prescribed form (Form N1) at least 90 days before the increase takes effect. The clause removes that notice requirement, and a lease term cannot override a tenant's statutory protections (s. 7).\n\nThe 2% amount itself is not the problem. It is below the provincial rent increase guideline, and the annual timing is permissible. A landlord who wants to apply a 2% annual increase can do so, but must serve a proper N1 notice each time. The clause is void to the extent it dispenses with notice, and the increase cannot take effect without it.\n\nVerdict: not enforceable\nSection: 116",
+ "finish_reason": "end_turn",
+ "input_tokens": 234,
+ "output_tokens": 1671,
+ "raw": {
+  "id": "msg_011CgycnsjMhJnFa26snco1L",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable as written. Under Ontario law, a landlord cannot increase rent unless the increase complies with Part IX of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17). That means the increase must be at least 12 months after the tenancy began or after the last increase, and the landlord must give the tenant written notice on the prescribed form (Form N1) at least 90 days before the increase takes effect. The clause removes that notice requirement, and a lease term cannot override a tenant's statutory protections (s. 7).\n\nThe 2% amount itself is not the problem. It is below the provincial rent increase guideline, and the annual timing is permissible. A landlord who wants to apply a 2% annual increase can do so, but must serve a proper N1 notice each time. The clause is void to the extent it dispenses with notice, and the increase cannot take effect without it.\n\nVerdict: not enforceable\nSection: 116",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 234,
+   "output_tokens": 1671,
+   "output_tokens_details": {
+    "thinking_tokens": 1362
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

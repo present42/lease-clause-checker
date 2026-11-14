@@ -1,0 +1,67 @@
+{
+ "clause_id": "s03",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "9fac44bad34050e6453e2742c030bf9013ec4054c7844d85fccce16233e3bd42",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: A prospective insurer of the building may view the unit. The Landlord will give the Tenant written notice at least 24 hours ahead stating the reason, the day and a time between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:26.583587Z",
+ "text": "**Yes, the clause is enforceable.** It restates an entry right the landlord already has under the Residential Tenancies Act, 2006, and it adopts the Act's own notice conditions.\n\n**Section 27(1), paragraph 2** lets a landlord enter a rental unit, with written notice given at least 24 hours before entry, \"to allow a potential mortgagee or insurer of the residential complex to view the rental unit.\" A prospective insurer of the building falls within this paragraph.\n\n**Section 27(3)** says the written notice must state the reason for entry and the day of entry, and must give a time of entry between 8 a.m. and 8 p.m. The clause requires exactly these elements.\n\nBecause the clause matches section 27 and does not reduce the tenant's protections, section 4 does not void it. Section 4 voids only lease terms that are inconsistent with the Act. Any entry that goes beyond the clause, such as less notice or entry outside 8 a.m. to 8 p.m., would not be authorized. It could support a tenant application for interference with reasonable enjoyment.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 265,
+ "output_tokens": 739,
+ "raw": {
+  "id": "msg_011Ch1HwKyTGiSxWGzrGB3JZ",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, the clause is enforceable.** It restates an entry right the landlord already has under the Residential Tenancies Act, 2006, and it adopts the Act's own notice conditions.\n\n**Section 27(1), paragraph 2** lets a landlord enter a rental unit, with written notice given at least 24 hours before entry, \"to allow a potential mortgagee or insurer of the residential complex to view the rental unit.\" A prospective insurer of the building falls within this paragraph.\n\n**Section 27(3)** says the written notice must state the reason for entry and the day of entry, and must give a time of entry between 8 a.m. and 8 p.m. The clause requires exactly these elements.\n\nBecause the clause matches section 27 and does not reduce the tenant's protections, section 4 does not void it. Section 4 voids only lease terms that are inconsistent with the Act. Any entry that goes beyond the clause, such as less notice or entry outside 8 a.m. to 8 p.m., would not be authorized. It could support a tenant application for interference with reasonable enjoyment.\n\nVerdict: enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 265,
+   "output_tokens": 739,
+   "output_tokens_details": {
+    "thinking_tokens": 372
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

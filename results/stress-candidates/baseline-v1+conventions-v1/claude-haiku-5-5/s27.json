@@ -1,0 +1,67 @@
+{
+ "clause_id": "s27",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "5450a1b44b525ce02ef60163746690af00f58874b2b3eaf7bfb8de94219d8fe1",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: On signing, the Tenant shall give the Landlord a signed blank cheque, to be kept as security and returned uncashed when the tenancy ends.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:28.729039Z",
+ "text": "The clause is not enforceable. Section 106 of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) prohibits a landlord from requiring a tenant to give a post-dated cheque or other negotiable instrument as security or as a condition of the tenancy, and a signed blank cheque kept as security falls within that prohibition. The tenant also cannot waive the protection by agreement (s. 4), so the clause is void even though the tenant signed it.\n\nI haven't checked the current consolidated text of the Act, so confirm the wording of s. 106 before relying on it. The Landlord and Tenant Board or a community legal clinic can also confirm the position.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 245,
+ "output_tokens": 1713,
+ "raw": {
+  "id": "msg_011CgycnmAiAcheMGf6yQxwK",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable. Section 106 of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) prohibits a landlord from requiring a tenant to give a post-dated cheque or other negotiable instrument as security or as a condition of the tenancy, and a signed blank cheque kept as security falls within that prohibition. The tenant also cannot waive the protection by agreement (s. 4), so the clause is void even though the tenant signed it.\n\nI haven't checked the current consolidated text of the Act, so confirm the wording of s. 106 before relying on it. The Landlord and Tenant Board or a community legal clinic can also confirm the position.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 245,
+   "output_tokens": 1713,
+   "output_tokens_details": {
+    "thinking_tokens": 1471
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

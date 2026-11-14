@@ -1,0 +1,111 @@
+{
+ "clause_id": "c31",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "66a779e2840f0a8019802e39e8d8beb46fcca728b160beab9246a7b46ba52de8",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe rent will not be increased during the first 24 months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:03.505700Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"119\",\"quote\":\"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed\",\"reason\":\"Section 119 only sets a minimum waiting period of at least 12 months before a landlord who is lawfully entitled to increase rent may do so, and does not require a landlord to increase rent or prohibit agreeing to freeze rent for a longer period. Agreeing not to increase the rent for the first 24 months is therefore consistent with the Act.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4526,
+ "output_tokens": 988,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "t3D3aoPGIu_r_dQP553DoAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:22 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"119\",\"quote\":\"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed\",\"reason\":\"Section 119 only sets a minimum waiting period of at least 12 months before a landlord who is lawfully entitled to increase rent may do so, and does not require a landlord to increase rent or prohibit agreeing to freeze rent for a longer period. Agreeing not to increase the rent for the first 24 months is therefore consistent with the Act.\"}",
+       "thought_signature": "AY89a1-92bqmkDBzl-l36OJvvCZdAp_e6eKNzpvwB0K6q5Z09s1PuGKXtttCL_D5wmiXCY77w-bTzZU4LtonsrFpjbFpLh3xZKp1D_PVQBf6DYF6myIzG7wrocfnpf1k-8mtYmd0Xm9vFV-5INoT7yim3VpXhaHZM2VFfaQwHx1d-INVUEecGD8wkkccijrpUfiauc2E2GDB9z2fd16lWygEqb6Up3S9h0j0EfWv-mNVrGzHjFTukJvryrhQ8CFWYVb-US2kHQarNul1dfgBrZGvMGq9lyVju8aiswTKScu91DxqrrKNB-qMt-0zAfSmyR_PoFsxHEMHbhNSYWwolFm_z9Imbl3wkG4QPQuyprLrQxj9MT57lDl44RjyHWjNLg-halcxnjXjVwL8laNMl1YEkwxY9pm2xR3v1Mc-IK2-_wHJdjf_hpiZAoJWtwU-KDsPh4r3o01V5zPTEGeYrmRxSlLGLoa1_zvLiHfX9EXaMTCXu3nxX1ryC2FZgi_iXAij_XCtcNu_IPe4AeAwyCffPnro0NR9141kcTj4I38-IQYhSg9UEYW1v0cdZny6Sioih4UmQMjLEzOBHwlEItmIdz8lB2Cs54l28glX9HQKmFSRWS3DHgq9x1Mm81YjEznqUBkQzgHj2y0eoHYz1e04Tyvq2wd55-a4gt63NPUQ6rfKA6MfBrtnass2L6fa7vtBf9bivqnUxqzl1RzZsqSTYmGcnnEnz8YUQoJW-UkQIVXFl7lG3ZjVYZRT6_QTizP5hIGbUnWm4pzzh9MBjxJxD2qgg0_56WaOTwH8HdLuIAPVs4L8qDJBdx-mI2dhat7-hxKA6DlLJupXpDfkYwODeQ3hgG9ELp-um_EA8tYvfWxa0iEQ-3g7iEISm9J4wHROCMHblrg9xAxBLDaf8OFAwYplahjNslgPsJ2RSHMeagMlX5Wx2EL8eBJ26WIHbY6I5hwDIdN3Ykmn5WxGDyLrFjpfZ8fE2_rdZ3kUfxNgQIPqd0SsG3hTI1pIgT6BtElb24QVBZ2bgEMQog8e2An5KLqgLzbtD1JSi39iiJbvkVAgll8j_frVfRa4h9UWhXyvbUj1OMghRYd8_t3HwUdTtkzRhnfCyaDS6N4H87vs1XQ4rRBlm5LRAAjXlIOl3RerLFrEZt6QGxi9Rs9xqWAZfX_rBsCIHfMzTLZq91MwUeago3OuXWf8tN8OD5hkEIhQm_nTmt9HrnzFUZ0L6zY1_xKcgExqFWa0LJNIHH-dOOtR_smLw69QvM_WhsfIscT3LoAh9aPNDQCu6AvpTauExhJWcWsS3J3mOrctraOPNnfZ723e0WOhdwZhdGyBVBztguI6bPfUyJNo38_si36d7TbqTUMzelaeWDxoyHNRoECQScwN10wc8tNKDG69RrZ4ZETQNCbAZ--e9dKdb3V1lz-oFqm4LPcMhr1z-iF7PfnJeYEQ9jRfO8n0TCYNsrQCiAZVY3-nWj9RGpDvPEdtmHn58ssJk5OrvasKREuKgn05ziJcZsbZGht9FmRM1T8nxCZTgKSK5OVBp2NJII77nu29b-l1UJ1kHKo7sC3O62NVmSbwaSlt0yV_ERPIFf2kRz2PEzo-PrzpXauKtN1L8W8FLRVMIM1D_3jhgPkmEdlA8OeCIku_3iqp90raSUKGNw60k7nsPI1C5LtpCCvimx0g_CGdol8lHykAUliY_cNe1gEn4YGiKz1iWpBV5xbdgepcS1FDu46Jvx2IIi9xmUVwfQgA8nFZZpDzwdJnWLIfQ_S2xMbF02KWDE7dWZARp_hdFXNqNcAUd-mSXe2sHzhcQmYHcsNS54ntpyixMtuXN7zCgSPzVFgoQWDMXZkCVjfCfWgtwtS0a3YHStenEZTfPx6MweqWS1q0z2VxvzOHeFaAHS3CP3pa_kC3I4uskVX593395EbBJaE34nb2cMTA-ZXknSc9glyFfe9P8uqVGTM6_kHVJUkn_AD-BPgXEzY4HGkfRq_ndZnXwOuTne6u5xQk5BwFCBLgapuCTWBXCQWI3PaRszJXMxIVgF8ZxdQVUDkXKA_3omuMEwneE7_Qf7qSiCNC94VRgxZO_2VIZ_34KpswENeepCUWGxxltpdizo4BXGmKdvflndqpWkXhh90zB8OzTyVkqIBl5H0UVLGiOl9y492mZEogdCGQWS2JDdKEeOKVrQ3ENNCBGLapJsSGJw0g6zrfZYwZFPLa2ElgEuyhkVui2SXr_B8NBht4Vz-qldYXAMENJlrmzG6la4nxHYmPtoO4OL24m-e1VZ_A4MkcnZJ3om8Bs529BYclzW5dE8yIpRbovAssYvk_sEAJOkNKImNpRotJehP2ANZZn3eBH5-o-5CSCnlVjyZswaxevTTg4KnorFom53BG5WYOVH0LJAhV9GmT4W7pq7DFvvELoHfoxM1jRAgs12zVVfddSNG-Sj4Mox3VYJ5mJqhG2-5DawDQ2Y_Rpt9ZXW4MNwuoiAMCHQGsfxjm29dTxp16wEUhHVWbZMe4eyQOFtqDX73Ne1WATPVTnZZv1-NLcMMmMz1m2tUkscdT943FCcUIIwPl_bWi9LyOJaiMH7SQivqLTZ1mUFmryI_MuDnJLjq-suh2-62KhOuqYay13tfO5fntg8YPUNJuSmtMcKMeRwq4fKbrEsH1sMbZRoi4QrgbGqVlgPD30lHTVSEMPOW14rL0bT3Vegz6lFXjuspjpbYpEQ8QjGp03GaLLWz8MhtiTxcjOS5cNOPnnSQTqaIuRxO2LR8UIMs63En6X88zsgjUqx2UFdwdr-ze0QHwHGpHD_DCGOByzZo4fqoTjmDRde9UYgSovvcTjvfxB8lYF-8Kl3awQIHQGJ1XaDMgMs7lRmJeOlpp6NdPOkEntqWn8iHzRsktEovfywSx48XlNtfYYpeUJdRLTy8izwgdvWN_Je9Gl4tHxPnFpPSJHB3UZOdrrn3BtUFc8hmYrHSmuUlSsTUUgQOP5phPRQ1tKRsvp-lpzY1XHmanjoSmfQm2ereuFW80TKFgPl1Sz-LGxubsT_KtEoX7zsx8UqmuOinkgGj7bPBo7SjQDuiGut0d0n8b609TAO8-qD7vd9Q_trAi5guCaM4KjDQ2Mk00d1bFhU3HkYqXWJ4UmBLT0zIg8gip01wL_Ta9D6fEjtLTHOED5NslIKU0Y87k00gL8gWL_K1MFsdhyZSzosWc3FoEcoAIN6Nu-f7YX3Rmaq03wWu0xVhKZ1tIqkbi1u_a7GfPTRGZiOrWOfGELKjBrEYSls55gKesUO-fp6rBNE59DeHUW3uIO8XumIdZccEpJIMjrAyVjEbHywRvunGw8StivfDDiuUqwW1NOwlPFB2Q43_wVaNlkSneERC2NvP9CEP8G-LKidgW9_wwXmxEWLyHmB7xqUNoLPzCnU90djGsNyNGWGKC4KVoYtJXSpAZojw9dMNx5AxWxKvJHqvck05Crq_8k76XxHw_UaEEZ_qbTjXQ--wXgiuOIVTLXTZNBvcKAqPROwSNn6K93jOYkUoK-JZze9ryqLNKjArueVqrJhzBDKhdr0bLxyrnI6ftOf5D1xlrEnFXUiwTJFPHvLGPfg93WaqM_aNMmr2moePMXYGge3bKjD9kMEi_zZUjN6bFJM3cpvYyarpbsYdXfxPMye-kge1ed6DVnzaTdENv04xCQwth30Mii4-Vsq7Dn0wjoC_I0EDWSpf0myPs5cq495xM_30WSEyHbMzPw6ZwfZfYJ56lQkQGInGT-ofHwpUdKV0LjswCdPFdVamEYyZldnnOTvY2E7IN6Xq-k6KgJPGxpRvUu26OaoZ6Z1su2io3--LA2bqdCheQrAlaNDe7bE-6lIeKAZzwZ0rovVHr7jy-XxnFjAEmdifm9fSAe9GKPZs0Nri5oi0T0Vfq56SwnEFvq-lpM1NChI-J-Isx48L_BwqPpoSnCtgscyGQW1l2BQTaCSfqhvnAFGsY_8F8yHP9iFXW_pSZutedqSUGRasc0IvVBWoocvOquET_nqRm1kynukY6TGhSEQO13KkcviLb6_gZmZhWO73SkVc885GA4d1PJaFnLtGDAuvcbZC5peUM7fFPjt2uN0Xu7r2v0C83kZS8gMvrGeV1iY41sfLjQR4KJ6dSJREE4-fMaqRxDsgouVBP96FqWmAcXpv_6j6PbEksVnCON815a6CWSF1Ji9mVJBKfp3eypjTpR1rtQr2ZBT2RK7bEWnS22_lBUKGfb48g-s-lzIcGqiZOHvwkL4havXwRD9HFbCgjMEcYcR_PZUmj6fYLUyCMAV99zmQ_yYo0mIGmLD7lKTagMq4dn9bvROBHUBt2Y-EPr7EXqPE3bmy36yaaQNoPVmN0xVTELS6SH1wG4X1fwWqAqPanWD9VRexuJLhmDv5DThRj1EG8Kbv6DA-HX23m6yFxxgg8L5OE89DdtQ9wTtKdddpU2LIf8LHjUqENNXojdVsO54tYXQkP6Swce_1wxV9TEKeAMvuG1jehx_jvltO8s8Ob9vgxP0Ccd1sEhCDNMAh1xNKfXIYkBqDLCf0iX9hrTwDNPR-OGOKOewQNCYu983JoLM-FMcZ9mreARizId7f8t70-DJVbzbtoNxfY2aY7vDFlEIdi9KlXao2HbP_hnD8rVSVz5SF0QChd6xNWhbqjZPtkZiph6eGVBZJ3YXHYXVvjVbvDwJagMRhX2-fYFoirpilu8IiBzy3Ond59Z18pIok_Clm12jxveHS2rXk62lXfFDb94ofPgkOem9YVnMqtkzb4Qf8HBdajNxRgshjD9y9pprHwpff25XtYfaG0Xw=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:03.566019Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "t3D3aoPGIu_r_dQP553DoAU",
+  "usage_metadata": {
+   "candidates_token_count": 137,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 137
+    }
+   ],
+   "prompt_token_count": 4526,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4526
+    }
+   ],
+   "thoughts_token_count": 851,
+   "total_token_count": 5514,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "119",
+   "quote": "A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed",
+   "reason": "Section 119 only sets a minimum waiting period of at least 12 months before a landlord who is lawfully entitled to increase rent may do so, and does not require a landlord to increase rent or prohibit agreeing to freeze rent for a longer period. Agreeing not to increase the rent for the first 24 months is therefore consistent with the Act."
+  }
+ }
+}

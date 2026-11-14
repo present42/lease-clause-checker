@@ -1,0 +1,67 @@
+{
+ "clause_id": "c31",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "56c343c0b373c82f0510592aeee5835dc5e86d78a39e75a35303778a1b33d051",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The rent will not be increased during the first 24 months of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:59.300448Z",
+ "text": "**Short answer:** Yes, the clause is likely enforceable. It is a term that gives the tenant more protection than the Act requires, so it does not conflict with the Act.\n\n**Analysis**\n\n- **Rent increases are regulated.** Part IX of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) limits when and how a landlord may raise rent. Under the Act's general rules, a landlord may not increase rent more than once in a 12-month period and must give proper written notice. These are minimum protections for tenants.\n\n- **The Act prevails over inconsistent terms.** Section 3 provides that the Act's provisions prevail over a tenancy agreement, and that a term inconsistent with the Act is void. The question is whether this clause is \"inconsistent\" with the Act.\n\n- **It is not inconsistent.** The clause restricts the landlord's right to increase rent. It does not purport to take away any right the tenant has under the Act, and it does not authorize anything the Act forbids. A promise to freeze rent for 24 months is stricter than the statutory limits, so the tenant is better off, and the Act's protections are preserved rather than undermined.\n\n- **The non-waiver rule is not triggered.** Section 4 makes void any term that waives or limits a tenant's rights under the Act. This clause does not waive anything. It adds a benefit to the tenant.\n\n- **Practical limits.** The clause should state the 24-month period clearly, starting from a defined date (usually the start of the tenancy). Once the period ends, the ordinary rent increase rules apply again. The freeze also does not stop a landlord from applying for an above-guideline increase or raising rent under other lawful grounds if the agreement permits it, so the drafting should address these points. If the landlord breaches the freeze, the tenant can apply to the Landlord and Tenant Board (LTB) for relief.\n\n- **Caveat.** This is a general analysis, not legal advice. Check the current text of the Act and the LTB's case law before relying on it for a specific lease.\n\nVerdict: enforceable\nSection: 3",
+ "finish_reason": "end_turn",
+ "input_tokens": 219,
+ "output_tokens": 2276,
+ "raw": {
+  "id": "msg_011CgwRB9x8a7xHw8nhyqzbY",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Short answer:** Yes, the clause is likely enforceable. It is a term that gives the tenant more protection than the Act requires, so it does not conflict with the Act.\n\n**Analysis**\n\n- **Rent increases are regulated.** Part IX of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) limits when and how a landlord may raise rent. Under the Act's general rules, a landlord may not increase rent more than once in a 12-month period and must give proper written notice. These are minimum protections for tenants.\n\n- **The Act prevails over inconsistent terms.** Section 3 provides that the Act's provisions prevail over a tenancy agreement, and that a term inconsistent with the Act is void. The question is whether this clause is \"inconsistent\" with the Act.\n\n- **It is not inconsistent.** The clause restricts the landlord's right to increase rent. It does not purport to take away any right the tenant has under the Act, and it does not authorize anything the Act forbids. A promise to freeze rent for 24 months is stricter than the statutory limits, so the tenant is better off, and the Act's protections are preserved rather than undermined.\n\n- **The non-waiver rule is not triggered.** Section 4 makes void any term that waives or limits a tenant's rights under the Act. This clause does not waive anything. It adds a benefit to the tenant.\n\n- **Practical limits.** The clause should state the 24-month period clearly, starting from a defined date (usually the start of the tenancy). Once the period ends, the ordinary rent increase rules apply again. The freeze also does not stop a landlord from applying for an above-guideline increase or raising rent under other lawful grounds if the agreement permits it, so the drafting should address these points. If the landlord breaches the freeze, the tenant can apply to the Landlord and Tenant Board (LTB) for relief.\n\n- **Caveat.** This is a general analysis, not legal advice. Check the current text of the Act and the LTB's case law before relying on it for a specific lease.\n\nVerdict: enforceable\nSection: 3",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 219,
+   "output_tokens": 2276,
+   "output_tokens_details": {
+    "thinking_tokens": 1590
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

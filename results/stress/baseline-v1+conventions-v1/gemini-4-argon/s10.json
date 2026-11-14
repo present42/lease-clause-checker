@@ -1,0 +1,74 @@
+{
+ "clause_id": "s10",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2982a376897e3972668e989571a2a8c244eaa6ccf52c4653c695c29fe5241d6a",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Before any rent increase, the Landlord will give the Tenant at least 90 days' written notice, in the form approved by the Landlord and Tenant Board, setting out the new rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T21:00:52.456676Z",
+ "text": "This clause is enforceable because it simply restates the mandatory statutory requirements for a notice of rent increase under the *Residential Tenancies Act, 2006*. \n\nUnder the Act, a landlord cannot increase the rent for a rental unit without first giving the tenant at least 90 days' written notice in the form approved by the Landlord and Tenant Board, setting out the landlord's intention to increase the rent and the amount of the new rent. Because the clause aligns with the Act rather than contradicting it, it is valid.\n\nVerdict: enforceable\nSection: 116",
+ "finish_reason": "STOP",
+ "input_tokens": 199,
+ "output_tokens": 125,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "hHr3atGcO8mkyOgP2qHD-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:00:58 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is enforceable because it simply restates the mandatory statutory requirements for a notice of rent increase under the *Residential Tenancies Act, 2006*. \n\nUnder the Act, a landlord cannot increase the rent for a rental unit without first giving the tenant at least 90 days' written notice in the form approved by the Landlord and Tenant Board, setting out the landlord's intention to increase the rent and the amount of the new rent. Because the clause aligns with the Act rather than contradicting it, it is valid.\n\nVerdict: enforceable\nSection: 116",
+       "thought_signature": "AY89a18Ncknn4N2IY-XQw0r8tnHvj9PZ3bfymlMqVHmCQWa7VC_0ObtR5DLSxOq-76UAyZyM8kJhE-rhraf3QCoeOqxMHZ4evFr7MDoRep48kONsSFoARW-jwnbCiNYh"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:00:52.970321Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "hHr3atGcO8mkyOgP2qHD-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 125,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 125
+    }
+   ],
+   "prompt_token_count": 199,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 199
+    }
+   ],
+   "total_token_count": 324,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

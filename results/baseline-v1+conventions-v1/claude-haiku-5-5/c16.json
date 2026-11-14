@@ -1,0 +1,67 @@
+{
+ "clause_id": "c16",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "70db5f03107b1fcc9ebfca1c1ffd85251e41ce79309c423f8f83eeea33a1f0be",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant's dog causes undue damage to the floors or doors because the Tenant was careless, the Tenant must pay to repair that damage.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:40.584184Z",
+ "text": "The clause is enforceable. It doesn't waive or reduce any right the tenant has under the Act, so the void-term rule in **section 14** of the *Residential Tenancies Act, 2006* does not apply.\n\nSection 14 voids a tenancy agreement term to the extent it purports to waive or modify a tenant's rights under the Act. This clause does the opposite. Section 34 makes a tenant responsible for undue damage caused by the tenant, another occupant, or a guest. The clause restates that responsibility for damage from a dog, but limits it to damage caused by the tenant's carelessness. Liability that is narrower than the statutory default works in the tenant's favour, so it is not void.\n\nTwo caveats:\n- The clause still requires the landlord to prove both that the damage is undue and that the tenant was careless, which may be hard to establish in practice.\n- I am citing these sections from memory. Check the current text of sections 14 and 34 on e-Laws (ontario.ca/laws) before relying on them.\n\nVerdict: enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 244,
+ "output_tokens": 2028,
+ "raw": {
+  "id": "msg_011CgwR9muoFNEwQpLBvdKRY",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. It doesn't waive or reduce any right the tenant has under the Act, so the void-term rule in **section 14** of the *Residential Tenancies Act, 2006* does not apply.\n\nSection 14 voids a tenancy agreement term to the extent it purports to waive or modify a tenant's rights under the Act. This clause does the opposite. Section 34 makes a tenant responsible for undue damage caused by the tenant, another occupant, or a guest. The clause restates that responsibility for damage from a dog, but limits it to damage caused by the tenant's carelessness. Liability that is narrower than the statutory default works in the tenant's favour, so it is not void.\n\nTwo caveats:\n- The clause still requires the landlord to prove both that the damage is undue and that the tenant was careless, which may be hard to establish in practice.\n- I am citing these sections from memory. Check the current text of sections 14 and 34 on e-Laws (ontario.ca/laws) before relying on them.\n\nVerdict: enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 244,
+   "output_tokens": 2028,
+   "output_tokens_details": {
+    "thinking_tokens": 1683
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "c24",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "7e9e733a297ee18b1f03f117b2714a8f7c98ee0bf375af6a3b462619b9a31091",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nRent is payable monthly. Whenever the rent is lawfully increased, the Landlord may require the Tenant to pay an additional amount so that the rent deposit equals the new monthly rent.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:27.880533Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"the landlord may require the tenant to pay an additional amount to increase the rent deposit up to the amount permitted by subsection (2)\",\"reason\":\"Section 106(3) lets a landlord require an additional amount when lawful rent increases, up to the subsection (2) cap. Because rent is monthly, the lesser of one rent period and one month is the monthly rent, so raising the deposit to the new monthly rent stays within the cap and is not inconsistent with the Act.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6456,
+ "output_tokens": 725,
+ "raw": {
+  "id": "msg_011CgyJ76bJT2UzhhXDYgBdX",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"the landlord may require the tenant to pay an additional amount to increase the rent deposit up to the amount permitted by subsection (2)\",\"reason\":\"Section 106(3) lets a landlord require an additional amount when lawful rent increases, up to the subsection (2) cap. Because rent is monthly, the lesser of one rent period and one month is the monthly rent, so raising the deposit to the new monthly rent stays within the cap and is not inconsistent with the Act.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6456,
+   "output_tokens": 725,
+   "output_tokens_details": {
+    "thinking_tokens": 552
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

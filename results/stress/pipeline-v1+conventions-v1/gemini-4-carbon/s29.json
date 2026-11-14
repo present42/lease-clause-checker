@@ -1,0 +1,118 @@
+{
+ "clause_id": "s29",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "c5d8f0a084b87d518a290c9535e43e5cbe3602b1133d368c4a0a5b2305359f67",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may increase the rent once in any 12-month period; the first increase may take effect six months after the tenancy begins, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:20:25.957410Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"119\",\"quote\":\"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed\",\"reason\":\"Under section 119(1)(b), a landlord cannot take a first rent increase until at least 12 months have elapsed since the unit was first rented to the tenant. Because allowing an increase six months after the tenancy begins is inconsistent with section 119, the clause is void under section 4(1).\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4557,
+ "output_tokens": 1194,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "CXH3aqX5PPmew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:40 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"void\",\"section\":\"119\",\"quote\":\"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed\",\"reason\":\"Under section 119(1)(b), a landlord cannot take a first rent increase until at least 12 months have elapsed since the unit was first rented to the tenant. Because allowing an increase six months after the tenancy begins is inconsistent with section 119, the clause is void under section 4(1).\"}",
+       "thought_signature": "AY89a195tXbh9X0-HXu1j-bCTYOc7umQYBrkHKNSbp16K_Bhow14CxSqnCHz9m7t4WOhywoefBemyT3jB9oo7lhwh8SExQU1eI8U2uvSITaWdM8jmNpU0fOClSGMPY59srYq7lalbP2CZtTTRUWRfR7kQFe7mHqb4w-nqdyxmm17YjxQqvmZmOUGI8v4wMcLqZh3aFIftrWpUvOe5V8nN0f5djWu7K06oaPFCnmuuZEFM_oeNAsOQHP3_QUicGiOulqg32SX6S1OMzgcCfRIISgBEKS7aJHnjX3U6VEuEhWDvLo6U-S3PBtLNbPxuTyIK8Cge_XzzzKK1aqswpmHHWbSJv7M0SC-lWyblnfTo2GhPrKREFz0xhPshspvUElQ7uK6yXwNQS-J3gDZKHT0APeKTqSDN2-dvStSWjJzxtTExFCPFZ6O5IBD7xezQFhP3LQHEnF4vo1xihNfofAkT-ZDu_b2nFdgC8hhboQtBXYSCt3yvbtsJgC2Clm6vVtpDh9JhNzwQGw1lWI_ybQq_PpeBfqFKqu5xMcwuNe2_qV6khEP9BanhK_4yxxkqyKDdjPlD08xmSMbZ30kWkq3V_oIjK2ZLqbORC7CWeoEXbTnSAcO2hnLELWNp4YBjHLfLACklxG0D-WyBEGkB2kUGTvSynIs-li67jcX33_EB6_F3Y_N9aWNq3EmK8BlKiGnNAwY1cYkTZHmQ5XaIF-3jXECn4HyiB1pIA6xxvDQeuRS3weTRDP88REI75tqBSFRaODN_3jgyh9CFz-0pGHijSnZK1lN9JX72MNnQham4pqKVtLaTPiLWFRT6XMAMetQi7N7i4BJN1es2PBL6ZkiNwbkji0gzXAOd7lJYHxaBuFZXlMGn4W5GLK6dyY8MK-EfcFvRTl-CMkxwEuhZaZBYqsdr12RjPS4qAM9ML5jR4csbJBVtzsjCrJvoFxZRS2PDhqC_TXpjbtB5FjO9_Vdgzw6Hm0jLzOaBLs70QvTZl0Tn-a1UNXG6ofwNbPcgHJbNqDOBXhVw53dNr8ycmaJ_0ZVT8a_1ZcbkcDdZ0FNOOYhCvnHCOkE-0lYWGkf4KL6Jm8MO5bur0Xk55W1EuIZc2q-wrX0g-8Iqw3oOgw8DstttZxoO_PsKiRMl4wTPbFvn1iCGzBZ3VQy7CZ1IR3LJRG05YVqXpBfcyb3kd0g4IDHLFd5x64jaEbRC_532GtAkmCwBDeOpODFsU2WpN5qWUL7XpdfiNx__a74EHQ_HEGlf44zagpNHhGx8uZpL-wZGCsProsopCVSNsU_GRn1Rv_Nq9C1iN-VjQZ_e7ZAdYJXBcSRrbVtTTj0X4Tfi7xNEgOgDEEz9_QLzN2TyusI45USUd0suaGhNoMvCe3TxVCRE_KQN25FLqAnuBMXl3Ghm3cUKGRt1qvEKjA_g9W32qvaCJkERQzkkqixEX5fSSN2jNSskeVKb0qc-aXWd0FPWZ9_i2xbKpBRWFeZB9_IB4wjoRbRGCN3oV4ZuqsooO-SIOdoY4xAezWrkPG5IFRl0B0lwOng5PPrbfvsmhY7w3rAPCfoWX8o1gEj6YqKFKAHFLdCVBu14CJDNpYGT65SrwnYLrQEK9ufwBI9ghaV7uzWxD33XlPhapaBMM4c1K_69his9Z08fOpU7ilE6EuD6lpkwIBQPL36q9F30wGKDcSG99hLpNGcZnjtFubvrq0NWCL_nT7hCPlZJcd4pCJxfsTUE6FHL3l97NjZCUrSVNpPAwojH0IGL9MpLqIWyL7j5PpkJxu4RDWXyMfVwSqg7NRrQM109E3MhwyXsJFS8KaGu3C4UBlz39fvMGh3NfYGfR7k4FKC2146mOM76_j4b1ba5IoUF5ZbWtY6m4HDYx6CSyKQO1sjVXkfHfSqqaRi1ykYu4thK0Kl7kXAYyor-oV1dJZBqWJgO6kSGTAg7bLzHKApI6tISFN0no4ygAQdmb0hRZpIbWZm1XPoF00PgdHRTcOlQPGXFYntIBb2Fjv1U5zBHGIjO9lldZ6YCHNbd3XpWl0QlffYK7fkBTiz3Czt7jjQO_3ID3QupXomg77U4hhewkWAUKDyRIMzxls0R3q91-C7IIeZMQaoRC6B9tMoVqrYbuniHci79rn77OL9kxJaHMiyEY_ekZkYk-Umm332asdx0kcjiJoxe0-7fVTXSPp7AvcOFxWfGfz5N7SrGN6o9bPeGYq8M4O4S8v1tDOKxegawkh_JHrw3pngI09tRpnIH34yd51Ruoz6jxTK3qE5yOm_K93tV5f29X4P8oWdLjeayPI2MY1XRvNJwPZy5geQ-1aJlQW5lrb9Eufuwq_kpXsL4BnUKVHa6b8vszesGoWKFEMDzAdDpyt2lm36l8bNYUx3wBKBjbU7Pq7x0GyvjdvN1Bbu9xJiS-4kGp5zmiyEdjNQ8uuxNeHognCpVEduZoBwvJGaVV_k2p2517ntJrS78beacRT0jFnCLfDp2Hn7LfWCpWMkRdlQhNYd92RosMDMuTGylM-dt7c3pCrPH253WMo1Fm4Tr8tc4SJS0Ie_FYaFyR4IpD9YSDlACgYTV5xAUCYwV7pcYs2SI9wYraqPNY2ggaXA817Dbt51AvhpMbcc_nFYrSdguqiNhT9sasUa1lnxsKInD982mO8-4VhdH1um5Du6oX1NPBNtQvrvLuWPEj9ij-CnzRlJlyseVUEbWfQIRuDQv-ttw-HVR9pw8PRp8dMFPLQur5p1nzmwJWgFf2oUKjjNWANoVx7n4TePpT041wagCIZ-Ern283h03xm53ZtVHMSzhtvaPUBWjN-4t844UN1epmOz5K12eMgBEIJUvmaZK_xLl7fpxGr0xA9VF3b5L_fepTkZluud91AkWN32hn7s3NUZbqx-3UDNrwYN_3qnSMn7WgU8_etOQP8Kx-mWrBlZ_skxFQRk4nBPhNJD0p9AxCzMNXVbGybnuKnutvh1BTcBIZNUaI-T8Xe0Zj2fV0nN9aXGwms1nGcaUfjLPkVJXh8oYDOfvCEkUeIAOBf3Dl-tu-SZB6oSbDKQT_Z5e59pVyMZMfXLDvT754VP7kNHF3mkPT5a8yZfI0H2CJ5aZpULH_HiAWta4qnHudL7rwGdkat1wJwAqaEVUSP88u0SYuSzk58Cs7MSkqYkh2D9_0MiwnJgqCBLklbkdp0Wz8GUBed2jEMR5dE4dKd2_8oXoOiauNhzLAIbRd1_t8Q3cqcFbzrkfdsfPf2bmMurlzdram-7ndVHD3rTisQmp_-7Li19cL1zOD7ogQinf9ZE51IFlykn5LQQ2PlfcaWEqCwsL5UpRJ5jEP-am8HfaFBJmVtDAR1H0uY_ZGXnZfiDNN9sYyvgVU4Z7p_fWZSuMR51Tbu_YzlWt8mNzXi6xe-26VDwDUwa5JNBzZVWQoGuGbYTFHew1At9Ni1IkDn45lq4zZBkPW5YafPX6dkRT73wjZBRUIf4zWXwKNuqqrVwoIqLMEW-zPSGE-DE-8xY3MrA6W-O7OnmKYkKV2isSHCIOjD4Pcs6R279_2ZOWU3PX7L7c3My9kOrSyaHvj0Evh8sqxQgRBNDkZROfvNt6H01sxa4XsX5KkJ3dHwghgwkStRub23GTSmSbECybpuFNm8VXhP1Xfqu-P5g_Eq6-0p77katWrtAxuupBjUGk89qeDE_8yumBEjzF7-9Gqy0NeLRwxpdJt1zfS9PVX3nV2eNXOwRawsyugKUM89e_opVjCZGkaH97xIYpGPrYlh3U5Y9SDYktm-ALXuPYacdWxgwJlx-aM1AIOBdS8EKTbH9InEPn89YP_26ALUcxRTiiIcNBeMjvftJfo4pk_o60fUu4eLQyvlvuA8UkPlxhvBGeJH6eWC2NsvJbweexywC48hOCehJhIAELg5ElRVdQhzOE-eLhaWoiU3ujgPFjMqpKZP32hSCmD9xNBa5j-lyBLC38Cn45yYheu7Urx1hlCIUK1CbElY9j2QQYx1rup77btcAAFKEvRrKRVOSiIvj-oHeCAbc3QKj7LSaY0b24JIyjxQF_zfP9KIPsos54SdXyj-i58LZnrpnVk2l0r1HKOx9Pw2nMztSuQEAypA--Cmkxh94QpoyQ37tgvtkzGLbP98sl60bAy5vrT-IlEt_XtKMbeGnNeTfXbK5pYC_Et2to15nhh0zrEbMssALJxwUFzbwtCnPWps2dGAJ0uRISI0wQs0djDRHToHlPRocEjbustj3A5mXemP5WdGoT9woZ3BCllu9g6RKJtPiPDSkPEVm4mgJwDRuplp3wJqCDIEUIYqE2tbK5EBlip-s2HRJiw9rSSfVOL8nsLs0z-XWRsgmUW8saY-wvgPC51Dg8JIOtdEhncpAyagspUtVsVjFnOiPT9s20I2NLhPjndYlZtpyokh0s2hPMiJ3lmfSO5K_uwI2EXwDhgleA0Ie_SC7x7H-jxZAGm6s5EcUcJsDC2NScxsoUNro7YqSNMmYbmGF0Uoh7v-QuTORrN36n__3t2R9lfoP2YL4YmpQ9iXmKkxQUZNgRxaK6I8NQ0GphHDSe7sFyGbZ_p1IDRTTm0n7EnSqo76NUSzksSAr0wvCin8N1z53gDdIMCJT5EkWUsuOFdNJ2DTjYh6aPl9ZnfMbXIwM4e0NjGsQCs4esrBuoImFhxyT-SZrsh6JhA71ovUpLRJZEPq8M86IqVF3mH-OzB1SQU0q5jpwKIUBIF7-Qg7Rb4pAeja2hKN_vgGbtqdW5BGJVpq2JLWWd6IIxNM_lTIfbSN9EsFwiygvW-IY__dRpM0WhgunFXTva4L1AbIgd3d9jko8c6Hh7U5wmOeyjziVZqUGwIXZoWxUK3PzlGKRW4kZeXmwa4lQAYyc5KXqM85vJhfZ2r1SHh69Xox60d8VufaIoZD31XWDQ_XNKrR6jbYCRrCMKd7gEUm8I5qKZPZrPzfYQaOrruxRwuvQ_t7-gDyGT6Mp5F3R3Om1i7bBDAYr1JDMu6vxBWHVmX-4MjnD9dm2TDzbMX8wiXDhLeGyPDOLjVrWKTR6XAEd6GjWsqzuQ5Xzo8RE-2pZw9wLH96__nwXsiVb6x8KTftmj2APFfdNZBWMQ1fIaqQjHZJCqiHHWspz8SlOgO1EM2nNlIvRSh_eq80HOMia7MTCWKr0XjDWKMrzdR3cXjaw4x3cjm9jbMFjpjI1XT_b0e75bJJGM2xQMkyMuDrZoSA7AaUahn4FIM6NVTY1Z5pDdC12zHJ2gXwL8zYnvn9LMjLr1zxqmC4nevYFKp4UL69oq3acgTTbFJGOPsK5ezAqVtKj6cfgr6z5BgGuIXmTYGJc9mV0iVm3Kw76uocax0a23WyG_X4_sMj-BFIIwyP4EthUkE4PA9n15s0uLAknN9iBUiC72auFxwxHqKa_xWXVryKcBiikFkKlfRE4upIvhBkMZGMi9QLtEEA4cbv4FWSpnNpgI3EplabDk3SUxkVzcRYdohTSwoYNirBjpVhkCOv8EMsaiS8PgX0Z0m8Rs9ZbbOuawkb8VPLsDH2TE0QxgyVTOILQBGry_7qsg39kEEBeIYi8zY9ZV1zKCoWs4vs-44sQnEpv7YfTJrDyccZ4i2_RSs-JkZUKW_7MMUKJ3zZU2mbk2ZFu7pvLFLsV_sAHZPFO_C_NUh3IwUwlU14K3n49aVNEsXQrkgIflH7D10WazWADAgz3YJ2j8UtfzfEoogQWKz-8vsENtpxs-76Qmt00LU7jCtTYIPwgJbGit7dK27z-hXwiz5jPgqpL9tzZCrone3Uyq9faFd5GgxHQc1TN8m9jrkx76IUzw_JHc7RCzXlo0jO_eXc06Z-34tT_OoxefRFEpB3JU8YoUgZ3y_n8rAMcIDof6fTQuzkSZiBiLgEZEt3Se41sYIaM1C5jpKLpCig2"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:20:25.998565Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "CXH3aqX5PPmew-UPue_u8Qc",
+  "usage_metadata": {
+   "cache_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 2504
+    }
+   ],
+   "cached_content_token_count": 2504,
+   "candidates_token_count": 133,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 133
+    }
+   ],
+   "prompt_token_count": 4557,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4557
+    }
+   ],
+   "thoughts_token_count": 1061,
+   "total_token_count": 5751,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "119",
+   "quote": "A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed",
+   "reason": "Under section 119(1)(b), a landlord cannot take a first rent increase until at least 12 months have elapsed since the unit was first rented to the tenant. Because allowing an increase six months after the tenancy begins is inconsistent with section 119, the clause is void under section 4(1)."
+  }
+ }
+}

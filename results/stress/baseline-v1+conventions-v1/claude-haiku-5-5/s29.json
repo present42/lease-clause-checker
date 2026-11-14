@@ -1,0 +1,67 @@
+{
+ "clause_id": "s29",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1d501c62c83de9b31f4c9ebe81f0192f0fb16a27399160697885aca72cb2e30f",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent once in any 12-month period; the first increase may take effect six months after the tenancy begins, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:22.552095Z",
+ "text": "The clause is not enforceable as written. Its first-increase term conflicts with the Residential Tenancies Act, 2006 (RTA).\n\nUnder section 116, a landlord may not increase rent unless at least 12 months have passed since the last increase or, if there has been no increase, since the tenancy began. The clause would allow the first increase six months after the tenancy begins, which is earlier than the statute permits. Under section 4, a tenancy agreement term that conflicts with the Act is void, and the parties cannot contract out of the Act. The first-increase term is therefore unenforceable, and the landlord cannot rely on it to raise rent before the 12-month period has run.\n\nThe rest of the clause is consistent with the Act. Limiting increases to once in any 12-month period matches section 116, and 90 days' written notice in the form approved by the Board is the notice required for a rent increase. The defect is the six-month first-increase term. Even so, the landlord's ability to increase rent is still subject to the annual guideline and the other rules in Part IX of the Act, and the clause does not set an amount. Section numbers and their current wording should be checked against the official e-Laws text before you rely on this.\n\nVerdict: not enforceable\nSection: 116",
+ "finish_reason": "end_turn",
+ "input_tokens": 264,
+ "output_tokens": 1513,
+ "raw": {
+  "id": "msg_011Ch1Hw2pKG9GceGkXVNens",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable as written. Its first-increase term conflicts with the Residential Tenancies Act, 2006 (RTA).\n\nUnder section 116, a landlord may not increase rent unless at least 12 months have passed since the last increase or, if there has been no increase, since the tenancy began. The clause would allow the first increase six months after the tenancy begins, which is earlier than the statute permits. Under section 4, a tenancy agreement term that conflicts with the Act is void, and the parties cannot contract out of the Act. The first-increase term is therefore unenforceable, and the landlord cannot rely on it to raise rent before the 12-month period has run.\n\nThe rest of the clause is consistent with the Act. Limiting increases to once in any 12-month period matches section 116, and 90 days' written notice in the form approved by the Board is the notice required for a rent increase. The defect is the six-month first-increase term. Even so, the landlord's ability to increase rent is still subject to the annual guideline and the other rules in Part IX of the Act, and the clause does not set an amount. Section numbers and their current wording should be checked against the official e-Laws text before you rely on this.\n\nVerdict: not enforceable\nSection: 116",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 264,
+   "output_tokens": 1513,
+   "output_tokens_details": {
+    "thinking_tokens": 1115
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

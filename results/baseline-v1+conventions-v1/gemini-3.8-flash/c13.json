@@ -1,0 +1,75 @@
+{
+ "clause_id": "c13",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ca4ef1f82b87f8de7735ff5885b3232acd9530b5aaba42dcf79001ba93069e36",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord, with its contractor, may enter the unit to replace the kitchen cabinets on 24 hours' written notice giving the reason, the day and a time between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:34.672827Z",
+ "text": "Under the *Residential Tenancies Act, 2006* (RTA), a landlord has the statutory right to enter a rental unit to carry out repairs, replacements, or work. \n\nSection 27(1), paragraph 1 permits a landlord to enter the rental unit upon providing at least 24 hours' written notice \"[t]o carry out a repair or replacement or do work in the rental unit.\" Section 27(2) stipulates that the written notice must specify the reason for entry, the day of entry, and a time of entry between the hours of 8:00 a.m. and 8:00 p.m. Landlords are also permitted to be accompanied by contractors or other agents to perform the work. Because the clause mirrors and complies with these statutory entry provisions, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "STOP",
+ "input_tokens": 177,
+ "output_tokens": 970,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Qm73aruiLq6dyOgP1emZqQI",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:43 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006* (RTA), a landlord has the statutory right to enter a rental unit to carry out repairs, replacements, or work. \n\nSection 27(1), paragraph 1 permits a landlord to enter the rental unit upon providing at least 24 hours' written notice \"[t]o carry out a repair or replacement or do work in the rental unit.\" Section 27(2) stipulates that the written notice must specify the reason for entry, the day of entry, and a time of entry between the hours of 8:00 a.m. and 8:00 p.m. Landlords are also permitted to be accompanied by contractors or other agents to perform the work. Because the clause mirrors and complies with these statutory entry provisions, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 27",
+       "thought_signature": "AY89a1_gp_Hifhf7SLmbdNeFm0z1SoBT0VxOekM3QkZdb6P-APGCDMsiIYkcnKnQ0C5WMTCYYlaNkJxyMMXX659mMP-DLjqiUA5e3vbU0hpBU6cFB-ZD7DWKCRuMOo2-Dfm3D-G-qeiDu_X5TDA0eGgzftUFFTeoVjSezwlLTw6Q6hqGYYT5WO8g2Y8UDL8Uj7OMlH1SEmRhLbgatJNiQjL2e-pqouaNdKaAIUzYSimnI3qhz2VG6eVd12e5IZw5A7tmIRubQ2-Qi9g5kasL2lYFxo20zLhyY8mxf6O4Q6beKCwoE3he_eFRsIqFPZwfoBSjdRQ9y_CxVeQt4Dt14AHtheNRMppcyI3xvwLCf3O03QQoUEPf3ARoMyihI6vUIqCXw62bNcpqQVAkDsV-Zj0bAUOwZ9rG4wWCnn71jB2WVf91r3YC0iP2wt9-MqdmjGl1fv3OXspIulHQUPfpAhd6JXOJDoyxsY_7pUWceo6rYy4N6uA2B5-d5WfvlvYEmSCrowyWIl4LKP6b8plbj6Obce4ELCDVA8LI8ANNwoHqveyu9glaBD9Uk3WVUxZ9Gu8fKYyMpZ2xQXzPViwMCFbPVi0QFCKsj0NkrGBhn5I2AkIGDg5iW5fIwZgEug7QbTRb1lkX2xRQAjFoRK-rgSMuWb7DSiKWOmDx-Oiio_dzhqc7p2QBX0UuwhlhIVGWK49MTVT7TN5MgwiV1IbQCV4mHKpWOT_5wRPJIxRqkm7zMnrN53oPzLrQR2OL__vSiWCGxRqoG9JPd3xVlPPk3q_tGoaWRkTG-BV6_9xHvMA_aLvLJv5fb140Y1amrzgBTsi2XMKViT_YLiduiJ4BUOtaYeROcBfcfCsUBX30pxHbWHTWMbNxXwqzcjNf6h6T6eIYoGLuE74zh-_xQPXhjaHxLZuk-_UnmawP3SskImyL0CaVPffa3eY4fxrsC9ujOVCDXgUY0lImbKzALmAGOQsAhzWs3Om1apT3lttj8Vv6NvKGINSEAli9koRBCp740daqcvONSYcvkdmJVTuXECJrUC7P6yQzh1_ZT7145VaZUwhTPxty6LWi6er4aoSFur8TKJzzC7EirJIA76n248TC7e4_5xINj319y2koqdSr_y8NFoJZX8iGm6Vz5m_WdCD_qkmGq1jESw90Zd5osTvBkWPTQklVJH0Rhc3_om5pxAnZZjRJCUFHO5PTEMKJmpNOXbmAAQB1r8ChAMA3H1vESyXL3tG8fi2dXF_UbLjNT8Sbt0n9SDQIwW9YY1VFAbj61UM2nMgy-91Xgh0-9qR7T537ML9F_UjfeH7YWeS7Rrw76YlTbU5sVk-NElvFNeVYgOa0WRL9VD2Yg74MubyX_u4U1A6gGrV_n-gCXqUSdyZqkJcc59LH78WOKfzSZwEtwZz1AVzeRfzUszWkVDj6A2UUPwRbYQUGDwwzR6d7zDKvGnWXgfdwApYA5xOgROdvXtbtkh1eWb7sY0x6WuOC6QQzXi_qbbqNZqqBd13zl4WfMNty91Z_9iPIo-d00pOo9KfWDd7NkgTH7ud3-MZKJ8tr6AmEl1tXSqr1kd8mwgNlkJmjRDbtTGsSXkdCoUquFn-I81t1NvvwnUB0EZc9g_ozdfM6b5d6Dm9zJHCk1VxAowQ6FqaGoQKvpOpaf4Hbi4yBljAuYGXQrQVlKyijLsCgr9PEAIoJ4EZkTk76l_mHT23paH9m73ugFkZszksYMhUJM80mcTRtdVkoebH0BsGBQ25v3kPH-z0Ttt3DthuaUPyMABsjbuyNtpg4Nv7Aep21kg3ZWubIqOtlkIMT9iMn8uAp0OKQEwC0cdJCmD9ChW3WCPAeyXi6pmxbh-I8tNm4A6RcXx9aEwembJ4DBFjrNDyeIEw4_S4bslUdTo9sSU_8hBqjtwlLobZOgmDrG-NaoLR0TmsbWs56nyUZDvl5N3b4It5KYIIc_Bz9t9RdHZHLlR3v1fB-mynb-p3zwj7QTp-cYWWRIvImuv6sfcNBl4GiY2fXS1gWoZGMhNYg0xgf1NabQOIYjxA5_dIWL330tWDbyx6NuUKFAbCKC28MQH9THqGcfzx74Y0hlVjse7hUTIWX6nHCftTDeooYWxgu2w0isWNJDMs0GGLiTuPgwcDYOD9pZUQKY68ep4jl_pJKcmlfH_R00pX5ayTOBIPCadgAuAaHp2hc_Gb4yyxZa31HwP95nc4_NOTcjouXB_F3Eg-ebCMLqkxAXaeBogr3WT2Bc_XhRiq12ds_R8_bbStE0PRt0Vv6A6Wo4VGGp5VBYdsMBClulwxD5yOgPG2ZKwKUtqHzTxXElWSFPCZIB1gvwNFGuUGus_M-p-umUupjWhuPPzdlWjU5nxYpcMiTHURYT_2Y5BhKuMwh6dtzuHGe3ZQBLCr4hpgT9JjX7lbi0oEBYr9m7-r3GZwgsPxqMBPMQ2RcRje2VOGOU1Nusvkm8aEM2DfCgNjBfylRLH9TR-TerpwhmhI6QH9jWuoLMjgsLshynNDtoXiXyaYyntd3FHsd-T9_p7XbQ4CKpS56COH7Tkdt_QZfrKOETJ__A_zlS7oOLaHA2s76oieX-DnsnCJAKbI4CEgwxwMjhpmztgNVmONFhsE0LdGOmn_mGVNjYHOxkVFSL-ZBOpl9dW0I1gYFd22FsFBupyJ7rvmWq9KDSJlA7VUUEABR6YAcDLqnZplAKtQ3N7EFpv5qNH6zV98XGKboYQ7m80pbtqfkkCxlkzogUcbzv8QR90mIDEf-xLavg6wOXpdxzIHEn8HbgMXg8UFY5Y7hB7PApl7mbrb1x7oVuPeRM_uwuFSnP0GKTk9qRnbEl-pGgEl99bCoxuJGoYmbWQaAi3c7TqX5QSupdk45hVknIdd82oBEVyQUqTAjbfUo3eECaBEHneWSTKOzRpIPDPJxWRZ2U-Njb47kXfpBkxVIJDzy4maDx6965J4zPp2AKjpUoA_2QJ7eepLdhoIagmrUkBkskFL7S-iL60lBeKe0QUsHHMcom8KZL-BrXPvkjV2x-bP7HjAxegoTNc8lLaVfc99xwJMD_UKhj1AlOUytzwxX3O_Cp1gtyk4cTOS3evUOfXzeiMD8ZZGTS-twfJevQpa79Cw7JK13O3G2Fz8dtkk8DKeE2Z0YW5Oizd9G01g-8eVfbfoJako-nGlFQpD6rkE6tDVEifYV4y_m9RsBINZaz_p2E4h3gKn5L96zAo79UqrssrbsX4Uu4o9iu9KJpZ4lBN-CavHGGA8nCrDiEMlq1ebAV7XAM8vnaA_kbV7T-WVGiyiXeQ3yLIBWow3aoq2vfeUABeeInQ8pCyep5x0IwC65w1DgdbYHh2Xz-1ZD5JjoB8_ejpOTCYhLS9aB1hgN8QegcBDBLAl7pdgT_pSQpEYNMhaLHeYS5HQRPjZh_y8FxYnotzlmHzzVNF_Gm0qlwpvFkd_kkrUINtyZHvgU1v8Zx5u1Wc4GROEb4ui3r7oTmY7eGDB4-66ppdwx3eJphon2l-YfmJ51aGE0c08G-3FujA0TsWe5b9qzlqI9zdnztsq9Cuxlhxa_lpdizvMq4tlMDY7Hif21q1BjL-coA4MkaePWZNN82h2NmjmIqCHKcslLhuOGMd7n-6zbirB3M2IrWlatBnGerASvm73UnE6FrxZzvjQl7uhAxtYR1wnuadxjt8flt4A92oLcOpll211dv1GQIOh__uSDzBga9ObeI4cvMR3x09OO3o21r8uXxh5US_ni-0SanYh61ZZN-ObZiSJ8i8j161fs3f4cRtW_iilaVeqEdzQHqqoo-tttiLDYHbCe4luW-DeY1GaX-ES0nW7eRagdq39VM9zRK8fVkxK9Zz1kOf2zFIuzGx_aarffds8q4-_54l7XLEgvggTDTKg8DFGe0UOkYwxQB9LEPMsr3H81kFDj3QDt9hzf7sJ4RCEHwPp0zKIbfsY7219Pr8irx-9xraAKnemo1BnX2FR0db7EyeKauA7fwTOIKGbKrL6CJqwiu7RcXbU1KVmS2NWh1OGYGPfqLZSTW5JGzf8QjG4_nbT0REIgw2kMHXW6MdPONYDoR5K-S8LAejOeUPzsH3SvaloGGxUubFgBNNpBEjR1024yhSD4ix8J9AAY2mfES9sikCrlxWRoGvy3tZCXNM0_XRf9cJJ3pXCVxDXEumjDQ3zl48gZDRUam3AGWhyyekc49x53SpSl8tqOSvDnJ5yhnMcUdlt1Dc-ZRMIoxzhPfcIwn5wr6g=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:34.758075Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "Qm73aruiLq6dyOgP1emZqQI",
+  "usage_metadata": {
+   "candidates_token_count": 186,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 186
+    }
+   ],
+   "prompt_token_count": 177,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 177
+    }
+   ],
+   "thoughts_token_count": 784,
+   "total_token_count": 1147,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

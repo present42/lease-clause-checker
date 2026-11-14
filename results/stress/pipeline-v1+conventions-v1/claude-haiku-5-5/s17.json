@@ -1,0 +1,99 @@
+{
+ "clause_id": "s17",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "3743c5f39c5c1a1be4283562c367edea1ffc8eb97d9432d42be3b5bfc51a65b1",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the rent is paid after the 5th of the month, a late charge of $50 becomes due.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:54.170451Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"134\",\"quote\":\"collect or require or attempt to collect or require from a tenant, prospective tenant or former tenant of the rental unit a fee, premium, commission, bonus, penalty, key deposit or other like amount of money whether or not the money is refundable\",\"reason\":\"A $50 late charge is a penalty or similar amount that a landlord would be requiring from a tenant, which section 134(1)(a) prohibits, and section 4(1) makes a tenancy agreement provision inconsistent with the Act void. No regulation prescribing an exception was provided.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6422,
+ "output_tokens": 981,
+ "raw": {
+  "id": "msg_011Ch1HyMs6su8YqzCUxjnpr",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"134\",\"quote\":\"collect or require or attempt to collect or require from a tenant, prospective tenant or former tenant of the rental unit a fee, premium, commission, bonus, penalty, key deposit or other like amount of money whether or not the money is refundable\",\"reason\":\"A $50 late charge is a penalty or similar amount that a landlord would be requiring from a tenant, which section 134(1)(a) prohibits, and section 4(1) makes a tenancy agreement provision inconsistent with the Act void. No regulation prescribing an exception was provided.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6422,
+   "output_tokens": 981,
+   "output_tokens_details": {
+    "thinking_tokens": 787
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

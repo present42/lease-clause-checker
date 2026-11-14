@@ -1,0 +1,67 @@
+{
+ "clause_id": "c01",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "053b475985429cca865d90ff2bf7150e162b9bc9a4d8d1e312156aaf5e3deb42",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: No dogs, cats, birds or other animals of any kind may be kept in the rental unit or anywhere in the building.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:10.515871Z",
+ "text": "**No, this clause is not enforceable.**\n\nSection 14 of the *Residential Tenancies Act, 2006* says:\n\n> \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\"\n\nThe clause bans all animals in both the unit and the building, so it is exactly the kind of provision s. 14 voids. The tenant signing the lease makes no difference, because s. 4 provides that tenancy-agreement provisions inconsistent with the Act are void, and tenants cannot waive their rights under it. A landlord therefore cannot evict, or apply to the Landlord and Tenant Board to evict, a tenant just for keeping a pet in breach of this clause.\n\n**Limits worth knowing:**\n- **Problems caused by the animal are still grounds for eviction.** The landlord can still act if the animal causes:\n  - substantial interference with other tenants or the landlord (s. 64), such as persistent noise or a serious allergic reaction in another occupant,\n  - undue damage (s. 62),\n  - a safety risk, such as a dangerous animal or a prohibited breed under the *Dog Owners' Liability Act*.\n\n  In those cases the ground is the conduct or harm, not the no-pets clause.\n- **Condominium rules can still apply.** If the unit is in a condo, the condominium corporation's declaration or rules can prohibit pets under the *Condominium Act, 1998*, and they bind the tenant. The lease clause itself would still be void under s. 14, but the condo corporation could enforce its own restriction.\n- **Pet deposits are also not allowed.** A landlord cannot charge a \"pet deposit\" instead of a ban. The only deposits the Act permits are a rent deposit and a refundable key deposit (s. 105–106).\n\nVerdict: not enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 234,
+ "output_tokens": 1116,
+ "raw": {
+  "id": "msg_011CgwR7aAJtLM9i8EHXk1Fi",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**No, this clause is not enforceable.**\n\nSection 14 of the *Residential Tenancies Act, 2006* says:\n\n> \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\"\n\nThe clause bans all animals in both the unit and the building, so it is exactly the kind of provision s. 14 voids. The tenant signing the lease makes no difference, because s. 4 provides that tenancy-agreement provisions inconsistent with the Act are void, and tenants cannot waive their rights under it. A landlord therefore cannot evict, or apply to the Landlord and Tenant Board to evict, a tenant just for keeping a pet in breach of this clause.\n\n**Limits worth knowing:**\n- **Problems caused by the animal are still grounds for eviction.** The landlord can still act if the animal causes:\n  - substantial interference with other tenants or the landlord (s. 64), such as persistent noise or a serious allergic reaction in another occupant,\n  - undue damage (s. 62),\n  - a safety risk, such as a dangerous animal or a prohibited breed under the *Dog Owners' Liability Act*.\n\n  In those cases the ground is the conduct or harm, not the no-pets clause.\n- **Condominium rules can still apply.** If the unit is in a condo, the condominium corporation's declaration or rules can prohibit pets under the *Condominium Act, 1998*, and they bind the tenant. The lease clause itself would still be void under s. 14, but the condo corporation could enforce its own restriction.\n- **Pet deposits are also not allowed.** A landlord cannot charge a \"pet deposit\" instead of a ban. The only deposits the Act permits are a rent deposit and a refundable key deposit (s. 105–106).\n\nVerdict: not enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 234,
+   "output_tokens": 1116,
+   "output_tokens_details": {
+    "thinking_tokens": 509
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

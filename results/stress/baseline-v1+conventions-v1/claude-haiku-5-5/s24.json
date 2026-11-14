@@ -1,0 +1,67 @@
+{
+ "clause_id": "s24",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "a240ee0c0d3ea5c399a233591caac11f27f0be6fbdbdf406458f84a227e977de",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant takes a job outside Ontario, the tenancy will end on the Tenant's last day of work in Ontario, and the Tenant will move out that day.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:20.984785Z",
+ "text": "The clause is **not enforceable**. It tries to end the tenancy automatically when the tenant takes a job outside Ontario, and to require the tenant to move out that day. The Act does not allow a tenancy to end that way. A tenancy ends only through the Act's own mechanisms, such as the tenant's notice, a landlord's notice on a permitted ground, an agreement made under the Act, or a Board order. A lease term that removes those protections is void under section 4, which says that any term by which a tenant purports to waive a right, privilege or protection under the Act is void, except as the Act provides. The tenant's rights to notice and to termination on the Act's terms cannot be contracted away by a clause that makes the tenancy end on a job change.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 250,
+ "output_tokens": 1597,
+ "raw": {
+  "id": "msg_011Ch1Hvuz46wFMKArrGQsda",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable**. It tries to end the tenancy automatically when the tenant takes a job outside Ontario, and to require the tenant to move out that day. The Act does not allow a tenancy to end that way. A tenancy ends only through the Act's own mechanisms, such as the tenant's notice, a landlord's notice on a permitted ground, an agreement made under the Act, or a Board order. A lease term that removes those protections is void under section 4, which says that any term by which a tenant purports to waive a right, privilege or protection under the Act is void, except as the Act provides. The tenant's rights to notice and to termination on the Act's terms cannot be contracted away by a clause that makes the tenancy end on a job change.\n\nVerdict: not enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 250,
+   "output_tokens": 1597,
+   "output_tokens_details": {
+    "thinking_tokens": 1342
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "clause_id": "s01",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "3c8956f68dd331e7ca83b0bafd3b902d35591fbd2f1d450761147caf8beedaeb",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may come into the unit without written notice whenever the Tenant, at that time, agrees to let the Landlord in.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:58.538436Z",
+ "text": "{\"verdict\": \"allowed\", \"section\": \"26\", \"quote\": \"if the tenant consents to the entry at the time of entry.\", \"reason\": \"Subsection 26 (1) (b) explicitly allows a landlord to enter a rental unit at any time without written notice if the tenant consents at the time of entry. Because the clause matches this statutory rule, it is consistent with the Act and permitted.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4534,
+ "output_tokens": 687,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "7nD3at-cJPzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:11 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\": \"allowed\", \"section\": \"26\", \"quote\": \"if the tenant consents to the entry at the time of entry.\", \"reason\": \"Subsection 26 (1) (b) explicitly allows a landlord to enter a rental unit at any time without written notice if the tenant consents at the time of entry. Because the clause matches this statutory rule, it is consistent with the Act and permitted.\"}",
+       "thought_signature": "AY89a1_YK73HL5qwLJGakyRG3v4vICR55l968pD_L_TY6-C38_BAvl_lzekfub9dRfv7rq-Q-Uf31IU48pj_BXhLvZy5MfRvfUIv7UM-Ak-QE5YYl_cO54YnFwjHycIxBGudf26_eC1GxyGjHEaEcQBgCqagYwNy5fb4Jj7YwSikzdxEYzQeZIM-32ZnQaCeMTMRTX9tBdMBMyuPJzEVx7aY2sXcEGfnlIX4QZT5BsIRR0gY0V_7NPBJnUKxmBnIb0qK6PSogSFW02NyorpPe-NG6sPjSHMhWSx5BgMpTuTPFarKCNiodI1hGd4-V_V6cawbW6jx7lKjIdQ5yCoyLtSRpneR01Km_wtw3pp5Sh2sPswPMCSGlqUMKN30VkkxI0GWispPQEugdXuIxYtEqJ9GIdxvDLYj1ZIqCaO4ItbYASXm-ztMzuDONGyAYspFQrxS-nl6BJG_x9cdQREYnpiI-ERpKicD8lavKFuCYBjvRb62UccgDvtDDNy2IJCI8Cv44zhAiR7Q_yxK4P1j_IvDj_2nCKlifylkWssMG4RKJJ5GGyImzsLqdyaxl7Sh3yBXhHYRwvMsY_z_3eccA_7iv17kS5Xb-2ObG_l3jTlTswE4lclZPHMADkMBb3FpWTV3vv4LJt9JqUc-Iqn_CoR28tqMQlQ-E68S1bJFS5TITyvZ1p_AGT2kpQV4gUG1iW46BRtTEvGpN5gs4lUXIIfyMKyFOOSFeSCOzciileAnoiYpXyBNQr4GPF1LZMyJ4IoKx2fLaWIEplziK8T4biZEyZ3C_B5rpPXFoEcu17_oAcz9e79LvhGB6akYkgyiMkK8g3kIneGAIbaO14YDE2A81FzNHrN-vbIU3P2LsUjyExXLC6t7q3Th3RbHkfkdTokJJWQSVSbotG2vOkm5cL8_LM0XPeKNDLoYiWYN1KkRj2BlZ0NnpHJna3axIMxxiF5pQetEcESO_STjCz46-kuEMlueWRuXjOsaTZRMzE1SpN71vA8qaiVPgp9CWrajF_ve4iYvYR_ntH2xZr3UWJ1cCp0vvSy01uhXyzYYkSu33q7WnL_IS5g2r0JAxzBcXZV_o0fS6pfdZYmsR05q-XR9wryaFrUxDtXfEmk7CUDQk4c2pMBd8_-ql2njCctpUs0pOfMp_9Rd5OPyLwnEE5NkNOpdNGLMeIiOcc09fsH8-rb_vxSb94GD-gkzjxIluU0qEbZLC45YXBxIM_FpmzHHOrwJt6VyBJb-eBQRIy_YXXlga1m53seof23TLCCnqhkFO2XctZO_S0J4IfgJ_mXnYFV96xfYwBrzFl32XPkdWcJhk0-bqjBhkTWtMg_SpYE7LEBPR5HNSw1om0mLRjEmzrsZTWkIp8IGT7VYEB26ss2ycrCILpT_3eqTG4J0PCBMsn97hGkxVhYMFgMzI2jR-glKw9_3L-9fwJ4Orm2gvek1vJSF-nYjjoMp2Ymxf4qsjL9aAorDw10WANqyGhzLdvAJ0LE8hsVj_Mxxxrxt7Zag4A0MvUTk9GBmeCLwaICkR1sMisVzxbM6aHB4KGBMB6pZSCBSgY-0yCOwY4jd3pIqbFyp5fSutQ0e67C96IWPovVGyh_Juf3EAUrTxVfPxFy53MG9yR8uDy4XGV8h_0Zfs-xgIN_IXT26ytNbUfaw6owR7kSEl3OkyOut5JbIKLZBUXzPY_y2KshQzfUntJLAl77Tx-wWq5V489SlZw49dUGehNDewixz-x_SsqdLsvdpaXXXGSDmAV-O155kH_QQo7H3plsncWz1Ae9rChn9_HABukDyaPpCSaronxbLaxTgSNJo931Se6KNnuMAbLQm6PR-Q30NesSJC5IrHww1UGyQNQS9dgXSY7v4CmXrrwZT3wQ09vTFr3NZHxY-z6wCBChfJ6r0SxecZ683rPW64dxEjswcdW7OnhRzIfAuh7aLOEc3gnhL_fPkVUpIPHe04bE0cQu0O3E6FjpJe3uHzDCdABZnF4s4GGcJLfXand-XRS5BaEgk_VhpxnT04_samyheA7AuRj9d0eTisRyanAmrGd8ksD7QKLrEOt9hqPOwhw-Ka-ndh4RGr1VA5zKGY_auGZkdkgF_2Sz19kmAnHX-1kKjAdvGcPHGLkfLG7n1PyDstCBxaUqdSwXN9zYM7bITWv_zWQ_hu_TsJy59pm7t4wfMadAsKaO437-gtt5WOVt3oabvWZAw6yCpTTKhhDOUvMzFwAajreJnMsF3Ym-o9Na7WXlRpF2MFBbFQvmlYJfiVgE-Cw3j8gjSAw3Lvd2Ecc_oGVeTtwv4tcS_WcZLKRj48wSqvhdOiZvaUoqR5naAd2XdQwFffkfSIUG2rYMm6Ta6eUGWj6BpHOx4-kLT4GxD4F1t4sh51JLJZRskpGFZoYitxMBHe8AYszFAaP82ur9-ccpaewR9efEq-4fPXfjZt_iu4pk10KbjcL-4HY6KaatawXs23p7HmXy6Bul8qfFMH0PXkK991rGix5KHdR1yoTLT1lG2-nDy8VhCn96suMu8HMilniYxUc-SNMl2DMo2CiELeJTXlLmp0B6SVYm5dOK0hQpTD71cGprWulep0bUiwPwe1rdMmNc9z8MkAZm298p-OGdGEgMrpLM7jhiBbOu6z6xbUsp8kjF3G1E2kqlKXq9PZB4AzfpdL9I6qxxx6AaUjnegO0qCMp9QZY014t-mHJbxPoUx3vgPcwka_hBj8LiqKdGk5DWntx0oHrgGxVdAlYyq1utqGYbDST53KQvSG9ST2REQlxmAkZM_FiTwlIAZZ2pDGkuBng80Kj5P6vPhpf2p4AKWBGRPYnsPymIux0tP721PIna2Trzq2lhjit4JZUgvoZuWxrqEbMw4G9vcLUUiVFWDnS03CJyzaER126CAUm0jCUj1EHEBTaHSF9ReMPH9q2aVCkPPJt1VTn6GiJCHkMgvQiaCTJ-l48iOT7q6by9O9I77XZTI95yzq1iRuL-7fLlT4YPZ-Lr0EwqDDKfkfckqtoVKBDFG-npTGJiWnZu8Jq7EsoECoCcnZTLcnN8Vt987-ToF15Y3vojCwuQysjJhBEmEBKDgSRJP59sJrLc6L_RFp9R02HG2lTSV5S0LpfkWpUbSIwb-ST1Mu-gYFl7dL4hhcvhboULWazMI5P9VfJWQCSn8iHUS5vwF0XlAxgzAHRaICMC80sm9o63nBFUhNB0Ek-sSXCgQZrb_tWM-"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:58.593503Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "7nD3at-cJPzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 104,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 104
+    }
+   ],
+   "prompt_token_count": 4534,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4534
+    }
+   ],
+   "thoughts_token_count": 583,
+   "total_token_count": 5221,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "26",
+   "quote": "if the tenant consents to the entry at the time of entry.",
+   "reason": "Subsection 26 (1) (b) explicitly allows a landlord to enter a rental unit at any time without written notice if the tenant consents at the time of entry. Because the clause matches this statutory rule, it is consistent with the Act and permitted."
+  }
+ }
+}

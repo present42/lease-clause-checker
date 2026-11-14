@@ -1,0 +1,67 @@
+{
+ "clause_id": "c36",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2af16dc807b6b0d992984b0a5c73ea4dddef619770b3677e023a972b73d67124",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the rent is more than 15 days in arrears, the Landlord may remove and hold any of the Tenant's belongings in the unit until the arrears are paid in full.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:52.302411Z",
+ "text": "**Not enforceable.**\n\nThe clause gives the landlord a right of **distress**: taking and holding the tenant's belongings as security for unpaid rent. The Residential Tenancies Act, 2006 prohibits this outright.\n\n- **Section 40 (Distress prohibited):** A landlord cannot, directly or indirectly, distrain a tenant's property for rent. The 15-day waiting period does not help, and neither does the tenant's agreement to the clause.\n- **Section 4 (Provisions conflicting with Act void):** Any lease term that conflicts with the Act is void, so this clause has no effect even if the tenant signed it.\n\nA landlord who acts on the clause also takes on liability:\n\n- **Offence:** Knowingly seizing a tenant's property contrary to section 40 is an offence under the Act's offence provisions (section 238).\n- **Tenant application:** The tenant can apply to the Landlord and Tenant Board, for example for interfering with reasonable enjoyment or substantially interfering with the tenant's possession of the unit.\n\nA landlord owed rent must use the remedies the Act allows instead:\n\n- Serve a notice of termination for non-payment (Form N4).\n- Apply to the Landlord and Tenant Board for an eviction order and payment of arrears.\n\nVerdict: not enforceable\nSection: 40",
+ "finish_reason": "end_turn",
+ "input_tokens": 250,
+ "output_tokens": 766,
+ "raw": {
+  "id": "msg_011CgwRF4Y4NvghMvc1uEoMs",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSpQsKEAgTGAI4AUIIdGhpbmtpbmcSDOTjN6QQ8rC5y9YNKRoM3x7TFqREiMfgY2WvIjAxnIWYMV/aoZEIiOMoljFgGrMdXqNhD9XGMYfhRWRhNJNyqx1x33kM5Zz/PryqZWMqwgrxEmnBXYHFOEylo6xwEm3sUGRa90h9gwde1P869WpirbRxy1Tne1t8JTRyV3U2RKiGNCN/9DaKolKCDjK+BfuR66yRbrcRjbC5Y2ecJQOB561vr/o9F449DwZkuRok7yZPHCD9SLQBNTc3o/OKLPorGnrj5URWMdlKawoKKO9ESR6BffbxAnKWMign/F6hSBkl0T6eieKkI+EkfWpO56kq/4iraqaqB3bb1QbnVsolVxmTh0XhI30xMGHguWkVK7SidrwwqjOxNRhTO5P2OcKr4eqQAiGkXpiZi9C+6tu8w8Jf+G1OoJthpEMiKRKC7ZyAYBplHkVKfnjKdqLYRGuKkRGh5uiAUdRPb2NHpaRb/pS+vGd4CX8TyUzUXlVI6XHEYxgiQx9jbEwVJqak21x/vAxJOmD+0F+9e11swTBBLtqtiqxJLD5Otl5bnR0/bhT2kQFNSyEyhqUAQg4EGQdtfvS91fojAe7xsGuxDoJONLw2H4S8zTQZWtzq8GkpHSKbnpTpK/0tSnr2WrcR62EBm6NYBQNlFnOxGhyunt0+EkhXHqygkoX+qZdpCDI58z5hVTaliTD/J81/gi58dythYC5NRr74l/MoOnGVM9aK5+0tQJOz2GKDZahDE06NoOZAj4RE8r9cFxKTcH95Nkz+EbqzwFTscexY0MXpMSNkFCDD4EGqFmKIxFqpXLG29I8ll7lLrv7FmlgwR1/HXeJzTfM+rLNc6qEMZkoUSEzRS/uZ4s8tC9a7qvVtHSzXshBMwmyb2q+KJerb2TkveQBHfqLtxue7t8LlYsF2mAOrqElMNHTwrlHABxXe15r4/HLpuunAa0fs7J2IBY+bP5IXAEWjHhpboJP7OFNI7TYecc6qeTMRHs/guISpILejA10WSZ+9AtQ7QPEoZdXtvzTT4Ark1i+wFKwmdOBTflJEYYQC+DXrRUND0d8OW7xiBYtm4eJzuDZzDNOjxcakEBSKHB6ybRyA8IrkERQ9e+scK105WqkrSb8h02x6IdoW2URl/xr4zT6K/36jSrhUK5WBDA5wb4ARmE1pZ+2F1PR0B6CX1t4uafK3LAq1WsRTZYFzAatduq3YDkCRuanzhFabhfA0oAPsAvPURcJ4eSC8WA+ubP95SowujZRbsZwxn6EU7+noEGbb3HdgG6KFxtOWJTEIR7Z0BqtEaaEfeX8s1OOOegistwQjVJWgxVTH165BJdvNxHmK9h15R2VdPgechWqS8TD0/XeZIWQ5ZbWAGdKGAsdpjmORcmCgAJOjWahDKNxd3XK46kTs0+NhQJeCe82D3dvXm5+fPR1CQRPnssBcS3S+9IPjY5u1el6qmitXtlabhUIp/IyTac4For6yeAemxnL8ozJqNnS6dasFNCpTvwqLQGeK4k/XzvrX6sH2V6jpPzIVT/cX7nDjAxHK/fGakdF5J3rVv/BrgWH9/J2EiJkt5eiHEuxMHm9+a9LXzXw9VujjsAfvoF0f9yHO/ZW+qZlnanPLo65yT/u1JQJbEmkZYQlJnT3KP7IWX/aS0stJzflrfI4Ylsh3hJHqJ+yMGjtghK3sC2uartUsSYXr0tvoovPVo62uLI+zyOQ/z+WBEl1TBnF2I74OgSDu/4I3Aivjwh2MqyPPWpWEduWTpt5wCypXd6LrIfAFMi+XLIpBlM7GBaKV3adq8tHmDSG6xR83/3Bf/anC/SKKpfC1AqZNZn/yV+xUs0ggOPR1OWnHa8Z6X0F7JpDPeGym4YkUc1xE8/9wK3JtNJhz82Oe+nOauqTkzz2cPO0siO10rRgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.**\n\nThe clause gives the landlord a right of **distress**: taking and holding the tenant's belongings as security for unpaid rent. The Residential Tenancies Act, 2006 prohibits this outright.\n\n- **Section 40 (Distress prohibited):** A landlord cannot, directly or indirectly, distrain a tenant's property for rent. The 15-day waiting period does not help, and neither does the tenant's agreement to the clause.\n- **Section 4 (Provisions conflicting with Act void):** Any lease term that conflicts with the Act is void, so this clause has no effect even if the tenant signed it.\n\nA landlord who acts on the clause also takes on liability:\n\n- **Offence:** Knowingly seizing a tenant's property contrary to section 40 is an offence under the Act's offence provisions (section 238).\n- **Tenant application:** The tenant can apply to the Landlord and Tenant Board, for example for interfering with reasonable enjoyment or substantially interfering with the tenant's possession of the unit.\n\nA landlord owed rent must use the remedies the Act allows instead:\n\n- Serve a notice of termination for non-payment (Form N4).\n- Apply to the Landlord and Tenant Board for an eviction order and payment of arrears.\n\nVerdict: not enforceable\nSection: 40",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 250,
+   "output_tokens": 766,
+   "output_tokens_details": {
+    "thinking_tokens": 326
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

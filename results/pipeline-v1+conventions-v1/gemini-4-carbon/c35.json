@@ -1,0 +1,118 @@
+{
+ "clause_id": "c35",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "f074a2e58dc00c88b0f2dbc29174557d97a141963e113a87288a2146095a9610",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may drop in from time to time, without arranging it in advance, to see that the unit is being kept in good order. It will always knock first and, if no one answers, may let itself in with its key.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:10.875064Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"25\",\n  \"quote\": \"A landlord may enter a rental unit only in accordance with section 26 or 27.\",\n  \"reason\": \"Entering for a routine inspection without at least 24 hours' written notice or the tenant's consent at the time of entry is not permitted under section 26 or 27, so it violates section 25. Because the clause is inconsistent with the Act, section 4(1) makes it void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4557,
+ "output_tokens": 646,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "vnD3aviFOdW9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:41 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"25\",\n  \"quote\": \"A landlord may enter a rental unit only in accordance with section 26 or 27.\",\n  \"reason\": \"Entering for a routine inspection without at least 24 hours' written notice or the tenant's consent at the time of entry is not permitted under section 26 or 27, so it violates section 25. Because the clause is inconsistent with the Act, section 4(1) makes it void.\"\n}",
+       "thought_signature": "AY89a18HxJb3CpRDbyK2vHLNN9YBpE8MPDeWg-mA6D5G3aLKodeG_nl8uSeWbp0cDoIDb2_oqhkks5fZO-BOHLtMVPT6B0JeXvWorDs6n6qRpIunvgAc0-1VdP6kUsz3kxKijo_UAz6LRNCkAPR_mpfIpoR4kU7yrzjKMSLP3bvfRDp-vncOYhw-NRipUdzDmhwpbEon68sNqZONGrVz2VrODzfUBhzErDoR61kygeEP-Oc2kHDX9dkto089Yx0hZiFff1macCwPSisA50-DF0tNnyrykxVZUeqcSvuEcg9qLZZsYrmRaJ5Xf4EXhB3FEJQqqz9rXWsUiB59q9J6sVWiNf_eXF2kFjWQy3Disd05h-1V1hTodmq3HjjwRG9fghYFOF8bZ1XJ8nOjBhH3aZ9lN-skhxWfwO6PI6qlRgggASvYBqdxRuO_alnEsdJLzJIqBYaYRbLw-Wl_E6z4Re3Gtp2c8c4jVF8Cc5O24TJyFOSLEpO50ADQcUMbcKh-NIo9_oEYgFx6Bxe2AAI_CBjksmpuprjAgSAovJUszq6V36kU9ViLw_5EG8bwDstkWjmyB8qwq7Qcspjja2PBb0vUUZ8_z1HTAvDSY5SSoyiGH1NCDxp3KWCd9ULzIkSJ1i_PbwhhS5gK5mAbx4XkAYJU3nrG9s7sxyJSzitZupwRLKy4C_H_k5dwlSFmy3ZybyN-3W7oTbLcZWTQLL3dOThrMjYahUZPyvnLCN9I37W93bEeY8QGcVRBMhD0L4DCZV9q8yxOTWBJXv1MsUPSiLHiyZ57btsFEFiENG9rb0iz9d7-k5ii_doTQOg03ziinoghbWA5iQY963VcNqz0nrwC2tRyRulVN9peqho3ey_yEexrdl-Q-c4avQLOxNPbaMbHBiEDTbKy4BiS1JWJ-J1Ln9SYEKB0uAiU18YVoDLkHuLQr6NbOM-2vv7uKI9N6kSZSWkSmyu-bl7uvgKliQ9nkrgcOG-UF6p4OEsCIYznOcxCXe8lPXIz1nHtBJDVr0tURiDDmcTXlkTKB1w2-amDiTJRxeOwmkgeNgDQYjIve930u6qoGorrtrX_0xquA-s7B_lEcOaJXqDfygFkBjtPDAfOATLpaaBSnhHHovtJtRGSHSNPz7VVZcD8mQyIpXQjAPQl--S4kIfOaJJMn_oF7EIKnrUh9PU2uhbXEwzJclBbiQWAT9reYl61UQFWXtl4tBgDYJqQJHRnDYxnI9GjE07TYpZdIsCXpZyLXqpnFzHyXErmh9IG2yAtCAPy5lEYI2H86rXgA52UFDvqZFeN1V2L4Cwv07N48qXU3sbNpKdPJRabsTJJBroIQQzJZi5DKrnc_wI1qxRu7Z0DQtJhJLFjh5CYPHeUsyTzptk8UkSwd6yDhXwAldS1C-XV5LWjnJGq4DFQrsQBsIrYRjvEicl_YRc63skYAJB4B-zwm_WzLs-Q3yuZzeIYHOyODKB9Ht7Zn7Z6lMyp-2sfzO060-BESx4NHLws9lH-y7E2r6duT5ajn1XHE5jBHPz-6B-Jbs4mFDqz8iZ87bV4V7u9QQRN2KcJ5pJr-u6ax7CxPPBnuu2V728qTnGOHADKL8a8S4ouiysCq6NkOwbz7a7pisgVF2o25R7WCo79qo_00HjOlaKeVkstRu0MSEWRJNeb4qjc0y5q_3DzDwtuY4fRy3a0YR7pFOPKSxFvEh-lN7lhLGuBPh2MeE8aMwyLVe3eHJ2Y34vrxD8osORmPkk22JU4KZw3eGm9ENLaZVCeYuFjviuKO1-h2gXhh8rzZaPrLSZ1vTS0arje9CXmHE8ixNO7B7sd6Cb0I7HLL-g69q7U6g1QJ8aYRNOX8Eyn_IeN-slUigH6Lte1ITD98KgMZE3Lpv8_9QkO3EXs5dh9BqI7lYHgD_PixyRtNnY21LVx0E8Qx6lmhl8zJUaWuXayy0X9YGivIHuGx-VwmKMfTiknLJDD63UQzxqj6aD1yLpDt8qEIfge0XbUgJdrXcoMdhmya3tr333FeZigakRBoMC75BwR8pEQ65eK74kSx_C-N10EWzCKV0BDo-nnk3HgEM4dgkM3hQKoxPYdk2neyLmWK2rIPr2MutbhcbBR4cQTcDtgk8pKe1N6szUKZaPsqlxonxRpgGSdme033DB1bMPZVKvSL3CF5kiF2Hh9KVSYQEn1h1g9z8yFovuG3DKmVvOUpycwaAiDloYorod9FEnxbC5sov8fvo-dvSiPEctLiwpgy9_QYa2QN_qpp7z6rJyB-YAn2GYT1SpsAwnoSrgwJcHq3ixpnv9fAG_ZnEbt2yUGIrdCHRbsD0MlQmc3zczgM186LVIVhEqB3Z_c-OHqc5Om1mDk8vj8XGFw3ashAGDNwPqM8Z5svGv3qecfB3S4aikhF-aV0mXM85C8ZGEacfDnV7C0sQLJwKERnmVgi42XFFHzQm6iKbsYqD262fHtTe8p21GPIU8x2ojCdNz5LxGojpYzcpKeNYU09CfFMXGPJ2Taelp1kwtp6TszZ_iDyUM3BNes5rNzk1jz-_OKShbzVksYeDwRZGvu9Wbhcc9ouq0KJbeqOZsCJlO3wHRtYMXmj2XV_-kottpc00OnNtMLIHFpmQ1L5bTE61K463nPjQTXuP79il0XjV1Zy_14x0UFuFOHG5chnQBcNzjDAasztUFLpFAAtN8-p82MvGb4q9rxmZWdt-KFl2KRbynLyPXsWCySnL3XYsyxT3ZM-Yrl4CmJBbuLdUaQzm5OBnQ4vbBcHHfARxJxqSY3QvtWhhGH9UbsNJGSAhcsD2qvB1GjXs1-G0s30QPNVugiPqXLHqzNZ8kX93G-1m9NoXcauFTyT5FgavX6JDHIravhDEwwW9nUgvR3854guUm6JEYcKyk0qN3Ti_EpS7mAYwq7GQVqK6vAI5Ks4Bbn"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:10.934648Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "vnD3aviFOdW9w-UPidKMiQw",
+  "usage_metadata": {
+   "cache_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 2474
+    }
+   ],
+   "cached_content_token_count": 2474,
+   "candidates_token_count": 135,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 135
+    }
+   ],
+   "prompt_token_count": 4557,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4557
+    }
+   ],
+   "thoughts_token_count": 511,
+   "total_token_count": 5203,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "25",
+   "quote": "A landlord may enter a rental unit only in accordance with section 26 or 27.",
+   "reason": "Entering for a routine inspection without at least 24 hours' written notice or the tenant's consent at the time of entry is not permitted under section 26 or 27, so it violates section 25. Because the clause is inconsistent with the Act, section 4(1) makes it void."
+  }
+ }
+}

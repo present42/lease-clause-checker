@@ -1,0 +1,99 @@
+{
+ "clause_id": "s29",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "c5d8f0a084b87d518a290c9535e43e5cbe3602b1133d368c4a0a5b2305359f67",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may increase the rent once in any 12-month period; the first increase may take effect six months after the tenancy begins, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:56.160274Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"The clause lets the first rent increase take effect six months after the tenancy begins, but section 119(1)(b) allows an increase only after at least 12 months have elapsed since the unit was first rented to the tenant, so the clause is inconsistent with the Act and void under section 4(1).\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6460,
+ "output_tokens": 548,
+ "raw": {
+  "id": "msg_011Ch1HyX4FicXCybNAR5hLS",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"The clause lets the first rent increase take effect six months after the tenancy begins, but section 119(1)(b) allows an increase only after at least 12 months have elapsed since the unit was first rented to the tenant, so the clause is inconsistent with the Act and void under section 4(1).\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6460,
+   "output_tokens": 548,
+   "output_tokens_details": {
+    "thinking_tokens": 401
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

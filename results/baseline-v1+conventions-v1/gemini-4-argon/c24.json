@@ -1,0 +1,74 @@
+{
+ "clause_id": "c24",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1f02763500505833b2adcae883acbecea1e858e6716558a39401fcbbac1333cf",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. Whenever the rent is lawfully increased, the Landlord may require the Tenant to pay an additional amount so that the rent deposit equals the new monthly rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:49.180373Z",
+ "text": "Yes, this clause is enforceable. Under the *Residential Tenancies Act, 2006*, specifically subsection 106(3), if the lawful rent increases after a tenant has paid a rent deposit, the landlord is permitted to require the tenant to pay an additional amount to increase the rent deposit up to the new lawful rent amount (commonly referred to as \"topping up\" the last month's rent deposit).\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 195,
+ "output_tokens": 102,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "KXj3avaKEOCqw8cPv6vbgAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:52:51 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. Under the *Residential Tenancies Act, 2006*, specifically subsection 106(3), if the lawful rent increases after a tenant has paid a rent deposit, the landlord is permitted to require the tenant to pay an additional amount to increase the rent deposit up to the new lawful rent amount (commonly referred to as \"topping up\" the last month's rent deposit).\n\nVerdict: enforceable\nSection: 106",
+       "thought_signature": "AY89a19qhfedA-Mo0o4EU5Vg9Bg9CesbTE4ALBHzHN41Xx3tgA-jfundr5HP7al01pmv1jm5Gv5shG5lT7BV868ASmO3vrisLooKP88y_CelxkQ9vTAUO4VyX46NWug="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:49.263542Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "KXj3avaKEOCqw8cPv6vbgAU",
+  "usage_metadata": {
+   "candidates_token_count": 102,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 102
+    }
+   ],
+   "prompt_token_count": 195,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 195
+    }
+   ],
+   "total_token_count": 297,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

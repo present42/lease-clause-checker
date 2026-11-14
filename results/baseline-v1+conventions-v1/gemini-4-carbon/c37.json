@@ -1,0 +1,75 @@
+{
+ "clause_id": "c37",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "b2c9c900d70110d94cd097d4afbe5c4d71229cd5927f4dcc35d5ee4faa767c06",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: After either party has given notice to end the tenancy, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, but before each showing will tell the Tenant, or make a reasonable effort to tell the Tenant, that it intends to enter.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:11:02.873689Z",
+ "text": "Yes, this clause is enforceable because it accurately reflects the statutory rule in the *Residential Tenancies Act, 2006* governing entry to show a rental unit to prospective tenants once termination is underway. \n\nUnder subsection 26(3) of the Act, a landlord is permitted to enter a rental unit without providing 24 hours' written notice in order to show it to prospective tenants, provided three conditions are met:\n1. The landlord and tenant have agreed to terminate the tenancy, or either party has given notice of termination to the other;\n2. The entry occurs between 8 a.m. and 8 p.m.; and\n3. Before entering, the landlord informs or makes a reasonable effort to inform the tenant of the intention to enter.\n\nBecause the lease clause mirrors the conditions permitted by the Act and does not conflict with the tenant's statutory rights, it is valid.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 224,
+ "output_tokens": 825,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "1m73aqjDOKO8w8cP9I-d6AI",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:11:23 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable because it accurately reflects the statutory rule in the *Residential Tenancies Act, 2006* governing entry to show a rental unit to prospective tenants once termination is underway. \n\nUnder subsection 26(3) of the Act, a landlord is permitted to enter a rental unit without providing 24 hours' written notice in order to show it to prospective tenants, provided three conditions are met:\n1. The landlord and tenant have agreed to terminate the tenancy, or either party has given notice of termination to the other;\n2. The entry occurs between 8 a.m. and 8 p.m.; and\n3. Before entering, the landlord informs or makes a reasonable effort to inform the tenant of the intention to enter.\n\nBecause the lease clause mirrors the conditions permitted by the Act and does not conflict with the tenant's statutory rights, it is valid.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a18CtD-cnhH7pGupSDM0brJLwHhoR2m6wP3N8g24xByeeVTjE-Kmrx0N7EWmzq6gHiWeAXvnGwF3DskK0Df0AyYG7ZA7qbtUM5-oVuXjM81hEiUEZf0x2sFkxhg_Ptox5lK4nJtjeotA-TkxzkbUdbSLP2j2Ib6TUxhnBG6DEac4MyZzo5Ae9YVQV2FmGKdS91fXEqev_JRlbL9HcfWKM6E_tOGWsknRyWCgAQX_T93wZETIsyGGgu_XnCOod4_pZjKOdHsPgJMMFI_FRmegTVjc8Bjm3cZPYSkQ94IfAdY-QbIO7cVhPoNyCCZ33pT5YnY9Vck3Au-HnsiQzGaw6z5Xl7fmQCoakKxtCxHEdR0Sd3u1tjYGXnWkSzhNTKtFU8iJRWE7s96Uu7zpJxrf3573y0l8rfl8pGhG22boPRFk_yzSYT_CfnJF4tN11cMProT11FNWBkl971Ra5siNrXWYFKxCqvdm9CHHTtHEIvyNG_qOczbNGy2zAYBwWARDjoY-Yn4cxLaCTaFKlSK1qHHO-Q6ePjvyK6XAeTVRXUQvRUwjsEf059uL51nqd_J5_dRbtV24k_y9AxZwwt-IgkyPesYpVF_IE2SC5HVMGux7bwFmK1Ln8u7MpJHDBLRmyUmkQzplz13MR_B7WPoYz1lqP_yHdZP-5-DqW2RaMuN67gfV4sB4Qi1DHvRAOZc3g7KnOqzL5QnrKC51HFV_voXTXeLykmNgK6AhrAq_jb0Y1T1DJqrHSfopRlUc3U5bN1sjuagNiL42V3o1cJjPjOZz_rCn5XRdxWSn4L2nPB2ImhuzI-cG-3Dwg4Ul46hFy-VdJsUOcv0rmWH03jmZ7MjY6xxTpPkLOvJQ9IJlZ0PYrzyVbWVmaOvYnTDNvCiJYol26JwjQDSrekDCV4UAz6YgcsUmUrkcnBblGcyWO9yiP4XyGy4ds6kPWWhvJUo9jLLB8iEInDzKnnm20lK2bZ8TmbJ_gnKU6RtjzgzUFs3bnWUX7Zjpv4iGLzmlYuR4idPBVf0CTeL9Y3FxQfdJbNBbIsu4g8jujxNGj5b3iy1_SSu4uys_jDBEbQ4gAGgDFlXdoLgcscCQsHaYKZ_LpSyPxQYexxM71W9eFcRCITKOG6kpCnVd9fAmBoYTWv8KpDf_G2nVPNmKYucglghGWmLDcxFSANPJvrHarPVADBM158V2ppnMBtzhMu9ajoG4W0_5FUUcn-VV3jkpXysY8UtWluu1SnxBa54zD_COcaFC_WuUNrIPp6Lq10iJ-iCMHJ-Jdl0iK083k65o-NeqtZQXjQTBBPYEF4nLnUutcn5AnQzbnVETWhoul0xqU6zaNCofQ72qGD0djtDNT32K3fIPviEstQnlsJTlLpfagR4Q8YLNhgEs3jcVfKHHBLPBqqv3rAA1w8rEjDUcRtNI12GLX1PF-HMIvE0Rz63Gqt6VoDLz83PDTjQ8sYpxHp2VkA1up5LvGsPltdIM6sK6NHIxyqyylymT53uX6vLKcO5KUSBKFtVkXQ0VJ_LkmtVG0mT4Zy5CbFGPGbQxbv9GNyDz6m5u9KRxi5yHldEqapCE98W5nacBNtpmgur3XFp77aM5ciy6HLN5U30A3KPN9TMcPTDwvgy3QHJoclGn2dTnNs3J-NervQQlBncxijwWP3ftUhvK9z4FG-nwqZZM60EoO8EVyEDOqra_FQ6_jltGtIZj_xjWQt7etk3dEPfPgn6WQYPhaSqg_hFRIMPWlEsgcbU6g-JaTiVH3VntnI7WAmgMJwasnDne5HSijlZLmoz2c4j1AbLk6YzMKzFAxyDBHQ_iIvgjGinE3U8zRSgHV0T75s4OuAGZE_-RbmnUijqBVtV7i6NKbWhs7BWGNgugQp3kLz0ycn_v1O_7Eg5A2ZxZsSkIkJeCpryKF_FUcf5wB4u3xGfMgAx2omk91Oi6du3wNYlqPAidxSG7C4ngltJSp2donbhde7AlfI6yf9OQ5VAGWDIohhjn3G1UVIPvhC1a5TlBCRZkqU0PJZi4TejZ-UdHwYm-Fd4wioWFBJZAdGGYKwiJgcBurcwUVVjghIVJxTcWC-yhAcYXAmwWCO-qgtVwEnk4MWHhG0mdzlckCd9HrE2xtgT40gGmkUXT9ugg5aZMIC_iJ-8zYuPFZabHPwCcslViLC_pZsSP_0lOdG2mdHohqto3Y5-pL8234FrJ7vQp0Q6lxDs-nAf8pPBHGpbklPBOsLkT4Bd4wzWZT3zHkT3Fb_Ec5votnqXwg3jIGvAvxdVho5-FtlX6zdhQQrQIZvO_N2IQ_aG9oNKbnLiIz085qDiaBTDRzSbzohk4ubJ2FO8kNFK_2jFYtecgBXbwwz-nFout0-9N3VaxzKIDq_9LwdNl5DjRIwfXd2-jkxADXICk7HnPGhYCTLEdfCwQWaMtiBN5Z00RE5AocHYj5OnqZUjNZ1u9pobIiZbbrrf2ixMnOJKt4iQACc409LsgkejhmbOGr_lYRF0gwC-g63xeK2T0hDDer0gFQDboqYi4iMcdMLFJtqbW7Fh6qtagthXZCWIldPugqHb5J2O85zJ_6DmP3yVIyNt7aHb6F-vhcMDx4gSmNUBNQUg5Pvu4PT6Jn7Dpxnxqm4YEszvPnPIIOQRgyRoEP4AtbXr-T64MkoQ1ZwplCCNBaOJBaJGslKwup3l82HbromVFzOIkaGjkMIjZcGOoa4dOCM8lp_LC9gE3040aur-IZ_o_ka8Za_Rj93XKwSCwqdkmrVgIYMxLydxVJxqh0d0xe43FuyCY4GhyxwKVgt_wPoVOBzIAhA4AHdpAf0fywLZbL8K6PWMmLDeJ1E4boV-Xsu6FwjPHDhTldxrZ__rdXpNS6oCgushcKc-FktsgFK_nOG2fuRIL8GHSj7LF4LO1JtISf56S1i41jsHNgl_VW3kR2h1PoLSFm6JttUQhguu2l5NvSjqdoPHX7O5g5I0XA-OurN68XWqMlLtAspqJsvmeNbouJEsuIePWz20yVDVJFkhZVyF0MBDLqH5lmUZ2T4KVYV6DIN61_9F-iq9ZTKNUjpVUnang2QXo6vOZ2wJXpUfSNCliZC908MuPgV78_BBZKeY862yjT0h-Es3sHleF-rMRvN_FyBuTgGrISeyN1CADX0wh-i4_BLLw-2a_yBaYkSDXbyhgopLYJoV1Q-BSaLp9t_uejOyrT_7qv0nnBOW8atxMmIzLMmayINXkI4F7DUJCuuBfIkFUrVJykAA14uOOgySrLs-6cK31uOGz8Vj3SsjZjp2oDg5goo2jzxbc"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:11:02.926120Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "1m73aqjDOKO8w8cP9I-d6AI",
+  "usage_metadata": {
+   "candidates_token_count": 203,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 203
+    }
+   ],
+   "prompt_token_count": 224,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 224
+    }
+   ],
+   "thoughts_token_count": 622,
+   "total_token_count": 1049,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

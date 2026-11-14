@@ -1,0 +1,67 @@
+{
+ "clause_id": "c34",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ce6cb540d7b1e3736377948e8c7037499f2c6f3fa8be7482f95f5bd5c7b4ad5b",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may enter the unit at any time and for any reason without notice to the Tenant.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:50.471396Z",
+ "text": "**No, this clause is not enforceable.** It conflicts with the Act's limits on landlord entry, and section 4 makes any lease provision inconsistent with the Act void.\n\n**Why the clause conflicts with the Act**\n\n- **Section 25 (Privacy):** A landlord may enter a rental unit *only* as permitted by section 26 or 27. A term allowing entry \"at any time and for any reason\" goes far beyond that.\n- **Section 26 (entry without written notice):** Entry without notice is allowed only in limited cases:\n  - an emergency;\n  - the tenant consents at the time of entry;\n  - the tenancy agreement requires the landlord to clean the unit (entry for cleaning is limited to 8 a.m.–8 p.m. unless the agreement sets other hours); or\n  - after notice of termination or an agreement to terminate, to show the unit to prospective tenants between 8 a.m. and 8 p.m., with reasonable efforts to inform the tenant first.\n- **Section 27 (entry with notice):** Other entry requires at least 24 hours' written notice. The notice must state the reason, which must be one listed in the Act (for example, repairs, inspection, or showing to a purchaser or lender). It must also state the time of entry, which must be between 8 a.m. and 8 p.m.\n\n**What section 4 does**\n\nSection 4 provides that a provision in a tenancy agreement that is inconsistent with the Act or the regulations is void. Section 3(1) adds that the Act applies despite any agreement or waiver to the contrary, so the tenant's signature does not save the clause.\n\n**Practical effect**\n\nThe landlord can enter only as sections 26 and 27 allow, whatever the lease says. Unauthorized entry can support a tenant application to the Landlord and Tenant Board, which can lead to remedies such as a rent abatement.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 226,
+ "output_tokens": 1254,
+ "raw": {
+  "id": "msg_011CgwREvhGSTk1fGqNLPj58",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**No, this clause is not enforceable.** It conflicts with the Act's limits on landlord entry, and section 4 makes any lease provision inconsistent with the Act void.\n\n**Why the clause conflicts with the Act**\n\n- **Section 25 (Privacy):** A landlord may enter a rental unit *only* as permitted by section 26 or 27. A term allowing entry \"at any time and for any reason\" goes far beyond that.\n- **Section 26 (entry without written notice):** Entry without notice is allowed only in limited cases:\n  - an emergency;\n  - the tenant consents at the time of entry;\n  - the tenancy agreement requires the landlord to clean the unit (entry for cleaning is limited to 8 a.m.–8 p.m. unless the agreement sets other hours); or\n  - after notice of termination or an agreement to terminate, to show the unit to prospective tenants between 8 a.m. and 8 p.m., with reasonable efforts to inform the tenant first.\n- **Section 27 (entry with notice):** Other entry requires at least 24 hours' written notice. The notice must state the reason, which must be one listed in the Act (for example, repairs, inspection, or showing to a purchaser or lender). It must also state the time of entry, which must be between 8 a.m. and 8 p.m.\n\n**What section 4 does**\n\nSection 4 provides that a provision in a tenancy agreement that is inconsistent with the Act or the regulations is void. Section 3(1) adds that the Act applies despite any agreement or waiver to the contrary, so the tenant's signature does not save the clause.\n\n**Practical effect**\n\nThe landlord can enter only as sections 26 and 27 allow, whatever the lease says. Unauthorized entry can support a tenant application to the Landlord and Tenant Board, which can lead to remedies such as a rent abatement.\n\nVerdict: not enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 226,
+   "output_tokens": 1254,
+   "output_tokens_details": {
+    "thinking_tokens": 625
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

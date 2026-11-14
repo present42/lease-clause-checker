@@ -1,0 +1,99 @@
+{
+ "clause_id": "c15",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "172064c4b075665d5881c52252a2aa51043551a50bb42f81e30d12bcab6f9781",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the Tenant, an occupant or a guest of the Tenant damages the unit on purpose or through carelessness, beyond normal wear and tear, the Tenant shall pay the reasonable cost of the repair.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:24.497850Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant\",\"reason\":\"Section 34 makes the tenant responsible for repairing undue damage caused by the tenant's, another occupant's, or a permitted person's wilful or negligent conduct, which matches the clause's damage-beyond-wear-and-tear repair obligation, so the clause is not inconsistent with the Act and section 4 does not void it.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6462,
+ "output_tokens": 603,
+ "raw": {
+  "id": "msg_011CgyJ6r8AZU1Ej7G23zTyG",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant\",\"reason\":\"Section 34 makes the tenant responsible for repairing undue damage caused by the tenant's, another occupant's, or a permitted person's wilful or negligent conduct, which matches the clause's damage-beyond-wear-and-tear repair obligation, so the clause is not inconsistent with the Act and section 4 does not void it.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6462,
+   "output_tokens": 603,
+   "output_tokens_details": {
+    "thinking_tokens": 421
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

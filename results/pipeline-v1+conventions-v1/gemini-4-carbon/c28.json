@@ -1,0 +1,111 @@
+{
+ "clause_id": "c28",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "ba6aeefc37cad137fb1a9ca6ceebc6966c9d5ec084998ee89ff68764fe025b53",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may increase the rent by up to the guideline amount once in any 12-month period by giving the Tenant 30 days' written notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:58.826981Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"116\",\n  \"quote\": \"A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord’s intention to do so.\",\n  \"reason\": \"Section 116(1) requires a landlord to give at least 90 days' written notice before increasing the rent. Because the clause purports to allow a rent increase with only 30 days' written notice, it is inconsistent with the Act and therefore void under section 4(1).\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4542,
+ "output_tokens": 675,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "snD3apuGNe_r_dQP553DoAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:10 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"116\",\n  \"quote\": \"A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord’s intention to do so.\",\n  \"reason\": \"Section 116(1) requires a landlord to give at least 90 days' written notice before increasing the rent. Because the clause purports to allow a rent increase with only 30 days' written notice, it is inconsistent with the Act and therefore void under section 4(1).\"\n}",
+       "thought_signature": "AY89a18Cj6k4BZBhjkveV_BnHTZxmY4GCpy_ehySpLxoQFgJJsUXpfy2MRCPVecyq7FYkPxvqOwZ3vZUnxQfv4I7URGVgus5IBmF3f7KkiTq7eK-UhPLWoAJvi1SPRajOc-q0Uml9Eq-Mq25fa5jshdN9ttBI3I_oOxDnS0TBapuXjSfwHOb7Dk-8QDrIQKAYjgR2EB_HWFmKlQ5AualWnFH0KdLVwNNVV8wWv8TG6CyIh_dgQSLVHnc5PkHyF1tLlcYL0vxa4NHdreN2OewxFlA3iUG36-WWzLoESQ_eMBfP9z9ttyEyRGvT94MxunDsCnFUUvXtpQbea14tFmXhZAeyTobMgK2FtyfUux4rQaY8ApZuh0Zfp9u80kmFYSHIjg0DyQAqRKAQD--qN6W6lVU6ZC8eIULJ6eyegH1AUWDq08UCqPakCKMEHfsIYtA7qoX0XIwen1hO2BmwkE6ZSTszrGtbu8YDux6VbI0oSbTLN2VU_RSNl_ClMJMq78_Otf8lWJkMAXYhu2oiVuHxEhP83a0N0mivxJYtZqMQB4M9vygmbRQ_3aiD18gChHp3mMWqEu48R9sSTt54qrjGeCIcU1ZP1V94ryceBvwV6CjBMFU-BH64yOv_zCfuS6QiXQe1HcNTcHeDtdno5Gg2EDSVTgXi3Gyh0n2bQChuyy-I_RIexC_XZR18_3vIKhQOAcPEhOGXSwLEWqp1vF_aeRQEfSZEzi9pZKLEhwZ0l1Dt1eY6DzikZYCmymYLGCAbXg1nABxBTdjXtvzBYaIX6x6c7w-IHkH5nt762HmV_qDUlVatYnmcsicO6U2jJNuE-beLqPfa8LZHQU1U1muY41Z_IKy138B9dxYzRwOTp4x5IvnVja_uypwWpgX4wK423Pm3iu1BY-JCr4PyuSwDV8NqS2dVfLYFuR6NQzua9jtdiJHKI0FGfPqNx8OdvOdiEHQQBpcIWQi9jxwDb3f9Av5s_GnYO2U2RgmMbz9apPqdVPE2UUvFrc2njZ5bvWbkCdSZhihJjfpPJiOLTmks4_GSKwbEcyNL8Gusy-1UscV2_1SBzwTUxpipNUtRl2m5mV3-K9XaSn7hIPx-gXPgRs3gyc1AZwIKOTG1JJTnPqo0taRRQY28VA8X25jOkh2ByOsa0FCz19yLZjoxPGW2py1iBN7U0_lLUKfF6Fj3snSd62-uMID3gj8p-alERnL_coju9NnqnZ_gbj13F7spwoZPbGrwxmmHMkx7Cn5in0aHG7FieRaqnKJ_PMAbCaeeYP8ShZnAA5Vy2OfrmQyyQj5OXqVFwRwAh17LblPwEE5Uj0YhgRwU4LUU1YCc4ZWa1WGV_PSOBIlNfS9ex5cfco6wa1RRZ6h5Pq1WVkICGMn7h6QAn1EESvGitn-vnnYw9U3BIkD1ltPreSkvM49FpqZdxTeRxYohpAHsBglav7xjVtK1nn3zlMkVuEPKnRiAE8meH8iSie3lfmwcMZLh3cuShdUoE7bu10HLrx4eLlOQA5d-sgmYBFVXQB7mHiy0ueS5T3xowd4NymZc53ImKS2nIs3SjkRCVUZ8VKukj5e8o1yiCpn-XAFZikOVo4Ec-y66yV8rOvEMpxiCdZf0gu6scv-Qj7dyu3WZw5H36Ar5wQ10fwHZFSp01-fnq57kMeokRWSd-lFpKaUDFdOQ2ogB2j4vS6ShgDpV-o0llD6iya1TXbJBP9rekvrnxpS0OW56UZ-Gw2WbIQ7GUGWX2qoiksPYMt2derlpEU1gZ00ps4c_QnN77hFM77tR4mSCWBtp3YMSfE-GbW2SARWCD1Rl6RxPnClJrmQ78_f9rhQAxYIWp9j0I5Nc-Wyd824RMHZOdfJug4gTtkZcdp5D_YPaQS77V2-norYLShILpGXEJDjpVrnZZnd5_fwzKPqNF58WpeaSzkzUTff4gNJKFj75oddkBzppBjXwLm1lKI5JiigIEqrZAkAH35hHwrvHnIscjPwd43Vi-zOooy_Gr9KIk3C_VZatTsXfW4U0SIsy-7Qnz38omrGyEgbqZT1AjA_a4eDM58KeEQqLR_LYLPa6KGKWgz0C-4wOIM4Eevo6QueQ_A9Towig1-qfQ6MChgW5qFywU3m94_NLLxlN0pkE_qx6ec9rd7Oie22RiCwgqFe5pETBX0zedKsNGoDAS3J5CgyFoUQ1a9M55S27aKokjZJGVMFHFkTwtk5CFTZ787gfk2aza2o3bNgBOJn4CYuH5ILhUfUrqSbOYUUSFeOBziL5PEIPHtSAuUsZI4yvSpa8u0CsrIit6bHnLWRUcJJ1GrsbzuHy7c1HQWu3yZu2AYfkkD7UUm2I86VSB_xIMt1TLb83QEv3GLZr1VWoqgsG4KK_SW2IRINROmjenawdYkM6Rcfla_Gi5gHo4W3Z9sN_0lVg0SFFUmbH-BVi0UP59BgaTqQDzABDs6MkToxdYIlORqpG8kfglOdp9Cwh9RR8W4AWeqYHi5WY6su5UMGxcSQRN94ECYPMiixXilq_8ovtcePoKEo4QCcQ14aJq9LoA7X6VIiAt5Yr-F4tQ_vrVcDE31O-KLLRl_O_iT4jDAZh4313-aj4dWmJNdEOe-NXFvGwvGYENiIVPoRzfViISEVExrftNFZ4Ieu6ZgOvGKWTuCrGtg994zxGugDiAH5AXTWx5zdRKo3ZThNpd9LyH1-4s7RD_ez-xpX-14riWTO1nfQ6QQFxr1U_XEMYgAMZlCLbCPhxkGHLJNKRrsiGwDt6tZtqvUUBg-0xXevQX1MIEu2Mt55LKoGZAjZJpLQiAzs-pgt8cfGRQCgBAXGdlNRsHKbpPpjnYJ8Gr_4-fIRKaT0PUHppPQIZErS49-X5cw1HRtghjIZyTSuaVETIIIjgpVMVRCZXJrrxF4EqvUb5_1RrM-vCAh8Pw5pw_ATN_9kDOEKuGGBF8zVSSuqTdU_Kw=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:58.869147Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "snD3apuGNe_r_dQP553DoAU",
+  "usage_metadata": {
+   "candidates_token_count": 150,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 150
+    }
+   ],
+   "prompt_token_count": 4542,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4542
+    }
+   ],
+   "thoughts_token_count": 525,
+   "total_token_count": 5217,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "116",
+   "quote": "A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice of the landlord’s intention to do so.",
+   "reason": "Section 116(1) requires a landlord to give at least 90 days' written notice before increasing the rent. Because the clause purports to allow a rent increase with only 30 days' written notice, it is inconsistent with the Act and therefore void under section 4(1)."
+  }
+ }
+}

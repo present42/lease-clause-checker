@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="730" height="298" viewBox="0 0 730 298" role="img" aria-labelledby="title desc" font-family="system-ui, sans-serif" font-size="12">
+<title id="title">Main test set, 38 clauses: counts with 95% bootstrap intervals</title>
+<desc id="desc">For each model, the number of clauses with the right verdict and with the exact deciding section, by the baseline (circles) and the pipeline (diamonds). The README's tables give the same numbers.</desc>
+<style>
+.bg{fill:#fcfcfb}.t1{fill:#0b0b0b}.t2{fill:#52514e}.grid{stroke:#e4e3df}.baseline{fill:#2a78d6;stroke:#2a78d6}.pipeline{fill:#eb6834;stroke:#eb6834}.ring{stroke:#fcfcfb}
+@media (prefers-color-scheme: dark){.bg{fill:#1a1a19}.t1{fill:#f0efec}.t2{fill:#c3c2b7}.grid{stroke:#3a3a38}.baseline{fill:#3987e5;stroke:#3987e5}.pipeline{fill:#d95926;stroke:#d95926}.ring{stroke:#1a1a19}}
+</style>
+<rect class="bg" width="730" height="298"/>
+<text class="t1" x="4" y="18" font-size="14" font-weight="600">Main test set, 38 clauses: counts with 95% bootstrap intervals</text>
+<circle class="baseline ring" cx="10.0" cy="36.0" r="5" stroke-width="2" paint-order="stroke"/><text class="t2" x="22" y="40">baseline (plain question)</text>
+<polygon class="pipeline ring" points="210.0,30.0 216.0,36.0 210.0,42.0 204.0,36.0" stroke-width="2" paint-order="stroke"/><text class="t2" x="222" y="40">pipeline (Act in prompt, checked quote)</text>
+<text class="t1" x="150" y="62" font-weight="600">Verdicts right</text>
+<text class="t2" x="280.0" y="280" text-anchor="middle">clauses, of 38</text>
+<line class="grid" x1="150.0" x2="150.0" y1="70" y2="246"/>
+<text class="t2" x="150.0" y="262" text-anchor="middle">0</text>
+<line class="grid" x1="218.4" x2="218.4" y1="70" y2="246"/>
+<text class="t2" x="218.4" y="262" text-anchor="middle">10</text>
+<line class="grid" x1="286.8" x2="286.8" y1="70" y2="246"/>
+<text class="t2" x="286.8" y="262" text-anchor="middle">20</text>
+<line class="grid" x1="355.3" x2="355.3" y1="70" y2="246"/>
+<text class="t2" x="355.3" y="262" text-anchor="middle">30</text>
+<line class="grid" x1="410.0" x2="410.0" y1="70" y2="246"/>
+<text class="t2" x="410.0" y="262" text-anchor="middle">38</text>
+<text class="t1" x="4" y="96.0">Claude Haiku 5.5</text>
+<g><title>Claude Haiku 5.5, baseline: 32 of 38 (27–36)</title>
+<line class="baseline" x1="334.7" x2="396.3" y1="85.0" y2="85.0" stroke-width="2"/>
+<circle class="baseline ring" cx="368.9" cy="85.0" r="5" stroke-width="2" paint-order="stroke"/>
+</g>
+<g><title>Claude Haiku 5.5, pipeline: 38 of 38 (38–38)</title>
+<line class="pipeline" x1="410.0" x2="410.0" y1="99.0" y2="99.0" stroke-width="2"/>
+<polygon class="pipeline ring" points="410.0,93.0 416.0,99.0 410.0,105.0 404.0,99.0" stroke-width="2" paint-order="stroke"/>
+</g>
+<text class="t1" x="4" y="140.0">Claude Opus 5.5</text>
+<g><title>Claude Opus 5.5, baseline: 38 of 38 (38–38)</title>
+<line class="baseline" x1="410.0" x2="410.0" y1="129.0" y2="129.0" stroke-width="2"/>
+<circle class="baseline ring" cx="410.0" cy="129.0" r="5" stroke-width="2" paint-order="stroke"/>
+</g>
+<g><title>Claude Opus 5.5, pipeline: 38 of 38 (38–38)</title>
+<line class="pipeline" x1="410.0" x2="410.0" y1="143.0" y2="143.0" stroke-width="2"/>
+<polygon class="pipeline ring" points="410.0,137.0 416.0,143.0 410.0,149.0 404.0,143.0" stroke-width="2" paint-order="stroke"/>
+</g>
+<text class="t1" x="4" y="184.0">Gemini 3.8 Flash</text>
+<g><title>Gemini 3.8 Flash, baseline: 37 of 38 (35–38)</title>
+<line class="baseline" x1="389.5" x2="410.0" y1="173.0" y2="173.0" stroke-width="2"/>
+<circle class="baseline ring" cx="403.2" cy="173.0" r="5" stroke-width="2" paint-order="stroke"/>
+</g>
+<g><title>Gemini 3.8 Flash, pipeline: 37 of 38 (35–38)</title>
+<line class="pipeline" x1="389.5" x2="410.0" y1="187.0" y2="187.0" stroke-width="2"/>
+<polygon class="pipeline ring" points="403.2,181.0 409.2,187.0 403.2,193.0 397.2,187.0" stroke-width="2" paint-order="stroke"/>
+</g>
+<text class="t1" x="4" y="228.0">Gemini 4 Argon</text>
+<g><title>Gemini 4 Argon, baseline: 35 of 38 (31–38)</title>
+<line class="baseline" x1="362.1" x2="410.0" y1="217.0" y2="217.0" stroke-width="2"/>
+<circle class="baseline ring" cx="389.5" cy="217.0" r="5" stroke-width="2" paint-order="stroke"/>
+</g>
+<g><title>Gemini 4 Argon, pipeline: 38 of 38 (38–38)</title>
+<line class="pipeline" x1="410.0" x2="410.0" y1="231.0" y2="231.0" stroke-width="2"/>
+<polygon class="pipeline ring" points="410.0,225.0 416.0,231.0 410.0,237.0 404.0,231.0" stroke-width="2" paint-order="stroke"/>
+</g>
+<text class="t1" x="450" y="62" font-weight="600">Exact deciding section</text>
+<text class="t2" x="580.0" y="280" text-anchor="middle">clauses, of 38</text>
+<line class="grid" x1="450.0" x2="450.0" y1="70" y2="246"/>
+<text class="t2" x="450.0" y="262" text-anchor="middle">0</text>
+<line class="grid" x1="518.4" x2="518.4" y1="70" y2="246"/>
+<text class="t2" x="518.4" y="262" text-anchor="middle">10</text>
+<line class="grid" x1="586.8" x2="586.8" y1="70" y2="246"/>
+<text class="t2" x="586.8" y="262" text-anchor="middle">20</text>
+<line class="grid" x1="655.3" x2="655.3" y1="70" y2="246"/>
+<text class="t2" x="655.3" y="262" text-anchor="middle">30</text>
+<line class="grid" x1="710.0" x2="710.0" y1="70" y2="246"/>
+<text class="t2" x="710.0" y="262" text-anchor="middle">38</text>
+<g><title>Claude Haiku 5.5, baseline: 14 of 38 (8–20)</title>
+<line class="baseline" x1="504.7" x2="586.8" y1="85.0" y2="85.0" stroke-width="2"/>
+<circle class="baseline ring" cx="545.8" cy="85.0" r="5" stroke-width="2" paint-order="stroke"/>
+</g>
+<g><title>Claude Haiku 5.5, pipeline: 30 of 38 (25–34)</title>
+<line class="pipeline" x1="621.1" x2="682.6" y1="99.0" y2="99.0" stroke-width="2"/>
+<polygon class="pipeline ring" points="655.3,93.0 661.3,99.0 655.3,105.0 649.3,99.0" stroke-width="2" paint-order="stroke"/>
+</g>
+<g><title>Claude Opus 5.5, baseline: 33 of 38 (29–37)</title>
+<line class="baseline" x1="648.4" x2="703.2" y1="129.0" y2="129.0" stroke-width="2"/>
+<circle class="baseline ring" cx="675.8" cy="129.0" r="5" stroke-width="2" paint-order="stroke"/>
+</g>
+<g><title>Claude Opus 5.5, pipeline: 37 of 38 (35–38)</title>
+<line class="pipeline" x1="689.5" x2="710.0" y1="143.0" y2="143.0" stroke-width="2"/>
+<polygon class="pipeline ring" points="703.2,137.0 709.2,143.0 703.2,149.0 697.2,143.0" stroke-width="2" paint-order="stroke"/>
+</g>
+<g><title>Gemini 3.8 Flash, baseline: 35 of 38 (32–38)</title>
+<line class="baseline" x1="668.9" x2="710.0" y1="173.0" y2="173.0" stroke-width="2"/>
+<circle class="baseline ring" cx="689.5" cy="173.0" r="5" stroke-width="2" paint-order="stroke"/>
+</g>
+<g><title>Gemini 3.8 Flash, pipeline: 35 of 38 (31–38)</title>
+<line class="pipeline" x1="662.1" x2="710.0" y1="187.0" y2="187.0" stroke-width="2"/>
+<polygon class="pipeline ring" points="689.5,181.0 695.5,187.0 689.5,193.0 683.5,187.0" stroke-width="2" paint-order="stroke"/>
+</g>
+<g><title>Gemini 4 Argon, baseline: 32 of 38 (27–36)</title>
+<line class="baseline" x1="634.7" x2="696.3" y1="217.0" y2="217.0" stroke-width="2"/>
+<circle class="baseline ring" cx="668.9" cy="217.0" r="5" stroke-width="2" paint-order="stroke"/>
+</g>
+<g><title>Gemini 4 Argon, pipeline: 36 of 38 (33–38)</title>
+<line class="pipeline" x1="675.8" x2="710.0" y1="231.0" y2="231.0" stroke-width="2"/>
+<polygon class="pipeline ring" points="696.3,225.0 702.3,231.0 696.3,237.0 690.3,231.0" stroke-width="2" paint-order="stroke"/>
+</g>
+</svg>

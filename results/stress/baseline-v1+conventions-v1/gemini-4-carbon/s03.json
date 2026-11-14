@@ -1,0 +1,75 @@
+{
+ "clause_id": "s03",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "9fac44bad34050e6453e2742c030bf9013ec4054c7844d85fccce16233e3bd42",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: A prospective insurer of the building may view the unit. The Landlord will give the Tenant written notice at least 24 hours ahead stating the reason, the day and a time between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:15:08.720692Z",
+ "text": "This clause is valid because it mirrors the statutory rules governing entry with notice under the *Residential Tenancies Act, 2006*. Specifically, subsection 27(1), paragraph 3 permits entry upon at least 24 hours' written notice to allow a potential insurer of the residential complex to view the rental unit, and subsection 27(3) requires the notice to specify the reason for entry, the day of entry, and a time of entry between 8 a.m. and 8 p.m. Because the lease term aligns with—rather than contradicts—the Act, it is not voided by section 4.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "STOP",
+ "input_tokens": 210,
+ "output_tokens": 604,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "zG_3asXBLvzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:17 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is valid because it mirrors the statutory rules governing entry with notice under the *Residential Tenancies Act, 2006*. Specifically, subsection 27(1), paragraph 3 permits entry upon at least 24 hours' written notice to allow a potential insurer of the residential complex to view the rental unit, and subsection 27(3) requires the notice to specify the reason for entry, the day of entry, and a time of entry between 8 a.m. and 8 p.m. Because the lease term aligns with—rather than contradicts—the Act, it is not voided by section 4.\n\nVerdict: enforceable\nSection: 27",
+       "thought_signature": "AY89a1-hahpRWWIcmbBIEhxr1J1LZvO6CW3UjkZZngmDJOg8PzmzE8C2L9S7_kIuJW_jZ2Kpk9JpwbRq70V_yDkB1crF_QurruLIv8TyluVfQG3dn-dueGFF4F79xDpL8mI-Xj2a-9Zi5SFfva8D891_DCDFpGbj3A9lMvabqbp8k0QGhYh24KxRoTkX3ozj48UJYJ0YN20DAFx79Dn8xQ4YzjSOhqov-dLeMdQ1iz38Syc8IlTwFq3B-okZoxYCzz-WSyAegq7B0EF07WFX3EDoWIyUNKzrgGUvA6k4tDq5g64EdopfL8jTcCLAwE13AT8LVtWCOG5S-TQQhE1odKuYsv5gtrtY409DFu5pAEjAijVJSMC8ogWaip8mTC6OMcvAY6IbTnkrEHuxpD0tjsb9dgWalurZrqSc4jNJIRtsru0UWlYWtqYt48HrEYoH-HqhKa5mzq9lf40IvXv7izyz_sNvXZQqcedA2O3Bt5JMbjtCv2oujo8xqT9GTpXcREw4ipM847kXLUPD3UPLEPa-QMFcvHyqx7bgzFyT7klJaoc1zOFTOwKTBl0rEZAVYI_C4kuHRd5oEQtABRdEVQ9NwlrpyeZTMcsWt6uq_LUrKQ1fmSiZ6b-CXIADHY19Zx5dlQoxJQ-Xm9jv6-XH-xfZiOtnpx6kISKjIRtrJMlvnoeaNdqpDxA93CuqAp538fFo3MRFV3KzjHslkm7z8jc5sojR61RdeovAWPGPJKIScFKy80yE_RsFY42CDZnXND9zHWrOzm7Lov7SQ2JANl6r8Eo5p8Y_noGu6RvR01mKzoMqYe_t5PkG7d8gx3E0Pk5uX0zqzHbBARH9zTopW4OKldDNiURly-gdaaBlvEgOqxeQeNY9djC0B_5GjloAuieW2d5pvs6mbg8-YHA9MttofpdXXWhvrF3JUTXJjDe1W62XYu6BVN4b8ueBJ12i2y8sHWaChZ7_1r16Te72_JJPJ5GFLpFYKfNcKA6o-3K1rrRdvjXmnDeEk0MmG75lZtoWHjF8g8ssEk331QfeuV14tNEYbOx3kp73FFsIDoo86bUCtxGX8a9RDcRXUSKvDRkgB0MLvoIXnnvZyHviI9zCxbDSx8-EYREJm2XuSF6nREBbtjcFOgqNF8KmljSifUKwdhs9hIOIqaNQyFrSaDwJydhsAngln1d9Qs4FRPOy-7S0MTtA-ueWj6N_tawySoK9dM2CcdPjp65xo-KgU_u27pVYVVUbhEbgEjRjWEw-jcK1afwGxVnLyZmOj9wY6KKEO-xa6yHaGAW1TBbqYh0Dg2fTe3vDBCgmoJUD016bzz0vRa43BHViRAAuw2RHZ9cKHPwkAPUoYjqP3wV-T8FdIT9hM22ZhEgGyXqwao8k10FPgr1YqwPoSiAalLHdczkRs9HYfk1C0MxJwlIDm0dXTF78NmfhEY6AkWd0DgdL99o0wGe9j80mqSrYxN5DmibEG7xoWOsLBQ5p4x8Ga-wDg48B2lRjjqX4wsXSuroUuVgqBmcsnV66WBrxUjLuSuXFlLoa514_Zx0mH5kFUMVKJEP3ruU2f00w3Pw3PaCxNQ7qksXeCC5EC3bqjKd1-QfbbUoxVbaEPzcrEM9TFp-8BVk2BASWdHwh9X_p41K99yBGgpARcDfQJ5Yz43PiEnd2VacsPaZ03qQFsQCWdVXrSbvVsnZ7OjUfmWv57O2m-yeimZq-RDpeUKTF6csB5sTTL6dPMWDxt2bVxZbAFrDR4a7AH8yzjp2O7Xmxb_8xLsPPbdXKdIXcUElHtvOswiIqhs_EUQweKhHbHB0VsAWTSIc2hOSJXsYaDdFWf87xQWip3SxbwDmf09l5tkk4PtTTLQtqtMUAA3OpJoS_vVZ0Inmkjl8BYW26jvB-db1_dy2JXbCsCBgO2bx7Cj5aPSAkaTuo9iXzLvm9HbyhnGttPnzqHYyLcsEmaqKiSvOZUJzYsSKX2gc1uoNNLyZGYxEswXDxgO2wAsOwhcH4R4KxlZ8jcgWrdrced2RLmO9-rjEeUQ3cU5XcWgD-0UbCLKMghZ9D-Agqkpqr09XJXZkmp5PfTOxf0gAJYu6vcAYWv_5ilxOJXfZ8xeSyYbA7EnsYSm6zrIDihwtr0RdcNJUN_euMOeLVaiCP2SVLkWA-auaUO8r0r1DvGk-1UZibRgrmANjXe3vEoqEIXfnvDaoVNWXFSinU2B-5YXpTq-xCV9BlNMY6QVseYo1uixht-urXLg0oTc11bctm1BokAVCNqnweT0aMeantFtwhYjnUyehP7HBI6QS7Ez65lbJxhDV0XDX5kw=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:15:08.762053Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "zG_3asXBLvzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 148,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 148
+    }
+   ],
+   "prompt_token_count": 210,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 210
+    }
+   ],
+   "thoughts_token_count": 456,
+   "total_token_count": 814,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

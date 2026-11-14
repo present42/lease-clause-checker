@@ -1,0 +1,111 @@
+{
+ "clause_id": "c14",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "f20ff74c56322f751459453b5d48891e33801c36a258877180d9f0d6425644d7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the Landlord lists the building for sale, the Landlord may show the unit to prospective buyers. The Landlord will give the Tenant written notice at least 24 hours ahead saying why, on which day, and at what time between 8 a.m. and 8 p.m. it will come.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:16:17.202451Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"27\",\n  \"quote\": \"A landlord or, with the written authorization of a landlord, a broker or salesperson registered under the Trust in Real Estate Services Act, 2002, may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry to allow a potential purchaser to view the rental unit.\",\n  \"reason\": \"Section 27 permits a landlord to enter the unit to allow a potential purchaser to view it, provided at least 24 hours' written notice specifying the reason, date, and a time between 8 a.m. and 8 p.m. is given.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4451,
+ "output_tokens": 740,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "EXD3as_-E6jIw-UPqcvykAg",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:16:21 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"27\",\n  \"quote\": \"A landlord or, with the written authorization of a landlord, a broker or salesperson registered under the Trust in Real Estate Services Act, 2002, may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry to allow a potential purchaser to view the rental unit.\",\n  \"reason\": \"Section 27 permits a landlord to enter the unit to allow a potential purchaser to view it, provided at least 24 hours' written notice specifying the reason, date, and a time between 8 a.m. and 8 p.m. is given.\"\n}",
+       "thought_signature": "AY89a1-9NbqzsKOfaovnImWCfeDH857qKdhGc4pamf61V5JS4fmr6TMYHoeT2NWip9U2jXAEwI4oUSZkSUgOcYbVUWmcUXImkbTLQCNiIYgOvH-JtrTMD_REux0REMfeiMVebySNd9BhTLhPYktwUvLGNFpiPxpMlapB1rP1CPXhDakdIB0ZyLya9VIZlte-7qWJSL9nZL7yZBKFhDR-u_lKXxdCthp_yltqyARKqfkByTyyY6lK3BMjXQjwah64LRsHSLmFzJFVhyq9c4I3tVLOUDv8boNkcoB91K69GNG_ujEz8OoyDdXu-nSis-cv-I-xxbIfGVTJwo-jizzmURgP8IcbQqqJOTw8CE-JYOkH8T9gut9erc1RycnrXj9TlUywfpf1lt-qlU2u7NmPFwPa2l81gSGsrrSj_tj7qQPEVn-WAoUyUoSEO9-igGHArH8ytZA9mKC9UGjr481xL07D0scpTcJXAdEtuzwzOowK4VlVolLjSq11ibWulNuyPV3osdw84k7LyZrOCgdnBn2S_DMbjDNNpx8OG6nze-ryd323YIJCr39jvYUL5Wn-IGHeNPNQM3wqkSG2neavGRGbKrWgfQ5gUjnDlnxtPzycRB60aKuly1fjQ9yXUvF2lBEVV6VdnfYcmsQ1VFp76sFr2qWNOOZIG301fqZx252DOhfKAcgBEQpzsTISS_HdMm-JQesJYXaMGDtUSg20ygn7sZSgjmkkAQNHoaWPktGlBhm2ZyjJVf3tj4KZ2UFoFSu-x-jWeJoJ_TFWzCfAfWaV2KGkKdTvRZzvc8yo-khl1vg3lzRGCFTaGafDg93WBUnSVqWJnLJsNBLqA24o-zkeCQNBwvQYfmoFBgLQuxH0OneiP6vB5IDdssvJ-uv1UQk4TBcVtRYjYb9F3zzYVHmvdX_tjzGn6j38cPUuPNID_hYhiTg3IktGyOUrlM_C19rsJB4sYLmTxiPi9bJXPpofaRZylMfGgVYTC8ur4ONkSxePr_IO_x73rbguq_L3IXrzyHCEe5ff44Hf25-TijvTir7cfTkJVM92j-RoQdx7dAwNk_1lndYETu8mWm-b69fOvv6nl5OmWIJ2Fyd6nqcei-sp7eVyJlD2GCkpToGREK_5J_jvmI1A5w91FErA261G4-To7o4Z1Y8acYdDr5uaqA2HzimKBL-y0brYS-Dh0CsR5uCcULY-U_2yIuvC-Am_ywUhu3zElk5grW4e1Jngc6lyvidEGy_VAKuwoXNlXVk8B77blg6DonDF6l-M1SPBOHgCAPSq3WqUNPx8RCgkO314p17oVKhZJVJavTqejCzAAC4T0dQFSY574F7INe2uAr8U2-KIU74EhIBL9hMHrGYXKVUS9rq5qhTXsZL_dxkzxGoMEpr4ZtbZ1nTKB347eqtV7rX6HA1lN_1GvEwUJdnBi-ukAZxU-RsmHQ9fKICdgGolVWwgHPjvlq8l-o2oDhTgUChxfEfjCYdcApNfE3JhGUDLAsGItQ8v39jquypdXX4dzbe3bULYRCF4dJtUgwL6HPQDgjAYLxivTeMoO7p8Dy-OPmr2xIhwnf1UJN_g9WENBkL1hyzw00bPIM2y3RV8b_EqNXBBD0he371_sEVYkpMlLgvtXNlHupMwtvyaacBxp4Mmeb9Z8hF1htjOrww2MErS4wuW4qdC9TNJjL7mtvngzUjPlzt64GVnUOh_upl3jXc8JqIqmRnTGsp7Ms6c_lKJQjmzY5kCsFuLICurS7-oKjVgIPTf6_mqfWOg0dvWi2d3Iw4MLBONsHGfFaSGx85zS96MNuz3lM7020YIxb9X2i6X9XqDfLolUCMRGUk9okMacuGDQ0slPT2yR-UvnPrUG_e6-wNWr3atJ6OTuZdextdE5oZK4-25KqRVQyeWtWcb9rC579_V9fGWTeGTlqo61z65LduH4mC9dgufF2ZHoPR2tVKYuQdT4rGLU4FuroEL0dX45_ijC2xAArGXR0ZUVrrp1m9HWX7KL3ds2fTTqcF3qeVfXZTw45BJ5xxChujcfOg8tVW1miniQrHrWhMslIW8IIR3ID-bqHGaa6IKYfIWci8Jp4J0b05Rio2q0MUX6_xhTf22EO1hddkXvNZ9FjCJLAhXHiqWvub1VyO-fGoj53qhwnaN2yw2WR-PyomTwPoKLGoRDKhm4MEgSHqszQVV0Af_18WUqwtoD09lv0W1eGl51lKP80X9jt4VAU6YGPUVlcAx9dF6YgG04zoWkaY5HJoJUxgR4Q00nh3-Ea6HoDf0C7a7Pk4DC2yY-FApmeU0-QYgMLZfFdiDc0iy1UXGoEYiBCn-Aw4LUQ9u99mqXuQdnN6d8SuQsto6vQOA5Vx3-u7m-dHP4SnSovXHEwqOdMCJyoXNpN6XQy0mDQGgiGUWMmdFJMKBBhqvn7t_kZomXgx4-cBi5dSw2thbcHoxGSVX7lQAd3guYiEo7dzTm7PMdr6B6_4LifcPI13iu6IOVaqWlKvz7D8g1NwKOwxfiAKTz1G47x9fR3dD1XJkJUxr1A86tH9Wgu_rYby1jql-1US-PbzV_8lCOPBMXDNCNlwR6Q2HCm1B4cjR5eHLn2Do1kg7zmy9QA_9YkQX4kSmmm3mMvnfQoZn4F-W5SsMgwBw741wGmxQ1npbJX7DcatPp3e4EKtxoiWK9gm5Ofhu9uZsfwhdVGM7ze6-TSOxCNkvtcWJ_TNM4toiQL_iM44AmZPNfS8_NGUXanUILk3vh9CQuTHJZ2nbUggsQcUvWD2RdYm6Vq2LPJkGXJp17AMM_9VnjOjn38pukoH25bwBwNozHjuLUxfaQ1uOXcLPu56ZroAGVs5pALXI2_xhx66E0eex3yt6iMZ2xM1vKJYqrHdXk55tLioxeNqXmADoYy5TyGq3CnwuDqfgbtoXT6kU6ZJXX9G4pRbYIkjvXPbaXF9BbhvHYqOkVz8rTYvso8as10akY98A_VO7ioc4ga_hgEokMXa3kALEJQ4huaWDpNRqpVJ0r3kgqD_gLY2onEqc6A1lbYSNThUtcFndo9LBtIFd8Ol4n4O6VmFR6JMrI5FXz2EtshnWqf45FgcYMXsMhLUZ2qxSSl2MLrnm30lB2dOaBD0NJI9zGumNJSnLlasvD_Pw3g08BtT7-TZIOwbEYy39TLAYIGr4i3E3BwenhCUZStT5XKofZhK6ghHtw0LwJDHcyZ6JDksmc0fgVB1NUQ-8EynRGn37JGDBdbZJjdkOP8UuuGKbiUk-YK3dvi1l-UT79ENfbXQCyyIjmtN8EBXI3NqH5k2j_-1MkzfjcHV8rqC9dxWJL3awBf_VfE25ap-p1oMcu-wExYRQzotrFtsMW_kOEajlV1T3dABB"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:16:17.327503Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "EXD3as_-E6jIw-UPqcvykAg",
+  "usage_metadata": {
+   "candidates_token_count": 157,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 157
+    }
+   ],
+   "prompt_token_count": 4451,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4451
+    }
+   ],
+   "thoughts_token_count": 583,
+   "total_token_count": 5191,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "27",
+   "quote": "A landlord or, with the written authorization of a landlord, a broker or salesperson registered under the Trust in Real Estate Services Act, 2002, may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry to allow a potential purchaser to view the rental unit.",
+   "reason": "Section 27 permits a landlord to enter the unit to allow a potential purchaser to view it, provided at least 24 hours' written notice specifying the reason, date, and a time between 8 a.m. and 8 p.m. is given."
+  }
+ }
+}

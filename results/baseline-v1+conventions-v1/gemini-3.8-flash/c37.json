@@ -1,0 +1,75 @@
+{
+ "clause_id": "c37",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "b2c9c900d70110d94cd097d4afbe5c4d71229cd5927f4dcc35d5ee4faa767c06",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: After either party has given notice to end the tenancy, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, but before each showing will tell the Tenant, or make a reasonable effort to tell the Tenant, that it intends to enter.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:58.506714Z",
+ "text": "Yes, this clause is enforceable. It directly mirrors the statutory right of entry provided to landlords under section 26(3) of the *Residential Tenancies Act, 2006*, which permits entry without written notice between 8:00 a.m. and 8:00 p.m. to show the unit to prospective tenants once notice to terminate the tenancy has been given, provided the landlord informs or makes reasonable efforts to inform the tenant before entering.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 193,
+ "output_tokens": 714,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Wm73as-_I-2RyOgP4b-s2Ao",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:09:10 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. It directly mirrors the statutory right of entry provided to landlords under section 26(3) of the *Residential Tenancies Act, 2006*, which permits entry without written notice between 8:00 a.m. and 8:00 p.m. to show the unit to prospective tenants once notice to terminate the tenancy has been given, provided the landlord informs or makes reasonable efforts to inform the tenant before entering.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a1_RvjkrfulbjjzQSO362zyWvmfaUaGWbKW943wZlx96mrqrEgXVgbklfiJDSUWxY-NjFxJgBt8gclG2vWdzaQ0nedSFrvnlDhLzXi5NqhSo0ULa4mbKD3rB0--hv5JPyxcNxR_zVgePhIv3WNGg-JrrF3zQcOQJeH-8FNrMQI98yhmraCjtC-VIOnH-RlVqH_YzxY7by-KSB24czHm43osSzjeU9eowEkRyKVTLdCWL1gfH3smibyz0Y7oMOMY7k3DI3SmYsunJyLIxa56FazAATi4q2GKGC7oGBh6kK-Dmnxlv2toA2XLZEm8-ThXyYBLVwO6eG1SzccTCmVXrePUHY80SrY7qgp4UYDl1z1NnEcwoT2zzNovn78xiPNk1rdS4U4ICdMh424bWBJxXNUVTJ73aqgp7VnZFU-KrgzohLqb7M06ZOojVpDS6jxzYDzB0KSnn1s3c6T_uJMJZyAM1lfsIBeLPrvHQgeAyl0s-EC4iCYTR44SFh_ijOCE75kc_wD5m5swHQVbSVvgZ21e5QvKgk6EMnKI64da5oX5mnqRvEkhzDEv7o2PrA82QLqYoR4zi1iTIQxi3fvE5D7KV7CKc8OSXGuby-uTiYXUoEGVp8OxbsMik2OehQdJhBwG4IuwdNQWUZRmwe3OlSRIDGmNsdwumzhlXGj6jtAGUW5G_wZnBplo1TzyCFzsxCV5eRRi0jyqncNv2Tm8_eOddvMRfgnldumTmda03R-PgbUYdFCyzX2X4oFFYEhkkMHHCE0rFuXR482SyYq07V88jbG4YY1HksTaGiiD4Dyjrnw3z7fwjCdwbtBLmoQnIZiWofX9RFL1MiuSK8NPOxB73AYEEbJTTtjScIUGkrhI_HKho8wMAW_M0Fe9JRW9dyopoMJYHOmLIHv4ZNA3HpeXg2pl77rAjEW901pfZkpjHJpFA-kQwKeurGFBpcGP0h5GBOkh8FHFg85FOtots5-eeWpwvbE3N29DnNvhuQUcYrocTVw5T2-8wm-kVZgaUTTKjUvB1yEWtRrx5fUKpsB_90eewoqMO8ccSnaFDLDX92M8Uw0kMGDrvFPBDJelUe3lt7PGqvKBqzmWjLpX6KxHDQkshWYwWWCsp_Z9SzGway7yArUxn4Se9IS89sWSx9hZnDG-3fjoPgho2jvtVMPqsjy36bVTKC9fh0HN1mAEioJv4RdWFqHVxcRmC2CVdJePiG_v19zPxTQADZTbWOn6pKoaHJEsqVU5wP3fVBFg8VuktYycJiAxQ-OhjsqPkpaM4td4wTTj2pI2Ofi9FBINVa0brJOtER2zOpryIQQ51MwHjO7C-9YEL4c3YURkrSoUbJ3fZVRocVv1qkRlg5jWn2-GD20oh_W2oOIxlYvzSYwuQBtfDNLgjrsAz_5zv14ObZMq4r96M9jHIBy2gsfTCTprXCq1VFjZXZUPWJXbENfxOCYsENFHsX5cAzGfz0NllFNvQsAFYnN5LX-cYnA3BJhJfvU_ifYz_0R9ETL1N-XmNO1OlghmpyVyW4r-0KrIigk3D3Wb59tkUFcc5s1y7Ek6p8pAo4Q0-APQN2yE0jUo7_9VsQrOlPkN4oQBbFSNSnLeRM85xXtDUlkg6ItJYGSs4Lj1gyUaNOaTtDmyqmF_74kq7WeLPmfyH5_uyUlfQ1lyiwGRCoC6bBxMGsu7t9E9I2g3y_uF7x-lB6XKc7T-60GRwbAFN7cqmL1oplkJgJHbXIysbbIrFyA52HhnbJ3LWCaB7WKf1aWFfhgGHthlFgAW6Ade7ITJkYE8zrzeHl7UeHFuhnIDNfFCKx30gPluZ3BmOWnZsKPEqgBSH6PrFxTjddfIVNaA0GBlXP1W2JbGKKtM4nwY0LMj8ZQRarHQe0tlXXq-2bG8X6Cn_6nfD9jrg1pg-8r3CrFTgysteUf1xQ6ImQHLonBFU31nbiJU6zD_D--TA5skuJpBDgOiO8sV9klaoIlTMx6Ls8BxXhVkelvha21Ig6dZxEZQH1r4y5h1iehy8qz4UqFNncjxQqSS7YjY8YeU353tsPeOEbNPDVrbQ_fUHTgNWwqWbxIUAcOwYXRzBlm1BZc4H04fQ6EO_Q9H30yrhfK4PV4kJCfA-0tPJCFZHzsHa4MkgHmmAyKKb-CFfBiOs6yZfNtALzRmM_VTFQVZUxj9-zdd5CMXsfeMpg6Kh06B2XOnn_QVD2n8rrt5hiQLCGnRJCzlyicN2BMCb_ihI2NQGW98qk4ircG7Q85ue8ZYuhikveXwNPMXevhvvfCmID9UHgMehngyeIg6uPKBm5ZQ7-1UcTtjHjosK4XTm5Tm4zAWW4je7y6D4SWZWEjpUKBdq57kJWSzwjgNkd63iQdrGuAvbdlagt83UQtCa_7fvCfGEupdvdiiEHzfi1w9dI2E5LOi_SFHBvplQdeAoacv2ZXzIVdXoa6LR-cbEhe_wA5KEBQtiuGPSjlVj0rCECe1LFHGsAN514oC9u7WXYVHCStFiiYRShJnAmFEi0whzayWgtZLaSELQJlt_oq6cqezhCI6CqOLp7UbHkMvGWBX_bDMAw_DxrDggfFNbRAUbQEPaoVthXiNYtz0A5CNNUeowE8xbWVi1RvthLknl2e6PI_TfDxtk40XVcVpcOaLTNgQJpSmSV3QbA8iJ156PDOI7wAiDqcG9CnXzpjHU7SODtpho3GtfVx6ExlOsIjuRlt9SmLAOhXFIk5loxS1RSvudgwj1GQP8sKZz-tofmoJzQsfGbI46zag_co9z1nhiCsvxLvCIIefcu8DR4LTmUnOlhcQ3sd6g7zsPj983Zc0FJ2iTvGTxn5UIjptYTepYRU-AmVWcBPiyxqut2UguGH6GQQcgBn0dlSlxst-YCN9JlK3iZKd2qye5NtxYDeTQsZEbgq8kGne3DuGh6h7O5YIquhKSDFWBLBqG192631V38A4avwWMuYBYX9CZUPyhWfTAQrCI_AIt3rBMpGiI5BQvcMy7SHc0DpB6rqCjx-7oXVXoW5ro-MtI2lyo0lkjs_Qbb2P96trDCRJaZF9pDFgWAUv5nt-KtpvVd_ADN_3m5b7dnoZWFvNR2cLet7goclrVlp4ay07Cgy-MnbkLsDnLqrzmpLhlAVboOmL3Kmbb2_G9vV7DBnod-cf-MS1MW4nAvAxAHMLzeHB6MLcKQowfN-uDfxWPJiJcZ8X0xx5neNzSSBfWPUD0UNt7GGatmqKPDMNmrozigQZmq8rce5NPssU-StHRV0bwL2w1WajAzju7-6M2r_AyHq686VohSdlZWFRoCp9k5J1rP1N-3LCAShIIe3URzJD0Ae6m7SP_52evS14ly4X3HCvruM5qrLgQgHBX"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:58.581583Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "Wm73as-_I-2RyOgP4b-s2Ao",
+  "usage_metadata": {
+   "candidates_token_count": 108,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 108
+    }
+   ],
+   "prompt_token_count": 193,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 193
+    }
+   ],
+   "thoughts_token_count": 606,
+   "total_token_count": 907,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "clause_id": "s26",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "6f7bd9f84c2e94efc9febe8a3e3f58694d5aa41e5e0371c3c05f98432caed1b2",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant's guarantor will pay the Landlord $1,000 on signing as security for the Tenant's obligations under this Agreement, to be returned when the tenancy ends.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:34.299455Z",
+ "text": "**Not enforceable.**\n\nSection 105(1) of the *Residential Tenancies Act, 2006* says a landlord may not collect or require a security deposit from or on behalf of a tenant, except a rent deposit under section 106 or a key deposit under section 105(2).\n\n**Why the guarantor's payment is caught.** Section 105(3) defines \"security deposit\" as money \"paid or given by, **or on behalf of**, a tenant… to a landlord… as security for the performance of an obligation or the payment of a liability of the tenant or to be returned to the tenant upon the happening of a condition.\" A guarantor paying $1,000 as security for the tenant's obligations is paying on the tenant's behalf. Routing the money through a third party doesn't take it outside the prohibition.\n\n**Why it isn't a permitted deposit:**\n- **Not a rent deposit (s. 106).** A rent deposit can't exceed one rent period and must be applied to the last period of the tenancy. This clause instead holds the money as general security and returns it at the end.\n- **Not a key deposit (s. 105(2)).** A key deposit must be refundable, limited to the expected replacement cost of keys or entry devices, and paid only for those devices. This clause covers the tenant's obligations generally.\n\n**Effect.** Under section 4, a lease term inconsistent with the Act is void. The landlord can't require the payment. If it is collected, it can be recovered through an application to the Landlord and Tenant Board under section 135. A guarantee of the tenant's obligations is permitted, but collecting cash security under it is not.\n\nVerdict: not enforceable\nSection: 105",
+ "finish_reason": "end_turn",
+ "input_tokens": 255,
+ "output_tokens": 949,
+ "raw": {
+  "id": "msg_011Ch1HwtvLeBvtdwevKDaR5",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.**\n\nSection 105(1) of the *Residential Tenancies Act, 2006* says a landlord may not collect or require a security deposit from or on behalf of a tenant, except a rent deposit under section 106 or a key deposit under section 105(2).\n\n**Why the guarantor's payment is caught.** Section 105(3) defines \"security deposit\" as money \"paid or given by, **or on behalf of**, a tenant… to a landlord… as security for the performance of an obligation or the payment of a liability of the tenant or to be returned to the tenant upon the happening of a condition.\" A guarantor paying $1,000 as security for the tenant's obligations is paying on the tenant's behalf. Routing the money through a third party doesn't take it outside the prohibition.\n\n**Why it isn't a permitted deposit:**\n- **Not a rent deposit (s. 106).** A rent deposit can't exceed one rent period and must be applied to the last period of the tenancy. This clause instead holds the money as general security and returns it at the end.\n- **Not a key deposit (s. 105(2)).** A key deposit must be refundable, limited to the expected replacement cost of keys or entry devices, and paid only for those devices. This clause covers the tenant's obligations generally.\n\n**Effect.** Under section 4, a lease term inconsistent with the Act is void. The landlord can't require the payment. If it is collected, it can be recovered through an application to the Landlord and Tenant Board under section 135. A guarantee of the tenant's obligations is permitted, but collecting cash security under it is not.\n\nVerdict: not enforceable\nSection: 105",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 255,
+   "output_tokens": 949,
+   "output_tokens_details": {
+    "thinking_tokens": 412
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "clause_id": "s10",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2982a376897e3972668e989571a2a8c244eaa6ccf52c4653c695c29fe5241d6a",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Before any rent increase, the Landlord will give the Tenant at least 90 days' written notice, in the form approved by the Landlord and Tenant Board, setting out the new rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:13.241160Z",
+ "text": "The clause is enforceable. It restates the statutory requirement that a landlord give at least 90 days' written notice of a rent increase, in the form approved by the Landlord and Tenant Board. The Act sets that same minimum, so the clause does not contract out of the Act. A lease term that gives the tenant the statutory protection, or more, is consistent with the Act and can be enforced.\n\nVerdict: enforceable\nSection: 116",
+ "finish_reason": "end_turn",
+ "input_tokens": 255,
+ "output_tokens": 1453,
+ "raw": {
+  "id": "msg_011Ch1HvN2x3Y38DYoHCAAjL",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. It restates the statutory requirement that a landlord give at least 90 days' written notice of a rent increase, in the form approved by the Landlord and Tenant Board. The Act sets that same minimum, so the clause does not contract out of the Act. A lease term that gives the tenant the statutory protection, or more, is consistent with the Act and can be enforced.\n\nVerdict: enforceable\nSection: 116",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 255,
+   "output_tokens": 1453,
+   "output_tokens_details": {
+    "thinking_tokens": 1313
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "clause_id": "c25",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "500763517bfad967364738c7b306d1cedde21e512de47ab8eee2010c88dea969",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Before moving in, the Tenant shall give the Landlord twelve post-dated cheques covering the first year's rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:10:30.612842Z",
+ "text": "No, this clause is not enforceable. Under section 108(a) of Ontario's *Residential Tenancies Act, 2006*, neither a landlord nor a tenancy agreement may require a tenant or prospective tenant to provide post-dated cheques or other negotiable instruments for the payment of rent. While a tenant and landlord can mutually and voluntarily agree to use post-dated cheques as a payment method, a lease clause mandating them is contrary to the Act and therefore void.\n\nVerdict: not enforceable\nSection: 108",
+ "finish_reason": "STOP",
+ "input_tokens": 184,
+ "output_tokens": 846,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "tm73atW8MPqiw8cPovuTgAc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:10:45 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. Under section 108(a) of Ontario's *Residential Tenancies Act, 2006*, neither a landlord nor a tenancy agreement may require a tenant or prospective tenant to provide post-dated cheques or other negotiable instruments for the payment of rent. While a tenant and landlord can mutually and voluntarily agree to use post-dated cheques as a payment method, a lease clause mandating them is contrary to the Act and therefore void.\n\nVerdict: not enforceable\nSection: 108",
+       "thought_signature": "AY89a18kGNRSKuYv32ZylxPxR-F8ReJAOkWWnPp3EqXzOzInOA1L_d8r8wzBcG8wXbGofsNFAzlCqD8zbePBGJBo3hx2jgAiDswY9pr8y3upwrwONqOI3xK3fOb8XYvcnmCh52etkslkWPns_GAPlRQ4eO82JiMwgtuJY54wWtq0RxlFt8NVxS3UbCTGzvF5DTptMnzGbpdxZxxspTYU9GqcwDIKHZ9xpi28_lzWIblaEpSsRlIGiwuXIER20bbAC-ERPnol_G3jXAD4MRewX1MNHJoXEHLZQo6nTdCopRknJIlz6Zfxg6gmWm-QltE-W5U0sBUzi2ACBhGfcfgwWw_eugzvz_ElmeNxbJ4uT4XruxnOiWju1wz-NS8zLYTFqtL-01JWhzItxw7ekxy7AKN62nhxi8epz1Hfr-fpqH-4yXU8p4xGHu7KsdLiIedjg3mH28C-t0tPNQVL7axAKjoH4DvDbPbGCQuT6vbz3lgmjrWTzTAPjioqqHT0RwZIKVmMgdgxv6G0TzENxhS11c3I7zODqaEm9fmzrJlzhS5e4lDlrXKRig_y50KG7HFF8F5djUEsQcyhG9vFozDHuD7g5fFrTQwR_Qc6OfoUCeB6onxJO4CP3uzomnbQPS5F-8gTie0N8Wbow9oHQnxRvktOuOrXA44W4Z0piozQkXdiluOgPHnMOmTYT9-j5WVjpx5SR34fd6i-LZXtY7w_8RGf9EVs2BvzRl_81fIPukPoMHzopLszVDqnkIZjJU-WPSEqLtZHi7vgY8HqjM76J6yD7zMzavzzVWJW4o9a6hcbleABBYNNxxSGu5k-y-Qa6NcpXw5O2LIo6H0WnWJrlmASvMyxUn6kIXDc-_BuD8SfI-r_JnZvJjDmUPDDKJpUjA16gtluq8DCZM8MNysZ-veB9iAhvTNCVKBITQ4xdOcorTWgm0wjk5ZrLePxO7vW_oTq5g__MXyGQjBKaH9eK5aioLEgHLtWGd7NbDA88iJMHZuMliNVyu8cXKrfx5Xg7vl2VWesrw2j2JQHwNvcHNPFtqGEP1PWoPgByKJADwOrWldRpCB6vekzul4h4akA5MxtSGYeGgPFpwPsyQo962bxqZCalp_pQ-I6VBMxNxLr5kstNCyJMjunBJ6FivS_dUOzcnf5qSu-8VJPkAv9tiszMoRE349vCMtZSCzADtW3yrNXSCiVYrWwjGw2AY2X5JKZk2neGUw7vQBySXitsp1PNqzOMrMejDZx-uPVZg98ekLRsTfASxL4YAyCjjZAB4F6PMCvFOeWFxIIutF2JICajmA3AgI9wWAT1by5Vi_xJtT8sjODTz4-wl0Mm-DH3Y6mrYNxZkp4syWbZB2d62zqudokpKJSqLgZMl8Cyw_PYpoieBpt0Pe2q34SQVA13H_sIQ8JkShxbP40PxteuZDQfOLSMco0MQRbRpjLT5Qip2sjopmK_K8f1Q7IPDHDLwRJo7PjJK21dlJaEthlbo03cDYN7niqWWC7J--FkMAIl8qdVuwdVq_iBjS5GrVziybXmI1J_UitJ64ouVeNSyT-i5EMtUM3Wj5XPBAIvqV9KSjp4nIX2r40iK_5Y_WmYOIysJMQ0eyY3ugRW3CTpDlPSqd8bQ1a5HMtBj2GYJ1HC5Gvg4UTxld7qtRHjaqpyqV8KJj3QidnFmoUdxiSR5G49jCl7VLmQ92_ZJ2Fm3znbLsP-DaKsDUxsr6vBEkQY-YiYXmUwBeAq0w9e3iYSQBpNSXayMyAkiE-Hl-QZsbEM4wKBEQTajd0LsPavRZ5lcYh1F7fpqROS-7WW28RZNK5LR-GWWqshYuJMW_tGY12XtCSMVcleMLKXmBmV4TSjZQICHJfjhrmolFd4Rfr6v-fvQjtPHB6dRl1tzNEFtSyiSFh35XFZcDHM01U8dVUIo1MUzNcLtG6NOrLAPRy65OaxogINPpbx2s69nWDeAB6aJ37sYk_eEaKXdpNjI-TsLuJ6X53NDqWT8lGgREjBy68km-WzMjuV_WX2vJn-zo_Tz5gZKBGV7pCC5Nk0Po0I-Vr4Ng3FUYQD76Pcs8sREI2cNaHC_LdUIyE4CJy-W2FkE_XC3H5riKqp9-R5xd1Z9JodPqlh3hK9kKTVqrgQsKhg486u7NvzNfej_zTynlrqPbSgcY2Il1z8YQwTEmCAOnux9AtNvImPHsnWMYTRZvfRmse4xwIc2VPzJG9HtBIMj0tUgqnsgfm6JqCRqqjBRtM7aFUZYuxy-rJXn0K-zGPxXqSAWMCX3Weeq8MTYT5GRar_L46hxOv7ZLCdRf-DVfH67Ybsm3c2rALxNeWNTAdW00ZFB4m73F36z8wCH5EcqWdSgxsiUXllyKT5fDAmpPZNGMdfhpVyONxUCF4ImMrABS9IrvcY5L6dXq90-2HMqA1jrt6h06Rie9uqopugEUFc2qxzOwbzuR6-kc-yE01tJZqSUXt4RQTmsrPJWtJYUi8LQzUUc-6t1p0zO0kLDkX8x8jIQ6ot7ylCoBxykrXzLr_n1nWWlLEcK1BUJ9GHvd5yb2Y02N3CARg9_udCLBI7vCoc-TDAzF8Oq9XcRGVSYj5qMh6gQh1EG-E4zSe4hQduIaQj1MajS4OXeyrW0bT1ggynY87aDI8v5KphLt1r4ayolgtvC5w-y7ATFw4h-vx0Ga-7ivghQlHcORpwHiFUXV9_YQOx8rnHVGVflzlLxrT5YDjK7Ar19hs8ubqQrY6xtUN1GbXM86q3WvSnG1YCMJOMXCJqgqGq4riFGv09EJRTX9mjFZtla6Mx4f0-IVYuiHzyRXx5Lb1Yae4SMsvPkc57CwJYASuwOGd4spOTsaA9ENZqf4JatUyi8SwL6F6e_SWhQEpGBEK3sAIezhgB1cQ1nzJc4a8iDjoCp13tSkaWy77radEN8hM2U3VrM4cXv04wdz7ORriMTb-QsC-_W9EjQd4jIiMX1XOdF00RjJZP0YcZJsv5ueb9VMFX8y_lYDuJPXzlzwf7pgAdTEYf2Em34-pDqNGplwo5fkXHqSlWUYK5aNftg3AI9EjSFcs2Sfm2vPTdBH-EWgm9HwolzQ169ATmX4SYF9w1YX_F_2hvunsVrwLiobXh57LGLBzoOjP32YteMl6EKehchNKTfiRQLd0N0hdh08rY5u4pK2Mpnde-nYvz6IicjlnPmVryVtyYvkXU4Ae1rr7fN3kmJ9uCwVjCAPA3igMxjS2qozWhk-Q7ctT7shKbTiTwTGEAr77RPxiKmJ_HAyiS5XQJvIkofCdQ3DPoSk55mH638_ySR03B_s4yECQw8-zUjZJXaTwtx_BDyEIVf_XWSGo9CdYB3bgAmgR2lis-9-mDDtYUTB-ccFqD9A43NMbRAAb3NeokkhLAnHuIIoeHJ4ptdUGAjzAA23X1XLHu4mp6yot1rZD_sQtE6A-7OL5XwQF-I2DMGzLOsFSZa21tBae76DgVxCRwraDTjKr1jRKXJXQa1QptBt5J7xpchg1RtaCNeFQbl9bfWLIHmG0G6unmlalF2_kRlHI1pcfomWzgnUgyPRP1yZHB1glupDxvY4dNQlZVdfnyVfKCwc2loa1oJHYFHcBuCycDomlBIzg-Lvm7fb3_J95gThag-Qr0dQhXBuwqG4VDhaMcEhiK8ANy1wdxJHyBUlbyLj6N0C8s99vhSTXKz0X60hadJhzCb5vVSXs0o_jbQC6o2ZEKWM9MkGSeQjeBO3caZNUhB2Uz7GOApRp_QHwansybVHjH01kuam8"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:10:30.794197Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "tm73atW8MPqiw8cPovuTgAc",
+  "usage_metadata": {
+   "candidates_token_count": 116,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 116
+    }
+   ],
+   "prompt_token_count": 184,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 184
+    }
+   ],
+   "thoughts_token_count": 730,
+   "total_token_count": 1030,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "clause_id": "c37",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "b2c9c900d70110d94cd097d4afbe5c4d71229cd5927f4dcc35d5ee4faa767c06",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: After either party has given notice to end the tenancy, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, but before each showing will tell the Tenant, or make a reasonable effort to tell the Tenant, that it intends to enter.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:54:12.884981Z",
+ "text": "This clause is enforceable because it accurately reflects the statutory rule for showing a rental unit to prospective tenants after a notice of termination has been given. \n\nUnder subsection 26(3) of the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit without written notice to show the unit to prospective tenants if:\n1. The landlord and tenant have agreed the tenancy will be terminated, or either party has given notice of termination;\n2. The landlord enters the unit between the hours of 8 a.m. and 8 p.m.; and\n3. Before entering, the landlord informs or makes a reasonable effort to inform the tenant of the intention to do so.\n\nBecause the lease clause meets all three statutory requirements, it does not conflict with the Act.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 224,
+ "output_tokens": 180,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "9Xj3auP6BMmkyOgP2qHD-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:54:18 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is enforceable because it accurately reflects the statutory rule for showing a rental unit to prospective tenants after a notice of termination has been given. \n\nUnder subsection 26(3) of the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit without written notice to show the unit to prospective tenants if:\n1. The landlord and tenant have agreed the tenancy will be terminated, or either party has given notice of termination;\n2. The landlord enters the unit between the hours of 8 a.m. and 8 p.m.; and\n3. Before entering, the landlord informs or makes a reasonable effort to inform the tenant of the intention to do so.\n\nBecause the lease clause meets all three statutory requirements, it does not conflict with the Act.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a19lQrgYvAM5k0QfoU44hZwTvl8H7-0CGHw86wTc-x0SwtUv5h0mWfBFPxaIDi_qOWKq_njSgqNwTl5Zzh0Lt97-rPConAghvG2UaR2217IdKc7NfSODLvozKW0P"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:54:13.081251Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "9Xj3auP6BMmkyOgP2qHD-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 180,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 180
+    }
+   ],
+   "prompt_token_count": 224,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 224
+    }
+   ],
+   "total_token_count": 404,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "clause_id": "s14",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2acaba45ea81f4a22c31bd1fe2b631f1c705da54f40da5eff08d92a989a86ff6",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: To make things easier for both parties, the Tenant will set up a recurring monthly transfer from the Tenant's bank account to pay the rent on the first of each month.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:14.546121Z",
+ "text": "I can't verify the exact current wording of the Act's rent-payment provisions, so please check the section against the e-Laws text before relying on this.\n\nThe clause requires the tenant to set up a pre-authorized monthly bank transfer. Ontario's Act restricts how a landlord may require rent to be paid, including by pre-authorized or post-dated payment methods. My understanding is that section 106 is the provision that addresses this, and that a term requiring a pre-authorized payment method is therefore unenforceable against an ordinary tenancy. Because the tenant agrees to it in the lease, the clause also runs into section 4, which says tenants cannot waive rights under the Act, though I'm less certain how that interacts with the specific payment rule.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 248,
+ "output_tokens": 2584,
+ "raw": {
+  "id": "msg_011CgycmiUUC5dBMeMeFin55",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "I can't verify the exact current wording of the Act's rent-payment provisions, so please check the section against the e-Laws text before relying on this.\n\nThe clause requires the tenant to set up a pre-authorized monthly bank transfer. Ontario's Act restricts how a landlord may require rent to be paid, including by pre-authorized or post-dated payment methods. My understanding is that section 106 is the provision that addresses this, and that a term requiring a pre-authorized payment method is therefore unenforceable against an ordinary tenancy. Because the tenant agrees to it in the lease, the clause also runs into section 4, which says tenants cannot waive rights under the Act, though I'm less certain how that interacts with the specific payment rule.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 248,
+   "output_tokens": 2584,
+   "output_tokens_details": {
+    "thinking_tokens": 2328
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

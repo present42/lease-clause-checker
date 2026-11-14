@@ -1,0 +1,75 @@
+{
+ "clause_id": "s15",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "e5f15b15438f03a87db0d91da95785ec9fcfc1c006441f4ebd3668d3102a2f0f",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant may keep fish in an aquarium, but no other animals.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:14:56.550762Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void. Therefore, a clause restricting a tenant from keeping animals other than fish cannot be enforced.\n\nVerdict: not enforceable\nSection: 14",
+ "finish_reason": "STOP",
+ "input_tokens": 143,
+ "output_tokens": 390,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "wG_3aq2qLtW9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:03 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void. Therefore, a clause restricting a tenant from keeping animals other than fish cannot be enforced.\n\nVerdict: not enforceable\nSection: 14",
+       "thought_signature": "AY89a19g6CGiZ08Zmp4JkOVLVeUCekUA2zTGboCoqXP4inveOTwcErtCXjzOX6ySKDKpQa2-0KKIdxhq7xVKkAZx-Nl-ppdpZB4LvzQTFTO0-ZQjO0Om7GDZG2VqyW9YzQb5vAkhc-oBjJYeOqklyPKxE0xSjefA8W5cpbv3SQKUSYdLHi_RImeP-0vs1GlJ_GpxjcKHs3fpWFQ7U6IXgRpnWClcYhO0oVLT9rTOdn0ao9SMc4H8FXIq1d7RnjHZ6up-HhcyJsJJJqJ1R9wVwCJKTWtrsETQgvROL8wi4j8PsACoSRqDXN_4OqE-YRAWaOSr_tOcMwJmWaOYAKNgPccOhHOVfcM93Grj-JmUkT4kVLbEQJdEgh4BvZzUcq-s44Lp3xOBHLE7OSxMMe72tj7fW1lnheqkDR0VRJ8gEXAhfcmdBMKnPqE1_RSgvELuf8WnXvB1E1mc0YFXkth34PoOm0FmuINDiTTShvZO3xruXBLVX_s6-tNdblSu_MMk561C6iqTQ8jQAarn1irJs1roRw31hCHN8tjndUKonXXZ9vtNurkQxal4HG70jFDq4A2YESKS_ineo8EKABXnnIPCq2qFrP3r1OJqG1v53bDgWr9nYM7FcvNlWBx8vMI7MmQ-LsI3mAoxF3Dh9AoMrU7BUKshQMk7UgeMDPvY0vhZ5-m1HZYnYbRR8crydXSezcS-sbKo2vJxIwps8UrGatNSm-YDV5jRSdUw73WHNzlyGqF4GFJCaJ5Joncc_pZIXnQgExbBcJ9AEacx40Bz7-sdbSLyHUEYTi_OrFKdOi6F3OZBcc8FSl3-s6GvmvQa8y4FKCjSneFqEjZPONkTOZJfhpkMJY-lzQBq0BdTZOKuU2vCcDoeMJyJ769Z4Mx4NZZQx-OrqvfrqOEgVO8-vwTwlNziCD0oy5ocLcuVPWk-XvIKyRBilnC5jG9KXqxtRrcI9d1DNI-wL1NUVhuxfhgZUSsEeHjBp67vacLMVvRQuz6uT0waeTyBoao-cUnDXMg06PsG6ebXsls9w2z8BaHOuUQQX3A65pCs54j16mQ77wyUSreAyOPqDLubnPAZWWm7PPyt2lGwsv0EvgbKN-xOYQ7yX8nOjgodChehFka86SDmV4_heCEGVQ5X-Nxytdxf5UiwyfJFZysONtpKIS9Q3rHmBRsq7q-xN3l8ktAS0i7anCzPgo2BJ3TxsvqS1gfmaddR4aCIponQ6Lf8IeWfQzN43JjufcF0FFQhzIn5OkGst_67W3fgy6QXJRnPy3RoJOOJmTozAeLUQ_uZDZtdbhDJogNZuYGxYwxOXrC8kmoL6JKyeRFC-LV66m7VLiLSWDs1lcGD7TrQeDxxTtUWqCAA9XxSoJtpr1pj6mumNvbZ2m0O2eqfZaK297rT5RM1-khXMqfUQnWjrKkPd-uK2DywyZkQa8tjHJByflQ43sIA4dJy5u6WOqxNtJ0yUQ1JTeTxcRMZYds9fb_VVIHzV_jLuCeg1RZ_DEYN3l-ZpLuvZ6kZ2y5-rUL2ELAu_3DnTeDU1zQu3GJR5aJCGmFkSJUhBeScxhBwMOmf2d5d7zfF9cSZYC6DV3BWJzY_J_y4B-1kXaYSU4hy3GeliVlTcyro53KOXDc070LAzQDg8kjtnDdDWSqVihvDz6Qv3O9kVkMdLM_xaLr5jKaxwVAFoKLudTaAENqHZ7Nv-DeYCXnzeTs5_M8w0-ayCfLKseUp7tZlUi9OiNc_XxMSgR_KwZ_rVJJ1p91owiTAVS403gb0EuTG8cVhTkF1lwGfVbCqg41m6IGceAXS5P-R7gu8Ml-4FNej4bfihNKsc2dT_1ammZjAofDdbETxTq0u3b2e6mRpqVa49kdLAezJtenur7ygZevyhzTthYKG"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:14:56.759085Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "wG_3aq2qLtW9w-UPidKMiQw",
+  "usage_metadata": {
+   "candidates_token_count": 62,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 62
+    }
+   ],
+   "prompt_token_count": 143,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 143
+    }
+   ],
+   "thoughts_token_count": 328,
+   "total_token_count": 533,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

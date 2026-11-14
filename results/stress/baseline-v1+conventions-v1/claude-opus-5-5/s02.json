@@ -1,0 +1,67 @@
+{
+ "clause_id": "s02",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "3d8675bfffaf254010fa3c35a2590a6c7dbd88b6b44b0a626b2db90784a16efa",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord will vacuum and dust the unit once a week and may let itself in for that purpose, without written notice, between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:23.702672Z",
+ "text": "**Yes, this clause is enforceable.**\n\nOrdinarily, a landlord must give at least 24 hours' written notice before entering a rental unit (section 27). However, **section 26(3)** creates an express exception for cleaning. A landlord may enter without written notice to clean the unit if the tenancy agreement requires the landlord to clean it at regular intervals, and:\n\n- (a) the landlord enters at the times specified in the agreement, or\n- (b) if no times are specified, the landlord enters between 8 a.m. and 8 p.m.\n\nThis clause meets those requirements:\n\n- **The agreement requires the cleaning.** The clause says the landlord \"will\" vacuum and dust.\n- **The interval is regular.** Cleaning happens once a week.\n- **The times are specified.** Entry is limited to 8 a.m. to 8 p.m., which also matches the statutory default window.\n\nBecause the Act itself authorizes this arrangement, the clause is not inconsistent with the Act. It is therefore not voided by section 4, which voids lease terms that conflict with the Act.\n\n**Limits on the clause:**\n\n- The landlord may enter only for cleaning. Entry for any other purpose without notice must fall under another exception in section 26, such as an emergency or the tenant's consent.\n- Entry must stay within the specified hours.\n- The landlord must still not substantially interfere with the tenant's reasonable enjoyment of the unit (section 22).\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "end_turn",
+ "input_tokens": 249,
+ "output_tokens": 927,
+ "raw": {
+  "id": "msg_011Ch1Hw7gGq7TasLxuReVno",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, this clause is enforceable.**\n\nOrdinarily, a landlord must give at least 24 hours' written notice before entering a rental unit (section 27). However, **section 26(3)** creates an express exception for cleaning. A landlord may enter without written notice to clean the unit if the tenancy agreement requires the landlord to clean it at regular intervals, and:\n\n- (a) the landlord enters at the times specified in the agreement, or\n- (b) if no times are specified, the landlord enters between 8 a.m. and 8 p.m.\n\nThis clause meets those requirements:\n\n- **The agreement requires the cleaning.** The clause says the landlord \"will\" vacuum and dust.\n- **The interval is regular.** Cleaning happens once a week.\n- **The times are specified.** Entry is limited to 8 a.m. to 8 p.m., which also matches the statutory default window.\n\nBecause the Act itself authorizes this arrangement, the clause is not inconsistent with the Act. It is therefore not voided by section 4, which voids lease terms that conflict with the Act.\n\n**Limits on the clause:**\n\n- The landlord may enter only for cleaning. Entry for any other purpose without notice must fall under another exception in section 26, such as an emergency or the tenant's consent.\n- Entry must stay within the specified hours.\n- The landlord must still not substantially interfere with the tenant's reasonable enjoyment of the unit (section 22).\n\nVerdict: enforceable\nSection: 26",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 249,
+   "output_tokens": 927,
+   "output_tokens_details": {
+    "thinking_tokens": 439
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

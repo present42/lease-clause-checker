@@ -1,0 +1,67 @@
+{
+ "clause_id": "s01",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "8ba06eb1c84a4c6117d6b5a4b94d15bd88cb4fd1b41041be1e9495040ba5cea4",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may come into the unit without written notice whenever the Tenant, at that time, agrees to let the Landlord in.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:13.240223Z",
+ "text": "The clause is enforceable, but only in a narrow sense. It does not give the landlord any power the Act withholds.\n\nSection 27(1) of the *Residential Tenancies Act, 2006* allows a landlord to enter a rental unit without written notice where the tenant consents to the entry at the time of entry. The clause tracks that exception: entry is permitted only when the tenant agrees \"at that time.\" Because it adds nothing beyond the statutory exception, it does not conflict with the Act.\n\nTwo limits follow:\n\n- **Consent must be given at the time of entry.** A tenant's advance agreement, or a general clause that treats past or implied consent as sufficient, would not satisfy s. 27(1). Any reading of the clause that lets the landlord enter without that contemporaneous consent, or without the notice the Act otherwise requires, would be void under s. 4, which prevents a tenant from waiving rights under the Act.\n- **Other entry rules still apply.** Entry for other purposes, such as repairs, showings, or emergencies, is governed by other parts of s. 27 and related provisions, and the clause does not displace them.\n\nI have cited s. 27 from memory, so check the current consolidated text on e-Laws before relying on the exact wording of subsection (1).\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 237,
+ "output_tokens": 1554,
+ "raw": {
+  "id": "msg_011Ch1HvMhqkCWVZN8ZLP8tC",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable, but only in a narrow sense. It does not give the landlord any power the Act withholds.\n\nSection 27(1) of the *Residential Tenancies Act, 2006* allows a landlord to enter a rental unit without written notice where the tenant consents to the entry at the time of entry. The clause tracks that exception: entry is permitted only when the tenant agrees \"at that time.\" Because it adds nothing beyond the statutory exception, it does not conflict with the Act.\n\nTwo limits follow:\n\n- **Consent must be given at the time of entry.** A tenant's advance agreement, or a general clause that treats past or implied consent as sufficient, would not satisfy s. 27(1). Any reading of the clause that lets the landlord enter without that contemporaneous consent, or without the notice the Act otherwise requires, would be void under s. 4, which prevents a tenant from waiving rights under the Act.\n- **Other entry rules still apply.** Entry for other purposes, such as repairs, showings, or emergencies, is governed by other parts of s. 27 and related provisions, and the clause does not displace them.\n\nI have cited s. 27 from memory, so check the current consolidated text on e-Laws before relying on the exact wording of subsection (1).\n\nVerdict: enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 237,
+   "output_tokens": 1554,
+   "output_tokens_details": {
+    "thinking_tokens": 1127
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

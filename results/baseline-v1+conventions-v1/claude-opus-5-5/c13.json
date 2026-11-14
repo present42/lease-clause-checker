@@ -1,0 +1,67 @@
+{
+ "clause_id": "c13",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ca4ef1f82b87f8de7735ff5885b3232acd9530b5aaba42dcf79001ba93069e36",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord, with its contractor, may enter the unit to replace the kitchen cabinets on 24 hours' written notice giving the reason, the day and a time between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:22.354996Z",
+ "text": "**Yes, the clause is enforceable.** It matches what the Residential Tenancies Act, 2006 already permits.\n\n**Section 27(1), paragraph 1** lets a landlord enter a rental unit on written notice given **at least 24 hours** before entry \"to carry out a repair or replacement or do work in the rental unit.\" Replacing kitchen cabinets is a replacement or work in the unit.\n\n**Section 27(3)** requires the notice to state the **reason** for entry, the **day** of entry and a **time between 8 a.m. and 8 p.m.** The clause requires all three.\n\n**Bringing a contractor** doesn't change this. The landlord may have the work done by a contractor acting for it.\n\n**Section 4** makes void any lease term that conflicts with the Act. This clause gives the landlord no more than section 27 already allows, so section 4 doesn't apply. The clause mostly restates the statutory right. If the landlord gave less than 24 hours' notice, or entered outside 8 a.m. to 8 p.m., the entry would not be authorized by section 27 or by the clause.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 264,
+ "output_tokens": 1034,
+ "raw": {
+  "id": "msg_011CgwRCrYgBKxWWqamP3JVZ",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, the clause is enforceable.** It matches what the Residential Tenancies Act, 2006 already permits.\n\n**Section 27(1), paragraph 1** lets a landlord enter a rental unit on written notice given **at least 24 hours** before entry \"to carry out a repair or replacement or do work in the rental unit.\" Replacing kitchen cabinets is a replacement or work in the unit.\n\n**Section 27(3)** requires the notice to state the **reason** for entry, the **day** of entry and a **time between 8 a.m. and 8 p.m.** The clause requires all three.\n\n**Bringing a contractor** doesn't change this. The landlord may have the work done by a contractor acting for it.\n\n**Section 4** makes void any lease term that conflicts with the Act. This clause gives the landlord no more than section 27 already allows, so section 4 doesn't apply. The clause mostly restates the statutory right. If the landlord gave less than 24 hours' notice, or entered outside 8 a.m. to 8 p.m., the entry would not be authorized by section 27 or by the clause.\n\nVerdict: enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 264,
+   "output_tokens": 1034,
+   "output_tokens_details": {
+    "thinking_tokens": 658
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

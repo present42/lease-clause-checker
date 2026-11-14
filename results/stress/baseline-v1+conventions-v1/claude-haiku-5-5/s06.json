@@ -1,0 +1,67 @@
+{
+ "clause_id": "s06",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "bab55fdcbb96cb7ea4d7625544b657bcbc0ee06a73be3ec854fc916674b852ca",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Each year the Landlord will pay the Tenant interest on the rent deposit at the rate of the rent increase guideline in effect when the payment is due.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:13.241033Z",
+ "text": "The clause is enforceable. Section 107 of the *Residential Tenancies Act, 2006* requires a landlord to pay interest on a rent deposit each year at the rate set by the rent increase guideline. The clause tracks that obligation: the rate is the guideline, and it is applied when each annual payment falls due. Because the clause matches the statutory rule, it does not conflict with the Act's non-waiver provision in section 4, which voids terms that give a tenant less than the Act provides.\n\nSection 107 has its own mechanics, including the timing of payments and how interest is calculated. Those details could affect how a particular payment is computed, but they do not make this clause unenforceable.\n\nVerdict: enforceable\nSection: 107",
+ "finish_reason": "end_turn",
+ "input_tokens": 245,
+ "output_tokens": 1271,
+ "raw": {
+  "id": "msg_011Ch1HvN3vyqpwDmBHYoNVH",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. Section 107 of the *Residential Tenancies Act, 2006* requires a landlord to pay interest on a rent deposit each year at the rate set by the rent increase guideline. The clause tracks that obligation: the rate is the guideline, and it is applied when each annual payment falls due. Because the clause matches the statutory rule, it does not conflict with the Act's non-waiver provision in section 4, which voids terms that give a tenant less than the Act provides.\n\nSection 107 has its own mechanics, including the timing of payments and how interest is calculated. Those details could affect how a particular payment is computed, but they do not make this clause unenforceable.\n\nVerdict: enforceable\nSection: 107",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 245,
+   "output_tokens": 1271,
+   "output_tokens_details": {
+    "thinking_tokens": 1035
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

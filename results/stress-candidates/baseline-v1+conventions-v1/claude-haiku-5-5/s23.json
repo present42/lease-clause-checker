@@ -1,0 +1,67 @@
+{
+ "clause_id": "s23",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "6ec0a12be979bba760b02fb652e97213037d4059d6f217400868336f0fe4698d",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord's superintendent may enter the unit to test the smoke alarms whenever the superintendent is in the building, after knocking on the door.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:23.948299Z",
+ "text": "The clause is **not enforceable** as written. Section 26 of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) governs a landlord's entry into a rental unit. It requires written notice at least 24 hours before entry, stating the reason for entry, and entry between 8 a.m. and 8 p.m. The clause contains none of these requirements. It allows entry whenever the superintendent happens to be in the building, after only a knock, with no written notice, no stated reason and no set hours. Knocking is not a substitute for notice.\n\nThe exceptions in section 27 (for example, emergencies, or entry with the tenant's consent given at the time) would not cover a routine, open-ended right to enter. Under section 3, a term of a tenancy agreement that conflicts with the Act's requirements is void, so the clause would not displace the statutory notice rules. A smoke-alarm test could still be arranged lawfully under section 26 with proper notice, or with the tenant's consent at the time.\n\nI'm citing the section from memory, so check the current consolidated text on e-Laws before relying on it.\n\nVerdict: not enforceable\nSection: 26",
+ "finish_reason": "end_turn",
+ "input_tokens": 243,
+ "output_tokens": 1668,
+ "raw": {
+  "id": "msg_011CgycnQgvYBpbSbGouz6GP",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable** as written. Section 26 of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) governs a landlord's entry into a rental unit. It requires written notice at least 24 hours before entry, stating the reason for entry, and entry between 8 a.m. and 8 p.m. The clause contains none of these requirements. It allows entry whenever the superintendent happens to be in the building, after only a knock, with no written notice, no stated reason and no set hours. Knocking is not a substitute for notice.\n\nThe exceptions in section 27 (for example, emergencies, or entry with the tenant's consent given at the time) would not cover a routine, open-ended right to enter. Under section 3, a term of a tenancy agreement that conflicts with the Act's requirements is void, so the clause would not displace the statutory notice rules. A smoke-alarm test could still be arranged lawfully under section 26 with proper notice, or with the tenant's consent at the time.\n\nI'm citing the section from memory, so check the current consolidated text on e-Laws before relying on it.\n\nVerdict: not enforceable\nSection: 26",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 243,
+   "output_tokens": 1668,
+   "output_tokens_details": {
+    "thinking_tokens": 1288
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

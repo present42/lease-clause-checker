@@ -1,0 +1,75 @@
+{
+ "clause_id": "c17",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "5eb91cee2771d60be9a017e29e33708eb9530215c5b84607dba0e7e2a155034f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: As a condition of this Agreement, the Tenant agrees that the tenancy will end, and the Tenant will move out, on the last day of the term.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:41.756729Z",
+ "text": "Under the *Residential Tenancies Act, 2006* (RTA), tenancies do not automatically terminate at the end of a fixed term; instead, they automatically convert to month-to-month tenancies. \n\nFurthermore, any clause or agreement requiring a tenant to terminate the tenancy or vacate that is made at the time of entering into the lease—or as a condition of the tenancy agreement—is void. \n\nVerdict: not enforceable\nSection: 37(5)",
+ "finish_reason": "STOP",
+ "input_tokens": 160,
+ "output_tokens": 1056,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "SW73avaYNMCJyOgPhteoiAc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:50 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006* (RTA), tenancies do not automatically terminate at the end of a fixed term; instead, they automatically convert to month-to-month tenancies. \n\nFurthermore, any clause or agreement requiring a tenant to terminate the tenancy or vacate that is made at the time of entering into the lease—or as a condition of the tenancy agreement—is void. \n\nVerdict: not enforceable\nSection: 37(5)",
+       "thought_signature": "AY89a1-VgKEMRpr0xgmsJ-IUD9Ljb6JIyPp-qFwuVaMhW7LTnq5Qa7k80mIQ1cYCDqVWWRUwY3RPMi06UiBtvB0bfGkM7kpQ5mTkuQssSXkXR7PWZG_MvM3LBIvy29mB7YxAkY83wwd_6PYh7QNCle2jY9qUbv7guQAfUuIMbLf5qkB7o6b-SkdtXR-7oc0avTdnWMAiDHP6BtkhlS1draPfUd97OzkEZiS-1TBZOeypF66-k2sa6bT0x2Fdgw_8oDKbLH7USRO1dX6q8M8r0yQAO9ZwPGiHFAlEw7C_t7YndnEZajQA7eSnRIaIcJC6Ub-p3BYwIgJP_Bs3rz-m8Cy9GVantxxQSqQwXzVWlY-sCcmmZBiiI7LgsuQqy4oRRueoFMJc50-JpHLp_-Vf78Rfw-UpQCLUfMAQBDGb3W0J_1Bt36oRKZKXFiKVwM-68YjH2gYi4Ljr2mf2y_wP9GJ4MqqUHgDfoK_o1dakxlyJt5ASANC4wjKy7-ZMV26h1MZeKvd5DQyg3PTGNAgnLyYvtCR1L5AWUaH6iamg3M__puu2dMNnM5vtXJ9SqKcWvqKZ976raSyPVpIragKR5EjyvRRIyM2Yw8mBd6Z_eDay-l38D7i4Byhk0DlEPr8kzgLRmsoOIdNXEeDG1gNMdaqdduNJa1Z5HK6xsiZC5OV6iyG5w9-cbkl-LUpN_bKzV-ABcW_IxL3bIlWc5bRM54tzfDkbpU8YqPe7Rw3Boi1Q5yWJeoWN8JpJw-jkMDWmxHXJJlpl3CkBwaY0y1d2K0YXSXfxzluZaIfr8IZZpSiT6FgNUATTMD3UrVx6xm3Ig-K5h8ePn7AAe5r5B81uNiROhbQ0krh85S926TOjAHitKPF5OzOzo1-9jGJS01KyjylR7LpmubSPs-0RmPdyNzKBY4jgf-Mku0WUoCdfFYMqI9XDcKoQUrSrbBROD5-rO87WATbjU5AkBsI2LuFeCYYkJ98I1Jvv7vHxwCOoJYN_6dbbG0JEza3n7VW-T5HgM6UxS8S129Z6oc0NKTBZy7kdaZ9KY-K8FxzR9LrS0eJNVilZ9duzo8ebO_bVw99-KewBUkj__PaarXF--LjpN3iD0D4p6Hpi1w5TFNHEw5jAgvJmFjn1H1A9XVJyRxfFxuTQQ9gkbbuyAUh1Kp8pVa70aqG54vUg9zGlOyn5L_YAymjvgviE_IT3V42BNl7x6duz4wgm9Q1g69sdLEtr_enxs4CHTgwja99mRpwSwK8xmVOtEDBegicK1My6PezY9g4MvORt3qjnA9TS60KOD_IaKCuTcizoxGO0lp6es3Ruk6oJ8ubANsol1LBmAVAQXtTfZCgeAltFwvtChx4DOOLKgoNctK_tr1CDvcs_lwWp7PyDGHFhCgeaz4w1x_0sskqpdMIlF8v66aRG9BDxBai1juQMVdPwLWSAfse_W0LXn81rnZXyuJyEpJFfttM48K4hj74uRV-z8tHmBL63vcijPXN8HJvTcejQBkClVm6N0k56Xnr8Cxph4-HHSa4OjWjkD-mkb4LOZzoh-zHdrRav9E05WUaw2ALyqzbRO-0EvcMxqj20XDjwSbyVuG6O_8eP8QcaELjh0YHlmwvGp80qmb9ykTM9RH4REpKbrXSQ3Sf1DuuNX27noha-UM0osRnqWo9rp106TB9KpyHfCD6OzxJwi2NUKaSs3bu1ETbxG2Ox6XASrzF7BuVKYi0NfFNwOmKS6-YYRK4BoDIFTaD0WoFen2lmTyqFNm4rn5WYhNRL1fEjb8HVX1RR6k9x7CPdZoSSPKhkyomMBhmSxS1eTmmzkiGPiee1DHAHaN5KhzhmwTZMB5ogHXOSqjSjIks4zSMQm8Ki9Ih2T2yCWN3q_WkIiFnzma1HrIkCDKoNTybIS-W6b-E8oRDjShX6N9XiTTVFjlZaOJrhmeWbef7nxGdLBvh42VPOXV7bUtDmU0dORg4BRPHUC744zNCLqVG8Q95FK12F7A-u35YRvWWQE6QhHYtg26SviVXlXkfrGd7vMIzxF1fENcZ-YGJ5P1jXF9QO09C5NJ5L3wuYNGxVHmG6COnVYAvWRIUeqhYoH0KZVbPIltYDngL6MngrRAAViovb7oOLJjHfW2w7y7LE3HOTFRcRnpWg-w82rhR1AeHemfwaftD_Crh8e1uHq4r8ZHkhRcTe8Mw5VnJnzE9lFiMNIRVIWvm_CYqJs_Wot7mJHqDz4ha143GwUsxQdJJ2Q4v74aq0fwS3mEYgQ33dCTxSYiNgQb5YL-UU6EaXL7sYzWXm-8PzRBLa4N3jTaZjWtH__a0EYzyOsyJY3id7Q1WtGOyS5ClUXDEUknFqvMhVpxSv0lJFh1cdYZmO6HpLIbckuQo8xzWxcTxuOZtzfWRlFA-INWYN7jxanj44orK-Ws_HwL9RIuTgJQ1Jp5mcjr858vebe3Gtk5bUfYWC2wvBq75MFjzi5gXWQfrLN0Xznd_dIpnrK9RD26DvTnkiHREHHaVTB_gjt1vbq3fQ30mKHHcHILrYH3fa0t6HINeg4hEE_vTCWfK_RIxnqWI4Ll9we7RBQtxY6r1baECDbvDfuA6x7JWD5PVDl4hICCxxE6vvlJeIOCbpvtg4z8gEGptmsTHmu6MKhg5Tq8fPUhiBIsBkDPuHyUp2zcqnN6N0e9bSCcLCBbQPCLhNaJ3S4HaMcNb9KlNJ3lIRrqZUhIUHrl9KYiA3j7sCdeXRxqVnSFmosYfJxPkC9Zx5eqxrwEk_E8CyY0LjwfJKZ9hxP1rPHzGGb4MH5MT0YmQ9pdkbR83nCf9COhxsv0GJpmBv7H26KQp5eCHE-AdWefEyrPFChFTOWPTr0QYa3bhi1HZO8TbdfrKAneP4Tgr9mezjs19D2KJLLfmaZQ-kEpjA-Pd54SUrG8C0ISRbOq3AZFJwpBE-7UD026oXGDkx5vXpPgevjZUAjHys8-QwvxCI_JPtuFLuJ5hiEjVM5iRbBM-uKV4hxMrTcKXHlafHugcOy3Dwx9SOHFs1wgnCVxPCV5D1roCYF5W3T_zSm0mOngoRIMBQpPhBc7gGZQKwMwdXBjIlwnqF3NHLrVhzIcBF1VnJ4I5UwmyjRp48WT3-lxKuVDUHYQN8QOLpr62goFgS3fhmNBGc_PQYORSq6gvpQy5UOGAHW9Wj8o2exJqTsAlGQOcLnZuD0f6M-GcSSDgWFDiB3HdU368ww1EU3Qe6WH3YWMU_WsVMu9KHTSG5s8h-HRHkWqYS3P7X5A_C3eJ087JZMMl-E6mA0VdFAqfPBgG_b4l1HfYubVCHqvbttSJCadocdQhjOrESFtMx3s73Vzf5h3_JPTKEyruHZL5Ce1XJLAveUCXoG5I-GJAs-Hko55ZQ9pm1fl7RkiFJx9V_BCfPlXT9LB60uyNmpYV5wBlvY62IItLTL8FqwMKQmlV1TswToxpZJzksbe0tazPbSmGudOYbQzgSaFssAjt7GFnCn7ZDy1MMsWJ6ixPSfJMAgoRBuNHOdszf7X9kMXuJQ3_OJbquFgmYwyggkf-k5JNTd5ySiOhRSzbpwV5KBESLmoLEyrUnz8wIr0fr-lD6-L36AopeO_caLMMgKgxz-5e4ryiX7Vc4PGGopbvGwXe_zpXM8OCwBvi0feMn6YM6YHFat1ChI11V87xVteGCbhc3QkTuoQvHVptT9ityvtMCQd3Z61aKGO-M6dVVgwOJabr-AyeOaCnIZeWSfCGGowEv_BO0iSMS7BUaZu-A06hHi0TqEYvM7a91J2w6qcYBE4t4b1glaN5Ppp3XriAHJN8eq3X-6TsljtOfVbd0hKDwwC6jF_ouUfsokGmft5niaGtf0mcuUp5Mqr9A3LHQXbyed6ODj1XDnjvTcBNXRG5jBXqmKoj-TdtBYryIb1gm2s9v864wNUeY6KvujELcOgh6OBL0XpBVgybuNffI8mx-YIFqJcoITrJZyxElGGY7y-C9t_RoLX19GMSvDSxROWz2fs7rQDfawZlszUAz4bsm2ixETiIHCnkvdkbxc8RUq_2tf3Wv7R1iyQg8UuYi2VDVdFAT8u2lAti9UjiX8FNYX369r3WlIza0_sc7GNF9CjCYoJHiDLMn4fs8MfnWmnJS6tcCrgchsnSfziYHFiM_RgBRB_s0sXfHIWf8f81Pr3nCQzJhS1QbeSZMi7YD_X8aoMYWypunWFw4WgjdFOjQXPzZ4_8diYxOH0hV7pdDNAzKyW9IzjsFoJvLIVLTu_zvY2ylJrsTYiXuM3W4gZbQ0_7uMRgrhmWOVO6S3RumGQ6rnM_IQ7ScYuBTogRVov4Q4zMhfZROKNETxdvcL1b1kFJOq0x7_BdbyIeVHYP5FNF7CUXEDae5WqigWjFpavOyitbb0OoYYHcSAcVWUq_p3jaFBJi9PsXgn95EUENFEyZrZvWGHLjadxIch4Nv1Lx9sTjyPmZy-ZjXm96qzSoyed2_0rsY2INehLobCIlNiwsWK8dJWT86mwnBXWQRrFSMPUB8XbhwU3coLz0sv4GH5WTeNk8cp38Z3pA5FRjMxCSh3b3gBPkSNHj4fDfj5LqSe2HlLZ5w_ht8w1Yykd3WN6lunuFyL5i2y8QG43K3mSewsD7O6f-3wJHYdU9729NkOp_FSsWdxzQUxeygU9lmBTvDc-nvE4vUeCf7XClYdSts1q8gQo2lAbnXNcnpOdAZEKJcAB2noSryhZfM5qJ7M_097RWCuiidVN9J7CuzvN5KGl_kl-vmbVwebsPN6GjyqE7WdPBokIcrV-GIogNpYnluQNgXwaWFWEPwySTDpcuagNuTlCrYBorvUJ7a30Zefx0y3NhZoIwAvqNkSpPa9OK3hvS4WDr76UqtfJbRAw-RqjO9XohnReVGgyU6ZBtbmg8uw7ooQJCi0CZ6LLh_bNa6WhSAnRcAMGukT7gfZcC0XUF1ajkd_EWe7UC3ILnOxzK2p0QMPOJSyYrnc_63s9QXCAt2xczWFG7w0srcCB-3mWvjPFbhghloVwKaILIz9DnF0PuytMY1AkjxyLVoqQadmGC9DwaZfC6-keU570PlPb0LxXNBEVmGpBdZJkDxqt7ooF8="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:41.855158Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "SW73avaYNMCJyOgPhteoiAc",
+  "usage_metadata": {
+   "candidates_token_count": 102,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 102
+    }
+   ],
+   "prompt_token_count": 160,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 160
+    }
+   ],
+   "thoughts_token_count": 954,
+   "total_token_count": 1216,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

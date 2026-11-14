@@ -1,0 +1,67 @@
+{
+ "clause_id": "c37",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "b2c9c900d70110d94cd097d4afbe5c4d71229cd5927f4dcc35d5ee4faa767c06",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: After either party has given notice to end the tenancy, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, but before each showing will tell the Tenant, or make a reasonable effort to tell the Tenant, that it intends to enter.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:03.638871Z",
+ "text": "The clause is not enforceable. It removes the written-notice requirement for showing a unit to prospective tenants, and the Residential Tenancies Act, 2006 requires written notice for that kind of entry. Section 4 of the Act makes any term that contradicts the Act's protections void, so the landlord cannot rely on the clause to dispense with written notice. The oral or \"reasonable effort\" notice the clause substitutes does not satisfy the statute. The 8 a.m. to 8 p.m. window is consistent with the Act, but the notice term is not.\n\nI'm working from memory of the Act's structure, so please verify the exact wording of the entry provisions (in particular, which section sets out the written-notice requirement for showing units) against the current consolidation on e-Laws before relying on this.\n\nVerdict: not enforceable\nSection: 26",
+ "finish_reason": "end_turn",
+ "input_tokens": 290,
+ "output_tokens": 1957,
+ "raw": {
+  "id": "msg_011CgwRBUV6ntpM7oN29bkEk",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable. It removes the written-notice requirement for showing a unit to prospective tenants, and the Residential Tenancies Act, 2006 requires written notice for that kind of entry. Section 4 of the Act makes any term that contradicts the Act's protections void, so the landlord cannot rely on the clause to dispense with written notice. The oral or \"reasonable effort\" notice the clause substitutes does not satisfy the statute. The 8 a.m. to 8 p.m. window is consistent with the Act, but the notice term is not.\n\nI'm working from memory of the Act's structure, so please verify the exact wording of the entry provisions (in particular, which section sets out the written-notice requirement for showing units) against the current consolidation on e-Laws before relying on this.\n\nVerdict: not enforceable\nSection: 26",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 290,
+   "output_tokens": 1957,
+   "output_tokens_details": {
+    "thinking_tokens": 1685
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

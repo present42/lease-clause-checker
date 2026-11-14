@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+.venv/
+
+# Tool caches
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Secrets
+.env
+
+# Downloaded statute text and API response cache (not redistributed)
+.cache/
+
+# AI development artefacts (kept out of the repo by policy)
+.claude/
+CLAUDE.md
+
+# OS
+.DS_Store

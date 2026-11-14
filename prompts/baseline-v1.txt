@@ -1,0 +1,9 @@
+Is this clause enforceable in a residential lease in Ontario? Cite the section.
+
+$conventions
+
+Clause: $clause
+
+End your answer with these two lines:
+Verdict: enforceable (or: Verdict: not enforceable)
+Section: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>

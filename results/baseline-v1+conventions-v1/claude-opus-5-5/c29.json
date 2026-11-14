@@ -1,0 +1,67 @@
+{
+ "clause_id": "c29",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "6fdc26a60187f372ba4be8c2f91cf709f075c9fdeb0a312e2d6cfabd28ab7318",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent by up to the guideline amount once in any 12-month period, after giving the Tenant at least 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:43.891797Z",
+ "text": "# Is the Rent-Increase Clause Enforceable in Ontario?\n\n**Yes.** The clause does not try to give the landlord more than the *Residential Tenancies Act, 2006* (RTA) allows. Each of its conditions matches a statutory requirement:\n\n| Clause term | RTA requirement |\n|---|---|\n| Increase \"up to the guideline amount\" | **s. 120(1)**: a landlord may not increase rent during a tenancy by more than the guideline without Board approval (ss. 126–127) or tenant agreement (s. 121). |\n| \"Once in any 12-month period\" | **s. 119**: at least 12 months must pass since the last increase or since the tenant first occupied the unit. |\n| \"At least 90 days' written notice\" | **s. 116(1)**: at least 90 days' written notice is required before an increase. |\n| \"In the form approved by the Board\" | **s. 116(2)**: the notice must be in the Board-approved form. |\n\n**Why the guideline section decides it.** You've said the unit has no exemption under s. 6.1, so the guideline cap in s. 120 applies. The key question is whether the clause would let the landlord exceed that cap. It doesn't, because it caps increases at the guideline.\n\n**Why s. 4 doesn't void it.** Under s. 4, a lease term that conflicts with the RTA is void. This clause is consistent with the Act, so s. 4 doesn't apply to it.\n\n**Two minor points:**\n* The clause doesn't mention the rule in s. 119 that no increase may occur within 12 months of the tenant moving in. That rule applies anyway, and the clause doesn't contradict it.\n* The clause also doesn't mention above-guideline increases approved by the Board (ss. 126–127) or agreed with the tenant (s. 121). Leaving these out doesn't make the clause invalid. It simply restricts the landlord more than the Act does.\n\nVerdict: enforceable\nSection: 120",
+ "finish_reason": "end_turn",
+ "input_tokens": 263,
+ "output_tokens": 1532,
+ "raw": {
+  "id": "msg_011CgwRESh3B8v8tnWns6G19",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "# Is the Rent-Increase Clause Enforceable in Ontario?\n\n**Yes.** The clause does not try to give the landlord more than the *Residential Tenancies Act, 2006* (RTA) allows. Each of its conditions matches a statutory requirement:\n\n| Clause term | RTA requirement |\n|---|---|\n| Increase \"up to the guideline amount\" | **s. 120(1)**: a landlord may not increase rent during a tenancy by more than the guideline without Board approval (ss. 126–127) or tenant agreement (s. 121). |\n| \"Once in any 12-month period\" | **s. 119**: at least 12 months must pass since the last increase or since the tenant first occupied the unit. |\n| \"At least 90 days' written notice\" | **s. 116(1)**: at least 90 days' written notice is required before an increase. |\n| \"In the form approved by the Board\" | **s. 116(2)**: the notice must be in the Board-approved form. |\n\n**Why the guideline section decides it.** You've said the unit has no exemption under s. 6.1, so the guideline cap in s. 120 applies. The key question is whether the clause would let the landlord exceed that cap. It doesn't, because it caps increases at the guideline.\n\n**Why s. 4 doesn't void it.** Under s. 4, a lease term that conflicts with the RTA is void. This clause is consistent with the Act, so s. 4 doesn't apply to it.\n\n**Two minor points:**\n* The clause doesn't mention the rule in s. 119 that no increase may occur within 12 months of the tenant moving in. That rule applies anyway, and the clause doesn't contradict it.\n* The clause also doesn't mention above-guideline increases approved by the Board (ss. 126–127) or agreed with the tenant (s. 121). Leaving these out doesn't make the clause invalid. It simply restricts the landlord more than the Act does.\n\nVerdict: enforceable\nSection: 120",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 263,
+   "output_tokens": 1532,
+   "output_tokens_details": {
+    "thinking_tokens": 884
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

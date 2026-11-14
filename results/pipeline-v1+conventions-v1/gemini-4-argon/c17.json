@@ -1,0 +1,119 @@
+{
+ "clause_id": "c17",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "40a17815bd3d804c463d286c5a454c5ef4062fa20d13f35f709976d604857a80",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nAs a condition of this Agreement, the Tenant agrees that the tenancy will end, and the Tenant will move out, on the last day of the term.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:19:22.553677Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"37\",\n  \"quote\": \"(5) An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into, (a) at the time the tenancy agreement is entered into; or (b) as a condition of entering into the tenancy agreement.\",\n  \"reason\": \"The clause is an agreement between the landlord and tenant to terminate the tenancy made at the time and as a condition of entering into the tenancy agreement, which is explicitly void under subsection 37(5) of the Act.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4540,
+ "output_tokens": 142,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "2n73asnJJMmkyOgP2qHD-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:19:27 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"37\",\n  \"quote\": \"(5) An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into, (a) at the time the tenancy agreement is entered into; or (b) as a condition of entering into the tenancy agreement.\",\n  \"reason\": \"The clause is an agreement between the landlord and tenant to terminate the tenancy made at the time and as a condition of entering into the tenancy agreement, which is explicitly void under subsection 37(5) of the Act.\"\n}",
+       "thought_signature": "AY89a1-rcW3zIxy51c2isyf-wakKMNdGwlzMZ5W_UyYNvVHTbp6DomPHaik2IcYw9q19KknwqRFdE8bfeySQBIUlxan4X7GUwNNWa9soj2wBmBH7CARYQXSGaKTw94Y="
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 267,
+       "start_index": 55,
+       "uri": "https://www.reddit.com/r/OntarioLandlord/comments/1ccy4zx"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:19:22.599241Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "2n73asnJJMmkyOgP2qHD-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 142,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 142
+    }
+   ],
+   "prompt_token_count": 4540,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4540
+    }
+   ],
+   "total_token_count": 4682,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "37",
+   "quote": "(5) An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into, (a) at the time the tenancy agreement is entered into; or (b) as a condition of entering into the tenancy agreement.",
+   "reason": "The clause is an agreement between the landlord and tenant to terminate the tenancy made at the time and as a condition of entering into the tenancy agreement, which is explicitly void under subsection 37(5) of the Act."
+  }
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "clause_id": "s02",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "3d8675bfffaf254010fa3c35a2590a6c7dbd88b6b44b0a626b2db90784a16efa",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord will vacuum and dust the unit once a week and may let itself in for that purpose, without written notice, between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:04.283064Z",
+ "text": "The entry term is not enforceable, because it authorizes entry without written notice for routine cleaning, and the Act permits no-notice entry only in specified circumstances.\n\nUnder the Residential Tenancies Act, 2006, a landlord generally must give written notice before entering a rental unit (s. 26). Section 27 sets out the limited cases where entry without notice is allowed, such as an emergency or where the tenant consents at the time of entry. Weekly cleaning is not among them. A tenant's advance agreement in the lease is not consent \"at the time of entry,\" so the clause cannot create a new exception. Section 4 also provides that a landlord and tenant cannot contract out of the Act's protections, so the lease wording does not change the result.\n\nThe landlord's promise to vacuum and dust could still be a valid service term. Only the entry-without-notice part fails. Any entry to clean would still need to comply with the Act's notice and entry rules.\n\nThis is general information rather than legal advice. Check the current consolidated text of the Act and the Landlord and Tenant Board's guidance before relying on it.\n\nVerdict: not enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 249,
+ "output_tokens": 2033,
+ "raw": {
+  "id": "msg_011CgyckyQcrqw9FQj8kJSTe",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The entry term is not enforceable, because it authorizes entry without written notice for routine cleaning, and the Act permits no-notice entry only in specified circumstances.\n\nUnder the Residential Tenancies Act, 2006, a landlord generally must give written notice before entering a rental unit (s. 26). Section 27 sets out the limited cases where entry without notice is allowed, such as an emergency or where the tenant consents at the time of entry. Weekly cleaning is not among them. A tenant's advance agreement in the lease is not consent \"at the time of entry,\" so the clause cannot create a new exception. Section 4 also provides that a landlord and tenant cannot contract out of the Act's protections, so the lease wording does not change the result.\n\nThe landlord's promise to vacuum and dust could still be a valid service term. Only the entry-without-notice part fails. Any entry to clean would still need to comply with the Act's notice and entry rules.\n\nThis is general information rather than legal advice. Check the current consolidated text of the Act and the Landlord and Tenant Board's guidance before relying on it.\n\nVerdict: not enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 249,
+   "output_tokens": 2033,
+   "output_tokens_details": {
+    "thinking_tokens": 1664
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

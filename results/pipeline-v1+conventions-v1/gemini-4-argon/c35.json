@@ -1,0 +1,110 @@
+{
+ "clause_id": "c35",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "f074a2e58dc00c88b0f2dbc29174557d97a141963e113a87288a2146095a9610",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may drop in from time to time, without arranging it in advance, to see that the unit is being kept in good order. It will always knock first and, if no one answers, may let itself in with its key.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:20:48.114122Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"27\",\n  \"quote\": \"(1) A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances:\",\n  \"reason\": \"Under sections 25 and 27, a landlord may only enter a rental unit to carry out an inspection if they provide written notice at least 24 hours in advance. Because this clause purports to allow the landlord to enter for routine inspections without arranging it in advance and without notice or consent at the time of entry, it conflicts with the Act and is void under section 4(1).\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4557,
+ "output_tokens": 164,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "MH_3apGfC8ilw8cPqvSE0AQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:20:53 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"27\",\n  \"quote\": \"(1) A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances:\",\n  \"reason\": \"Under sections 25 and 27, a landlord may only enter a rental unit to carry out an inspection if they provide written notice at least 24 hours in advance. Because this clause purports to allow the landlord to enter for routine inspections without arranging it in advance and without notice or consent at the time of entry, it conflicts with the Act and is void under section 4(1).\"\n}",
+       "thought_signature": "AY89a18wMdrHuShQlPInuv1BGEkz-RmyOggY8NmnlKIXXnXrTxgDP_oVGhAFTTFFhUsWc2CmV191_LY-vni1xrZtQEHJnROijS6mxIc-feQk31g2U0tm5nYa-OmAQuI="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:20:48.184209Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "MH_3apGfC8ilw8cPqvSE0AQ",
+  "usage_metadata": {
+   "candidates_token_count": 164,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 164
+    }
+   ],
+   "prompt_token_count": 4557,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4557
+    }
+   ],
+   "total_token_count": 4721,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "27",
+   "quote": "(1) A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances:",
+   "reason": "Under sections 25 and 27, a landlord may only enter a rental unit to carry out an inspection if they provide written notice at least 24 hours in advance. Because this clause purports to allow the landlord to enter for routine inspections without arranging it in advance and without notice or consent at the time of entry, it conflicts with the Act and is void under section 4(1)."
+  }
+ }
+}

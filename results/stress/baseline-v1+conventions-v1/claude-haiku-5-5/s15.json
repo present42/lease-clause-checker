@@ -1,0 +1,67 @@
+{
+ "clause_id": "s15",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "e5f15b15438f03a87db0d91da95785ec9fcfc1c006441f4ebd3668d3102a2f0f",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant may keep fish in an aquarium, but no other animals.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:13.241487Z",
+ "text": "**Enforceable**, subject to the Human Rights Code.\n\nThe Residential Tenancies Act, 2006 (S.O. 2006, c. 17) does not prohibit or regulate pet clauses. Under **section 14(1)**, a provision in a tenancy agreement is void only to the extent it contravenes the Act or purports to waive a tenant's rights under it. A clause that allows fish but bars other animals does neither, so section 14(1) does not void it. The Act contains no pet-specific provision that would override it.\n\nTwo limits apply, though neither comes from the RTA:\n\n- **Human Rights Code:** A no-pets term cannot be used to refuse a service animal or, in many cases, an emotional support animal needed because of a disability. The landlord has a duty to accommodate under the Human Rights Code, which the Landlord and Tenant Board also applies.\n- **Other law:** Municipal animal bylaws and any other legal restrictions still apply.\n\nVerdict: enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 220,
+ "output_tokens": 1315,
+ "raw": {
+  "id": "msg_011Ch1HvMiqVM1nAg5g8oFM6",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS2hkKEAgTGAI4AUIIdGhpbmtpbmcSDCeJ9uTx7KCnUX7i+RoMoFLz66cH2jDAJPmTIjBlQ4d1ndH9v0scjDXi1zDPY8R4y99yUfL+lJpCZi+bk+60KffAwsWfExLjtGsun3kq9xjyrqeLmmAsliUi4p5wLO2l22yiJM0eAX02gVTAdyeV/itLWGOzNwkzoRoARBAU7lknkU0rKjmWpwSDS65hfL+sl4412nLbXGOo6ftEgdhYKul9O4SKbjaNi+dY0XclheRTn7/ztDEJsCk1iGPKevm1N5cRvDyGPwd+5g/U9U0Ysh5UN4di57EOwhqpoyBUzQXLjQSUIftQZZfIaK95DqoEWZaXoigLyOtTizq/9hUEJw5y+T5dTAHTPBvCHZzswCVM3trtkQQF4GcCy6vzESF/23QzqBGMgiihTPJyuPQ30KLtHUQ0LNtC6/AeP6G2bCEi0srXnCuLh6d8lAUFe1xkAxPJODHluM7G+36S+/rCNKFpf7cy9BNxV0iPH3/AvPuPX+raKxUHu+KUokLrNvVIKkXf0ci006bjNWZGq3wmfKpGkD2rAZXjy+ZueEmne3tMqnu9nMrzrr1Yb5Ir3u9RQQUserC6FhJvvOqDUrJ8slDubTMmkkWiM9ek5Kmb+7sfGXsEnCuU6M/ReWSRr1tJn8e3hk9ld/dI0Cahg51DLfBgkP/BJ5Tk/IBt+Fnven0yS++TAPFhqf+cPdVOB4ja6Ve8frqeZEegIpqKI2s68puxwLTiw4ksuk0y7UwsyW0t4TWIvtoCGM16uVtAb9EdYOG9+Ym4I5Y1BGrpCz3LTAXhpdzMPEvsE3DMrA9CabxvuETptRdC9xdT0D4o23sZ/ZaywX4zgk2Kr1192i5MQjioa6dPyXBfXye75wcwgrJ5sgLb+AvjgpmIZnvXg6FehuVbczk7zLKncFZK/3K5Y7yRpLtB6F+80XsiEeR/M5zpORA7H2qbTiS+kD+UOWv64a5fyiHvdOlmFlRMKheCEIZesYOKDRwkvnGMzM8/gLQJ9VSx+WHN0Ptm5YfAD/yT+/teHdni0PkDk4BVV+cCnXTwOJq+xaAo9TS7eLnEHaNMk5XaRT1cu/WA9ZNUqJpFwz2tXsBeBvwoi7vg4uTrZUGFcsx4OAHjpsPyLOCLLuAC9vHIVPkoeXTnBF/X1l0Gu/Aq334f4UfJVqq7CRxhUU0pZksutv0ggYNyRtuUyjQmnkrr/tjBlxmndd9ZGgrEws7wZAuyJJ+XnrmtTJ0zZv+0k8rOWIZ5TfHmMtutPmqiLJeH4sndEFqi5XCG7xrmqg3V/33BcPePgLbyfmDCtZBJj2ADQOVeslXcIKqGAIggtQ4gOxPSoD/eyCmIazgTYcF7SGsNm8x81QjLpZVkLr4YksQDb57ug9iTRxBuVHmRlk5sGsqI9JHZblFdAKZwF4Hv4D3IoWw9ef8TaA3srjDoVRdwGMK08ZdI7lykEs6WPX4CiqXgQValxiKl4PkNyetX4OLI8iEb+unZsM8GOErEAKIMQqCsxpooYjTvYC0XXwdfHtaDt6TN2/eXnmCDV3rRC5uruhD2Y4Om1HY1cs87KDbJkLp9UOkmJ7PMDb1NFQHsWHhrlyqA7itSt1YhZaOvS9OptwMcHtasXtlbx9chPx6p3ZxvxfXxWSPMnCl2dB8A+vMtbQg88YPM/Gxly0IvdYPjU01htFleAQOujYThdek3uoXnMuU4K8ec458S2dlmTB01GE0aOF/vXx8Px4jeXAW/HLNDSXqcL7ZxQywVGBMYKNV/XxSnWy5aozTTNnZciPf7dokpl7NYprTEsVRCMgGEnsxVOufCZvc7YS0BPnx808oD64kNeYtX7OHeY8kdzlRomQspOhC2PhqpuWTcF58BqJS+A1FNOiUkkXw9uTpaofIPWizXE/BI0xROfWHbrEz3LDyDxn26BY5EwMDmtR/QD1n1Dd1JjtJnysMvKMpkZwITsmWvchLx1NRTaeUvzLivHypQx2kY0JlVnjqP6YLn2j+o2YFHCFiuP2RnwyBwettOyK1hgSJy+9k4iLIIUlRk+KUbBD0AmgBxyvUP0BBn2VM8QF/IG+DiilNbtHJiGBb6TsqmfDBUwRdisnpfuC3/cQ1yIVAsURgmQFT/JLQ+1apZzwmaVLn/7tAfwhoiQ3qLL1le9abAXbCOLPYi/tpCSmfxUJa8ecYigz6yMFm10C78J0jkBFcIlRJBoHmSKZDjkxN2dFDDm9aaBFcv0gCsHCELnUtS4xqHNq6nOpAQVs8o4NLX9iqV277JVsyFrYzWbCD2tOKN3d1xmOn5PESXYtNwXg2aeO04r+e4d15YrJcdiexwYOITvmWw6srw4DrU/w4fej2JRA6Gz9vF6Gy1rEx3YAzPmYtVlgvhaMoOizLUjLmvAlhGBzxgivGx5RXvLRMk+yZFLSYvkVzANLIeKC1oekBFzxwBapnODEyQYKU4TpdGQOVuBhYoDqSLMQT/3npvtVgdzUDIDjTGdjpPriQGsjTyQijn6SumLwPIsWmhA6AwEzUvqNJ/FFBg/AaBM+xE1bK3+vhFbjkj8e4bSzkscm/H8zLoSIMH0qEjWVpHEjkwybL00fxWICAn5sHjraleRMC1jWj9U7b6ZosmThLDniPig+cuH9viXL4WRQp13SGYeC3/Y39o8okmhdGRe+/gfBwClfx8v9XIz9s9aNF79rpax/BYukjyBLeYERS6cUlot4A4zvAmxQhSkkVcZZc4Fwe55PnSWMzjrasQ3OkGYR1+u42yT43iNnT6D2JHV63d8UtdTIy/YmiI8Nv3s7tCwb1ZYc97JCjaEsQVeN3r64DDbw7zUbIOHjMfn9Nj0ZozSeTrHLhxH05az57U0Rth2rSkZagJV9OJ9P7T8cFd3eV0bSAU9NtXGsmXSqvqSMDYzQQPSc70vE961Xn1p0nlNqkMJFNvfmJdackHnAsO82aEf1eK3iYal8tvXQ8k/Epi06JFX5YVvwBPlO9DcgEdUsEUI7nYXg0Yql+11sDNs2Sr2dzZYrHWrWezqeLotGnAYkfqLoPBqtcLsi9DiGwnZdt978UP7piKrIDeiS0oNL7EbI1oCKDcJLpfcknIhvMJq52QgCNHUa7k1WbMjZak7B3WNCjCugksGYUzs8ZN3UU4Ltfea3Yca4Tk7TwNJdu2dnqe7f2pe58V05K1eD8QyQ3BZ43PiT7SGMpqgy8Exw0AjDQCR7DzDdecabJubMlWPy3pLxeUB4TCrL+sKAAP/Tl9erg2XL1RJHx/u+V/i9QczEsKDO1q9fzuMLi/GUwV0S3NhPIDpgidFzYKZ6yJWgHVltWfEjAPFOMrsSumqxI0WRIl1ohIYsGUAVVmuUbBZe4K8QQaYG4fjuPI1TPKpfkwaysWcs392u9EnnkLYlxJC/DIxiykMr7vupXdAtpEqM+umdWXqeO/24w+fIEuv9zup3njSi9yGqTj8QJlg2wzZbjaI3yfpA1Ch9uKq9yuj2nF3qTgFFew2M3VGUJYkgf4GJWoEf0d7pUEylo+/N/tTh6V7tpK+kuGQaTCSsf286dzqGeC6VOuWOwcWoU2WNnfKnfoBh4907T8fOCBk73AaUQu1zm/8cyoqG4bEERlDLwCaIQW1cL5WDH2U850WcHqR3+G0RmcKhWVuOd2BAyFnRF0S/hpM+Fw3iqt4H3Q/zHMJrfis8QCh0p/O2U53w/ojYwGapAclhXgAleWGz9H8Y5a2i3FbD3iWIr+vdVvAm/hb71+P0qVWDVIK0u5fjzhzY+U1o2J0QYrA+5LmzpJ6DoGzQUx/2XidmKJ94/cPnm1I8HLSNrhsHvfq4u1Yr04jrZ4spNlUJoMkfpVvCLiQNDlyD/BvdIOxMZzN80c3xQr55uIN7pEOXJBss6yb+LkKqrJ4cJGwDYihXBU4/1/C2qqlTDZbGUIiPBz8NB779vKGfS+7p5C6de5JYHL2+XqQ4oWIHPF+mzD05ar8jkndie4xgwa+Bfqua7OYRZH0/SvVj/8Byi8zYshmkHcIKDS6y0qx4QRobj5ZqlUh+cTaF15TRszHGnbYHsH19HXYnnstYsihdoK2abT+azpq5MVI6My4zZ1Maese8KsrrMe2BwLaK3mEEzMy1utFCECG1SisJ9dUOzZeRdy1yLafCqF6Sb8045k17WqBPRSl7BDs9EmPpsnmQlW6OzVEanlxoryhAMgQC5XpsFw9+r7KWfR8OS3p3i/VI5uh2vIe+/7sVQXj+h9VKLmySRnh7Cd7No4vsBKVyQQtBbg7zrJiNz1PiN2XV2lLlBf2dEtFxLeQhOMUcR942eqdXCP003QiQOA22YV8WEgXdyijV4yJSGxl4eJx+NlXIu4E+3JF//QkcsDEmU8VTqDIRgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Enforceable**, subject to the Human Rights Code.\n\nThe Residential Tenancies Act, 2006 (S.O. 2006, c. 17) does not prohibit or regulate pet clauses. Under **section 14(1)**, a provision in a tenancy agreement is void only to the extent it contravenes the Act or purports to waive a tenant's rights under it. A clause that allows fish but bars other animals does neither, so section 14(1) does not void it. The Act contains no pet-specific provision that would override it.\n\nTwo limits apply, though neither comes from the RTA:\n\n- **Human Rights Code:** A no-pets term cannot be used to refuse a service animal or, in many cases, an emotional support animal needed because of a disability. The landlord has a duty to accommodate under the Human Rights Code, which the Landlord and Tenant Board also applies.\n- **Other law:** Municipal animal bylaws and any other legal restrictions still apply.\n\nVerdict: enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 220,
+   "output_tokens": 1315,
+   "output_tokens_details": {
+    "thinking_tokens": 985
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

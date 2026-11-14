@@ -1,0 +1,75 @@
+{
+ "clause_id": "c01",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "053b475985429cca865d90ff2bf7150e162b9bc9a4d8d1e312156aaf5e3deb42",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: No dogs, cats, birds or other animals of any kind may be kept in the rental unit or anywhere in the building.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:09:06.547495Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord cannot prohibit a tenant from keeping pets through a lease agreement. Specifically, section 14 of the Act states that any provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void. \n\nBecause the clause attempts to ban animals in the rental unit and the building, it is automatically void and cannot be enforced by the landlord (assuming the unit is not subject to a condominium corporation's pet-prohibiting declaration under the *Condominium Act, 1998*, though even then it is the condo declaration that is enforced, not the lease clause itself). A landlord can only seek to evict a tenant over a pet if the animal causes severe allergic reactions, damages the property, substantially interferes with reasonable enjoyment, or is inherently dangerous (such as under section 76).\n\nVerdict: not enforceable\nSection: 14",
+ "finish_reason": "STOP",
+ "input_tokens": 186,
+ "output_tokens": 843,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Ym73auWLLOqpw8cPuce1sAc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:09:33 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord cannot prohibit a tenant from keeping pets through a lease agreement. Specifically, section 14 of the Act states that any provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void. \n\nBecause the clause attempts to ban animals in the rental unit and the building, it is automatically void and cannot be enforced by the landlord (assuming the unit is not subject to a condominium corporation's pet-prohibiting declaration under the *Condominium Act, 1998*, though even then it is the condo declaration that is enforced, not the lease clause itself). A landlord can only seek to evict a tenant over a pet if the animal causes severe allergic reactions, damages the property, substantially interferes with reasonable enjoyment, or is inherently dangerous (such as under section 76).\n\nVerdict: not enforceable\nSection: 14",
+       "thought_signature": "AY89a18PaFGXLQRSSQgJqC_agQlnBLHPkiU56x4B56CWTrKdicu7PybUlQ0ZX3-i5xKANDOtM3PPlOj73pYwgelzl4bmvcnqE2Oi98cMFOiV3bwYu59wofXSgKwDvDrkH9RAW7Uc5C23oLxTL5NPhEGn9Y1eL_IlEgcdmeHGoMpLfDi8Po9iUhJfhiCIQv99lyiivtM-5mXXJufKSFmqhT9SZjK0QRfhskbIfit1-vPeSoKx7xaPHJkJ_6bZU83PIOBJkG8AB7GeCxjRVaUt15Tnp210hZiIOhXkooOMHIEDEztj7mWoZqTh_oggEUzjC9UPuw5op1uYQ0P3Jyz4IZYfOdpSQAkPQSjt_rswZms8TTltfTBDF-ocymGbyBqZePF5X5VN3ncW9Y8Sm4W27yedsqPycpTiVs_SnK7k6tTJrXnFBK49ck3JJNvhtteLBJeS_oul36GEjSaDW_wPADsp_gOD3CS_5BdzM0PgsF5KNaj6GYnurqhZz2dQ0Yh7uos26XFTh0plS4Hoz-MNYUx4X5Yqt8C50pGO-3K2QVgqRuCgvkk9QW4Qkdvktve0gpd_zqeA5hiiR0EbaJfUhVwaZZgJVcX-GOgl0_mm_pLcdkHTed-RIrjZwC7fzurhHFVKJIC5CSzMo7XmDjwIuesGYCWWDkS6sEKqJhqAEeNh-FbTOqkfzjswcyuxjfHeFJ8UsdVbeqs8tirqpVPxHtViE6K5Y_DPWGfekHD8U-Mq8k5tOgtAqmRHByEWs1nN9xpW-HvSTMfC2xmPU3jrSEvKRBL9wBFCq7h3HyHAdqmRvS64xZZ5XbnF9sTesBPZaMo3uuWzwzp1t5azZBZTazJXiB2OOzdcUgfHWn8zkLtCxc9rKiOfMXS5KhyCJTFa4HrfSlDX12ydnTlXix2SMQ-Td3A8r9Jk8sIwhULAFxs5r8wn7JvWvD_8X_sntxqeu4uZBQ31zuUA1N03KuL1Py7w9WaPKcSKWtkPCC1UXwq6yWFmct9GTkWhRkvfoJ4dd0g1MGN-tMl1b7JDizOyCGQ3XVlPn7NsfTmeSH9uauxWl1Bl1K84coEPZlG4u_CvXhX-CWmXmNnOfmMTugMTWEHzw_APgf-Tz0do3emnIeviFYKD7pN3boalPgEm6_c1LR5UP3Uc06ZMy2dpw-LG-4vjB7TplMdJ-A2DqYKuE2JaEJxz4SDSk14ukw7ADmeyV-Z6vtgvoPZIBEeUx2qv7Pl_a3cmsecwGN8kNe-CqbCl7ZJbvo4OSJziaD-kuzELUayW5I5AGr-YjMqTm8VTL8rql21Ov3Nx5dkt4ZTM27lRUx1nZwJG1D0L5VC9NYTPrD_ba_8JtLhgzB3m81ZZuIPJK7VW--0FPWSeYa0NUxakH5YMwLkzR6CDAj9NKPAq94ARork_kC_-T7Sq0NEo2qoQgx2X43IPFMm4ZYoO1YPoYDliw4PC6gy49UvQybKql1jLUyVsjh48GWqODIrOR6shlulF9WBq7V00Jd57m92CxcAFN6-JaZZSb7OkqMSNwuUXdQMsCLzv9j0Wz-LLMtomMN-x84MoTIAAjfB0ehWIuY8lJ2IAIaDk6fdFORL8QUIJbeFXzMr--zd_Vhhb29iglRY8X-nyMUqA8cQ7nYByMKGdPpE3DPoeFKGN6Pvzj8kdOqJQzVD0Ffh-MwwgSKFSTy8-M9gYkQ7HChW4l7Q6tyGCu6BvgN-tAvYyvnkFHt2bT0h1eIxoaTM0Qe-69p0KfmwAR7Jm62HjcgjYZmNZrd1Av3raZei03ZJtZ4a9xnOrHEXEicIS-QleLgSKpb7QdrDoW-mhV7GrRqf0i9aPOlMHd618hO_K70Opx5bGD0sFqGxo2iE725zvdwxMbpToKXnVp2GJODwbFeI5RhR5okdmKBwV8xC51bAY_tiVlLJNWXIhbWH3UBLynrK9ork-I--QlmfpIDfhgSrlXN7c0PVTsQnM-HVtGGPRspTmlh3ASKxTZxm_iyUfVxCN6mbJfloJgExw8qCMO6gVaLBJBMw6XjjtHO_ps6JhYUunCRjN63ILSWaJ-CmkMuX8hddDEV0sNdHL8v1DHuy_3Qqmm0ciy6OqPJQrg8sKYTEGYD3evYoHDSFW2hzhrPaHq0kVB5jaWSRiXydqfk6x99EpssCY6x6M7pmAvfd2mBMFk6rYbnGrugixZrLgncHipafZB7MsQjkJwZHqnIsFqdlNxv7MvVj_zlEzMehqa_9phPCTIqU0ARf_IPg3PcGis7v6Q0exe7-191n1Se82G_5mmBR3a6rPN1U2eBFuNuVbaamAyUd9gawAAQbTd08CFruzbLHLF8zrNF6WhdnKwqpoSt6HBGg-XEPOuPcltMcXWyRStSTMuntDF6UIwTw9dnYMrjZfh12mQZcR5bdtHjkqv8HTGqO-ewXdDHNgrs9iUgZc9ouebzLnB_jSp5Ml5BDVPeewLkTOwLtfeUntkqS_uiwqzWm1VPEtDOkOO0FTMpmmRBwZ6vVIdy7Uxe5YVkwPr_dwO5h5rygelfX9a7vfj5qD2oxQaaF9FPsLPI9EdLqd_iPJcSAM0fdAGYxS4pc_FAoMc4OR848NKAtXnXfMFrwoB3-QYAZ2NizmWqZ08uCm7hvGKS7o_eSVJZ2i2MCZdAQcDANfVXDj8RBCQn2jmtuLZpvRZv7oJ0HTI-LGv-K4PhFCIcVW6NrhtI26we1nqVfkcQdLMPilfyEtXwGxGkELpsYnsPHrjIRWDRGZkqTmUcF1w3ZHLJLEY8vzQJTCEXQTVKKfm2t5zDAsNwrS0h4iRRmLv0TdXzTPL09bQXQ1ROFrNmL1wmn3aQfF02sTf33Vo9STdXXBZCFrVGpvgl6AiuQVk2r3Ay3XZ7BFfvZgIT1kw0YLBujGVNvibP2vRwQ1AsGhXP5AGaD6OPmNvCht7ht-n5FQ0JdjHDifwnq6GyZ656hoK28QcmFtO28COYVwmmOiNdhiWLH2TZ7m42qkozFrN5YjDDoVPE5TyIleVpuw0rH9iD5vLVHWdlRxkN68CYrOOvMZWrZCLpyaHHwhFez95pjOWQitkmx85UUhU-y6NRjbuqdtaajEnKuAXnzefCaVkBw9rMJhDiCSjLga7FMLctMoNnu00b2CFRsAEgzEYXp1I4L_fUvEIyXHVxJCL8OQTiHgGGukqXTT2Ttr8_hiC7sNikKD3OukZkEOKwLzRPvmzzBO42zLKMT41aMjFZvj6ye9jiRiXPt9Ua_zIErbH9uIbYNzuVgDLSCaPNJLUoP2xlmhvt2buFsY7zVxLe9oCHn4Or_e84qG_9lhR5px-KE7A94tKM1dO11vVh9RFyrj1lfoEllsj7q-7UTmVbOLkHJ26bKmZ93iErd6wgf6ytzht1L6bdlNzz9_qT2zxIYtZSjyblJebl8Xf9Pg_uZoQtsDuUYyPpWz8Fzk30tVrg=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:09:06.722405Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "Ym73auWLLOqpw8cPuce1sAc",
+  "usage_metadata": {
+   "candidates_token_count": 197,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 197
+    }
+   ],
+   "prompt_token_count": 186,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 186
+    }
+   ],
+   "thoughts_token_count": 646,
+   "total_token_count": 1029,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

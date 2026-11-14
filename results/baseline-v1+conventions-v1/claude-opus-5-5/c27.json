@@ -1,0 +1,67 @@
+{
+ "clause_id": "c27",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "e1fc42b9d4bded219e543cfd570e9466460bc11f9b16bc7314034f5828568a6c",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant may pay rent by post-dated cheques or by pre-authorized debit if the Tenant wishes, but is not required to use either method.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:42.076100Z",
+ "text": "**Yes, the clause is enforceable.**\n\n**Section 108 of the Residential Tenancies Act, 2006 (RTA)** says a landlord **shall not require** a tenant or prospective tenant to:\n\n- (a) provide post-dated cheques or other negotiable instruments for payment of rent, or\n- (b) permit automatic debiting of the tenant's account at a financial institution, credit card, or any other form of payment for rent.\n\nThe prohibition targets *compulsion*, not the payment methods themselves. A tenant may **voluntarily** choose post-dated cheques or pre-authorized debit.\n\nThis clause offers those methods as options and expressly says the tenant \"is not required to use either method.\" That matches s. 108. Because it does not conflict with the Act, **section 4** of the RTA, which voids lease terms inconsistent with the Act, does not apply.\n\nIf the clause had instead *required* post-dated cheques or automatic debit, that requirement would be void under s. 4 because it contravenes s. 108. A clause like this one, which only permits these methods, is valid.\n\nVerdict: enforceable\nSection: 108",
+ "finish_reason": "end_turn",
+ "input_tokens": 244,
+ "output_tokens": 767,
+ "raw": {
+  "id": "msg_011CgwREJm3HeKGPyNPWEuko",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, the clause is enforceable.**\n\n**Section 108 of the Residential Tenancies Act, 2006 (RTA)** says a landlord **shall not require** a tenant or prospective tenant to:\n\n- (a) provide post-dated cheques or other negotiable instruments for payment of rent, or\n- (b) permit automatic debiting of the tenant's account at a financial institution, credit card, or any other form of payment for rent.\n\nThe prohibition targets *compulsion*, not the payment methods themselves. A tenant may **voluntarily** choose post-dated cheques or pre-authorized debit.\n\nThis clause offers those methods as options and expressly says the tenant \"is not required to use either method.\" That matches s. 108. Because it does not conflict with the Act, **section 4** of the RTA, which voids lease terms inconsistent with the Act, does not apply.\n\nIf the clause had instead *required* post-dated cheques or automatic debit, that requirement would be void under s. 4 because it contravenes s. 108. A clause like this one, which only permits these methods, is valid.\n\nVerdict: enforceable\nSection: 108",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 244,
+   "output_tokens": 767,
+   "output_tokens_details": {
+    "thinking_tokens": 400
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

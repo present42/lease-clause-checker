@@ -1,0 +1,67 @@
+{
+ "clause_id": "c36",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2af16dc807b6b0d992984b0a5c73ea4dddef619770b3677e023a972b73d67124",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the rent is more than 15 days in arrears, the Landlord may remove and hold any of the Tenant's belongings in the unit until the arrears are paid in full.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:03.457099Z",
+ "text": "The clause is **not enforceable**.\n\nUnder the Residential Tenancies Act, 2006, a landlord cannot seize a tenant's belongings to pressure payment of rent. Rent arrears are enforced through an application to the Landlord and Tenant Board (s. 69), and only the Board can order eviction or money. Ontario also abolished the landlord's right to distrain (seize goods for rent) in residential tenancies. A term that lets the landlord remove and hold the tenant's property until arrears are paid is therefore a self-help remedy the Act does not allow. Under s. 19, a tenancy agreement provision is void to the extent it contravenes the Act or purports to waive a tenant's rights under it. The clause is void regardless of the tenant's agreement to it.\n\nI'm confident in the outcome and in the Board-application route, but I'm not certain of the exact section number. Please verify s. 19 against the current consolidated text of the Act on e-Laws before relying on it.\n\nVerdict: not enforceable\nSection: 19",
+ "finish_reason": "end_turn",
+ "input_tokens": 250,
+ "output_tokens": 1843,
+ "raw": {
+  "id": "msg_011CgwRBTfz4bsTL28GHu72C",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable**.\n\nUnder the Residential Tenancies Act, 2006, a landlord cannot seize a tenant's belongings to pressure payment of rent. Rent arrears are enforced through an application to the Landlord and Tenant Board (s. 69), and only the Board can order eviction or money. Ontario also abolished the landlord's right to distrain (seize goods for rent) in residential tenancies. A term that lets the landlord remove and hold the tenant's property until arrears are paid is therefore a self-help remedy the Act does not allow. Under s. 19, a tenancy agreement provision is void to the extent it contravenes the Act or purports to waive a tenant's rights under it. The clause is void regardless of the tenant's agreement to it.\n\nI'm confident in the outcome and in the Board-application route, but I'm not certain of the exact section number. Please verify s. 19 against the current consolidated text of the Act on e-Laws before relying on it.\n\nVerdict: not enforceable\nSection: 19",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 250,
+   "output_tokens": 1843,
+   "output_tokens_details": {
+    "thinking_tokens": 1506
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

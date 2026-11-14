@@ -1,0 +1,74 @@
+{
+ "clause_id": "c23",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "011f735274d1600edb5b07c5de3aad7a319d00bdacc015216edd4d8fdcd0c397",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: At the end of the tenancy, the Landlord will apply the rent deposit to any unpaid utility bills and to the cost of cleaning the unit.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:48.306436Z",
+ "text": "Under the *Residential Tenancies Act, 2006* (RTA), a landlord is only permitted to collect a rent deposit (often referred to as the \"last month's rent\") and is strictly limited in how that deposit can be used. \n\nSpecifically, subsection 106(10) of the RTA states that a landlord shall apply a rent deposit that a tenant has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates. It cannot be used as a security or damage deposit to cover unpaid utility bills, cleaning costs, or maintenance expenses. Furthermore, section 105 prohibits taking any security deposit other than this rent deposit, and section 4 makes any provision in a tenancy agreement that conflicts with the RTA void.\n\nBecause the clause attempts to direct the rent deposit toward utilities and cleaning costs rather than the rent for the final period of the tenancy, it directly contravenes the Act and is void.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 189,
+ "output_tokens": 219,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "KHj3avbJF5Gow8cP7KPO-QQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:53 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006* (RTA), a landlord is only permitted to collect a rent deposit (often referred to as the \"last month's rent\") and is strictly limited in how that deposit can be used. \n\nSpecifically, subsection 106(10) of the RTA states that a landlord shall apply a rent deposit that a tenant has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates. It cannot be used as a security or damage deposit to cover unpaid utility bills, cleaning costs, or maintenance expenses. Furthermore, section 105 prohibits taking any security deposit other than this rent deposit, and section 4 makes any provision in a tenancy agreement that conflicts with the RTA void.\n\nBecause the clause attempts to direct the rent deposit toward utilities and cleaning costs rather than the rent for the final period of the tenancy, it directly contravenes the Act and is void.\n\nVerdict: not enforceable\nSection: 106",
+       "thought_signature": "AY89a1-eXCK5smIFJNAyQYzhSeDI3Z7BMUGJ2nXuci3sxvD5nupVaDQrWMNQPWl74gZfJq3JTKG48zm34U3wrgvn6vOzsZ4kam5ceXbDPtXCmgY2BpWkXSgt0cLOnW-e"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:48.386294Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "KHj3avbJF5Gow8cP7KPO-QQ",
+  "usage_metadata": {
+   "candidates_token_count": 219,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 219
+    }
+   ],
+   "prompt_token_count": 189,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 189
+    }
+   ],
+   "total_token_count": 408,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

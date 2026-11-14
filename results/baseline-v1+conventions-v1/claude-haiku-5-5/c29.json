@@ -1,0 +1,67 @@
+{
+ "clause_id": "c29",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "6fdc26a60187f372ba4be8c2f91cf709f075c9fdeb0a312e2d6cfabd28ab7318",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent by up to the guideline amount once in any 12-month period, after giving the Tenant at least 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:56.186333Z",
+ "text": "The clause is enforceable. It sets out a rent increase that the Act itself permits, so it does not conflict with the statute.\n\nSection 116 of the *Residential Tenancies Act, 2006* limits rent increases. A landlord may increase rent only once in a 12-month period, only up to the annual guideline under s. 120, and only with at least 90 days' written notice on the form approved by the Landlord and Tenant Board. The clause tracks each of those requirements. Under s. 4, a tenant cannot waive these protections, but this clause does not attempt to waive anything. It restates the statutory limits, and the landlord still has to comply with the Act when giving notice and setting the increase. An increase above the guideline would need Board approval under a separate process (s. 126), and a clause in the lease could not authorize one on its own.\n\nI am citing from memory, so please check the exact subsection wording against the current consolidation of the Act on e-Laws before relying on it.\n\nVerdict: enforceable\nSection: 116",
+ "finish_reason": "end_turn",
+ "input_tokens": 263,
+ "output_tokens": 1421,
+ "raw": {
+  "id": "msg_011CgwRAvfvBqV1tF2mGWu1M",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. It sets out a rent increase that the Act itself permits, so it does not conflict with the statute.\n\nSection 116 of the *Residential Tenancies Act, 2006* limits rent increases. A landlord may increase rent only once in a 12-month period, only up to the annual guideline under s. 120, and only with at least 90 days' written notice on the form approved by the Landlord and Tenant Board. The clause tracks each of those requirements. Under s. 4, a tenant cannot waive these protections, but this clause does not attempt to waive anything. It restates the statutory limits, and the landlord still has to comply with the Act when giving notice and setting the increase. An increase above the guideline would need Board approval under a separate process (s. 126), and a clause in the lease could not authorize one on its own.\n\nI am citing from memory, so please check the exact subsection wording against the current consolidation of the Act on e-Laws before relying on it.\n\nVerdict: enforceable\nSection: 116",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 263,
+   "output_tokens": 1421,
+   "output_tokens_details": {
+    "thinking_tokens": 1097
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

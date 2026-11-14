@@ -1,0 +1,99 @@
+{
+ "clause_id": "s24",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "44225d1d0716ccd92bc0f686fb29d40457e67c7e611d4987c4c24f9a2d48cc13",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the Tenant takes a job outside Ontario, the tenancy will end on the Tenant's last day of work in Ontario, and the Tenant will move out that day.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:55.359000Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"A tenancy may be terminated only in accordance with this Act.\",\"reason\":\"The clause ends the tenancy automatically when the Tenant starts work outside Ontario, which is not a termination permitted by the Act. Under section 37(1) a tenancy may be terminated only in accordance with the Act, so the clause is inconsistent with the Act and void under section 4(1).\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6446,
+ "output_tokens": 495,
+ "raw": {
+  "id": "msg_011Ch1HySq19FTuYDU5DX3QB",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"A tenancy may be terminated only in accordance with this Act.\",\"reason\":\"The clause ends the tenancy automatically when the Tenant starts work outside Ontario, which is not a termination permitted by the Act. Under section 37(1) a tenancy may be terminated only in accordance with the Act, so the clause is inconsistent with the Act and void under section 4(1).\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6446,
+   "output_tokens": 495,
+   "output_tokens_details": {
+    "thinking_tokens": 354
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "clause_id": "s05",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "d2f3e152d3b9e129e2d87060e1c6817f2bff6557a57c8c53d4a24df3c02265b7",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nOnce the Landlord and the Tenant have agreed that the tenancy will end, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, after informing the Tenant, or making a reasonable effort to inform the Tenant, before each visit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:44.501946Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter the rental unit without written notice to show the unit to prospective tenants if,\",\n  \"reason\": \"The clause directly reflects the landlord's statutory right under section 26 (3) to enter without written notice to show the unit to prospective tenants once the parties have agreed to terminate the tenancy.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4447,
+ "output_tokens": 856,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "4HD3auq0NO_r_dQP553DoAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:51 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter the rental unit without written notice to show the unit to prospective tenants if,\",\n  \"reason\": \"The clause directly reflects the landlord's statutory right under section 26 (3) to enter without written notice to show the unit to prospective tenants once the parties have agreed to terminate the tenancy.\"\n}",
+       "thought_signature": "AY89a19PbXcz72i8xpzyX3SLzTCaYB1Ez-6B-85ID_b58p8u0oqVkyH-zTmz_P6BUyuTKn83pS0Kx70AvDnSDJ-uK8SX-IUO2VYhoJ7YpFfpR_QEklI8hC0Ajae0iGn2PdmPKPiX7t2wLfiaos8cSiaHi0l1RfKfelflP5Yaz4zH2-haUzsz-voaqJn4HVjmuEWptpA1ibR7SouKA-zjHJWbn4l-3IXRK1HYGBe45SWM91DfK713It6pofZDbSXki0gJ5Xz8YIkHlCE4UF6MVw0uIcHVLtr4aMpgGtxDKtoO9gIejfQZy46_0h1Sp3LLxOygzhmAgVSK2jv27yc0oUWYk1AKoGyB-O0vp1ZPtttxjFwb-zwjSlbeaL5o0qqQ0eCICwYBNej7irjBmLP2OaAHIZYjR_Wk8EJ3dqMzpGbY-dP8GNxuCnCNf72-icO_lnKgxkhuktWEMv87wy8kXtJznuFihpgDtNpSclZDfV40DxBp61TVlO78UgZXFH986Q4ZviBx8mW3RXglH0_S7VueJ49JeZ2dXBUzp3fSx0yb8ds7v7nOmVj9fOtV9rKRD6NYLr1XgDyx5c3wS-p7XQab7B73WhRs03x_un5ceYWwNetr0Nw63lKlOlLZFqLWLt_Bt_f5ZtWNat3p7VpnIQPvj-GyM1HSg212zDECcnFLYxZ_WEnbtrKBc5YFon5Txmte5ka3wkPE61MFrsNwszFl9H9DCMvqGFtyGLjuMRYfMRnKK14JRX6nqbFNzZahpfWyofEoQb9Tsu3inatD8ibW_DROamxNb6Su6tR1HHUjKPVcoBp1aJ9SHj8bMyqEke0tVl_9FE1aWV1OqC_waRGSRp1-W3EMybNny1k7w6yyplkUKbba_HME9HZlvYcF0OkqYu9LUkJKw4wOEAUlvCCHQnUKH7EKMx8g4LSnsZCriKefQ5EK-S_iBSO-3farC_7wHzOFE3hE11kmGgzXo7K6mLkt8_FbcbeI3peJz1Y4evt0NSnVZ8PWQk-S9odZfn03xGCzNWfESyqod7qbK-fg4H5nHPP75BtqRPOszT9Lacn3OZI7pVl07jvt1s8_fdoHbUK8g27jDszZR9G1b3RI6jo6L1zzi7R7zDjVhK79q0Za2bkb4hFaKXnlnaL2DkAgZUwLvyalKFCCjfmMoCAvuXq7YEWZQ3umD5gkBz5s3soBem1eIjAGU6YTeshTa2gMNLOytqtVbWG8FW1cSIWccJuWMt32Aa0ApPBeHZhBMQKLbz600IiK6y3-nVzN2kHw0wDP0yd0XzXYhY0uJlfEFexRVFDxvYhQzaWNpiaCfbBBfSs1Lnc0Vpr460mQ8Ck-OBmgVUkwenCgvNzoTN80Jtd-B9qGZE2UTGEstvtgzWOIZ1gU7q_jRWgbi1f_aX9IRxmtqj4MioUbKF7xcGH2jcJKUXC-Z2G08d_sknpZrBsoyHH_kPNUZ8UNL3gYneWRn1VGAwkJj1xxFvQHQHjy2HssVu7E4nuFZFxpIteOQv8j89_wc_MI_VZuVIXRNKjuRBWZjqoHYsNkpXbjfx5w3oi4IWEUOHZ-FNY6AD42zGStNDbsfufuqwMhD2dixUgHpOces564h1YdtBkSJvMKupTSbLDkfwj0p-o3Qx82fJBNhnvaBpyyWM1SoCEaousdFkWoJWfU__qjE6chQ6gqD8B4JQUqik3euXpvJD8z7OGKm1YjUWgnhdA9HNZjeXVzRNTPixxzpABFP24d9MLS6asrxO22rzDtvquLapTSjYDRWWgsMcZRLlEnGmRd_8z6itwnnonezEf0hCkmsedGpP1_-Unigl23x1Vb0HnTjVQI2axnIESlm0sQ_usEBM_hvpfDpZNOeFd2skTeucOIe2DnQA-HUi73EfKTYkd-DK4st11ZzpnZ1WSfNt_SidXibtQbirOpPmi8VZn5DGNS-W_-dBd0AuXhF43m4OYhZa6NiMzjJ7Njmnbg1N6OnAzIVZLzbeZkUgH574kawL-RrNPnp0TugTasPL47ZaDdVpiTaPbduZ0nYfXLPDV8XRvFmv4Gc_lPxqD_W-jhxjmx_ihMiJiHDWm1xYNtH8KstA2V05_Z7jutA7ZnJSiQvujvoUjqSeO67bgrmrcb74vEvc6jVxxLVV7QB0MRCFuZLUD6pOKdUOfl1CRP2XNQRLX5wfzoHKsygf9VD9Tj932LClI7RbIbYD2VmpyFx70AYVVphrUtniI_Mn42o81gxrwPV-4kaUeqS0iuH4QVu6sC_TUNY-cAtDy-9Z1dkpJcGDybHM_6ngDe_7Lbk9YgJAL_Fja3NToKWUXe-h2dUViOdiZu-1tUyyQLrIys_WPL68cqnaNkeHPWQDNFYJhWXUNqHUiAa2wX3tlrrm8LQaZdNZAFq9mpU7Bk4W2IDsQY02kDMoYKxBjRziEQcfE4XmOkI2pMdzNCv6OFVxiXnvak29oD6lTs7qAjsADlfZUdZt9rJxqWE9jgnyCpnY2OaVNuLiJLVaH4GQAvGhyNn0TRavtHYKFEq7NO0KRXocIf-XGBSIk7tXyEj49sPwwFeeEmu_hTMTOX98hPmH4ZVFAILFGAwZhgwlTnQaRs2iXh3aVqw2RdHFWfovbt15hWpQEGXavF3tIvXfR9gKkxUP5P13lRf7RzSFaluISygu0u-AlXkZ6M2-rHt1KP5AJhPCrOKoXwJcOzr4oNRgGPHA2OR5VBbSpxDUAYp_pBx3Yq8MUlmd23Zyt1AMcLeI6MwrFiKPPAgvSIom0VafnT8_QLqaZDvbsl0Gypm5oJ2zJeuX39n8SCAWx3GWJiBit9VyTkSt14kMKPub5MIV0Avd697nEAfEXAkFrnaJ8PWXiFCrnhWIHu1tGxRZNxkZKA6b3QiplrmokrGxIPMzu_DP1bQh4iSzUquPU6wp0X6qep8Orb8Dl2PlRa6Vdb1zCQfeIalL99UTo-P6sG7oNkOuafeeAP-KhB_teD-_TQ8fbO9OZmFsojjNCnZjl7wR6g8zBixo9LVFkH3o4EfsHMn-hwD4OOSPAom63KTfueP4BypJ522IkE3ROBn_oovYVji397Om8cl3PPYe4igzxGia2n43WYKbK1CW2pIQ-ZShDIUOzx49iXiWugfSVO4ezkSog76JQGfNP7zCjrKOrBfYKrkI3DwJAwNIfSBZIJEL4QIxZ8Q8QpN1cwbNJKMfR80yNkSl0WUDZXywmxiTogJk7WpsKqv7vTJMltkfGEcwc13oToX3ZYeF2T2yrmNEn17FfMqlYIzdMb-TPUkCEgHmKEFYbgsP5UoNSMgjwcw8PZ7COIVC9gra8wHPhNBa2rt4WEi6zgyMQOfSii__brOYvTmtxgU9fasLdW6j2-eXiNTrAYf8nOUj2QNN52R-DS0y0lGhFdGv1ZhceKFGyzjjedYgGpxAl2Ho6Sql4ZTDMCZbeR29_rj6mXUYrweryixyZkisF_fAUSYNqNNxH7Hb-d0bstkwWyFnetrYGXY1dxftL3RS1ZBE2SWiDRpXGb55_7e76QQM3ZU2PrvUX2Pw679EzYq6MMdx5_N7H6I0Ol5HZSY7D_fm_-FYj9Q-2MD107-vao8UtdD5xeHdoAHxOieGMAaog9WvcXVqPbJO-dvTTEmeq8ON_m4xa8jjolgnJoGVAFbk9hkpgLsytEVaB4h80w7IkIVcInZ8jlp_UDitG28WquAGhBolFulAZCGGK0BlUWysT5b68j8nBXZ4M81rsXQQKFb_BBNU5WIvu9c5odSgb2mEQ_a84f4cn4XZg2wVn6LQSmmyiJxNDJOE4v0ujKEtEafh5Vm0-mgzKGjQLUJqs_Lj5rNpMmMQDhAUQeEyctHk6vZQJZL2sMI5McT0Dt9iYV_J89TaecqN5m3_8KJ2FKWygZyASjVMFQj8RBZ0Fr649-M7ZcQV1Cl1kavkIlAb3Eo3JwwL1OXeURPpDrjU0rYMvxKQroL2vj9uiIbU_hMO6W2-9B-m7R5PqNQ0C2IeVuMdCxmXGOTOR5SIaiR-KtVc646q-Gpa21ctwnHqWfvbvms6k63MXdjilDmTwh-yxb0vUQfGyNlO6Vvewn3OFEU1GHql8l_uPHd8v1s_L5z-AMkjpkxnzrJxQob3c2yB1QVAvLxKOGCqL9vuPj4HCkFm9igGQ1CGGxddBTA0xu84LzMiZ3CrOulnV2X7ovMtMEysENP83_BQ29yWWJv4wmzhxCGfLRZj3pBfN7VIhojIl0NItA4DGX3ns-ZX-biHC36Lst0pmwPRvhJo3fKA2OxX9MUTCfj3ZF1rOw9GYeT9Z7YrS533dGEpO0SpG2oeiYsEGAeC_LT2o1eJuMrTz3kXEO9CBNQyTCQ_jsMFlIs9bVmSEZrWsQcAecRM7MVmDDkEAr6cI="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:44.858730Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "4HD3auq0NO_r_dQP553DoAU",
+  "usage_metadata": {
+   "candidates_token_count": 92,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 92
+    }
+   ],
+   "prompt_token_count": 4447,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4447
+    }
+   ],
+   "thoughts_token_count": 764,
+   "total_token_count": 5303,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "26",
+   "quote": "A landlord may enter the rental unit without written notice to show the unit to prospective tenants if,",
+   "reason": "The clause directly reflects the landlord's statutory right under section 26 (3) to enter without written notice to show the unit to prospective tenants once the parties have agreed to terminate the tenancy."
+  }
+ }
+}

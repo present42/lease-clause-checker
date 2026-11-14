@@ -1,0 +1,99 @@
+{
+ "clause_id": "c27",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "f66a0cbaa5d0055c3118d10a7eec68549cde9d4aba6089281343f1c8de64d0ac",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant may pay rent by post-dated cheques or by pre-authorized debit if the Tenant wishes, but is not required to use either method.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:29.668735Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"108\",\"quote\":\"Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to,\",\"reason\":\"Section 108 prohibits requiring post-dated cheques or automatic payment for rent, but the clause makes both methods optional, with the tenant free to use neither. Because the clause does not require either method, it is not inconsistent with section 108 and is not void under section 4.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6440,
+ "output_tokens": 691,
+ "raw": {
+  "id": "msg_011CgyJ7EDhMAPQ2crq8QQjf",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"108\",\"quote\":\"Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to,\",\"reason\":\"Section 108 prohibits requiring post-dated cheques or automatic payment for rent, but the clause makes both methods optional, with the tenant free to use neither. Because the clause does not require either method, it is not inconsistent with section 108 and is not void under section 4.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6440,
+   "output_tokens": 691,
+   "output_tokens_details": {
+    "thinking_tokens": 545
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

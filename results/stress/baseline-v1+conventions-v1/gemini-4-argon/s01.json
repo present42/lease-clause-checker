@@ -1,0 +1,74 @@
+{
+ "clause_id": "s01",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "8ba06eb1c84a4c6117d6b5a4b94d15bd88cb4fd1b41041be1e9495040ba5cea4",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may come into the unit without written notice whenever the Tenant, at that time, agrees to let the Landlord in.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T21:00:52.455340Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord is generally prohibited from entering a rental unit without providing written notice at least 24 hours in advance. However, section 26(1)(d) explicitly creates an exception to this rule, allowing a landlord to enter a rental unit at any time without written notice if the tenant consents to the entry at the time of entry. Because the clause simply restates this statutory rule, it does not conflict with the Act and is enforceable.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 186,
+ "output_tokens": 119,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "hHr3arqaLanXyOgPrajYgAM",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:03:05 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord is generally prohibited from entering a rental unit without providing written notice at least 24 hours in advance. However, section 26(1)(d) explicitly creates an exception to this rule, allowing a landlord to enter a rental unit at any time without written notice if the tenant consents to the entry at the time of entry. Because the clause simply restates this statutory rule, it does not conflict with the Act and is enforceable.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a199-tf6lq708rq6vGwHymnnTlRfQvA2KV5Wx1QBkd75Puc38TJzsUBvzEARJmcvlrua5uXyjo5Jl1q2jX838v5h_3agD6Q78LOkGmOiLSC-KRHVm_mgGikA6ONY"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:00:52.740666Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "hHr3arqaLanXyOgPrajYgAM",
+  "usage_metadata": {
+   "candidates_token_count": 119,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 119
+    }
+   ],
+   "prompt_token_count": 186,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 186
+    }
+   ],
+   "total_token_count": 305,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

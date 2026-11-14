@@ -1,0 +1,67 @@
+{
+ "clause_id": "c11",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "848c9d23bc2c623aa49a1b16bab0aa83c6a33c8d98c9456a192765013d664d6d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: By signing this Agreement, the Tenant consents to the Landlord entering the unit at any reasonable time without notice.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:20.261369Z",
+ "text": "**Not enforceable.**\n\nUnder the *Residential Tenancies Act, 2006*, a landlord may enter a unit without written notice only in limited cases. **Section 26(1)** allows entry without notice:\n\n- (a) in an emergency, or\n- (b) if the tenant consents **at the time of entry**.\n\nThe consent must be given at the moment of the particular entry. A blanket consent signed in advance in the lease is not consent \"at the time of entry.\" It cannot replace the statutory rule.\n\nThe other exceptions in s. 26 do not save the clause either:\n\n- **Cleaning (s. 26(2))** applies only if the lease requires the landlord to clean the unit at regular intervals. Even then, entry is limited to the specified times or to 8 a.m. to 8 p.m.\n- **Showing the unit (s. 26(3))** applies only after a notice of termination or an agreement to terminate. Entry must be between 8 a.m. and 8 p.m., and the landlord must make a reasonable effort to inform the tenant first.\n\nOutside these exceptions, the landlord must give **24 hours' written notice** for a permitted reason (s. 27). Entry must also be between 8 a.m. and 8 p.m. unless the tenant agrees otherwise.\n\nBecause the clause is inconsistent with the Act, **s. 4** makes it void. The tenant also keeps the right to reasonable enjoyment and privacy (s. 22). A landlord who relies on the clause to enter illegally can face a tenant application, abatement of rent, and possible fines.\n\nVerdict: not enforceable\nSection: 26",
+ "finish_reason": "end_turn",
+ "input_tokens": 235,
+ "output_tokens": 1326,
+ "raw": {
+  "id": "msg_011CgwRChUjMzvbaqnoaj3pF",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.**\n\nUnder the *Residential Tenancies Act, 2006*, a landlord may enter a unit without written notice only in limited cases. **Section 26(1)** allows entry without notice:\n\n- (a) in an emergency, or\n- (b) if the tenant consents **at the time of entry**.\n\nThe consent must be given at the moment of the particular entry. A blanket consent signed in advance in the lease is not consent \"at the time of entry.\" It cannot replace the statutory rule.\n\nThe other exceptions in s. 26 do not save the clause either:\n\n- **Cleaning (s. 26(2))** applies only if the lease requires the landlord to clean the unit at regular intervals. Even then, entry is limited to the specified times or to 8 a.m. to 8 p.m.\n- **Showing the unit (s. 26(3))** applies only after a notice of termination or an agreement to terminate. Entry must be between 8 a.m. and 8 p.m., and the landlord must make a reasonable effort to inform the tenant first.\n\nOutside these exceptions, the landlord must give **24 hours' written notice** for a permitted reason (s. 27). Entry must also be between 8 a.m. and 8 p.m. unless the tenant agrees otherwise.\n\nBecause the clause is inconsistent with the Act, **s. 4** makes it void. The tenant also keeps the right to reasonable enjoyment and privacy (s. 22). A landlord who relies on the clause to enter illegally can face a tenant application, abatement of rent, and possible fines.\n\nVerdict: not enforceable\nSection: 26",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 235,
+   "output_tokens": 1326,
+   "output_tokens_details": {
+    "thinking_tokens": 800
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

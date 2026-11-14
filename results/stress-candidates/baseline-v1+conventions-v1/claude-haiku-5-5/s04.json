@@ -1,0 +1,67 @@
+{
+ "clause_id": "s04",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "f80806e9be57ae8b1a66811292cc85cb60f43a06c2681951f31acd2e182a3b4a",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: A real estate salesperson registered under the Trust in Real Estate Services Act, 2002, with the Landlord's written authorization, may show the unit to a potential buyer after giving the Tenant written notice at least 24 hours ahead with the reason, the day and a time between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:04.283311Z",
+ "text": "**Enforceable.** The clause tracks the landlord's statutory right to enter a rental unit to show it to a prospective purchaser. Its conditions match the statutory ones: written notice at least 24 hours ahead, stating the reason, day and time, with the showing between 8 a.m. and 8 p.m., and a registered real estate salesperson accompanying the showing with the landlord's written authorization. Because the clause does not reduce any right the Act gives the tenant, it is not caught by the rule that tenants cannot waive their rights under the Act (s. 3).\n\nI'm citing this from memory and could not check the text of the Act, so please confirm the exact section and subsection numbers on e-Laws (ontario.ca/laws) before relying on this. The result does not depend on the subsection numbering.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 298,
+ "output_tokens": 1942,
+ "raw": {
+  "id": "msg_011CgyckyYJUcsqZRFMdcmSL",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Enforceable.** The clause tracks the landlord's statutory right to enter a rental unit to show it to a prospective purchaser. Its conditions match the statutory ones: written notice at least 24 hours ahead, stating the reason, day and time, with the showing between 8 a.m. and 8 p.m., and a registered real estate salesperson accompanying the showing with the landlord's written authorization. Because the clause does not reduce any right the Act gives the tenant, it is not caught by the rule that tenants cannot waive their rights under the Act (s. 3).\n\nI'm citing this from memory and could not check the text of the Act, so please confirm the exact section and subsection numbers on e-Laws (ontario.ca/laws) before relying on this. The result does not depend on the subsection numbering.\n\nVerdict: enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 298,
+   "output_tokens": 1942,
+   "output_tokens_details": {
+    "thinking_tokens": 1666
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

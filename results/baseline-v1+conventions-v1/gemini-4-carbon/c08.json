@@ -1,0 +1,75 @@
+{
+ "clause_id": "c08",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "fbe19c807e15d6f2daf3d62cf13abf3f45efbaccffa510fc163bfe2042337249",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant shall pay for every repair to the unit during the tenancy, whatever the cause.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:09:23.893646Z",
+ "text": "Under the Ontario *Residential Tenancies Act, 2006* (RTA), this clause is void and unenforceable. \n\n**Section 20** (specifically subsection 20(1)) places the statutory duty on the landlord to provide and maintain the rental unit in a good state of repair, fit for habitation, and in compliance with health, safety, housing, and maintenance standards. Under section 34, a tenant is only responsible for repairing or paying for undue damage caused by the wilful or negligent conduct of the tenant, another occupant, or a guest—not routine wear and tear or repairs arising from other causes. Because a lease term requiring the tenant to pay for all repairs \"whatever the cause\" unlawfully shifts the landlord's statutory repair obligation onto the tenant, it is inconsistent with section 20 and therefore void under subsection 4(1) of the RTA.\n\nVerdict: not enforceable\nSection: 20",
+ "finish_reason": "STOP",
+ "input_tokens": 179,
+ "output_tokens": 2125,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "dG73aq_kBKnXyOgPrajYgAM",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:09:52 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the Ontario *Residential Tenancies Act, 2006* (RTA), this clause is void and unenforceable. \n\n**Section 20** (specifically subsection 20(1)) places the statutory duty on the landlord to provide and maintain the rental unit in a good state of repair, fit for habitation, and in compliance with health, safety, housing, and maintenance standards. Under section 34, a tenant is only responsible for repairing or paying for undue damage caused by the wilful or negligent conduct of the tenant, another occupant, or a guest—not routine wear and tear or repairs arising from other causes. Because a lease term requiring the tenant to pay for all repairs \"whatever the cause\" unlawfully shifts the landlord's statutory repair obligation onto the tenant, it is inconsistent with section 20 and therefore void under subsection 4(1) of the RTA.\n\nVerdict: not enforceable\nSection: 20",
+       "thought_signature": "AY89a1-ij4chmUcX4MAxbLIffq__QZYDdz-pwBT-Kp2rvpgJxJqSVtTH1Gkdem1aQry-y5rpCyGr1S2kEG17iTNbt6C721Crz2cMVm8l-pEvZs_n9VBHvWUUY6HeuIy2i91ayuHoaCxwrKg9Q9HRVhvO5QsP0J0AZf9H2vPEu7AOabzqW6hD-GanC-DrMSUO9ahWXAipfPoJSLREBi5vJJzrX7yVoZBzbtjZmJGKtszplqpisoXU_OLBV5Q6JYnuun9hnPHGCu37j1novq67cMWb4tCAePlJGRfvmQ3O3BUP7U3cggMZkIdS8nyiTvOgOQnjcViA0IWc3jrkVjc0AqpWddPwnQ4St4-YqT5QZgtm2g1pmueKfhPw8clA6mOllJCB5eeB5p1SYQHDamR2v4TdryHYrQFgSgIHL3-xgh9UKHop7dCoz9mKudlCf2N0hcJPrhnAepKwEbTlgF6_ad5vsPGh9mhBRIsL0HGejVypxTLW-mx36yaGMLsqsdb4z3uECf5dtu8fp7U5e2vqKq9SiZTMB3E4Mwkv9Wr7XH6sNK-V7c6aAoti4PbI3KchkJmPPwDF2FoG2Di4dIJtbGk-xrZuZu0_JLKq6YeANJF1SV4-3O_VRz_Ac1pUwc6hzQa84agb0V5Ecm4LFc7TcWTIWhJ6fVYChu6s7Pa_U-4B9rWbBA4-SaFm4zJ5Y1-AQxv8WgDSKqels75A2_7HAk0zVIK2XG4pgOzBlenndZEiBUmyKrqhExDjorlP3RcQCtYRl8Vn6EhYc1AOg0uJSfCVDdFW9uDNK8hwchLAbZsv4Foch-18P3YiN09nAVQR9elBWfUpGNvTl9JdUXamzAMGx3ucyIWz346dlGVFqalEadac7pkg-TITTlSDQzjrRUUeVKr4hVajcgaqSbKoQhjWgf5c0RwaK33dZUnOnqvor1BNLXUZjhm753K0LAd_XcptkdRGS1Odh-WcUTcvpwp2y3fr97b1q2FONuWyfCaIqeAWUd_wZ2x-YuTmUSVNnsu-oUz53SJhnxj_rmI6VXsksvL2R9D0oXIuPJKqm9o6jovzKXP55mYUe1dntpLbA-DOuCuN0mQIR-9RwcwcLLD_pqtQlTeV_TWCjZuFwVDAHS8BlBlidnpFJF57Rvul32r67AS6HK3j6JzQgPwjb3Uj79tfOY9eZJdsYwzlLHXvABUUt6DJLONAP0wijSh4JMilFFmYMcqxVXW8O69prg0zJpzPpz3gnT_JQp04CfZ2TH_FgPuxYCEWo26WGMcS8S3BBONDhh7pgYw5mlJPEs8F0BBhNvPFefsMxGnOy7xZXuJ-6ZmxIh1ac4S2BS7lzRaUIcllvuEp4rlXVeyV7KX2lWJl207jNWpghb2UXJvHOrEPnbykn3x642K_c5FcfN4Gw3LGtxAaUMl8fKYv6d81IiWcugdNjNBXvIxOWOn8ao9Q1UM9K_AwSXEV-EKt0Jmvzhvn1NDY1XPZEvtz4ZELzIKOcBnonbvJUpsuh0u5uIv4Al6Hj4zjuEk0y6N_CfYG-T-Mp7jzHgtHHcr81zXtj3sbqAFkhdRDimGEAD6lviPQ42y977D-ndQ6AQunCkU2r34bkVsBhPBUcOwd7yCFzAuExBFYVy3xQ_X43dDUTSYEU8876lYoUXOZNWoR_5eBXWNNYoZbgGeR6U-cbS0aKBH_dRdCkmkzJeobt92Wu3wg8QMGuz0nTEENvqVPSyaFj7izRrj82PAixote_QHnDmnYFdW7loslmz_LeW6GvcLcm9lhFx2L8Vif7unnraqqplatJb5Ogay32aDLcfEIuO3zWJl0a6-wfvunma16bVe3D3J9ICh7GqkQLdzrod24pCIjCMPs4BFMQBbs-gViilrfGrDqiGvpqCMQLoTB_DEcBmGaog9RdS4wii9Us2fmdiW4mXO1dTsDSZ__jNAqrd44bhoalyZ6b5rSUl7z6bQ0Apxga6mkaC9Yik62SFStiWtJYZcG0G5REZaOvOissP2XPamrYhdVuefQuToUjRMa7bv60LPtBfP51bP1kU_zHh1cJO8uecc-C7fYnJFcK3UH_wNiWMvu9fmOVO1L4pW8eu-2Q0rX5swltq8W8PG7QWa4yLkPs_i2hpAgBlNCk6vTGQ2F4EsJkJ48pJ99AD63MWRucwlzvkr4dZuMCVVOPJwCbMkwthMsQQ4mXOoJpVqqpMjt-Ud2-eH4p8SC3_Cxh8wfR1UyQpCqXwV6432dwhwdEIq27xer5P0AynniPTN5Fxx-4-PUNIWqcR_iaepaovbFElJdIFZLiVkBd2JUwTELoc2NKKMGfOYptNgKxBMlvprn6xXr5JBSpI4gtX6XxT4W_JZbJ2hz4Qer2E4MaVfs_CRpYy9dDGO5hidADGyzwiSPZ71b91wnx3DvfxVgu6EAuDBFxqK1GJ3xwHTJQrLR99bvBB0JdcRq0tQMl8JmnXdk1Bn3343t3w2uzzAfWDJjwehQn2q_AxjklAb2b3cDGUeOh8_dCDUR6Fdx3fFIxBSlDwkd41W76sReDFCiM27YatBIngcvvm3ksldDthF5zN4EBpq3IdJgZUmiEGt6TUdKYVocHB3_TsEN-D7Y0o6tL6A85RY67WGAzeIRX-2hcuBV0ZU-riR4glfr15HfFd4nXFFvGLZJbVCLtNMI1GGoOMpOKxcSJ-ptbRBqP5UxuuHuJewIIvh-Tl6xNVXIPD6iELg7PsAui6O8GWRG5zW__GvOyu1qqvAu-QHARMN6VFuzEiS3fxJ0SA3z6Zeh21PvG769ODG8o6bhucHuAhWCsv06bdFHumvjkmHWyTPyhvI02CzjK50G4U9lKdHvULGHoxeS8iv7CYTnwZy2yLq75Oq6zOKx9VnyryZezae4WR7KG90-OGhXVqhaok3lAsWi3bPd4SDD1XyukJHRTqydK5rLy2jWxoyNEhvvZG-J3JW-Xq03ahtRtYs1BERWGLUx2hW8BvInOVNhg2HHq6TFJTFhpRswj7r0MscyCLA-PPbsZlMTVL-uzEypjBXXhsj5PORMtoNbEgI7BTsSK3z6PPwGtMzZxm37PAyAs3TfnPhcV3hBQUqDnSqqdlN0DN7gHnOUrk4uYTRDyH75PWaGpt9GVYOB6_x0CbsLLyGPGOJ5eCZm7R_-7Oxp1vZkmxQVJZ92j3lwciyww46QbP4TWccoBYq4kb8Lk4chvLo4ersnERJV2xNNatYDE36behZuQfJzjXpKno2dBZn4ACbt8f34JqTny3SFFbm2l2BiMPcSGtQFks5WBow7yEg5-iwHZJCwRB7JYCuzFI-KtdAI0FtGEvj7hqdwH4Z05rGRHChHyTsspRMOGAkSWjKEfCGvWsssCsbpFZs4pxASxhmASZWeFjvIOJ4EYXP-VvYND3qJEC5zSoJSHw01e_3FDMvk4f4iET2WammzqptWbGTYi-vqBRST3IEdoXUXW5NFny6OyLprF8jbqq9Mv5uMQw8eBJrlqxPnYb3j7Mhewl_ucnxGdJpFdC-9DyVGQjWIFmjtpqp2yTwCNMlAywDsXNCv3m1TFWuM9gIS69zy9a02KMmnCdK1_ilx_m4kRJplBOKCBRww3slEMbpL-xTmJfIDs4TR_w-wtfrweX3kWlzQVlbJ2qwsAVBfZgTYf1oeoeJtB9F0QRSvDmPo9et4mKXrmDDzPeg-MBqRso0hKDPJZfiolX2ByepEFf77-5JgqSMoiWqJlJge_vmqPZje6Y5eRwfwZFKTP8vacJhwqD2Fh7wXuwOypo8Es2bQpba3h-o30snNMUA-_csB1ISvaqCeIQIfYKRxhHOFM4vHQ9OCRAgmCJJ_5q1d8mE3Cf2VuvkBgb7QCeKp8UHNPh3hdH3qsgUgZB2wgxEikrY5J1QeWfe4L_sksZVSzR2r1WCKFj_zIxpulB649LgaNRzRH6H_H8Twal5i2ZVvJMkjyoqXv3_AeqmDhubqZQfvTEdJbvrJB0_9Z7oW1rPBCFzXmnwHcBm2saayF8zQF4xQ0sIoNmqJ9sDUn3vR0xb__9hFF09ShxwEo2JGjpV4VFb4cukC30xng3H5nyXN2ObUny4mLNUOgZYUTG5gsyTUwq-qXYtfNbsBfMlXlbCa-ODIL4TkvuAvQAF-_ZFtyaa3LKRkuZwRvLCWijwHEKQkccq1aRnTKrihr_RxlS9xI29u6mdXpadCwcoE5POfw2ex5YMIMg7HQAHF4T9-CyHDupJEI8yRgPSAdv6HKCTLZvn2zgw8IC1QAsuvjdZyfSNX10HqmZyj8dvolhySgIDRXY4y2KZPGpR_lQBCLkbxzZFneU1IUhLkg_3b4JirB6fJnJ70ZcVMGD1NqK5LLX1kaQnSS7z3G4jnXMqSA5RgZmri139mMJzHWjY6kUE2lLpQmvtNdEWyWJnTXzQiizQEMA__rFAwc-WPJCOnF-ePOkuXy0Iy_R8gwEGz_u3s0F0InVflU6E45_OqnQC1xUKz9BxfS61yFZh_6_OJguQAejiUg36ihCEAOip54G-0YF3hbzQgM2fTh4m4fc9WYUp0Nyu0QcSYTwADTA7BUQ-4IhDBM0z2a5LLie67dnmgLL3jHPVVeWSw4us6JOm071YM6mzm38zY1GGau4cPC3xusikSj5GpCZz2AZjOVjmZQBznDt_n4vvQD9PhHuVfL7bt9L0RkeL4l8DOY-tSoQhJaAL1-ruHqgDT8uwhQO3hfKB42aEzXWiNwhR09j1x0Tlxf4djocmZyCEJXbFANGiibD6F1GH27dWgPzswvkQt9l04qyf9e9RJq0hkX4nqUM8lIOZ4pcsATplv1ImxUrU0MmNIaQ5AB2Hp4NdfnUzqoXV0J0ddfZSIPBI1iRKVUnSe2MwLK60SKRJhV105JKw5BHbLLxv9XGlS8xNklGL7cxDxMkVuyv_Ax48Ng8ZXQPynqQ9SJSdu5lF022RUMeG5rrcnoWNiSdzqwJ_1pWbJpEdK5dR3Csic93bAQuzeKNy6nziDoaERBESkaOEblJ_3LORuxkEjcnQZRv_9QuPo18ko2skVgvEO3tiezABVMAvBspAqkwDyIL35IzM9yuDHT6ZAhYcUbgQkChUpCEOk8zo16blavAGlz0_y3omKMwvtvGxaNln0UYjQgOUU3trDMntiezvzaZI7873yPSml2T06KANZ7_Vi8CyK7hAvn5d9JwSbzHWmH8aoO_mIlI-DZZo21zwl883i0vV-QQQn5hadjmCwQpvtn7Gbhx2kUhb_NyHzVE12MusI1VwcGtRIqW4mfqrm-_0sRdzJYuShhDYNPX12QUjZBMO5OAi2C5UvAUZX90nWClODulOCz9xggtlO5Gsxj4zP2N01ItP7Q3ldqvpJ5CK3Vsr2Rp5k9pf_4qQBOFkpu6u0PYJlnwPLluJyhlvQ6G-JRF5lq8CmEWtpkwc1oAEe0GHZm28VZpJ8kI0kmsASKJFDB7uTOnRo24aTDLx3wWHeR1hyNVv6JPTgGe0pM0TK4z61nq4NFOD6XB2kJCh1Cl9QKCIdeKUSkXLLQYMtpeasfwXykwsomMsc1xz3GRB_e_YnB-0Ib6uQtYNAAr5ltkvIo-ifgyEa-nKIWvHd95XvxIf6CpgMmskBRLmBdmJb6WQZgPLvVJkAMnchNZqP05zO_N1dTqt9UnUbMflWkfKZWJyon78h9s4iD9w-7XRCmaHGEQGV7thfyO2LpUYnBmyLzZk7GcGnfCZdC5IyRCbQMiN3pui8aNS1iSOJ3GmpMkGFtLEa0JH3XqtiOo5UeJdgXkis2nyoomNbvA81JBa-yb_WiHch9qqIgFYp3NuYexa0wVw5qnL4Gm7ox5vkcCmwePimcmFsP4a5nvB9v7ayIEljmnPOVXMv3xIByTWmNtjT7IBx8et6YtBrWpBiVQfCVEwznuhG_r-PPnTjfxsI98aoJ3XX5uIDgQFlI-BIY0jCmuLGPQcTQ8PtWMBsi_SahkocePZK9VwIaQiYFGodr6hbnAOzoQMiVvUFkp6GGbYh1PHvHHV_vElACab_4qt-66aDEzduWTm3YJubr9Yv7ZPNxYM4sNcLFiIhGbAyq9m6cN6EW1wWGRI3EKAxmc6ycNNjSdF-z1omtGeFDLwMRnKvni1rUHVv-DMsqcHu7MeQUVCMTgJ2tneBgz8j7_hRki6j_oMVuaqpKcrdXp73fAP5DOIH7KH6RGUJKRLO55_NL8y7I1uHWNsidSrq5H5py7xg6iJ2SkY921C3NpIbUNlAfk_Ww-ROWSQYnouqqYuFUpv-5KhXKqrJFSd3Ax3e-eu1q2mIlxvSlA9P89ZfcpotFhchM-xhrsSZCAZY0GwY-L2fQu9I9N0vaRkFrq0jsAYGVgNmNEA9TztDLv-A-SUSwYnG-vnlTEew-qZbjvUilkx41odrdySHbOPmiOKKRSiZxp4WgsW7dIHBAmxTTha5CkY13W6orEge_jDbPg3dttF0DRCZGPLjdhVV00wy3JrrKow5UbUQJDBjMaJruSTF7jQ1KuztWiMZwcK0PBjck0eZ6CkVrDgID4OS64FSXt7v4bLWqIf6NvMhdoEt-cjtbfRcFR6TCBaj-NGAG1Ffj4zoyTpoVSQNdAKcvd8CtvV50KSW-ttPZPOmaH-vEwgwu4jSiGNBM_gampkfMWbM0hTjEfB19SN3S64CFeWcj-DUzSOii-_etTHvINVGFlUTeKikvYMVy5-bnmsXJYI7d55WgXQ_WbxGGrI6J7NKWeCxwmjqpxtHYfmDfdi5o4TFOEo-b0wLRznX1B_gLWuFKB-u0JgfwupOOLM1_-Jb4cQ8-UtjGKWmaBmU4oTm_7iLWkFTnwdWCZULYDkQlNw6IRt1xu9Y3LIKmC-1KdR_FrDNkH7eOv034_G7Y4HaNLosQy9SqHuFCj_94K0TGk9qvLS525ryNKzIYNGnIIjB6VQbx05Ta_aDJzqQk68jD_q34csZfpS66xbvpsdKEhoilvmR3x9MBdSK2IKEX-Tq1qGlhObTG2SOAPlJKIAlnlfPi6SbhBgFTU4WIXaosBOljuIFyw4IyjZEtqAChlTALS8grSyHogmXXcLE3ljXvTE0I6f5RJJlCKTC0JYCOWxpDPkDpyBiXn1p7wWnmNrtWPt4FLJEOURc1jJ8T5FVvUfyfhgeHgF5kr8N_THITPTsD6HCfiL1TqWrQ1OE2t28lYjsHXzJCVgeuKeN6QtwKDnQlUz44JXgBOJyKflGAcd3O-ufPWiL61-sYHw-fwUgtsRRCmKjGC6plQ1XyMjShYA0mZF_ZSFUANVQtQzLEHT3MpT3UW0Zimj6ahyUNlnUzSMHahVUZ7Vdtxb3EEtiO97cVDdChrfKWjTkmeDngV7wm-shsdcFJ8O94h1hQuYz0i1w_A6rMqB13mEhoW-ntKaxga5kHhTAtqwV-BGBnImEdEYJULt7Zfsa-HX7Hdtg26K2VY_8C40nWl16njEYi1PiQnegEch5opAZI674y-sOEAqtA29i_KkP0tajPrjrrrb2X2YsP-SpdiwrT-g7aQcYBlkS6IrixNOyJuebaWZy1ltt5zFRBvaHddiFkm3t8JWfisJm9jqi2xFyAcbFI5CPSA_cAC_-tdvt9thhPvSFCCn0UJCNUr5t0OTanrDcxhcrOHoYKE41n04SEa9v3-DlU_eSmVB8U_8feQZ4_wSIZu7eYYE4K5Vm-mG2AJJCRyj-aFOn6TBa8IYM5rrudhzZWwNvI4XHyBsMBpICFewyGoCjFWKShx7ckr5BmmSuUZFp3F0f4TniQByYf1h6FDz4rlvKN1yJfwUZLoPIE8e6k0Cda3U0mCTZgL1L0Q_OCRbhFEKZDRQn_QLFnoV4bcviWLHuEmkVz6gbJyfSee34B51dYcnGvzABENlCYLZIjyXC6xaN1nBgbth--BEczIJBTXxgYrQep0gMoCtoLNnUPbbsCl6krAoteabPQE3roYtzzm7eLy6ePFnBEnT-5SsI2u2JGY3VXN-Y7pxdkBZNoOOeWHNPEFgDIKGaw3nCfBvmG8pWFcRtUntK5ooeVvStStMzXRbTxSXFDNHMnwCs2S-mzKVGYrUOFlHsxeDvMpXHhH7BIKQBIEzT5DqRAX1dnw3Nqan-VYrTA52e0rWSFIZd-AgDguq1LMt4osvW4a6NdSRRQ8HtW7mb1ziOqLc0wIxfdyyLGKRjSa90WMgj_aXPKVwv2-EU5Nl67x2uGzRn5rfvGVhihWw9ZUN1JW6TnIQgNWNc16qK1CjieQ8m8OzP_QWXyIuKbIaaouf3x3mRpZVjb2n6Hb3co_jOQCjY_bvrNQ1iE1IZM-411mHIBelOhHHzEANmZ3-psAfGLi_DtzKuOwbIE1Y4beFJ8ZsAOMB_cg4uonHN6w0z7DujIyjKKDVCfZdc0uqvijlEt93izS1_F9rPpHVmVx0nG5jCr53bzocZcWiig41SWJ4CSiIEntFb1oYfbc9tojm_DCo8zA5AEiMd09c0fwFaad-WIbix6VLK03lPD7-ZNIC2loAcKSmdTRI1HsEhDgrkiKRuZfmCscYhG41QWmZbT_RS3XZyhMHWRKXDaTuDQNKK7TD7Z82Kkq5CAXxdze8fM_2BlCVf70xvCcfN0nK36Y95FUbR4_AQLMRtOFHZs3dKJGJTDQuQAQDawYXzgSL5-ci3SRblDPP3PIJabZEKNxHdAwPKoZHzTcNLq3SiuESn9jiDzCfg7pB-iokSku0l6J2WYJGvmAbTJlxS9THE5Yi-M0LQZ6qi0hR2tJyUM-LK0YULQ4oEfCT2H5Wonvp0TJQy8BAvRWFaDFHVQAVpVRnmuT-zuy7mpdKg550OehpPFekeq6CFhaV-yg5i167JUjbDJd9189dIWcG1idTAIn3nc-NeGie_-Dt4lbtbX08g565XSKoC8xdlw-oTh4On8Z9KfF1ld1feUzFfRN7RrSPNrrmRoV-G9M_b22OmxI0nfWR3j3-iKKzXgeIb13Fp3GJgl37wcRiAmsML7GvdaXR3XCaKNykIp12_OkhAWJMvVri5-2wnSJfzSNeNLoXEyossGmtdqKDM5RjiB1qRI3WskSDJIdHkPfcp5mGe_ZfdwTIEyG2Tf2f8DdRjmE07_nmj4zXJpmr6Kg39gnVDEdk22U2p12xK6_oQRjPF_vlHXbh5X-NzwMoXsr3eOUhyD-yBmFFhsF3-6l9Es0QvI3YNacPiEZW0HKcDDz0UUQliOqPIdmnaMyijFD9HnZBLca-wUs_U4uRfSvoGj8bAQGdfBjFy16NlXq-t1xqbMdVAGkA4RYM1i9h25HrUDe5AYsv2-F6wsCVj4IIMB_NlEZVU8ICBKwwD1OD122YuSRgPBsE5-ELIeo-jMMvQeNeTdXKSYqFdPyxi8k83lcelxtHQRijZKnsAdkFVh49hnZflKasKtYWq307pq6cZ8oePHDIjg5VVyXAKj6GTstECKJUJ4fpRExIABc-JGXRjQKFa1XdPNaRbSLLgKZWKzH0297x-oL7ZmyB7dWAhqHDKSncmi3Jivm2wWIqVeuvalWw0FnyYlJ0TXOI-ho5vCRTp319rbiUJyFpTkc2FR4iRL6yrv0XocV2KOUywa0787rQzq5MCt2Astl5CInrn7PUU0tRWSiMLZREkvc6F9ci94tzCzosAq26B_cmhKM2Rqn1KygdJZSYfrSuSykN6Hotr8vzC82Vn58CO18y5DODSR6ChjphYCZ7_H8XBN1a7VTTGtV_IoRKRkKIKLSW94CTkHuDcfNkzOlRTPWgeeGqsXa3r0NttdFTl-JIwM1DaYv7rUt0HaJBVs6e8CAa48HYxPjhIxy6iJnJ7hvDEjVP427LbsuzUbkvEn0TmOYM13cxvkDaQYTnzf_0kliQZ6kyFAZmc5dJYdSmNisuQn1ZuYoqkt0Y-7dmIab9D2VE00Ilx2yY4KxQqTR8lFQof6zAGAj25UzMvPQvmuGkj6ZB2xaN02xk-XT-xrj1Jt92XTcnvAHsUpRoLJRktG6NQwdcSNKKFcXOZm6BFc4mfM8IDl1TkO9XGgz0UWyTKXqJ-_Qo="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:09:24.078383Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "dG73aq_kBKnXyOgPrajYgAM",
+  "usage_metadata": {
+   "candidates_token_count": 198,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 198
+    }
+   ],
+   "prompt_token_count": 179,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 179
+    }
+   ],
+   "thoughts_token_count": 1927,
+   "total_token_count": 2304,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

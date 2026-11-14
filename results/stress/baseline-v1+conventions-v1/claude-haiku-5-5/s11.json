@@ -1,0 +1,67 @@
+{
+ "clause_id": "s11",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "308e2dd537bd31276160af212b9f9bdf08a9db7ce0a57e48dedb84bc4f499bec",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The rent deposit is held without interest, since it will be applied to the rent for the last month of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:13.241275Z",
+ "text": "The clause is **not enforceable** as written. Under Ontario's *Residential Tenancies Act, 2006*, a landlord who holds a rent deposit must pay the tenant interest on it at the prescribed rate, usually annually and when the deposit is returned or applied. The landlord's reason for holding the deposit, here applying it to the last month's rent, does not remove that obligation. Section 4 also makes the Act's protections apply despite any agreement to the contrary, so a tenant cannot waive the interest right by signing this clause.\n\nThe landlord may still hold the deposit and apply it to the last month's rent, provided the deposit does not exceed the permitted amount. But the landlord must pay interest on it throughout the tenancy.\n\nVerdict: not enforceable\nSection: 107",
+ "finish_reason": "end_turn",
+ "input_tokens": 230,
+ "output_tokens": 1615,
+ "raw": {
+  "id": "msg_011Ch1HvMxUW2xFEgdCfg2AQ",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable** as written. Under Ontario's *Residential Tenancies Act, 2006*, a landlord who holds a rent deposit must pay the tenant interest on it at the prescribed rate, usually annually and when the deposit is returned or applied. The landlord's reason for holding the deposit, here applying it to the last month's rent, does not remove that obligation. Section 4 also makes the Act's protections apply despite any agreement to the contrary, so a tenant cannot waive the interest right by signing this clause.\n\nThe landlord may still hold the deposit and apply it to the last month's rent, provided the deposit does not exceed the permitted amount. But the landlord must pay interest on it throughout the tenancy.\n\nVerdict: not enforceable\nSection: 107",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 230,
+   "output_tokens": 1615,
+   "output_tokens_details": {
+    "thinking_tokens": 1359
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

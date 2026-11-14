@@ -1,0 +1,75 @@
+{
+ "clause_id": "c03",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "0c08285f88ba98def017d12203d66fc60317c901aacab6759c08fd6fc1c84b50",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Dogs must be kept on a leash in the lobby, hallways and elevators, and the Tenant shall clean up after any animal in the common areas.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:24.595608Z",
+ "text": "Under the *Residential Tenancies Act, 2006* (RTA), section 14 makes void any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex. However, reasonable rules regulating pet behavior in common elements—such as requiring dogs to be leashed in hallways, lobbies, and elevators, and requiring owners to clean up waste—do not prohibit the presence of animals and are therefore valid and enforceable.\n\nVerdict: enforceable\nSection: 14",
+ "finish_reason": "STOP",
+ "input_tokens": 158,
+ "output_tokens": 792,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "OW73apO4E4mSyOgPip7BoQk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:33 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006* (RTA), section 14 makes void any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex. However, reasonable rules regulating pet behavior in common elements—such as requiring dogs to be leashed in hallways, lobbies, and elevators, and requiring owners to clean up waste—do not prohibit the presence of animals and are therefore valid and enforceable.\n\nVerdict: enforceable\nSection: 14",
+       "thought_signature": "AY89a1-e2tWdE3mdkmiQSCDbg0HpxY-wfenOVfhdYkZArC0x3vlRG3QqzkvtdZwzbTnbuvIO2GnGB567X8oxLcOo26KUlTDV5uBblR4Jy7qNznJzWWUZjS9J_8WVukQOz4o9Op0GL3Vh4LMufjmIVzhr5ORJ6J9sKRpxqxwnEdEvCavxDLPFE3WAQRUIS4i2qAXyvIkOm4nYtK7RzX19tFSm3eyTBy77i4XCDBfOE-oeX0SdppUADt9s134zJ97tXWKv2Hn4O_RlsSmyNAlHmGHXvk8tKCSuaUGbb-a5AockrywRGeWyNuh7XByIUS1ZHMsETqnYAd4mF_snRFgs5hjKDDcQDVCPGvUZucP2LQNil0f4KaotZBjqUj2kZzvf9oR6gYMs2ymvna2Yehq6fdjLn0WuLzv3wzCAbWQmxjSzpGdbslSjyVlvtxm80l6z1lhcn6NcInWuZGkiU0LKqjKoXNhAm5J_X9aHe2Hp5dfU1iypwXhWBN1sSp1DFQ0DwIOyoB1WCsaQVnVatiJQ95oyeOjTkDYgCFMJXNR44YBa12fTBmMJOD2KhDTQ-GL7S7G2AvyUffPG4iSYRSu-WLx7irFf01iGzq-EGixC_F8MMff2XLgWCW31rvYtPRTrAhbo5jH-LcFBCnbws_bqHMKgTpjFEk1g4FXu-rf4cGna9O7nKvqIcl5GpAfFovXQ7_8_ulaf9ZcdQjM6RiKynsZMezrmbhvZy3lyc7tlLQybWsCurTOyV9FO7DGqXNYi83stSjsjLCLN4NDIm2cFz7iqdOa2ojnEKgoXsAQR2tC1ZkGetD_ZQkvREpEGMYEluu5jL_n8VwQatbEUEG_Fi3aMx6P1z6F15KAfvlK5hRdeQJwlj7YvPR-w2eot1XTONWC8nLytngZ-OCgNHnUK3qeXbHPv0804qI9ZT4xxTsbXSvPOJ4mfrfE-Jla14TPB0x1ywO7JV2XMmwmqK6vxWvuhw8F0Dakaqk--oZyqbXVQxdSjAerAL3CuhqGd0rm6DwAMWj-UUXc-fiAGudtXNQtNl6g6xTjtNw95W75okoWOLDycQANGB0enEr6s82dgVFAeYj0OeC76AR46bzePL7aYfUu5OvWEH5P-eSspQDmcw3Tkkj36mnamSF7eZDAdHSjKuxoyC9vCNTV7zvZHeFN-Ro_xfC5QhRnKwlqZo_6lNYKOixoR5TA42Xn8ky1RZ2Pjm8j-CPRv2Ic041goO6BfmLfjZHbicqMz7v_rLZgTkMiKuJ9RA5V1Hw4mV9MoeJAIP3DnSL889IYuBzcs5fLfRTyWbY-GpyKzf4q7wOHRbdjt4HER65psLXUxrTLBhuQaQKqCd96lxuyS9S8dL24ljiZAv5s8BbZ61uv1-79rDFAYf3q0NcQJ3JEFsEtknlsSY5AelT-R62IBhCN7MRaPXscRCGOSZEoNg6opQNVuI8sjAQ1Y-jtwm7qvDBsj1lmTengQPVv94b-C5E9IeLF6IReL4EKulso7ou5rXXLYhMX8_eAOhvLP6PgameiXHDIhkBdiqtR4IDL3ci8wPf22RszMpdTeBAQ12-QfjQFxB8XwxpZdcZaLogT3CjpcFgN0BvZiaW7T_oJVPUKvffN5dSQS8Rbdx1WrTB-E1B6YYpEiu659Wdm2z-YYUufVO3FyUbPDVvUOzygTG7qQkO9fvRzmsGathnw0NdBTBlhc6v1mihAvUAJYEMlFI7MElG6jGnkLS4w9QhSrT3rZsdhONH7BdFRXN74PY4ht9Epk5KGEG4nwczvN_s2a-4WIknPC2TVFQYu--e0eBvFzJ37sS-ncZ5LYY-Y5p4DjIoiFm-J5JXjZE3h6kvneMpep-W30WSW-2HuDxqTxM0vrCKZpURt1SxWO7ceE6woKHmc6zZgI1L8tXDSLs0RyGu0rEPypEspvuvCScfuPpeyTdvQJC8Tk8ii9up5IvGBMmsByftcVeTTQgyPRkH92LdoVa4qJv_b21ngCtHfElF34EymLVM4lkZZKZc7nzKoLWbm0HnMMEugkr4LrVWGFYWxMKc3uyUO4ABl1fNQQKQmLIloq14_3J72MDDsL5YOIT2k8bwukRu45T29BX28x3DKrabEm89hBAoJs9hVI3LDT3xlGH4z6QPaoVFHsOB_2vFPrdXbjFnZLVDGBZRYvHAli-Q75kSFMphFz5UpvRAHuAVqBOWgH3nLR9gKSGMEGgPRn-LLfxfwV8O1HxALm2YjzwkNFymZWrl1Wi8qwUzmsGnhG1prcT8l7KqcHhy6yMHcbg38gSCGW_clNm60insUI9qxBqP2B5Ohn5HL2P50a9RHJ1oGfvlPPOg25SbT1U8j-yejX2nvHOXdQ0h4IEsGMYL9C88QbtYAw1-jrJN6ZSaHD6qY2qsFFKRt-U6f89bn5FdcbEsvGYHw4_7M8ejDapi1M4XqJEID9atlhBCLbjNJwo9FIf8SUPGg56DlQrZzOj4Naa1GLdv7-p2Z_umWx16r1mc37p0W1kW77Xp10jgMr-9R5LGAiQrKFsFsDyfGNoZyWLmIxUdtpUU2ArqpJ-7CAAVMHlYZdvW8RCFtU3M_2qBFBSjeHSUEZ4UyPoH5MuoDvLrs0IZpSxJtfomLKedm86-HWXrMzv6Q37JM5GHl9FmHIkPL68Oa3NyVaiKTMWKzhBKpBpBKwJvLe0de7ffMLJqkT5ntI0GaDGDwg9qZX9JmS4blealqIiplurNq--dYlPAkWnBWGyoKP7nU_cIEtbeoydiKF6vGGDnAHyzO7SjhDrj3N-GGAcKiCtfiEWjuQ8Z3eaSIM9L8PCWXfyWGJ2TODw_Jm9dP-qgCEFLw9UZkYh_wLyLypFdTwBL27xz34rDLCA-W99spS4_9PltFhncVrlBIgko3vHyyGJV-beSeC3Eerear64Hfwg8m3NQt8v8W833_s5Yitgazn1xaNyc0zedsZSo8WLeWxS60fmUknv4EFO_rRoo9gcsHuin_Ikwt_bBJlNbaB1HWGFUJlgEXXAQFTSfg6LXT8ag2ecI3iZ0tCQcVOYpyG3iFYNPXkWdBuY5qw-5K4Da7cP1PQ-ryCKx5wdU4kBt5Jd-ZDIDL6WuMY_zUl7blqsAwfYsfabCtnTwGZV2mcs2gK8g_UVPZ-iXBsdiwNKhyUAWwbiXGggDI1oU6JudpYhaOV3vayTcYVxH5_4ryoayZggnDDxrNGJ8MqKrZ2osUbLfHJ0K8OW6Ca-hlWDheAyQTSwz5e3ovnt5EFHq8i68Rz56R-o7DZDlX1LtNZVaVPHJuDnCe0wIsjbOSXEsZuuLYzXxIYbZrwWP8u0Q_Vx3f8SP7SBrJ1N22TXlX5CvelqWdUfh9BaREBHr2usmzaQmELJm3heFudG2Kry-awWAC5-p2yjdOzrbIagF9R-TFS6TvCo3KLsOSINs9AohdpZHM5MDPwnpqSjF30DWKSrH0Ln4anPcCqyPjRiTS4bWiALKpFkB66Zl8lu8rx6Xo_JtsyT3W5blBoTCHCD_BNkCk4zIE4bDqoQRF0Wtq1yFJWHGWvBTGFWQdhD21tBYeWemVnF6rSsS5CJU31e4k17P2vX_VDmXyfFDQGcYHLRn8Xb_MjOeQ6oQuHqjuavJVAWgi4ydcIJxmGGw1xqbZAL-xgyupxCvgO4YqkNugqjQzvxq3V2-Kmjc7q6Z0aQnKP-Z0CNORUmI0XHmFziKq3KU5MOYeqnndSbQlbSRbznv8e05C1gEI-NRztkI_GY56pTo97vfIT2Emq5uu2bIfUV1v_eDRvrRtGNFiqCNqdbFqHFahp_WlxkQzqlNa4iSrrgIp99cW-g7ZrNlM0BqwspNBjJD4NRchFYRRa5GWc1v9-Yw9u0Jf8QtQBQOEtisG4PuMd2w2-2JfYXj0tTHQV5f9Eo80gs9BLR7dKfY-81yKtTTqe4YBeEESFljoqMeydlzeJVGmYSfR4HZiR1sjuVXrtm6F_3pD249Y21fIjIAI1pRIrj2qanz4vlDM34_hyakP8_4fdevScT2zR6M_1HzpKwzPxipvyxA3fnt8O-vXKCMcrHd1vLdStI4WhgxTf-e6fiZhrbVK2ihk="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:25.318483Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "OW73apO4E4mSyOgPip7BoQk",
+  "usage_metadata": {
+   "candidates_token_count": 102,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 102
+    }
+   ],
+   "prompt_token_count": 158,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 158
+    }
+   ],
+   "thoughts_token_count": 690,
+   "total_token_count": 950,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

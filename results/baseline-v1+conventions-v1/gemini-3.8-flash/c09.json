@@ -1,0 +1,75 @@
+{
+ "clause_id": "c09",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "110d86ae214f8e6fa9ee8e48d819317ae1d8d81bac1edc01c77c4a6159197bd0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If there is a fire, a flood, a burst pipe or another emergency in the unit, the Landlord may enter without notice.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:29.811244Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord is permitted to enter a rental unit at any time without written notice in cases of emergency. Because this clause aligns directly with the landlord's statutory rights under the Act, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 156,
+ "output_tokens": 470,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "PW73aqWKN9v3yOgPmbOE2Ak",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:39 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord is permitted to enter a rental unit at any time without written notice in cases of emergency. Because this clause aligns directly with the landlord's statutory rights under the Act, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a1-QoFQKLDq3e3bBWKDtlQjwbBFjgU-_uqN1tdrmyyF00rS49bAZj_UMJ-ezRKFWLJOWN6ovVCf08irM8BoXT83VR2QtvhWGykGptjbSQ-0dRG6lFjvyHjW-KBfVuVuuvdBu0U9p5OgkxUvWY4NnF0z1qEZ13b-eaNSQa6qw98rdx5F-Z1XbHdmbd0nSZ2_OHxWQQWZq4UqpwEe7qG0TzjRiHrXdSB_O18OoMWejsIuQj6pP7folcmRCbCEuxvjBXdDDPWnY-6cIU_ovU45EiBsRqfIvSfqR6LEhjHBTQh3Zna-wNl7g3zBHesqljt-ZzQPzrDhI8rG1aCVIxK7W_geNql-1rgHcDZaVEHN3481ciAL1MLWFaUgMYkLeynggr1ZOpVnRfiack89SeiuhMoHhb3Z5E1fia3H07GHWqQmJLS-mXtjNVF9GAmWU_rMxRklTDC52palpI2Yqx2Cof3BCpYmkxzFxylQSb6ifCGTKXaGdkJyLjwJ8kDc20YC3cZCVB21AQsrIP9XiQpoou5nXVDteikKOOdTBuAfGj-CMNu6CeQo5vt5h1SOOv4sgGgfKPXc59_ut0YLYfsh9Bdl2-zySg8hPvHzU7Mi7IXsBAZAApP2Lfhj_VUGlZOundZQD5CcEa8lqx4QuI5hlSYeK4BtUQSui01lA4slhQlHA4fzFhraRrhF4Y1IO5iSUd1dICRioyZrmx0lCc74JrlLEqAcmK6gNP2PrsJqSfzAaDXVsKr7KyGnNam8G0Yr-RE26ps8ZZLukVSO7usPTGdqTpaMCHCrM8kyre4PJQDimQ3H1_kF7SZ6IkIr0kRVNtga3PuLURJK5nj48kAx0cPGMoBs14PT6nIzBM3HDullUozx5FDb01uQt6x8AddSfMyXEgwlVW2DNo3Dh38zwfNSSTD6VWnelnMaRXjnlZO2quOEcDK49j1cM8nLxECPhhtAF7h1KQ3QQUPsAfx5ymfBh9X-DZSShS4JhbcZ1_8UBQ_ir2o37jks8QHKHheSZkXmnhoABFxlaGcYAwHXM8osw7EMDe792LeDGAB4NrTZ0ZauaqyY4KyN3vNTLIvHsRdNNhcmuUGBXEc7Vqp_EcRVByseFzi6Z_OSfD-xd5z1Ao1vaLT45fHpAtSNFIif0g1Q2_LleLbl1fcPZjDs3UjwNkvINrtiBOJvy3mvJgDAb5kSrEFtWOn3kUiZr0rUxlzcapWRR1FjdPEWaZWqDJA4YLqDLFWC3UNVWBL-GijPh3uB5zSXLve2pTlwvrKcg7RHgmQn7hX2_KTnBGkGOpzt8SKcW0IvPo4Hd7Ll5Dg1qcQ9GS4LnGS-eKekG9AePz904jNUY30Jt4ukPrjlRsOwug4nnHPFXCTt_xvdY84EINuCtJlUn9ifQgU6tSy9c5OR5rqAjXEwwSImGYOsZeuoIQZJdpgRYLw4mmSDDNnYPjTechnkEeNldespCeZg-Bjme2U0Eltq8HWky9dq61osiP69JB6wJ0kIuyax2Udzy_qcHLryqj1944FpTrogFOI6nleXorTSXHpneSpJZJfSGVd0oWr_dz4AJt-UWJKYrVX_gSB4e8vmpUlEpg00_jZzse2SrfFTGxw4OAQy0G4s1q_GOp8pAIitDkqV3QM4eycayuxe2hvvLuYpxoBrYabhmMJBoY71fsYYT64m_WaHVKv8I3RbENpa-o59F0S_xIjXczPjPjkbO0pNTicg7bdrUVIz2phwF5YL8CpojcgB0PQXH-r4p7krjDLMcakVoWPZ4XAII4HCqa-sBZfpJBKXe_iX_WyaOSIPnAOXMab569ZKehPlAyl_OGmUMMzBrqy_5Qt0by7KJVA3jAwtqXoHGq0pzDgzcZIYhcnr4kkjxKArJCVVv4UPlV73nJ3Zgt_NE-TiDY1Gq-GM4E9nveotpiP6EnefuM8dfR8jvgwcxxbtpA6FkeWocFCgBjEbdnZEULckyZInwDhhl3u7T3Hpl4geBrYNiGIwqSSQslTagYogm3KjK3-I28HBtrxyl_ZlpP8AIedfj-anh1OuHH3pcST0BIrt0FSUC8BO1LlxhaFqxLYt1NONxArz5Ck3iZldEmthY-u0NQX4DHpbpT2fjgeW2XYcq78RWrvET3GnwD9Pi7KlvBj5RMc9cvYJpOuh6eIaNrNG1gPxp537_LelZirHXRVkx0q13nASA0A=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:29.902437Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "PW73aqWKN9v3yOgPmbOE2Ak",
+  "usage_metadata": {
+   "candidates_token_count": 66,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 66
+    }
+   ],
+   "prompt_token_count": 156,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 156
+    }
+   ],
+   "thoughts_token_count": 404,
+   "total_token_count": 626,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "clause_id": "c09",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "110d86ae214f8e6fa9ee8e48d819317ae1d8d81bac1edc01c77c4a6159197bd0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If there is a fire, a flood, a burst pipe or another emergency in the unit, the Landlord may enter without notice.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:30.905443Z",
+ "text": "**Yes, the clause is enforceable, but only to the extent it restates the statutory emergency-entry right.**\n\nUnder the Residential Tenancies Act, 2006, a landlord generally must give written notice (at least 24 hours) before entering a rental unit (s. 26). Section 27 is the exception for emergencies. It allows entry without notice where the landlord reasonably believes an emergency exists and entry is needed to deal with it. A fire, flood, or burst pipe fits that exception.\n\nThe clause is therefore consistent with the Act. Two limits apply:\n\n- **The clause cannot give the landlord more than s. 27 does.** Under s. 3, a lease term that conflicts with the Act is void. The phrase \"another emergency\" is valid only if it is a genuine emergency that justifies entry without notice. A landlord cannot rely on the clause for a non-urgent reason, such as routine inspection or repairs that could wait.\n- **Entry must still be reasonable.** The landlord should enter only as far as needed to address the emergency.\n\nVerdict: enforceable\n\nSection: 27\n\n*Note: I am citing from memory and have not checked the current consolidated text. Please confirm the wording of s. 27 on e-Laws (ontario.ca/laws) before relying on it.*",
+ "finish_reason": "end_turn",
+ "input_tokens": 236,
+ "output_tokens": 1411,
+ "raw": {
+  "id": "msg_011CgwR964vNz2SuZDXH5hWT",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, the clause is enforceable, but only to the extent it restates the statutory emergency-entry right.**\n\nUnder the Residential Tenancies Act, 2006, a landlord generally must give written notice (at least 24 hours) before entering a rental unit (s. 26). Section 27 is the exception for emergencies. It allows entry without notice where the landlord reasonably believes an emergency exists and entry is needed to deal with it. A fire, flood, or burst pipe fits that exception.\n\nThe clause is therefore consistent with the Act. Two limits apply:\n\n- **The clause cannot give the landlord more than s. 27 does.** Under s. 3, a lease term that conflicts with the Act is void. The phrase \"another emergency\" is valid only if it is a genuine emergency that justifies entry without notice. A landlord cannot rely on the clause for a non-urgent reason, such as routine inspection or repairs that could wait.\n- **Entry must still be reasonable.** The landlord should enter only as far as needed to address the emergency.\n\nVerdict: enforceable\n\nSection: 27\n\n*Note: I am citing from memory and have not checked the current consolidated text. Please confirm the wording of s. 27 on e-Laws (ontario.ca/laws) before relying on it.*",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 236,
+   "output_tokens": 1411,
+   "output_tokens_details": {
+    "thinking_tokens": 992
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

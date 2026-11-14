@@ -1,0 +1,75 @@
+{
+ "clause_id": "c14",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "8b959039fa68297762cd299e02db1ab163d82ff0d58a833961921a5f9d635ec4",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Landlord lists the building for sale, the Landlord may show the unit to prospective buyers. The Landlord will give the Tenant written notice at least 24 hours ahead saying why, on which day, and at what time between 8 a.m. and 8 p.m. it will come.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:36.750362Z",
+ "text": "The clause mirrors the statutory entry rights set out in the *Residential Tenancies Act, 2006*, which permits a landlord to enter a rental unit to allow a potential purchaser to view the unit provided written notice specifying the reason, date, and a time of entry between 8 a.m. and 8 p.m. is given at least 24 hours in advance.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "STOP",
+ "input_tokens": 195,
+ "output_tokens": 645,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "RG73avvEMa6dyOgP1emZqQI",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:41 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "The clause mirrors the statutory entry rights set out in the *Residential Tenancies Act, 2006*, which permits a landlord to enter a rental unit to allow a potential purchaser to view the unit provided written notice specifying the reason, date, and a time of entry between 8 a.m. and 8 p.m. is given at least 24 hours in advance.\n\nVerdict: enforceable\nSection: 27",
+       "thought_signature": "AY89a1_ZkUS1UXWdlw3QuXUiHTVCbpeEbum_5lyKzFIMEshJIiT3xjVrOLe2mrW_pCeARAkKHi_t4Tx08hn97kDiG5-ZL4G2wqyF9q9djVkuw2uqvWrXy7_apcPFIAKfJgZdFVko9VA1LSsgEq9DCBfFEFXSitASct2E1gb16zM_ZCXfebGzMv3uEd2v5Yduw0ZtFJ5dGGhkuBsvyIKxnyRyoz6DPSyn43tmJ3RT227LEO02JV4QxXussPC5JSPCkxLmR2EmG8AqihU0olOv9Z0BMxO_pBqjPqiF1egXsQD8B_hVDAasKe6jKNamxC_wToFUol-3brxmYvLp1OjCupiOk8ROlJgHJwWhg92bT-Q6iiY4JJM2Gx3_IzAZ2Hu09tEXSRfydTBCzoy_K8qHQ2gElKMOqHK481E1cAsUVcprggL9aIynNzYuQ6ZuP094Q6EEHSZ9dbDru4kEvFt0vwAc1w3Cqz4geNSfGqdmnFitXUOebUFgGnXtNc--DTbE-srs5hebT-C98310bDZjLpkgfY_-LyFqKZtHkst6fuJEtOvJSfMNVL9l2WV4efUcDJ-RIWkLLDh57yQPnQgNPi7neAzWnH-dZvTNwbZvv1CzQB9Lq2NcyuqRWk8zq6ZN0m9ruVCa4heCbqzKv4gpu2i8OfqQldPKQe7Ig0kHpaSRdmjDpXj2MEnQXCSUp5IbKVUHnVRDmYuFue3vhY0bOZAkjFJec1MmiKir_IKfc4JNpfL6--XRQIBa3saWakQKafppkJRPJijbYo3F-uGCSObqHdHHd2iS3kY0BV5qnyPaFw08oFlB8LeRfE6kxoCcVCp_Ahjk7wGTbaVAOVVevWSP9_h3A8UJ88iVvXTkdiUv-4KCEmenQYWY0RXDaBUEzorvkDu-BJc0u5ea8sWEEVgIzkWAwbzRxxkR4mvX1o9VMvdPhCPMtfb49-bxm07jnErr3MCsYOzCuxE0DLTRfS9JZ-EYsA-Q7TPPVpeEccTzi6z9GUUrcf08tweNrxwPFyacd6gmkx997elejrAItY3lymRMwVhyExK1RILGa2Jz-7vm2ORIwqsT1gQDH8utwBSO9hIcC8jSddpwKiN9JnLZSkMrnWjcq1YSOuy9mSW_HS7FfyqqaajNksrKL9q9n_81HPNJLID-Itiy3wQhOsQWGWnrlAmVPQi6gTr5HLJ4okZ4hg0dB2sGDdllGRSg3GlhQwV-IWp9k1YlUM9x94NDkCkRdDTHegFhnWZoYvY_ruORL-CXz9Hxxja_KYgg8CiwTmsVhiQ6KOJnGpBQer_7ODLpAfQtsIez6RgDqbPV3DIpDcLp5v3tEJJf2Z4veVjPf8mJ0hbyVrhwO3wkgyasqjCF7d8mqSRHWAf4UA-R8p8CTwZtGAfaehuGifrDYSFN7szBEPda1yPMN8qcqD8WfmDder922S7br2sLs0xrVMmzLdWUOHrdIJRASpXMdPCfjo3PZFdA6LJZxQhKO7hmyBfVe6oNYT-BT2d6Co6cdVVynr0iK0yoF9zRlfVxLPh23B9jc6FfARKSIPYXu4-BzVcKHw5LJ8TGwrO_Ggjopaozz9BaGKkAty1Gf9JiWkk4pGtl52t-50MUcfF1T9K98GftaRG-Ps9wO2jdWzoHgN31AfJzfibcjRe-CbEwpShZjFacEkNSsGaHKRGWX0Hir6sVLP2WS5Ha0RU56oKVzUCWun37iT1bTS_M4hwc5C-m-Q9ep26yUa6-vlq4wi6uSYVVgAONXC0kt7GU2ty_cwSpMK86rdCeOJfNlp9T81QfG_TjDz5qK2zKCfLZCKBEr_cipj_Ks-yf0C8R-29DuA2I6x7hYXNC6kBcu0EaQuIZhUrXJ1MCcFDigXZLH0xZ7sjoA0cDFhTiWpxuwz2yAf2LnldPE6jRb4m1px60chzPo7dC9rwevZPE9KeayUkBz7l46rmNoGEWD2x16A8X9r8KFQcATgLcCiMKNxHHpBfZ9Blo41itaMj4eaNDTUqgGUm9ViKxn0TWqf8qHgNqTxu_-MZzrv1_zl5B7gK5XoPbTmSMgDAkDhtP0Cq09-A5RRk0Irh-I_Iu4N-MegxCyCL7wAWIOQWwJi4wg5TsmkspbD7ZpqnMYMhY3_totoZNszoXDDn1_0tf2Cz7umk8p8GZHhRhME5bhHzsinWZmtLySq8m_tj8gQbdXFzzglJy4czRlfafaj5vrmyo-Y5Iglnuv5RMgvN0ZKLFN-Gr756JLzjphcrEMLrWe21ttVVHdHS7XbwaWqkfSFt6FI6FGe_1Eo29HVqnjrtazpzFx2iS_u6g_D-dCl9Q8OjxEZQju8Z_heiOktOoti8jtb3uc_9Hbb_bLh9Gy2NbcMyWfRE3PuTgppVLt9Fx44EhaWzmH3QUOPGISHtCPlB9C1LeqBbejxlpyXWrVcC79V7Gc1S8M_-QjoaCuOCIoyOy9bSCzEe6uVpbJBswgX3xYU1N-z8Fzp4OYykpb67VT1eRauShp0wi0sZsponvliZWZIwmWO4BOlL57VSIARrMv6lhh4zx1ZWoGZwOIE3Hvx7AIwNry6e9HJSCYhBSZlnUX00iTSWW0O_kn7Uh9wbeBD7GGf6qAboIU8KfNPDPaPbbY7acGUDs6NvHfQaGde_3pckAsv6TtlOO6u7NqwzpZidi5vGWlYnwIuuKPTBU3-xq-94q4mrW3w5lo_b8ufbVSfYjWzspymFG884bvLIAimq2gtK5BlJ5zP5pjWleNPt7bmHpiwqp6v__NJI-Yw7kSYkEZyYP0ExA8XNYay_7i6FNCA-xCEMySiQSWZkOxcu_1Kuegu-Rmv8dwhZedL9t-mgl5XUiLBpnTaCVqzMFUcV9DkjmKetRVzH7CaehKtLd8Beln3yllF2RCvvoibKf3YA3gE59DsTgd2JAFLCCshzv2YO3B95jJfafMzxrOXjVZZPlzECxS6NQSFA960DrvX_TvdoZ-yNCtiNAMRKevzCWHmVJru7U-FImxBdRJgmFBv9ShV5hUGv86gxwWE1s6WSsigwQDg-sbOH1JdNRM7HVnRlcmCYMoq3Ry2MgWJYf"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:36.811643Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "RG73avvEMa6dyOgP1emZqQI",
+  "usage_metadata": {
+   "candidates_token_count": 90,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 90
+    }
+   ],
+   "prompt_token_count": 195,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 195
+    }
+   ],
+   "thoughts_token_count": 555,
+   "total_token_count": 840,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "c30",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "df1757f59c0257fa6152ae4cfba854b2b37b110c89b02a4149e14c59479e532e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may increase the rent by up to the guideline amount every six months, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:30.537064Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"The clause lets the landlord raise rent every six months, but section 119(1) allows an increase only if at least 12 months have elapsed since the last increase or first rental. Because the clause is inconsistent with that rule, section 4(1) makes it void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6445,
+ "output_tokens": 686,
+ "raw": {
+  "id": "msg_011CgyJ7JTgZoym7GgMgd163",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"The clause lets the landlord raise rent every six months, but section 119(1) allows an increase only if at least 12 months have elapsed since the last increase or first rental. Because the clause is inconsistent with that rule, section 4(1) makes it void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6445,
+   "output_tokens": 686,
+   "output_tokens_details": {
+    "thinking_tokens": 551
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "clause_id": "c08",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "fbe19c807e15d6f2daf3d62cf13abf3f45efbaccffa510fc163bfe2042337249",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant shall pay for every repair to the unit during the tenancy, whatever the cause.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:16.623319Z",
+ "text": "Under the *Residential Tenancies Act, 2006* (RTA), a landlord is statutorily obligated to maintain the residential complex and the rental unit in a good state of repair and fit for habitation, and to comply with health, safety, housing, and maintenance standards. \n\nWhile a tenant is responsible for repairing undue damage caused willfully or negligently by the tenant or their guests (under section 34), a lease clause cannot shift the landlord's statutory responsibility for ordinary wear and tear, aging infrastructure, or general maintenance onto the tenant. Because this clause requires the tenant to pay for *every* repair regardless of the cause, it directly conflicts with the landlord's mandatory maintenance obligations under section 20 of the Act (and is therefore void under section 4, which invalidates any lease provision that conflicts with the RTA).\n\nVerdict: not enforceable\nSection: 20",
+ "finish_reason": "STOP",
+ "input_tokens": 179,
+ "output_tokens": 190,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "CXj3auwm7qDDxw-LlZ7xAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:52:35 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006* (RTA), a landlord is statutorily obligated to maintain the residential complex and the rental unit in a good state of repair and fit for habitation, and to comply with health, safety, housing, and maintenance standards. \n\nWhile a tenant is responsible for repairing undue damage caused willfully or negligently by the tenant or their guests (under section 34), a lease clause cannot shift the landlord's statutory responsibility for ordinary wear and tear, aging infrastructure, or general maintenance onto the tenant. Because this clause requires the tenant to pay for *every* repair regardless of the cause, it directly conflicts with the landlord's mandatory maintenance obligations under section 20 of the Act (and is therefore void under section 4, which invalidates any lease provision that conflicts with the RTA).\n\nVerdict: not enforceable\nSection: 20",
+       "thought_signature": "AY89a19Wd6wmnuOxzQp5ccpLRPqcScXEZLJfIODuA3QbCm55MbEQac1EShdoUE-fl3u-_OGUyOHCwRu3p-e6bEFmpOKbrlVcE7p4egrkDmHsyooH0zVtogVSuONnnN8J"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:17.004972Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "CXj3auwm7qDDxw-LlZ7xAQ",
+  "usage_metadata": {
+   "candidates_token_count": 190,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 190
+    }
+   ],
+   "prompt_token_count": 179,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 179
+    }
+   ],
+   "total_token_count": 369,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "clause_id": "c21",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "91df827585f4cd338eef655174da7b2d1d6f5354b2bdd38488b07f7e75b25d52",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. On signing this Agreement, the Tenant shall pay a rent deposit equal to one month's rent, which the Landlord will apply to the rent for the last month of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:44.819425Z",
+ "text": "Under the *Residential Tenancies Act, 2006* (RTA), a landlord is permitted to require a rent deposit on or before entering into the tenancy agreement. Because the rent is payable monthly, the deposit cannot exceed one month’s rent, and the RTA requires that this deposit be applied only toward the rent for the last rent period (month) of the tenancy. The clause complies fully with these statutory requirements.\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 171,
+ "output_tokens": 598,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "TG73at_DNa6dyOgP1emZqQI",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:48 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006* (RTA), a landlord is permitted to require a rent deposit on or before entering into the tenancy agreement. Because the rent is payable monthly, the deposit cannot exceed one month’s rent, and the RTA requires that this deposit be applied only toward the rent for the last rent period (month) of the tenancy. The clause complies fully with these statutory requirements.\n\nVerdict: enforceable\nSection: 106",
+       "thought_signature": "AY89a1-4QR2x7LgVNvRW--Bgr8Cg65wqfvoLobepguWOtkPI8tMVb_aTLuT3R7CyZvEwOUWxmwst78PKe67SApuCo_NNnLOk4pvrEB9UqngoPGv72v4HSP6d-0NXRUCP1_yxyO8lAL2Xi-4k4zoezGm_ijpaZ9785g9l6y0_KpaBO61bQ3Yt2HmnZ3Qi7ZzuR9-czS9OkmiOrONjS8H6gCpWkFTzdzhjqw5x7uPoVu29D7NnsLXZd3r9BMjpejTRSyYZnuA1LXhG_goPyHOtMEhu9Uw8KB8FLMUI2s0j9kKwa84FlPnjY2lFnG7LKI0jBj8XgxvS23VbzL3djB6RzbimLLExl2WQNLH9yQ-Ly2aHryf-zZdq1Y3IC-czwSInENIzxoZ5_i0oOmpiHTEcW8lEOWkxpfJCeBNmyxBg9uDZa6FNGiAKQAiEloWd4syDJCoPBBkywfEQSkdS9EcsOTuJkm4jfPlo3DEOWxN5zVsWHGXAvo2hQVMmKRVMccRQmVfsZW4jJF1F4znyHTUwIcYwRwl3Ug-vuahvAFoH9tzjeCo0SrP9rWbCfinLEIi1jo98IElJL9aEnB7PFHNbNfhfXjC-ZUeEW0M2AXg1daNDSixx8GhzhHDPDuRH0Pb-0r-I_DcU2g-Z65WU6o0KNS-REfn7-7xw_xWhHRsCwb_Goex4rDjva2EVbALDZELZ_oXMAc-r_aZSnolfAp2tjOX_0rSUFJGomNEatoIt1uMx-x2BLBLu3QpIMHHFxHp74g4k4J_7_lJaZ4vpXBjo19zfl1Oqv_vmAc6BCHIQkE3IgM6Aek45S7A6VfzF6SinFsaysxVZQNEJSLn4uPymN4WDB3xWw6p-IICUekr-MjwLgfPiTQ0ShUFllZB56ZQ--TJNeCik7P-XExvWKIVgFmrPwrPRRe-PIzK8IIDcW_Ca1cFuLKxjBvnr-5ZIE0kVD3qIG_OZdNwiPYb5cECDcGess19e1RY_qGeB6Tjx5AT_NxMp4CLvxNca8s_I_VP1UUm0lUm7zuqSKwNnKpTf3FFC0q5ouYms7YOUiTbc_FMlD-eevDIQT6FguZCD4xmE0uhqjw5tlhAW7OdgRB1c5mjnh97PuAk-3Azt8D5pPWp5_IFmNQGTU0k3iRWTN44-I_xN11A98xMUg132ZSAJgjbsD-p9UYjINZyxxhT6gq1ybmmTvu14ZTvp4c3WsLLC3fIfCkXKBoJjXJmvXhaGQk4SWstSUmvT7X4MpjhloDc0P7mJ0BxnIcAsHsb6xp2JV9zWsNrNzkNwIWfeqHuPmNgNnF090kRPs6NlzOHQKz-3LiaqMtbXWIFXzmaz-rfd7qcabMVsv2WfVgLNMU6wdVQlwtL5VPytDv2pUJeimBzLFMLslv6-95Pcc9IcuPIuDMdxIG6j0RA6P2MoZITMIqzty_un40yTv3HC2GByw9IaFk_YOeLqcNOvXGZKIahCl6FhQ_PGu88QpAiTyjcWGRvm5gO1BGl3ENJIBiJq3eOymTIxjAHCejwrMllytH1UyHr6nZEkAaNzpnVPshB6CjNV9RL69hKwc7N0cHLNYRmGCCicEDIX6uuX7IqKtyDZfYnXOvUt6ByjrGyL9F8HbBZbBNBYV10rBLC3FTc4e5N8_mjyIeMbuHbPqBhGaPKvBbPDTseNswj7k3ceOGlZgn4AMaMs0A0YLE6maFp3x2WhRQ4ACfyO8Ygn_pDnmWXCQYFvWXjj2EsUkaOXRjT60RJtqL3WooPix4-nMUpfujbpHkr1Ps2yIfOx_KE7yLtDnnFNIM434KCSPiSf_1lS7fU0TgJ33N_CatcTvGcOaanVf5OfT_LcuVXZ1GoO_KIq7wdm8_dflsxUDc-erPXgiZd8yRq2HcgCTOEU0XBCfN5PeFgGPcemUKwbjyk4CzXkhO0WTBbDYqiFeN4oiVhFvwWWfi5jkrr2EUYsaZ5TbKFe4nItWcMGYkl_QU4HASnz5IyNvywWUPsJ13O0hay8gCEcuKAimM3hv0PMOfY0iaKJv38LZ-cOmq5o9A6OpXwkOHcfg6fdMNe2BGuqf_6aVFhOCllM_6-yHOWktISkh32QjDJRmNxbAA2pS8gMBUCh6poIHbLOg1JbLTGDsWe1HoBskhOCfcZIyYO7NSQhqly_dI6WJlJhYDOCqelg5EQUYR5WW155tT-ZjIS5KsHKTBETrbL2I-HsO08delKqok1vMGobcmo6WHZbd6LhEk-RB3e54Cys4wrL_LJ15mvqmwETL4CVlDXO7g0w1nwbbjORCaASBnbA354x2sJq1MlVlcY2u4gP_WK5g6VINZy14jAIHMZAZqTe7kgxzrQ4UnwMQHQ3w0WH_zEKfGkbMfi_ptxC9eWXQr3iW3s9S055rQirEQDzEwTwr21c0rqEf-X-QD5zX4kHNT1jG7KvekKAPuU-emYtVH43dM7zvfL9k5rqk8HQ17TfCPYN6FTu8wwlGAT3SY9EGMmaNenyn9WQqzdwmY_Gl2I3_vhgbF5IhHFnVBM7RBpHivR56NlkmfIOnF4zK_fmdRpnWPSx9c9DoKOP1yD9ScXnwIbrvz68BvFcTzczCiP8q69XdbtXshANiBssBSI5YHD2uEsrMx4OzSEne5PXJ-snkPYWGXQAtS6lHt1yXKmBTeDYKEpAY_hHOkq2WUhj4UmfKKfmsaJ2VcPF10PgGk-s92iLaJLbbAUQ7gMF32NAb_SjcfL3-7FDO42KnGi-4Iwegsgfz_ck6OQ6wNb5usTM4C3YnknU5bkqUUWbsd9Leik="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:44.877023Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "TG73at_DNa6dyOgP1emZqQI",
+  "usage_metadata": {
+   "candidates_token_count": 99,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 99
+    }
+   ],
+   "prompt_token_count": 171,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 171
+    }
+   ],
+   "thoughts_token_count": 499,
+   "total_token_count": 769,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

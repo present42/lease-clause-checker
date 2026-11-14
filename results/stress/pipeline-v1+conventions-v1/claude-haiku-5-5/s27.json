@@ -1,0 +1,99 @@
+{
+ "clause_id": "s27",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "199004619dc1510bbf143074563a8eb910ce89ea95a565fa08fa05af37982b67",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nOn signing, the Tenant shall give the Landlord a signed blank cheque, to be kept as security and returned uncashed when the tenancy ends.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:55.616077Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\"reason\":\"The signed blank cheque is held as security for the tenant's obligations and returned when the tenancy ends, so it is a security deposit under section 105(2). It is not a rent deposit collected under section 106, so the landlord may not collect it and the clause is void under section 4(1).\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6441,
+ "output_tokens": 767,
+ "raw": {
+  "id": "msg_011Ch1HyUQGEPRcyxyWD7FDA",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\"reason\":\"The signed blank cheque is held as security for the tenant's obligations and returned when the tenancy ends, so it is a security deposit under section 105(2). It is not a rent deposit collected under section 106, so the landlord may not collect it and the clause is void under section 4(1).\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6441,
+   "output_tokens": 767,
+   "output_tokens_details": {
+    "thinking_tokens": 621
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "clause_id": "c20",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1c9703ced85db80e14a216dce1428a62803afee3561d2beef2e222ff2bdeae9b",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Pets are welcome. The Tenant shall pay a refundable pet deposit of $250, which will be returned at the end of the tenancy if there is no pet damage.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:33.114727Z",
+ "text": "**Not enforceable.** The pet-friendly part is fine, but the $250 pet deposit is an illegal security deposit.\n\n- **Section 105(1)** of the *Residential Tenancies Act, 2006* says the only security deposits a landlord may collect are:\n  - a rent deposit that complies with section 106 (no more than one period's rent, and applied only to the last rental period), and\n  - a refundable key deposit under section 105(2).\n- **Section 105(3)** defines \"security deposit\" broadly. It covers any money paid to be held as security for the tenant's performance of an obligation, which includes covering damage. A pet or damage deposit fits this definition, so it is prohibited no matter what it is called or whether it is refundable.\n- **Section 4** makes lease terms that conflict with the Act void.\n- **Section 135** lets a tenant apply to the Landlord and Tenant Board to recover money collected in breach of the Act.\n- **Section 234** makes knowingly collecting an unauthorized security deposit an offence.\n\nThe landlord can still recover the cost of actual pet damage. The route is an application to the Board under section 89, not holding a deposit.\n\nVerdict: not enforceable\nSection: 105",
+ "finish_reason": "end_turn",
+ "input_tokens": 250,
+ "output_tokens": 732,
+ "raw": {
+  "id": "msg_011CgwRDeSwT6MPX4hGfaXac",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.** The pet-friendly part is fine, but the $250 pet deposit is an illegal security deposit.\n\n- **Section 105(1)** of the *Residential Tenancies Act, 2006* says the only security deposits a landlord may collect are:\n  - a rent deposit that complies with section 106 (no more than one period's rent, and applied only to the last rental period), and\n  - a refundable key deposit under section 105(2).\n- **Section 105(3)** defines \"security deposit\" broadly. It covers any money paid to be held as security for the tenant's performance of an obligation, which includes covering damage. A pet or damage deposit fits this definition, so it is prohibited no matter what it is called or whether it is refundable.\n- **Section 4** makes lease terms that conflict with the Act void.\n- **Section 135** lets a tenant apply to the Landlord and Tenant Board to recover money collected in breach of the Act.\n- **Section 234** makes knowingly collecting an unauthorized security deposit an offence.\n\nThe landlord can still recover the cost of actual pet damage. The route is an application to the Board under section 89, not holding a deposit.\n\nVerdict: not enforceable\nSection: 105",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 250,
+   "output_tokens": 732,
+   "output_tokens_details": {
+    "thinking_tokens": 335
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "c11",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "274c4a9c83ffbce13b42347a48cd3cf84c210f1c52cd28fe251f3c2d3e83ba6f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nBy signing this Agreement, the Tenant consents to the Landlord entering the unit at any reasonable time without notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:21.789885Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"Section 25 allows entry only under section 26 or 27, and the only no-notice consent route in section 26(1)(b) requires consent 'at the time of entry', whereas this clause is a blanket advance consent to entry 'at any reasonable time without notice'. That makes the clause inconsistent with the Act, so section 4(1) voids it.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6431,
+ "output_tokens": 559,
+ "raw": {
+  "id": "msg_011CgyJ6eUvCXDKv9RvBFjAK",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"Section 25 allows entry only under section 26 or 27, and the only no-notice consent route in section 26(1)(b) requires consent 'at the time of entry', whereas this clause is a blanket advance consent to entry 'at any reasonable time without notice'. That makes the clause inconsistent with the Act, so section 4(1) voids it.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6431,
+   "output_tokens": 559,
+   "output_tokens_details": {
+    "thinking_tokens": 392
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

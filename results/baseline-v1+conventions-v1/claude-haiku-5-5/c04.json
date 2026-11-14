@@ -1,0 +1,67 @@
+{
+ "clause_id": "c04",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "4a8fda30fdee05564d7fccc283f7fabf46c877a8bd137251b3a3ec6162798aa0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant shall not allow any animal kept in the unit to damage the unit or to disturb other residents.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:30.904883Z",
+ "text": "The clause is enforceable. Section 14(1) of the *Residential Tenancies Act, 2006* voids any tenancy agreement provision that contravenes the Act, is inconsistent with it, or waives a tenant's rights under it. This clause does none of those things. It restates a tenant's existing statutory duty not to cause damage to the unit, and the Act's rules on disturbance and reasonable enjoyment apply to animals as they do to any other source of disruption. A landlord can rely on it as a tenant obligation, and a tenant cannot avoid it on the ground that the Act voids it.\n\nThe clause does not ban animals, so it does not raise the separate question of whether a no-pets term is enforceable. Nor does it purport to override any right under the Act. Section 14(1) is the section that decides enforceability, but I have not checked the current consolidated text, so confirm the wording and any amendments on e-Laws before relying on this.\n\nVerdict: enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 231,
+ "output_tokens": 1773,
+ "raw": {
+  "id": "msg_011CgwR95F3t5grnmUCMz2Zb",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. Section 14(1) of the *Residential Tenancies Act, 2006* voids any tenancy agreement provision that contravenes the Act, is inconsistent with it, or waives a tenant's rights under it. This clause does none of those things. It restates a tenant's existing statutory duty not to cause damage to the unit, and the Act's rules on disturbance and reasonable enjoyment apply to animals as they do to any other source of disruption. A landlord can rely on it as a tenant obligation, and a tenant cannot avoid it on the ground that the Act voids it.\n\nThe clause does not ban animals, so it does not raise the separate question of whether a no-pets term is enforceable. Nor does it purport to override any right under the Act. Section 14(1) is the section that decides enforceability, but I have not checked the current consolidated text, so confirm the wording and any amendments on e-Laws before relying on this.\n\nVerdict: enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 231,
+   "output_tokens": 1773,
+   "output_tokens_details": {
+    "thinking_tokens": 1454
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

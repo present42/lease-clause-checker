@@ -1,0 +1,75 @@
+{
+ "clause_id": "s26",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "6f7bd9f84c2e94efc9febe8a3e3f58694d5aa41e5e0371c3c05f98432caed1b2",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant's guarantor will pay the Landlord $1,000 on signing as security for the Tenant's obligations under this Agreement, to be returned when the tenancy ends.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:15:03.096976Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord is strictly prohibited from requiring or receiving any security deposit other than a lawful rent deposit (applied exclusively to the last month's rent) and a refundable key/access card deposit. A deposit to secure against general tenant obligations or damages—even if paid by a guarantor—is illegal and void.\n\nVerdict: not enforceable\nSection: 105",
+ "finish_reason": "STOP",
+ "input_tokens": 167,
+ "output_tokens": 723,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "x2_3apuzCPmew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:10 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord is strictly prohibited from requiring or receiving any security deposit other than a lawful rent deposit (applied exclusively to the last month's rent) and a refundable key/access card deposit. A deposit to secure against general tenant obligations or damages—even if paid by a guarantor—is illegal and void.\n\nVerdict: not enforceable\nSection: 105",
+       "thought_signature": "AY89a18LA8SHWpI5PMGhYTYlon2i4z8sRr8-QfgPAxhej5WF5d8r5G6U-H1hlSu88DO6OTquEKjOkOwJAH9NxeGLUFhQEo_bMxy36wgFVLHyGOJqXmoDZW-j8DdO78q9A9ypmI3OMgIrBq7ITU8lk9mRxBU6712ijxZT7WLHfo1xoyb_V4k_nNANRS0kXf0QXosDW2GJ_izRtwACf_Fw-znHX1RAUXxP63CtigGbrSumfrtJaCD97HHR78UoIuxm93RcdGIKJoWHMC2KAIgKYPB3J4xN13GweyFwvx4fzwaJL1Pz3dwTO4zuGrTJRAVLeaTU6DqYaKtphcn602a3_a4B6VOR3B65NgEo04aMBnCmVsmMyEp_oVvl8iJppD0X2-VRW_BcfA7hshEjC0VBm-xFLnIxxiTkrYlunmTOHcF8D9DORAokVsaH7ck13CGIafgL1y759fOtHVDRlUEkyAi_otiALesNl4gPVZh9TFABqr2iobh-JrRjib7iWWNqq0ARkFVcmabU1mV60gE2kiCd5Tu-7YC6yUJOoF7vIE7Ji7qAhAxGwfcF4-zt_atOWrnLsp5j3IaJm856KpYhM9gA096B8_sk6L9dciffB0VrHCVqMEtvRtFuSy8d9bqxUOiXH_LdlMtxk14j74ZeJ2npaPF1qI7GT2-1TaerQyksbD1xe4krRMdprYDDWn3yFm8ycAnFzjmFkLovH2xX6oimB0tyWwf_A2mSa8H4XyN9G8IILBxczEBUgV912y7zfIezQ0ucmf93qbkpw3RPTvxiXiD0n4U-fBhW8iWmRTb8flgxEdmn2VpId5_0QX319HNICAnoYYMWzfam0AAnl8eNBUxDrA9DCRFUtPwbBPOHn16bb38noKHTYy-1eMc9Q5FNrpY3Rt8jKU0JFwHgjXy_rUKjTPW7ysmOUTqoByQZBcVf-XiZAQHODJROgAi9Y8674rHwVFo_rHGO6bwywIOuHyY6e906FKOIsVpxMvaiAa7yR1Nzc-bMJ-q6_TsTlJAs4t3e-Wf-CPUk1-h1i3oiaXahknayrBaENFpjT0T1R3l7yjDb5AcFDfctfez8I7R4-kQ8snJq359wcHeqq-8tHMBCtgK2EEdBfTCe8bAM2FNVuj9o97pAmIgODIfUcgPGjDXXoAEAlhocR9R4tRXDlEsRp1IX64DUKbJN4sZH6R8N1b9dPpc4rpd-lCrYHHnthdmo05_FQSzQB86Fq0LceEcHLeT_Zb2N9hy7xp0wjz7UIofqWgi_GIo2WJuaYEmET-5IPoZ0Zc7jXvzHFfHsVbt1DEWAhLDCnNOw-VCuxflED30Nd1F5Q4ResmHt-HqWsmjkwb8cxZ8zk-y0zx-sOPu8NLXBM_oZ19bl4BhhGnETDdan3Z2zg73BdOrC_ApezC5Sgp7VrKrtV6xE9qYo0NdMyLB8g8dg-QjO03Ss97CX4NfvJs5FqI-fF5DZ9up0vNP2WCMAa5X_FO09DYQtOAl2wEPOV0mUuwTSmyWLNTqhFyPTWjgau1jpnLqYcrQeYEGOta5_ViV08U9JepNlUXAucyhLam7T3Gm7DlgDJmbj8YxUBqoanZWTTOQS4SRIXFgZyUHsEwvSlRIrBGVhl0kVaKh0vFT_ACAUjMl1cECSi7Y0tuDkoDmDWLaroF_ZrdQGgz3tBx7gNpxX30UFY0HM8aZO_RiKrbVzz1MX9Xk2SRsTVJaLgk4dyngNesL9pIWxn4R-GdsW2NHEbOKo-3QTFPgm0x0Jw2iPZ8vouUyVnyVv2AvpkuF_ZlJeZhm-kb0RT6-568O_3tli7iPVYy6p3nnFureXS__lS7q3_hSRwVo6BVvCQ3lEUaJhS1Xgvf3AFVAyrej_hkSEwLe4sMmZACO4kS00ht7qMFX7WPoZaSr4QpF24hQrHMMv8TwLw-lJr8R3wPQooSkA209wdrtA-wh5CzhufewrFmWF6uShS_lip-6hEwWLt_AMbECDWPryek83zmNtxRBRJoIX5gMGOS6GUKnhO_uje64cZ9kF9XMRf6OFhKiYxVG1nq0qtaeZ_JGTHKN0cJ8NdCZlkdO3d7TI6TBpuOc3COQrKb3xDjS9dpwaGGhoLDxaDIL_a_qEW3uQpHezue54mR8D5rNEim1zE4KDKFlm3gL3vbMX88rAn7_ADySz03S9rIzR8fSWhnE4Is0Mg4I2nY-DdbNVFRs6tfRGTw2CUNQmZhcqskpDHaQjjCjaRntrYLoGZUK3pgguMnktv7hQa1fKuj7AEqVZ1lvpsBFFvdOcWmdQJay6lJXh4vII0VuUjMxe7Y4JPykEfeRZanrZeMVNooimsrwPQ5q9oOUpsagAkdBG6SgWTQ70cnGEbAfpyIuJAoBIK4QP5GP9_cwT6Je96obJEIs6or41aeafdYwqo0HCM5DQQZo6cp2C_ndXdys9RGHtHvsfNbim9ySDIVPDhEgkgvjjgt_aAXnC7XkTEUH5Hh7jYzjYoD4UqUkqXs4D8bnJ0nuxne8OW8xwU7oeQqlq3QoUVWOTandN4JRIN-b7tU5xGrZdLgAjZiynfRW4mYFQmcPxSJE4tdTH663xKlOUUIZj9aeWZgasJrEcCZqB7x415ZnRIRGC6wrRlK6TeivsupS6_Q1FaoJDsAAObyg7_5KN_j-hW_eFnlZ4X_22F3ThkavcYuncq8CG_juR0loX7T9zJSVCrNpe2mxNF5jotdWGBcRmABbBmJJcIoBusrliaE6JVLzppl_bELGG9RM7r4ORH3wamzvjWt6shjhQcuO6ohkpLVfg9lIbtSJ85inF_TvGh58dmLSKxooRRdRrUccjJ2_8XnWslTYKynzbrbOCQOO7I1l7T3VLBn_5TQXIkDsi7J04N1P11OOfsCGnivp5iKeOFhfJGEcqy5JmMrBRvQVqEeFjRTmUWukNnT59AdNlUJCK59_6oJ_eI0Loh7NXKpuLzHtBIYGoejbMfC3eb6lMWBp-QvYG6CXNnduArncPACXi1vSTPLdL2QQX5kz9Wr4uQoJIFGKN6YL_SEWkvikL2rtwa05s3PGYK5bqBeNlDJlA49biJ001mybqM6nwM3xiqv9fBozjgOrwHI0nEI-3-nIN464nquEtClNUbKcraDIH3GrDqmDr_JYuAsU8QPOKaOGdrUpdEGPL9NeLDCSFcCbQpUVZ9UgijsYFOVcxugA_MKDGwVL5EU1XRtJArJL3_JnGzyU8COF0W2k-CqGAv9rpvzIG-wrmSGpvRr-YWgksjkgv_f0frogKIE01wtTM9hmVlI-SLXzeDgFT2siACOKuR031lXhT44cN0msBpgqKraj5T5mc2X7kaicZeJZV_Mh1_ksQ1pTn9loo-VbVnKbvP2T7hPEf5M8w4UMYcRwQQJomQC2GKrMHh433viZcwOgVgIJcU4jTH4naNED8wXtOHyay3rPsssEGiroCyMSrZzRpw2cX7vAKwsKakzGcjWAjq8yQo2QNJADBxyMokfWOx4QybrU2i8VTFV9iCNCA19F01g44AhYnPIyNFRztDaxsFXDKsGUm6yaWYJdQI4vstBVNZ3Yz8WYHcUD4IBaiGC-OsAgnzdAhM_-Y9yoydtGZt3-_sPuE1S3vOnF1uvDvQqT2qQVhVUdaj3TZxfPaK02MaibzEaPQQFoMKyMJLYEfGSei7Ao05nj0TRdGrZIMyq_2FgzqxQjdig3wmg9Uy2wJ"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:15:03.137627Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "x2_3apuzCPmew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 87,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 87
+    }
+   ],
+   "prompt_token_count": 167,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 167
+    }
+   ],
+   "thoughts_token_count": 636,
+   "total_token_count": 890,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "clause_id": "s11",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "308e2dd537bd31276160af212b9f9bdf08a9db7ce0a57e48dedb84bc4f499bec",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The rent deposit is held without interest, since it will be applied to the rent for the last month of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T21:00:52.456980Z",
+ "text": "This clause is not enforceable. Under the *Residential Tenancies Act, 2006*, a landlord is legally required to pay interest to the tenant annually on the amount of the rent deposit, at a rate equal to the provincial rent increase guideline in effect when the payment becomes due. Under section 4 of the Act, any tenancy agreement provision that conflicts with the Act is void.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 185,
+ "output_tokens": 95,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "hHr3aqmwNbn2yOgP6MnKwQQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:00:56 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is not enforceable. Under the *Residential Tenancies Act, 2006*, a landlord is legally required to pay interest to the tenant annually on the amount of the rent deposit, at a rate equal to the provincial rent increase guideline in effect when the payment becomes due. Under section 4 of the Act, any tenancy agreement provision that conflicts with the Act is void.\n\nVerdict: not enforceable\nSection: 106",
+       "thought_signature": "AY89a18tFZrS4ieiF-FW5JFHLqALiOR88qjkG6QK75aONXw8_meve6q4yqsbI4kBLxUTjSuFIu3SeFD-TtnWknJllnUsIuO8ZHGkpX_gM6hz5Yvnk79kET2UqPiIbNtR"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:00:52.874537Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "hHr3aqmwNbn2yOgP6MnKwQQ",
+  "usage_metadata": {
+   "candidates_token_count": 95,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 95
+    }
+   ],
+   "prompt_token_count": 185,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 185
+    }
+   ],
+   "total_token_count": 280,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

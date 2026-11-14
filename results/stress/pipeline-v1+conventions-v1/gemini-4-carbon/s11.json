@@ -1,0 +1,120 @@
+{
+ "clause_id": "s11",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "77a3d40107aaeb115cc283825dfd99ce39d83e02f4abd2621c59b20284788310",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe rent deposit is held without interest, since it will be applied to the rent for the last month of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:20:12.843334Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120 that is in effect at the time payment becomes due.\",\"reason\":\"Section 106 requires a landlord to pay interest annually on the rent deposit at the guideline rate. Because the clause waives this statutory obligation, it is inconsistent with the Act and therefore void under section 4.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4533,
+ "output_tokens": 349,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "_HD3asLXN9W9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:19 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120 that is in effect at the time payment becomes due.\",\"reason\":\"Section 106 requires a landlord to pay interest annually on the rent deposit at the guideline rate. Because the clause waives this statutory obligation, it is inconsistent with the Act and therefore void under section 4.\"}",
+       "thought_signature": "AY89a18inGJMHj2NkCgkQ0XvVHWYF6PzDdJgBxR3IPmmeHolTIzf7LjpC3t5ZR5HDNB0n819v7Dlv5QWxfwlQIIVrFnFqg8czCJTkQt7y2eIEJsdkW3QIM0YznSfxAL-QDv5vCMWO3KGqUlugPw4RrXVhEftStM1VPnFxw4JsYDv-d9Fv_zvqs7ASh_f6aOoedGwz3rT0mJV5V6Efv2ffEZDWUp1D5rjDrzukP8uL17sDTpW-LiN3DlnV4ZmTu_eJaWHh9wW8zcGKiK7rWeiWVVuGPWX-lBAov5ojVDWvvQC3NWiqAmQc8cn908Ki_Z5UHb3O0GbYsxiqz0yUBrp-7puRCSuWHwsPrsyv1S2VCY4-ZN5EqJlVAvjRXJWWlFdul1B4paNgaoXmjbNMQdnakav3iGxhAUhGHlO8qMKn3tNF04vFF5Vc8MJxPqNEGSe6riAVvx9RcBLWedjCSArS_CxollMrtBUwxxJVQIW8w9GAkm72gAloy8iq4dH_GgL8nKiAqsnIiT2kkgbol89h32XMSQlHzUJhuGu8jCTj0Bpuebwcz_8qxYwdmQ69fsGa4nm2z8ZhF-2p5bmKpObZU-VVIwHeFCkMCic_uGLQaCTvAT5pHh7uSiog7k2BeRNqCzkU3Ew9MkKGdcW3pTrZPg6U3m1hVrRd2YaG7iKm_jinSEp6tllGwW_h2RTlc6o8IUgIKCHWAxtRKQrBx4s8lNAOUDMjb_X1kJvDDCysIjhksWjj0UPqnHPEB_pzLOfR9uepV8eZ_eZPHzcW1G0lZ35ls-RLU4EVKmeIQk6wMrCUbIBDR-kPnixyIgCYybIZddQZ36g6N-JqOQq7SwfJmvAz4c_5i8t0x2bDEkLOHgEPazeCpumXCDL-mKbLTeqMMn4crzvZHyEFnNe-xM62WkPk8jhz4LSKcPPseH1ug-gKQphvPxhj-6XDuqqule0EXeAKjg5m6B_0FRGvKImEMcf0SjyXaPG_UO_LbhAiHZZRvaDJBmXBCMEpLz1O5ZqUO_wc6_ZaQoiplbgCebj2Bbj1vaiy901BlWYitY_O1csaA61s7j0Dj1Uq94xk6pOtbciwHk3kkFza-SBxGGNfIN-zfuqlnEFE1J_QPulsOZVkPBHdjNS27RmclmvTnSywZIQKROp5QyWdye66xsBIYCWyyKMHqemTPR_pYfx89zShCl9GQEyoanr7C7mPzhU3aq2j2y-DrJgCO7XuwrVp6R7H2ny-XmEVoDFSMjAzqtPznfxMPA91TBONj8RbZAoGkbMW6l8KMb5LfLyK2OLMle8xflMiB1miyD9KkzJoQtgOGRfHeOdzIrG2OMgC0xoVC9tPqorXYqH5bq6YvE4LPMQrbKLSLfSEw-q7IR_OcoXpcBsbtVwsH7VdyrgGlHah4Iun78Fo0QfSD1Y"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 262,
+       "start_index": 43,
+       "uri": "http://www.wellingtontowers.com/last-months-rent-deposit-interest/"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:20:12.912322Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "_HD3asLXN9W9w-UPidKMiQw",
+  "usage_metadata": {
+   "candidates_token_count": 120,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 120
+    }
+   ],
+   "prompt_token_count": 4533,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4533
+    }
+   ],
+   "thoughts_token_count": 229,
+   "total_token_count": 4882,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "106",
+   "quote": "A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120 that is in effect at the time payment becomes due.",
+   "reason": "Section 106 requires a landlord to pay interest annually on the rent deposit at the guideline rate. Because the clause waives this statutory obligation, it is inconsistent with the Act and therefore void under section 4."
+  }
+ }
+}

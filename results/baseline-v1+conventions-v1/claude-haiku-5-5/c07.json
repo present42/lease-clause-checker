@@ -1,0 +1,67 @@
+{
+ "clause_id": "c07",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ff5e5a075af3f5876c0e239313a4a0be4fdfa51930fee48aaaf27592b819cf58",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant viewed the unit before signing and is satisfied with its condition. The Tenant will not ask the Landlord to repair any defect that was visible at the viewing.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:30.905202Z",
+ "text": "The clause is **not enforceable**. Section 5(1) of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) provides that a landlord and tenant cannot contract out of or waive any provision of the Act, except as the Act specifically allows. The Act does not allow a tenant to waive repair rights in this way, so the clause is void to that extent.\n\nThe clause tries to waive the tenant's right to request repairs of visible defects. That right comes from the landlord's statutory duty to maintain the unit in a state of repair that complies with health, safety, housing and maintenance standards (s. 20 and s. 26), and from the tenant's ability to apply to the Landlord and Tenant Board for a repair order or rent abatement (s. 29). Because the Act does not permit these rights to be waived, the tenant's acknowledgment that they viewed the unit and are \"satisfied\" does not change the result. The fact that the defect was visible at viewing is also irrelevant, since the statutory obligation is not limited to hidden defects.\n\nThe clause may still be read as an acknowledgment that the tenant saw the unit's condition at viewing. That fact could be relevant to other questions, such as whether a tenant can credibly claim a defect arose after the tenancy began. But the promise not to ask for repairs has no legal effect.\n\nVerdict: not enforceable\nSection: 5",
+ "finish_reason": "end_turn",
+ "input_tokens": 252,
+ "output_tokens": 1483,
+ "raw": {
+  "id": "msg_011CgwR94jZ7jZbZZLGHSQoL",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable**. Section 5(1) of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) provides that a landlord and tenant cannot contract out of or waive any provision of the Act, except as the Act specifically allows. The Act does not allow a tenant to waive repair rights in this way, so the clause is void to that extent.\n\nThe clause tries to waive the tenant's right to request repairs of visible defects. That right comes from the landlord's statutory duty to maintain the unit in a state of repair that complies with health, safety, housing and maintenance standards (s. 20 and s. 26), and from the tenant's ability to apply to the Landlord and Tenant Board for a repair order or rent abatement (s. 29). Because the Act does not permit these rights to be waived, the tenant's acknowledgment that they viewed the unit and are \"satisfied\" does not change the result. The fact that the defect was visible at viewing is also irrelevant, since the statutory obligation is not limited to hidden defects.\n\nThe clause may still be read as an acknowledgment that the tenant saw the unit's condition at viewing. That fact could be relevant to other questions, such as whether a tenant can credibly claim a defect arose after the tenancy began. But the promise not to ask for repairs has no legal effect.\n\nVerdict: not enforceable\nSection: 5",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 252,
+   "output_tokens": 1483,
+   "output_tokens_details": {
+    "thinking_tokens": 1030
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

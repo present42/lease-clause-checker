@@ -1,0 +1,74 @@
+{
+ "clause_id": "c07",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ff5e5a075af3f5876c0e239313a4a0be4fdfa51930fee48aaaf27592b819cf58",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant viewed the unit before signing and is satisfied with its condition. The Tenant will not ask the Landlord to repair any defect that was visible at the viewing.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:16.623076Z",
+ "text": "This clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a landlord is legally required to maintain a residential complex and the rental unit in a good state of repair and fit for habitation, and to comply with all health, safety, housing, and maintenance standards. \n\nSubsection 20(2) of the Act explicitly states that this obligation applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement. Furthermore, under section 4 of the Act, any provision in a tenancy agreement that conflicts with the Act is void. Because the clause attempts to waive the landlord's statutory duty to repair pre-existing, visible defects, it directly contravenes section 20 and has no legal effect.\n\nVerdict: not enforceable\nSection: 20",
+ "finish_reason": "STOP",
+ "input_tokens": 193,
+ "output_tokens": 181,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "CXj3aqjpBPqiw8cPovuTgAc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:51:44 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a landlord is legally required to maintain a residential complex and the rental unit in a good state of repair and fit for habitation, and to comply with all health, safety, housing, and maintenance standards. \n\nSubsection 20(2) of the Act explicitly states that this obligation applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement. Furthermore, under section 4 of the Act, any provision in a tenancy agreement that conflicts with the Act is void. Because the clause attempts to waive the landlord's statutory duty to repair pre-existing, visible defects, it directly contravenes section 20 and has no legal effect.\n\nVerdict: not enforceable\nSection: 20",
+       "thought_signature": "AY89a1_A5vUFPX5pIjkAm8zj6fV-5wwkhibcyi47k9wTKFQSLd57ui5jrQlJn10iFQ_D4alhpJy9KGGAnbCCgjZPsZpijV8RJszcPtTKmV02LZ2WOPc084BvB1fJvLhX"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:17.079016Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "CXj3aqjpBPqiw8cPovuTgAc",
+  "usage_metadata": {
+   "candidates_token_count": 181,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 181
+    }
+   ],
+   "prompt_token_count": 193,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 193
+    }
+   ],
+   "total_token_count": 374,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

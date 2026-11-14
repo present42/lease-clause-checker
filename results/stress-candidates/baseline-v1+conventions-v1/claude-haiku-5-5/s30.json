@@ -1,0 +1,67 @@
+{
+ "clause_id": "s30",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "d3608141160cbd02e337db5b9f1e940f6667fb0ffabe61db55d0364359290650",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant shall pay rent for the two weeks after the tenancy ends and the Tenant has moved out, while the Landlord repaints the unit.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:32.572881Z",
+ "text": "**Verdict: not enforceable.**\n\nThe clause requires the tenant to pay rent for two weeks after the tenancy has ended and the tenant has moved out, so that the landlord can repaint. Under the Residential Tenancies Act, 2006, rent is payable for the tenant's occupation of the unit during the tenancy. Once the tenancy has ended and the tenant has left, the tenant has no continuing obligation to pay rent. Repainting is the landlord's own maintenance and business cost, and the Act places the duty to keep the unit in a state of repair on the landlord, not the tenant. A clause shifting that cost onto a departed tenant is inconsistent with the Act. The Act's non-waiver rule voids any term of a tenancy agreement that purports to waive or limit rights under the Act, so the clause has no effect.\n\nI am citing from memory and have not checked the current consolidated text, so confirm the wording of section 4 on e-Laws (ontario.ca/laws) before relying on it. Section 4 is the provision that decides the question. Section 20 (landlord's repair obligation) and the rules on when a tenancy ends are supporting provisions, but they are not the deciding one.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 246,
+ "output_tokens": 1704,
+ "raw": {
+  "id": "msg_011Cgyco3euawqS25sYZQwBx",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Verdict: not enforceable.**\n\nThe clause requires the tenant to pay rent for two weeks after the tenancy has ended and the tenant has moved out, so that the landlord can repaint. Under the Residential Tenancies Act, 2006, rent is payable for the tenant's occupation of the unit during the tenancy. Once the tenancy has ended and the tenant has left, the tenant has no continuing obligation to pay rent. Repainting is the landlord's own maintenance and business cost, and the Act places the duty to keep the unit in a state of repair on the landlord, not the tenant. A clause shifting that cost onto a departed tenant is inconsistent with the Act. The Act's non-waiver rule voids any term of a tenancy agreement that purports to waive or limit rights under the Act, so the clause has no effect.\n\nI am citing from memory and have not checked the current consolidated text, so confirm the wording of section 4 on e-Laws (ontario.ca/laws) before relying on it. Section 4 is the provision that decides the question. Section 20 (landlord's repair obligation) and the rules on when a tenancy ends are supporting provisions, but they are not the deciding one.\n\nVerdict: not enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 246,
+   "output_tokens": 1704,
+   "output_tokens_details": {
+    "thinking_tokens": 1296
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

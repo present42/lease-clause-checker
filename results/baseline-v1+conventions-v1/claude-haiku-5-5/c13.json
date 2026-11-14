@@ -1,0 +1,67 @@
+{
+ "clause_id": "c13",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ca4ef1f82b87f8de7735ff5885b3232acd9530b5aaba42dcf79001ba93069e36",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord, with its contractor, may enter the unit to replace the kitchen cabinets on 24 hours' written notice giving the reason, the day and a time between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:39.192871Z",
+ "text": "The clause is enforceable. Section 27 of the *Residential Tenancies Act, 2006* allows a landlord to enter a rental unit to carry out repairs or do work in it, provided the landlord gives the tenant written notice at least 24 hours in advance that states the reason, the date and the time, and the entry occurs between 8 a.m. and 8 p.m. The clause meets each of those conditions, and replacing kitchen cabinets is \"work\" in the unit. Because the clause restates what the Act already permits, it does not conflict with the Act's rule that a lease cannot take away tenant rights (s. 3).\n\nThe clause does not authorize more than the statute allows. Entry must still be reasonable and the landlord may not substantially interfere with the tenant's reasonable enjoyment (s. 22), and a tenant can seek relief from the Landlord and Tenant Board if the work is abusive (s. 83). Those limits do not make the entry term itself unenforceable.\n\nI am citing s. 27 from memory of the Act's structure and have not checked the current consolidated text, so confirm the subsection wording on e-Laws before relying on it.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 264,
+ "output_tokens": 2077,
+ "raw": {
+  "id": "msg_011CgwR9fwNmCoDM81oLxnVF",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. Section 27 of the *Residential Tenancies Act, 2006* allows a landlord to enter a rental unit to carry out repairs or do work in it, provided the landlord gives the tenant written notice at least 24 hours in advance that states the reason, the date and the time, and the entry occurs between 8 a.m. and 8 p.m. The clause meets each of those conditions, and replacing kitchen cabinets is \"work\" in the unit. Because the clause restates what the Act already permits, it does not conflict with the Act's rule that a lease cannot take away tenant rights (s. 3).\n\nThe clause does not authorize more than the statute allows. Entry must still be reasonable and the landlord may not substantially interfere with the tenant's reasonable enjoyment (s. 22), and a tenant can seek relief from the Landlord and Tenant Board if the work is abusive (s. 83). Those limits do not make the entry term itself unenforceable.\n\nI am citing s. 27 from memory of the Act's structure and have not checked the current consolidated text, so confirm the subsection wording on e-Laws before relying on it.\n\nVerdict: enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 264,
+   "output_tokens": 2077,
+   "output_tokens_details": {
+    "thinking_tokens": 1688
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

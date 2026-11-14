@@ -1,0 +1,75 @@
+{
+ "clause_id": "c27",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "e1fc42b9d4bded219e543cfd570e9466460bc11f9b16bc7314034f5828568a6c",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant may pay rent by post-dated cheques or by pre-authorized debit if the Tenant wishes, but is not required to use either method.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:10:32.519308Z",
+ "text": "Yes, this clause is enforceable. Under section 108 of the *Residential Tenancies Act, 2006*, neither a landlord nor a tenancy agreement may **require** a tenant to provide post-dated cheques or permit automatic debiting (pre-authorized debit) for the payment of rent. However, the Act does not prohibit a tenant from voluntarily choosing to use these payment methods. Because the clause explicitly makes both options voluntary and states that the tenant is not required to use either method, it complies with section 108.\n\nVerdict: enforceable\nSection: 108",
+ "finish_reason": "STOP",
+ "input_tokens": 191,
+ "output_tokens": 641,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "uG73asWvJJGow8cP7KPO-QQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:10:45 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. Under section 108 of the *Residential Tenancies Act, 2006*, neither a landlord nor a tenancy agreement may **require** a tenant to provide post-dated cheques or permit automatic debiting (pre-authorized debit) for the payment of rent. However, the Act does not prohibit a tenant from voluntarily choosing to use these payment methods. Because the clause explicitly makes both options voluntary and states that the tenant is not required to use either method, it complies with section 108.\n\nVerdict: enforceable\nSection: 108",
+       "thought_signature": "AY89a18cB2Eaw0Dk2wJ-0gQ0yAGnI_2tBCn_TAkfyAqv_wKcD2M1sx5Jcr9i1RPuVu8vJA9Wrr_bgO5RvZ2Ow2EhPRRiIz4HZxvsHySjGBxsJc03aySd3dPajnq7CIj2ophOxqp5GEsHGmt-YwnZQCFDMRvsl1_a-EHmFvrJGganhLlG7Xr-7VuGc79UYebtuub1fEE92HTPRgCLooSmgUFO_2ys9DNXZIiPzOp-X90dEFc0_9IwzYiuNsy6HASC4m--NhI6elj4YzBgGagnbFFccEhhctFx9B_o5SpZs75GXw5y2lAZGxLFbt13hEjbFlvF465oZZuDYKpAGi4PPLdv2njYegav1tl03cPt93hiHPvcF_ucZkONXhWQLBJML8mZYZjsOZ2WaVtCkNHA84W0MU1SbIftleQXamw7IZgGBdh4jBvsFGe5Yt7R3D7-e0GnfWYHQOJzLLZ6acPyDL-33-jUn6be2VH1f3vLuQYekOGnFYVXu7bULn1qvYq9GdUds_mveVQVhyNBznjJivfM3on8pSGcOM9IgXE_RU8xV94ZmgIQsMJopjOv9ODvXIEoHdEG1X2SlnJOq4ISPWSJ1rq6bnGlQGCaYBrdpZMk5eV9z-D8L7EWvMysRmJrGUSNiyYBNsC3emllBiezM-peTlJnyrym7i8jGorfsFfSQXaXZSRBoj4acoRNwqBQFkPHtVKj4-8t_cf4NH7x2ceBLGvWlPrZySZsyujW6RmmERJbdkwyJWXUWRSmNfoCvQ21323MUfy5niieFe0ppC2k5dPF4kJo5uusor9fBhwnNa5IpdPAKYwH0P6q_SsZrq8oMvYeeIf4lyc29pcXtI75ObGOu3qYVeB0xTDiMOr6DJ9FZAMFeBQZY4cicBuMi0mrD7ZgtZjz28nV0mpg_UjgqVKcjiKM6aSCEZ5-tEzLh9rX3WupbVHEdCcnQJ4VoB7wAQM1G1cy6Icn5lDxvXMsT5Rc1HL8QtWL5IiDFknBLp4Xbmq1cyue0zOY-rX6W6j068QFDwCqlKwL6T8Teu7ZkXxFsVbgS3QtZY2ozKUwBfrTTLHMY4uuHLj1qbSnfqdcas7LlkIj7xATCdCKT_BqTFDtSg8yvHN210-7r4ecqFukLPm5U7z2vNE-uLWW22D7X-tEY76AkA-BCHqOcH-yU7HEGMAZSoXjp8hLLWG9ctaKVNldaGmgn2myILfBrMspRkgiaNuEgA_9nw_ZRupUHe2vP_Q64_LuTz2cSlbjTSFp19ZKmCbpdm4LJay1Kw0AXZlw_fARwhErgkuFI3BQ35cVzQSZ5VxOzphXytcYBo4GqybzQBtVIlEaJ0Y4Genu5ehUQr-U18d1t9eHHb8ZVPXoEyfReZdbsdeDDT_7kD9slikQu6CCciN0TGsK3SQIIwiWR7_Dpxdl8OBH8695pzwOKD3DpxsFvVlgOyqFVAAjvr8yGGB7p9IgETlRtdHr3Ia8_PJA5LOmkfvIErjHwdu4LQf_zAMA7MsuLdZuTJ8r91ZbrKm03AFxn5KQrRYYzfHaDqskFf2QMnXljmZas_FOIl9ml7XDshijJuTfUXUFoiIlD_-SWegXazSlrnK5r1bzfYXxADGKuGElkTEszXwfJoqHCICGhVLHGE96Q4Y1JP386qVli4SPmSp4cXnfOhZnbHgmtPd4Sq1Yiu64gXDQCwKhOchURfZ9qolwCv1nRgaGlzegFfNym5OcFQYVOnNN5WQJuUWxIuP-KAEF_dF6O5T1IWqWW16aCPBlz0vVXMfKURGoSZ23gujoD5G7YTwaDVa-3zZb8u0QirpRXiUZryRDWPiRsDTac5_AkzsN5xlF8DLksMqgcFHMI1zoqFTYOPYyFN8EKS8HFzIRv0hdJ_eubvL5ePN_qmCFuQWQnIOD5-HIg47lRx1PvzZVTdCw1EooKWYXfJGG8Hhy2h5hV4G-ZjiZRD7MtlGj0tRFVpexeSPaihnFaiVwle5Y24B50ydUpxcWeMdsACWnp4UM-3pbN_O7_ZFlA0Jl7kXHld3l09YdQeeKfmpSw6BYThUdnffMU3bDglngMchQM2k9blbaVGJgVbSC-MfByY8TdHIAPY_iuK5rzuiFoeFz4sDdOa2M93LXsAnGQ2rP-GBInfq0QbecTC8pHARX0Hp6fricHBl551QGjn5IlJDf5w8mPHwrr4AoKa-zsu2ZVuub5X9Trxe4YiZ1iXXmtyywn-RDnh6uomekYHRcEmhpIss-8AHlMGv2pPRNFMbqwH2j1W_jDfuLnzNZ2Xunr6clK2hGScha5LbVhrlqohPuE95F2m__4A1ZUgJz6YJsQoFOUmLZFTHUqEVhBovERm51hWnfz0oJ873hmpPYzGzE8js64yIixSqDmlBR6jpuZ_eP0GgpDQbv7RkomE10Jt6HT5xnFcAG1dIc96XQrvLoE0khtYp7kMZ5oyV7QJt5KNllMii2XR0LWpd500OeYvjy7nQ1r0JrdZScWDIC84Cfasdw8m5RsIJs306mdvqJcHCLXdtiLqW6TSgHb0yYtQ7zcIgFs7lOEigH4xksd2sPwBw6wh-Q83xYYNhMwHZBsNaN1FwFsqYv3k50tk9Kw0xSnNf1SVs7PdujSXG5XWZVECA6VIH1Ks1k9-Otql2mCN3lwHlqkFbybBLaokCxKTmEqOcy-0S2r_st2oWptDorRWahWurGxZHtrCfXa8tYk3r-6z0Yp0gDGSXXh0Rmm1fSBpsnf-0Q_aFmsCaY5VMqj_gwY-ZpqVVwB_sXSefD5iAv3MFzYv-JZFQ0MORURVwXk6WOYeJJQ0x5nyTAqNgBVMyzpcbSHWZqetlLr_BlYTw="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:10:32.595909Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "uG73asWvJJGow8cP7KPO-QQ",
+  "usage_metadata": {
+   "candidates_token_count": 127,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 127
+    }
+   ],
+   "prompt_token_count": 191,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 191
+    }
+   ],
+   "thoughts_token_count": 514,
+   "total_token_count": 832,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

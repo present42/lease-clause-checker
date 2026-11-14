@@ -1,0 +1,67 @@
+{
+ "clause_id": "c02",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ca067addf33b890bbd9907fef58e5ed5db51a86026a19f3199841c6560abef63",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Out of consideration for neighbours with allergies, the Tenant agrees not to keep any animal in the unit.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:08.519808Z",
+ "text": "**No. The clause is void.**\n\n**Section 14** of the *Residential Tenancies Act, 2006* says: \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\"\n\nA blanket ban on keeping any animal in the unit is exactly the kind of provision section 14 voids. Explaining it as consideration for neighbours with allergies doesn't change this. The section applies to the provision itself, whatever the reason given. Because it is void, the landlord cannot evict a tenant just for having a pet in breach of the clause. Signing the lease doesn't change this either: section 4 voids any lease term that conflicts with the Act.\n\n**What the landlord can still do:** The landlord isn't powerless if a particular animal causes real problems. Under section 64 and section 76, the landlord can apply to end the tenancy if the animal:\n\n- substantially interferes with other tenants' reasonable enjoyment, or\n- causes another occupant a serious allergic reaction.\n\nThe landlord must prove the actual problem, though. They cannot rely on the lease clause.\n\n**Condominium exception:** If the unit is a condominium, the condo corporation's declaration or rules can prohibit animals, and those bind tenants. That restriction comes from the *Condominium Act, 1998*, not from the lease clause.\n\nVerdict: not enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 233,
+ "output_tokens": 759,
+ "raw": {
+  "id": "msg_011CgwRBqMiSRivKoWTsxRnm",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSowsKEAgTGAI4AUIIdGhpbmtpbmcSDM1+u2s8/GxYoeIcvRoMiR+tU6NFiEVbsF+4IjDGk/XtuctraWvALTrEIrvIQzSH+2CDQGxlcYtZVCC0L0KW31gqiyGXt1ysdTKL0r0qwApI7XjUPqkNfZJ6SZuk45QVY0T9G1rA0hxAQpeT+KCpdghnybwVe1bdqjmzHHjclubkdRN9WwaXPSmzaot2jmte8EewOu8n+i6E2py07heeBwkSF5fFKPiK5uJtYVNuBN1owpPRbJN2tcif7Ha0fWi0eELtmYNriOjV4Z3GO/6X/MX+vw4HQ7oRc+pgIIR5xIUF2I7b+ll2Nyn3zYmDZk85zULrBFQknIwWuPkqLw9h7J91jmne+Vzxcaqv8Awxr/6qZJ1vVIqhBXrRGvFcQtpvSB44erjqxSXpCLaM93gza8HLqdLljdoaCBZPFPUg3Pren+P4wF0jk9mZWn/hsG1wwayLpScHygdYyE19AfLO+sG2Adw1mR2q/sgHCcn/ys6wtmCe1S7e0HuO1KQOjr3CPHTaxH+C1Kbm6aH3ZxVFFkSMfTSPtKpvLOQLNJ4mxCnQ1jjnZGY9O582jNM0d6UHl+nkQDldZ/u3LCFCy9lIEKfQ2kusIA0GOj/79KzfQHvfzbpbNs8gXCx+mtmjcDP/QjZ1Pm2HNQYand1zOv0iKQm9C2XhoOyTY6rSDiLwQn1SwkJxh6fLMvTd/9IioeS56VPAeM+CU2sE6oqTx/Fax5Y818u8zqKh+OShRpcMPpLgY/7T+C5ADqeH3fI3zeWAghDXstup0j9EwIJJNchThw5t+vFwT102CAL12SC9mQWG7cX8dqS5yWHwnfbNdWv/Y6bvhr8X8itu/hOx7OV++OwkIsxQIpxrIUX9bo0fw9kQxpty/Sy7wJ+3EFdaaHcPh8U+/GMocH8iVzt4KTUd8MopW3myfD+I2wpl1RugoU8AEKZXVU56B0XR0/MVL1wSzZDX8npP0OyakkK0qJKSIxbrOcKb+OpcQzb2O2SxLz7BpieTTztN5NQ6Kjy5Tm90LrWMmuqxvDU8P07RtcbrTZyON7alqwN3CxuEwosouZVFl9KA7OlhJ9uafedSEarPM0EaEQ+xV6AlJDPbu9JhY7yGI5ymgXs4E+ypgDXhoYrLmdAkMbSXbgaeEk2EAl/lhOi+xSNEqW7hzY3OVmwMNOgpB0CtYikZcVn/PBvKIFhByK1x/wyPjw6UcfF1XDX/Q4Wll42MSWGPw2sNaoi44dsJ4QAG7iqi/0+NlLbfk+vx7qdxJomxuvMZc46HY3+3iP8uWMg+9xOYhN+zmmTEBSUO1WVdZibZzz251appW9P0rli7y5uvYMdoQKObqMBrjMsb9OcxSM5RiDN+piOj/WlQQ4KGejfk4CFy6+c/KHd8GIFLvtE1CzYW+9Nc1hCqZc4H8TYpS5J+9gWQuaMWEXK5SFff5RHyHufmFgm8wB/M8jGIjah04V9RdJMxubqkZ2g/rI5CV80hpi5uYTJhsIjFMAjJ3tuaO5eAPM6vCkMujG5BZ2cCEqDu6ENF2zHSCrx278atO2nG2Q8Fd+LnGAAokbGs7BDU5Nnl9bi/eHRb9JY0ExDuOzRIuwfA1+S6K9dUieoDeAVGIUUDjvtqVQ/rKbittYd5IIE43KL8ZEQXJF1KbvBsQE558XOYd9R/IqU6dKY9XE4sX8VpVhumHXNDJMjLNc+98FhE70sRuP+pqtFNPJSs6KBFw3g+oBR/nU0u76xeyHxda9w0j3BgBA+F0Ld0zdOwvxBcw6uajKlnMyqnvsn2xf+h9+fua3x45GzXpvcwCFTGaoeB7nqr4ELs34Q8di9RfAd11WrKDGsBXAqzOikMPdYWYFcrLqd6wO7ioiarxWkv62e7eMFpYivj49UiUSbXbIXyfIqXbz0YAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**No. The clause is void.**\n\n**Section 14** of the *Residential Tenancies Act, 2006* says: \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\"\n\nA blanket ban on keeping any animal in the unit is exactly the kind of provision section 14 voids. Explaining it as consideration for neighbours with allergies doesn't change this. The section applies to the provision itself, whatever the reason given. Because it is void, the landlord cannot evict a tenant just for having a pet in breach of the clause. Signing the lease doesn't change this either: section 4 voids any lease term that conflicts with the Act.\n\n**What the landlord can still do:** The landlord isn't powerless if a particular animal causes real problems. Under section 64 and section 76, the landlord can apply to end the tenancy if the animal:\n\n- substantially interferes with other tenants' reasonable enjoyment, or\n- causes another occupant a serious allergic reaction.\n\nThe landlord must prove the actual problem, though. They cannot rely on the lease clause.\n\n**Condominium exception:** If the unit is a condominium, the condo corporation's declaration or rules can prohibit animals, and those bind tenants. That restriction comes from the *Condominium Act, 1998*, not from the lease clause.\n\nVerdict: not enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 233,
+   "output_tokens": 759,
+   "output_tokens_details": {
+    "thinking_tokens": 308
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

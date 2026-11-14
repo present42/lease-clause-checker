@@ -1,0 +1,99 @@
+{
+ "clause_id": "c26",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "17f8599262563396bb90debb41568ecd22aff9b55b0525360c7bc87459542005",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nRent shall be paid by pre-authorized debit from the Tenant's bank account on the first day of each month.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:28.904784Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"108\",\"quote\":\"permit automatic debiting of the tenant’s or prospective tenant’s account at a financial institution, automatic charging of a credit card or any other form of automatic payment for the payment of rent\",\"reason\":\"Section 108 says neither a landlord nor a tenancy agreement shall require a tenant to permit automatic debiting of the tenant's bank account for rent payment, and this clause requires pre-authorized debit from the tenant's bank account, so it is void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6428,
+ "output_tokens": 554,
+ "raw": {
+  "id": "msg_011CgyJ7AwVQxvBKjxjL64Vo",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"108\",\"quote\":\"permit automatic debiting of the tenant’s or prospective tenant’s account at a financial institution, automatic charging of a credit card or any other form of automatic payment for the payment of rent\",\"reason\":\"Section 108 says neither a landlord nor a tenancy agreement shall require a tenant to permit automatic debiting of the tenant's bank account for rent payment, and this clause requires pre-authorized debit from the tenant's bank account, so it is void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6428,
+   "output_tokens": 554,
+   "output_tokens_details": {
+    "thinking_tokens": 387
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

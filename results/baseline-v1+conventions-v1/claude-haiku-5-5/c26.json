@@ -1,0 +1,67 @@
+{
+ "clause_id": "c26",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "f7300eea13bf7618dc74988477cffae804bf9dccabba408e99026035b647ea3d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent shall be paid by pre-authorized debit from the Tenant's bank account on the first day of each month.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:54.400601Z",
+ "text": "The clause is likely **not enforceable** as a mandatory term. Section 106 of the Residential Tenancies Act, 2006 prohibits a landlord from directly or indirectly requiring a tenant to pay rent by pre-authorized debit, or to provide post-dated cheques for rent. A tenant may agree to pay by pre-authorized debit voluntarily, but a clause that makes it a condition of the tenancy is unenforceable. Section 4 also voids any lease term that purports to waive or contract out of the Act's protections, so the clause would not be saved by the tenant's signature.\n\nI'm working from memory of the statute, so please confirm the exact wording of section 106 on e-Laws (ontario.ca/laws) before relying on it.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 232,
+ "output_tokens": 1923,
+ "raw": {
+  "id": "msg_011CgwRAnvbMUre8mVjTXMYq",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is likely **not enforceable** as a mandatory term. Section 106 of the Residential Tenancies Act, 2006 prohibits a landlord from directly or indirectly requiring a tenant to pay rent by pre-authorized debit, or to provide post-dated cheques for rent. A tenant may agree to pay by pre-authorized debit voluntarily, but a clause that makes it a condition of the tenancy is unenforceable. Section 4 also voids any lease term that purports to waive or contract out of the Act's protections, so the clause would not be saved by the tenant's signature.\n\nI'm working from memory of the statute, so please confirm the exact wording of section 106 on e-Laws (ontario.ca/laws) before relying on it.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 232,
+   "output_tokens": 1923,
+   "output_tokens_details": {
+    "thinking_tokens": 1660
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

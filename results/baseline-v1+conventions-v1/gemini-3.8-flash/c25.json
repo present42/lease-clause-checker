@@ -1,0 +1,75 @@
+{
+ "clause_id": "c25",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "500763517bfad967364738c7b306d1cedde21e512de47ab8eee2010c88dea969",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Before moving in, the Tenant shall give the Landlord twelve post-dated cheques covering the first year's rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:48.673949Z",
+ "text": "Under the Ontario *Residential Tenancies Act, 2006*, neither a landlord nor a tenancy agreement can require a tenant or prospective tenant to provide post-dated cheques for rent payment. While a tenant may choose to offer post-dated cheques voluntarily, a mandatory clause requiring them is prohibited and void.\n\nVerdict: not enforceable\nSection: 108",
+ "finish_reason": "STOP",
+ "input_tokens": 153,
+ "output_tokens": 696,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "UG73ary0LLDWyOgPr4jfmA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:54 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the Ontario *Residential Tenancies Act, 2006*, neither a landlord nor a tenancy agreement can require a tenant or prospective tenant to provide post-dated cheques for rent payment. While a tenant may choose to offer post-dated cheques voluntarily, a mandatory clause requiring them is prohibited and void.\n\nVerdict: not enforceable\nSection: 108",
+       "thought_signature": "AY89a18JonoK1OGYt0fCKoj82M1bizz9xYs_FBmLdRMgclbkumxEVi-6-_qs_AWOr0YSDqDr2gAwK8L1jzp7cajICP-ZApyWFPTG_11HmDEwPZD2s1Y3EyXwG8c7d9SbLBF8sf2Z0DTW9ZubGlPNJX21dzbnazD3fvn87j1NmOloWgrpUig2IuXivt8xiSw1GpTPUiYJk7eMkUzj7hSRKVY4rAtVtYgjCoPOzbKYKVhi72we_Y1vA3btn0tSkEjQjnmiZYg9j1eD4HEMOOWvQjSG9eL8JRYFim2UG7zeB4YeT1EvhcLDxNSbJDZnM8QkPy0AAOoz-BOomOwzGq7F1lcucK7Hbqeh47thJ80eE8a6cAXq_rxCDkZZyWoFnTryu1j5Wn1o-whb1Eik-kqz6ucESWr8x6fwMLiA6w_2Gd66YGcl9L1klDOjS7vcovUu-StN3ozzrSsypLtUtEDgPiOduBfh9ldMgOFPGncSO9xujxeqUnY5oeUotDh1uLTRHXZ6cMsxawgAGhHW_riYFgOPpIDINcShB-cInZT654CSF-2tgCadi2lyHnBiDmVpiayJfBkm3gJV-O0Sg_5MNNo7loQo36ekNOpVHavuCIAus45rsUdssvy7fhSSp751jhnLQhR0TGwjheF1uDPxf-PrGzevQtPku27YEQpBxU_4CZLlB9AvF828Bd3IsoyrqtoAxe-wtJ4jCaV-jp2CoujBgE9V7QkNvqqwZBDcf02MKLAwqUfp-tTri0Wh3ycSHpO974QyvcDHsXBxqjH7_TT5f6fgg0zIIvSt5ITwQyukfIM-enKZNCHDcbu6CZNozjZ7ivsOOpivFjJc_E83y2z-jRRnZS6svvmW4EEnW1QDcTTr7wGLs0jT5ogfDV03eEY0YdlTss4ThBZ5C01eXN7nt88sh8cNVJUEQRWHCXX5VrPebxHvv9JwZW8lQL2N1zwF7eb6Kyz-kKjxUKt-eUZE9Moh5bfL5VvbUSsb2dL__LRz3V-ZIkjlcAM_E1nE4YYvt2bWX2q4Fl6SAbNnVwSgMSEz0lC4KUCBlnQUeVk7NUzd85hjSzvbNsco5YKQo9THCBjMkibw8ka8Og4nf0FL9a_vNP--s65DQHKRvxKH0iqK1ijlNFylzGXy9InPhg-zI3_YVU6SXO_vHlhYZAuU9TERv9sxDRlt1Lx1oqR_UVm1BD8Kvgx3x9dhwJONPmp0h5LBNs7Su3IRYnOq45joTxHl06ja5SQlzObeofqZXAOxC0bQr2fXsoDkG_g5sL57y-ryr03KONiLnCSDDaAaBqHwKGoQDbN-XCwR5XlqiJfFn7g-e5dQUiDpXNBOFbe1n2zE_M68sq2NeGvNBoQMwxhng1L1hLR8T5yN3Sw89Sczsyqjnk4yPrwdeTMhOWvFkLNtBsEMzjJ_PyL-eaSrF3Qmm0KxSii_Kggha8NoY3vvrBnjxgNgPeAL4P0Yjv07qKGKX1_KMACp02HB9LP_whAfoHEAriM160ScGN6mdOlM58R0wlcemw24V-rBN9vGv0Ja8HBKztjSc2LwZKMbek1UdbEP8GnHluCzfXR85voOJneXUE_YHb8DAbzVvu71WYfgTbP9USSXIWNmgkYpoBR_GiryENq4YPfGTZuQl0K03mCubXDAfKLaeeVfegCM0crHKqQrHJUWYuIS-hi56ZNx4vMgkDeg5ihMUvtGu-zHtHxZY1JcTp6BmkXPWMUHOU5x7HsbaSi44SXfe7r5-kGvdLSlo6XbqovHI1IFUTMdQSfziS5BlbHLXTZz8AB_cVMDytqStNOXz4GmLCTn5IkNhZW7IO4-hrh0NuZjh45tC7uH5hF_dJC2wVJfjqxs7k-QEbKdhzz30rqooZP5UNB-AqeZVNk9HMYGKH68WCfU2RFLJn5ZtmJBIVLa438_PtaKxe-hlQIR8CWdu5VM7mqiIsgnzWY0R_Fe7RegJbiT7760t35VnW0X5VhXIkWtC9bwQfejTSAzepS40QAYpfF4sYbS3BIKc34QxZ-fHRrFDvGrNAWLYBtmjnEkl-pRNP0FgxtCOUSuyO-pH1mxhdcxRepw59zOAGacJCOOW4MA34hFbc1NcbZTkDFYPNn9JylawEDmkDLklOdGJpz4z_Kd5HGEtjP9iNqtC0STrY4dj7tIz5EdmBkzTDyj0latmTsWpjefVMhCTNVrHYeuSL5zjMTeNKxJIG6krt2PltEOz2bsvItcU9LOhecY8UJ7q8tx_iXKvyMAVdXXipdgCI-Ps08-ACqepGbTU0wHJwDKIU6lkYoQztFnGbU_6EARLJi8gHYTciGuPkfPdcdsYCNUGmhMm9Se00X_UpElhSjaQxcpnx5a4-1RcXhTjCd8kFouY0cRvBJJoai-ryZSLPCaOOXM5GRWpqsEXQ4ZVL3hAnchNAbmtpCl3PCryciSqy3wfjtf3W8wTcj4g8n7U3LwCvMN-CVOzYPA5u8vTlDlFqswTESLIdVBn9q71Y3EhWvBMGbfb-wQc04gkKxNvCOKKvMmDX1w-SQBuz7vNQdt5ln6ejN4KaMgbIZtV5de1UBD7DTgYd0DgJCHQy4J9PjLxEJRRiztLcbdWjBMb8YR9SkXKzPkoKy5BSi-9_dRWBZx6vOwKiMiPiJuxVbjuT70A4S4KBmQbL9G1KrjDY2kElmn7DN-mUNjOCYUT6fcnDKtsSfkIpYMJLZAhmzev5-znNSAe1vssz9ZQB728392uFDArYlHdgZAO3b-l9MkRk-9T501nyYvSC99ayjdQ2r8CaTpBSW6BHT2CrNiz8pDMH5QiIY1HVC9mtr4tM8GXrGID7STu7z4ic0QxxRuN27-TICs3JZSFY3_sFeyY-DSCOBJbez8fUVrD5ZadAZasfWZ6aTQTkIvLXcoI-ceXAyF-K0KdOXNfAjI2wV6SGyo9E5Ofgtlni2N5LtpxWFAFsG138bsakiKpehMLij9f9dnKztT0OfUfyuRKU6xPDUlUfvY8fdsY0CPKrI9CsW002-LLs9dRA23znm4IaHj26po3R9EM0bwRRB9T8rKt_p6AiEd6fEwqThXUCekmuYsOmyamM9o-vukhEwy953Uci2m0j1fZ5O2pz0jtczbAzlq8-nvj17nWV3QRS-HtrQWWg6izJLXf8Cxzg7V9OIU4HxSgACM6-mAT_WeTrITRgIoKimKPNuKtcdymgGy7WR6pBrjWAv_UY3g3EMZ9iVZqpxkCapFJ3O_8Kjy4LpnzpjA9pvwJxjgkJLx6OvLdLItT7cVgU8bUkTJzOg3VkIJh2yfzCUVObnJ9-KSEiFu8Vh9THiwzYzYKXcGWivdrnE9jElklnk0R1jFFjR-HdckgCyVUVNKaNmq8ulu"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:48.727612Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "UG73ary0LLDWyOgPr4jfmA8",
+  "usage_metadata": {
+   "candidates_token_count": 74,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 74
+    }
+   ],
+   "prompt_token_count": 153,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 153
+    }
+   ],
+   "thoughts_token_count": 622,
+   "total_token_count": 849,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

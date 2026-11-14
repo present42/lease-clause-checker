@@ -1,0 +1,67 @@
+{
+ "clause_id": "c01",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "053b475985429cca865d90ff2bf7150e162b9bc9a4d8d1e312156aaf5e3deb42",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: No dogs, cats, birds or other animals of any kind may be kept in the rental unit or anywhere in the building.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:10.515490Z",
+ "text": "The clause is generally enforceable as a term of the tenancy, but a landlord cannot use it against a service animal or a disability-related support animal.\n\nThe Residential Tenancies Act, 2006 (RTA) does not give tenants a right to keep pets, and it does not address pet ownership. Under section 14(1), a tenancy agreement provision is void only to the extent it contravenes the Act, for example by waiving a tenant right under the Act or altering a landlord or tenant obligation the Act imposes. A no-pets clause does neither, so it does not conflict with the RTA.\n\nThe main limit comes from outside the RTA. The Ontario *Human Rights Code* (ss. 2 and 3, accommodation) protects tenants with disabilities who need a service animal or an assistance animal. A landlord generally must accommodate that need to the point of undue hardship, and a blanket ban cannot override it. The Landlord and Tenant Board applies the Code in these disputes, so the clause would be unenforceable against such a tenant. The RTA itself is not the source of that limit.\n\nThe clause's breadth (\"animals of any kind,\" \"anywhere in the building\") does not change the analysis under the RTA. It would be read as an ordinary contractual restriction.\n\nVerdict: enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 234,
+ "output_tokens": 1773,
+ "raw": {
+  "id": "msg_011CgwR7aDY2Xzi7vma5qhfg",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is generally enforceable as a term of the tenancy, but a landlord cannot use it against a service animal or a disability-related support animal.\n\nThe Residential Tenancies Act, 2006 (RTA) does not give tenants a right to keep pets, and it does not address pet ownership. Under section 14(1), a tenancy agreement provision is void only to the extent it contravenes the Act, for example by waiving a tenant right under the Act or altering a landlord or tenant obligation the Act imposes. A no-pets clause does neither, so it does not conflict with the RTA.\n\nThe main limit comes from outside the RTA. The Ontario *Human Rights Code* (ss. 2 and 3, accommodation) protects tenants with disabilities who need a service animal or an assistance animal. A landlord generally must accommodate that need to the point of undue hardship, and a blanket ban cannot override it. The Landlord and Tenant Board applies the Code in these disputes, so the clause would be unenforceable against such a tenant. The RTA itself is not the source of that limit.\n\nThe clause's breadth (\"animals of any kind,\" \"anywhere in the building\") does not change the analysis under the RTA. It would be read as an ordinary contractual restriction.\n\nVerdict: enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 234,
+   "output_tokens": 1773,
+   "output_tokens_details": {
+    "thinking_tokens": 1352
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

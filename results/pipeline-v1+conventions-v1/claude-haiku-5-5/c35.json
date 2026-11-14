@@ -1,0 +1,99 @@
+{
+ "clause_id": "c35",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "f074a2e58dc00c88b0f2dbc29174557d97a141963e113a87288a2146095a9610",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may drop in from time to time, without arranging it in advance, to see that the unit is being kept in good order. It will always knock first and, if no one answers, may let itself in with its key.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:33.010373Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\",\"reason\":\"The clause lets the landlord enter without written notice to check the unit, which is not an emergency and not tenant consent at the time of entry, so it falls outside sections 26 and 27 that section 25 limits entry to. Section 4(1) makes a tenancy agreement provision inconsistent with the Act void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6453,
+ "output_tokens": 824,
+ "raw": {
+  "id": "msg_011CgyJ7UWBFNXaEfjP1UVCF",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\",\"reason\":\"The clause lets the landlord enter without written notice to check the unit, which is not an emergency and not tenant consent at the time of entry, so it falls outside sections 26 and 27 that section 25 limits entry to. Section 4(1) makes a tenancy agreement provision inconsistent with the Act void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6453,
+   "output_tokens": 824,
+   "output_tokens_details": {
+    "thinking_tokens": 669
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

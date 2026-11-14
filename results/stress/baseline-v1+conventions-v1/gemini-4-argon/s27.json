@@ -1,0 +1,74 @@
+{
+ "clause_id": "s27",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "5450a1b44b525ce02ef60163746690af00f58874b2b3eaf7bfb8de94219d8fe1",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: On signing, the Tenant shall give the Landlord a signed blank cheque, to be kept as security and returned uncashed when the tenancy ends.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T21:01:02.021050Z",
+ "text": "Under the Ontario *Residential Tenancies Act, 2006* (RTA), a landlord is strictly prohibited from demanding or accepting any form of security deposit other than a rent deposit (typically known as the \"last month's rent\" deposit), which cannot exceed the amount of rent for one rent period.\n\nSection 105(1) of the RTA states:\n> \"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\"\n\nFurthermore, section 1(1) of the RTA defines a \"security deposit\" broadly as \"money, property or a right paid or given by, or on behalf of, a tenant of a rental unit to a landlord or to anyone on the landlord’s behalf to be held by or for the landlord as security for the performance of an obligation or the payment of a liability of the tenant or to be returned to the tenant upon the happening of a condition.\" \n\nBecause a signed blank cheque held as security to be returned at the end of the tenancy falls directly under the definition of a security deposit and is not a valid rent deposit collected in accordance with section 106, demanding or collecting it is prohibited under section 105. (By extension, under section 4 of the RTA, any provision in a tenancy agreement that conflicts with the Act is void.)\n\nVerdict: not enforceable\nSection: 105",
+ "finish_reason": "STOP",
+ "input_tokens": 190,
+ "output_tokens": 299,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "jnr3aq-GBdbYyOgPoNXP2QQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:03:14 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the Ontario *Residential Tenancies Act, 2006* (RTA), a landlord is strictly prohibited from demanding or accepting any form of security deposit other than a rent deposit (typically known as the \"last month's rent\" deposit), which cannot exceed the amount of rent for one rent period.\n\nSection 105(1) of the RTA states:\n> \"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\"\n\nFurthermore, section 1(1) of the RTA defines a \"security deposit\" broadly as \"money, property or a right paid or given by, or on behalf of, a tenant of a rental unit to a landlord or to anyone on the landlord’s behalf to be held by or for the landlord as security for the performance of an obligation or the payment of a liability of the tenant or to be returned to the tenant upon the happening of a condition.\" \n\nBecause a signed blank cheque held as security to be returned at the end of the tenancy falls directly under the definition of a security deposit and is not a valid rent deposit collected in accordance with section 106, demanding or collecting it is prohibited under section 105. (By extension, under section 4 of the RTA, any provision in a tenancy agreement that conflicts with the Act is void.)\n\nVerdict: not enforceable\nSection: 105",
+       "thought_signature": "AY89a18WmDiz1Pwd87dD-OKkjQ9Y4RfqGJa9USlJ2mKUoz9OfnTArsgOMl7iCk9840uUD_YO3BfgdZ1OMay5e5g_lHbwUWgOhnzhaOZT_Ik9Odsh5FhDmnnnCUdRD6k="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:01:02.082735Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "jnr3aq-GBdbYyOgPoNXP2QQ",
+  "usage_metadata": {
+   "candidates_token_count": 299,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 299
+    }
+   ],
+   "prompt_token_count": 190,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 190
+    }
+   ],
+   "total_token_count": 489,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

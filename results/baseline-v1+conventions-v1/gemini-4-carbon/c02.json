@@ -1,0 +1,75 @@
+{
+ "clause_id": "c02",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ca067addf33b890bbd9907fef58e5ed5db51a86026a19f3199841c6560abef63",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Out of consideration for neighbours with allergies, the Tenant agrees not to keep any animal in the unit.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:09:09.464766Z",
+ "text": "No, this clause is void and cannot be enforced. \n\nUnder **section 14** of the *Residential Tenancies Act, 2006*, any provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void. Including a justification in the text—such as protecting neighbours with allergies—does not override the Act or make a \"no pets\" lease clause valid, even if the tenant signs and agrees to it. (While a landlord has separate remedies under the Act to seek eviction if a specific animal *actually* causes a serious allergic reaction during the tenancy, they cannot enforce a blanket ban in the lease itself.)\n\nVerdict: not enforceable\nSection: 14",
+ "finish_reason": "STOP",
+ "input_tokens": 181,
+ "output_tokens": 1025,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "ZW73avzoK-6gw8cPi5We8QE",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:09:23 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is void and cannot be enforced. \n\nUnder **section 14** of the *Residential Tenancies Act, 2006*, any provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void. Including a justification in the text—such as protecting neighbours with allergies—does not override the Act or make a \"no pets\" lease clause valid, even if the tenant signs and agrees to it. (While a landlord has separate remedies under the Act to seek eviction if a specific animal *actually* causes a serious allergic reaction during the tenancy, they cannot enforce a blanket ban in the lease itself.)\n\nVerdict: not enforceable\nSection: 14",
+       "thought_signature": "AY89a182699WcIhh3XeqTLvCQTSWITvxCfPm_OCjgOV8u2I6YI1v0z4binPdh9rTNPml-n-TegoVm2LhqP2LZJOabdJndF1Cz3RLDrQZ1uF7ws6k7ndGH-e1Gj7o10hDphiW9LR0Q0-vWzrhWjGVv_W9YBFGo6B6um6iP5UTdvmnEcSHm4tk77LWmL9o7gw5C2_x99Ew_GgnkFxF_9i8ncpHsCvoOUyDDregS7t8tJcs7chMNoDQMjss6DzjIp_hPxKl9Z6wk4d1sgdK8Tsj8gfvUfe_0uWe87CndCzPBYRKIC5m5iN1OD9cfG0VZQ-AOk347t5ug1tCwk7ErRd4qVGykFwwuRhMzpOiFchh9ThOJ9-m71ffBbqUWkW-629HPxOQL3lxh5PATo6FpmaPuI1hZCAUHSJp8BvzuX5xL0DJ0B6R9SCIb11TzksDvwv1h9ybQ7dTZbpuysAgbwO7VKTqzb0-1XgXxgg7M3N79D1kXq2phsr0dnIxyWGx4JHsLIlY5clfi-INgbfJ3_U059jSuh6HRDRv_rBWrjt4nGWLJssBe-yR-NeGiYJ1iq3pcwE2F7L10kU-Cjj-wd3A1BJdLbaU5J-meUo-J_bPa0-4qdr1cmOm51ctFcfpf032a86JsNdyQCWrkV1cIR7pNJ0n8cjEKYWjj6FGuy_kkhRivA5kqNECe8Y8ovp-rEK7w-Xwp4HsNF6w5Hvg9AJViNBoHZF9baPg9MVK0fBDly2dU0PD_g4TcHe5WdpOHtryacWaPNT1jscuB_3-jzUwl7hFTmDZjgdLVgdXJuKwpHnAeV35MHlQ8Bn0ec71dD5a_CuYUq6KfqkoTbo3keFL_7QvAuoac2QUzayNNg4AjdDNT89IiFAPT01tH4_Fyo7YDzmG5t1olnDXvbHvgfea28K5xzyDUPvsp2eXrYQugwjbYV_jFsB_o7ErLye7ym3XggijOM0RJ48qLnACkmv6nX5M9YT9TgJUnMdF2tIKX3t0-PPjfoYDToJiWe_XVqDksjSxlrv-q3h1EKqXgvOSLU0d73aeO2p2XhlzYtqx3q5Hy9MMGjgXuVva1meEL03HSmthUP42Sa9QMVpWiAlmwSaFcrjdqOT5Y8Op85ruekipHdRhnd0JgQE_kn4swu41rJjKFVVdWWQ9pc5_Xj4rT6hJW8GQTi6rLsEAmIH65oK9loZfS4IDTY7dYPmCf9V0ll4HElLECA6aAZVJestqwl_cPXpg5X5hU5iVxEUYF2waSw4ng6pBRd5Mjz9YLSipZyqKlBgSaY0b6dlN9vxLmyttE4jpjeMpsCYoxgx7k7W--FkNABnD0dS_fE7XPm-H3rXv3lxp86vxHrIqnmFSAUePIRfTESBhnYazqjCzLkt0pcHs0ywp93P9bMS2l6cJw53KQV-upGQIVZLVTtl0inytiYlcFSjFZefS-ujlrc022R9gVpnl1EXTnQ0T7UfAIZEfJ4r_YyoAFuvbfRK3gZFYh-xF2n017KQyn0cu7RJigPv6W-kW7_D_O7-RK5wR7ZAn65SqJ7ebM9QC6kGxac7sGSiHgrCkSaMoHBjXzdO79tkKuDfEHZJDJCrXONcUQm7F3sXwtkP9bolLRls5L4cP7Idfb601jBVH87I5xZgsGvbvcKUwbwHxZzb7xIXIgZoOXpTG6Si7wEbJ70V2Br30t1gvYlTfBMv_hThASP3PbW8PMi9rDbKs47zf4MMTEjIru4YV-sFnmZuq2f3vpDz61mkFV1i0_dVpV1vM3rQCuV2cfzfpevTE1gWyv0dXLco9mPIvX1BjA8Y2LkcOf4AMPV8NN-TJReYPQ8-VyUP399SmM-sYhrtlydP-9eExP11h2m1bIKgoPurXWYGhBWjIp13pXXixjvfKW8GlTWlTWYdaFikPxxbBjTtEd_OPJqkMgJo0Hm5wf4_aRHCtZr4XFVLrLeDXZTWmITL3BlyGs6I9uPxHR4CZymdronkAQczo0AQcM5SKsG3MeII9TrYFIeVKmstD9XDIfWREL_fjXgf0aT88SkSfqX2xpUTuAj1otUjnK-6YyAsPd36VdyXmG1l1o6vsV761w_ZnTHbomTFuoL3KAyTJF4bGjs-EAj_SDi33iTWcG2ws4_9wO0nuHjNhPJauVpjXHb3onxNKnhCi81SMBlGAT8n_W5ElFmj2pXlIycDELKSZgtVbvrfmKm5OfBPDpHVXCrn2ld-ZpeUiU4AKIELma0wPH4uA9Qpj2hFedfuvi49yv0jdM9a4EU2_CPwKcgTKv0PZ6Ba8n9FAF8_gnAS_k978GD3E3hbgJKpnnYDV4lsiQB-UGBfMMg2RE9Q7xso3y-yPwqzcjpr0hIMpN2mBrmh2WhHHpnF1kwSYhIctsVLF3PfBzpg_AahcrOBh9gY93cckHS6AMNx4D-ysWpM2hYkXQBG2eM4_8RAcAH9a5__vmKTwHpurBdTCGd4mk5oKaodZvWf-kmIg1EhcrEZLJAe70cZf8jHRC8FOM2CGrSHNiBqGPpt6fL0rwOsAbF6TwHCaWLT8ZIBlzkluEoxMQTl0NhuXfrxf_7ihVrzY8zloDwTd5CjIhbMtEcrY94zwpWDreSCoVKgJ0_vOXqN2-2KEp9Rk2Qk4zwM2oew8p8WJPNxpIIYNJb0yyFTaKKfWjhvbXdACrTYxRMbL19yPvjUfWjE1abkX6NFGjiDwrQ0vaaoMu7xL1LK-jgdafg1mZBjo_rkjUopQsHHiYfC9OPN5s8Pga6XLDFq0bBcRszXa2LchKbYsMbkMqp-kd_dZIIVXOFcyah3OTy-E4tBlCV07byJ4iRiWgFqxB4dhLFriHAGyjqvfv3kny-SSQGZooyqSUuJjvwaeizTr1W7lqedTFv-Wcg8ZvGckRjLXb8RAS7DyzOt0czMp0bNwnl_4U34O6bdaH_9rFoAkT2EC7bNCMFQ-4oE9kHleiadzH4j8uyjPn66JrR1BmHGkIvbPHg_bxGiibaqJrMNT0hcBclvBcq68VYXy6o7Q3uBmoZmziZYJn1dLZts2vkomZdo4RpRgwikEeprSo-aPlGQbuWQpx4nHGOfNqTVLU-1zDBhN7wMHf5wgiWuYJwRhwFGnaezPO5tCxbvXO22C4YDBPbUINxNlWka1pWsibUftLoCWL9bZX8KJe5JhhFzfwmrtdAC3ON33N2bzkpSj5SvA5PtMSab2X7kANwbR1mQuPT-hq_kKm_eiEIuK3_pAFwphbhz7_6As7tGFezhkSRp5pqxa4WDXZksdV0ZQpn2PdsRCfSCc34JJyrDUO3821OkvSnqydqGg44lvKgSrNNTXGbYgMeG_VfxmIVF9fJqkvdbJvfKWY_MPy3_vGUk67oUeq5REkErtWXq7SYE0T0FFzCFy1SKcNSaHClyRAL9goDJzE94UUJtSu3DUtSGE4h4T9JVmm5sP4uZ6kFvHB2VSGiaxVkbI_QFRXEf0SyGVdwuc1xLcqCDGYm7fe7jVDF0rM-xvkYI8fx1UTHkOS043Mjv7NUmAm1zRYM9fWw6fm0skCh1np1y5BAUilveFE110F3D_YvhR9wdP4rOAZ6tAu2lmHB-b_K4GFv7e3Vy66fsVcZtkUBhQqW6jkaURXipscFehY9zuspoFEFYODvoJ2pTPMzKt8X-4gNS_la3fcYAz81NLOndmuiFzSZney_7dACNz0Vq-0FG4btyri31mV_QHB6g5LtnO_-H4NMMl7GmqLfEiM46GRXA4zSnAUEV3PIR_FXXwQnXb4V1xmfF1t_CnCFbkWyBhTGLSkd1Iunspntr5xJ_ncVWBqCLcSTUdGJoEyKkxvxPf84GUapKTWxdlcoXWpqdbw7Ry-tuKI_1alvUaUVyy2tsai6Eip4LEhaexbTMYdOg9ipLB-jON19ycY7oCh5jpcjTTszAP1LUuBCYXtYjLEYgXowz1qwPxQCKZDzJGaK_FN_A1f3blOfx_rSgmnQ7hglwfQKRSxBpezpek_szc-PDeL5LSYx8h_L2Z8Dd-sJiHAvwIBViz6ow4KnWx-0ddbMZ3sKSJRuaCmEA_IkU0ayv_lvnfNBBNEFSDN6HqQ2IsLHvTdpi3JjuKDyBWHabw-ieZUMZUEhJMxsErGng7Kny-G-wgU093rzhgKlEOAa1xB8E7T0EQSVnQHINXYLAV13GfvD64wmDMMBkl_fIolVxQv3jpuQbNiBAlpOI-d-HplIIsK7JbzNgInqc0U0apwoq_OQPgmvR6uucSmgKuJuRWcz6HR1hWwEsX-jXOOlZ6m2XAJei27FfdmRbYy19UWzY52KxSBWFxCmKZxjVqAQa0qo9-LnIqzIGjJe08wNCBlVTMaWPNy1fDboWD7H_ULrHfNNNlEqzjEbsKdplgGls8VzSFNYhBiFPpxwPjLGuacRUu1GgRlLdqoEfoYai-bKerlxYiiPQSOjuLYrt0CM6CEKDtR38kQqW21Ft62k4zXUcl1o4mDInjPeSxccjywufmEi-70AszvYDM9F34qW42YCyaYIeGpUwWQOy40JxnQO9fh2LizRNVONeSGfF3bTb-S161t0dW93zFEw_9cQG6LF4jRSBAmgVCR3yZ1ThL4Zq_lKz1aU_GV509I-9SUuaoRhQg4vAgyNOumO71B-tikv2tJv2ssaD-8Ndc5BUFDyf5XRXcIPJCcvUibGfrHNiub3nARxyxDF5XByeaB262niwl4FHNiX23npAMCoOzTrcu9y20lGaVgM-2XVwQ-329Zm9YxKutsZc-bpDfotBlW5Po65sJfrbxrTdsKsg1HCoQPbkudp9dkcRD_iqPRKyD-FUDKDqvwW76yc2jqz6FDah221AbArS_xvr6E9msE6upyRzzQZqKAnYrjx_8vAbiiarC3i6eK_jUITizKoi-Z9Mbo0PslN6I5rbOGgmiUKHqracC3eBt4f3lYRf4bP3Mpv4oW17H8TdB4nPfTUoAYOCvSup9rs_6ZhMN0QM="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:09:09.717948Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "ZW73avzoK-6gw8cPi5We8QE",
+  "usage_metadata": {
+   "candidates_token_count": 150,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 150
+    }
+   ],
+   "prompt_token_count": 181,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 181
+    }
+   ],
+   "thoughts_token_count": 875,
+   "total_token_count": 1206,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

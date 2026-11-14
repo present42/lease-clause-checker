@@ -1,0 +1,67 @@
+{
+ "clause_id": "c32",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "38e21f02b6aeab1871e2bf512b7c55e1e27b58019ec54c4dc0d5f4f3e60cefa7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Any increase in rent during the tenancy will not exceed the annual rent increase guideline.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:00.280686Z",
+ "text": "The clause is enforceable. It restricts the landlord to the Act's own limit, so it gives the tenant nothing the Act doesn't already provide.\n\nUnder the *Residential Tenancies Act, 2006*, a landlord generally cannot increase rent more than once in a 12-month period, must give proper written notice, and cannot exceed the annual guideline set under s. 120. The landlord can seek an above-guideline increase only through a Landlord and Tenant Board application under s. 126. Rent above the lawful amount is also restricted by s. 116.\n\nThe clause is a term more protective of the tenant than the Act's baseline, so it does not conflict with the Act. Section 4 provides that the Act's protections apply despite any contrary agreement, and it would void a term that tried to waive or reduce them. This clause does not do that. The tenant could enforce the promise as a contractual term, and the Act would impose the same limit regardless. One ambiguity remains: if the Board later grants an above-guideline increase under s. 126, the clause's wording could be argued either way, so the drafting should say whether it applies \"except as permitted by the Act.\"\n\nThis is general information, not legal advice. The exact wording of the Act should be checked against the current consolidation.\n\nVerdict: enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 226,
+ "output_tokens": 1524,
+ "raw": {
+  "id": "msg_011CgwRBE6vD7Z7ADtD7QsVB",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. It restricts the landlord to the Act's own limit, so it gives the tenant nothing the Act doesn't already provide.\n\nUnder the *Residential Tenancies Act, 2006*, a landlord generally cannot increase rent more than once in a 12-month period, must give proper written notice, and cannot exceed the annual guideline set under s. 120. The landlord can seek an above-guideline increase only through a Landlord and Tenant Board application under s. 126. Rent above the lawful amount is also restricted by s. 116.\n\nThe clause is a term more protective of the tenant than the Act's baseline, so it does not conflict with the Act. Section 4 provides that the Act's protections apply despite any contrary agreement, and it would void a term that tried to waive or reduce them. This clause does not do that. The tenant could enforce the promise as a contractual term, and the Act would impose the same limit regardless. One ambiguity remains: if the Board later grants an above-guideline increase under s. 126, the clause's wording could be argued either way, so the drafting should say whether it applies \"except as permitted by the Act.\"\n\nThis is general information, not legal advice. The exact wording of the Act should be checked against the current consolidation.\n\nVerdict: enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 226,
+   "output_tokens": 1524,
+   "output_tokens_details": {
+    "thinking_tokens": 1108
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

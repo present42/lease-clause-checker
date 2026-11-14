@@ -1,0 +1,111 @@
+{
+ "clause_id": "c12",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "ecbe0441f38f686115e173e5cd741f1ef5affc35214873ab4f80564d13e72e8e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nTo carry out repairs, the Landlord may enter the unit on 24 hours' written notice stating the reason and the day, at any time between 7 a.m. and 10 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:15.963771Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"27\",\"quote\":\"The written notice under subsection (1) or (2) shall specify the reason for entry, the day of entry and a time of entry between the hours of 8 a.m. and 8 p.m.\",\"reason\":\"Under sections 25 and 27(3), a landlord entering on written notice to carry out repairs must specify a time of entry that falls between 8 a.m. and 8 p.m. Because this clause allows entry between 7 a.m. and 10 p.m. without specifying a time of entry, it is inconsistent with the Act and void under section 4(1).\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4553,
+ "output_tokens": 814,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "iHD3aspEvszD5Q_WjuegAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:28 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"void\",\"section\":\"27\",\"quote\":\"The written notice under subsection (1) or (2) shall specify the reason for entry, the day of entry and a time of entry between the hours of 8 a.m. and 8 p.m.\",\"reason\":\"Under sections 25 and 27(3), a landlord entering on written notice to carry out repairs must specify a time of entry that falls between 8 a.m. and 8 p.m. Because this clause allows entry between 7 a.m. and 10 p.m. without specifying a time of entry, it is inconsistent with the Act and void under section 4(1).\"}",
+       "thought_signature": "AY89a1_0jNokeloMmDQUpk7WQfm9Q3wtaF4ZS_zyuawA7TVdjPifYf6Vrj-K0FEvdyWs_2RJwuK1kE-Bl451FVkk03iiBsgIEhLE1iRKdfeWIoD9foxaeCph1irZ4_LVHQcQhmBnemHHqXRe33Wolny08CFCPzbQD0bqXSkN8sf0Q1tbWEx9PMF640G-X_NkchNHFp7hWreB99ifB9af0W-DVjIMZ8UbfdSlKsmn_Z8sW0jrVLTUOZugJkquE0bZTZBPrzsfNH9p5mfM-3Am3DMh2R2s_Z6Eh8yMQwOTLrzJMUtDCktwJwMuKgbqAbEMh07-chljC4k0oAV7_QMV6Pllhr-7aO8-8wLHLSOlst3ADrb_Z0ydm8MLARXwvygt_5IUgI0NoV754X-Vqq0XkUwr_xoWrDaUKhsG88-IcSKUPGbbhj9y3_-73O2V4yBRT-xOY7FaDQvx17tT6rBUXNGVp1eVbuDtXeDGB-2LJmtfkBnE53-f0rUCd1zvR1O5ASvVvhhvQxs-2lzyuN0n15or0erS6iX1F5JS_lu5GshPj9JXXVLfVGLuT7f04x_yoK9fJykLUtaDlVPsfJrBx968TFFwTwy-lQpOcc_EbRshoeBMwug4w2N9ci-zFtXW4dM8CWJZdOQz2PfNLrZE9_gi6fc9En4815Yss02mg_6kqHIH7PcdDKcAq5Hpch4A6uEGobxsaINsyr_m6qxQyCVTFwMTv0yoLrVtQrTFf7ZOuAsDG4I3sh3-z9Rc2YYwwcvmnL8rYaxSEXHpAla033ak1SD3eA3A3r9dhIICW23XfN3DEgrs3FN6G4KeXYZ27RgHJvJ1AVWXqHgd7Jh-LsHrh3Un--V7dBhFg2WhjzIiueKfCfdY8PXf1x6ZVLwApa2Kj9sF09DKBFp_xa7HXPoU8mub7BVZrb7r__DoPw9q7oUKnKBnKma4r7tVQIchD3zqqjYgumm3Mz-VdZijEwL0Mj3hqIcGh7d-qQuthKvHv1s2jMBKNqOOYgLMjrG3D5CNUO3e5W2wmVblHxU-CgUyrelGkTnEkZjcCEJ-gCu0OuWkJ50NUi6LmdfVsIepmN4QGwP870ceCQYDRn0_rIu0uqKfLYDhXem-n3u9uI5-4DviiFXRm8UXITqy4fEhfO1gsbXqB82fbfgV3lo02ZunvCo179BWuuwCeUJhknOUUfuAiLun7VXUDS6wLKg-Q9hMPm7Ur2Tx-GxDgl7OjdLRVj7IxuXGlq7xyjMxELVoCpysDRAxV1hzaKySfL07Gz_-xhNbj1DUUkXyGRwXoRNUsRsU-llWfgcky5eezGy1DHWYffa0sklxn0RR-LcrIrmGTJjavjVt7hufpQ4jxkuOjqFr0UkwCpnS8JaVGDR87jMvRC-w7Z2sV9BzByrZxPhzZMFElYKYPRDj-JLHarcvJtdPtBCAP0SF77ULHTXEddN6tYAjvBkOznekh66psa9YTIczq1dite9yLKhipRhhdzpldwPcls50prsCUwn3AuGwz9FFh_VTDGM2FyumA0FFR7YudaBbelKCo6q_3N_shlCTT35jv1WYX0A2IoVML3AWMeBH0ISq91ivG_UqU2wubaruhH8YwIi0ef3_RG4xE3wZS8RuHJVO64WwQ6T-eRVrf4ZpKvOQqd8z0Q210wofFHSee6AUsvvzUFLWaJs3OqY8_qHCTGITSL86OGYlSpEWDw0quq5dj2BKDAwYC4A-Oo2f4BrpqfaQubYjwcwy-rRoPcq-VUtpukFcC3k_Ki7UAWU5itRICf6e7MmlK1UUtFqhcVpinM5QJ3XxmdGmHXVK8BtZaXhuKI3-wjr72J5QU6H7qvlA8t6n0pfV3kLShsGGOXiQAg8yLhYlFr8RGYAD8MljDirK5Dbvy2yhPFx3aHHiwUCY2g2TJIj--18Lrij-0_CmVmIx_ZFHbnwYNa2Uow_grG-4EKbbo324T_JkI3ZAF03IuaDftx39nzhpdYkmGuai4JhVPJxxVYJyUrFZwo2R1b1TXoV299NPqwBihP0NGuXogNODMgu8bl7ptm2lNWVtvh_M5jFbdK1IySWzXVoFMDdzEg2vIcqHOciHv3seh0Kk9x2d4K8pfjO0Vog0stQ28YQFmfOG9_crmNva7-Kqd9uFREMrN9itCXLDaXD0rAHHSy9HPVIvbUdBpLyOjmJTcbIbbxQa8oKVbVCKh5mEtg1aUPHne9VToZnUcDOF7qu8YmBf1ZKa8kkS3mo8HNU01mjCZYFN8SgS2af0t3i5q5m6S5cJfPKrYL6Fg6XTbY8eW2FCvymAGM8QpZm0QpLiLjeMm_Rj0V1L8rZZghImC_2m6MGDPpiDhATKUcQb1lHcIlHY09q6QGTEpu5kr4I_yZRmYlLLIfSrNzid5wguDrCHWL4kKGI-IqjcFJq2th4C28bA0LZWd-jj7hDFc2jiBKt95qfi9LAWylLdonbZLOLqnR1I6exFeAJPHSN8tCzCr41VFsKSjIFSkor7UMfrTyfmlHshO4xehKfNP-fFh-Rlnt_6y_GQe1Tt3RO8UKG0N0M4qccNQMxmNZDtkwfk11jx0m2l59ckCIHai-BiafAMBnbY4HdtrF2D5bMU92fZL5MZtuYo95Ba9u3ux7k2MBpzbWc0cMZb-7CrSOAaWSwEK4neFuufQ966J-xHIgGi9CFYnYV1p95yWUtJLsRoZ8dNimo5d3ICZrUc6tJXxx3ahrRV2j1kS8D38A-HJBgWHNG4sh27LVwUGBktkC6IlgbQoO18N10A2voUI_X9t_8qKPQ9J6X9PFcmnpWbu5JC2OleejmKy-XKxtxAqLhrou0scva1h4Wd6kveMW13rYJASAW1gPQSqgvr-ODx790DAsuxAaO6LWJ1QhuWRNfFBnvR8XDkm_Jx5Z6exWoFHaEjczI9kdAUO5twP0_Oqv4KMnz8V2FxlVsHpB9EkUwoUi-R4pejXYZx3pOgzJbR5OzGMBUxfE-ZQTJkkihseyLgkwY8L8Xwr97Htib4lGCoKSGDzuoUzU72u2nMz4tRK1HkYLWdv8X-VIrQ_8cq1FZ03YArYuVdCVZRj9bOhJ5YP6pW5g76x4jlOEzZTtmIfin1mV0umTNUXz6N_3Ca8Y2QppBA7CvM-hbkutBTqIY6Hby2e5d13g=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:16.008778Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "iHD3aspEvszD5Q_WjuegAQ",
+  "usage_metadata": {
+   "candidates_token_count": 163,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 163
+    }
+   ],
+   "prompt_token_count": 4553,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4553
+    }
+   ],
+   "thoughts_token_count": 651,
+   "total_token_count": 5367,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "27",
+   "quote": "The written notice under subsection (1) or (2) shall specify the reason for entry, the day of entry and a time of entry between the hours of 8 a.m. and 8 p.m.",
+   "reason": "Under sections 25 and 27(3), a landlord entering on written notice to carry out repairs must specify a time of entry that falls between 8 a.m. and 8 p.m. Because this clause allows entry between 7 a.m. and 10 p.m. without specifying a time of entry, it is inconsistent with the Act and void under section 4(1)."
+  }
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "clause_id": "c34",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ce6cb540d7b1e3736377948e8c7037499f2c6f3fa8be7482f95f5bd5c7b4ad5b",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may enter the unit at any time and for any reason without notice to the Tenant.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:52:46.733512Z",
+ "text": "This clause is not enforceable. Under the *Residential Tenancies Act, 2006*, a landlord's right to enter a rental unit is strictly regulated. Section 25 specifically states that a landlord may enter a rental unit only in accordance with section 26 (without notice in specific situations such as emergencies or with tenant consent at the time of entry) or section 27 (with 24 hours' written notice for specified reasons). Because the *Act* prohibits contracting out of its provisions (section 4), any lease clause attempting to grant a landlord unrestricted entry without notice is void.\n\nVerdict: not enforceable\nSection: 25",
+ "finish_reason": "STOP",
+ "input_tokens": 180,
+ "output_tokens": 140,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "nnj3aqiiONv3yOgPmbOE2Ak",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:00:51 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is not enforceable. Under the *Residential Tenancies Act, 2006*, a landlord's right to enter a rental unit is strictly regulated. Section 25 specifically states that a landlord may enter a rental unit only in accordance with section 26 (without notice in specific situations such as emergencies or with tenant consent at the time of entry) or section 27 (with 24 hours' written notice for specified reasons). Because the *Act* prohibits contracting out of its provisions (section 4), any lease clause attempting to grant a landlord unrestricted entry without notice is void.\n\nVerdict: not enforceable\nSection: 25",
+       "thought_signature": "AY89a1_4ox_v5zv9CicPVDX74YpWdWwSipClQgU6lRUIsi7DgfbTwK2LjMQfA-n3pcJP5ADKkzk3Kxo29bEBDZ31iUl2wyTUTVlA6nfSPMs4DLCNzPK82WNSMLexFD8="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:52:46.921896Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "nnj3aqiiONv3yOgPmbOE2Ak",
+  "usage_metadata": {
+   "candidates_token_count": 140,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 140
+    }
+   ],
+   "prompt_token_count": 180,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 180
+    }
+   ],
+   "total_token_count": 320,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

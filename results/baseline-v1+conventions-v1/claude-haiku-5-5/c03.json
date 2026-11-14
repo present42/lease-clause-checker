@@ -1,0 +1,67 @@
+{
+ "clause_id": "c03",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "0c08285f88ba98def017d12203d66fc60317c901aacab6759c08fd6fc1c84b50",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Dogs must be kept on a leash in the lobby, hallways and elevators, and the Tenant shall clean up after any animal in the common areas.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:30.904755Z",
+ "text": "The clause is likely **enforceable**. Under the RTA, a tenancy agreement term is void only to the extent it contravenes the Act. Section 14(1) makes provisions that purport to alter the Act's effect void, and this clause does not do that. Nothing in the Act prohibits a landlord from requiring dogs to be leashed in shared areas or tenants to clean up after their animals there. Those are reasonable terms for the use of common property, and they don't limit any right the Act gives the tenant, such as the right to reasonable enjoyment of the unit under s. 22. The clause would become problematic only if it restricted the tenant's use of the rental unit itself in a way the Act forbids, or if it were applied in a way that amounted to harassment or interference.\n\nI'm working from memory of the Act's section numbering and wording, so check s. 14 and the current text on the Ontario e-Laws site before relying on this.\n\nVerdict: enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 244,
+ "output_tokens": 1990,
+ "raw": {
+  "id": "msg_011CgwR9558ghXCuLKMVaEce",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is likely **enforceable**. Under the RTA, a tenancy agreement term is void only to the extent it contravenes the Act. Section 14(1) makes provisions that purport to alter the Act's effect void, and this clause does not do that. Nothing in the Act prohibits a landlord from requiring dogs to be leashed in shared areas or tenants to clean up after their animals there. Those are reasonable terms for the use of common property, and they don't limit any right the Act gives the tenant, such as the right to reasonable enjoyment of the unit under s. 22. The clause would become problematic only if it restricted the tenant's use of the rental unit itself in a way the Act forbids, or if it were applied in a way that amounted to harassment or interference.\n\nI'm working from memory of the Act's section numbering and wording, so check s. 14 and the current text on the Ontario e-Laws site before relying on this.\n\nVerdict: enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 244,
+   "output_tokens": 1990,
+   "output_tokens_details": {
+    "thinking_tokens": 1678
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

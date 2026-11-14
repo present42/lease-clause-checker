@@ -1,0 +1,67 @@
+{
+ "clause_id": "s25",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "91ea56c1a2c78ad0f1b4805cb73657cf69f0cbd99ac85a2b57f0454197dc1571",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: As security for the rent, the Tenant gives the Landlord a lien on the Tenant's furniture in the unit, which the Landlord may enforce by removing the furniture if the rent goes unpaid.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:26.852284Z",
+ "text": "The clause is not enforceable. A landlord has no lien or distress right over a tenant's furniture for unpaid rent in an ordinary residential tenancy. The Residential Tenancies Act, 2006 (RTA) gives the landlord only the remedies it sets out. Rent is recovered through an application to the Landlord and Tenant Board and enforcement of the Board's order, not by the landlord removing the tenant's property. A lease term that lets the landlord take the tenant's furniture on its own authority would waive the tenant's statutory protections, and section 4 voids any such term.\n\nTwo points support this reading:\n\n- **Section 3** provides that the Act applies despite any agreement to the contrary, so the lease cannot create a remedy the Act does not provide.\n- **Section 4** provides that a term of a tenancy agreement is void to the extent it purports to waive or limit a right or obligation under the Act. The clause would limit the tenant's right to have a rent dispute decided by the Board before any loss of property.\n\nSection 4 is the provision that decides the question, since it voids the clause directly. I have not checked the current consolidated text of the RTA, so please confirm the wording of section 4 and the Board-enforcement provisions before relying on this for a real matter.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 262,
+ "output_tokens": 1444,
+ "raw": {
+  "id": "msg_011CgycndBzUv1ehBG5RTaUK",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable. A landlord has no lien or distress right over a tenant's furniture for unpaid rent in an ordinary residential tenancy. The Residential Tenancies Act, 2006 (RTA) gives the landlord only the remedies it sets out. Rent is recovered through an application to the Landlord and Tenant Board and enforcement of the Board's order, not by the landlord removing the tenant's property. A lease term that lets the landlord take the tenant's furniture on its own authority would waive the tenant's statutory protections, and section 4 voids any such term.\n\nTwo points support this reading:\n\n- **Section 3** provides that the Act applies despite any agreement to the contrary, so the lease cannot create a remedy the Act does not provide.\n- **Section 4** provides that a term of a tenancy agreement is void to the extent it purports to waive or limit a right or obligation under the Act. The clause would limit the tenant's right to have a rent dispute decided by the Board before any loss of property.\n\nSection 4 is the provision that decides the question, since it voids the clause directly. I have not checked the current consolidated text of the RTA, so please confirm the wording of section 4 and the Board-enforcement provisions before relying on this for a real matter.\n\nVerdict: not enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 262,
+   "output_tokens": 1444,
+   "output_tokens_details": {
+    "thinking_tokens": 1019
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

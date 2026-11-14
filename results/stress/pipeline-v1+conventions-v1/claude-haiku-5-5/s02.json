@@ -1,0 +1,99 @@
+{
+ "clause_id": "s02",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "b56028665cbf1f04c49b4765d85c9ba3f4c2c4ea93becee82ea2c1b662d0526d",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord will vacuum and dust the unit once a week and may let itself in for that purpose, without written notice, between 8 a.m. and 8 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:52.069225Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"A landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals and,\",\"reason\":\"Section 26(2) permits entry without written notice to clean where the tenancy agreement requires cleaning at regular intervals and entry occurs between 8 a.m. and 8 p.m. when no times are specified. The clause requires weekly cleaning and entry only between 8 a.m. and 8 p.m., so it is consistent with the Act and not void under section 4.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6445,
+ "output_tokens": 573,
+ "raw": {
+  "id": "msg_011Ch1HyDtsrfazc1w5wLeNx",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"A landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals and,\",\"reason\":\"Section 26(2) permits entry without written notice to clean where the tenancy agreement requires cleaning at regular intervals and entry occurs between 8 a.m. and 8 p.m. when no times are specified. The clause requires weekly cleaning and entry only between 8 a.m. and 8 p.m., so it is consistent with the Act and not void under section 4.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6445,
+   "output_tokens": 573,
+   "output_tokens_details": {
+    "thinking_tokens": 376
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

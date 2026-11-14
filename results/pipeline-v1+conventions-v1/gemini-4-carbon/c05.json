@@ -1,0 +1,111 @@
+{
+ "clause_id": "c05",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "91ceeb34418c9fe0472212d0d40d5eb2f384b5e5602b099c04acd6a5fbeb9b85",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf any instalment of rent is not paid when due, the rent for the remainder of the term shall at once become due and payable.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:17:59.911487Z",
+ "text": "{\"verdict\": \"void\", \"section\": \"15\", \"quote\": \"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\", \"reason\": \"Section 15 explicitly renders acceleration clauses void if they make the remaining rent for a term become due upon a tenant's default in paying rent.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4536,
+ "output_tokens": 307,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "d3D3aqumOqjIw-UPqcvykAg",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:07 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\": \"void\", \"section\": \"15\", \"quote\": \"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\", \"reason\": \"Section 15 explicitly renders acceleration clauses void if they make the remaining rent for a term become due upon a tenant's default in paying rent.\"}",
+       "thought_signature": "AY89a18qive-_uDYf8E_swyMNsWtc0QkKyj7dJ2jY5cMcq7cfHJz054hqAMMeGGDPX_rpYMZcXjsEwv-9cJXLpSZJYEXgqug36FU6nf51jvA5byfoK72v3j4tmjrSgm-rDtEphnequP_OMkr1Glq685yAN0JliHlZgHWq0KECfVC8pFzhQmZoQ1bIOgQzd5AnjXEPeDpxOOZiGCv1eHGAPw5lstXZVgVkTj0CdtwJgMDfPOONCIutnymdtDUAUvjg7sN39bLa5k3ZGFSl3f0GX2b_-_GxXV_0MG5s4LdYuHPC2sx9dJACTFb4xcXRqABOQwYjeA7gpPExl1RmtBT3psy8XSeUfR0pMdkQgOvwHRVtOkJTUcZrH3SLlb3sD0K1Mtu-oh0vWAZzd0OjsjL9V0t5ePa-UoRB_JrLmr1sAGBkWlDaZl_36AEmVKf6whVhyPSrsFw-YwLp7TOTu-hguynvVk2CG0e86EsdHImrZxPYmH9MytvOeS1KhAimOEameNrE3hFs3sjRhX_d-ATEP83E02P-i2KrKRLwLxZvYInbGpYovnRmsv0YhkJFKXAahkVlW6XZEd1PggexTh8eUHXyTGdYoaAhOxe0Ek0prDFRMjH82n7Wumkkvc8knGc7Nu68D0eHM6NCQivMsmBO6LTQMmal1WL-Jr4Lfy3tXhKBp_0ACYCRhjW79ssK_Q5fWgnu3iTFomX6ZuYWzJAUwhRhMGhJpS7Pfzq6DIYLdvI3dFCwIIrjRcXJNaU_ZVwzqIssu_DOybUMQYD1O_fARk07oeBhU2xbU1MfXQskU2rVgl-KluP-YcqtpwWoMLnEYoqURuhWzFyff-Mjxe5kiUb4XFfwjv_uzJh9Zo4wMgAfrCP_fdYPd7v_P_5q5HaAvNqsUBosc_9_ll0Bsa0RlVcPr7bPmYfBMSrebCrdXm1tFzzq6YGU1FjPkwc7tAq2kCjrnEySk_uE-q6nsJmM3Dpv53pRk4qb4QFM_Y-5IeBB3WhBHhIgeyw8xeym28xa5bEZeHor1WsAzb1gfVnvWHNspllayB_aDpsHwfUEt6mQJnwwB04rJK0TTS185bB4CV9PHJcdWtYu2QTt86XOuuF3Q4ZAUPXnFPiO9XEVfbrnZ55n8f6Z_FN5JfqYcCNTZ6RLdODAinjCnYUttaj7ExTo4j2wkwLjUTClBn0V7BcD9-St4L--d-pN7pjFDWiTGkqjMMZsV1qYAYB87AYd4eMbr1t5zxVbHWwP583FbCS_z2bCSBH5d8D"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:17:59.955179Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "d3D3aqumOqjIw-UPqcvykAg",
+  "usage_metadata": {
+   "candidates_token_count": 116,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 116
+    }
+   ],
+   "prompt_token_count": 4536,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4536
+    }
+   ],
+   "thoughts_token_count": 191,
+   "total_token_count": 4843,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "15",
+   "quote": "A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.",
+   "reason": "Section 15 explicitly renders acceleration clauses void if they make the remaining rent for a term become due upon a tenant's default in paying rent."
+  }
+ }
+}

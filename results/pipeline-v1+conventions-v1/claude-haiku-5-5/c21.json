@@ -1,0 +1,99 @@
+{
+ "clause_id": "c21",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "a5eb3d29ce1fb399c10fe30eb68ee182d6388c0d521f55e03bd4552d625da991",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nRent is payable monthly. On signing this Agreement, the Tenant shall pay a rent deposit equal to one month's rent, which the Landlord will apply to the rent for the last month of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:27.166890Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for one month.\",\"reason\":\"The clause requires a rent deposit equal to one month's rent on signing, which is within the cap in section 106(2) for monthly rent. It does not conflict with section 105(1), 106(1), or 106(10), so section 4 does not make it void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6460,
+ "output_tokens": 674,
+ "raw": {
+  "id": "msg_011CgyJ73UXPV2raoBmuMUeo",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for one month.\",\"reason\":\"The clause requires a rent deposit equal to one month's rent on signing, which is within the cap in section 106(2) for monthly rent. It does not conflict with section 105(1), 106(1), or 106(10), so section 4 does not make it void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6460,
+   "output_tokens": 674,
+   "output_tokens_details": {
+    "thinking_tokens": 525
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

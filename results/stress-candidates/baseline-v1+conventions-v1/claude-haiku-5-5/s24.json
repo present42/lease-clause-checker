@@ -1,0 +1,67 @@
+{
+ "clause_id": "s24",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "a240ee0c0d3ea5c399a233591caac11f27f0be6fbdbdf406458f84a227e977de",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant takes a job outside Ontario, the tenancy will end on the Tenant's last day of work in Ontario, and the Tenant will move out that day.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:26.712805Z",
+ "text": "The clause is **not enforceable** as written. A tenancy in Ontario can end only in the ways the Residential Tenancies Act, 2006 allows, such as a valid notice, a written agreement to terminate, or an order of the Landlord and Tenant Board. A term that makes the tenancy end automatically on the tenant taking a job outside Ontario is not one of those ways, so the Act overrides it. The clause also purports to require the tenant to vacate on that day, which the Act does not permit.\n\nA tenant who takes a job elsewhere still has ordinary options. A tenant with a periodic tenancy can give the notice the Act requires. A tenant under a fixed-term lease can try to reach a written agreement with the landlord to end it early, or can assign or sublet with the landlord's consent, as the Act provides.\n\nI am citing from memory and have not checked the consolidated text, so confirm the section numbers against the current Act before relying on them.\n\nVerdict: not enforceable\nSection: 19",
+ "finish_reason": "end_turn",
+ "input_tokens": 250,
+ "output_tokens": 2385,
+ "raw": {
+  "id": "msg_011CgycncZ3u1USsAfKWQJBE",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable** as written. A tenancy in Ontario can end only in the ways the Residential Tenancies Act, 2006 allows, such as a valid notice, a written agreement to terminate, or an order of the Landlord and Tenant Board. A term that makes the tenancy end automatically on the tenant taking a job outside Ontario is not one of those ways, so the Act overrides it. The clause also purports to require the tenant to vacate on that day, which the Act does not permit.\n\nA tenant who takes a job elsewhere still has ordinary options. A tenant with a periodic tenancy can give the notice the Act requires. A tenant under a fixed-term lease can try to reach a written agreement with the landlord to end it early, or can assign or sublet with the landlord's consent, as the Act provides.\n\nI am citing from memory and have not checked the consolidated text, so confirm the section numbers against the current Act before relying on them.\n\nVerdict: not enforceable\nSection: 19",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 250,
+   "output_tokens": 2385,
+   "output_tokens_details": {
+    "thinking_tokens": 2062
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

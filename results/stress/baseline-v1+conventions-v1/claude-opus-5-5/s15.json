@@ -1,0 +1,67 @@
+{
+ "clause_id": "s15",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "e5f15b15438f03a87db0d91da95785ec9fcfc1c006441f4ebd3668d3102a2f0f",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant may keep fish in an aquarium, but no other animals.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:31.458707Z",
+ "text": "**Not enforceable.** The \"no other animals\" part of the clause is void.\n\n**Section 14** of the *Residential Tenancies Act, 2006* says:\n\n> \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\"\n\nThe clause allows fish but bans every other animal. That is a prohibition on the presence of animals, so section 14 voids it. The permission for fish is harmless, but the landlord cannot rely on the clause to stop a tenant from keeping a cat, dog or other pet, or to evict a tenant for having one.\n\n**Practical notes**\n\n- **Other remedies remain.** A landlord can still seek to end a tenancy because of an animal's effects, not its mere presence. Examples include:\n  - substantial interference with other occupants' reasonable enjoyment (s. 64)\n  - undue damage (s. 62)\n  - serious allergic reactions or an inherently dangerous animal, where the Landlord and Tenant Board (LTB) considers these grounds.\n- **Condominiums are an exception.** If the unit is a rented condominium, a no-pet rule in the condo's declaration can still bind the tenant through the *Condominium Act, 1998*. Section 14 voids only lease terms.\n- **Standard Lease.** Ontario's Standard Form of Lease also notes that no-pet terms are void, except where condo rules apply.\n\nVerdict: not enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 220,
+ "output_tokens": 901,
+ "raw": {
+  "id": "msg_011Ch1Hwgp5SW5Gd9r6rZSDN",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.** The \"no other animals\" part of the clause is void.\n\n**Section 14** of the *Residential Tenancies Act, 2006* says:\n\n> \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\"\n\nThe clause allows fish but bans every other animal. That is a prohibition on the presence of animals, so section 14 voids it. The permission for fish is harmless, but the landlord cannot rely on the clause to stop a tenant from keeping a cat, dog or other pet, or to evict a tenant for having one.\n\n**Practical notes**\n\n- **Other remedies remain.** A landlord can still seek to end a tenancy because of an animal's effects, not its mere presence. Examples include:\n  - substantial interference with other occupants' reasonable enjoyment (s. 64)\n  - undue damage (s. 62)\n  - serious allergic reactions or an inherently dangerous animal, where the Landlord and Tenant Board (LTB) considers these grounds.\n- **Condominiums are an exception.** If the unit is a rented condominium, a no-pet rule in the condo's declaration can still bind the tenant through the *Condominium Act, 1998*. Section 14 voids only lease terms.\n- **Standard Lease.** Ontario's Standard Form of Lease also notes that no-pet terms are void, except where condo rules apply.\n\nVerdict: not enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 220,
+   "output_tokens": 901,
+   "output_tokens_details": {
+    "thinking_tokens": 425
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

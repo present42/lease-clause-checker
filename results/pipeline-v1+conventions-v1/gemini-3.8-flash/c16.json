@@ -1,0 +1,120 @@
+{
+ "clause_id": "c16",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "4938d774e186dfd34f104e35388742542d1838b07501bfc42da66e5c056d874d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the Tenant's dog causes undue damage to the floors or doors because the Tenant was careless, the Tenant must pay to repair that damage.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:16:21.607771Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"34\",\n  \"quote\": \"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\n  \"reason\": \"The clause aligns directly with section 34 of the Act, which establishes that a tenant is responsible for the repair of undue damage caused by their negligent conduct.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4414,
+ "output_tokens": 541,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "FXD3atj5J77Mw-UP1o7noAE",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:16:28 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"34\",\n  \"quote\": \"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\n  \"reason\": \"The clause aligns directly with section 34 of the Act, which establishes that a tenant is responsible for the repair of undue damage caused by their negligent conduct.\"\n}",
+       "thought_signature": "AY89a1-MIkuFr1wwIp0fSuOxAbm_zd3vVj4AkdI7NXboRO7yyJvT0sLPtGb4eyePtZFvXAFWLavJwqwHln1XDQOLv-qKfzsCYlzi1NOIePWZm1fw0k1Wl5RkMXKR7q4JVXJ5WjBQrw9_-B_DCjUPm2LrcjAHo_2v9kelUXXcQ6qgoSaPz3gTH7ZzTs-T2pg35VEj9fIoCcLt086QCc0jDkhMItbH_iotk7WKyAu0xg0Nadyrg5qYSNAlnfEvSd56jrSTj32jkzHCBy8dTznokEEq08kus-XEO_9r8i6dnn2ldxhhd8iI80HoMs7cH6thOzoYsYrkVHegD7Ep7DEi8Rp7eSCVDzypIuqQqI_HBwkWAewi8lnHRf6EhaoliASVpzsd0lhhYd8y6gPfVpKn4kqrDGRjaI6RmOs0AsBKlYGnIVS2eEAb--NF_NdKaVaDhcVw8x8qO47cHsdRE2rTwmNveC_HTakDlcDbj17i2aV1KDKVpm3vMvH2x9boJvs0h1hYA-M_MmgtoLg3Kz-kEGA7I-xQFcesVPykp95sapG0dR7XwbiJuAHrk2rKKiXXCIT1giBZ-h2iYKFzkQuevBGhukzuLY3ek7o0d0hgVY1G43uloMv8Q5c6-cbzp7gJVshIXsglOi_cOLGErHM5iGkplp-LGe3ahM8WJEKtLWYE70DPAHf3euTPyT_P45j6cXV7Tt4u4Szzmmss8xKGsKytMzEhH5L2TLyPHzcD63Wf5PwIfIegYFjgQCS7zf5GfPnTmRb1XGgSVYqeeakoBymbWjrTD7UpUE0aueif8E_z7XcH0gwA_elRQA5I0Ap_So65NiT941ELUMNIFzFlpcPQclY4AumVdaHx8qSlG_b8zLwE8rD_F-20_gGVOhMlCr6h58KkBvWTp8tKXgzUsYNSia7cWc9WVAMqeCVT7_rd7FOT5bK6yyADz91VcAbaxSsn6QQdI6WCD_hcdqnli3wRzJc4xmBiqhX9iPkxzlfcwprHQksDJuk3MIe7yKi99o9M0cp4x7XFrLeFTTwC_CYe76ZxI7VF-sQPRvz4tOZLRHjOrifZfARaoXT690zq_rLLLrYahZgA9ZW0nlvi41o6DcmjAg6nrl_wXWWEW5mTqdJ_usXKbUBKO-danniebPDErE1ArZ-HYWoBFMAfLzQeVZAeFtL24LctEqMEtUzwCJTZXTp7xEpX9Q73b-aJOjlFVJn_LFs0mMwCXcGNnEzHykV5WfMYuKkrVHvzDEpYh6PbG9hKMQx1QzrKNkd7nXq7PL75zlYYnfAXONcZ3vHkzcEyWnXqs6PU1uoFaG2xEIROtOigm8H2OJ7vK23UK1wMM6Irf94TRmv8e-xEe53lR-qSmqH-h-s-xPOJnDAUnAudUZd35aYMvxwmmvz3oOSPf3f8hMzntK2Zu8t8Spo2uJnftX0eb74oeDjHxtqYSAWnL36hwYTNfmu4Eo1Mz5WjoXPlGfYpFpWyRYj7uqI8xC23VQVjbzkQ4jajBd6q6dXjbtYM_sgo_D9Ku54TQzbxnw6f-wNLBsXGzOcd1Kb8tUoDhkIpvdE6w1B9ZNg3pc_YLtQW12yM_2ry6euKVW29x2skUxjqR9mLAfSB9uVKpiEs2sSVN43ryIDeTsprfdOIj5iUjC8uKd142VrHrvC4LwkgCkx4awc7ZZZkXwsimOuPPF8U8L7xczUi5YFlqphLLwxhiMXMrpCTt8jDDbG3Ol5SMm5OB7-2eXhieIAGNRoO94kT6V-D6IAaMHrTBYm9n3FFOG_5pHSgJkiS6T5VU3uK6XFzHJmQ8CIVdLrwJZyUO6NOgzoky1ps_I9D52AVMpKLENnx3-BqD0Eb31jc2ManNBDjNHNXEuwZJUWYXeFCyypWb3DtGVZBs0XdqDVRS8UZFlfg_RxCKL79gpXsUn-nVgvmNAxWVjTehlwSD_0DL_ss5OaNgp5L1tZhujPUanKtir5ZYJEzApPQc3ah16c45Gg_uPpGX71VM_xiGMYSxELrwWaQckhPJ-HdkKnBaAj6lIZgGwF0EgJWvbOvb_7cTD3z7v02Q9Cq1t1tSc_D8HGxsfSRquJ9c1KyL452PR0Nr9SvdZ4VImSqNtdz0J4FRsmCe4Wqy5A2MPGAcWUlHNp2KxoCp022gVkH1ic8zmusR-NthHGE-dJWi615S7izb2dG04KBPE_bYlpnvtt3AAfuXggLwFbyPJfMzNY0wOrSFlkK9u3bSA4LRhWyZVlaz8V_es2eK7smhGK3XBnSsm0gAgHWD1BVeeKzC9aGEEQaE5Ausma9s-Gea9eTj9zRpI21_bpME7c9khVoz4sFE6crs9G-240cQ6NWJD7YXgg2jTUnlnHE9U0V0sIG5wVUZypcXE0RVuXUJly5xX4DBJxtGCd9AJVl08NpMmgqeVomkdAohU9rdGPrtTiaTtSwdcKuxMLR-u_hEcb3kfP9ouT55QUrj18KYOvMLEs6eP3kjBIfOLbFRkJZJAGH0ffEPTenuOn2Q6WIZChNlVk1D2JCBhwYJsBh5JL1CAmD0TpPPfI0l9ms0bwenOpH5ek5k5lQ3p9SgSx9qh14Makmaqk5SrWE9e4UphYQin11Owwe3tksO9PVSBGejYRFf6pMWhJZzO1N8sWpvr_G"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 311,
+       "start_index": 101,
+       "uri": "http://www.isthatlegal.ca/index.php?name=rights.tenant_law_ontario"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:16:21.654552Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "FXD3atj5J77Mw-UP1o7noAE",
+  "usage_metadata": {
+   "candidates_token_count": 112,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 112
+    }
+   ],
+   "prompt_token_count": 4414,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4414
+    }
+   ],
+   "thoughts_token_count": 429,
+   "total_token_count": 4955,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "34",
+   "quote": "The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.",
+   "reason": "The clause aligns directly with section 34 of the Act, which establishes that a tenant is responsible for the repair of undue damage caused by their negligent conduct."
+  }
+ }
+}

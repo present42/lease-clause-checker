@@ -1,0 +1,110 @@
+{
+ "clause_id": "c09",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "a2949122f4b690f3a5d7d24f7a7d391499611bd80779406d4910bf15ce2b731a",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf there is a fire, a flood, a burst pipe or another emergency in the unit, the Landlord may enter without notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:19:08.565184Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter a rental unit at any time without written notice, (a) in cases of emergency\",\n  \"reason\": \"Section 26(1)(a) of the Act explicitly allows a landlord to enter a rental unit at any time without notice in cases of emergency. Because the clause is consistent with this statutory right, it is permitted and not void under section 4.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4535,
+ "output_tokens": 123,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "zH73apvAJ-akyOgPuYTx8QY",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:19:12 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter a rental unit at any time without written notice, (a) in cases of emergency\",\n  \"reason\": \"Section 26(1)(a) of the Act explicitly allows a landlord to enter a rental unit at any time without notice in cases of emergency. Because the clause is consistent with this statutory right, it is permitted and not void under section 4.\"\n}",
+       "thought_signature": "AY89a18ABvCx4BkvdEQiFbQBVBBCf64x6NIP6uKFbDSzZxx5yp046SglcLwaLpM8f4-yEuZU_bidiSjaawsLmfhCbzn-Be1CdSjX5mx0b637syfehqWovcjCH4IRqtJ5"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:19:08.647195Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "zH73apvAJ-akyOgPuYTx8QY",
+  "usage_metadata": {
+   "candidates_token_count": 123,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 123
+    }
+   ],
+   "prompt_token_count": 4535,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4535
+    }
+   ],
+   "total_token_count": 4658,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "26",
+   "quote": "A landlord may enter a rental unit at any time without written notice, (a) in cases of emergency",
+   "reason": "Section 26(1)(a) of the Act explicitly allows a landlord to enter a rental unit at any time without notice in cases of emergency. Because the clause is consistent with this statutory right, it is permitted and not void under section 4."
+  }
+ }
+}

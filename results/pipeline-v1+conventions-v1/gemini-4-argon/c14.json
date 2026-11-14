@@ -1,0 +1,119 @@
+{
+ "clause_id": "c14",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "f20ff74c56322f751459453b5d48891e33801c36a258877180d9f0d6425644d7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the Landlord lists the building for sale, the Landlord may show the unit to prospective buyers. The Landlord will give the Tenant written notice at least 24 hours ahead saying why, on which day, and at what time between 8 a.m. and 8 p.m. it will come.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:19:12.618850Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"27\",\n  \"quote\": \"A landlord or, with the written authorization of a landlord, a broker or salesperson registered under the Trust in Real Estate Services Act, 2002, may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry to allow a potential purchaser to view the rental unit.\",\n  \"reason\": \"Section 27(2) and (3) explicitly permit the landlord to enter the rental unit to allow a potential purchaser to view it, provided the landlord gives at least 24 hours written notice specifying the reason, day, and a time of entry between 8 a.m. and 8 p.m. The clause matches these exact statutory requirements.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4572,
+ "output_tokens": 191,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "0H73auHCKNmbnuEPxaCikAc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:19:30 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"27\",\n  \"quote\": \"A landlord or, with the written authorization of a landlord, a broker or salesperson registered under the Trust in Real Estate Services Act, 2002, may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry to allow a potential purchaser to view the rental unit.\",\n  \"reason\": \"Section 27(2) and (3) explicitly permit the landlord to enter the rental unit to allow a potential purchaser to view it, provided the landlord gives at least 24 hours written notice specifying the reason, day, and a time of entry between 8 a.m. and 8 p.m. The clause matches these exact statutory requirements.\"\n}",
+       "thought_signature": "AY89a19c9IplxHvWyQsmUpvE5YTJvcjADvCacNfUgYafs-qtasiOWHtm3ola3mtWw0y0hRQLWyMKV6IXJxgyhpnZPnDCLICTEDtrcW9DvdniMzNyapgAK9BOTxAvSEg="
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 306,
+       "start_index": 57,
+       "uri": "https://www.reddit.com/r/OntarioLandlord/comments/1airrza"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:19:12.663905Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "0H73auHCKNmbnuEPxaCikAc",
+  "usage_metadata": {
+   "candidates_token_count": 191,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 191
+    }
+   ],
+   "prompt_token_count": 4572,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4572
+    }
+   ],
+   "total_token_count": 4763,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "27",
+   "quote": "A landlord or, with the written authorization of a landlord, a broker or salesperson registered under the Trust in Real Estate Services Act, 2002, may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry to allow a potential purchaser to view the rental unit.",
+   "reason": "Section 27(2) and (3) explicitly permit the landlord to enter the rental unit to allow a potential purchaser to view it, provided the landlord gives at least 24 hours written notice specifying the reason, day, and a time of entry between 8 a.m. and 8 p.m. The clause matches these exact statutory requirements."
+  }
+ }
+}

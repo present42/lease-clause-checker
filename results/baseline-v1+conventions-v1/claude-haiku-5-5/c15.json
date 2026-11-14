@@ -1,0 +1,67 @@
+{
+ "clause_id": "c15",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "91bcf5b55d0203d5daaf69d21507b1a6f2f66873dc56e832a74c8093f827ee8e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant, an occupant or a guest of the Tenant damages the unit on purpose or through carelessness, beyond normal wear and tear, the Tenant shall pay the reasonable cost of the repair.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:40.326480Z",
+ "text": "The clause is enforceable, but only because it largely restates the tenant's statutory duty. Under section 34 of the *Residential Tenancies Act, 2006*, a tenant is responsible for damage caused by the wilful or negligent conduct of the tenant, an occupant, or a guest, and not for ordinary wear and tear. The clause matches that scope. Its \"reasonable cost of the repair\" language is also consistent with the Act's approach.\n\nTwo limits apply. First, the clause cannot make the tenant pay for anything the Act excludes, such as normal wear and tear. Under section 2, the Act's rights and obligations apply despite any contrary lease term, so a clause that tried to expand liability would be unenforceable to that extent. Second, the landlord must still prove the damage and its cause, and any dispute over the amount or responsibility can be taken to the Landlord and Tenant Board.\n\nI'm citing section 34 from memory, so please check its current wording on e-Laws (ontario.ca/laws) before relying on it.\n\nVerdict: enforceable\nSection: 34",
+ "finish_reason": "end_turn",
+ "input_tokens": 266,
+ "output_tokens": 1804,
+ "raw": {
+  "id": "msg_011CgwR9kna6USpHw5NYjXDM",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable, but only because it largely restates the tenant's statutory duty. Under section 34 of the *Residential Tenancies Act, 2006*, a tenant is responsible for damage caused by the wilful or negligent conduct of the tenant, an occupant, or a guest, and not for ordinary wear and tear. The clause matches that scope. Its \"reasonable cost of the repair\" language is also consistent with the Act's approach.\n\nTwo limits apply. First, the clause cannot make the tenant pay for anything the Act excludes, such as normal wear and tear. Under section 2, the Act's rights and obligations apply despite any contrary lease term, so a clause that tried to expand liability would be unenforceable to that extent. Second, the landlord must still prove the damage and its cause, and any dispute over the amount or responsibility can be taken to the Landlord and Tenant Board.\n\nI'm citing section 34 from memory, so please check its current wording on e-Laws (ontario.ca/laws) before relying on it.\n\nVerdict: enforceable\nSection: 34",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 266,
+   "output_tokens": 1804,
+   "output_tokens_details": {
+    "thinking_tokens": 1452
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

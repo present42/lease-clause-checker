@@ -1,0 +1,111 @@
+{
+ "clause_id": "c10",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "bb70dbbb527cd8d103e95f8d52d538cb19915d824b00f27d785377b2aa3ea0fd",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord will clean the unit every second Friday and may enter without written notice between 10 a.m. and 2 p.m. on those days for that purpose.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:16:03.702888Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals\",\n  \"reason\": \"Section 26 permits the landlord to enter without written notice to clean the unit when the tenancy agreement requires cleaning at regular intervals and specifies the times of entry.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4423,
+ "output_tokens": 677,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "A3D3aqPJLtW9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:16:14 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals\",\n  \"reason\": \"Section 26 permits the landlord to enter without written notice to clean the unit when the tenancy agreement requires cleaning at regular intervals and specifies the times of entry.\"\n}",
+       "thought_signature": "AY89a19cYH2Q4EH-KgNR5UnfzpffDFcGWzCCcRn1BBCOYQx4AQbvbMEpesYwH2MBsmayVcIBv5NHyrItYyhwgf7UhRfm-D7Hyk2xqqAknJul4jvpCCl4UEs45qADkurWCU8uwrZGzWtlnpW0h2-ssR2Na-6gwR60oai_eQinJDDY2qEvhw2iThGbwFn_dYHPMO0S8t9LkzqH6riBiYzmQIuKZV3GsWx7aD5trwkIo3cgn0CWQFBRknoB9cduK-RuKu8YY5AkHCQ5GUZvc0wUNaZ9DnUnMKCr4FEsL7e56GIOIDi_0c_izrvaHLLlLS_12-Z5b_Fq3QIWLUKT99Jg33wge-0_StgvGSsQyVEvfxiknxOLO_GRDnyWexZfGV4S-FxCXOYbNZQQLCVxwwTMZ1S4EJ1RrOwLUewSjfgJNu4DhuR0nD3QgJHz6XpWB_fLoE32HqplS8R8dg9VPd9gPq0nqpyzD2ldKMXDNaFAG4P6X6XjYnC7JvRe1R8lGj0VfkPaqog70edS4CeK1CTtsbbODFAfmmwbS3DxaBX-LJ3sSU3_3qg8j2mTQmq0MH_MTNAZ-eYznD_TdqEvmAfhE1Z0w8927VIhbi4kiXUyttoh42ZfOv_4kXCDmuq1tx1YPhWKVxRbmeWNlIz67dzlYV-pJi-xhaAUjn0J7nisnfk9n46PiaZhwWysKf-ldczfBHS5GkWUMITZxxwMUwalR3fgPZ0XToM1bylKowVQq8UdwuaSowbu6WUZzcPODzTNr4Edx92FmaATDIEaEtfGrdg3krL82buQqtbYfdKC2bxfL1VLdfggHCO9bt4b0PG1JdrhP0iD5IHk4YMKXz8J9A0aoDvZuHwH0TR-YVxSN-eoWvzQwM_fWYtUjw3aNSUbbpo_YYm5piWf6WX3Dr3S1qatapRVTN5Fyy-BE061N08UsTHgAk6JlHFHRXzpvzfYo5g8uTMKjnCMsAcW6-P1XByFUyP9rUIy_kwNgKKgDGS4yL0wyYbCHmzk37mwpH55a6MBtWEym33rbsTSHw-SNUbs2j8Tt0UZZRYUGuJVnvDxh2r7OLCAjoJ5YoZ4fTJFtZ48E8xdg3QFG5PkG85S1EAk1Ypa0V8LaOmkYrJT3BRNuWJIaiFpze6PJAvKauenRU5Gw5q278tJsw88qDjVetHPsRo4X7qe-YU32jO6txZD3b75r5BYctwBlepAXGX7E0qNbwgc6v1g9Xrjn8U43Ua9XjrzVdYdUMWvU1i26UrXkCpQ6_Xsbn7eq4RSpUR2LmXt_uC7tP_-8vBV0O_gsWTgfKfr1R_9-ZFc8cWjS4B9NkDp5wRBUj4SSNvB72Y8fK_4FUPZehWrMgrSxcLMpJkQgmh6MUVxCrxwVl1GxobgYglNYqKhxASDy5Vy8VBjo-3zye6Itkk-aCb8dBsHtrmb88Wj5JUV_mvrSW0qS-Xxe7Xm4T8yF-AGgYsAg1bzQvARcdkf-AqZqatEKfaBvOjY0RaYARKn_dpM1nrKdtwoF9jaS-W5VmWrKbaDKDkvLHChPZC4hXV2-1JzbnKsJDdEalJiMDDmdADrBsmW3BuMYx24IQxxEF_vv9p1002hzPIEh9h71-1oKwo25Nncn9Rlotmk8sk4lq-cXDVE9atYiLXLEi2nuhQfx7-AXvyvf-Bso9M6XSjJOLvd8TEd94Jbmr4nwOkRvp-oDBEBa5PBunKHxUJo6lLjFQu-8hn5TXtwWGfB-xbIpytDOevvcyjiBK-KH7vTt1WznBAeT_Ez0FBpzyd-eBjlZgHQhazmQ8JS-0M_bVLvT1pTPyuyojuUQWpi23--Kqa8j7ysBOQ5DXI4L0YkcWBojjyjHKabhsGDFvgVT29IK2REPEgnv1Mn3QLN5e-HTDPVb5bI-QUnjao5ToE0G9gVpynC4nuh48o047C_xMzqTcFpm7S4K9GnxEP6tSbV0lXOiRLQTQI6ogYqcpvYbtRlJtq8UYIhMyHe5iktwR2lekqJsJEt1JIXoWnuuUAuGAbKRs1L8qo7bR2eH1g2mAA7_UPcgvu3IKZrc4W25Os-whxT5KO8tOy7XkP_3yJcvsEyS4A-9IVpcxb17KSHQEhwb650cJ8TKGdEfB0AP-YiCPYtWT4S-3uXep9O2YT02Hkw4dsnxMIlux-rDksaJRweSvIhtzQ_vRLlm0RYU_aNkj7ESfxEnBMxEL-rgkFsQd_SIo_P4BsNZD0Ng7tGOnJEgft6ueF4SiR0ef0nYY2nZ4lxKGbli179fBcNKH6WwxveZG49VMYTFhjTnl83JCeHmVrU6cLcDpUo1SnqEbfIVDxlJHQOEXnNOmgh4NSw-2j8maCQw6xddLRjRiEPcEWXV77FuRWw2LOdU8PmY43fxTWRdxdGJmpYDeomX9Dh7QzmriPE181ilDU4OoxXtG1nBgryaOSWt9NdZrdJnukHxI1rZpSmNeC4zQX43YpwGtxgZHyugzW9mTOJ4OB9PaWqYal-BTWCYdQ-txIILWglRvZ5r77yrOmvFXGOe1H5NGlOzROyHEAlvueB-q0N1sD9D2DJSYx3sGW6HDkuf7ApBbBQPUCL4dnxp1w2-b-F78jjHwg9F5yRdKmzucrebnYf4RZaIgwfv08ctdi8_6c7VBYzVynW-oxZ4e8XL41ozcndO-Ng8XZuc-04D5iaTL42M7l00Y1ODz5WbG7wg9-gOMIzwHF5gg6CSD6pbbIEpitkGq-WYdplGfw6Avrwtn7kDsCGv5UqgulqaBO7qOJATIIyiVq7xc3gxc7tvX617eqHMtCb2HUf-PR2Igk5L40qY2vbn478yyQ0Rsb4vLGnlFCr0ALhAcy8FOFPuZLyEEfPcFXnDSGUj-4Rip7mjd9tuMJFHYHMfIasX7bmf-wyP_RtRKXTSns1Wi7RktvR7oUCIkyfY2Tbhrqrr9BMj2PMauFWYWZvarUGzj52Ipl8u3tc9J-Lr3I4_8fcZNmO_DKgqZfAw7wBoA04uDDurA1lHw7_kouRWDULQVbgHrOp8R8AmTktEN2pLt6LMVqMgwzShYzh9ovXN0Lh_Faib2lPkYzms-gbu-Xo28tZiF1GSkUck8B5NsRDMhbwIfdSJYnIpapAZ7C0YEKi3XC22z_h-HgcoubMI1gXH4lR1d4MbTdboYLGQ7QzVy_yPXSPCPDbn8tfPSoIxY636F7cN6qlARTCJyMe46rZNyGzz7B2KINnOYSp31BZmY1tetTjOoFTnh6q7K16Z_C5PCcJcV9GPRGq9B6aAWzrPm0jsaNUKZohH_acq_-lv9xispqj5GVnuyvNFQkMMSlafxhpSlrLp74NP36zIaubyyzh6ZSz6v-OmEvPcBsYedPX1leNgniLhXxqHWtLkWsbn8_ksDZeJKR994rBB3a1Vig2mG_Io3aNWD4OxD68OFSLdVLzXzL2RpS3AhcyhpJhsZ-UrTEaFefucJTNWkKwOOQrPiVKqNQhWi1rt09hb77E5nKYNve_TFOZjE9AU7rUisdieZLMymqYAUfVC7h2wQYG4irOVCaIRLw7kgwwiHJA_C3Jjb434rHHjVDfLX2-Kw=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:16:03.763043Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "A3D3aqPJLtW9w-UPidKMiQw",
+  "usage_metadata": {
+   "candidates_token_count": 94,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 94
+    }
+   ],
+   "prompt_token_count": 4423,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4423
+    }
+   ],
+   "thoughts_token_count": 583,
+   "total_token_count": 5100,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "26",
+   "quote": "A landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals",
+   "reason": "Section 26 permits the landlord to enter without written notice to clean the unit when the tenancy agreement requires cleaning at regular intervals and specifies the times of entry."
+  }
+ }
+}

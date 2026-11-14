@@ -1,0 +1,120 @@
+{
+ "clause_id": "c37",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "01be3b2da1889223e5cfe1944c375112bc35055ad7738a977e071f4d31cdecf6",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nAfter either party has given notice to end the tenancy, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, but before each showing will tell the Tenant, or make a reasonable effort to tell the Tenant, that it intends to enter.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:17.943625Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"A landlord may enter the rental unit without written notice to show the unit to prospective tenants if, (a) the landlord and tenant have agreed that the tenancy will be terminated or one of them has given notice of termination to the other; (b) the landlord enters the unit between the hours of 8 a.m. and 8 p.m.; and (c) before entering, the landlord informs or makes a reasonable effort to inform the tenant of the intention to do so.\",\"reason\":\"Section 26(3) expressly allows a landlord to enter without written notice between 8 a.m. and 8 p.m. to show the unit to prospective tenants after either party has given notice of termination, provided the landlord informs or makes a reasonable effort to inform the tenant beforehand. Because the clause mirrors all of these statutory requirements, it is consistent with the Act and valid.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4572,
+ "output_tokens": 1119,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "xXD3atysPPzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:31 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"A landlord may enter the rental unit without written notice to show the unit to prospective tenants if, (a) the landlord and tenant have agreed that the tenancy will be terminated or one of them has given notice of termination to the other; (b) the landlord enters the unit between the hours of 8 a.m. and 8 p.m.; and (c) before entering, the landlord informs or makes a reasonable effort to inform the tenant of the intention to do so.\",\"reason\":\"Section 26(3) expressly allows a landlord to enter without written notice between 8 a.m. and 8 p.m. to show the unit to prospective tenants after either party has given notice of termination, provided the landlord informs or makes a reasonable effort to inform the tenant beforehand. Because the clause mirrors all of these statutory requirements, it is consistent with the Act and valid.\"}",
+       "thought_signature": "AY89a1_-lN-UmfnMmGInrmeJr-RjdD5mSx6BuN0yWk7kZi5MlBx1T6SJdYpEC6CKncAyH5F4ri9XBBysIQcwgbtqUbd8qBcIq82Hp9G1Y1i1uXzgnoXylKV8S0wAZ1J028ZiT-mOwu5fK22gl0d2Y_ywt2rZVr-gkxa7lPl6_z98uRPrZpt61Vr5aLatGI4pd69ENeJmGbuucrXUPD3KfLKRn4SsAoiQnm3GSGPeh5HRF5OKtsgB6cC422scgSIs3W9yXer9DzvoaYXIge-njNNLLO5J07UX740onJtRvYzz_2jF0fQAcjb4D-SvOW_xEv8rl1RjqHG2mLvxXrgQH8OaQYmxmavfRwVW-Tq8T09mcqGQBY0YNJ22lT5cpYhmlqXHGhaknIp4Wa89ig-w8we-hdVHyuBJitL-aPH9s-wUxN7XoQOZncOstRT8lhqmjm71grCYJlnPKOZCscIEQbAltktCExEC-_XxZ5q52dt9gdSL2nh9t1kaC1qv-UkgB2m6TSzta928RNlTzrPNpSwxDXEZe4I-zxmrVWORRpmcEtaI1cvR8aLypXW90dTGVLev55g4AogRS5-485TIrxIT01RHzN66kbQgDPuXdQmdBITTAj4q7mpO8g5J5oNJtMtjtYym542oc14kMmPZniQMKiJpFB_asoKFK0F26VJpmFCxX_p-MZyt4YAsEsD9eZjGiBatVtG4InF9jHVXSG0ULmcaOx6X1P_r4mJnlCzRDS273jwWH8AKDYpcxlq4KHgh7p9rP8XsQYoA1r73c0O1Ytjv3jzB1i8uIARru5Nntsh9AxebGHaJrgeiwcP_eMb78JIzTfps0kkN7DsCRS2uWcf9jbmv7z5RK-8iHepEI22ewkJ3px6YB7NxPNdiaDysdWWyBoQA8zqulWJYX70Ciif8_V18G6YWasVEyCXLuFxxavxJyuXESJhiEwblyTh_J0MtpzbdrBYj8ekeBF-lX2fHhR6aLB5ZkA77AxObJf2hsoFAJtCFAkD1FpKYD_houJ0nD_nGTi4GCax_qyCHnyOEXiMFH0ujthdFzyO9GA1WdoiEvKaiL7UK1zWpLTuoEh8RPbWor-sK1W2Fgx2TL2TbhNF6CCgs6FDHUzwRoZMcbSEQQHZAmTk55Y6RlCSrMIAXUU_f0pfY4Mp7Vtk-O__l4SiK7yaKi1tYYe8kWQpV0IaxBq33vVT_EbMpLBeIHtrPpoC6wGjtOMdZE0t93F5To4fq70XmAmYy9efKADWiK6yUz44YiKfBwpZ7lXSShss4ylDh6zDiz6MHkwIIBND6VSXQClAIPaVv0bpfBEvtPBjmv2Q1E3cVY7XI9MFzS80zkXbhPjPgwMWZY7WAcUyeh0Av-ugWpE-CYuRVZNkfDmeurJH0-7IScWkU2QRt5TrqpLIYrzdfpXMWoga3Xtgas2LOOE4Tf-w1MBs8AIQ6DjSLapIpsH0gT4xRojRJh_AfvHMyHkO3Z7-UpRMm5Jw_5Dv8bSPW0WfJ8_GfVXCeyxVoa-noEQM9K0sWL5rI7OgFh6B0W4NtJnavVS4fxnrYRXBCdKrETtiBoid7C4oZkBH3aJ1XFwLoLosGhEK3J034xuTPiZqSvpKwstZskSQOGOG1EH_QCw6RQL4D3buDrVVJF-JkdJXL-JaFR1tCfejaKO3Bgc8E0IIhuHKdsN3Z2lWrt2tUTLLdLBD5m0cVDy0EWc9lC9IBGFTYzlA0ESCerB_rwN6RZ-Skgi52MYA3GyDZvOm41fjmJeEgT6FULluvn9tdpx8oxz7hZ61LIc5lFW-5NXqqotqGPpjO5bmaRZV3GMXjPIVhDgLNeeOeTzQHKhDLSr4JgfSegob0FfhiQrRmXPNSli8cYKgc1opGv5TprHRyGxkkqKUq0xvWMzjiLj9u34LtglmqlwunffWVnt_tYD1ziRwOzP0-N51bupD7eqgLU-IoNa7jtbD38Hsg4d4nBJR4mof_I_07i-7OIfaSUzjMHZVrYBfFBogCRTNj9tv4zexpGtPJR48Bi3xY28tkBk9YBmDMS6tZx39DVZbI7mDEaeX9E3a4POxicT5uNlgyQHbzF8DNutskm3FAfAgb8SqgsjBK5ZUBILOH0J3yh-xKuLE7F2mNttAxYN2zwQiHlOkMUCkD0n1bPJZQM0juEt6myuoU4dq9QiNci7vmSA2WbxtAsTPbD2UlSdqrWeRXm7fmCOwLH8PK2gYvmD4S3W6gQm-lgJmIc8dWRlYidBrZKDSqAsS4F_OiYNNVYnBmDaovwt5p6P2Ig9ssewLUNiSr9h_WoTp1VAJlCXoEz8y8r__ocQfMr_2x3n5467uOp61TWiRQiEJ67BXx6fpTINut3Ujgq2e-t-d_SlWrsNXSss69DAuVRS-mke0phcahTnRtiLGsom0G4iepIXwAgEwPZ65dHwnGnz5kOPV1aswdEQbfM9NQkdTsq0MSueL9r190RgFHb99KUqkY7yIzBebWtKx6J4D1pUHIMYEKw6vPb2l6psHZz3IIrJtj5dhZbBTQUcjxaAAORjQDiGArqRhkOI4T7HJBDiYOiCPch815Trq_8eMlKbf8D4DZuOsAO8C-_s0JkXJctq3ZhURam9sa2Ssf8qR92UloXq82fZDu675NN0zJRWAj6p26aIFFq9r_5SanBQExA9UgMMvkf2aThGpS3Q8CJcolvhBoqFEAigQNsuY6c3DpHeUWeGSISGDxdXICFdI_fOHQPbZQALj0mBssvBnst_37YC5wc3VaiXj5zKGDFkgGcJRXaaOARo5Z71Jg4u7ODmsMRMQr20kC44-YCNheno27xWEWTkgcMAWJrGZZj_MVqOpOTI9RnoPye15Tu40LZ99ZsLqS7sPqNaks1Ig3MZncmkkynRM5uJ2qcCwJWEVmqaZoLNWSoqLbp7aKuuoWfCspOtZw6T_J_YmdHHw-353uI4BoFVC7iJr-yPxNGfySvBQn_8nAh_0azEXjRSFnfhwqO1_KSRyjVoVEJXn_sGSAFYaU6oI7u8yfY5WEXSr7QJUFqBU5RIBQOQYgl608qm8keFSZewfJUIVufL2KxvAQrnhopAze61NnGo-zpjlTCnc92HEzQ4jqmcJOMxKv--A4cZzz2VO8nOj49T3UvfydbNnSloP_laLYoHkCWdXr7-hr4OmrLRlU9vdV0ZjTZ5y7-FBFnNtQfC37vE7H8LpwgQIDx16OY0hRsDFJU6pz8C--6mv2dEHch2_snt4gx1bwBKmllk0_FK3uLh-35vhY7U0fAZFxGbRgNr9GtIjIbJi8_BsVGGiaFlVRt4sLF9OhSmhUvSDeAUf9z1OncqDR-JpHxmWMaX1ZKv3ASacI-oHq4IbPJuOvyWSw2y_GJ2ayL1nXZPvVA4suIzvKyKv3JFm0k6u1hZlwki6P_NesiFTJdbBXRv8m9R0GuejqdFu9PdBndr-0qd682FZwA2a69Gr_fz3_TDrKrZ63sd0bHu5jMXOOLIBGRIV_a0JS0aqUpt4l9qZwquaew-O2nVM5QowxmaeviL7tg6cMLlY99_QL_JskGW233nVYc0eWKIrNV1KB6wKZCKbRDJ62TuAuyHhXOePr6I7Qper-NVd9Q6DpzodMvUn5juyAGviQrg9ie_tODqeQ3lvSXD7UQp9wpsA33z-QhnSpVrSbjEW2kqea49El1biTmXo6Umvi1E3WIEPiHIZ7evCiWjpR-lLsakJm3zRt0TzfztS28_z5VOedzrJwjbqiFrxRiyhoNnGlV9WG-D6lpYGxT9tKcgt1IQxwWs83MZYV7fS3B3N7tw2dBXvLdh8mPqhtdMx229aSrJBjkp3pX8kZXVL-U4-7vw9aJwldjO3pLh97yiThfdDdP_O-pf4qpqaw9AX-wlc0uUJuu4x92BbNP9GqfPqg9W4kv6cpHOOTyMMAkryfa9pAXpZs-UbQ6C5DzohAZ675edvMP5ejY0g3g8h7EkZpNzv32lQb3_N3nOx0kHCKcpDkg7mxUMDYaKAWKf2Z64Vob0kjYDhOwcYYn3VtWTfis4uMpOAEPaAzL9Kr0Czdt4U03ZrUA0nUPE2jb_p-ez6xQgfcRiWOo4_XXOMVwOFkv4j3pBQ6yUMLdRVG2h9j9gjCCekeUWl1kCIoWLibALdctkC8I1O-v12RrPX0FRc5Qg3j0w3pWJokYzTERbVk0c_OH0WBsQEaPDI9iZAwHLfjzwcvKhx3i3pswiY_x9inCcaD9L3y0a18tRLG6Jq2QeGPtNLDabaKThAc9RG0N98vzuP7n96CZIr8MRmOqM6PjzfyVcInSJOKZUeSTuvujAyJAjtZBqapXFmVrCipfD_nIcbhH9Dz_ChlVE11tRHfO3zVZpHYeCriQH9uRCrbwOxgykL6zbMRvbSpN0xRQZj-vQlfxFxIvL5ApcsKSVyf8a_LFS5YoD3JP3Sd5s3knvoivvWf13Fp2I5dEU4eSrHRk6Vt1JVyCgZaUTIzHOjua3Mta85brSbOfOZWMR4iACOnBBT8ChLhVmKwIzrEgfENjJlSkQSPPQbBbmvqrcsLrjD3BTUKA24da6oIvkvbUTa7TyC_sKfeMRmY1rdNWj59ycAjPdBKnTDWbomLfyEozChKSqchgLRsin-t20QVhRVytgzsXgy0KepwPwe_VLLmB92dvJi_6K8tag49F8Tr0NbcFkGBBHArV5YZZEXoUbEz8fIUFZnqm4iApJUG3UDhAdRWCgsnR710iXUkILh_Z1AjHWqVzb76Sum0lu8na__OVpQK0yL-OJ-qgSwt5a7OQEcTf3ZPfpKZ55_SUn2IuZlqjtLy0lL1LXV60-tMd9Gs-_jXwBb3bNgipDsVLWQ5dgXhojKQsDz9JgGrCHNj8RO2pFMV1NAnFwmnGDSjbQfJEEyBCYEwkBB155AadxPM3awyNQ2iROOXaRykr4KFA2HtH2m4J_08nK3PN-xncgyN7WXX5VkcenSpLzdmOrPC8XMxakdg7eDXiwB2zPajl6gc27MAVXjep0ruGJP3kJAGRp-os45lfJpsZzU3FJZVBsENpuRfhA2s7Vmm0NSRmGd0s9wAu_VA7_pbNEP6xyVjRvRZLCD0ONgfyGO6xDAcqOoaY7PrHf9C63GzTNVzIXTZhmLXf0FV7UmaiGDAiJ3qsaP9LgmXD1V9zzS441ldPfd9vfyZVhHkt-DTCgV-ZE08Y1q7ONZvW4-5VRd2I7IUfjvoDpkM3N8q32MhGGu8zmd01UMYmm6TrDA_hffKvOU9RTtosMpfKnYTNQ36myNzgBQK9Ry8qXfrKshN17zNzmReR3aOrhIvKbJPL9jMGW3Spo9Do114xniEj2jMZaWBVZE0c3wuS_3wao-Af_p-cKaaSVu5Qp3g"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 480,
+       "start_index": 45,
+       "uri": "http://www.e-maple.net/bbs/topic.html?no=27750"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:17.988764Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "xXD3atysPPzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 209,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 209
+    }
+   ],
+   "prompt_token_count": 4572,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4572
+    }
+   ],
+   "thoughts_token_count": 910,
+   "total_token_count": 5691,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "26",
+   "quote": "A landlord may enter the rental unit without written notice to show the unit to prospective tenants if, (a) the landlord and tenant have agreed that the tenancy will be terminated or one of them has given notice of termination to the other; (b) the landlord enters the unit between the hours of 8 a.m. and 8 p.m.; and (c) before entering, the landlord informs or makes a reasonable effort to inform the tenant of the intention to do so.",
+   "reason": "Section 26(3) expressly allows a landlord to enter without written notice between 8 a.m. and 8 p.m. to show the unit to prospective tenants after either party has given notice of termination, provided the landlord informs or makes a reasonable effort to inform the tenant beforehand. Because the clause mirrors all of these statutory requirements, it is consistent with the Act and valid."
+  }
+ }
+}

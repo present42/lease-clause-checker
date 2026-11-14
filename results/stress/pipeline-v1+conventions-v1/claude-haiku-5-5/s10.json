@@ -1,0 +1,99 @@
+{
+ "clause_id": "s10",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "73286e74564b2e26c8ef3e20509afc082fb6b34a01966c81d60b47a74b5ec518",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nBefore any rent increase, the Landlord will give the Tenant at least 90 days' written notice, in the form approved by the Landlord and Tenant Board, setting out the new rent.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:52.069751Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"116\",\"quote\":\"at least 90 days written notice of the landlord’s intention to do so\",\"reason\":\"The clause requires the same 90 days' written notice before a rent increase that section 116(1) requires, and section 116(3) requires a form approved by the Board, so the clause is consistent with the Act and not inconsistent with it under section 4(1).\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6451,
+ "output_tokens": 739,
+ "raw": {
+  "id": "msg_011Ch1HyDTqEY197MdrvZLfL",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQStxIKEAgTGAI4AUIIdGhpbmtpbmcSDGGoobBis3GikqBR9hoMHpncqKeEs28OB+0qIjD2+CLQachmpqVy4ayrqI6mxQTsAyVTa9B1S+zTD6BCoMzfZGDf51WLx66cS5gDdiAq1BEWTfaR/KrWDnSGX7Rl5ZmK7+TxqH9gXMuWz7FnnHstxIDMMwzlMhqLoIklUMfmJlsoVh7lytdXHlryNK2Btr3E4X8nWmrOi+aXMNfq7c4KJth8oWixBFVQg0AQG/jkceBQhBOwsnrVtDzzCZh6PLzDDIzgzHPy2H0aDe7DXxnH2Y9JM9Zpq/gcOq3rGcPEhp0yUYU6QdMPkvF1uMVOL5I5RuvIGOCLIzYtl+thgAiZlYVJAz4H3I8hxNnOWlSiVqRyN2DeAqJ4v5uUZ71rB6105y7MabiLdH4/A1XK5T9zkXS9TKLw9OLmio30cBTEjy0DlYqu2w+qkmFFkagwTvFAHNlOVZ79vG6v83rvvfwL44xozOyo7uhwxM85muMCvtulnNLAFm4q04X0PVh//pcLjj6YhQEK/F/jrm0CwRKrsPnUEGNVkBY8BbiBYUh1bPTJg9gmQDRxvTKRUnTqCoZx2yCq0HmYD/1+ygD13LshJrNZf2jFzOQNQHWqwNC8fhsz1/ffKqM5WJnh68fiP92TiIFhlL6SoYQLScGHemgsytQ+UF/XASwz7KbVfjkIkKwIORs1ridw9MMeYMQ7a7VbBl9jEPfjrWithmWWqERBAY5hxNzm82x4OESJc8LDkHDg6Y2Dj2h//8CVoOVrCVp6xjrHkCvTLhsjl5SzwuRR7cChVdjmtS/lbefgKX16xSKjEPId3oy26ZKbMpwcRk+BOQcnjDXefwU/oGZ8xTfsWQtKuGkzmi1nGCOJ5c9UF1qBTMCVZOUk8w7ZeruaY4qKPpae7DFahRRNOWo/DKbjCFcHR9ZLX2LDQDmVnHwaiHAyxDrZ9KJuQ9/fWJPX31isE5RqlFbl/kxMXuynrqKpFnlo7nytI6dRdf7E35e3hpXORJ0BQUrFWLex+nXXMqlbbEdEPBrVTz6Z1lGISYl4FLVzGXrHcQEUqXhzE2PRw9BPDNlCl/C2udnA2ZPG4usy6KdZRkSRNTRW2LeFSoLBF2eeXWr+eY6eO+tqWY87NtiztQhynQiwk4d+Qb2GH64lC1trHHcLbtKSawE/bbZ1q4eFD+8Uk3PsZ0o/sY4+FUtTijC7LF0WBnrsXVEROSBDzT+c5PAG61OnKvgpx65TMtBTSmSvs91ZOlYJ0fRAzG3uyTij+TJinfOF/rGuNwoe5ux1AKYKvs0e1ogTP2RbQbsGE7RHzbr4YkTeBeK3RrrDvjYY5UdMiY6AsaLyUhKmIqOA9o+RWhuGDC66VBdr84Yo1fM2xSWTjElCH34a0iHTvFwirn8Pq6NFuiY2qkUwODlAe+Gb4ir1F3J23roAav/uNjHVK20CyjgWgG1Z9dWBvsImaeS3FAuMlQK8c7TNz8Qv9cysp6weuMFvdwOAPmCae9kNXAfzuZGy0mfyC5iM7n5VfEGZfA+706wPrDVKvoLpwELeObhIEVIz+8oub2FUkEf826n3npGe+TLNb+7hHGYgCUWYtG0hHcFyktw0OMHA+QM29WcNm23+wtdYyY1cMylhTSDZ34whJRBy8S8ahYbGq+a6WbxZOs+0kVF/PrNEolKn6/mC4LiFoaF7h5j4vvDWxx8p+i1WrDwGRhUQ9VJtd6Fh4eowXBosEZn6F6inTqgrzulA8GLGeYTz8HgTO7RYUn6/oEIlLbQ0/R4te6daO05Bna+xBo9xOCxNBMif25BPS0sOElW3kjHCCADhIrrSlhSfiBnolpfJohXpld67JN00vhmkF8NzqTRza26BaraqPhvbgWOTSviBSiGDXsni4T6XHmavKTNvr815GYyIjYzJ5PcIYIsqllATiWi4qsZq96xImq7jWyyWTboCs9vb9hnE0zvlre9p0Iqet0q4yY0GRL/4I1fsXbDnjh7z58F18j9zh9+kCV3wv3UJpRlK25ZTFOb/FqnYNDwwpzP5wjxcuWae8zRxyrcOhh9DGBVV2Xro0tnafq9j8tpiun+cYYn7TwN7DxbDTHtlRgoLAkXWovrfkzh5N1/nb/DeJnuLl5QebLmjSafANzFbHTwcowqWBCiYGpST5nfEJ+FS4XrIBZP4o1yOETBgzQXVunJwIdIX22DfIk8ZLmg9QatfY/RUh4LcfAnCBgSnF3pItVJ+1daMn4TWQ6DEguo4DD20MsN8c0E0jISnTf+Y1ayX5uyPBZyLqWFwqfnH+hTGUiMovtNtrqfwnEi5zem+Z51R/4Z3r/iXOcRjL7+GXUsn0pnotAN11UHUEKbw5xrbKgbHSpe6kJY31rp3tgQakI5Jbh8xD4vBKqugxiatOTSEk8rRBUU7z2qY/ebUauOeGFoYcwEEBNCF7w9+rdRficn/D3nc8k1y09+poKX4vXTedz2ArKqOB/3+w+3FNuvRyEaz6Q+GoBeDmd0XUjc7KOhJ9SYIsb7lXJoNfMTWplKW5tQUThF7sjxNXXTaNc+yDPaBG0JHfO4OPGr+licXXNeFpKt0ZvgQOn3m7/KVDawIFQLpjZYLNhkzuKBm8adl1Xc4VbKqldpm2CLAz5EUS7pJwpXCZ0w3tBC9TPZD0sSJev2mnDTiOOqo+UI5kg1Qeg84oODDWTw/ry7zQnRcAF68cqnoxuwWk19gFXKaVTUUve+PaZMDWe3Frq2BoyMjTAr/UY8ljRwbYrWiW9aiwxeL2Hzw5Lax/vNGXKaphpbDQEBYD31vicYa+5uKtBkt0Ke8DyRN1C0QEthXTBcvi69vfXvYhh6XGIUCtLJVeK+t9eCOS+17t6EwG2GdvSX2yBJViPJQMOk1iP6YEA58LQ28+k6WDMDj0Qz8CpSQ2ub1NCClaZw72ZW+10tCPLwZJhLnEPaGtSNsohrCuyxGBb1yOLoZnEgZuSHalJss1wh85GQBcCdmJc5g0+xA0Lx4cvG7QSwD78d2b8uIPIF47cF/X5pnMYqlJXZ6VYbHw4Fum3FPQVi+F1FIDTBSstub7oU+rUpIY8D2CZsmuUK5cTmnYgUQz6i5bdXkxLzW5E7r/8MLJIukg6HhFlkzfUhLGAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"116\",\"quote\":\"at least 90 days written notice of the landlord’s intention to do so\",\"reason\":\"The clause requires the same 90 days' written notice before a rent increase that section 116(1) requires, and section 116(3) requires a form approved by the Board, so the clause is consistent with the Act and not inconsistent with it under section 4(1).\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6451,
+   "output_tokens": 739,
+   "output_tokens_details": {
+    "thinking_tokens": 612
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

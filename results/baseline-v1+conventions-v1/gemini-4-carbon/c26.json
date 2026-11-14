@@ -1,0 +1,75 @@
+{
+ "clause_id": "c26",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "f7300eea13bf7618dc74988477cffae804bf9dccabba408e99026035b647ea3d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent shall be paid by pre-authorized debit from the Tenant's bank account on the first day of each month.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:10:31.880730Z",
+ "text": "No, this clause is not enforceable. \n\nUnder section 108(b) of the *Residential Tenancies Act, 2006*, neither a landlord nor a tenancy agreement can require a tenant or prospective tenant to permit the automatic debiting of their account at a financial institution (such as pre-authorized debit) or any other form of automatic payment for the payment of rent. While a landlord and tenant can voluntarily agree to use pre-authorized debit as a payment method, a lease clause that makes it mandatory is contrary to the Act and therefore void.\n\nVerdict: not enforceable\nSection: 108",
+ "finish_reason": "STOP",
+ "input_tokens": 185,
+ "output_tokens": 620,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "uG73ao7PBcHkw8cP4ZGT6Qo",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:10:42 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. \n\nUnder section 108(b) of the *Residential Tenancies Act, 2006*, neither a landlord nor a tenancy agreement can require a tenant or prospective tenant to permit the automatic debiting of their account at a financial institution (such as pre-authorized debit) or any other form of automatic payment for the payment of rent. While a landlord and tenant can voluntarily agree to use pre-authorized debit as a payment method, a lease clause that makes it mandatory is contrary to the Act and therefore void.\n\nVerdict: not enforceable\nSection: 108",
+       "thought_signature": "AY89a1-c5KFEE1UNN71P4Z_e6kRJFJgXUP7vePozRj4jJ9rVkRvjHqTefv9jZyhYnrhJwGZM1R1J82j7N3THoXjGsu-0QUEfGJPpy4GAlBB0_ZObXh8eJ7aBHarfu-3x4m8oLbxTLz8RixETIGWqabliqWaeISxssO-qE2lWyRqdf66eeqbQTD77powLWNTA9eYSjpev8wk8Hn8fDGW-zf_8yRZaJUXo39c6m_tL5b0x4s7FO6OA6B5Y6L8K6c28lY6lr7-NX_CJJlH0_mTO3WeMhotzMcvQI8wtH_KoCfDbwQzGczGzAhmawlbaDgdFN8uLDluu7H91UpyQ243taku55MAzdb-Qi01HxmQvQ4OoL7oDKdJ6SZE2PqGpVTBxYwTUS3_QCF-mBKw7TL-ee4qIwrYEhJAcYz3b3x-dnyXKBO6YsyA-kRI39ye_DSWGmrGv0JaFARseGLG4OUq7kqPtUnCbiT2MCHfLTAd-t7Ck8MMv_ZIby4HOJ9BYCHnQzslqu0ZNARe65kzzoEQwaFhESnMX0qdpRJoft5oojOPtnius_NzPhxcaWXRv9oO7znyrbnQzd6U7AndnoxknfddDEQn1LKDwtUIPSHwRrVA8AFldhM2sP0YuwTQPHhHXEgcaLjNhT2YHD7HwpucLdO_RpZM9tUNS8tD6dHgTQMZcu1zTQpcn-ubD-5Y6xFcJppawbMFE7j6JtScMSd8R_NN2TBFoszPpEJGofWVckEHggqI1NJCgfT8COMXFtbfgGodzpYduD1Pco1erveqe-pmVUTWpWWKmxjHCSKp94WHX3frZPqk5DwmXcfAfpVlQ4CAM8fCHay_HjspBc38R22gXZuzz5qVHq2AcYJkiKKpM7rsJ5YvDSHayNog_H8vgXLb02MF8r2UDAxiJGax-AWAuUKzKIe9q8K60UduFqZdFP8gAap9w9rOLDbgVExJBn3vKJxizvj9SmO-YNgtWfOusAbOuQBKetuPQoVZLMQRtL8_l4aKPfxLkfvv7B1CuIqZEF480Hr_zCQUHT0Fxbm50kk0tTbOMGVodFP0iTbVhXexVmI4xgJiQjb8y8VJv4js0QSG3Z-9JCgDmx2qgmBY0SMgu951qNj9jncTQyjihLcRwaPnglzVP6r3OU5pNAYBlhR_aapffnKef__eMMyguy1AyNrGLN0U4TxjwbvqjMceKyJI5OG5_HotsL4SN_UGiFCJ01gGQPbdHhfLBs7kF_m8BGwruTiQsG0nAiq3rwKJCx_wfN9NmtOUvDLsMz9-Q3d21Jhc2BJ6Vl8D7Hzt7pjE3YXTTr9XcMENOuDWG7PRmjOm2xH2KxXz-6TTaKz4Z_BWi8AFc155kp4MhHwj8WYTtDYhF7KeyfHWxnvyDRt8nMZICpcBuUqi0I6UbG_RAI-OSXhgyFgbO1lmDOEzZ13OJ0tB1bCUTSBp37lu1UY65VPKjMEU7gTNBXpbKnHZi0PbFwNFpoVA68rEJoaymtO8H3bUi51bj12K4aNdxPiEgZ5K0BDZMiuhyRo0LKZQClMOSjqBDiPYmJpNqg00lV0iBu2AzcuTdzTQvJ0YMRvcynF-4ji-IoKxqSfv4WvGWp6bs0bQq7AqyOb8BS0jTsGl6OKKCypUUpdPUDJNFQqMwYBiU4wXaJAfeK4W9SGAjj7zTGe-73bpr0JQ3YiXMCHV7R6FDYiGM1j_6OJlkvBPaa9oLhVOt_hWAvdKWiiVAUTI2a0gbXbg52m4w7KbCWtZ5hWFOfyUhF0f8XjjM1zJeRICFER2HMLr3g4mVxQrNYlZXDTl1ACzmi6OdGL696Yk53oEwoJYjASjC4blVinDB6mx6drcT7Zuig3nYZu8l6KZ0r_r1_e1alJU82r-douOX5ADYRcLrCeqR-Ae8LP-LEBADMD4fLPJEC8s2NiZ1kACfFvjTIdN4nAJsDA1Y_rddL2LWEtubZddr06Qh5k-z2neCAH8oj97_wjU1ecIKtHoe2Jx-6Fv1FQGRGuaq51_dU6iZsMOQMk9XW8LnR5TFjgyBg6ecTu8qpHV5NQZYuDFF0KTynJoP66uYLf4iis-x5Ah2kIhdHwRNJsOCeAFX319-AW8Cos6IxT6rM-ZPpcOfM-MYnm0dNZ-WaF0EZ6tVcGWcrfZ4PkI7-3D-KcfbTXoT6KixXI0yEy7rWeipjLAFZ5G_zirPx06jCLU9IS5oej5nr9h4MenHeEqG2NWBGwdc4Au10tDDa_gJhaCWWF28EhqbiZcseY8aSjYzi_bZ8oNQmjq5BZpczQClFhGy_GreN03vu8obbtcCfwgiXAAyK4ewja5KJurm5I1YExyhmkCcqGKuecI2vv2N2w4TquIHlD-0_0P5pSR1YkvoibFVgNnfLBCd2yf_yt7xuqtR19GpHiFBM1LEANzU2-6qu-Q4fprr7qr29pIIoJl3eRjAWa2fEguyf_ILrYAlg9bPJKT2cMOF4Igkw-NNJD_PZP_qkLMt334yNc9kiRTYDkdltC9vhw2_QVfjlrgS0yRwmfdVyYdgmBIaQGI6o_zc7wp5GMdtyLfbpXYj0CHIyxe_rUhbc6qCgeWChtQPZKk2KjqAvzNU-c95YAYgsoz38P3j01mGt6Y57FjG6gAIvEpPe4x4R8zvfzYcB-ft5ChxBSvNVPsczfNEJfa5Yg7kVn4Xjte8_6Sw1ICOmf2RfnYLPL526CsZJH2IZQwHAcQ2G1Dh2vVcRl_sWu4KT4Wixr0ZUz-Km68vKsE5rpQpd2CxangHNaPwrS0m75fF0ON1X0Dfg8gGeSCmzWnlbLH0CxrzfFJSk_NWd-h085M5TQxpdHHszzaOc9LAlCw5OQjxOkuctv2eeOI="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:10:32.092046Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "uG73ao7PBcHkw8cP4ZGT6Qo",
+  "usage_metadata": {
+   "candidates_token_count": 133,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 133
+    }
+   ],
+   "prompt_token_count": 185,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 185
+    }
+   ],
+   "thoughts_token_count": 487,
+   "total_token_count": 805,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

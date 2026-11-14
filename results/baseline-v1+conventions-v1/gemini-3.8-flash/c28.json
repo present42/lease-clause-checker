@@ -1,0 +1,75 @@
+{
+ "clause_id": "c28",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "c0a6333a24a6d2653ab18192c65ecbab9a5d042a05c8f2725ca82f3b3e017650",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent by up to the guideline amount once in any 12-month period by giving the Tenant 30 days' written notice.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:51.531755Z",
+ "text": "Under the *Residential Tenancies Act, 2006* (RTA), a landlord cannot increase the rent without providing the tenant with at least 90 days' written notice of the increase. A clause purporting to permit a rent increase on only 30 days' notice is inconsistent with the Act and void.\n\nVerdict: not enforceable\nSection: 116",
+ "finish_reason": "STOP",
+ "input_tokens": 163,
+ "output_tokens": 476,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "U273auT5I-akyOgPuYTx8QY",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:58 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006* (RTA), a landlord cannot increase the rent without providing the tenant with at least 90 days' written notice of the increase. A clause purporting to permit a rent increase on only 30 days' notice is inconsistent with the Act and void.\n\nVerdict: not enforceable\nSection: 116",
+       "thought_signature": "AY89a1-W6Rrd6sbNUlILTQnj5wM3sSb4yNqkJndOTPlWLCUZNH2GUKXIDswrigoGExzVOBCutpkQSOEi4FldK13evB9g8sdjCTRcZqpQg77akwurD01lq0zqGTOty8PATqOiCEC7p9MlxgiZWPc9ysm993WULVEjJnKYAb6tzkX0hhwWRZn_ZSR3JCEe5AcMHxYa7xtVwkBAkaQfT14OSDR5GbfTECDmr1-ORNtYY8Vpw5sLnGf9pFAs_YM3hy1dxLMzjT-aV7yEGYT0qGB7jBBRAs34DcmK9NnIXt6qkIJe8FsSspm61Ju9Ugnq6tNTRizIJH69TRhprGR3LNQj4FcX1y6C_F8rBN1NPnu7m1ZqMoYvjKyeG09-LsCUGfG2spCwhvJJOGy-zH1J2xTaNC5veL2UGtMixqtNx0rpEwEV0VzA8Ouq2_YC3-WgFv0pSLY4E0ckdW2X72PYirHZATgEV9Lqq6IAOVGOSK0bgrTE3hmSQw8bfMLY3BKOQMlbo76g4AotiPxs-f9AURJ3vMiMwcuStUNhnBoLh6HlObM6ksQ7anKGQezO8yrn3kQ6jDb1rB1b10VnzgX3gjv8CXA7DGVp3utWvmzTznyzFowy_2_iMLoCMRYmpYPAhBExF91Q4ocDzDePkwUlJHn9DpWcjo8fan-xZ9dIodWAsRbpaDJuTnqhrZLQ16zzva86o8CNRsPmw0bYd0Wg0fSrTNTwHddVN8w7-NsLRd-obFz-HTMAG_lNxRgMXzT8BMfBAR5p8a7Jrtfj-VLGpnvEPWK7I9EgcaSsyC0F8TUsB7Sw3emEiM7LXuk9AMcUx9jXKG6X_Ws3htqoiwGL2-JZREeNiZPLzFHYfDnNmfQeN9vWBn_BHtQsbGvBGfe21JI6g5C62y0T5sT-SGcPv55v2TaeJEHXOLatG1sCzMxajiNWsu6iIfNUpzdTAZGFkPk6GtpnstBuf8uqr7tEu3HhtWKG1eqw2lbvVXI0MPKTuDUCwP0WT_1GSKAPx1myEgOBhDP_rcKCqwIcOjroSytXNjFD1xCWDVQEwNuHnpcBuZtV7Khy4-43X-hh_DDonO69Xam7s77ahApCOZVs2IQuLciUIReIBFPY2hG1Zngs6K1zqTyqrRkKbOSNrwtEl-ALMdgCL3TyJJupyrhF_yJN2bqD0XpVdo8p4T55nleS120qfhV9mRh7WNPrYpR_7BdPC57th-mnFZVG7xdnRsxRa5xQx1-upegF0ys3oVqaVUw_OVZyjTKuagmsIn4__tkpROaJKZS8Pjy6F76yr30nnKd0PWEzEeD84x_Lt0Q6JMVKte5vnoNzN_SYw-Z305oI_zPv8ICCDg1OHIkNMY9Nz03u9eCmz4zgqAbdQ-QIjHYSYQpw7oOLMIrMouHgtbiiDOtGAF_7oDDunUpLJEs6I5OwDVR1yP9QR768ECrhDzyTR5ZZ29txccBuvi52TTWCnh_SSc4kfKQXotH7a8fa1OcBZDFeFcA2ZBxEQDe2RSbVijDGLEdmsKLx-Iso5nsClJjyaeqU7rA0POtLDhYiZVKjJ4jyiya9dJanEMpgcLoY7KJBZn3Teextfl_gz0kgpARVQ22MRO_MBksiPN0a67DwZoSsJwA6-5v2z0k-KRAAhcTvzShfdmg_7jZneSPwOFnBIilbBEffO3oCrjnFNKsPITsWUnZP_4UPw5JoTGDUblk6NABeOUL88g5dCVpdBsj_VJSf5xrBK1HfqITdEAPELmrValpV4JHfgD3qJvlRmyxHD1T7yxJsiQ87_q3jjrx24zdFD2g-oXD8bFUTSx8VCedTME2fTXZ48Ay1bTVzyW8dPw5HURKHraarA_dk8AbNpML6pr7Y0WgEOG8pnDYART6iPZJMmYmfN4VfxF5lJyG_i3g_dt4reduXsC19rGwyQ1GG-UgWr39-GthV_wqQoaZbLNqcZrPqndHRUnonWBZDSUAupopdEr7HWSyISmlvX6IVb_5I1fcUzPP_3HTsb5VkFaBVXDYdb9mP6GxpgQk5TK7B0mNkSHO_rNNUFvPIxE5EZ5bq73wgAxxG1s2Fm_TTRYCnh5VqEn_GNKwPJYmi2DHxajZk8oDJDegborTACcGJUhhLL8sFnmDUB8C5DaOFsaxfCOvLWKq4sx5tcOu-LVSuGHXwtFfjW7Sw483Fd5FY1AqlFLvr82k="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:51.589028Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "U273auT5I-akyOgPuYTx8QY",
+  "usage_metadata": {
+   "candidates_token_count": 78,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 78
+    }
+   ],
+   "prompt_token_count": 163,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 163
+    }
+   ],
+   "thoughts_token_count": 398,
+   "total_token_count": 639,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

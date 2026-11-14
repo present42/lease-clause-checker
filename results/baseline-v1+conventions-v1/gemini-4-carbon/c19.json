@@ -1,0 +1,75 @@
+{
+ "clause_id": "c19",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "7ad28ea3e8e026a0f75240c9ecae3680ce66cc48ac1919bf04573dd986d97811",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: On signing, the Tenant shall pay a damage deposit of $500, to be returned at the end of the tenancy if the unit is left in good condition.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:10:09.845757Z",
+ "text": "In Ontario, a landlord is strictly prohibited from collecting a damage deposit. Under section 105 of the *Residential Tenancies Act, 2006*, the only security deposit a landlord may lawfully collect is a rent deposit (commonly known as last month's rent) collected in accordance with section 106. Because a $500 deposit held to ensure the unit is left in good condition is a security deposit other than a lawful rent deposit, it violates section 105 (and is consequently void under section 4 of the Act).\n\nVerdict: not enforceable\nSection: 105",
+ "finish_reason": "STOP",
+ "input_tokens": 195,
+ "output_tokens": 947,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "oW73arqxO-Wuw8cPyfrakAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:10:32 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "In Ontario, a landlord is strictly prohibited from collecting a damage deposit. Under section 105 of the *Residential Tenancies Act, 2006*, the only security deposit a landlord may lawfully collect is a rent deposit (commonly known as last month's rent) collected in accordance with section 106. Because a $500 deposit held to ensure the unit is left in good condition is a security deposit other than a lawful rent deposit, it violates section 105 (and is consequently void under section 4 of the Act).\n\nVerdict: not enforceable\nSection: 105",
+       "thought_signature": "AY89a19a9HtynPoF9t4V8CFdZD7Iy2c24woJMPlkt2_2JGldNyNVBx-d2ZsDvz1RI5qHxFEUzlU_qQByYNBCSqE_8Fy1bUDL03kT2NCwv1AvaB1y5z1XIAShM24CPYIEodstUUxcyKFbHNNkmtlXm1t8nXcZBNX7Y3ZtR07RBwODPzhqH4uWz2ypdp1DZ12EyYxkevWBW-FWZwOk-DA2KkwLql3YaBezGGwiMxACVPa4IyN3e1L09uWa4E4aFd_-usaCVhAJ5Mw0LCfVerwbV0HTNBFRHOFYllQle-GWrKM8j6bw0dZfslukeOGm7pgOlo1VJz-0VRSwr23GaCWRc7roN1yKbnjZKQMr-7OGiHgIEEQx_9hAN7l8Dxu9WNuDhfv4UeDYvKtG6xDr5Pi5v6-XDo3oQelrwlBU90pvB0MGA0yV1tJpILSMHqZ3_0x5cyleHRLNZSgd7_ODuaxDRuOS9Ckae0YOJR2KYcLAbdrSSMX3IsNtwpyEtTd1Rwy9zX5yDOhJJdhkb6jWwsKuxrQNJiHkoaJAMIrvQkd4_U04ZUc3ZP8IMFog3EMQNcU5Je-Aa7KfhIVOQ2JSq6JyA94mHn-xcChglfV85vgLQsLAkwGL8Fju0ZjWzxMGMdyEtz__lWDZZ_ZicOf5QHJkG50nTDg0jlgXNHAfqqlDK-AkYroX34_IAGPDtf89BNuxwM8074FgdZukzmXCOzEN79tyWpVa1MgW_z4NAs0G1P7RAdZ0w7-tLu38bL9pRKKIvvWC9TezCktLbCuob3vc6AsnKaIn9XPCdsk5DwxjyLbB-6vaMZKa4F4MPXjXnqwqF3n0-BENNdATB2SV4xaNhUW1X_imQ-rtF3lJ4BoDmMgCC8085dLlgdVZnVs2mg_R3cD2oLNgNXdSJPIrdioMmQ3wqJaSF16eOuH9kfgZIStF8E2aCgOH-x84frQYs1NXRjgNNgr2A_p0d13mzRcgIY6XiPV7vKvy4Rn0gTIi-K-yTns_ZZhvhjF3tEk_s8c3ODOCi-Xw7c8tWRxlv5SJTa0T7gVHNi2JtVaw4glI2ogEFLetQxB9SeEwLvgVMsdDYA9TuDcudb9fEQe5LkYbD047nYbNDgaeC3xYuHXjRdtHSxkt4K0iUibMHfcItzPLQnks4L_0oC85nhgmFHt5r8OUSJItDdr_eb0jG61iKQzC7GC8kIhDM0gy1bq05lsSM6msTtghV4OjLLqeRE7bqq1Fu1V_ftxLstIoKtFEBQfWr8Vr6A5iplFzFb5T9htebVq0AKEBW2cPhNihzh29ts2sV30n3C3sj6bgGlAw7zNraR7yqHYVey0EdiKruGFscuTJ0F98fPlHWx2kO5iRUReYVG10obOIdEh_DTP7vJ9p57wj7jIhaDVi3NAfRWNTg4gKHR0tXaC4ZlJ4C0DwrCDPeN-PbGf1rXGNzyYK6lFW4iocZAtG_4mOSKv75pHStdRQjflFwu4wkeBCBnRqeiEOnuVgbrBUHk9cufATlqDTHoFpYkAqNAn5qcVj7JYRBaCp3i2HOdMRepnQiwnDeQcUXVpdhCRTI9SbJ3VN8FXsghnt7mKwOXpLjGwIhZ6gqOMoVF2KrHEJcpOTFHH9KA0-Sh6VBddxh6o6QpWq8W9BwLvGDwsaz73gvEKBfFkJJaypQ7X0iDEVgYOJbosf2-l6mVEPdJaS-LSjEpOYRZ6zvleKeBlens0PHksvFmY5_Vmo4zM_QYUryA5cvQLX8oibhmn1cm-iV5cSu0q76bG0bRFHmGX8ZM34j--dQgrtSKGXFznMJYbXIUxUzKvdz1x2TEAHQGNBtilfI-dpU_xo7V9h3RnLsbGhT9yIbJ3mCMpc-jCb54dIWmxxpDV8Opvv8tZNcFKANc69hiJd--ENQVLNSgrFkKVhzOQ_z6zOVrx0BZGPcsOr1DTxWAeUXABla0MOfgrgPAQ2MRB7q9F9Czgl6IaD8Jym3HAe0LkRi8-Zo5Y0QOxhQZLDQB0Sv_hLdBCCrtilTrGvewK-ew9M6ifCbKQpVSDE3zzqSDNJmSYPj9kmgc6Buu-GxKcDuEUW4wMXs3G_sourVf7fU8YketV8qRv4tyPMzIN760pjZJpbof1MyHKOwC9Uqh80nHGkokrMacS9h5BuSKclo-J1byaN0B76Tol19OOAx5VexqsSOjFmC7CNRK1de9TGVO-6_laAtu87UIUzuJmf_ge-X11GZi-HuKc4-7HqLL6GWI0eEY2cjr5bO1sReOf7Av1nXrK-CCDlz5rBemsFWxsXItBj1UF1IuHUTnjQHrfawoY-KzNJpkIo9uXdZsaKBCL_CpSgYnS1Bp17zUuhkS1Zgznr67naycYHMbgbPhc71ldfcJ9dhkHScmrJJ7dH4jlummnVGn2233OhScE4NebJq3mNpK_Xi7GLBiRJCwlFVHRCuBWqEsdgmWCYolFNg45Ef7kxGHFtYJ_v0IPLFlrvTcYgw5vW5k9pi24hvjAHr8KfDSF9kcCfn6yrnA1i-GA_65-ZajI_yq_m2uHqWQP5zq_TPqsdqqOzSB0nbMjsNFlh6XpeIzk_vg-W1S1HqgM9sylpxuhsFmPJ09s51IfPZE0es-6qjyhC8r8hF69xX_UCz0S4J5KDinpryMhX6Oh_ZHFjJXWTM-LGhPKorsiZEcpaffn8OPqqEcFADPYaYM-wQIgGczQhGWH1cNlacEkRlVBSCzhGcRE05IodFTAS-QkJLAPt4sqeW1RSioG9Jq1V-qCXBV8Q32-1tdEkAY1I2Qhfd0nGK27ufi6GIOD6bSnB71ip1a4e1-PNdgXCACVWUKmLRFwLty5qKQVEX0Gtpdy8cvxXKZkgq4U6jmdevyZOCz3MTALC6nk8Zbdri2a2i_sh16YbO0Zv88ThO8AugJulx6rYaUovVArTfFhmyzLJqiLv2VQXbfeSGwAN7tga4qkv9CI_T-aqTdkcjUfJguaHMSVjDDZnZN29I4GCTdE1flNaBM0Ae_9i2IeGQ2vtzI8ztx6mL5yWbQutIgckumvHkqac_xP8ngdJwntiYocLeOBw9OLLqopmjiaDKIsns5aC_j01BJwvoM1oSJ7zeuch_t24pY3Tn-krPYQ9oNr36ROgY4xi5UEgYbQcGop5-LaXzNZVkf1eJs8S7UbCxSEaaoBielRRbsCFcH_8fjR7LYbXc5OBYJzsEu_A12lSPCkhLX9EswhD2iNwx6JKukMyfqaSahRJ3WtsjUY9EpO0rt3AOmsLd3S9dtIhAcBvwOnnZ-kxvWPkVC0hWK0fZHkP6OaLUmON4RUuLHN3s-EiXMwUe1yJHM9EfAZm4Ov-9EBS295nDObsE0tBX0wouY_l1fgdKQFL5lVkCt7yf9LoXXFGEsrpPIdLYy2VNWmgj_zubTqvuLkqBRYjOvYLMxlJAwe0TV0WNcIQ8Scu9IMecv4efxOfISx1OB43-iyzJEcnrjt3hjWk_eFMgl76na2bFddQx5ZiHp4yaFuVnvrcgqjNgI3UPs9xB30egm4IrzRP7nnY6WaFFmGnTE6G3RpNwS1fwwaVjCg-IkMgELiTUEpLDc3-QE185fyUdlFTc7mD4aSdcvNzIC7f3hXBjUHs1AwdbBMzB7DArMr95T9-D3qSiOrWpMsfy7zNlKX9JVaOB9HB9u0EebG_Oqn6j0rgaHZpfVB5E57Qc9vA9yZqq3uFdI-5ZH43yUrurJ9awDe7AGJsdMBFfwq070xdCqDYGZsPeKAamV-3ApIdzQpSR9sn1Gy2FnctnZ5uMZNtJF2h7wCuXE6CRptDQTvcZpzniCulnI_Yee5ytzmXeBEfUJrNWqsKZgJZq3VjINMSBpzeYHyC09EQdWoPn_jkbKNzTz8Q0rnFfSNKMcaDxvMiFMH6fLj17OELml1Q5lLxiqF1-A6g08G-2mZPNWuVN4gfQTtChvMCFKPTMV1frPgKtOwG_L71ts_fgVGGvAVEbVahTotfFKDAfSSEnnCfKLaCre_3zvjHd9FOQ-hlHNwHxVg2PZEqUm618PCmLATN75TOuUOpnE1OHexB4eOZ2SBTxZ_9aX50hLeA-T1j7D7nmYMuK9jJ5T7euJHg9dXd9NssD6X48RWFz0ZWUZtiWz70Ak9GWvHvOkrtytG8ICOd-ZCtQ4E8MmD6nPiHfbl0xYQokeRwUMtcnj5HpB3u8NRO_2mT7uhjDOB3BOjUOhImVr2YrY-5wGXMs_KBcZQ0wAQPnS0w_Ev-8iQUUIqlMYc01uAAgwoLZxzy_jM9Ypf3n5rfZ8pCWjDWQEfdfPshUqSGcS1u2IN_jQqqS-xDSfCwj5CMQ2YIo9xFDwU7MIvwe_RvJq9JcVohQYqLTQUYTv_RpbhMtXamnCMe9X0RvM2_k3TGyZdZ8Bg1H4j_zHtBh0jn6dphPw8bwD2fkDit4kO3ifjhhSkBIugatK3PrpN9Br3sL7W8ckfFbQn4OK0sz-Mgve__TnRltrKZ1qTopZ9FzHHsKw=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:10:09.972986Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "oW73arqxO-Wuw8cPyfrakAQ",
+  "usage_metadata": {
+   "candidates_token_count": 132,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 132
+    }
+   ],
+   "prompt_token_count": 195,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 195
+    }
+   ],
+   "thoughts_token_count": 815,
+   "total_token_count": 1142,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

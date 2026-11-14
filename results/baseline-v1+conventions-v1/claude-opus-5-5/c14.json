@@ -1,0 +1,67 @@
+{
+ "clause_id": "c14",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "8b959039fa68297762cd299e02db1ab163d82ff0d58a833961921a5f9d635ec4",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Landlord lists the building for sale, the Landlord may show the unit to prospective buyers. The Landlord will give the Tenant written notice at least 24 hours ahead saying why, on which day, and at what time between 8 a.m. and 8 p.m. it will come.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:25.090539Z",
+ "text": "**Yes, it is enforceable. Section 27 of the Residential Tenancies Act, 2006 decides it.**\n\n- **Section 27(2)** lets a landlord enter a rental unit to let a potential purchaser view it. The landlord must give the tenant written notice at least 24 hours before entering. A broker or salesperson may also enter with the landlord's written authorization.\n- **Section 27(3)** says the notice must state the reason for entry, the day of entry, and a time of entry between 8 a.m. and 8 p.m.\n\nThe clause matches both requirements. It requires written notice, at least 24 hours ahead, stating the reason, the day and a time between 8 a.m. and 8 p.m.\n\nSection 4 makes any lease term that conflicts with the Act void. This clause does not conflict with the Act, so section 4 does not affect it. The clause adds no new right for the landlord. It simply restates what section 27 already allows.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 286,
+ "output_tokens": 1076,
+ "raw": {
+  "id": "msg_011CgwRD4CAPuuZL8sBTsBhT",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, it is enforceable. Section 27 of the Residential Tenancies Act, 2006 decides it.**\n\n- **Section 27(2)** lets a landlord enter a rental unit to let a potential purchaser view it. The landlord must give the tenant written notice at least 24 hours before entering. A broker or salesperson may also enter with the landlord's written authorization.\n- **Section 27(3)** says the notice must state the reason for entry, the day of entry, and a time of entry between 8 a.m. and 8 p.m.\n\nThe clause matches both requirements. It requires written notice, at least 24 hours ahead, stating the reason, the day and a time between 8 a.m. and 8 p.m.\n\nSection 4 makes any lease term that conflicts with the Act void. This clause does not conflict with the Act, so section 4 does not affect it. The clause adds no new right for the landlord. It simply restates what section 27 already allows.\n\nVerdict: enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 286,
+   "output_tokens": 1076,
+   "output_tokens_details": {
+    "thinking_tokens": 753
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

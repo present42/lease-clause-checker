@@ -1,0 +1,67 @@
+{
+ "clause_id": "c22",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "f7fe038a85530764bd5b73c776176291e020cb20cf47f66d54608ba2513b4b25",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. On signing, the Tenant shall pay a rent deposit equal to two months' rent, to be applied to the last two months of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:49.702878Z",
+ "text": "The clause is not enforceable as written. Under the *Residential Tenancies Act, 2006*, a landlord cannot require a rent deposit greater than one month's rent. A requirement for two months' rent deposit is therefore unlawful, and the excess is void. Section 7 also voids any term that purports to waive or contract out of the Act's protections.\n\nThe provision that decides the question is section 106, which limits rent deposits to one month's rent and governs how they may be collected and applied. I have not verified the exact current wording of s. 106 against the consolidated statute, so check the e-Laws text before relying on it.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 251,
+ "output_tokens": 1334,
+ "raw": {
+  "id": "msg_011CgwRASr7AYjhQAGSyX7Yb",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable as written. Under the *Residential Tenancies Act, 2006*, a landlord cannot require a rent deposit greater than one month's rent. A requirement for two months' rent deposit is therefore unlawful, and the excess is void. Section 7 also voids any term that purports to waive or contract out of the Act's protections.\n\nThe provision that decides the question is section 106, which limits rent deposits to one month's rent and governs how they may be collected and applied. I have not verified the exact current wording of s. 106 against the consolidated statute, so check the e-Laws text before relying on it.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 251,
+   "output_tokens": 1334,
+   "output_tokens_details": {
+    "thinking_tokens": 1121
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

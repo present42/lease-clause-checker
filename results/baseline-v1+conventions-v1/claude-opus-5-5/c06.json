@@ -1,0 +1,67 @@
+{
+ "clause_id": "c06",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "cd12687371afd569e1072569a954820edc094e332e6353200afda7701918dbfd",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant accepts the unit in its present condition. The Landlord is under no obligation to make any repairs to the unit during the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:11.787410Z",
+ "text": "# Is the \"no repairs\" clause enforceable in Ontario?\n\nNo. The clause cannot remove the landlord's repair obligation.\n\n**Section 20 of the Residential Tenancies Act, 2006** decides this:\n\n- **Section 20(1)** makes the landlord responsible for keeping the rental complex, including the rental unit, in a good state of repair and fit for habitation. The landlord must also comply with health, safety, housing and maintenance standards.\n- **Section 20(2)** says this duty applies even if the tenant knew about the disrepair or the breach of standards before signing. So \"the Tenant accepts the unit in its present condition\" does not waive anything.\n\nThe second sentence (\"the Landlord is under no obligation to make any repairs\") contradicts s. 20(1) directly. Under **s. 4(1)**, any tenancy agreement term that is inconsistent with the Act is void. However, s. 20 is what creates the conflict. If the landlord fails to repair, the tenant can still apply to the Landlord and Tenant Board under s. 29(1)1.\n\nVerdict: not enforceable\nSection: 20",
+ "finish_reason": "end_turn",
+ "input_tokens": 242,
+ "output_tokens": 806,
+ "raw": {
+  "id": "msg_011CgwRC5HcnpvmtvrsSP6pK",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "# Is the \"no repairs\" clause enforceable in Ontario?\n\nNo. The clause cannot remove the landlord's repair obligation.\n\n**Section 20 of the Residential Tenancies Act, 2006** decides this:\n\n- **Section 20(1)** makes the landlord responsible for keeping the rental complex, including the rental unit, in a good state of repair and fit for habitation. The landlord must also comply with health, safety, housing and maintenance standards.\n- **Section 20(2)** says this duty applies even if the tenant knew about the disrepair or the breach of standards before signing. So \"the Tenant accepts the unit in its present condition\" does not waive anything.\n\nThe second sentence (\"the Landlord is under no obligation to make any repairs\") contradicts s. 20(1) directly. Under **s. 4(1)**, any tenancy agreement term that is inconsistent with the Act is void. However, s. 20 is what creates the conflict. If the landlord fails to repair, the tenant can still apply to the Landlord and Tenant Board under s. 29(1)1.\n\nVerdict: not enforceable\nSection: 20",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 242,
+   "output_tokens": 806,
+   "output_tokens_details": {
+    "thinking_tokens": 438
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

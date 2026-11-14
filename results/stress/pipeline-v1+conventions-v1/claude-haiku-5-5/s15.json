@@ -1,0 +1,99 @@
+{
+ "clause_id": "s15",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "0642d9b30aa148fe8a1baf8d9d85182deb58b807193be60566c8ff1460b56d68",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant may keep fish in an aquarium, but no other animals.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:52.070109Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"14\",\"quote\":\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\"reason\":\"The clause prohibits the presence of all animals other than fish in an aquarium, which is a provision prohibiting the presence of animals in the residential complex. Section 14 makes such a provision void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6416,
+ "output_tokens": 387,
+ "raw": {
+  "id": "msg_011Ch1HyDDTPBLgdKbQW22J3",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSlQsKEAgTGAI4AUIIdGhpbmtpbmcSDFZ+qsbwPPig0cUh7RoMh+yW2i6TLf0BXvScIjAeX6AaNSLxy26SqFQfUMgUl4kxjC7Yxf2XTQhFRDvt8YR32DOCIMWtHB1nHlPafTIqsgq+v8kktSadumWC8Lr2W1pKvhUDGIVFczGY1c2bCWbMBUYvoyM5WSGMMlIBENfSuyZAnJZ23PnvYzIXsc5R5IuSw7XecleawCHYvpeYZrMSbqhPzPxmSoXYXfS8n1dMjuDN0sRZmle2O0mke5IHDDE5ty8e0AkmfZ8ExEUGOoqAqn1QZtoFi5i4BibP65xvj/TTfHPS9gxL66klqMXj417aA2bvzQY69KmD18mmyii+QzShh5soxtEG+wBf+65R+lCuDZrqSXRTcqLWYSziqIv/m6pOUfdlJZcJ2wQnOOgtjQiv36Cc0eS7mjP5s15LUCKRp4+rlwr3O4noJ8L/RoPSrpYqjhCByrMz0QvXucHT8WxRzGvd39nE8lZCWQYjAP3UKXNXBCdpPn3vJm3iViiumy4GmBy1BKxmAS+86WRE4ESOjoNshr41EiPLvju4xQuN9QBeg/dAdOmLePXrhmYR5RSa0S+a0jQFehNZQoTrdRxiSFD03oqiuA41OcmdfDhr4z87Ipv10vOsvR8GC4rglh4FZme44IoShJnGJnTKcvYg/+aKMwPWYOnYNKWB7s8bchAB6MjVifXL14VbZA9HXu9WJsbMMEtBmucTaE5NXBhhH4iec4/fQ/z+v6vS/0ZLVzq5IgvkKTsqJvSoh13uRrMaPv+ONsvhlFh9/ppgowQKEeqX6nX6sMZqR4B+t2+XcRy3eqgpWWg/tV9TBEUA4CWV09ZNXPum/z/oewSPzj/J6osTnj14wPqW/zTjDn4xt3HQfIYIEcfPj/Q1x5YRqTEW+GvFn+Igs3547q82QoXXpAYdry7CHwWmFVpeDcmYLCtU5LA1Ri68wzQvvnxdXaH0SpiORfL3TP+IrzrqFR9sGOptVs+7e/KqBP6LdgnUe8C/o55uZPkUj/dGsBrzAbMKG05RJMYo7bvHUheEYYBTnd8aLQLzT0CUhTNvckg8yKEhf2ue2rPtZ9puu6VuKcUm/RzaAZY/iSvAUGBEgW2YMsxN9fCVr1GQAMkzGsU47GnOkmvRyVeq6Q+nS0X5LuiHipRBCKwHbq2ly2m3YA55yLOPK7aIXzaQnja1k3wx0E84hSqpOc2Bbm/MlOvRoCQ4HemkFBiijYzNHNaWPeNtGYYEfk5IvzkyvN39luWQbyNl2J2nFKJDjjmOFzTURitVz64cLJiEQqedXWgBKjgkVTkcbhlGwj3aA7CKTzEA9PMkOgHw2MjbD56mK9fyU1vzgBGN5JCsN4VpNZ/8TwMK06z06YN1ZGED9dY8x12KlKzjUM3eZJfL5ubOA6OFqdqhig577zJk4MDzVxYxhtC1ekPT1Q/5Dd5q0dXFel7Hwuf0WNMXkCtDNuLlKeKLe+pVvsfT0iSvCzqog5YJK1qZv7m5DaFrucWCe5461SofivgRdmu4k33xRKkuf/5NH29fw1S/Z1FqxjKZyO/pS1jFHOqMOrKzx9h7e2t3AjMww5qlmc7zdXqtCN5RYLrOMnG7GYCXWVv7N3bG2/ZdWOL0xgE4Cg6hsDO3FlP18hG7m5PP3YwshjVqxfGcsdUb8eTLUPjei5deGSOUklxqsOy44iuJJaYCgHijSaH6vUSuYIAiOHN3CxacgSECTKSYmLvosXYpnYXWNeQCdMD4DaxFJ0N6mR0+tPcUfOloQ21E6a+zc3ilF/UODhnRTcW8iDDtkY6sRkk3jhzcl49LBCEEuf3lCcSdwaiG8etbuH3AWfXUvUOD7PhIZmdrWHSfURgQbP3IMnnzXanAvY06ilG3GAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"14\",\"quote\":\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\"reason\":\"The clause prohibits the presence of all animals other than fish in an aquarium, which is a provision prohibiting the presence of animals in the residential complex. Section 14 makes such a provision void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6416,
+   "output_tokens": 387,
+   "output_tokens_details": {
+    "thinking_tokens": 266
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

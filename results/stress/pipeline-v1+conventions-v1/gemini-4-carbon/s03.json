@@ -1,0 +1,111 @@
+{
+ "clause_id": "s03",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "46737a87e1f6e25c0c8f43f1522955a85b72a738a46b9c282df5ff3bb428f10f",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nA prospective insurer of the building may view the unit. The Landlord will give the Tenant written notice at least 24 hours ahead stating the reason, the day and a time between 8 a.m. and 8 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:20:03.819306Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"To allow a potential mortgagee or insurer of the residential complex to view the rental unit.\",\"reason\":\"Section 27 explicitly allows entry so a potential insurer of the residential complex may view the unit when the landlord provides at least 24 hours written notice stating the reason, the day, and a time between 8 a.m. and 8 p.m. Because the clause matches these statutory requirements, it does not conflict with the Act and is valid.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4558,
+ "output_tokens": 576,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "83D3asvONO_r_dQP553DoAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:12 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"To allow a potential mortgagee or insurer of the residential complex to view the rental unit.\",\"reason\":\"Section 27 explicitly allows entry so a potential insurer of the residential complex may view the unit when the landlord provides at least 24 hours written notice stating the reason, the day, and a time between 8 a.m. and 8 p.m. Because the clause matches these statutory requirements, it does not conflict with the Act and is valid.\"}",
+       "thought_signature": "AY89a1_vOMXCJOATyYBOUBYZO-QaGeStFouBbT80vu1dx5TJVYwQlFWR0QcKtUgXvPFwPMB4hl6d43POqhFUtRIkh7zCUtWKWFu1VHng5Xp7jrt16Q7pL9xsaRGItBtxSecT4ud2x9ZS5DPkqG8TSg2KQ5rqluPE1OJ0WcWanbFV5zW6lQnflx4ztbV8om3QIdURTZRtIrE9E56d9ZkDa5K1D_3dIffd_WJNYj2RttfhAx0ZrztMnHnbawN8awMmlymMMgmNLyfiTDOBqU_XXL0CJgU84dhkMwF3eKcbk9U55QnILbIw8JEGRVDKJhhncp6TTj_FQfsd23itajAQUQsqqEv-dj7VnvIFKpfIo5bIrbTx3RaJWS07DlizDxOYCWyr3--VWdwNQPK1bSK2fmC1spcHSrY_k9iJEIYCLPOCexIVx6UE-z_qCqTsfHENVfLvGWVZiCGLbSefQWWOS5FIuh323F7joMZavvg7fQFkXBbHex2CeH9xQgx6nQo3AYBolhlY42mHOTbQivXOj9nheONxMf4gQsahddApUCH5yS1UPtcPfHa2slYUZtEEIG_dGc3zVd6An1pK0WSjb41ehLatmgV66af85ai4fcafQ0XDjcO9fvV4vx4AfC3LKr9k0huYK2hVAP6S8ENhh3B9wIQ0gfZEvOlOUsWC1YY4nrVakkd4BQNjgjRa4uilsLLG7w4sYEoZKm9REvJDOC1h61kyPmnyyFGHgHTJuZL0vC5JvJkTUY5M8RAqk_PmBqI_hjXvnkhAI-4Rt4stKZVYTs_zWb6EJInC6FObq2Zy8s34D9D1NxnoiGGOCwNPjt_KHSRafiFRtYc6xE6EqTuxaNHPtHMOpm40iyEjDIoIwN26_iioKSU4g1aiHgtzZdEUtYElLIcw35yrpOLdmNWMbDG37fXPZhgberSunJnrytNl6KeBn4hZ9uMVV8vs3-c2QHFXkls6aX0ORZ-udIkwo1CCUGY25xMb_8u4MSQSMl0V-yyd80bij5EafbIYKQGDCZxuOUtpDkkPVJbU69TsJM3lvRrn0yLef2VOPkqVdf2NWJe2jKh6wfB7iswpeRMwJxKuGDc9Cr4hjDe6VbkZZbsiJD5ULK_gC0H5ctHLkkiXs8G70oT8T7IkdWSamQ42umxp1nvfKz03nmqAXVQLHIS5ioluSRlfESTe0BMT1o1rLzTFPI_ejQPLW4mALfhQ9Wv88892lFvESIELurcZn09Oax6JxeiGh3DyXP51jqkDGJYX9F8tGYDQbJ6tJm4Y8MdGA35YjvSfLfjm4EoKkUoD66YJJeQmbSDfgI1smzC1a6Jpfa8tud-9-3AXGpGMBIeSBH4mt9WD4F9goEusLw6YmkpZ-RTeL3gE0Td-ftqmTh-1PwMBlfJZ-34jk9QNQC7eREeDlDcNJpCIx6ATfqNinr3ryDrZI-CVCNmyNVsn6fyHjV4JdVguwcZ5Tv9a42J8VC1LHoVIIiEcpBjhXY8nUEk4nIl7_vJA5hVuoivU5QzACjnEgXIUp6WbjVhEFcApF2fyDScbX8pGZNEhfoAv7ZujnpFl6srfP_XKwsTVh5gwg3Z9h-nVSlYPj8q6HrD-osXi5DjPDYVHOzsjPZrVICNVI0sE9iTS_7cd4RzaBnF8k-zOhr_E73nGutBgykJ3J7-FwONj0_WGQR5cMCz1JSwv28J1LZODS8PaTVVx4Srk1J_o42KNWwG1YPVEz7HAG_BYULocetYPTiN4dc-UdbynKAPIGojC4GG0vcsXBFUfxI9gOIFYcqmdxVOb9eR8FVwtKzbr4MCHzaBgIsltvtMO5GKKeI6hNdUEVBdCkTOFtPdF3xbDuo5En5gYAlKzA9P23-7BHY0ef6dmhVnpdnE7cv9JTxn1NOTp8IE_Oc24MKb-StRhlgGO-fDQkKRYBFRJPs1BFfy6JBR-2VZ59Gftq_ghBP75yTkl_fa1Kr8qMmNViO01QdnPtXieMyuWlMYwqtIaTP14aUTaqvhnCmyB5ad2yQGgsX5iah1W-2ZKz6lj6RPyaLF7Xq_68PeQQC1wpfHnyNEopFE_yecL-IawKtmdQJUpTL_GdxHgEmBdjDSszIZbaYuGJ279vnAPTNTVyGUzK6QoJpqNjLEV5GIaCVzXbgvVQmliHJLNKbF-WN0TOaGf5RzEUgHW7Cfgd2XAzun2px7KiuFa2gwMdATxkXMIAmkeZIi4cIpnVUYKqTYLKVq8kkrYUm8TuHI_kkObdShCnSp6_jZk9X_Qx13YRYZtGB8VZ0vS9axfp-8WElASqolzXiVrFvOExcvLC8RipyowRR4poeAaJc2q6TCCrRzdN66QS-r7qi9KB9vG_ueaQ2LJfsr9qLNR8Xrqk7ZLCU0uz9LKjcNkGb1ylUysohVZJV-uzGr9iSvQfEc5vXzzbmR71rLuH0ukhdfGBB2R-5IDUQpYn8AtAf2UToDYd-WOorixjvFBvWksCLrtAFmVTdZPkGXmtO8Qrysz_Fe6kuMVxYXC17p0bY7kGt-_KQlRxdjhIzQdoe3-u_wxXMjo-w_vWxzhpq5CAtFC06bk_bkP5Ti15CBo6p8XMPnvFz7OteKvU2gFV_8Dgd2Cya4c2WjN6pURwPZZooZcKDc5iFlMj-MLHjwvs2-sEVHFHOZSqhOvTJfQU1YusC9NFjHARY_dmwBZhK5XbXkDLcD2kY3QRVnQHe2ru_gv4HZAFRM="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:20:03.862027Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "83D3asvONO_r_dQP553DoAU",
+  "usage_metadata": {
+   "candidates_token_count": 122,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 122
+    }
+   ],
+   "prompt_token_count": 4558,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4558
+    }
+   ],
+   "thoughts_token_count": 454,
+   "total_token_count": 5134,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "27",
+   "quote": "To allow a potential mortgagee or insurer of the residential complex to view the rental unit.",
+   "reason": "Section 27 explicitly allows entry so a potential insurer of the residential complex may view the unit when the landlord provides at least 24 hours written notice stating the reason, the day, and a time between 8 a.m. and 8 p.m. Because the clause matches these statutory requirements, it does not conflict with the Act and is valid."
+  }
+ }
+}

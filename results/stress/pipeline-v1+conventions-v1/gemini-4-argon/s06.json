@@ -1,0 +1,119 @@
+{
+ "clause_id": "s06",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "bf8f5833ee820380d4c8658f8680b66309f2a94c7f608c6e81eb8051db4bd5d7",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nEach year the Landlord will pay the Tenant interest on the rent deposit at the rate of the rent increase guideline in effect when the payment is due.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:25:11.289703Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120 that is in effect at the time payment becomes due.\",\n  \"reason\": \"The clause requires the landlord to pay annual interest on the rent deposit at the rate of the rent increase guideline in effect when the payment is due. This directly matches the statutory requirement set out in section 106(6) of the Act, so it is consistent with the Act and permitted.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4538,
+ "output_tokens": 155,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "N4D3au3qHtmbnuEPxaCikAc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:25:17 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120 that is in effect at the time payment becomes due.\",\n  \"reason\": \"The clause requires the landlord to pay annual interest on the rent deposit at the rate of the rent increase guideline in effect when the payment is due. This directly matches the statutory requirement set out in section 106(6) of the Act, so it is consistent with the Act and permitted.\"\n}",
+       "thought_signature": "AY89a1-Pd-8ilTuoBt5yRZA6JgJhBLnEq5dWMpXAl0ofk5eIhU9aVIGihnyz5rCaoHMqUczRXp4fWULar1hE--fFiqY1dYDNkTZewouKbMsHF1ZIZsvgM1pxIA1eqtc="
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 280,
+       "start_index": 58,
+       "uri": "http://www.wellingtontowers.com/last-months-rent-deposit-interest/"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:25:11.505197Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "N4D3au3qHtmbnuEPxaCikAc",
+  "usage_metadata": {
+   "candidates_token_count": 155,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 155
+    }
+   ],
+   "prompt_token_count": 4538,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4538
+    }
+   ],
+   "total_token_count": 4693,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "106",
+   "quote": "A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120 that is in effect at the time payment becomes due.",
+   "reason": "The clause requires the landlord to pay annual interest on the rent deposit at the rate of the rent increase guideline in effect when the payment is due. This directly matches the statutory requirement set out in section 106(6) of the Act, so it is consistent with the Act and permitted."
+  }
+ }
+}

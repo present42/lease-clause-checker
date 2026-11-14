@@ -1,0 +1,120 @@
+{
+ "clause_id": "c08",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "e5f23e9071a052ada2280c197c9acee1065f55011b2be141e7de74fc5e8832db",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant shall pay for every repair to the unit during the tenancy, whatever the cause.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:07.540101Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"A landlord is responsible for providing and maintaining a residential complex, including the rental units in it, in a good state of repair and fit for habitation and for complying with health, safety, housing and maintenance standards.\",\"reason\":\"Under section 20(1), the landlord is responsible for maintaining the rental unit in a good state of repair, while section 34 limits the tenant's repair responsibility to undue damage caused by wilful or negligent conduct. Because making the tenant pay for every repair whatever the cause conflicts with the landlord's statutory duty, section 4(1) makes the clause void.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4527,
+ "output_tokens": 695,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "f3D3auuXJNW9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:22 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"A landlord is responsible for providing and maintaining a residential complex, including the rental units in it, in a good state of repair and fit for habitation and for complying with health, safety, housing and maintenance standards.\",\"reason\":\"Under section 20(1), the landlord is responsible for maintaining the rental unit in a good state of repair, while section 34 limits the tenant's repair responsibility to undue damage caused by wilful or negligent conduct. Because making the tenant pay for every repair whatever the cause conflicts with the landlord's statutory duty, section 4(1) makes the clause void.\"}",
+       "thought_signature": "AY89a19eERHHSXRynuYbWU1ngGoBMBuSWBYBeFfOxrWhkl79i2tE5SyUvsWqQWoR68tz0pLzfVPizG8jSvf6ubBra4Pc5XiNSxZ-YrGsIBP5iLukkIsA1NEZUCWku2Tmca_8s1Dlh4thpQam3XwMcZ4MG1Yyd2-sV88NY8D3FAg9_XaYoWBNa2BHojAkvu1IGErs0tD_6LsLhVEnD6eGeTVwPGiW7TdKiCGjsLzScr_QrQcVbYAO9cis_5uL_C_rv6zMj9iyWBdusHYf1j4r9oEC4HY3_49HUZ43rt5JkStkI6-xMGxPEO7eOBa9ami4w5u3uTfeEyVWyfootBEFMszR1OsOodsZUiOzKiql8xc4lRwPQLRvLg6wNLtonf43cJSMiG5whXXC6yOAvBfwIbQfrR7GCAlWdESc6knjwjffkC-TIVOGTc9MtDlvLIqn8tJ0P1tFxuB8aF15dLXdy2tDUkcfUcxI-DOgv8Z1cj1cTGngpC39pWuwDo7q9-o8k6eVrtPATxMrVA1-OWhEKYRTq5nOCDY0CdyFTZsDTmLKQxv9f-zQu1IZl-6wshwSlMfAbIr0MSeSFeq21DQgQT7XXy3iVc7y5dUDXWLYKz32iOmYXIfitWDBKrg3Uq2TauM264cTwKGMVJmXLl4zUb4hK3kAtqpM6vZHcpxSK2qnV3YAUlWwk0KhoGHHLBPxKY6F7gxCn20qHjIgGmksRvtFgKsja_mTsle15fjVPAKKiZaTJE6pj01PspqJxLkt8AS9d_wPNIuj1nk6gft52MoZmLMBsSVrmZH8hDh2uHjX8-RRD-jIs-Ne9mA-oCVbpwdicI4nOdeTBD9ezRzYSwYBCmRCCR4ORhEBOoUk2DNik-XDJCCgXccZtWjsdzNnCQhnfZzoXh_pWEi3v0hJXgG0GTnhlvVq56w_qDdY68YHIvJtnSpQjYnymeOxMQFFcRhwNhJJhSN1sHLwsfQ0Jkv8FwdG1LktN7Q_duOTo5_YLtvRyxse-IsVajLotJCZF_8wT7xicVrjoF1lNPDKBV4sLG6eb6fM6exkel_PSaqa34HsTQ1NEFPJ4caR11h_9_Kxkv2iBDes60Vsw5s0z1Po1EDZOGLB4PlgBqUyRPZcSHXHjBW6JmkELpAbkmudRxk8a8Q2e8oEj_Y_9ZeLLMq-hmV8orD9cgLgUNSusWpNNYWpXrQxIJVKFVfD9IiyOuf2oDcYTad_NV0V65BhQfc-od2RAk3DMirOWtO5XnbBNoACOpkTMdShNj4nOIZBcJ_HvSSatOaWaH-82GSLIXDvB55MyYClPP1C6iLWojlwDVZRWjoIWnpSDy9kRZ5-8sgI_36jshxjCQfexTunM6Bp5K3ORMCfJSLywR4e7eGFAL6Zk2jbJLM7fbSfnyxaRpUHnBPAznJUs89smV6kPntmyuY8OGA9wb1TIncElvOMRsxx3PLVDLRlYbPAuTNg1ItppczwbtQDPGUJhwTA6wm2v8Fv0bMxtPIxm6HJoZ1XVleKne5vzymC0JITo885MzalXig4wbEKNOz0hQ6rtDssrKxG1r3g7uiPdcsC4kr0DYU_KZ53QNTKiGlVeV-yuY0Co4Q2e6X7_OGUvkgiPS7Z2fH6e5nTS06gGrbA4GVDu_8LDGG543UjLpx6lZPQN-j3SKdanh46VIObq2QKA1GPezFkqVSFUjbmVRsdmQZ-FpQ30ggNq-wcQhV8tsFMdnE5gsxJO2u39pr8uKFAhGKLeotOpEz9RVgP1QKu8l9uoebgTjKoAFfHzYRwhiVUx2nXSQOj1w8asMTxP2MqwH73EYVZ75YbQOujen-aor4c77Qn0qn-mZe_XL5TPZNFBiOy8QhfJpYJ1qci-WrI5eOFdZ2AdwfdzeZdGMhsritrbSeSfgf25fPv8t_PM7I2lZ2QZ4RMuXuCEuTTYqgUyF7mBqEkLBdpP5bXZpnWyHqyaqFsmoYzfVl-aCv_ILqmHboe48HoKIcyEVKr0DLDeOvvYWehkv4aIIl73wHXGuVUbyBaZmGraLy1En6Az8SEi0E4gDC0Qsotf4Wg-hbHErzER5Z7yDdJDVaj64gaGJFEXPOrx-WMOg8DARgeOlawwTJ-wMzEbUo37xY13f4hVPd-imdprg8EFdwnfEHl4Wf2Lpbop4SRV6dWn6gLo5CSNdWDirnwUUpSwSjdBmA2p7IqzoBVRwMQZtX9e3hZbMh7w0CZ0fcFKn0il5v6DSYGT2MQfVDzRdME4bz-6bEDI4zhq_Wy-UUnFCKsY1go0aXa4G_6_KI4M2z-CVFfOkkt3WZJGKpfxJWFQ0T3dRIeHJhXKYJnVBJCkCjthY2pM0oVSIowjeCExtNusgHxHSChwBdoKbcdO7L4CxEzdnnu8jiJ7s3DIOv5VTpxqV-JCIQ9VMbV8oq0NCHulWoeBxJJdUzRGvLAFMu3l3OuHKsbOIoYmNfXz8R8TLsidT_SZ4ZGsCyjsQCCoDyTsQnb_ly3avGtaqP4m_GnwiZT7SLcqelZpMiw4sOg5YuZ6nuBFRMnZZNCUGAokd_ILpuDw75RBAA-juCtqcT60YCkZH3VFQVay02yaWTeUxuVlrR62eIOl4s9oz_0Cr6IDUXVQLCZhWsjNAgj4d_dtZieLVqlyGrWkTD58HjLmAA1PXiag8VAZgt5lBqaFkXRWCSVUG7MsTeAUkvidmW7tuZiVjJ8qUECcear3k4Wa7Edkd-f3YkEEQP39nBPMHhLbEK6S6mhsdtw_KmMsEb7HPIoNjgVDbnp83ZAlzWnmO7D3a3p9zA_fag22KsAvwX8FKxfhiiauQ1klmcWfGsDJ7hLI9Xm_nIVnHY-XO68dPE20dz35nZP7X_HgIT6UpMdtO_FLeAjAevkqvmgpz9fwhfj0cLjxxiZ5XdPTLsnnB4gKhaM__wB-DgJPLLeygoCXZbP3tUEc3TDCuJ7u0vKas4SCqNN2Zgo9ryqXNxdWEVESJjMWveWsB8XkTJSdaJi5h6jDSjpTuqOg3JJ8pfbMxadOSLFUeOzmO8p5uLvpr4206Gbo78gEIkWJ5QjiQxyUjCHpmQF-4JylgFtkw7P4bSjlw8ZqG6587snMVsj85hGiQCtej_bdd9FIMQCmNMzsNvvHvMNPKASEEQ8UMFwQKO5KQ9ZSArGAT8VDUMJ7Yzx0mezd_EF5F1ftC0VAC_ALRMIFjEh5EU1VQP5gJJ6btwjc4HiAyf_2l8ozhKzTZ6YrfO31ofcMzlBNcWvQ46UNw=="
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 280,
+       "start_index": 42,
+       "uri": "http://m.yorkbbs.ca/forum/chat/4349450.aspx"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:07.592875Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "f3D3auuXJNW9w-UPidKMiQw",
+  "usage_metadata": {
+   "candidates_token_count": 150,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 150
+    }
+   ],
+   "prompt_token_count": 4527,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4527
+    }
+   ],
+   "thoughts_token_count": 545,
+   "total_token_count": 5222,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "20",
+   "quote": "A landlord is responsible for providing and maintaining a residential complex, including the rental units in it, in a good state of repair and fit for habitation and for complying with health, safety, housing and maintenance standards.",
+   "reason": "Under section 20(1), the landlord is responsible for maintaining the rental unit in a good state of repair, while section 34 limits the tenant's repair responsibility to undue damage caused by wilful or negligent conduct. Because making the tenant pay for every repair whatever the cause conflicts with the landlord's statutory duty, section 4(1) makes the clause void."
+  }
+ }
+}

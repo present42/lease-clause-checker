@@ -1,0 +1,75 @@
+{
+ "clause_id": "s17",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "0cdca4e3dd908b3e8333391ec503fe43cd82dec6ecbfe5f50307208c4ec36fa9",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the rent is paid after the 5th of the month, a late charge of $50 becomes due.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:15:01.643290Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, landlords are prohibited from charging penalties, late fees, or additional administrative fees for late rent payments. A landlord cannot impose a flat late fee (such as $50) if rent is paid past the due date. \n\nVerdict: not enforceable\nSection: 134",
+ "finish_reason": "STOP",
+ "input_tokens": 153,
+ "output_tokens": 762,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "xW_3arjWKfmew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:10 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, landlords are prohibited from charging penalties, late fees, or additional administrative fees for late rent payments. A landlord cannot impose a flat late fee (such as $50) if rent is paid past the due date. \n\nVerdict: not enforceable\nSection: 134",
+       "thought_signature": "AY89a1-Lla7jvyLfrY-6t6Otgr00AHxXeu4awnvYTENdf24k3XzjUJbjS3a1cP75CubXCn-5ksYDvQO1wG2d9VMI-Htmteg3viyITMjhfukE48MXIGx5YEhQNGpD_GPKYZ9qQkP1CwdTuwdei4O_q1-jsh6EtWtf3KVumWoQlKfbhSLxvL_56YYJrIsa06xa-UjJtw_WvYIJ52W-7i0Q8KK7WxXRq38BuOHRlatEolDIKSCV9rP4x5YzNaVME35qd7IdELoaR9roQ6Q7HkjImN82UqsR2am-lHESUSgF_3ksqjKQrMbT4uYfzZgcb68hetOWosElgVYAxs5YXYxdwEvNr1094XZ_Jx61DaAbWIE62XjkywKRgXTj2DCsRQhx-Os_yBS_kSohOhGAgu_WSeatAv-tdfDph1C2vIOog6VG1n1OQwnXiflecUYahOgOq0OtMudDl21Ele-c4kOqyvJiDR758QwukUkLHstTQLO7wP90QZLZjrCiVW08YGA1qdgII1t-w8Arlci_pgjMKNixZ1WG1AUjJYYMaLrMS-qy6xQ9kRDsQzrM-iCv0M7hfiwqVJsTLpoUskTcFEC6hCLLsttxDrXCsWGRYKOyr7Kl9lpypda-u-Yzt_3KAYEaGORJkZZ1nPpTpoDnilD0Zp_v0O5cxN3WrEYXVieh-Vi-3KXqKrG-q-BF2PZxY5C1h3DxBlklCK3tgnx6sX_ZZGko8aVqChnD_-g7q5CHeZQQFSn_LArjG1tHCMY-OiymYty454golsqRf_X4XappT8F9hoIxOxXjSlLGtcwFbLeUm3qK6NhbDBRcYNRFkpD4Fp0X2Dg9rfqU-r6Qw4SAkd5CrLSZHhI4kyw4WlCQEPsuYTQz3VGJgP4aXkjrjfg1_gKIbvUqGnHhz_JlXpnU-cOs0dRcD5R-nQwnUQxTUn_gM6gyKefGIOiZtgCghP5hK54NluaIcCe_IC8ABmUioCTsYYw6ex_aGLnB4EkBsaM2-cdznUB97jBCcbJIVDMkHohffBEy8q83bWSBvZXuElS7-ZjoNMjG-nCxHtd7hQiFQSVMgX95nzSq0YIfysJFZDfz53Yrp0AFRy8pKpImG5Sa8WawbmRsfORXk_7rtDT0895g91J1gmG9Yviil5iyoIolaW4IVTIrAUM0LKpFmkhV5GGhEAECvZgBaXWcroTefwz8tOsorbgcpmsfXEn33urNL6-HapG8TG1mpnJ2QJl3oPKTZlp5OS0omPgeQ6VU5rjDGC5jodERmZFcYR6OZCcmBR-XVuSrWEkO0YX-qBmGHpmrFNHhJsNAmyxTzRmvXOfBOmhTjkskR60WV1fs7LHwqDQ2ITbXKpIqaqjeji1VHqxDCynGHyWTDWAlEsNcuEVJkjOG4Xoh9xNX9OGIX2P_0nWVp7JU17UmWwbGvU7sRdFXCgpmdlzFsxOisscOx4ie1bxJOFsH2J6FRXrmYmoCGEmF9X4EZIy6-9_3Q1-xHyHjI4JdCpQVX9PmIUYBugkbEtP4vt5CngbQo2C6uK-F-KmZ4XjzQq46ndSd1gHK34cxue0N98WOi3mCra9EwF_tHlCK1uO9IaSDZl1oYMgy4ne9wR2evljmxIajC7aF8SkaXzG3s05W3p8IPrNMKz8aTICNBRvNbfeLJpf220N7n4WsG5F1t7ufyjKv4GABWiGZp2_-SdmDw97jMh9357s0XfHGgEM8u-6HycNhBGLvoso_euiESL-JV_Xbjhun3xoHadP9yayqcZDMKDabna208Fz8l2ncEL6fTHTYgwrfoTGKZ66qCNYmjpBkErwfXCuxE9hNSbZRnjqzJViQYZ8DgOqRx8M_RqbidaFVkahnh0Laf5VhFtjgQBy1loQExYht_njDaEzNobBGjZ5ON661_EIsJNLYdUWbx7rThrU8MSxkOUDKGSc3WnuZguB78VfspFurCd3ehZSUFnNcRzrjkYKEsf_SVfFp1xm93QK9MhQTU-JXnIn2NqQmz_wd9OhqnRNOHz42THmD1xkx8bbpRGTEl1fGSdAj7l5mHuUAnrnk5v8uCeKojW5Kx-XI2txD7NZD771jeKLVPfDv1YfvHfN7fANlaV2K4NagRkK-S862YlHQ-K4WGxfmcrgqbvg3RIEbvPHrv-jSwh86uWv8UTQssEeTJv8w1lbbYBzYbO9iLzUiygvlnpH15nxFEfsUQMr6OBt-IBGWkrA7V2l1j5zMMV7P55kOPjJvMKBT96HEGPTewRBF7Q2T3HbYLNBcHT0bTy_eSwVLSfagPPlAEkyyFjGbAwdjGby0RPUNafiNWcv-D2JLPe5SWIJnVd9ZOteTByf8FzdHtqJtbcczPwF5Ce2DWHlS7j5KLlVFzrstYQVMy77nrwa5JrYjDf5TkivZzpJA_N13AkKSVm865xvc-Ln74RZf2bGiXaejgr2MxsZ1crZ_RhM8smOre4yTpsYCnz4lBgJ534HJigszQE6LU2mZHQWlEFYCdLjgqubKv9sZbZtklCY2nwDn4HZ94-CHRAbL9F__mk4joFdiLKN0mUmxJ3b5P7lSEtuBhUoTtBgVOXbkJcUsS_ZpRhtnsN7eyfXkOmRQiFnjsr2uvhZOoX-YHwLTTCNLQGJjRK6YxZT7A1Og9wx6Sr7qVqhtKk_OG_WnodloDubYUgtEJODO2SJqXWrhvjt1JXFOfG-WwdvDtFknTVPmIEjJP4d9lseJjuyN8yDOSeSjFK4J-IDYzQ4lf12klJmLoBsvafR3vHq8xOI2BDdOnEBaZAePqf3aWVugKXiwZRognJXuuM66coZpvpa8RRDKwqvK71_kSgeJFu6MttrcWGDXnwLuqroiFx_zbl9-KL4fD8sGYsuB6TQTWi4AhapS_CCH2CQEuYfWemBWANsmsb-wJ6LFrsvGPmeO8ikwTFEHoxJEH1lXHy0IRqgeqGrMGurvMVmI4DwWgJRwrF19S-yayADfCt432QFUWu3AwIeGHN6xaYPPII1X08IR4axP9hFYr3k97EofHVeqMivQMCA39a2izTpUHEhnHP4HavYtfn1uoO0yrlGbgcRqhgLQA_rF0pXdv0t9r_T6MlHwZ2zjtXQxSyZ1M8Ze-ly__RMPPILH0cX4_HF4EDzqUDSD2k9kR7zU0PIsj47R57APKK2sPEBrPjNpkSdLvQnVRxPgkWtZR7sodgqhfjH7pMHW-Dug1Ah2RVF_GgKSFfIko1H22zDnJmWvTAkDmkflJGMAEGt7X5hMvsrwcPAmUfXf3MjGGXsCgJOiGjt_9YQEHdBt_Gtk41U6gDEcWTxxfRTmhyHojefrDabRquJF4K-j2zInPB5x905d9kJE8NrWiad0NVzWowiW_rHGfiV0Qdie7VgFfcCujBPN2nSJWCbL_ZqVtlQHAQjtLhEsnuj7LiHXSpjCoigZx_V7xLJ55zJ9xOT8IugI5KT-6F2TUYId8iUCFdV_BHnBGlQ-jqAAUeTC8OQSxRP2uWDA08M0R5HmzJcDB8Tiuti_pbveFUx5BhbnpzzoFCp5eAT0GJGEdXfsWlRcyDCu1cWlHZ9oRv_Ao2L8W2a8r_UXC3t8iETyxmEWOQjZvAeTPgMlRRG8Bp1AvLQt2ZA-eMmD4a2pfZfSwtjNIMwvw6EXLgHLDyJKvILzr9JYagomcO2emWVYqt1SIKA3h6_QuFbbuoh_De02ONUh7XZ8O4gpop0RdY3bHw-B2Kxigu32Xfz3kbHRVZ1HmJe3s4OBilgNFDf7gHxNVC9A7Vl2N7RtYIKIaYBl0Q=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:15:01.682808Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "xW_3arjWKfmew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 70,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 70
+    }
+   ],
+   "prompt_token_count": 153,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 153
+    }
+   ],
+   "thoughts_token_count": 692,
+   "total_token_count": 915,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

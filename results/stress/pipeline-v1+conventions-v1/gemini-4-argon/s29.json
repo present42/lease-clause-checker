@@ -1,0 +1,119 @@
+{
+ "clause_id": "s29",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "c5d8f0a084b87d518a290c9535e43e5cbe3602b1133d368c4a0a5b2305359f67",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may increase the rent once in any 12-month period; the first increase may take effect six months after the tenancy begins, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:25:17.975887Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"119\",\n  \"quote\": \"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed, (a) since the day of the last rent increase for that tenant in that rental unit, if there has been a previous increase; or (b) since the day the rental unit was first rented to that tenant, if clause (a) does not apply.\",\n  \"reason\": \"Section 119(1)(b) prohibits a landlord from increasing the rent until at least 12 months have elapsed since the rental unit was first rented to the tenant. Because this clause allows the first rent increase to take effect just six months after the tenancy begins, it conflicts with Section 119 and is void under Section 4(1).\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4557,
+ "output_tokens": 209,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "PoD3asSzAomSyOgPip7BoQk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:25:22 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"119\",\n  \"quote\": \"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed, (a) since the day of the last rent increase for that tenant in that rental unit, if there has been a previous increase; or (b) since the day the rental unit was first rented to that tenant, if clause (a) does not apply.\",\n  \"reason\": \"Section 119(1)(b) prohibits a landlord from increasing the rent until at least 12 months have elapsed since the rental unit was first rented to the tenant. Because this clause allows the first rent increase to take effect just six months after the tenancy begins, it conflicts with Section 119 and is void under Section 4(1).\"\n}",
+       "thought_signature": "AY89a1834rZwt7Pc6VqKs_IEibmapnlxsGwPH-2vB2SZKPbbA3AFGpK84DT9mNqC9ZqTOE8kn0RoBLeBatrDqfN0q9ZZp2JBrj7cT_5GVFTlPadFel2BMHMRm2sVop7z"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 417,
+       "start_index": 202,
+       "uri": "https://www.reddit.com/r/OntarioLandlord/comments/1himjqe"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:25:18.039364Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "PoD3asSzAomSyOgPip7BoQk",
+  "usage_metadata": {
+   "candidates_token_count": 209,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 209
+    }
+   ],
+   "prompt_token_count": 4557,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4557
+    }
+   ],
+   "total_token_count": 4766,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "119",
+   "quote": "A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed, (a) since the day of the last rent increase for that tenant in that rental unit, if there has been a previous increase; or (b) since the day the rental unit was first rented to that tenant, if clause (a) does not apply.",
+   "reason": "Section 119(1)(b) prohibits a landlord from increasing the rent until at least 12 months have elapsed since the rental unit was first rented to the tenant. Because this clause allows the first rent increase to take effect just six months after the tenancy begins, it conflicts with Section 119 and is void under Section 4(1)."
+  }
+ }
+}

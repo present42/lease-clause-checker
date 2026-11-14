@@ -1,0 +1,75 @@
+{
+ "clause_id": "c24",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1f02763500505833b2adcae883acbecea1e858e6716558a39401fcbbac1333cf",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. Whenever the rent is lawfully increased, the Landlord may require the Tenant to pay an additional amount so that the rent deposit equals the new monthly rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:48.058062Z",
+ "text": "Yes, this clause is enforceable. \n\nUnder subsection 106(3) of the *Residential Tenancies Act, 2006*, if the lawful rent increases after a tenant has paid a rent deposit, the landlord is explicitly permitted to require the tenant to pay an additional amount so that the total rent deposit equals the increased rent.\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 164,
+ "output_tokens": 697,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "UG73au3fBsafnuEPl9TYsAw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:53 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. \n\nUnder subsection 106(3) of the *Residential Tenancies Act, 2006*, if the lawful rent increases after a tenant has paid a rent deposit, the landlord is explicitly permitted to require the tenant to pay an additional amount so that the total rent deposit equals the increased rent.\n\nVerdict: enforceable\nSection: 106",
+       "thought_signature": "AY89a1-FkDUOP__U7eVRRWpG4zLzWqgt5px-0ZSXCgS-anFZNnDUHFJojK5gpB01VTS7N7OuJlzBcn_qVNF7jRVx-DVDfgRuJCUEvNhogfMcSMu0nhbKKzHy_YVwugzKyXL7jLGdz7OUr4lXp1v1B8R1QPIHQ1z1PT5Xav-AdZZN_mEYiV1DnDe0PAzfN87KPfxYymANQQ9Sr4q9WCPFWVkUyKt9OcqLwrE08fNZZPpBHyz7lv2dEI1MG190n4r5GfCCjfNXytSV2BV_GDKfXpOoPNbhq_YNKYbMotRJqjxRMq7R2rBfjLN4xPwb5D2g9wRwRm4CHHwiul2HSdaxw7q9qH2QVIbtch_Q30zPXtgU0glGlivr-5_Vz6OZIE0W0ZMKqtiU0q3V0Nh05sbzFV1NjtM1JTfM6pB869s7Q_VHq7-HKVSOzA3fkqSQxFaqJlg-HNf7FqEa2e8-sKnJDlNg-uqiZQHyFVRZKtSPaNv61UjkOnEwDLF-WXxYkJwu9CZpg0YauJkXs4WX_bXL8elxLdhsiNTmWWF1i2Otyxccyn5GOMRUGLDahf3de8kMMhI7GgFIOaMLd4SDYxpMCiloMHTtI6HaF3bt08wW1kTmXQO_v_Xp11XUuj3UH6JmjFaHmLMgDbjtpa9HvD3sv1Vy_9lFgl4l-TDz7pk0ImoY_Mwzw2SGtt5Yz5VPQHjXLnj0g825rtZpW9YB0E2jeIZ96w9LWU7vpjcf9GCObCjOo-dF5b1bvs1GzUZ53HmiccxNOTbygw65OXsN7cn4i1EkWLhPH4L3tizuwMtYEJzv18WhHMZa254VvZCqA6KJp8Rrtm1UlW1aeNAMsCwYwX_eINtSDq0dFRc_zsx8bVWMvrU-UecRW7xL8xZLv3EYw4FXC-ZKKRNCaXPy1jJg3GPxYDAWpO2B4nO5rVrjpeMe1jpo3eGOPxnDysEFbz3xZbIzzjfdQ6QInItf2Yx7P_ruhPwNihQbfGijZcHxhnJdgTTzOMzyCD4tk0Cp0_Sy8s3jHZ2Ict0oLGbo0grrIF9HKYhkVbzoo-G35CoJFVxpLRfxRlaer2i06ZYoV3YvKFrxl7lQl0EI8GqRDF_oBS1Nvkf2yCZc4aqQqvq8dVDhi66r6zzuvDD82s0j76ygR0NcU2akcXfzkSPn9ziHViMNPZoMRtA-A_EXLL75Q0WSV8whD9DxF6qKloP-BedoYHjHCX_JrlpJjPvRgEhH3PqlcqHTti9s8bRYamPH_qsW_2phk55oeSHzCjEe2c4LRIdIrMk53mLhjPAlm08JFv4P2jXLst3sdNujpqpSqT86mAJ0_owkx_uXDAmEOLhbgxaDBP9cjr-pP_t9q2HvwE9j54BqOtSUbTOTC59VovJDyFuj6aYxnyl9tc7Jyl32VLwD4VccSQoFrrr7YY6hSbYXkc4Dr5Myfze1aSUNRpmxPVVaUCXxBOIL0WlmsR9-5NEVWN01kSlgJMdzkruyBZaqoW2YKlZ3_bFCGXzCLwmxbys8W7O27rhwAoVtqOVCnBVztuovDYQcb3LO5EbvfZGD62qgvSCAZjDgQFV_qcQZjgpzw6S-5bUeo_OAPbYLwTAt8sRL5UwAEAXHlL-7YB2Rdmt9vK5MSLbB7IWBf159HPiO1NtfvMF2fway-ttVzz1lej_4fnwhOG7n5jgq3heAaTrRI7Se8CLXzn1MWv4u8uZmwYs-897cpHAHXqnNlcWi-6bCwHNIr_MFU5M97GIHP3Z4ru7ZGhNJsIN4ElYPW1ZrFa2UfQJQb4vV-1Al8Hi_ehqU6iXSvrIakk1tWxQzq0egHN7_CG4J3Gbu4HZa-mthI84I7BWNL6oucz9dCUB2trFKfkbfmhg3jzpJFXdUcrIGpQrUUZQpsZUPgz8GZL3_zZmD__97UPBotv4G4gzP_enGYdn8W_NknO5pzhU-2YWqx7bbni7pCjaUmAd8Lf-b2xByVggCUFkA8uqlwuwbhkwoOiJU17Vs7NRA7sXfa2rNCDKh7plu_BlrkdDx1upvA-AGQpr3S-5spkJLTFedVNmX1gcFDsCOoKXqxrl78br_HohWWo942WvY1E6r3sOTRwCoG-8XK4z9MzHFuT9SKU5Kz97lLTE_N9rJUyjSWHjqxvp4fj-bNFerEee_UNOK1abVzz8dkPnjn_IyIuJL1-NCOtwvmjSPdA5ZNesHiOKEpwzzcSBDDoLU11x4npUoO7xO4Mq39ok5tvXO4tGKcdjUGYQjRLUgxpzebRpjfnwlZxaSrvLOtb65lyHewnqFYH7K4q-oFc-eQ85fReWuKSx4dkaD0ZClist_o_NydwudDZaA2ZUbFPPzDebuwWJrvsVq7IaUDxfZYvxCxPeyzzn3J0aIE9pPw4zJr32Jw0EsIfD_cIVkJHXZYuej5pzBOpiPOr2VILFWvx4pw3Lz25al7bFiObaUGXqijJTLJYO0BTvi3y_ODv3qvtLT1D-onZx30tP-xzlF5tBW25Rl2aW6bIym2nTerUK3UnQmo0FiXFRZ4q-m7ipEwkS_rNOAcQToa-vnfiOl9Y90fo3pqE7ScyP0QVsLimmZqyBaW9ZdJzmhqQEusTODnUP-S7gL6GZmymNow5IqFGvkjQM0RgndV4rhDQWF-w9tYqOhwRy6CG9U_6k-Yvd1ixCm0hnuw_zJMoYibJdwc3wMC_I_-XCOV4EaZEHe4y5Y1uKgIVe0rzFqzquWsFzQaff6kRLQY9TKunal9yMUTYcN2qbIvw_pPaQp2_MyqCxzJZgteZpJcZwR0YDTVn9S2KRxMEoobkZC9G6EQ5H0mMl7xyPu2j2IHHJ-qOP3APanfaf02e5lZ8ZxYMnNOzf2TyOD5DacMA_5EUDiS7Gp3NrkuUaSMa3-NHHXrmu0UGvHTiKU4RDpqKKixVkfGJI-fmdicXO4zdyZ01IJN-finuIgVEWpeos2GxoJ6cfPSekadEnQeEanRckvj84gQCRqHQglUFfUNlnKdSkzAB9PTSXRoYdaOFSQma3pdW2lfgfswaTWyojbE1tYkVh3f7N45MLhntl_ZLHUZyGAgFw5lt8aNnrkPK6W5SC516u-kxUydAyNyuDSQOkW6bjH2dd4a1_18mobwf5LwwoGyTUJTANpIiqXD04yPBWY0TW4UaNkZ6uN6Sz7ba2KMJp7VqE6N_UYYvn9FLUdx--uInmt6i4dh-vWZr3fsvLDnvzcrVTfUDpfMuI7owHA-LamMbWlmUTi5r5gKLS97cOQqYljtCTBwxF_a-2lKYyW3b6b0FG7-nlXaREttgmtXwyUr0CphIICkyCNrtnS9Iwegw3RzBOhkBdPaGF5oOUC5QuGYOhJFsutp1rPY52i"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:48.110573Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "UG73au3fBsafnuEPl9TYsAw",
+  "usage_metadata": {
+   "candidates_token_count": 82,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 82
+    }
+   ],
+   "prompt_token_count": 164,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 164
+    }
+   ],
+   "thoughts_token_count": 615,
+   "total_token_count": 861,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

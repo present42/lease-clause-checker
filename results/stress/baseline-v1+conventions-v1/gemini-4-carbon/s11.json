@@ -1,0 +1,75 @@
+{
+ "clause_id": "s11",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "308e2dd537bd31276160af212b9f9bdf08a9db7ce0a57e48dedb84bc4f499bec",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The rent deposit is held without interest, since it will be applied to the rent for the last month of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:15:12.297105Z",
+ "text": "Under the Ontario *Residential Tenancies Act, 2006*, this clause is void and cannot be enforced. \n\nSubsection 106(6) of the Act requires a landlord to pay interest to the tenant annually on the amount of the rent deposit, calculated at a rate equal to the provincial rent increase guideline in effect when the payment becomes due. Because subsection 4(1) voids any lease term that conflicts with the Act, a landlord cannot waive or contract out of the obligation to pay annual interest on a last month's rent deposit. (In practice, if the rent increases by the guideline amount, section 106(3) allows the landlord to require the tenant to top up the deposit, which usually offsets the interest owed—but the statutory obligation to credit interest remains mandatory.)\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 185,
+ "output_tokens": 1068,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "0G_3apHZFL7Mw-UP1o7noAE",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:35 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the Ontario *Residential Tenancies Act, 2006*, this clause is void and cannot be enforced. \n\nSubsection 106(6) of the Act requires a landlord to pay interest to the tenant annually on the amount of the rent deposit, calculated at a rate equal to the provincial rent increase guideline in effect when the payment becomes due. Because subsection 4(1) voids any lease term that conflicts with the Act, a landlord cannot waive or contract out of the obligation to pay annual interest on a last month's rent deposit. (In practice, if the rent increases by the guideline amount, section 106(3) allows the landlord to require the tenant to top up the deposit, which usually offsets the interest owed—but the statutory obligation to credit interest remains mandatory.)\n\nVerdict: not enforceable\nSection: 106",
+       "thought_signature": "AY89a18xzo5279u4JilaLbsZBKJ9PmJFEPb5guD4rKIBN_Eq2hqaa-3kdys3TQkRblbaR1Yg9jBIExJOtuMKA-oNyg8MBRyHs9eYTb0z6uPEytipmQrmIe83gl1Ib25qHDXSGkroqi0qR3uqbTYBHx3mc7Vl0Eay_xPKeHtSsMlBWCoUA6yDjy6WbolEugu6Ewd53aPT99TCONQ_hBZndykqIgwvhJmyKFvOwl1qjBHQ_9-kvf0YXC-0_KI3N6VFpjVpuwk8CKUhqv0_SExpmh6ShZYUKS79BchTRS4-M9FpW0wcCnMNNEQaC5FRhC6quct_1dA9MFgznct_dgnBIdOYvWEh8axKdFzJAlFJ21b8rZJ0E-tAXH95pj_M47SIvZXbk9u-Gif_ooW10yFlwiTAF62k2q_MvHj5rYI77gsbQKchDpjyea2FVLuUYLErRaPru4984ktVEgokheaNdH_WxoFIaot7ibY_BcegkoJw0OIQdH_IzuGVbkLfvZdsO6eHwtMI6loyApbBggg_TUjdngVO9_OquhTXdDN1Pw43QzFqhAsAh-h52zu05Z--lq60c9hZIioDGYKT8qhN3nXwAWFMePPRLJLlMP-DOZzwy27s89-OC68kSB3ExpTixZmyepY0Mtuh_uwnmzMcUD4UpNiupSlp3wTxjybGM_l5RD05bBl_4uz7cQytWN-_jPjS_DRvWUwtrA45Ln_0Z7IC23L4kbMvsvTlM1l4pXRBOxH3TfuF2BdPgsSrUUV6DZGz3IchTeG2a4YrI6JQJUpo2pgU4u8CekmxmDLgyVMfWy-0yW5HCdDucWLebCwe153zksqm9UH21eFfX4xILYWnRkU2m9aREjkV1Wdbut-ceq4FbVj-UmVp_0jbE_IHSDv1MQYv2Hivg4rci1J-5WHdI_tYXJurkg1-Iez6B5CTA820CuZ8XIic_L_3Y06dCnwgROZm_xbreyw4JNLxKVBO9kJmfc_2sFV7UZbPvA4RrPoZVEfg3Z5wTFPOVMga2tVBvsejb4y6LC3uM0PkqMNz5n2tY5EwAcXcwnw9-WWYs46wSxf7DN9auRRAvpFyZzn5Xozba07UIMjGwFyuaLI74nWVlNBnD1tWrcAASwLrLAyghlJfZ-nfGCYjmgYgzC4hRlUs1wAJ1iWejIoHZH0JLOlh_tGJ87aENjkwiN8pG-Tf4Anx0YxtNZ2AYCMUGRkDk9rOQq2rydtUj7gBOaVYcItfOA2Jn0KqIE_Rn0XWWf7R80aFMthCSOr_Cn7BIrObbjw7x5_gkXiXx0hPJhrINh0OY7SbLOC9FB34T6armmCbq66SNcVlTzN8YXyu_ZxdmCh67T0SBEXFNjZi0UhrH0sML6OgrKKsSIundXak0YJovhk4chaqSf6fsFzm7suSO8SAuQi5AXJc3K4mR87QaRoilWe9MRwA1STqcTGdZvGkxcvEaHWi-NodeZm590flThveh0x8nfPLm-lLWiN8EDK42Isb3vK-5yLrrKO835ljDLXyuQydCYtm_9gdDAT4-OG52FEPmpHWNWWIUKHWAfNHrtsgRbnw9tyVQJOA7rK3M-0wM0c27XvmtJTAzhunphzEFAUX_kTGbbExPNCijD8N4w8t6bXsA1P2NimEktsQ8p0p2u6-n_6xQ2xKpVbsJqOJycTDJBUF7KP92OXoDBXiVoeH59FxiwSirfZex6pG93RJ6-HsDYI8ct4Vz6EWM_r7dOAwdbczjK1KgJRjhBUMeQ4BefRXoWuRdvZyIcQamXlilhSRe7Mhs7WzbyYdznZJcKnFDnmU5oCYS3cgagtYTGAuws-KNPNp2OBkHw4ZNb6RkIlRfoXV137l-o5JmKc2OKnbatG_Cer5k4uMEGq_vyqRYB0WK__DA5wodzv9hj6K_uI6UAkegj5amTYonNi9xnWDEf1J74X9k_q7MFKqMaFwJe_CNc0KFoTzUKn6XtwrXdBBfWJGtkdzGenVDZw7tdfBpVjNokr0BijeiuYGqFDjZaALko0C9zXJfKZYOX7RPZ-ouHC7X6wzrsF0FmVYzUuwqw_MXIP2lP4eKD3yFtOx4CTwe19Nd5EYpyuYXVEvp7r4rgmlQUKMS0L41b9R446yPtJ4mbPn2syRW3vzMK_51TWs1vrO2FxDdHLnyZ5DqRaa_G6ErDknDWwo7Fkau7KZf25u-CGsUOFiDIq3PXH5E15N9YgtMUmtYpVyzpZwNhWzxf3PyorwiAbVErDoGmMu-V-ng70jcvSSDHpclcAytJmO9neH2RFHqa2gDLfiTRD9vG3TxbqwU-EfKLsNA7dvsDvC1PadNlZktisSdlSPHlgEfJD0_UhXbnptkNkg3hFFJ8jJ9x4K4m3Md07kxrvVJa7hhh6ijeANM8pfjz1dlRqsp8W1IMqRUtL2aU_VC0f-qqRUwv-ZJvtJtRKuUTtPvD4vUQUD25xTRF5H2_CWVBI3jIMrwMRMAdhLEip2Cnc2BEbjjYOsLqPenJBSVsapGOcEhDP4Kbhk_j3T3pSwuR1G3pujCA1zo-q47oTlanISmcCnGyUGv3EJBwl6XeVQ7Vkf8NtmQNH7iyhaRkTOUbClgJ-enu2bc-zgr8C7-_WQ8wKRFPhlcdlLL-EfOxo9wJOGu1wuOfyqQ4ASkiGjCVxLyUOwfZ8HzdK6l-UpFLPXQOF31lSiMnlTQrhzVIxcB5-lzBEF-6NzkV89C9WCGLiRScMNKyLHJCustK8f5wDo6PCVndkEA_eVVVQgRelpA-gW1KfPEDzgS4HjVZ_LrovM0nXaABvuIEb4b-HS6rENf-bN4jn2t6Pon5WNG9PFpujP15aTtjYgbwoMF_B1iU-SyWR0gn6QPkEtXxF09bzwzm1mJ0-bxzPLKCNtBbeW5yqMdBFnT6dVfwImBtY8evwXfRAColk20a2LHxgUsHYSjuJ1nZELLkbUN9LuTP2-QJsPKKr07s_udxEl3hmt1DZbwlWPSLVc-gTN7CGKUpO9SgUf05leOy_D_kUGwZgXcGfb19ZeX-LKvW_iCLJjH2rMAS7CCeNpmgJLyof9OL9BOz-0_k4VWlVWayi1KXfD40BDQyDZo-Pa3CmXDaptDG_rKLKrYUgLhKn8FS7Lm6MKr7PnqrW7ltVs_3ABejoJvkIhrLYUWmBD0q2dnCGJ2wD3M4uE6xvcnMeGY8_2zIaRWxdP_PAzFm1W59b6vn_YVaQD0ThFEBdIIpic963vBOWgkLG3u54ZR0BbFASC-oKzWTO4bRG6UmzL9ZzmmV-xLqmt9MXBdiHu5LPQki2zlboHYomyWafdmjEuy4ZbNL0eN-X_8u45abx_koXQWs7TQ6ryAMM47TX5T9sTVODnQmnqNq8kheZalvMhDWS1fgC01msUZzEYBIBnyXndW3yoGvySafnEChsHMdi8OiAKAqL_tbLY3WPdJtF7xj2YEXTQ1JyfeUtJ4yFK7FSPsJ_yALGFH8XL43rErGDd5NlMW3SS8DtMCJXiH9bXAfGE1zCmXj6XpSF7ymeOr_AJYNW5rpTV2cxyBIZfzuNCNvVA0unxTHTb0WlB_HWOYxwopOt3urfcS0sKYSY23d9szkat879VRoglE_YsHvoq72YC4ilv_CWFrmpBMMTuoMIZFo0MEC6aabUptvImKxlrVY123xGtQ8eMEbc3KRIT54GzzitSDvPk4tEciElNkwXVmo6p_nW-S5PyYKObNppJ8umMTQqZSjCzPseZ4fkfgSAFvmfjno6224U4SgytQAuBn5ueum8IpBn8ZOYWc4nBnetq8gmJdBQInRDP2DRw0WaX8YXzC7eHuJh1N7YK8ch4VbUwOtoGbijVkL5pypeXPtNJrQLJWlACE2aKitcyRcnk_agvqKDdOXvX-Tce9YPv0HrKlgSTcOkq2RT_lHl9n07_dzQSqXdWww3LLDxYcwWFYw_euNeDVhatEaxYFZFnAC2iT_d4nkhzILH7Z2N7NMTXQtoovDoKtcYi7DM_kS_CmPgnv2SrwfJoGu1dH0ajGRh0F3aAWSLTYYiL3lx6uCFBT31ftjCHUpMVigHQSL9owtEcpLs7Y7-hvSODLz8o9QUUMRAzsiWCyGVozguS2uBYAdl1g35w2qmGtNHqOCIuuNVPOEer8iy3okzwjZFiB_jql3sTKsQ_npLH6iHC_8df_YZfb47D8fmsalcgqrz3vuZwiU8KZ2i2sFpc1V4lthO8PmSm_e6w9VZfMiHDCxw9qUYFLJuNwt_3-76mB7-2Q-3reyohTiX0h0oRpgE6BgMEbIg6vCfmIFrIWzxdZfljnZL1ZRbqEL-XesxqDze1Dc7Zb-nxReXlkCuJ-dMKdG1aNdW51wSY33nVDUOVTZsnVve1vfXUjDYjkcwNztKKGIBWGs7IbVq6znFDDDjzU9P1Vj2sqNIJomTyZMW10GmC-NhJaiqg6S_5sSy6Kn4XmBoXy5mKJa6ZUmUFoYPtwU_XOcDGX2vo_DfRHwI8A-KSyK4V6ZQyzA=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:15:12.339089Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "0G_3apHZFL7Mw-UP1o7noAE",
+  "usage_metadata": {
+   "candidates_token_count": 182,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 182
+    }
+   ],
+   "prompt_token_count": 185,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 185
+    }
+   ],
+   "thoughts_token_count": 886,
+   "total_token_count": 1253,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "clause_id": "c10",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "23346ae996a5b5aeb182d2da4c8d35e6c612256848775f48539ef9dc0c5b1c06",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord will clean the unit every second Friday and may enter without written notice between 10 a.m. and 2 p.m. on those days for that purpose.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:16.776199Z",
+ "text": "**Yes, this clause is enforceable.**\n\nSection 26 of the *Residential Tenancies Act, 2006* lists the situations where a landlord may enter a rental unit **without written notice**. Subsection 26(2) covers cleaning. A landlord may enter without written notice to clean the unit if:\n\n- the tenancy agreement requires the landlord to clean the unit at regular intervals, and\n- the landlord enters at the times the agreement specifies. If the agreement gives no times, entry must be between 8 a.m. and 8 p.m.\n\nThis clause meets both conditions:\n\n1. **Regular intervals:** The landlord must clean \"every second Friday,\" which is a fixed, recurring schedule.\n2. **Specified times:** Entry is limited to 10 a.m. to 2 p.m. on those days.\n\nSection 4 voids lease terms that conflict with the Act. This clause does not conflict, because it tracks an entry right the Act itself allows.\n\nSome limits still apply:\n- The landlord can enter **only** on the scheduled Fridays, **only** within 10 a.m. to 2 p.m., and **only** to clean. Entering at other times or for other purposes needs a separate basis, such as 24 hours' written notice under section 27.\n- Under section 25, the landlord may enter only under section 26 or 27.\n- Under section 22, the landlord must not substantially interfere with the tenant's reasonable enjoyment of the unit.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "end_turn",
+ "input_tokens": 246,
+ "output_tokens": 800,
+ "raw": {
+  "id": "msg_011CgwRCSdGdk2zwHzs7hwPd",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSigsKEAgTGAI4AUIIdGhpbmtpbmcSDGIpKwKHp9evyoOPohoMzf86/eH/m2UTp/WHIjCa2sRaOD1K6Nl0nmVNoABtizkuwzNFwTJEkyMBsqnFGB6QzGQvcMO9YjvLSiwh90sqpwrR0DVyMfyMSQdzCZxfYuBugT791y/6Xs8yac6/3POz2lUsro1f24mB1rzBFc1DmVpisv4/Xh4Ur5GkZh4e9o80RTgRpvJ67xr3P0HOXn5uuHXs84G5Yn7QFosQM71wJPD/EwHdWtU/5t4+1m+0NefIYMeehcmzR6pKWOTou0FrwOO9/5UlO0gil8wg7iIW7xjDJCTPzVkii9qQQFXtJe6mj/ENqdYlFvweHSIPi+LFsJ+PxXAivoHQZVq9My/LCyzeIdQZQx4j0cZEv17ko6ukf/ePd6ymm6oovlKicTeMGTZ9eNqH6ijBnJnIQs62wAdG8/+hSKFngIA+iXupTlcLjXSNl99IS6pzErtPG+GqX1PhiMelBNoMNTcvEyG3wFZoi2tZgoCq2rHo7kbgWVgdshxCRSDIxzAdz0mrFl+BSmSFBXqIEtkjfCFbg4T0ok7iq6eZH5wGi3eFTp7qLLHpuqkwOwtli4DRuzi/oOORgPBXIdBL40+6D1+V91gfKiX53c/sjxfZ9pW8sesAPlwB3FCfvBUmLj7fv3JM00ma2NztwfBvIWsRpq2pnXkXbzvvc+o8bRH8g5ZL1oLX6HQO3KB74bAkAqeNqYT4Sgl0l+rYPn0BSTHihUluyqwuAKNF98+Fbqi7oCyi9nojF+fRmkSAMysGzIReg8wwuWivN2ebJL/14m2cCOnbMCzkAawTkKy9d2Y4vuSOJthly57F8hrA2Iau/MSXnYtncr3UsUdzjAgnr/6rvGI/2j2dVRNcnRbLPOXaOBR6lzCoGbxH4v5CP+PQy4Q/wQBU3oKEbKyqgu9b3SF/xzShSzuPWnrb3wlqMqiGhKawoHhmUFAuhWq24QxtRcYX8UfHxjml3aIDDwZfRR7HnlMrN8shs/3M4NtiDbrJ8zbszsubXlZGEewy+o+e0b5UFGYrZrbWImUjg+WJmWT/nKAwxEsICt0nyu75pkohEi+uNZMknlSDfozuQYEl8QlUgB++GSZBCf5TsFeTVM+ZJXCu4alUDhWLaCe7tD+xYlAOTV2l4g4egdtN22N3Mf/UGRKygT/PS2ndbMRms8zo9ODa8jMQ6WpeByblB4zHcWaHVJbj4oj9nUGahdKvuPfMzGPNU8Xztx0JpV3rkaN1/3Gtu2oztmx9AaQEtt2OCT9VuDNOBu2Yzg1E02DJ1ZVbMTRLFI1ifIhaxoQhYFEX2AdVtVb+c8uWrhLsdMwgS5IpHi8UP34iTgVOviveSyOIK5hsBQYkB0U5ZoLyAfgeLrZpJxm5HbRyxoMKwGsKsRiaf2Lg/zBK+FN6fwoDku4bdb6Mf/wwxbcHpj2aL697n4/Y1pk7KDvgfDj2DwmFD0rEfS7HVPwxegGcii6MKMwOcnAorqEmBNkXxWPr5aB1YY4BLo5jubmn/RrXPgMl/7YqZm5wnYSIYoWkGEOAbRlfr8gywCHNHWJ7dSEDpSQveMyJP5GM6y0HXJhdQojZH1gRVbykJVdyfM7k4F9lWL3aFbI+qbMkMzl0z763Q1rBXayWQ3mbVQ2zZxS6tUlLoEh0JHAxIQjlieRav5Uh4Dq2ZNtGCzCsco9FbGEJm/0VGxdlvPA4yPxMXRV2wC5f4F/aJYy/SH+4pSq4MOA4hPm23/pURuNGCBD+0BpqiiEo77CDTaGED8agocRuR6l1waZ32hRD1mVeukMDjg5xAls9Xs8Z3hLtOnuy3y3tZPdNo6lDkiKg4GAC4SeNGFEvQXmC/NX5hqNnF+YgKhNsXBgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, this clause is enforceable.**\n\nSection 26 of the *Residential Tenancies Act, 2006* lists the situations where a landlord may enter a rental unit **without written notice**. Subsection 26(2) covers cleaning. A landlord may enter without written notice to clean the unit if:\n\n- the tenancy agreement requires the landlord to clean the unit at regular intervals, and\n- the landlord enters at the times the agreement specifies. If the agreement gives no times, entry must be between 8 a.m. and 8 p.m.\n\nThis clause meets both conditions:\n\n1. **Regular intervals:** The landlord must clean \"every second Friday,\" which is a fixed, recurring schedule.\n2. **Specified times:** Entry is limited to 10 a.m. to 2 p.m. on those days.\n\nSection 4 voids lease terms that conflict with the Act. This clause does not conflict, because it tracks an entry right the Act itself allows.\n\nSome limits still apply:\n- The landlord can enter **only** on the scheduled Fridays, **only** within 10 a.m. to 2 p.m., and **only** to clean. Entering at other times or for other purposes needs a separate basis, such as 24 hours' written notice under section 27.\n- Under section 25, the landlord may enter only under section 26 or 27.\n- Under section 22, the landlord must not substantially interfere with the tenant's reasonable enjoyment of the unit.\n\nVerdict: enforceable\nSection: 26",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 246,
+   "output_tokens": 800,
+   "output_tokens_details": {
+    "thinking_tokens": 310
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

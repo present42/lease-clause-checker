@@ -1,0 +1,67 @@
+{
+ "clause_id": "c35",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "41cd7bd523e6c407a0f44696f70d953c0ae1c8bd5f318736d4150f2772ccaa8b",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may drop in from time to time, without arranging it in advance, to see that the unit is being kept in good order. It will always knock first and, if no one answers, may let itself in with its key.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:03.251488Z",
+ "text": "The clause is **not enforceable** to the extent it authorizes unannounced visits and entry with the landlord's key.\n\nUnder the Residential Tenancies Act, 2006, a landlord may enter a rental unit only in limited circumstances, such as an emergency, with the tenant's consent given at the time or within the 24 hours before, or after written notice of at least 24 hours stating a permitted purpose, during reasonable hours. \"Dropping in from time to time\" to check that the unit is in good order is not a permitted purpose, and entry without advance notice or consent is not allowed. Knocking first does not cure this, and \"if no one answers\" is not an emergency or consent. The clause's wording, which lets the landlord enter with its key, would therefore authorize entry the Act prohibits.\n\nSection 3 of the Act also provides that its rights cannot be waived by a lease term. So the clause would be void, and the tenant could apply to the Landlord and Tenant Board (LTB) for relief if the landlord entered on that basis. A tenant's agreement to the clause does not change this.\n\nI'm citing from memory, so please check the current text of s. 27 and related provisions on e-Laws before relying on this.\n\nVerdict: not enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 257,
+ "output_tokens": 1715,
+ "raw": {
+  "id": "msg_011CgwRBSkfzSJERz2FEGYY1",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable** to the extent it authorizes unannounced visits and entry with the landlord's key.\n\nUnder the Residential Tenancies Act, 2006, a landlord may enter a rental unit only in limited circumstances, such as an emergency, with the tenant's consent given at the time or within the 24 hours before, or after written notice of at least 24 hours stating a permitted purpose, during reasonable hours. \"Dropping in from time to time\" to check that the unit is in good order is not a permitted purpose, and entry without advance notice or consent is not allowed. Knocking first does not cure this, and \"if no one answers\" is not an emergency or consent. The clause's wording, which lets the landlord enter with its key, would therefore authorize entry the Act prohibits.\n\nSection 3 of the Act also provides that its rights cannot be waived by a lease term. So the clause would be void, and the tenant could apply to the Landlord and Tenant Board (LTB) for relief if the landlord entered on that basis. A tenant's agreement to the clause does not change this.\n\nI'm citing from memory, so please check the current text of s. 27 and related provisions on e-Laws before relying on this.\n\nVerdict: not enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 257,
+   "output_tokens": 1715,
+   "output_tokens_details": {
+    "thinking_tokens": 1311
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "s01",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "3c8956f68dd331e7ca83b0bafd3b902d35591fbd2f1d450761147caf8beedaeb",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may come into the unit without written notice whenever the Tenant, at that time, agrees to let the Landlord in.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:52.068728Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"if the tenant consents to the entry at the time of entry.\",\"reason\":\"Section 26(1)(b) lets a landlord enter a rental unit at any time without written notice if the tenant consents to the entry at the time of entry, which matches the clause. Nothing in the clause conflicts with the Act, so section 4 does not make it void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6433,
+ "output_tokens": 366,
+ "raw": {
+  "id": "msg_011Ch1HyDRMdTmKrEicWbStd",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS6QkKEAgTGAI4AUIIdGhpbmtpbmcSDJ1IBNytDJqMQfcaPRoME6fDeQKelY52v1tGIjDJFdOk6Hpu4BRKR2sppYMuqfAJ9fRDC0nibqWgFed1zS3PBJd/1r/pdvmprkSOkeAqhglealO/1ShISUGTbp/sQHoT1yQ/Uoldkr/8tSwMNm6uligqJrx0DrgxfmxroFb8X/sowQf79cq77vrmjg954UlNpQeFvUZYMJdCMxw1nNozM5ts14j3S50glTZ1XUG8NXzaAuZp0pFjpVylAzWVl11PCbGcqHW9/CEVcZ1Ki94yDs5DgmSTLJQsG7XfJ+L0A1smmCSRphD0Y3CQRALI5qt0I6TVFztfI3ubMCki0nu0bnwoM1SssC0CRinFl6cwkLQjD8MDtZHezeYxWuTbbAz1VxHQAOylO4BIsmyoCqvOzc92S+byM3Ae+SLiQ/9xjBOpTfcVeaz8OVLXHzXghCyRnS9uRoz15nvqNysOzJsT+APN3nRsQ9c1f8LRSGf8ZKicfjZ/uqXrL+k9QMMKRFrzzQU7WGxg4QKPgN3goc8jRNOlhIHRYVbaL6CvP9kohCj0YmOPIgEj3K4WKZPZfJb80fuvj9gObfLKTujfbmjozjXWj+Ctd7Si2lL9oYkKHJ25VyCVCU5EtNCpzANNx9fFb+K9G1Nw2zaMvMO2Ct5/h7p4nEcbpEIO3Xd80i56J+sRG/lccI3RO3aflMKXLB0MZjkQUAxkyrL92SGXsd7MEShK6h14QsaJX/Jxq+f9fqSM2dgOd+ZNkcwaQhcW2VYkEN97ampy0LsoYILRupECVW9K3qCv1Y4xdTJYmpuWPGSSMZcEERhlBas2gzmhrd30yuqzazPeuExqzcA9luUNt+43Ul+/fP48ckfoHKSA8fq2ajPDU6UQwA1wPR8MVzxGz2FlcYbD5hFoArfS3gPh8LVFr60z1IbsqjqEPOUJ5mrpUcT+QvE1L9YZjw3elmnZZvk7yj0w70dCwBviHK3VKmzxW8TfVz8gAK7Dt+xdlzlWGSbVDoEmnz73sUD14L9Cr/OS7020hPiaTXYcaIVESQXzkIZf3KzdunT3yNuUlEZO+XcfvC07PofC/mjj/T/n6+tBt1mb0H74XCMNM53i3Q6uzd+JW9z8gXX7cvB2ig39nVa2anAx/3mT9ew7Ccif3DzTe2MRRfo44tN3d4D6GiuKcJjf1v1FNWHjjsqc/qb6rOKh6GXj7/Pu5oAcDTdePnfmpX7Fku2LciG0mCZ2BkrjMje9fhF2J7ZGeZy3aBkTUAe+kpHTF+NjaYu1R19zBrpm0JGo1i/igwAO1xXjyd4X+EPSkrlLHF/vxcY7iHTyEh4rSdhWIH93GHSlTotOzXSEWr2vRXu2EkLEOV4IwoVBj+QBnwxre4InGslPd9S0RlNn6NzZYiUV8CCtBGMLf9p1IrOA+9CoGc61/zyp5p/U5tbFfQ092GZpQQoU9YzUkKD43PB7n/RYWdO6YaBHRIX1hbIb0iLYSyjKGKow/xQSavIyx+jhzrQGVHJ5MDF0Z9LQrm5fnYhZ8KjBL46oaLIeUcFJBq/Rm2Fx3CeztC25pS5jcNtjsDLGM2mwCfRQiFtSav/+5hqwnpLMmsXj26e4Xno1FaAAkvn5Wgz5ymq7CWMoa6jkLzUdQXb2xWZGAz2KxBUYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"if the tenant consents to the entry at the time of entry.\",\"reason\":\"Section 26(1)(b) lets a landlord enter a rental unit at any time without written notice if the tenant consents to the entry at the time of entry, which matches the clause. Nothing in the clause conflicts with the Act, so section 4 does not make it void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6433,
+   "output_tokens": 366,
+   "output_tokens_details": {
+    "thinking_tokens": 237
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

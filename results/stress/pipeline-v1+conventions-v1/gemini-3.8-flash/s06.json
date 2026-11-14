@@ -1,0 +1,111 @@
+{
+ "clause_id": "s06",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "bf8f5833ee820380d4c8658f8680b66309f2a94c7f608c6e81eb8051db4bd5d7",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nEach year the Landlord will pay the Tenant interest on the rent deposit at the rate of the rent increase guideline in effect when the payment is due.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:44.502404Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120 that is in effect at the time payment becomes due.\",\"reason\":\"The clause is consistent with and mirrors the landlord's statutory obligation under section 106 (6) of the Act, and is therefore allowed.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4415,
+ "output_tokens": 384,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "4HD3avOILNW9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:05 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120 that is in effect at the time payment becomes due.\",\"reason\":\"The clause is consistent with and mirrors the landlord's statutory obligation under section 106 (6) of the Act, and is therefore allowed.\"}",
+       "thought_signature": "AY89a1-W4A_1G7hclukWv0146fJ8WNTGBP_1x5LomqCeQv2qU5frCB8RpHBc8AQEkVqfD-YbeS0VbWMjwmhTRyuqpni9dA9qkE5f8wMlYesMK-Myo61gGhZVjOzHN4I_pqeg-EVA7QnnT9Ayt43J8Sxi76oSPYKKd8ZDtQIeLnkGKsInnEUDQyPraFHNYrsKjdpyydiHFETp0NlztCVO7xnhD7xYt7eqRpFB4tILPXQfllw3WXLQ5JAHXHQz1-orTnCzixxh5vLJyDIbn8RPvlDxLe1s-fgWnklHbr3slK3m0rEs7gj_FC4GsvEw28g6cJznVkt3oscrAXiOQzIJaooIcseXx8vCpo9qj6HVEjTUgm9HUcnOaf273zgRz1GFm_cNeT3FaFerDUORxVXIiXdWVBZ-uPlgq5dp8wEMARxnHueSRnupZ5NMJSGf95_kZifbm68TtDV3lj0kWHJgse8BbfqJMj7hZCWZpSFqLwGolcnvBVNRrMB8j3bUP4eR8raWwRmXyunsm7NZWU6lRQFxg7LuklW1FRUiFMXH1TQkHXz_ZErTfEgVG7X4u7YbWQyCbFTMehm9Sen0rMv2enNv83HfmeF02fCMhokgzAptnTF2zHIDNOX2QCzguSQwCU-oE5hPbhpF4siiKb2RxkxZRsPLb-xLYaScuyOhvT2VVP2OrgCMLlkmtEs4uT1BOMrDs5GesJByQ16FmOOqrMyvWU6MtxtSNxnXPxCRwGRazkQvbR7GjvWJK6EVdcZ34aT_Mr1KDb_K4i1KvWPtV07Hl-8gbSPyc--QEb4y7WIL_-b284yJg7e8GtO4E7YqyTwVeUe9jdJhZj4OaNi0SLpE7Mms5rNgX70egD_hVgqOQaSY0tT0bK1E1oZfgy6ivI31elpyumtxe9m65pacLIDID1wWdmwSa0yJjJTRDMXBjdSFLv_boOETaKwFrxq3RUwXSIx2gOWoWkImMt3kWekTwx9GeYO-tjIXIOCC-kv7tXOAVlNPMLH8X5QhpxgSNJ381loLPJty2P7my1OqzdzK06EijxUlvWvb6nuW3xOuZBa0plCkq7CsfGQAuffH1GElFSSCcKoQrDkx3J9xVnzgcSxUIC6Pxq59vVIDbz5aRK9fyUxTspZ-tdMGwF15IdjV1ikJUuBFVBq9gbTbPf4c3C4y3tShOrndDTuB3UyQZ6xBXDJfUWRlk99fFl7zK9JlO2vZkk5wtmDA_8XYwpKOdjUwwDdzo-cIFhlqH_jEVCCTVrXHTrxuzlNYwMs-PN2MxadKec8e0x-L4shFFd6CT60_OJMV7oR6rkTaovJU31G0dH4c1pU4u0z0FasrwHpn6uIA5_5hWBYUPQlYPyVZXaUjENs60nVu16PFJifl1bH7fMTlcYwE1C4whyzgWQugU6y2GjjVfSzajBl7zUsZ_FpAYemSlw2tvY_lRtQ_QaWsXxYdePgyuI8owRJXVnl6QSOOHe6XCa6XpouyFiZs_am4v1wu0lgYXcuST79dEDQI6MOJctRa2Ygdw95pGeQhnZOL_guJs6DaCWiDUJre48vdWWNgvJYYWlbK6BCAEy0G_3Y5E31duFSKqiQNkr_uUFovp7dgxaVYSR_a2S6VicUl-dlvqOQI-AGGQcUhm24XRqCnS13JP7kWh-boN332usNx3jMHY6GcyfHe8vrJgYoqPPFU5vWek6RK6zaEkXLxMe7lwRhivKjXlK-iE_SA5AyxRThRwEVvuC1s"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:44.722035Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "4HD3avOILNW9w-UPidKMiQw",
+  "usage_metadata": {
+   "candidates_token_count": 94,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 94
+    }
+   ],
+   "prompt_token_count": 4415,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4415
+    }
+   ],
+   "thoughts_token_count": 290,
+   "total_token_count": 4799,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "106",
+   "quote": "A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120 that is in effect at the time payment becomes due.",
+   "reason": "The clause is consistent with and mirrors the landlord's statutory obligation under section 106 (6) of the Act, and is therefore allowed."
+  }
+ }
+}

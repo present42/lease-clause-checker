@@ -1,0 +1,75 @@
+{
+ "clause_id": "c31",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "56c343c0b373c82f0510592aeee5835dc5e86d78a39e75a35303778a1b33d051",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The rent will not be increased during the first 24 months of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:53.812830Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, rent may only be increased after at least 12 months have elapsed since the tenancy began or since the last rent increase. Because the statute specifies a minimum period (\"at least 12 months\") rather than a mandatory schedule, parties are free to agree to a longer period between rent increases. A landlord's agreement not to increase rent for 24 months is consistent with the Act and legally binding.\n\nVerdict: enforceable\nSection: 119",
+ "finish_reason": "STOP",
+ "input_tokens": 146,
+ "output_tokens": 1681,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "VW73atOSNa6dyOgP1emZqQI",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:09:09 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, rent may only be increased after at least 12 months have elapsed since the tenancy began or since the last rent increase. Because the statute specifies a minimum period (\"at least 12 months\") rather than a mandatory schedule, parties are free to agree to a longer period between rent increases. A landlord's agreement not to increase rent for 24 months is consistent with the Act and legally binding.\n\nVerdict: enforceable\nSection: 119",
+       "thought_signature": "AY89a19A5lQ3Mru-McwWcAXLoNZX5q0cVPLp9N8hDw5RUgiUIstR_FrcYiDX4f4t9HtiD8AYgTFvl4roskKrYernZSVGE89swLZlfjXA4BSA3Ze0uiGM5SLwT8IKbOTNqDp8aHznf9UgbYCRP-fY9vzHvlJXxjlBchDFQX0JgglbPj8MBI1CuWRRznMNnRszuwYPwuOcgICwOj47cIgiir9THKFG55_UkZn2WkQpYujWfhm5WWI3MHqmEG-FNSLjpIvjO5KqPNX22FChzAPpD_U9ejq0yaaiTk-R7QKgei6RUB0MSOYZqLm9l-ruJEELF7NO-C_QYyyiaUz2fXCYOiVVt11ISy_xxk1DqbWIXSK7edEkuoReJhCdBkGyk8I7gSLLeKtQC3V4iDX_xc89nTE3RJeKV4K1vuZ4aT0RFpFJNHtunYUVNAxgGy2-WwSocsXjSLAuY2ojRGXcWivLM3gooYBpoZo6SO8ecnZwBNSX6zjHbu9NApSLEr4qz1azTL6DBkhljoweu1bjFPROIpk2Sh9EnMjW28Opv3CVMFqu6h6_AecA1Z3xNUbJMx2vmiRGo2Wv1tRuTi-Yv_JDn01K14xh8DSpm5HRJkJDbCL4hxwo5-sUW9APDBd0H5Jhuu2GTRBTaVrdTNGXb6j_cnTQw9X53t8__hXyIsXdeGQcbE_hRdeRHoEVByie1BaaQZWYg6Z-gbgRja81pBo54ZEI7R3J5EuVG4CUgNxuVNTMvwQD4mhHY7ZZXqU35cQOqLzZoXDbwT2lAjeatYEPHj_Hb2MCKrMnSJF0NDhTOUv8-JvaOqTm_h5IcHVRjKaaz5Y9lyDJ4uOsZnUicRNJ7XJ4kWXlB30Bo8pnJZfOODo4mlsAshd6zrbGaAzHpS2N0RzgiUXMl1ZjHkywP3yvUadhXVV0C_a-o06Cjg9mN0R35UAAiWUWKEUIDBGvcVHNiQK1TgZpsoq9Auw_gTOnxv9FqkMqTZBFyAxw9oUixhGeKiRIGECxJRz52wSgzwWtMLBfaUQyOe4-vJo999GSrHO07ACfw0hZh9tiiRKOp_mvtull1vYP9S3LiJYBy8NmQSLIMxCrN77kMXhurj9zqteQgnAuqPgEAT3NEF3Cyj3r3m180gOaV_n5USQqKttkFqJZya439P7VmpwEvzQTbVsekHMwuMKTg7frxQKXLc2B-bwkPKZRCQkk-_weVW7ofQ264NEbGubE18cRJ53PDQQ2Q8z2kCPfWiUt6zNPOPaaJrTbw7AcSMxAm0sgzXKxPfOh5adD3A4sBOlkRx-Yh5Rdk7rEKWqYWXGEueFM_5IIys8UIL4lv6KamIOjGI1BhuO9gjTZuVDesqh7-TgKMwXh8CkyMLgIaw2VL7iYEL_2NcS9tSOeTDgSrlrNEOeDIbLpWEFOoBijstcc8LjznQCz0F1efR66H25xzr38VC7jti8V8OyYnXckgvhYNCPHLnebCjbXm9UQDp2LuwcDmATq2axQ0MuFJ8lZFwgWBOLTfmzY9JGKanpkkiP6MkNgXa7HbwV9ynkg_SWpCjfK9vmObvsv4hE-YaZ3ATioW3DIdyBTnMmjUMZOgVsO--W7ZZbVDJ4Xs2AzTrOLvZwT0iuYxBmEahYR4PZHpzMKVOSadlcDg_7m7lwK_nSJBPUKLJ0mxk-3YuNJSqPPuMGW7KQBmgdoK4ImASrrQiWIkLLYuslb_Fq-Bbb0KurG3kZK4VAd_A93fSTiM67ZkhS4F56YiXJwU4z9ucGRF99775umyzDfGiwKYKbaMi9kCWrWk7LCy9O5lyh6Kfjq8hUyOhyeGdCeIa9FcMGn8k21eTMpJ6wYvLlCedmdzHVi2xmgJLdYuC_qAdjP1Eq9SocnGAvVqzOlzbCK_ndpPXa528Tkgcpze-zx2gXiIQWkvmzieTnBYFvZXTd_YsdXw9yUB5opeJlC2RFNkuyENiVyXbHhDv0ZQDJUcb5Wa6yLWG88JBkANgWrCE4cQ2BXUib4LkRQo9tjQz_nz2l3e3JTYgAdQlB-h4EoKVFmR3woD8smFbt5JgH7qER_daLiNjj-bN4fFU-0BDF2clZ5uLi7B6DvCiuxB1SOfjKSs93vAnYTqEVLRS0xGL--dP_dRUkY1lYo0pm8Z12mJ1bm9cOsRxmkReWAuoksO3dy2Xoh_6HKvZg82s0nRPZ755pD7ovNsEUPWvBjm-IPCGysf1_fUp2Ss9iuBW1eL9FwUscJuQfenNSEADKJla67HQ1l1_lVAnZjs5Ihj24DTeXvsZa48fbWi3qfVxWjAEC-r55BtdyGd_EtWadZ2T_XYr9NJJeDIHSmzyUi2WkhAVU3TJbG_jA-VGs_Z5gqMAjHKmUevWdbQJXJU8iZ3SAdDkaC_ySGIJ99J5j5VxDQ17chqCFmS2SU6rG-5srnxXTmTiRBiWM8DTV4JfT_QzIrCaijxKKKobeysuzG8doS7o4-4jqCjcu1xwWzgMiuz-p0AWp3cptQL4-3NwghKiJ0MsgAZ7pimhXEhmwc883WNBjo8uQmO6b139joVx6TcItvyIdiD1RMFUKlfegGJ558PoHY3h_tXdxUV-IaZZ3NB5fJWDqLDQw2ZBF9cyRPtHBgjnjOSpiceieLh-5d4v4n9qtsifdwqwqt9_efacnNOKUS_ohNew0Q0xjMkX2BKTsnPcCPDzddRAAk3Q6NiFK-BJ9uHxRzmE0qGJnx58E5IdZKCB0fh6Bv9kL9UaNjNIa3AmiJjdTvM0uItICrggSR61c_ohcghqxBf95XuBDEGND4L4GNPt0eAJDexfkx-6gS6q44SwtM4HQF-4yiMIZcCkoMPYIdD56dHatZi89cV8lnzmFW6aWkvjS3DjeUIe-Htd-EXXuYpUxz5mob5aRhVrG-IPk8JR4fRNsdgo_QtJUzvsoBZh5vYBkPX7xhqke2Mq-lSIud7zb5jweigFqn_7MM_WCcijeelxC6Gz-i9F0nPZ38AlytDtg3GB0VX4993y9tx7JP6xBpUA9A91-oxlxf595N9ibrUKNTZVpfmEW8nPQWACkQxVDHEbB7YcTmeBqJ7XwQY1FdiYqmWeDBmv7lmbDDSOxq2V5xsuxgbLkoFhgFeK8R0uh5y_AgkeiHNxyfUO5uVx9Kmq3ey-uVgwl25uB6Q4kl-ue9YlkkmTr8w82ilA5MEXzSIYsrbCGwP86qRj__wukcjocdPc4kHeCqE2FlSaHkegmY9q5Or_sanR9ySMjzm8BvbNZtJhf9wOeulKa91Hny4Mh9Twef978sMG30VvWwpKJkoOcX6o5KF3YbWXwB7ghZ7sVHt3Jnt7FBfU7Jx27NawWDJCfoAiWjCxy4gQoYsDiTA1YAYFDB1tiLWaRfuyIG1BDqUT7L2WEUo7kshU0cPpfWcI4d6P2uK9RIrUm5ufouNbrH8B1KwtG6py5nIuCz2nHVmFS21PG8KUXBPGa2hUorjwonbJrGVFOojqWxFhfbjPH7IWX1flf9MU2XjpS1_jVTE80EKC-RTHF36JOl0RoHXCZjj_iTb2yYUz3DtuugELcLx3GH9TRVUQ4zZZnIKXaYRIWZM-zaGiUCU7yTUX9ZLIiLcHwIJUzROT0I0XL7Krj0xevEkwaQGNWZKpZnGUuT3oOKCpiuw-JYwSt3ytTdsHCZofvfTxK7oJJcxr_1xQfXb8RVk5jRWv92RSTDFVFnylQ6WAQEornYe1TVUSVQu_njMHYWFzJPAKh1tsLxX5f6vE6fA2FUS3Ld1UL-HBHuoQUqNkpsUqq5QbLmCbpfINa7_f9xgH5XdGA9ezJozhqT_9bwqe4LntE_ykEt-JLFZRk0xXkgFS0HwdmOZXBuyw3J-dZ-ybZOtOeXcbCtmiNdsTlCaSnIOVws9I3DWpy8y8Hw0S842aL1kRSuCwZcX4QWCk7y8O4Zx9l6FtJu-cUNhPEzOkikhyv4OweuRrNWFSHge2Ol3o-Ab4Me8pz67Zestytv--dQzJKuqBAOzFcUhyCinXUq7Uybyt1Zpin35fDzXsjL4GCZtlnPganSfa2baRzYcPZ_KkX7HA6Q6sFVLBLJDhWOpwekpMtmxo3Ib-oTpyIXM6kN88ysy1ZXRX6RlL7lKgGKFzDwjQO3haJVegq0hlo301v6WRsOsYOxBWGW3pT9Fl0dRTsNuarS3fYaPgSlJd4Zcb281qLcBRreFPaC6CmFtNAnzNHqcM-SC8b-hawnMTCWBDEk4nw7PXCrAqi4HEK4jQEOxzdzUGvgMMROaQAni0-uQnVNcCdD1j-snxOHSTcOiQURReFZKSo9lZp55t89h7iaI-TmgyYPIT-fhMoJtabzs9tFvvmeV1X6GjR0BcbTCpYuP0xQ3kuhHSFO0yHUagOK04tyz7vttUsS9fCuF4eyp-ZIcJblWQaHDn5cyqXstUSNTKor0W_cVrEMkkOp94qbykBu0fMqL220f5jOVwoN2163zSK40dy7JRjmJHnoMUGa3TzOY9DqkcP276MKPhZesimzsNmKXbMF-ACpth_h8e5CM7FcmaRtY1rvizPl_W9j7ZLeBVh5WO-K5aTmgXBlkLbke4L2gA2k2_Pph8sYDo1DrkTdYapzkZc_0hE6XYeoSR9YXZ47I74D3BAp7EAfF5DnGJrxhiU9NC5M2SShRRT-F7Pxv6xD14SD2OzzPylSt51sCBI-cd9dz8u-bCUsx7ORk9yJm2KZvlGzzmEYU2Sg0JqOknkZJXTCcOHc3ptFc4qESZKN8BcEq7zZSNIaJh8_APKobG-ndBfEsVUFMRaQkjtr8tAgBSiLfF9oCB63xU5SqyyCDM7IzfQfc34Bcxzlm0rPnIxYmOxtm4JlTYOKi-yLRUzA1MttK2y8qjrI9N72KrmsLTbaKGeyNIn4UvZonFc0NJfCquMYNKxylm716iSIsCXg3xO48VeAH4hGuxgm83ETVBo1jFytDoOynB8oJ6XfV29cXnQSLGAlJfweuHGKJOTwl4Ng7cYCqb8uREKHQof71F0IW2Zo4uF4T0HvoWomG60jl6IGP9to5ZBFBnIziNi5xyvKhRmkV3mzwf_pcq2rkW5MeNgSkk1XIZxuNNc-e8r04OoDNau7ckguarGmpBZ6OHbAXkWeSJsmGlozV32WUlRIlJJLOimuHntm1N5bCvIMLR18Si4XfEYzKM705b5so8I6vYOh-qOthOC-RaeQ2J_miKJk8h4Wn3thwi98MJuPG5a_BiEmlLdAO2Y_7-vTL6jSFQa3FnfFZAz6lIxo6MFoa3onOiyfvUYXfnEm3I5ia-3uM4m1RUlnwK1KiQwZSGGlJk35hc18bF8dSs3w7EF_oXmLIwDsda97Hf4YLk1LDC9mP3F_wQ1hmyiHF-A-J4_7C4rDq33iz1i3cfbOpEtdW5FJQI9yAxpgrRS7LhY646kM352OI5hpw_zR-bRnNO3dOCNbGYMlOYOhR03WlIzzTn8ffwnRaX2R3At2KX97-_RU152Sb7F1hSPmfzY8gysws2aDYqa3mN0U-rEQu9tyluMqkCP5TXHvqzOi2Xaory9_pXnkrxrTZNS1BMWwEpRlCYNKEfw7LRQCYhABp6aZxQv6fBq7gZuZtg9l0BLUa8RwHh6C0rFWg0amaQseVMltGY05BBRlj_x3pevdytRToIeqyleboXI2H5aIXseTzmYNlJ6kokcn-q7gb1YBMZ7aM5XjqWFjgRgijyfCkLE4dgdZQXnQXuFRY5hWE_5b3I-YWsoCx06FnI9p4s0Xnm5e2Gp6UHWm3tNADgTrZd0T4BWvp4sDmOJ_RlldmwU1h8ue-ROyV-4QSU6LUxf2gxomYwbCo5Ja2N56PeoOeC3dJf017NyUssbe-tODU8phK1YT5wzthaEH2EV6Z4y6L5SR-B8Hid_I_onbOqWpqRqfe4hYpDXcvoshlwYaCPQEImsj9O99_uhAYueLMkPySpUCw_wWRU3sXKzsrTBrs9dfvqN8BiKqJeFvA1F62YtOoUvaOC1ZiM8Y6L1nicXXaqTfSIbzrDzxQ0WEn4CllxGFDq1Q9ftVKbrDB8VCQuMJxuLH-O2QP7952okd6S1sXQLDtZaTdBdArb3LHbDV7vatj-J8byiCgkuvPRJsRBMxdJ9CCbQUj0EjtfVhz7j4BdiAF8aZOYFgXnUR2Ub8Jep3xVJ1d8SNjXqGI-aKDGz9l9NPI6o-qRdaFw-omf6TNX0-yMRBsRe5qrB8yiac8L6s0_Sayak7tlztUCn_4WQCJyo-UANaLLDOhlnVklbCfZjtknF9NBQsr5rrJc1BIntdnxg-tO7Y5fLadRaNYrdqmybkkJD1sSm-yqT4JiNm3kmoNBBdjGkqC6Eh9jlNVTfaDOu5GQxSWTpnCSskATiKFpMJhZVpQA9SxExxvJaiDqvJeQW_Z6sasxR9M1kBZeix0eNyBIFGQdeLfeQnnFWhOktn8yKGaKezEXB9MrVSsIuqLAOO-WUgeMeFmatfEhqGc_sWpEM2Imv5NlfoEQuofLD8HS1N5wJSBJcML-VX7yTiPZLPa3bHyj2JcPFVZGIcCBJTRmbOkoelJHsZBkd8bWCMqNDFwBtGT2emQFYquj0dBx9f5hD3PWdK8d9F8H12Ij1afRWbK_JbGwNIqTS9k9pjpbxTPLM1lAUbB_Bg68N77xS-j-Aotr8Uzu_U2TXlMIk54BXae4uuS9zbuhgGerc_l-nYFjFAgesYUvv_7QH8xfh1pM1bhhobde8RoGoWMJ1OSeWaL_iyJ9jMUjmXHFWJWpgebx_JPaF3NMfIXCau90htyRBNIc-FKR4ojDfOo3TUpWNiQFGgmR8tzTd9SOEvMXevbzbnyCiYoBc_DBfpj-YUnu9ncuxX6tDePQP17Ar7QEROmxXWCfpqWePhsY26tSp21SD7C9NgzGUnh-xcHtE8yBFd56ujOu5Q2DbX2hYZ34ifrIUeteKff_2DZE-bDsuQ3zwGGAuWRNoezdqcpLR0oarHqVfymK_fQOuUYEHamS9OX4K0swG5s9IHhmG1MfSCbrU3e3KsFOvwywgyujgjK9Zvq5ulOp94s5WIq7I5bTTKAH1L5GYtSNvJy5RhvVcdGvw8foH9L984fUOqSQKWLfkya6oO87GAQEFupHasdM_uEDjN1Wb34hozwZYx-V5TXa3OFzyEIyBYLLs1yLiaH34yEpWqjti5J15RsmLhQlumhia6Xb6j-8FP-S2dOY6F9d9AzpvkalsReZGquidwuXwwmKC4H0e8mriGKYWDT_XYOvghpUw5gAsNL_cG-3Av8nCgKLht_-LJhfItrncIBv7CmBtybPIq1DPbvB7vLuju0SOUKTZfSBixBAuHsbjGQM8LSXr2IL23Dxsnjxr3aZlSX3hnOTLFMkMcsVIcnlbYWtnwYAnroeMRLQ6eG8FqCivPrOj8QBHEhG9dDirwsLDQe8bOyEsDoNwEzuXVromtxHyKN4QH3FeekdQGIXH7abv_uUoTMT_St12C0AYKiPdlQSZ0WGYEJ0l5UTl5oXun81Qtyl0YbqTMFgubNYb4meC22iY_xPgnEZ2TLFBRKyeRh8n_VkeHuN66_6SJdJawgz5i63SVj3lKNA23MFZF-WCTXGLRESmMi3RORN0Fzm89t1E8riWnYZi_2Y4yBSXJouZvaPWZeaAS2xjzt6yvgAr57T9Wxg6tv4HZEbQwio7-55GRALl_e_tkLPSwyCBa6OPHMmMTDvX2ydclQxRIhPnRJfDsTnxAyHuurmAy6cSkBLQK8gCfU06jY44mNB4Fq4K4cK0JqTRTKWM8nhEqQ0PCe4hBUw-uJdVgBn8sOBENi9oyHq4Q1OA0YXzXrZBPm4dYhp74nCHX7IO9dk_q7WUZ9tlcLv0UTsHDVoOplIGDlPQCQh-t0P83R-OYaWmdvF6zII-LETUppXu8aG_F1CmMKhYSnPMGeqbPLmSqlik_K8o_eoX7eUtgv0QfbMp_EEQ8I48VzcBtLQ8PginAh5RI71DwMQ49oYSMJfHhmj8CzYPwr6Nid8IQsktL_deOyDCNcnK6uLplsOPceGpE2RuH9GyTVS1ECxz6xpHZLnvlcAvsxZ30rsPt9hkzaCq4ahyFTLXZkRbKBLcCnNK8lrftqtVut0jdwzjGywf_4knCZzU_KAWuBmQYPFMYKnO1-PxZvIK9wiWJbNOlyFVdF8Q18kqXvvGVJxB1CtPLK_CCE-I2UNZt2AR0BZXeQsbNcft_FxdP7qRSRBMU5sA08Msr0x3d-HlU7FovlXyxqRkZXBVe-YjO2Ushac8itw4E2ycCWdFAQ3y8vPIuom0mHWMfRkXCowUxkX8Gx-T22wA8LYgttyhQ6IYAn0qCDlU6ZtEpy2OYwI81ZIrdH_Odn8NBVsaHQ4ltUkUveKAojRjfFkZ_7TvyZeNjxyG-FJ0wMlyfLC5NO9FLJHiA0pcwrRbWa-jg9ufh6LtypIjCxty-f9qR69rTWVAGOm3W9ZtuzM2GqWmjSRA006E8GSBitr-rDtzMFfixlaofghgI2QUr-4219g=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:53.870739Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "VW73atOSNa6dyOgP1emZqQI",
+  "usage_metadata": {
+   "candidates_token_count": 107,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 107
+    }
+   ],
+   "prompt_token_count": 146,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 146
+    }
+   ],
+   "thoughts_token_count": 1574,
+   "total_token_count": 1827,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

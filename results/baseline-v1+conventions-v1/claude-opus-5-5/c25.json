@@ -1,0 +1,67 @@
+{
+ "clause_id": "c25",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "500763517bfad967364738c7b306d1cedde21e512de47ab8eee2010c88dea969",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Before moving in, the Tenant shall give the Landlord twelve post-dated cheques covering the first year's rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:39.741044Z",
+ "text": "**Not enforceable as a mandatory requirement.**\n\n**Section 108 of the Residential Tenancies Act, 2006** says a landlord shall not require a tenant or prospective tenant to:\n- (a) provide post-dated cheques or other negotiable instruments for payment of rent, or\n- (b) permit automatic debiting of the tenant's account at a financial institution, automatic charging of a credit card, or any other form of automatic payment for rent.\n\nThis clause does exactly what s. 108(a) forbids. It makes twelve post-dated cheques a condition of the tenancy (\"shall give... before moving in\").\n\n**Related points:**\n- **The clause is void.** Under **s. 4**, a lease provision inconsistent with the Act is void. Under **s. 3(1)**, the Act applies despite any agreement to the contrary.\n- **Voluntary cheques are allowed.** Section 108 only stops the landlord from *requiring* them. A tenant may choose to give post-dated cheques, and the landlord may accept them.\n- **The tenant can't be penalized for refusing.** A landlord can't refuse possession, end the tenancy or treat the tenant as in breach because they won't provide the cheques. A tenant whose rights were interfered with could apply to the Landlord and Tenant Board.\n- **The rest of the lease still stands.** Only this clause is void; the tenant's other obligations remain, including paying rent when it's due.\n\nVerdict: not enforceable\nSection: 108",
+ "finish_reason": "end_turn",
+ "input_tokens": 235,
+ "output_tokens": 1006,
+ "raw": {
+  "id": "msg_011CgwRE8rjSUmGBtoEdGpmJ",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable as a mandatory requirement.**\n\n**Section 108 of the Residential Tenancies Act, 2006** says a landlord shall not require a tenant or prospective tenant to:\n- (a) provide post-dated cheques or other negotiable instruments for payment of rent, or\n- (b) permit automatic debiting of the tenant's account at a financial institution, automatic charging of a credit card, or any other form of automatic payment for rent.\n\nThis clause does exactly what s. 108(a) forbids. It makes twelve post-dated cheques a condition of the tenancy (\"shall give... before moving in\").\n\n**Related points:**\n- **The clause is void.** Under **s. 4**, a lease provision inconsistent with the Act is void. Under **s. 3(1)**, the Act applies despite any agreement to the contrary.\n- **Voluntary cheques are allowed.** Section 108 only stops the landlord from *requiring* them. A tenant may choose to give post-dated cheques, and the landlord may accept them.\n- **The tenant can't be penalized for refusing.** A landlord can't refuse possession, end the tenancy or treat the tenant as in breach because they won't provide the cheques. A tenant whose rights were interfered with could apply to the Landlord and Tenant Board.\n- **The rest of the lease still stands.** Only this clause is void; the tenant's other obligations remain, including paying rent when it's due.\n\nVerdict: not enforceable\nSection: 108",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 235,
+   "output_tokens": 1006,
+   "output_tokens_details": {
+    "thinking_tokens": 517
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

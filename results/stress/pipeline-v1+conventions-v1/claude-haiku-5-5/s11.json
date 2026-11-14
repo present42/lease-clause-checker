@@ -1,0 +1,99 @@
+{
+ "clause_id": "s11",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "77a3d40107aaeb115cc283825dfd99ce39d83e02f4abd2621c59b20284788310",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe rent deposit is held without interest, since it will be applied to the rent for the last month of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:52.069866Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120\",\"reason\":\"Section 106(6) requires the landlord to pay the tenant annual interest on a rent deposit at the guideline rate, so a term holding the deposit without interest is inconsistent with the Act and void under section 4(1).\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6426,
+ "output_tokens": 501,
+ "raw": {
+  "id": "msg_011Ch1HyDP7mw6rXuXhnKeCk",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSng0KEAgTGAI4AUIIdGhpbmtpbmcSDH9nmszVfVFXILgMbBoMUQtWJYkr6CXmcmPIIjDKVY+rkMpfB64kUADWtZ2TrU8hWNGhmPhEHMDxDpRFaV3Cba4dKMTDAFglzkbSOsAquwxlIbBRKnVB0JrZ8b6qhix2agO5dlK3+d+UhH/cQ6/RKROTXl5VtPUQC8g0rnf0gUCvtiY4w4sYQmkJVqH9IPuDO4glLc4cavuWHS9ubKmd6UEfrMC1EU429+oVD9RolDHwxzSNeozRw4aIQAqvFYwKggHXYsBocYF7YVYodCn1VH6AClnbeg1zJSsl8mO6HjKMDwaCDpd6qmS0SZI7MsaSZxCjiCql8f4JTyuMCDIi79yKm1kcOLzeTOWPLq8+1EN5LumHuU25CyopNrEHy+6NVLIdMU81zpjdYOS+7XS5hW2+plLFemuQvXQyPVGKECAmezQUr4nSCCBB7LmCMMEvAb2naiveqDwDbMxmfq7F6JybVKBSSvbwuPM+z622C4h8GVl4teZBCdHRn/7ekzUk5bcswhb2fuSkNcRztK8yxx65/wLP+2x3gz3o6UCl+NQ6MAsX/tv35dFR8ilxwx150o4ACc4IRm9Y0/yW9oZMGPudBF+mlJ7i4E3JduWhu/NwfgoK11J6yFaFXWTBTvAtSlaHY3ieTb+hqs7SoahVtDq6y+bg54N5QI9OA9u+bGTafEggW8ZxX13shJ4PqX9QRGhlegudH4Hfv84dcneDbsRcp4+mFdn8Oc2oz+XQn9bUuHnPfmnz+K1Gr0LSJ/XYP2auttllK8wk+2xXZXMxxrxEht05ItoLn9ZO2hbgB+0d+yIGETPgDbdzQjMuO+qd5pSfYyC6/Gh9eR2KJOkt64KypfQuyYJTaVDO1VeowCkvih068w5NMkDgK2zgoyMRbQwEbyZcpgXlSOh2O9oak5rLI32Pqni0ZuLlIHExH2aH704vNrdxGHt2PWVEldQv7OeGHe7hHFd0Kd7iY0YbPrkH7WCm1y980nmO96vNy7Czb9qmNqnHJ1tyVN6fXc6vCeOr/w7w9MH3gEjt7fDcqukpv5rf3npNAPQoNTWkeMwkcxtdY0DXfTNMft+LM1kNzeZ6qB9L2G9x1C/jr4w1eAseEWSGfZNIdzsS7fAtqQiu0nHvB98vBtbFtFsMQ0BonisfxE4BfQK2Tat26HNe/tmvaa7t7wgr5cTpwwh0eIS16MRP9QGs7DN6obBFjeQSKYw88t7bEHNtNGiGFhAcsgqpnU2YYR9KjfCorm8M6nJS8tt8vZiGrheoqSFd7cI4I4aDbm4yFEUXtZmWGliXukcnQ3NofOU76koVlvY4b8B+7k9WUVGWVch5AMgZ4X8m7d19qm683h/uDHu05KnbAdxsS5KpxBqp2xOZJbDOVI7Iwm3XrloCQRFrhDg4ryMxIKIKb3rABDPqtMHvg/MZg/7Yhl1A8HtoyeiC7+A9AHgkPI6jFPxXpjAwQHhqGTZztU1URehYwVdjbYplzVbycPsUVYIDfqSqSGhQ3ZaRZux8D8eg4P678BeFn+m7FlODEQfHOeiTL4ogc5rkQGi9DTS5cNRIfmR9CZ2+ptq3CS8uw0jqYy6b87NQ6P5aZPLw9i+vTtP+0gIG8GZ2HcsM5gfjESZ457BTyhNY7l/0yUXPuqyd/nK9mxleKIa0goVzzlbdkdYCxGtTH4pTn9qKjqRbP5rnS6tYsXnH609Yoo5s92d5SASQtQQ4ck6MO+XWX1QuFFm/wbcDf+EnoIZVXDZxCzCie4CFju3qsy6s9uJ46oJcTSOuunOcrBoyItJzBEf73HTn6SO963xLYyhk2b5lDqwXxuAxelDkTvK6BeaflOY+IsImiEyRdVpQ2cQABk4/1uas/Ba6TKrDSlm1aKiHQ6QfveuXkjDVMwNiqhbW0MEZ+2K9ILLzlXGg/yQcCzDZvjooNJ4dNrCpYa00SX7vG//g3TMZPeaBm7xsi9iYNQxIAM1irLmFZ1FL93zzIo8eozyAoQ1SDKg/aQ0NVmKxsZZagrGZScJjn1M3KyGW9B/STsoc/Gj5h8IIavJ3Xj8ciida5Dj8GHUcR9QJZ01csHcILu73OMHn754MNEi1wbKj2fKjFf07X7Ed0lhx6xVWKk9IUt73gNGM+6WudmPHPbLLhTSMknbJmU7jdHDyKVjuTnmPv75P1W2e7mILsGlSv+7CBcpSvrKEMfAbwtfW0nIH3MO5ewMdfN+QjxwT4e6H+OFFMNjqohgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120\",\"reason\":\"Section 106(6) requires the landlord to pay the tenant annual interest on a rent deposit at the guideline rate, so a term holding the deposit without interest is inconsistent with the Act and void under section 4(1).\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6426,
+   "output_tokens": 501,
+   "output_tokens_details": {
+    "thinking_tokens": 353
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

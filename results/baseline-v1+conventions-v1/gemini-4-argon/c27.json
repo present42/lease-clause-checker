@@ -1,0 +1,74 @@
+{
+ "clause_id": "c27",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "e1fc42b9d4bded219e543cfd570e9466460bc11f9b16bc7314034f5828568a6c",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant may pay rent by post-dated cheques or by pre-authorized debit if the Tenant wishes, but is not required to use either method.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:59.908357Z",
+ "text": "Yes, this clause is enforceable. \n\nUnder section 108 of the *Residential Tenancies Act, 2006*, a landlord cannot *require* a tenant or prospective tenant to provide post-dated cheques or permit automatic debiting of their account for the payment of rent. However, the Act does not prohibit a tenant from voluntarily choosing to use these payment methods if both parties agree. Because the clause explicitly states that the tenant is not required to use either method and may do so only if they wish, it complies with the Act.\n\nVerdict: enforceable\nSection: 108",
+ "finish_reason": "STOP",
+ "input_tokens": 191,
+ "output_tokens": 128,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "NHj3aqYWyKXDxw-q9ITQBA",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:51:03 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. \n\nUnder section 108 of the *Residential Tenancies Act, 2006*, a landlord cannot *require* a tenant or prospective tenant to provide post-dated cheques or permit automatic debiting of their account for the payment of rent. However, the Act does not prohibit a tenant from voluntarily choosing to use these payment methods if both parties agree. Because the clause explicitly states that the tenant is not required to use either method and may do so only if they wish, it complies with the Act.\n\nVerdict: enforceable\nSection: 108",
+       "thought_signature": "AY89a18u3cfvGFBMYivgdT8oDV9FBlFa89QT69YAL176S8Coctvv1PlucDNgDkTAshFcug2t9V3_TRnhoXsFiYxI4vtQCgf6jmX0kh1QBdmLYd_Sm9vOT-Kal5bIIP3b"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:51:00.002854Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "NHj3aqYWyKXDxw-q9ITQBA",
+  "usage_metadata": {
+   "candidates_token_count": 128,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 128
+    }
+   ],
+   "prompt_token_count": 191,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 191
+    }
+   ],
+   "total_token_count": 319,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

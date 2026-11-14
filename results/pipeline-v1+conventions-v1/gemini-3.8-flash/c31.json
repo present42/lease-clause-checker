@@ -1,0 +1,111 @@
+{
+ "clause_id": "c31",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "66a779e2840f0a8019802e39e8d8beb46fcca728b160beab9246a7b46ba52de8",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe rent will not be increased during the first 24 months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:17:21.103031Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"119\",\n  \"quote\": \"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed,\",\n  \"reason\": \"The Act only establishes a minimum requirement that at least 12 months must elapse before a rent increase can take place, without obligating the landlord to increase rent. Therefore, an agreement not to increase rent for the first 24 months is consistent with the Act and allowed.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4402,
+ "output_tokens": 1200,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "UXD3auLvCPmew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:17:30 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"119\",\n  \"quote\": \"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed,\",\n  \"reason\": \"The Act only establishes a minimum requirement that at least 12 months must elapse before a rent increase can take place, without obligating the landlord to increase rent. Therefore, an agreement not to increase rent for the first 24 months is consistent with the Act and allowed.\"\n}",
+       "thought_signature": "AY89a18ynTq44dN-UTooamvtSeD-XSv052euYoaVWZwJeRlAxQUpADVdGnNfVsoa0ozIjNMkRkHlW7MR9JYzWGdrjp-umSyWnZzZVw3nbBVNvR5KpndcyAC3iGFrAUO4dZqB3Z6T3ND-3xeG6iNQ6XvKyjcj_O8StYvjK21pjkNG9JvMx8vmmrvVRItCrg9r6p4OY3lLeb-sCyHbDeRM8PfTRj-P1NpBBJeSU7YY2CTwL-whrH3FURnKS09rJ4AeABr8gDPMmnvcJxgiOKpwEEa6JK4QXWsU6WT1Bsei8j-vNTUJzxSmlXwl6ZNrLllml1RYX_PlcE648jgs_XsJZgBQ2eRuhzxijrZIY6mtd8orjMSa-MbuUJ5T_Bqj523JTa5k6Vg_N_AIF3iP3TFx19eVY4019JAQeCfV7Rc_en06WZb20QTI_RJLbCxvCc-iRgAwlXZX7UR9PYGvnd4mJGkNYyl9r9RjOTsDjRAB53hopytfeQHbFOnRZiOitBzeF2AXjh1OMfzzn4Unq0x7JCXu8Hc1D120eOkJEESJthYsSWcJDd7G_KM6rRjwYEMBSNZqBLl4UzCOfXMK46KYnKZchrBBq12igYccTM0hrI75C7mYSKN3t81v2C4JRl7J-pQ6F0d7Hs1DziXfxRq1yxJ5aaev4_VDVDLyCbduO1UqqZ_taEaEarJyBve7mnDD0QmPL-dplQfU0t-Ggw6t1hXyqMaykW37KblaVUHj1GDdosN_dCBTq1uNSvxuJEUDuqW1AWBzMwOJX5LZvZKq4CFBVThcoJf11Plcmur1cTjuJzmKR2tyo32Cl3l9vgmLE8rrUxm8BwgBO4KYnwgYtuIUDXKVzzBF4ul29jr-89_THF9oo8vrmpVeueIM_T90rD2sTrIXKnyUbGmOdv_WNUhkqGoQvFpozbZlkkB7vy6o1VmueiYYzLwnhwRgzBPaewc2pVmUf4vZSjfWOa117S7vOrouhOpzc8IylERXlwdqSxftgJupearPqYurGSAz02TNfFiw8ji1c0H11tdTHVWMhOBPkOEJFtUsFah9DNZbXug-Y9v-Mp6F-ApBinJ6Od8_mdZW72qNdxBdu6mdw3an4u-uw6vwW0y_F918MaEkjlC_5WqVY_EpYjAaE75oeYfkZzr5VxL8pllukpoBQkxX4UI86H97o-Sg2ib5ycbi0tX6WZGWCnKBtucVrFjFxx3pWlGCbue65o7RJlE8ex6Tz6nqIecVW8bPWLWpc1zapGK9dGpDuDxjXGg1v-Lz5TlX5zqkun_5YYf220XSuDmNuRfXeJPG0JPNtOuLCBRn8pKXp7zCMylHwQVKYFao2atswm-2fjgtxoLmoIODx365-3vGEPyGZ4zCmLt5AhvCZB2RoRlai75QIUg4T20MgAOjR1ouafqgAnhgR1S0Pl5rhvdUxWYe6zSyYw5YKRhacHs1070l2VPEiHPaBMO77NXR67iZQqsMYL4WNzDNcdandFHUAQGZtwhEhTNyUv-e7CRqBQhXtT4pP6664O0fI2jNKMG5uzlkQZ6175dz59HjbZGKn7TaW3D7kbCkIrEz8DviL6p7fGoEcdapTGNkpcEvSmHqQVXHze2BfGMyivOiYQAz-Av4ohdp-VFBKprdfQusU1e4VluRPV7tDHuZB-TZp-MAKVXELR849IFJZUEB9touHUGa2ItJLlCRGxxcHEx6OlCOvHE7b9VRVDWVRk0reTYsJffEUCpdhwuop6iewC8vc08effAAF4qpOe8rv1fKzCG8JQCO7ua0Y-EDpt6YWoIFbTBnvTryxDEXu0rUZ4-syXSR-eGBJOkU5KdhqasfXoK4DZMaalqGRVmvs879F6Ivniesfse33K3NqE6YjglGxNLISzMaqowE7_l9VPp-epiPICmQqhd9Iza5J_at8WFo-5VUZ80svko5Cbrpa7I-Aq6qbXjwH05SfJhrwrLh2gn-3-lqxVeSV12tJQmphAQ1tEJVmEg8m8bgoVwSnVDZTwAYcZpxZpXuoJlEq0aX4-X2su5MnWm6JyhwYqteU7SxxUnGezCDlSMhVMTai04mGvlHdw0FJcQY2GciAsqy5bUtTQmeJqC8OVUFkd7KGQWMIekRrWw4Tte8-DjRC9GNhVVfrohOkFfYsXKpeb0giGlr9Xro491lBZ9ntChkShwjEpqAlqoqrfKj7FDkH-kmYKa9yIct-kkT63xhR-Jy-2dtKY-RbCa-BITcIV1xs_BJY0XTy7FF-QMTHMyZ-WYqV3ZkPPre8m3O4UvNQaBfSUh43xe0UMZ9xMQYx4_7SpXDRfqaOh03Cf6qcQFxtFZHlL5m-gQvGI45Fxg028w5OjiKXcJxLlYg4jR7tfDohi9nwjScJ7u3sT6ZvZabOEDdHrT6ZnvYg4TquoEgrFkJuQEW4CoyepSQbael1NrBUVTddLIWn95k8hpNeZNyoqFYOiWja3EnZm9MGKKKqh5_FyIQmj7-Nm4NYk28iRQ7VIQgyodooZD5_xVBDpBYDJdXmRrl_gV4rGp7LZ1rShadRyaiQHqHunHwlEcLOJj5Z3AuOg-LKtUdInhdUfeq_tthuUYRhum0MH8ZO9ZoUYTOPSzseS4wBajFChH9bW699lGBIV5FpIBTZ6WYxZJzOmQ0AfLFeB8TVKqWouJMKnrYToOPOetIp32r0milPE2fIUeXdcslvIjlQcXLYuo3SUUfjyLARpa96jHJsDFpN5vlDe4C0tsZcMqayuDyCxKwTGPWyoSnwZ2nWv45t8PzpNpDFt0spgOOEfCPJkUh79ZdxInm8czakt1VhxhVxWG4UlVARgyP4-cDp0xLP43f-ichiaQ8TP5BCgN3QcAVxY5DcZgTu3cODHOAKkZ514Y-3SYZmbBYKE7P_951Rt4NROPaiM6lNSGcPPtzj08a-tprNtTq7aCmSG_1AHwsdTwELX1DSkrwXhofQqtZnVqh8-FL_3q9RfKk8UcDiu3-8P11UHTm_bJJ5n94ElhpAH09yRe6Mr3ngGFioJgtsYeF8yedw0pZJZYkFg3Ih8DoCnFh_4BPz5IUMczWgOKTrZFKd94MkpqOoRH96wm_K68ZTH3ODThET1x7YJF7uljl6TzrZwbuq3nYK0uC5edCxYYX9Hj2_U_Mc1iVieyjLJxQNWW-F9UEKqJXsoOBsx4V3M0X3-cIYarNt9-uci7tpKLXmSU8xPLcFkNviNmlfn4miDXtmccsMdNhrpR8MumITKSumOWvb43wQwflGLLQTQnnBMkXvdJdFBouEeQXs284IFuahDNpBzmy5s4hUweyzhzG7BhqbA9kuW8GiQvhPln9Se5EpaYWn9hCRsaZ1RuGNzXBfChvPTkxSzQFIwflprcPLz3wKbMz_axVWKPsxdG2xXSHoGTNJDK6H4qGp7K5TIIFBtHfDIniN8RenWon3RI0LfIS7xJdvXV3Lw99PtMoACyZRv9r8ZFw5QPbW8L4VS9AT5Uh5xV8ozmNqeczwnfi3gZQt04l8Nw4YtHMM7puzCzgli2R7iSm7R_0o2BErSbPv0Vl4vm_SHyo3dXNO7WXuN1bxb-uG5IIaFZykyXzBa0jQJGQQWkheKFmXVlVMDnruncxRHjvafJ343avyXPTDwrFMikBWeFUo8TdT5zXYsoebVhHQBCdClAGexO_naz4BHpkWuX1YHHLxttYCCyut1tt-8YugMtZEk0uPh2lQf1vSxWwuqnj8jyTPBW35LQWIxvrW9J4S1uP5maAd1tqO_GVDJzjmlZ1LzmpVE4j2UNRbjkFG_FZ2BFTDOWxPCYiDVgO8-Ws-vE8QJNXdwQSozLK1Key_f_QpdVZ72LcRL_q9WYeXEDClVgZJRHDyb5k_RvwFFHXtGmfbiWf2fdJBSziybvoXrLvhc8f4YYfCyz04uQv90hy08U6tFZ6K4nHaLLUL0ESbAHX6Cs-liIfvHz4ZcdGFwkw_LbpHjTRecz70ZADx1E1Celwjhi-w-zqfjs-0GTZa0s_0AY1hQVCE8XZrZBdiUy-K9inKDn5GY4i8dnNS4MZhkdPnBM4Biuzn7n_OeH_kDdAw7S3sPs-O9IZQ48OVPvQLxMLvj5HP9tzoDzw2i2pvEoao8AthSKd-kYbypSxYDMx6tkIa10j7lOaB0vbvbOC_hXbO1xg46S1z93EsdDGrOFMtPw_l6XvM15fFHnPK4zb2LjvN6en20ESTPk_Ciwx758e4FClGcQdJowaosEQ0QmYf2Prvi8coasGps8YGb-FW_ZgPWRXwrm1HxqKyHo1xmkEk3WBp27TfGeb4URXYQRjqp12ef6HxREWDCkkpY98lk9V_uJZvLzGB8obKEog4SHDDdKCjRK1dJ3x1JpYpq4wXgq3NfKyMkUi-p0_UUo507DcLPMnoGpTJLiWSqb1mlya_Z6Og_sCo1LOp2IBWthbbZO0gfZiFm-RNH_UuHfUGTGHOeqgj4xOBaotxjbfhKlW7UND1rE26bGZH2Jy68PWAKVLXxD8vUqV_XAtmfGzqonRO3OPLC8aeKqVWIzArxcWwk9QlSNcTVqWQfpT-3EXViaawkJZKlpPpM3fnYl9BG_3uNmw__qYU14JW4Z5XLzN5ICr7ZNc3Txo2HJg4UrSUfCN12rdh87ioG6vrjxjkiEwPbpTYkNKiyHJlXO2nkruFvbKzVNz4vb1Xh-szmMZDt5frOF4QoAImF23einu3kbcpZ-fqOu2UKXvJ1zgdjGwWB3onlNzu8Wp-37ShyDWKFn9DSJTtCz-Y6NsbsOzTWqyuUcF6JNFFFdPw1UODLLBbzdz3NGBYXlrwUCce-ywxkiCk2Qd4s6OTic8Ctcm3gTxFXN77tceZ9TrwkFxxLr1TDCxznvtLcXFJzK9_oewAElo1R0AZ-OwSxypgzUfBJq5YdpeQz6xlgyEc3TMg7qbYXg-ZwQ-StSspApZX2opmqO50y8vSBOA0n9Z_TDcEiFbJmJqpKKYSy4_Zv4-Q432sFv3xq8OdxwoFbMgPlkzFmh-Zln8zrNo8jYA-Bbz1UBl8PHQ4rjrvp95zp-9iRIQNprilLYI7OPVWc3pLOWZBlE7VcBS86V2rTuzTQ19iL8-qN2pPpLzUgVxGXSg01Omeb2Oh3n3MfotsDXsEV6_Mh3GEYfzhJuqZi2U4JxzXQtYpjqHHJd7j0RZYkj9aGhAXkmp9uCb1vSjacI5lH-r1ckU4WOnir__Rc0OS9bIn3VGCcXCb8XnuAOO5Wts20DRMVyswauMeJcRJNOi2M3Zxmrm91p0mGuOchyyctV1MjntUwxTA6dbIsYz5MGgnvxEH0pxlVdKY1YSo50bIOc3WBv0QTNCfjBEVi83on2IR_scTpTT3X0iuTG3ufRLHOV5-bwXZ65fFyDO_vvkJvDpqvf4i8nCN1X0Tnsu9QznkvpJhqS0xI94POmjNGlKkdIl4hhssqTiytBBu1asz-6FWRNggWJOQF_2-yN33279LPvxH9m026ngJzkd4dpqp3_eYY1Sq69GW8pgcDqyuIEea97ZJshW0b7oceX2F42eHPEc4kGSehY-x_uzsag0y9USmNfgf5xipX_mYLT7LVqnK-pdeWPK8hNJUzXOlQCWoxKBAiOAdyNFksnfEcOeHmJnBcdI3aTdVAo="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:17:21.145378Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "UXD3auLvCPmew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 122,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 122
+    }
+   ],
+   "prompt_token_count": 4402,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4402
+    }
+   ],
+   "thoughts_token_count": 1078,
+   "total_token_count": 5602,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "119",
+   "quote": "A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed,",
+   "reason": "The Act only establishes a minimum requirement that at least 12 months must elapse before a rent increase can take place, without obligating the landlord to increase rent. Therefore, an agreement not to increase rent for the first 24 months is consistent with the Act and allowed."
+  }
+ }
+}

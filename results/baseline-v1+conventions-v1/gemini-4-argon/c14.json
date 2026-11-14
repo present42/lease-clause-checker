@@ -1,0 +1,74 @@
+{
+ "clause_id": "c14",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "8b959039fa68297762cd299e02db1ab163d82ff0d58a833961921a5f9d635ec4",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Landlord lists the building for sale, the Landlord may show the unit to prospective buyers. The Landlord will give the Tenant written notice at least 24 hours ahead saying why, on which day, and at what time between 8 a.m. and 8 p.m. it will come.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:29.308902Z",
+ "text": "Yes, this clause is enforceable because it accurately reflects the statutory rights and obligations set out in the *Residential Tenancies Act, 2006*. \n\nUnder section 27 of the Act, a landlord is expressly permitted to enter a rental unit to allow a potential purchaser to view it, provided the landlord gives the tenant written notice at least 24 hours before the time of entry. The Act further requires that the notice specify the reason for entry, the day of entry, and a time of entry between the hours of 8 a.m. and 8 p.m. Because the lease clause matches these exact statutory requirements without attempting to modify or waive the tenant's rights, it is completely valid.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "STOP",
+ "input_tokens": 224,
+ "output_tokens": 162,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "FXj3ar2yF_qjw8cPtaePwAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:34 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable because it accurately reflects the statutory rights and obligations set out in the *Residential Tenancies Act, 2006*. \n\nUnder section 27 of the Act, a landlord is expressly permitted to enter a rental unit to allow a potential purchaser to view it, provided the landlord gives the tenant written notice at least 24 hours before the time of entry. The Act further requires that the notice specify the reason for entry, the day of entry, and a time of entry between the hours of 8 a.m. and 8 p.m. Because the lease clause matches these exact statutory requirements without attempting to modify or waive the tenant's rights, it is completely valid.\n\nVerdict: enforceable\nSection: 27",
+       "thought_signature": "AY89a1_Pw5aM34kuK2j61RE5sS_OBwB-npEbC-NQ6R7DRuzaV9jWGYmzuKbFCTkWbWL92BY95U702FRBlITXJKSWgvacRW9jybbU6cf2qBcHi419UPiR-OZLJv0MO82_"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:29.383293Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "FXj3ar2yF_qjw8cPtaePwAU",
+  "usage_metadata": {
+   "candidates_token_count": 162,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 162
+    }
+   ],
+   "prompt_token_count": 224,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 224
+    }
+   ],
+   "total_token_count": 386,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

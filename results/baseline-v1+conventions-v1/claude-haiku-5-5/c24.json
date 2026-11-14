@@ -1,0 +1,67 @@
+{
+ "clause_id": "c24",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1f02763500505833b2adcae883acbecea1e858e6716558a39401fcbbac1333cf",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. Whenever the rent is lawfully increased, the Landlord may require the Tenant to pay an additional amount so that the rent deposit equals the new monthly rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:51.424641Z",
+ "text": "**Not enforceable.** The clause would have the landlord collect additional rent deposit each time the rent rises, and the RTA does not allow that.\n\nSection 106 of the *Residential Tenancies Act, 2006* limits a landlord to collecting a rent deposit of no more than one month's rent, and the Act does not let the landlord raise the deposit later. Topping up the deposit to match each new monthly rent would take the deposit above that cap, and so it is prohibited. A rent increase that is lawful under Part IX (the guideline or an approved application) raises the rent the tenant must pay. It does not permit the landlord to demand more deposit. The tenant can therefore refuse the top-up, and the landlord cannot enforce the clause through eviction or a claim for arrears.\n\nThis is a summary of the statutory position rather than legal advice. Provisions of the Act should be checked against the current consolidation before relying on them.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 260,
+ "output_tokens": 1662,
+ "raw": {
+  "id": "msg_011CgwRAaFbm62Q4FcEcDfyE",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.** The clause would have the landlord collect additional rent deposit each time the rent rises, and the RTA does not allow that.\n\nSection 106 of the *Residential Tenancies Act, 2006* limits a landlord to collecting a rent deposit of no more than one month's rent, and the Act does not let the landlord raise the deposit later. Topping up the deposit to match each new monthly rent would take the deposit above that cap, and so it is prohibited. A rent increase that is lawful under Part IX (the guideline or an approved application) raises the rent the tenant must pay. It does not permit the landlord to demand more deposit. The tenant can therefore refuse the top-up, and the landlord cannot enforce the clause through eviction or a claim for arrears.\n\nThis is a summary of the statutory position rather than legal advice. Provisions of the Act should be checked against the current consolidation before relying on them.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 260,
+   "output_tokens": 1662,
+   "output_tokens_details": {
+    "thinking_tokens": 1347
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

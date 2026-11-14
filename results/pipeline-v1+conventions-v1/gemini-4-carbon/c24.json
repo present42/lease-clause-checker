@@ -1,0 +1,111 @@
+{
+ "clause_id": "c24",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "7e9e733a297ee18b1f03f117b2714a8f7c98ee0bf375af6a3b462619b9a31091",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nRent is payable monthly. Whenever the rent is lawfully increased, the Landlord may require the Tenant to pay an additional amount so that the rent deposit equals the new monthly rent.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:54.577641Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"If the lawful rent increases after a tenant has paid a rent deposit, the landlord may require the tenant to pay an additional amount to increase the rent deposit up to the amount permitted by subsection (2).\",\"reason\":\"Section 106(3) expressly permits a landlord to require a tenant to top up an existing rent deposit when the lawful rent increases, up to the maximum allowed under subsection 106(2). Because rent is payable monthly under the clause, the permitted maximum is one month's rent at the new lawful rate.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4543,
+ "output_tokens": 628,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "rnD3arDoJe_r_dQP553DoAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:04 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"If the lawful rent increases after a tenant has paid a rent deposit, the landlord may require the tenant to pay an additional amount to increase the rent deposit up to the amount permitted by subsection (2).\",\"reason\":\"Section 106(3) expressly permits a landlord to require a tenant to top up an existing rent deposit when the lawful rent increases, up to the maximum allowed under subsection 106(2). Because rent is payable monthly under the clause, the permitted maximum is one month's rent at the new lawful rate.\"}",
+       "thought_signature": "AY89a1-7IbSvAxRvX3hnUKKAxWlC9rVIUyspr8Rs0TxZYCPCnV-BPjhveKdFqjUo9k4aKUJjTLJ2ebn1ebHR0O0DsY6XhOeMEREFDP8r15q5hQBRLPxPxUOk3zHod2nU0SO5YXwOkdNrbDrseSZ7ovWv5xfDPTiPEyLHB_vzEDgQQfiFNUf2YUbWPiiUH4Fw9pJ-og-k0iVJld_01RjQedmiQTLRObH2cA-VklsPg-1PiF_JQ28xcV9lwg4nMZ6JjNTLSIu44YAv4nWiRZcE5M-GgQZd05i9U0bEDvzEYeyLInBJ6XV2lbVqfW5bKe-x3y9UeCx5TOmQGlCbHJB9MENX-ncZKC-SB983FEOVscgdW9fCy6o7QNmLyYLUQUUnBj2er5kxHU_pLN2Tw6ZTcK61oZ1JcHPm-Fsc-Ros9nLT7Uv8HzMV8DRCh5UbgVGtlygTl_zVZWx2NlU0VZ4zjasKOUgwHdwSqSsQqwGUJDArW5CDawUaiO_QnYwHicNgtv8DjDZ1QwI0yLJsYE-RdCFh7xJ4wz4lNbzxHDzecQ7HeVFvVQ5OqgnZZd2d7iAgePZyQ5oz41ad92FteYqzajmZeU81BjLbVkLdPHLbmy30OQXgMTxeaO7RhqPXD2N8Vmf5vnNVbkBE1fBSZVkARWKhZluAEv3o-m8oikAqU-j7OfwiG5k4f5ZgG5jKaS0TcvET5RosruWBR6JOnYEoAgEqZ8fRLGUwL0kyJ2eDszj1pxC9mqRoCzFI3WhwbRv01Lv2a7wM5sjdNTi59MuEVzHT9eRf4Uj3FFsQOOk0JpaLjJUyVriKdWGkDh-mj6vu3yO_d3iQM4fatMxAsK3CZHjAzxF2v9l2FG3RnZ51Dr2mRjmSU8hlEuzaLj2WKQWk21ddhc6H9SCA6g-rkzTHmClctkuE79wjBzkY9jU8rmHFYTwne0kMII_-ZOj3drFsB79uJXyWwdTSi6mQQ88zQeIaGHCPK8oe3ntLj7riFHYNjoZg928asfqPZeweuJA1iBTjjVxRAQ4AUNcvZHnPyHiZ9CAhNB6LHeEMki2v9z7MxGvAwXr9cV3UYwo_HefGxbn0wKFMriGkKfoq733nW-57HKtObR-jzRh1fEH-eZHOrT8WTllWs9F8xtbNR4Jdw0XeEBhVlw4kqPiwYQv7iN12-vkjjT3wwRq-Dq3gndQSYG4GEGS3VDobIxyoLOGeJ9VrLAPeN1eEJEMwIK04ywkWDDUDF6dqXv1rumBLn4MZkCv0kmT01huLpk3A5YZK_to6LMO9__gIi3dPQdrQkjunciMmMvpuOfjt7Pic-AMhR6zJ3ckY7xdGEjFNNEgtdis0jgxXxwGZ1TW_vLveYdOCfZZQ5KSETFNtq-ZWePPKJPcNKSSAV411tlFfO4e8Q7YLR4wgSKl3Z0DBjzoDEyANltOUzZDOq2UFdO0wFOf-YAyR4Io2W8IbOloU7TZPlsHLtlVZmKqnkOZVXs_UQZoCFa24h4uFc9XzxznspFppOcSAk4bqeLPrkA-xgflZz-VsH8LYk4YxdA9u6Xt3IrdkPP0KgKwSxqV-2tyhjiZAUJAxLIDP46tqJGF3nMGKVe6eYOYEbD1rp0FeISvvrGa6-vFw89lw8uMoZ817wpmWe_YOuEOkSK6q6TNvAj_bPBWkCyaCVeMAdfHCxI1nZhkguyo1zvLDjJMPvzRT35gRX39KaTAvn6KMQg9VP8VtFOStM5vSAhr9rSAtrR0zJVWVyit0UicrN0HbTUb4rQpYxRAUNhR-RoI_Zh7elUcH2EdPsROjmasQGBUoEGJewNz84S7fDsy0_eQNPqCOoDAhc29tED4WuKIMp9q8nb2_7TlJqT3IuhUVMqOE04fHulDXUCD2G8OgKyGVKhlx48Eho5XkVznfVQA-VyFcCPcvzCcc3g0bQmBqTx30SMQ-iuLGx1PLOlppWHDunAE6aK455A5n-5lzNO-VzZ3vMGbN7lvw1a8GjCxbYt32oD-580cLmUtsGZ1fevUlk8sORVqLABw-sTT1qxUnrepGGJpj6JJLg01HgadOEesPVYMS3d25c9nzIApccCM8tSz1cFBnPdxcXlUjF_aZ0gpS7hEp2nxHeY_-JeIpElqHBc4QDG-OD_Y27yA_wDWDDGvGQT7iPkzWa70BnryA4F6nTd3AgQMoTU98Bfy3s38nt5DzV4tSSXc2-oKk61T7AS4M6SAUHfUgD_CcvAtYygLzCLpk8bP_B37dUKCracgLGDYR8Nz6XCTGFMEjV6oJrTGovlDaO0F4MRI4puYpoxv6unKtPT5-s73rXnlXO02AgF0hMgGZP9a_U4XRYQLRB7tUJdzxvtfqRNt0HdwU4rjt8MPo7iP88KJM1A4iuehYp2d1fNBDC_ABDUdqWWY73dqUxMhDtcAIHZG8X2oIaEmNQ_tznw4aQVsfUhl20WGTc5zvVRarjwi6VmrdwnslxvAjbk1VFDj8ujGKj_9DymDeybjT1NpcZKdXx7Koi-DJ61rGY2gvhF7jBn4E3K5QVHX4xA-9lpRVehjENyH3qHfuRnWrJbNaAtB-W0H1IEBmFczS-iLtQm2fdOjERtYQ3jHDWsvvGUvCLIMpMnKQBcDeSqF5ngBtkCp7LTWmghjpopSqgT6wqVtjPT_lKUrupyyl2JtSv5BtmX4M42IgkO7Lpu4z2cWWMZgbDGFglk6Bc5ChbEYSvvtMJSy9rmJjGWqU78P5nho5rCRuhSGF1DVsKx4D2UOU1BgHjl-0DiE5_j5V5DjprskqexsVZxsSXu8zke0yBe4T1EFBxo_KWr7O-kKf1brLhIue9v7t32Skb93GAf8u-IXZFKXviw_fb1qXzUcoIkoeFkTMDVn65OJFQ5YEbXhaxr6K4d4m-K6o9bc="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:54.619568Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "rnD3arDoJe_r_dQP553DoAU",
+  "usage_metadata": {
+   "candidates_token_count": 140,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 140
+    }
+   ],
+   "prompt_token_count": 4543,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4543
+    }
+   ],
+   "thoughts_token_count": 488,
+   "total_token_count": 5171,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "106",
+   "quote": "If the lawful rent increases after a tenant has paid a rent deposit, the landlord may require the tenant to pay an additional amount to increase the rent deposit up to the amount permitted by subsection (2).",
+   "reason": "Section 106(3) expressly permits a landlord to require a tenant to top up an existing rent deposit when the lawful rent increases, up to the maximum allowed under subsection 106(2). Because rent is payable monthly under the clause, the permitted maximum is one month's rent at the new lawful rate."
+  }
+ }
+}

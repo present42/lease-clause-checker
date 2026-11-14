@@ -1,0 +1,75 @@
+{
+ "clause_id": "c15",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "91bcf5b55d0203d5daaf69d21507b1a6f2f66873dc56e832a74c8093f827ee8e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant, an occupant or a guest of the Tenant damages the unit on purpose or through carelessness, beyond normal wear and tear, the Tenant shall pay the reasonable cost of the repair.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:09:52.092398Z",
+ "text": "Yes, this clause is enforceable because it accurately reflects the statutory standard for tenant liability under the *Residential Tenancies Act, 2006* (RTA) rather than attempting to contract out of it. \n\nUnder **section 34** of the RTA, a tenant is responsible for the repair of \"undue damage\" (damage beyond normal wear and tear) to the rental unit or residential complex if it is caused by the \"wilful or negligent conduct\" (on purpose or through carelessness) of the tenant, another occupant of the unit, or a person permitted on the property by the tenant (a guest). \n\nBecause the clause limits the tenant's financial responsibility to reasonable repair costs arising from wilful or negligent conduct beyond normal wear and tear, it does not conflict with the Act (which would otherwise render it void under section 4) and mirrors the terms of Ontario's mandatory Standard Form of Lease. (Note that if the tenant disputes the fault or the reasonableness of the cost, the landlord must still apply to the Landlord and Tenant Board to obtain an enforceable payment order.)\n\nVerdict: enforceable\nSection: 34",
+ "finish_reason": "STOP",
+ "input_tokens": 199,
+ "output_tokens": 1253,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "kG73ap3QCsCJyOgPhteoiAc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:10:09 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable because it accurately reflects the statutory standard for tenant liability under the *Residential Tenancies Act, 2006* (RTA) rather than attempting to contract out of it. \n\nUnder **section 34** of the RTA, a tenant is responsible for the repair of \"undue damage\" (damage beyond normal wear and tear) to the rental unit or residential complex if it is caused by the \"wilful or negligent conduct\" (on purpose or through carelessness) of the tenant, another occupant of the unit, or a person permitted on the property by the tenant (a guest). \n\nBecause the clause limits the tenant's financial responsibility to reasonable repair costs arising from wilful or negligent conduct beyond normal wear and tear, it does not conflict with the Act (which would otherwise render it void under section 4) and mirrors the terms of Ontario's mandatory Standard Form of Lease. (Note that if the tenant disputes the fault or the reasonableness of the cost, the landlord must still apply to the Landlord and Tenant Board to obtain an enforceable payment order.)\n\nVerdict: enforceable\nSection: 34",
+       "thought_signature": "AY89a1_s9e9bVAPHxtnRTZIvoohdD7iNctIZMIrKAKhzZxYMGAWiXY0BsyJKjQi7QxJY6ERmBsoUJYrnTkvcdcmS7A-fLdrIjSqbKVdF7sYvc5SV_H2zJ-CfUtB-HdTfhNHNHpwZq7yXMy7Aq0OqE8pVUSCI6XZn1thKZXjk-JFWYfu5XFgwlMebXKhrHaPAuT2ORNdn2wn4DeFqwMGEf4Bl3hrQ7zp5B7-BPuRRZ5cD_QnunJhu9cdduqihsjUDm2JjaiSgbRFfvm9ZsvgXDA9lntW4FlqIsZAw-0eLqfh0PERczq_6TIZvz5DXuueeyKAb9jZU7GTC58NyxYUJlX_JODu9uPXz2yPgCN223W-uvI0E5iG_ujOFzyGqov6UmVJ6jC9Pkyy4l5cBI7oa9m-Hiq6s_tozson6t0DP1SAB5tGI1zkoxe3_KSOIpP_DphVr85qhOpLhfP4D0yr-44YUOxFii9VgeNVEoTABfwArhCKi_oN20bPgmgQ8Bql4psdqjfLDMoPX4hI_jtZ0wAhrTMDXrOPivEi3R7DkeSXbiEhKGjhqR10Xkmq2SuND-f3pPfxsKZ4nhly3sJ8dzb57w7t9rCBYiIA-Yr_rYNECIu3pS8scpCKHar-810Tazivw6vTvc9zk3IUB-VaTe7wpQmTXEO3upIvcZhDybDE4DIAcZeWk5G-ZbZlSbaQ2Fu-bx2Ex_PTUx1C0nM-ZAnM7YnwgyVxpIE5NwDEwRTWI3lQnXS32wBho-Ra_9CDh3wOoZxoQrZGvfk6DBGnV3yTpmahydA6i_ykx6pmgeWpIXrPslnWc5r9MNI-kVDVtW4TYO1ul82usCygQtdKnAYjO402TmYccw_pAXhTssJ2JHMmtwD9kOWTC-E1qPmGiHnuLulisCMF_urz4oBsytVkki6iRTNBJbOBMDtAvXK7Jg0ICSm9JbgD99kcoF5vdVPC9pHFk34f-fmKM-36V4lPlrJXRt1xt2gClBylB_egjFg4OdVUuE_zM8lETYpJoZgw64PK6SyHg36JS9bgqWv1TfvovgtR3SYGQ-sxWns2w_KsP0hrlAtLSRhJfvo4Y6QC0Jsy-3_Z_H4kYpNpfZyoRL78aTKkqyMCksf7z1MlhMCP4-5Uh7eRhHCWTUbs0w2UPkB-zRVpSlDCeZ9vmNlhp1z9s4pYcc4KySoLBdlwXPousEPrDU_DfMLzHITpkVKXFzvRL1ZM0nOp6-rzXBbkCuGgsPMiuZzdxikFny_Plfn0HpTwgd53jmwkG4xowXyFLAK6vZQ4UAjxSozWKbDU4hy25WFEFI05Dw9uHPrDQ_Z1PxDlipUBz3_-t3Ygy1sVR2FxeX6ZbfDDmbkE6v_B72e8u9JPoGSPI57YVlpuw_QSzP0NSbzXKVE-qVT8wDTOSjSz677MnBzbFjMzTLPZ1yATJ7JmAEEELjRiTNiy_faq1Ezkux6DQcmPmTdcXHObToBhJ6Ixfjt35u_GLBsltyqg40PrNyNcJiwL13RfmeDPjwWcrSfqgKk3O7keepmn6OxQwn3TRUrV7WJMZPV2r_DzhnP-_mHScGlsHTtT_SokZJBjnHRYVVFOy-tdlsBX54FREmOkT18l85ddyVVe625ZK1uNr01iEbKMdojjNh_bAZblRjZBDMw6eQJX17cmv4kQ46mswYf0reWwrfLSXvTQHOtChHeo8xiNgokJ_4khi_rmbKCOdS87h_PQb1S-8xJ7gdECtxvI9vivnlLnRSyLARsRI7uohQpI3qX-8pU6ccFOlc9nqydsyfTeStanzhZPsQmgQPbMgefSfTqkAhC10HaZx4Nh7IC7kAE5Rg8vwDWOLlxmZye760T1PmCm-17Des87U3TwlRphwv33M-zK8vp-MQLeIgYAFZFQIBJQ3G-JHz6KMipSaEdtJlKYYGhn204NRi0pJD1oVNKnseYNv8BeTHeske1MA3VN-6HxqF5n-QSU5fRrE6O8JZE6G8K2CUjKtLaiuOd8x7xMhx3WvksDq6x-U5VPSFQU4Hrpssu0lOMp3On760FM1jfsC07IQ2TcwcJCHcj_RslajXw0ej8BmOM4XmztUUHeO5aRoPWsZnW2x1JZuA-IIoP2DgafvBwUVHsEVavJ7LBeuXPElHwngaeevWdlm47NPJRPRS1qZtJFJCsrm4ZQk7AnrgDepiuFBiDFqo7y5zZwfABbK6MJLt_-IgGS18_JT_mqrIM_tzEvfPHzzhD_cKdY4lp3-sigTXz1fAtRDtOCZJX7iENY4o3l9drsLK3TTHEC15lFzK3k1nI35fGUEJbrHL9J_GKsf_RQJzZXM8LrOAx1EXwKuRJjZYdDmlzdIMhKrtUHPy-IF3r7oHN9EE0p2oJWu3JDFS_XEXgVvE3YaflNClMzFhx1E96ExRgVBcLc-XkU8n81W0U1gP6lnq3mX2Hyx9ltsCA9K-yzEj0bCdPCerocxscxjIBSRkB6Czzh9x8thh3tUaaYk-kgEEB2J2DIseFq9DbMEY1QxbA3F1aNuUjxODQm74Q0UQURsj51S73QeU7MVjp41cb5V49SFlP4cRUIIktVj3FPA2HO9O8DzjkCRyLcsMDAVPG_NUdnLvCYTTCnUfz_lMdVY73ZxoTYqKn-huGag7iZJ6N2X7NIntcFb3Mgj1_RfstWsthsIGXxocGO5kXlVulkumJqWXcIhvArus1k777H6wufGVFtVXbhL7Ka_S-hGqmqwd3uf2PnbKNR0xzvhwgIb3PrBztVyumLQWv-f5kuBgmhFwr0UKEyabG8Z31cZBe60sZp1F_Qjg9QPOcf8OeoUeqnH6jXizJj_Pvdprni7-WHuwgjLHqfwTgYxQj396Xnk4la8w2cyI2BwdeNXQ98jmc6GIhPdnVEBeZURfJi5U9fvASf_o4jpd5i8kRW6rdszxhEhdb3tIWr08P2iVrqEXv4T5tFnjBN6Lc0zGdE5FQLzwJFUFXASNRvSLtos7MUbRL1qm4ETyu7k4SX3GAoMJXFKqErtPD9OOrihJSRp5vyM-mAq1OjKCY2GFnKDf0vhdiMcFoSBOrWmt89LN7TgpYMnXZG1tBUY3ZQhBUf31QPJRmzZTR6yrq6tC2HVhQE_SUpu8H-nAhxBXHXlLxUbDgeXF4bgCI7UkJdiHSkWrDgp2iNjINc4UzbUXeUb58sreNbdGclSRi-71Octa_OfYqT3PSzqrwJ3ofg0Bd1L_vnMZnSfT700I7uqAXBgunBo-j3IY-ckcTyh44sG_4mQagMLknypDOFz6KuhpczCC_Dd0pjMQpuD-Mhd4DT0FoSDaDS0fZ6Ss0ZzB2ZixQRYMZ-44AjcQthsN2pU5iq1i3tQu5Z6BcLNvXibPuSG2RP-yF3OkES72TyIq_bWei4tiNuo1ZkYUPuLuyNxcEveU037jyUbDEASxoJh9_T5o-As2rNOCZOwrahXhB4Lm9oliKN_SYhzuiQyK-9DGRaOPFvLkP0Zu0eYu1X-6Kz3Pys40eM6bmUEtLfkUt-YIBP14Eun3G5ex3z4DsVsBwGE6iujM4gZjM3LB_VYXl_NILrBswZooscuE0HghdvrsAPEDmfaVhvmJGkcAY1tJxuzORE1ngjlpA5ebdhyHYHCjzxigwAFTYLEGzRfERMRgP8XXQE-DJ8sX_MA6i5IPD4VtGVDyyvs1zBFnNHiG11f8bFfNkQKNqMUxH6vJRbqkHB8Jx2eT3gxqoSab0ODctf1UvAr5m7-enaafA55KRr-UzDYzAyDCk_rvN2pNoPs1gvic85i_C6Am_IJExPRxDbR6qbQro7jxhMetAnSOwIeyC9-cgRobP4a3L97N2F0qhLuWRxV7uQagYlkDOVnD2H42rYnD9mwjor7LE74jCZUse723fKrVJdQlGExOf9gb83LRee2wwAb9ynRUmfOpg4f1pIuK4_gMAzdTinyti4XVWhDh6FnYzcCT1aSO4bqaolZvqcCOVfJCwUdEDiJRzSig1hM8IwV-qFoANrBTIS_op6KDrRPb1hGYf-q-7-U8paRTaKU4PDTX2oYZhxlFnAgAcnxOk6NAFsU5vW2G-ONjCSfmziBSKX-fEgwO3Pa7dHZwbqGKLxNlaqSJowd-1BoL99I3PLqHRW8gsusSB5hfs8jz0ayyyR2RPCi6-XglwDza6H2kfTgemmauZPUQeL2sncN0Vv8l2LYWrSaZfkUVQywmZhditKA_O6dNYNrH_3ypvG-u-4Ijlg2LjXCIuAFtuKFOuDxs1BCF_ETdn_FVeCtztMoHZZgQGPATAFcftkX1Li1VLibcuJOAYDFDPuqkr-qaAuxUjbT-GnZGEAzkxSN1u8gXK6OPwbB2Yq6Vb_w_G7Qq1fwBVEWWxMN1l8_vIiKbtJiu3syD4ZaPz8jC8gRhV_KO-6uj8bCUFxt9kBF7xdTL33IEM63YFj-dAZ9JM5c3yGy1fIi-PaL3g9ujWDC8ALDfItaFm7HZMgM_5KGVUacRwUZNQ60fLnPGTzLHIQyBixwv2DPnACX35Onaz99-e5v6Z-Boxrf_pGR2oseEw0AF627qCWGBRF9je6FzyVAjfhmDMFyGjYebup27yTbK-y9TN-jb0GbG6Hct1IzrhMfgXChMA7CNPkwrKNclzSk8oxblrsqQ4dFuEugxGYhhFD9u3lcOeOrQju5R4YuyP_VWCD3pGjr_9YU5V1mvEXBvopyU6iF0r0gbH5DY6HB9h0bFslAPhreMVU2zoqxRO_YMJHCPbxdy_A2FuVRXCCT3H0qJG17m5g39H7C4FLxB9PHhMBzqypCz15_XYr13BAOMReo61kD97v2K-dQMvWewFCvTWhRVhpriAHiqZnT6kQWTUn1emszqY2_HE9rNSkvcAyZyTpaWfd_Z6cw_kqKFhPrTy92ydMuRJAiwtUkQb2UZPaRDfq9UsJBhYuOHIkXTaI8t3wWWWSc4O0WbQV1iK5eymMkv0ix6RHv9E-Km_xCiIfG6WVr2RlfliCdhieRg8fXqZoLYZtlJD2UnQOoINyFfKT5ikjb6hID9HwL6hZv9f22u460PDFe7DaYsNrDz-dFd7117LBNOHQYaYoKBk_ILJs01aWmlYTxUU4tJK5tlH7GKjCjMyBh-8a36_qsR55ou8b_o-N5N69q7jUyrUOvCMAtCAN7s-Uag_zWOlzeAUJNp2Hn3IpTOF2ten0pFEe2TelEqvc-4XWdhkz8xuqkc9w-1N1HJJ4jHclsOf28x-gr2FZ0ZZ9sCJv88h2bIRoygPmW4jEGhdfUQaYGy9Mf_hO_A163q3Dopj_DSvu3MqRJ8iYeAZMm_Q_R4mSozRGBP2PVqDf9uxv4RauBZ0aVr-KjAczqfwpH08OFrWbKOc_jNV8XyD4YzrpJDk5hokklGjqyV12wRkY2tsOxIyr7CkQxGpxB0ZwHX9y-Vp9mhrCkBhOUTL1ZCLOpJq_SRX744ep-Y-yMXmr4CZoQbdtajuVYrWZbzjDbR_IA3bCah88f905zHuq4QNyb2Nfwbw2t1Mgci3IenjnMmp2i-eWMie4PW-4TqcsGepz7NAYEEauGTbJ9ADL99Zv3I_Zk45RhJiramDqKDkQmjOYSQ8SkaxjvL7clqhnF1BiujYSvdC97O2umXgSsJRVBGiABRfJNVd5u_G9x9SXHRaRjdR9ey_KtYEMQ1DAKw4QaMi7YcghIfM58HSyiwOVbroiy_ECmr1ab9HYnelIMcz0azVT8121M4pXyQZi9p6q1-OjqPkCF2IR9LCKSGDQ6L6lxGi506M3Dn24fpMigDB6CVlcLwb3sLmdk_FjnUD-ep3FgdAWvCC9iP_l6M-ecOs46fXawXF5D5d9HzwZyS5uwdRMeVTyc_89RoHxYYn64PtEsk0rlyusARblv_QEu0YD0Qoqq6-b3iqnpINmdTgWkH-0GUiU9C9jcz_OtscNMfzojhFtA2DqjNyfLFKDVwa0ja8WZV7FM6F9aXg9hy8BUQSJc"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:09:52.174109Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "kG73ap3QCsCJyOgPhteoiAc",
+  "usage_metadata": {
+   "candidates_token_count": 238,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 238
+    }
+   ],
+   "prompt_token_count": 199,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 199
+    }
+   ],
+   "thoughts_token_count": 1015,
+   "total_token_count": 1452,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

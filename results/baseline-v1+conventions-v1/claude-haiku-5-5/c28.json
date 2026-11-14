@@ -1,0 +1,67 @@
+{
+ "clause_id": "c28",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "c0a6333a24a6d2653ab18192c65ecbab9a5d042a05c8f2725ca82f3b3e017650",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent by up to the guideline amount once in any 12-month period by giving the Tenant 30 days' written notice.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:55.952279Z",
+ "text": "The clause is **not enforceable as written**, because of its 30-day notice period.\n\nSection 116 of the *Residential Tenancies Act, 2006* governs rent increases. It allows a landlord to increase rent by no more than the guideline, and only once in a 12-month period. The clause's cap and frequency terms track those limits, so they are not the problem. The problem is the notice period: s. 116 requires written notice, on the prescribed form (N1), at least 90 days before the increase takes effect. A 30-day notice falls short of that. Under s. 4, the Act applies despite any contrary agreement, so the landlord cannot contract for a shorter period. The landlord could still impose a guideline increase, but only on proper 90-day notice.\n\nI have cited s. 116 as the governing section from memory and have not checked the subsection numbering against the current consolidation, so verify the exact subsection before relying on it.\n\nVerdict: not enforceable\nSection: 116",
+ "finish_reason": "end_turn",
+ "input_tokens": 242,
+ "output_tokens": 1547,
+ "raw": {
+  "id": "msg_011CgwRAucBX9Ynrzvq4Z7Uh",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable as written**, because of its 30-day notice period.\n\nSection 116 of the *Residential Tenancies Act, 2006* governs rent increases. It allows a landlord to increase rent by no more than the guideline, and only once in a 12-month period. The clause's cap and frequency terms track those limits, so they are not the problem. The problem is the notice period: s. 116 requires written notice, on the prescribed form (N1), at least 90 days before the increase takes effect. A 30-day notice falls short of that. Under s. 4, the Act applies despite any contrary agreement, so the landlord cannot contract for a shorter period. The landlord could still impose a guideline increase, but only on proper 90-day notice.\n\nI have cited s. 116 as the governing section from memory and have not checked the subsection numbering against the current consolidation, so verify the exact subsection before relying on it.\n\nVerdict: not enforceable\nSection: 116",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 242,
+   "output_tokens": 1547,
+   "output_tokens_details": {
+    "thinking_tokens": 1237
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "clause_id": "c26",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "f7300eea13bf7618dc74988477cffae804bf9dccabba408e99026035b647ea3d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent shall be paid by pre-authorized debit from the Tenant's bank account on the first day of each month.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:50.582902Z",
+ "text": "Under the Ontario *Residential Tenancies Act, 2006*, neither a landlord nor a tenancy agreement may require a tenant to pay rent via automatic debits, post-dated cheques, or other pre-authorized payment methods. While a tenant and landlord may voluntarily agree to pay rent through pre-authorized debit, it cannot be made a mandatory term of the lease.\n\nVerdict: not enforceable\nSection: 108",
+ "finish_reason": "STOP",
+ "input_tokens": 153,
+ "output_tokens": 595,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Um73atHcJrKbnuEPhqml2AQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:55 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the Ontario *Residential Tenancies Act, 2006*, neither a landlord nor a tenancy agreement may require a tenant to pay rent via automatic debits, post-dated cheques, or other pre-authorized payment methods. While a tenant and landlord may voluntarily agree to pay rent through pre-authorized debit, it cannot be made a mandatory term of the lease.\n\nVerdict: not enforceable\nSection: 108",
+       "thought_signature": "AY89a18pPirdrIhuRlqBwBP7DJq1Bac12zBT2wmSAUErTZR3y3vHWKnSaI1IAvZkJc1bj8kV25wDkQpznuihG1TMQ1tXkq9lViyItdGztHtEQfF3dG1itOb_9ZKFo8isURFSvXyEBIt8-kUXjdFaT40UClAn8g_xvem0yWPYZ7UzeIcpaxcMYpoUwjnQE8HbbYa5_01zPeyF1CcGOgtWZSujkJFDmze_OLMxWRFIWLM3XUbtu6iWK_WcJbox91R-cPtNtq3JyL6nc5-TEGi3PaWGDrpYVzhRuhUFF7onIkKgwbNF0V9Xa8w3M7amHXhzzBQTNLMUAUwTL8TSMqL_7d3fD1nAoQC9OS5mpepq2nAJPqs8PggGtst8HnhmJsUEUZM6HALZAofW-t6PWiD5c70-PXW6-fzv0nBaXU8JEoWf674eKcS-fZw_Ux2vY46Iu4JdGT1eL-S7HhmI89Jww6mT_BybSGhve3RivITrw4rusuBtZCYdltdNJQPDeqF20XFRoTZbwXrTUSH-Is8dsqWs-yq35j45AoPtG8PRK_qbQOtSdu0Zy4UGb07Fze5eKje-cwdxAKqXo4nQk1QAhOIyxsJtbx3YcIdMtZNrL9_iK2Fdt_2uhEivxl5rGAKfbPC_om5jOH-38KT1HIvbki4prFeXkmEDZv2Fh6zoo5ZCwc7eHcCvtkgHL7ScUECtPzuNbwgVH67WppL6GmOQtGFmogYazY1QBenuu18WlQb-7xS_K8DtN7a-ARjO9oa8TPUeyoGZ4N0qlhe_yjVm0AP8SR2gT7AvhL8Y-qYvHv6mbYSuRLHWOwWJi_kr4VVG4rlHygUxGVnu2VPg4QckLgjZzy1JpTM8L9a8XzqEHmukuiEDfqfoYBpiO6okGF8Xgvg17cyRBUcSuyjyW3mIJdM50aTF-w485CmZ7TBo6R--GKyojPPBULn7qW9Sl7sh2l4xG66c9WBL_vjkOsi1C85ns1x7Nq4uuDGSanfC6WV7B9lK8dC7fEVFjmA3ltl-fU-Su9PtZ_cYUuPNomHfGldoRdqVPeUxuzMReOcSPRZMpnLo7MGpLiW6BlkImI3qylcFF4LO3PoNsikYd-_SrPSp47txfThVWN52sCg6aWioKMsWdd_l2xBb0IBPWdOicYD2T3sfuU65AEPl73RtMpSagn9Ddg3cllrkuPxcvPrsQIgfSnQrSN_AKlIg-iRYRKmOd9fh_qauY_b8AncQD97RfQqW7xdcQseQYHBBEUjgAurw-rihGbKvkwzpx-vwdEiQxnTvC1UTQBViOQMzTROIiHzUjVW3S0JB4HWpL0XfD0PTn4iYWRA-eDoQ7jxL-YId0-EqurgObsoEg4A0CohA2VpYo299pWq_wlHc0yAZPcjyE0UHIJOWkHPLB-JpgTvHOH99lF1zOLd8NVzMTIie6BKJJzVWJDbZcHXGcV1bo2xRsS0ME4-vbBE1kiv5mS2E73FEjxMu73Z3d-wM9GxaRMBuWm6IMFhW9T7G5rKZQ2-541uO4MZA_eZ9WzoO9OOgMccAAS3gAmcsmpSp3zwCS-4CAyj-ypwJCdh5HO5rEXkAfhCuWkJe7ZoSe4OSznSnknmLk3JS4W9G66Kt17eVJE_B3ZjyQesVaR5Cd2c3MRULFjvv0ue5ndcPVwnpvngSa9k8-m_mLJvA5KfcQi4PXG9d1S2f9B9u-ArSNWNj5X7H8-uiZrnbd3kad7P4OrmyZhg4ox4581wlVXPyKKeNc42yUhoN1JLe46V4SlzeVS4YiXJ6w2BQ4oPZkmQ_g0GTAMoQ_XIjkWJk0Or_xJku2URACUx2ujwci8Dp26WfrLyddQ6gGNa_zvpL92c1Z8iSFVwymqeho-Npe-GZGRD_yrI6shyRBrxfXfF9Dr1eMASUUT6xw0ZAy0lbisG-LLcStSP9ihxMGu0Qdb3d-a1NRRupQtHrNoh6zzbsjSfjl1hqtD4P5CP6brmAdIkMsBiIdcl60f2cW4zJKPpN69sy9_vYWtCBOy7NM9R5LVKLesV8jBPtkML2SSDwWnTzOj2psdfrgidpIQLdhxdKXnnPwIjfpuSmfGNRxlfJfC7ZD2i3SUr7flkDlnGkDUvA4o6Pq9zsI8wOC189cEVOFqOj-LzPqOMqNgxbgLDlpphy-yAJ77w_h1J0HqIZc_SIV-qVkrgOVWwsQyjsIpFFBcgvjjXdTdYAgkLM1GKpXsPBXS0O-54PHA9W5ArPEB8pyC11cZRES2apq6jR7HlvRGchWB_clAlnYQADFm3YzAAcHEvP4XxnIwOINHg0hR4ZEQ1PGTeT6if60Mqb48OWjs8M2LdnJNSXl2Y7bJDcubUDCY70dTgiPNXoCus1h8YjOforZCeUILq7w6lYRyFpC-SZi_7LpBp1RfBVOV-jzp9O7SEeLXy4QQLYkcGCX35cxrezaMV7Y4VlOgEli7pEVQQ1LG3El5ml14TXbTX_gtr6Wvq96BL2yTQxzt3Ao9jSkLSpc9jP1_PVmjqlSKkrHm8a_C4lt6KsW0ZmZ2xavgf-FC-eXGjpPiuhU6Itrv5sA_ORxYimVHucultIkUAptM_xPRE67E9XFQLLwTBFv9tvjiXRbNV3hM-q0gPHOHTDwg2XTAPz-Rb0u-OjnfNtcHDtbgd1B06UeHeyKyS4VxWY7IZclgWP4BKqPqJVMR8Kg72qN-rhery61tGKS9EC8QDgoeUvzAVyDLFjMUxImDBM3QKUBOGJwLTL9HC6qYPsq7nG"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:50.634449Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "Um73atHcJrKbnuEPhqml2AQ",
+  "usage_metadata": {
+   "candidates_token_count": 87,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 87
+    }
+   ],
+   "prompt_token_count": 153,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 153
+    }
+   ],
+   "thoughts_token_count": 508,
+   "total_token_count": 748,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

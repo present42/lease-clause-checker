@@ -1,0 +1,120 @@
+{
+ "clause_id": "c27",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "f66a0cbaa5d0055c3118d10a7eec68549cde9d4aba6089281343f1c8de64d0ac",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant may pay rent by post-dated cheques or by pre-authorized debit if the Tenant wishes, but is not required to use either method.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:57.935023Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"108\",\"quote\":\"Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to, (a) provide post-dated cheques or other negotiable instruments for payment of rent; or (b) permit automatic debiting of the tenant’s or prospective tenant’s account at a financial institution, automatic charging of a credit card or any other form of automatic payment for the payment of rent.\",\"reason\":\"Section 108 only prohibits a tenancy agreement from requiring a tenant to pay rent by post-dated cheques or automatic debiting. Because the clause explicitly makes both payment methods optional and does not require the tenant to use either one, it is permitted.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4539,
+ "output_tokens": 944,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "sXD3atrsO_mew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:17 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"108\",\"quote\":\"Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to, (a) provide post-dated cheques or other negotiable instruments for payment of rent; or (b) permit automatic debiting of the tenant’s or prospective tenant’s account at a financial institution, automatic charging of a credit card or any other form of automatic payment for the payment of rent.\",\"reason\":\"Section 108 only prohibits a tenancy agreement from requiring a tenant to pay rent by post-dated cheques or automatic debiting. Because the clause explicitly makes both payment methods optional and does not require the tenant to use either one, it is permitted.\"}",
+       "thought_signature": "AY89a1-emRSWMLsg2zVYVLWaIsYEsHiMVfocQ9sItpqLWCi8K2zO-65l1YYrNX8NUsOcyuBAtUrviCszYAAKWoS30Rlb3VQ-MTf-j3yXTgqDGcPTamwcJ4kjk0QGtTscPdHVzbe10aabKbRaKQW5YRSiUu7l01A38Xfi1KFF04BMK1Ec7CNdKLGKUcBOnVB57dOgdhxOh5sng-SS36kn-TK7dRENMPZv1c0AZY7AtSZgcS8XbfjiD_49x_5DztI9KdbiKHLgX0-5IUxQZ819PnH_3RX_Rb46Y-Lz6TME5SxCtf1cEMKeYcv8lFSzgDx6X3TCjTYTcAX3jadVgOg6u9ZcTeETAVI3sGQ_EEceKwjvKo7Ovmd9TcypvZYC_v9U1n3qLa8njfgXAnl7RV-cn09TnjR3SmX9nNa69dop0xvLJCxRfZ931fg4vNHj29CV-0-Um2mYT3DhatUjPmkW3tMTMiZ-4ke0w6dh1Usl20kyUQk9D8vRgDHhFgrmYWms2z1gdnS2BPsdtYpOqGkcKKJBHv3N9oQFEc1FynFDknAj4ENZEkcNF0UwQdw-O1eeHatte_SQ-ReBnRua4-Ov39N9BoegXRL2gvleSa4dagYKPe2KVOZ843LLD16zVy3RNAZyTcAqbjrJltCpBZWL-x3jJLcxOL3TnuaPyUOTbOow9-XJFGRBM3xHda20osAttjvoWjr-ZduuseOQ8Plh8HjEtXf3h3dED3Egnxp2PJCM7zzQE-RAc8Z2evFQvU1RXhTd5Awp1hhOiStvpWswrVnAf8iFLuEF6VEUyzq0JBPNScHREGnLiDZo_0y5DAut6WqnoqflCrngAf9n0Yptxb1_mrPc6UTVmhqQm9ixJEFiRy7cEXWpjoM9Sz1VfpoX5KkslaTZJ-e0wGVGdn2s3LS8Vo1RA9J33P_EcJ1Wsp6hkoHnFyzBL5gsoIGuv3_6rOyQ-VdfBRxQdoGgHoqiUab2ee52DJ9hglceaYYvLcUBRhXjttKvtSdKTRykDxTF_V7IUz_iRFfnF1YWB5QkyuMQ_FjPvXo3eJjJNZdVT8yv-ZyKpwlRiCesSCvnRTBEGdIsPU3eDYqevWBfZd7H9WgSaFa1ZW1Abz94VYKzz51jq1QzIFo5RKJghiRPg3KYmvowqZlDnjl8BQToj_SyKx7G0TiGkV7EYOI8cEeM8xX1HKRknNdcHvKSXp208jC5BrktZc8bOaCJMn0BBogZdNehqyygVGnkpG5s0eWeWt3k7mDqgxrNHjsa-zYpNV0xh2tpAR4gnaMKniIATTOijK_gpo6u7myu9TERaAhFlljXy3IOkCTUdgjCYOjeGHoO7eH9jXfakPpjzDmdwTT5AuOGQIJfzkHwpDu8JZc32rsNp6gfMqulCbVKwmbMKc19TSFxXdC8_Y83AOEPAGFeu-snRdfcWNHzLHr7Sl4Evq5-z_49RNObmCYk2GUjFRiXcPe48OnO5jZ6r4Spdr45Uy3npeIT-a-A4IR3kloRNdDmFA1oc-nEUNEqw-IWcZOLFh1W3adMv7MTWUnR9KlWxSDuOphqBrisuMfq8JZZTt97CmbGX968LrSG8jV8sq0om-cfGLZAfRExAqHIW1wtpTZDV5GZmM6RWReYAN7p1nEIhCT2AuWdJZObe5PaX9oh_k5uqCwu3JgFPN2v5EKMN3ma8FGmWIJndra4R03lgSNpYGBewT6l5ZM7JXFtAEm3okMmQN7oemt1MkBuEfnlzUJQ3c4Wm7p2p_N1g_HrqzkPTt35WfMmyz1vH8RRoMpZQUYaHwS1ZauIHk_ZpADMPQqWAalxZQGoJ_DQf-yYBhLI_eyRuBB20RT_DLbh1ZlFLLbsLpugL9_308Orel6XUY7oyidXZS1C_i6fyyRUJxUnJIBo4-yj-DDPjNjHXN91uxkbwI8Ie73MZklXjF8BsQBcePR4kgVEJMuFeW6AhE3fkfcUvUhBd4OHTFgqXTnAFESH1XzjCRLJxejYZZ-HD7Niby35tIXZRlfZ1IxK74eZF2qadTbIF0AG8CB5IVoUa2baKq9Jn6qdI2BT_v_BkoO04LwBjFqRv85T1kJQVB_2WwMzuFEZpS2VUvuRoYmZ26wpRtLAiP2Sbi390cxXBBvLBNVZ58g912fga45s9W5oV59XLF88r9HqSEzr68o1K5ISaI5NZq8EqrUqheIpFbVcOudMW8tsY9buXmxX6R8BjF8BZ_0J35TCnwyCLUrX1uPAoOm994_RgrnPT2mlIxhrSWIn8Z8O7qpne_vrImD_OdK8LTPOQNzBXzKZjWN-C7rum-VKVWojR_1WxiSvHaYenJbT1Qw2bvFzsGe_yYVYZsJhTfY0d7wl6TLGBF4gVYksZREKmHVCVr0CwdDmXVOG5-jyGnN7KRa7ndI5iH_UADnJGuysnI3-fUdk-VVsxsiU56tqFc2X8LIePJM7Zlvi18ecaMCd-uLpWRAHzHoRHIu5PyWzOyGFCZbrcXjNaESg4AwfYAUtSl6ZjTrHHZMmgYql8swE5l1yMXr2MzwAnRfPxBtdlHekxib1KaIEE0U295F9xydFV23ANrlChkLX0z8OICK5GVLaQ_Kb4icHWlhNZK2w3pRhrrvS0Bw4pomua6-anLhXU_Rm9vZLTeAYFkStou3KSjJzCgapGGtPAkhtROPK4QozGcZ2owEXt9d3gCwucqA7bXsmg8f9Hn7Vx-jIODCzaXq_peSnQQU5eROdRl3MlUytUN7jDxcBCuAlvD3Ag8Qop5ZmFTk5QEo2NDgXS8RR3Q8Nlsd9Ll16oWLQ96tnkN1iV5XId29VLmlTrRCvy8MXkl3gY5jNEtJw_pbh936yFrlJ0RBrdbzd9hQ4ImvuwS-ghICEtiNot-UH62Eje9L0LOtCFiyv2TaVYniKfmod8CL841lqFbsTNRkWaA3dVbetjGls-t4dw499Hfz6xJIZnokbn-eOrJWfVjivu8etQCyDa7tmYyr2qVQo-m1NfuLq19Y1nToId3Q738GuK57XGfZ4o3VGR2nIR_XWdz0QXau8OWTLH8XGvEucYtEmI8ybKnhUEFHaz_Y8O7Laf3RdAg2MR42Fz8JrED09Ki3slYynW1nJtmOc3p6L3O0hHcOSqIBd87uTQc8Yjh5UP_nf1CUn82knOZIrjeABkMppUTJ3lXeH-hhwCnDYdUSgl3L8xNk_6HfwQAFyVsrPu_QFAXGAnbHWvXcx-j4mQpEVrYtYUUeTV9D7brtLBgi_cYkj9-41mdBAm5LhUpq-1xwiSWZNUu4eljwR_Xd3CmUcrwszxRm5Ut54QqTbX-NZ37mwQR7FQWBN5wuIZv326eKOQxjRfwPmguFkTzRaPcGbWCsOSt2_RMyKpY1IF18qG8XYIprAnOqd_GAbjdLapgcu5n3TfL8_FE-DCIGZ7Sr1SvV0aER-8LEAFObEXIFQ0OcXAhGSEhE3EsPQbAyCXdSa0f-yaEu-YOObMAb4uOOO7I2tCeeHKuJ7NkLiBo34kiH0Z-Q43K6-fdEnSRReyRdeLbg76csoZIsjx5nwXaKWHapEiqs9a0nkvf0prKx5PyybA5BPfHXwAY6LyC1T-0Saan2Vy0OETf_H0VTs5PYz5Os77kzUyqHZfJ8bihbW-hrTFzMcR_d0kdVo7OnVzdHxEdQHA9EsijyiuR4exaxGEHLVhoziMCb_Cu0ZIrRof6-S9Mpd1QlMchaVcqxUFUKvT0yaybjAJ33DZEFtZZ2IqmodPQgaTPEFCRGHAV_DR-DwAevfhNxBBqP5l8gas20Y_3VtWpfVtTnfsBXPJxQ7Yl9151UlFukS4SytG_MtcYz_i-wkseLriCwr7JkbyioRuue-f8QiLXo_21txIi599aq39A7y6VemYzaYqpfNSGtRZGjoe81prczY-ybazoD-yRd9oZFqxMxxvZep9D3Kbu4oupR1Ea5DZDL3K5GcS2Ac593QL5wB5NlbBaeh213k5lhSUfRKNzUv3R8IN-hwPHq5eWWkGSh_M4asiys1hHDReQkbY4E5o8VCSs3GQD7Stxr5Gbe1eDHvLaGuKr2rtkfvp_MKXAdPYY5h4Ny_r4eHjeB8-i0fo7jz10ry-govq_6CulanWOeFcMV8gvOjytwH8PfycWotAcB63z5vf4S56H-Epq9OIYSovoC3669CXbzq7qxx3dDLTJMa3lCpn_iCcwA8tN7eHJsJNlAQMPIy3Cpv7x-lZX9MsTmO8e9x7mpXgEg4P-Uj9zWKf3c_bQs6ZP8fQXfn1jMvmsd4PHCiJUTik2aLsne0vGkn8XgcqVCkTezl7naK7z4jXrHWCekCC_L4G8Uxq5PvoYEZAJtYAsnwjEHGUiDX9cJBdhEXCaAWQ5yScvfW0Jr9ZixSFZneGGJ_2mZIqspHdLm8pdojI2k6YK1_4iYk6sRgbsHWtas0kg1AZzpoxcV8_LKa_CgCs7INoJucLHAUM6ggGTWurVvxqPM-5JfBRkK7aQf5vejhW97xzgCy50KLMoIVHGYFmc2kNUV4XxStkC_ek0iwIWFQxnnDBxkTtR_6iFTWwgce5gSeXx3SQ8b-p9ZqKKzSPgo60-Vrc3Dk7rquLH-1zuDFtKM-HNyRDh7z2rX0yorFQX6DHmRmIwbrEXFG4ovXh2gEI1y1JX-3cdi99PsGPMRFMMR2l8xCFVd8t5-Hc_xdepEUna2y2d115dd7a4lZgx2rI4lnYdz_Pf5KpDoB0Cvhx3KTL4aD0zDaGo23XhR254_kaSb8pzNGylbdjCU4Rm6CJ2AZwnATlYt3S8ip32_J0BsB8__S-RygqBBRTKIEU_X0KwMgN_ryNp0AJ4-7Z8ijqAy7M2I_fMmikvxtjPeBc0TsYvHZGUmrzcZl4hXCxNgJR_4GEw5q9zes50g_jkSOGxVQYSe6nXy-bTNtxV5BOwPLIuBOyLmR0C3Udmo6ego1o4v9ls91yleAaW2ej0h84o63"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 429,
+       "start_index": 46,
+       "uri": "http://www.wellingtontowers.com/tenant-letters-april-2016/"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:57.980570Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "sXD3atrsO_mew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 159,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 159
+    }
+   ],
+   "prompt_token_count": 4539,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4539
+    }
+   ],
+   "thoughts_token_count": 785,
+   "total_token_count": 5483,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "108",
+   "quote": "Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to, (a) provide post-dated cheques or other negotiable instruments for payment of rent; or (b) permit automatic debiting of the tenant’s or prospective tenant’s account at a financial institution, automatic charging of a credit card or any other form of automatic payment for the payment of rent.",
+   "reason": "Section 108 only prohibits a tenancy agreement from requiring a tenant to pay rent by post-dated cheques or automatic debiting. Because the clause explicitly makes both payment methods optional and does not require the tenant to use either one, it is permitted."
+  }
+ }
+}

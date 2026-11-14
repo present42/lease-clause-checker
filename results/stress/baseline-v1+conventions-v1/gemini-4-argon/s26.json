@@ -1,0 +1,74 @@
+{
+ "clause_id": "s26",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "6f7bd9f84c2e94efc9febe8a3e3f58694d5aa41e5e0371c3c05f98432caed1b2",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant's guarantor will pay the Landlord $1,000 on signing as security for the Tenant's obligations under this Agreement, to be returned when the tenancy ends.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T21:01:01.598629Z",
+ "text": "No, this clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a landlord is only permitted to require and collect a rent deposit (commonly known as a last month's rent deposit) and a refundable key deposit. The Act strictly prohibits a landlord from requiring or receiving a security deposit to guarantee the performance of a tenant's obligations (such as a damage deposit or general compliance deposit), whether that payment comes directly from the tenant or indirectly from another person, such as a guarantor, on the tenant's behalf. Because this clause requires a general security deposit rather than a lawful rent deposit, it is void under the Act.\n\nVerdict: not enforceable\nSection: 105",
+ "finish_reason": "STOP",
+ "input_tokens": 198,
+ "output_tokens": 153,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "jXr3aoGTKPnMyOgPj9Kl-Q8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:01:14 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a landlord is only permitted to require and collect a rent deposit (commonly known as a last month's rent deposit) and a refundable key deposit. The Act strictly prohibits a landlord from requiring or receiving a security deposit to guarantee the performance of a tenant's obligations (such as a damage deposit or general compliance deposit), whether that payment comes directly from the tenant or indirectly from another person, such as a guarantor, on the tenant's behalf. Because this clause requires a general security deposit rather than a lawful rent deposit, it is void under the Act.\n\nVerdict: not enforceable\nSection: 105",
+       "thought_signature": "AY89a18GA4_bhbw1GtnDNUpl3wJXSRXB1jqYlBkkjSCCOXBwN1ePKDlaih_Jg5UQvKGKxT8v75q4DHTt1yMabTm3ODUHneKoYoGVphKZ_C3MwOao6UXJsh-8gR-AYkI="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:01:01.657793Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "jXr3aoGTKPnMyOgPj9Kl-Q8",
+  "usage_metadata": {
+   "candidates_token_count": 153,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 153
+    }
+   ],
+   "prompt_token_count": 198,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 198
+    }
+   ],
+   "total_token_count": 351,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

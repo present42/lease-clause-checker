@@ -1,0 +1,119 @@
+{
+ "clause_id": "s02",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "b56028665cbf1f04c49b4765d85c9ba3f4c2c4ea93becee82ea2c1b662d0526d",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord will vacuum and dust the unit once a week and may let itself in for that purpose, without written notice, between 8 a.m. and 8 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:25:11.288382Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals and, (a) the landlord enters the unit at the times specified in the tenancy agreement; or (b) if no times are specified, the landlord enters the unit between the hours of 8 a.m. and 8 p.m.\",\n  \"reason\": \"Subsection 26(2) explicitly permits a landlord to enter a rental unit without written notice between 8 a.m. and 8 p.m. to clean it if the tenancy agreement requires the landlord to clean the unit at regular intervals, such as once a week.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4547,
+ "output_tokens": 185,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "N4D3ao-lLrDWyOgPr4jfmA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:25:17 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals and, (a) the landlord enters the unit at the times specified in the tenancy agreement; or (b) if no times are specified, the landlord enters the unit between the hours of 8 a.m. and 8 p.m.\",\n  \"reason\": \"Subsection 26(2) explicitly permits a landlord to enter a rental unit without written notice between 8 a.m. and 8 p.m. to clean it if the tenancy agreement requires the landlord to clean the unit at regular intervals, such as once a week.\"\n}",
+       "thought_signature": "AY89a19db0KOYct4q80J37-djykjjmZ_gK4ZimRTeAZKNqnLyYilzyHaep_2bfRDd8OkD5zswXrI66lkd2Eeawfox1xsa2kDx7RcV_aRSebmk1Z_q-78oGqbSxc5tCmP"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 406,
+       "start_index": 57,
+       "uri": "https://www.reddit.com/r/Landlord/comments/m5s6mk"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:25:11.758415Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "N4D3ao-lLrDWyOgPr4jfmA8",
+  "usage_metadata": {
+   "candidates_token_count": 185,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 185
+    }
+   ],
+   "prompt_token_count": 4547,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4547
+    }
+   ],
+   "total_token_count": 4732,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "26",
+   "quote": "A landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals and, (a) the landlord enters the unit at the times specified in the tenancy agreement; or (b) if no times are specified, the landlord enters the unit between the hours of 8 a.m. and 8 p.m.",
+   "reason": "Subsection 26(2) explicitly permits a landlord to enter a rental unit without written notice between 8 a.m. and 8 p.m. to clean it if the tenancy agreement requires the landlord to clean the unit at regular intervals, such as once a week."
+  }
+ }
+}

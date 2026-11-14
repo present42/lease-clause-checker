@@ -1,0 +1,67 @@
+{
+ "clause_id": "s26",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "6f7bd9f84c2e94efc9febe8a3e3f58694d5aa41e5e0371c3c05f98432caed1b2",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant's guarantor will pay the Landlord $1,000 on signing as security for the Tenant's obligations under this Agreement, to be returned when the tenancy ends.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:21.390738Z",
+ "text": "The clause is **not enforceable** as written. The Act limits what a landlord may take as security, and it bars indirect collection, so a guarantor's $1,000 payment \"as security for the Tenant's obligations\" falls outside what is allowed.\n\nUnder the *Residential Tenancies Act, 2006*, a landlord may take only a rent deposit, capped at one rent period and used only for rent or as permitted under the Act. A landlord may not require or collect any other security, deposit, or payment as security for the tenant's obligations, whether directly or indirectly. Routing the payment through a guarantor does not change its character, because it is still security for the tenant's obligations. Section 4 also makes any lease term that purports to waive or contract out of the Act's protections void. Ontario's Landlord and Tenant Board would likely treat the clause as void and could order the money returned.\n\nTwo caveats. First, I have not checked the current consolidated text, so confirm the exact wording and numbering of the security-deposit prohibition in the current Act. Second, the guarantor's separate, freestanding promise to answer for the tenant's debts (a guarantee, not a cash payment) is analysed differently, and the answer above concerns only the $1,000 payment made as security.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 255,
+ "output_tokens": 2032,
+ "raw": {
+  "id": "msg_011Ch1Hvwmy6UbxrTCMyhpuA",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable** as written. The Act limits what a landlord may take as security, and it bars indirect collection, so a guarantor's $1,000 payment \"as security for the Tenant's obligations\" falls outside what is allowed.\n\nUnder the *Residential Tenancies Act, 2006*, a landlord may take only a rent deposit, capped at one rent period and used only for rent or as permitted under the Act. A landlord may not require or collect any other security, deposit, or payment as security for the tenant's obligations, whether directly or indirectly. Routing the payment through a guarantor does not change its character, because it is still security for the tenant's obligations. Section 4 also makes any lease term that purports to waive or contract out of the Act's protections void. Ontario's Landlord and Tenant Board would likely treat the clause as void and could order the money returned.\n\nTwo caveats. First, I have not checked the current consolidated text, so confirm the exact wording and numbering of the security-deposit prohibition in the current Act. Second, the guarantor's separate, freestanding promise to answer for the tenant's debts (a guarantee, not a cash payment) is analysed differently, and the answer above concerns only the $1,000 payment made as security.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 255,
+   "output_tokens": 2032,
+   "output_tokens_details": {
+    "thinking_tokens": 1614
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

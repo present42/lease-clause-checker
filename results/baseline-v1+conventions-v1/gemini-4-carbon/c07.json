@@ -1,0 +1,75 @@
+{
+ "clause_id": "c07",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ff5e5a075af3f5876c0e239313a4a0be4fdfa51930fee48aaaf27592b819cf58",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant viewed the unit before signing and is satisfied with its condition. The Tenant will not ask the Landlord to repair any defect that was visible at the viewing.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:09:14.572991Z",
+ "text": "No, this clause is not enforceable. Under **section 20(1)** of Ontario's *Residential Tenancies Act, 2006*, a landlord has a statutory duty to provide and maintain the rental unit in a good state of repair, fit for habitation, and in compliance with health, safety, housing, and maintenance standards. **Section 20(2)** explicitly states that this obligation applies *even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement*. Because section 4(1) voids any lease provision that conflicts with the Act, a landlord cannot use an \"as-is\" or prior-inspection clause to waive their repair obligations under section 20.\n\nVerdict: not enforceable\nSection: 20",
+ "finish_reason": "STOP",
+ "input_tokens": 193,
+ "output_tokens": 598,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "am73aoj0J-Cqw8cPv6vbgAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:09:28 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. Under **section 20(1)** of Ontario's *Residential Tenancies Act, 2006*, a landlord has a statutory duty to provide and maintain the rental unit in a good state of repair, fit for habitation, and in compliance with health, safety, housing, and maintenance standards. **Section 20(2)** explicitly states that this obligation applies *even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement*. Because section 4(1) voids any lease provision that conflicts with the Act, a landlord cannot use an \"as-is\" or prior-inspection clause to waive their repair obligations under section 20.\n\nVerdict: not enforceable\nSection: 20",
+       "thought_signature": "AY89a1_8hXXOYyQpU5C9ItbFXSvU-PKVtdzsxV9Oj5HzICb2mCR0katczed7qtGC4yPT4rHq9ijhggMPqiH--GB6ViKngi2wx8jjPzS-hJms3TBUOgn8HGR9k0ysl7ueFn4KqWgT6TPml0TgkEOUz487tILC1-nTqtQmf-w516y9ESv99AjxEL4tikbrJ7mZeyavTTbVBADBc5Gz4HOe67HogbcagcQWWwD2wRLyof8_SMYQcefsXidwthSz-S8Aj8O_S-zv4CNLz2LD0DgXXJWWojvanEva5z3KXemX-7BZEe-yxgl2O41q2udajvLj6Sb0BTqkzyAxMbJ2fBRanafUmvrft1Det_-cf8SrcH3hwshiXM8GhWju1GsztPNF3_din1YzUrn7wbAiN_0MG4pRzWaMtwhndzkGZUB13oMn93CEFHBwlULQVZwBb87zGsSbAM-7eUr_j9T3w6S2kozazw9GI2bumXlJFzEyrZuU-RhMJaMyAw4BRHE7SQ1DeYDcJpj9Ada_NpxlcLox-HCReYFDpolv6ncWTroQtmbOCi0ksXb5GDxUSlbcWkRNaM5glAxz8ZrxiL-iue9nyVdDxdtcrMgH8__lxLYbXBVs_IQLGX-is_2BeY_ooeWfHEPcziDVAj5-2RVYb-NqO-Jlqwpw4WffNwW4t97qizWpuh_nD1eiBuaDa_uR0MjcmqsAEGdLacciUUtqIlE7prW8bV7BRfvjCAIpKSRu0_gpqw0TUuSc_qJeg6esOxEan2h3MDUcLk9bd2B2Nrz0QszZCRSYq2O-ZCjRctizTxJneU2o_3IIyU38TH_nnDS_IwRj9cRMgB5Dh0HV3sDtye7TooK3_tfJzJFp5yVVQKO_zWst99uIu-oLQ_3zIIwIdt5ah2h5r0DBJACAEI4386ZTN1ECEYctMCdW6qNvOSBARIksUODVxTmr0tCInljW3jMAc6XIzEBiuzG3Mif-rgbLjda6lwbLXyq_apfv1SeaUsC7bs20Scg5Ql9mZDqAzAi4DYvh7wcp1GrVHcLsRQCCMt6Qk3vZ6eKehUCf0pOLicTfi66u1JOhJFr9LlyNYzvqnPZ7lDlf6rMkDl1RNgLJB1leELBXHp7xvzYwUBs2-CQ76QkFwlfQcxCTBo3UQy5zg_bYtF3XxghehsUdolRIgYU_1hHwRIK81om7UYXaU0EwhHw9H5yHOjjT-SDX7OTw1lZ99ZWERPiS1lCmwEL7qSllqhbCqj9Ctu3F4U4SyF4EY9QJ3zehwcZY2zScGZv8Jh0EhRQtvwkRlDknT0Cwa2pkMzLNr-Nb-ELXUQtSjGGz1SHNhr6IKJyGrfeV89ah_23K_tL9NDvbUUqb-nQ6h7csFcz_SSePNzr9d7p7uzpVmcu6r6FNTm5RV2H_i9gCHUkEmdndA_YiMx_u90Lf9PEyfVkDdIwEzuhrQRN4FVISwVm16yqaBOvAGJ737jAoLaivChn5Q7wJdeOMvH9b1EFb_MHXU70xFnFCxGT7GyPCBVYvdSNmL-YuKG0TcCCsyH_vLkUJmzcxGmvBw_pfaZX436PL5ukE7Oqi5Yzw5eid3lXgKvIn7qnqdxM8h46nimPrsJ-wvAUeVn0GyObt0iUMbVB0jUxZ1bcSjBlYkjgrU6KoY32Tzj4MjVTI2s6BVLpmy9JSgnr6r9AivbeNB3X89MYrDi7ovzzHZWZY4-TIKlI5k48gSi-6guc3L5hGivyt78r_4yduJfFCXGGecgCaIW06ATSkT310NH6iv2G6dUYJY8lZLpBsTDsl8gaiyfJ0TA6F3-npsCA7SKTvyLJlbun7CQry-ZBwyqHU4bU94CYetc0fwqNX66XxvVyA2aGA3tqVsknRCFjKDyrCnd1Xt3jk1tOSp5Unn3DsDDv9-0ohvPAv7e1ibcUjZFUVzCcRQWtOG6kHgR3Sc8mp8X-fQgnbOTxd-KdhvJKAKljpNt6wu80KW65N-mHutzWEdRZac2Xhc7v_bvYUWVE2K8KPgFvYie3YvnMt49crN0_7jhstKpxiNnKWzzEvbqEGY4GKYq9q-kkF1_sEyzqrq-L4Hf1K6NLG9INj_fBIXAIX8WVoEPUQ_opP5tcAnHCxHW7ffaB5qBgefwD_-XPJA6JWtIg5KLkAO8VrxtZ35S4gW3bOAnV_GXTwHdZMN6uDkP2Jlp8Ex-qThbEKnYSfcd_VRXVs2SP3QzScy8GMRY5KMFlzAi3jLFcDeSqwQVZVv08zY81x3nWpxV1KblWphD6VvKHlz-e6B0vlTSbcrDwmn8JS_rb_aOef002YiOOftJ3tYA0sdsP16UmIjLE38mdgpdRQvz76Ben-B0PwEWw4QKbLWhw2-RMkRNT1pE0ueh5aQiJuNYuh4DjbmbZmqgAqfCIuOV8wRAnTaz4Ss4ZoaVt43D5qldKBowOzXKERFTAQE4GFO5VM0yuc3vO1QuSywEpJD6xKqMvzL1Omu8IYycSVEC1qxTIW_9Siz-14CpBPnmGU1YhOTy8xLqRuLQhTXaA9dg2BO0WtUJJ2rSvAKRkx"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:09:14.653832Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "am73aoj0J-Cqw8cPv6vbgAU",
+  "usage_metadata": {
+   "candidates_token_count": 171,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 171
+    }
+   ],
+   "prompt_token_count": 193,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 193
+    }
+   ],
+   "thoughts_token_count": 427,
+   "total_token_count": 791,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

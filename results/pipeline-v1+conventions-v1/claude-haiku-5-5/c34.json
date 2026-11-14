@@ -1,0 +1,99 @@
+{
+ "clause_id": "c34",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "4bf37f39a36e59648376fa15b1ae90bbc51986ab5a5b9b9af7c5f9479a3c72dd",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may enter the unit at any time and for any reason without notice to the Tenant.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:32.063896Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"25\",\"quote\":\"A landlord may enter a rental unit only in accordance with section 26 or 27.\",\"reason\":\"Section 25 limits a landlord's entry to what sections 26 and 27 allow, and section 26(1) permits entry without notice only in an emergency or with the tenant's consent at the time of entry. A clause allowing entry at any time, for any reason, without notice conflicts with that limit, so under section 4(1) it is void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6422,
+ "output_tokens": 497,
+ "raw": {
+  "id": "msg_011CgyJ7QMduW4giKSQZ56WJ",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQStwwKEAgTGAI4AUIIdGhpbmtpbmcSDLnYrTa2n1cZzI0zXRoMvG5MUwkuNIC8C2A6IjC6xh9Oo3G24AjdkAvfNO2ek7RCs3Cztyxc/pYy4AuOofP6f9X2GCzNxuIYKtr9naYq1AvSnQMSzC5xVZCaDLxFu9DA6fhiHT08p4+fua5ReZarvQa8sSwxzS1A9FiiIpJsJMGCHez8oGUTNz3lLzY7WrfpgXAegWd3GNpv2Kly6UcBjx/EXUlBapqJ7H979zSUKfTodrNoXw1hR5M9+V1Ohf0u1AXp1EvMGzLdbsG9go7DZFfmnt6u0rf5hZpfJQFRJ5VXZK1BRFGnshAxSQT2D56ZnOwoHoiIzSCaWbipSvN7hR5F0FH6hRSDLzzqasf8iDF/rhTSyFMdISIcdaUoPVPdI7QFCkMP/Ui01Movkxy+7cqptcKLlRek7KfvkNimyt/MDaBf1EEoGW6yWl3dPWbeM7noiIqzha3pf5CwH8yhNnsvVt9dv4xwElIgSxrDoS7vngIIjz4hzMD0DpcvoSZp96E9tbnofXWkAgu0okXOh1BD6UC5RH2uyFzfFi2hyV3Mgg2hRpGn2BiBcavuIv9PnTuNRm/i7yoWivaqMa2ytV2Gk80SCmxAvYfUj90FJwX1J1wRwaaWjo+n9sMO0vsvSwCJ4afXpnwaNDJtDcqsqJEIi8isjcBTbyNdP0fdrZhFejdSST7+wdJm+pRh3zGdrmb2Rmx9iBRmVYGtONhPB1oHfjxnRuEewXdykKQTa0lW5Rp1FiehAl9hKgOlTiRny6ScFzEbSMo2WlV3TzP+IFXrq6NR6wh8iTDleXV5DjmhD5zcPi5jkQDa0RIGlw4JE7v76PQipoFFP7gB5G0ae4TUoS8Nn+Eo0dl95a3GAT82Qd2xaCF0vk8v3Afo9g4dRew/EQuw+6ZtH9lbrrjwmJqAntrJkJLXR0y7p63TQO0ShDLW7KHry6ILJJdIGDcHScTE2KArpgI6+oH/5UZpkGAt8cuj5ozSx+1k5RRUj5deJeqQsycj/H68yBvVygfrdaEjxpBDHjqc2+iChjDnREcnfGlEKzLXCRnZ5zz9sI1PN/KVBYlkHp2Qhas0sf+CR9aVJZUFxEZwdvx6nhF+lWblKu8EMuh4TubgauTzZCOWPgN+kKJ16fJ5/qq+BVVSwbYW0cWZ5o6ghegzNOgXr4mUI/v3gTBART+lCW08mkaOQ+jhzk0dlcnBSs43rvT9Lv6hvBKyylb4azdCrOGz5WkV/fmojMKBkzQCOtPxrmkIdF91jdFi4G3THZUqCrX//VB4BRUtJl229/r3p6G86cmjiUU91tQtHExSxRLU9D1rVvS4/p7/LvRtd8EY9+LWt/jpCWLnToF4fzNZ0QcNyGcx/G/CYrf024yZXC6pr9NW5oQp3b9nBypRoZGvHi+HIlFhbswb5aHijVLhQztyex0oLPrLP4lZD33Gnu+++PJ7svghmZoEkIIaKjQil/hmJ/AZhPP37WK4BJ1nqeh9HxlC6hFaxlau6jD8necW5uHHllL4dilXDa496zrTf78EUTHkjMVxrYI5mu30jK3pU6KZTq67L7LNCFHt7hi/FQ+RXEP1ooe24WZKNVgZmqv1ZoiSecBpwPjgt+iEtUl5HCXW6GPBTEcKt8j1MGq+H4McC7gEY/kqCLsE8dLgUVWvrMo0PIlJXEapkeZcxruDcYGdz8SUn3w6+YdrXUROrKlMB7g3QLoVXa26fsctRa8EU8Xr8EVfK2/21UkdWWkhW/Hwo8anPrd1EIUVkV5bA1+s9gnSos7U6TIwhdkaepg89OgWipbEbaOi73CkSm/Xlr8Mu7T8W81cchNGOK1Z66zcKf9lmB8R1wcADH6v0QN1tG6+gWMK1s077rOc3/Wj02sNreU+JLRQ5BSAXj75eBLttxcx4cMFgrjF4j9k9E2Ul0kbwC+WgWzKQMqlyQkMMAcXMFodvw/GAVym96XVyEVGSn3cbuEyCYftd0jOcxDEWHDIxu7rJNs9EiJfplkf1ZJIfbA7BxdOgCwzIaYDos2UgWniHO7imHiCJ0lTGyLJGOPGki6ypI1/QoCr9zP6W7RjAew55J2ov+kSZvD+1mPDG3KjGAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"25\",\"quote\":\"A landlord may enter a rental unit only in accordance with section 26 or 27.\",\"reason\":\"Section 25 limits a landlord's entry to what sections 26 and 27 allow, and section 26(1) permits entry without notice only in an emergency or with the tenant's consent at the time of entry. A clause allowing entry at any time, for any reason, without notice conflicts with that limit, so under section 4(1) it is void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6422,
+   "output_tokens": 497,
+   "output_tokens_details": {
+    "thinking_tokens": 340
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

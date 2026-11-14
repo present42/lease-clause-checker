@@ -1,0 +1,75 @@
+{
+ "clause_id": "c15",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "91bcf5b55d0203d5daaf69d21507b1a6f2f66873dc56e832a74c8093f827ee8e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant, an occupant or a guest of the Tenant damages the unit on purpose or through carelessness, beyond normal wear and tear, the Tenant shall pay the reasonable cost of the repair.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:39.100892Z",
+ "text": "Under the *Residential Tenancies Act, 2006* (RTA), tenants are legally responsible for repairing or paying for the repair of undue damage to the rental unit or complex caused intentionally or negligently by themselves, other occupants, or their guests. The clause aligns directly with this statutory duty.\n\nVerdict: enforceable\nSection: 34",
+ "finish_reason": "STOP",
+ "input_tokens": 167,
+ "output_tokens": 900,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "R273arHaCeakyOgPuYTx8QY",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:44 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006* (RTA), tenants are legally responsible for repairing or paying for the repair of undue damage to the rental unit or complex caused intentionally or negligently by themselves, other occupants, or their guests. The clause aligns directly with this statutory duty.\n\nVerdict: enforceable\nSection: 34",
+       "thought_signature": "AY89a1-MH3tBkpj8uD6fmXbgvh8ymM8oTgC1iZzzMKKcVYC0ptGeyCCrMVLYaPbdPM-RcgylpuKGr1Ad5BxzSxMiDgIwTey9Y0CGq9EJ-DUiunzUW6Vm7eAPo4KF6j0TmweDTB5SgvXiEZt_5uU6CRAh_vPxh0qAeu_8F4tHhVNe2ZHfXVCyyypbJ15E-p6DcegR5n_WA23Vuh5UtMbH03NxbW_Qv5W5bTSUSyaC5O4WxRbC0HZ9OTUz-z16oEk67Z9BzZxQFrTL30xS8XR2P16Drs0oehqbAkH49WCC4MmxTciasZfiKmLI5Tjgc0q-QzEfiBBNtCqN6av2knEVqqTC7XD6PSQayRlLSDU-hvQv4gHObR5Hxz2nvzSmlTkQGRi4n1IEdBtwN-vlYLvWN3NJizQKcOiCVsWaHdASgnJwBGAoggu0El3-SevzIlBK-JJZQTHiVkFKMooCmC10qtc7PbRXT7F39ClrnpiWM08q9XQaaPlql4o9tqwFzo1UG8pS6suIN8cWqxXzRkARDoDofPiw_yl9fVlFECJdp4fklr3NeOxpfZK0gQ6XP4X6PQbFaVTF5CrqHVP9rFDYpNCkWkmXWDSR8oJ7c_iPoxC8hyQ7HLz5rtuMQxaUn5Ct2CLwagfnP7AukgtfhwT0nLxgqyNB3RgX4V_rP8d6PFD-SqymhHd5mnUelE0rIsR0qmKXwSjp77QHAOoFxzKHxp2Fa5g07oUuFbsRXnRm9MIWxy3YeLT3R2Hk0D4wro5G7_RelSO24uZV0sh_XrKrbGNVRTbozP3l1jJlDYVZ6F_h8VtOMAZzwffW4m2iMkzzorgSDNbleuy_5TPP7Q4yuS_WXY1BsBt7dkdGOAsWbJbBUX2Z8aZradU86WH_QQ7o-pw3kmS1tLVqV4uVH8jP7UtJFNZ3LGcBKenkHzmK_qfqMT6U3kNgIgoHUoHWuYhqGoxBLckGs-axCh2KVqNhh9mlxV689LPO7gHHlyHD1EEKbCM6bwBBGJ9NKcmvBfz064tLvBdGF_ora3Dx3QZyBW5zQ5GCBVndKyPg0M5HQB9CoYalTM2T31xSh9LSoaA-SWNWqUWZNeMdjh3nAeO4rd_aFHSqLY6m__s-4yDHIKm56rCGXSSpl7PCCqhNMue_vpmb8o2N1kVIc5Ro2G2EOMyHMMvoBzLMWoFwRUHz2KeyvNx6jT0CUShIwajjQbXJxX8aQExkUWhkVFto0ozkyndNVZVzQbv3Tw_qOq2wmf5880d_ha3s1_FDbRQSo89YpPBpStvGTDolLyxpS9wTdKV-tzfEdiJG1jlss-_IQK9ac3Zf3M8ass3Up7Nl5NPlSFbNNxNZcX0IYSIOyKSVG59xF4aZtARGIJtBPL4VnpkrTmucYIeL9hNFMFBqyJ2ETxF-6E_WYX9MnWTYDKyvjLYey42Y_yX9oz9OomyuCSlSK2BTMLREONyOxjXRKkpy4g6ZRBDpAVjYriPId7wViUS7jMFl2XuePWtcFDbZSmNLJvrwEUHwcRMvzjGpxhjCseh4mFuVLUB1nmyjeJb5MKP1f9mmUj10THF6J7XWuMusdqVnYK1B5X_7NsRhmOP-Xa0pMKA4UA90sd3u6mRf9v_cH0wdetJtvT1pF6x4JfalBGQ8b31H-Km5k4EoA3k7zxReFuw6lq48PA-V_xiqQtCo2ZJrIjmNZKn7q_DLkU5f1MFatpGzbUk3J4DnoGrunWgb4ui49IPL2ro3PaGgFML0eleC_LKQokctx613HIzUFXuLPyEdRuK7YNRoIKxcYZz-RQingynMrECv-sqIcgAPy2L1uyGvf8azTGBGlEq7naAu4uN6ixvDV488yRadRFueLDNr7xz_vxCv0xo-CdYf8UZjrQ-saBuYd0okNUwbbnECpIf_GxPNGIpWnU30S948P-9NSrXH7s78OQwjtsPsCY5Spe1FPLD0DDqV9gupLoasq0NPJPAqysIUpik4QbIUbWHl6YiPa3eZJtDjZBy8esPqRsLHm8pJpCA2WaOG7D97kmS2hLnoqS_4KHUgkldF0S1_IIy3VDdTw7dz7pcYAc1hrc7TEinuxredyimISlA1idbS-1dr3yqyyY0cRmtQ9eYWqh9wyt_t-y9hkYG01Iin4b0bSClTzM92Oc7JPDKRogMn0XByTm6ky26tx9alvh57cn8KV-iD9CiQLNoP7LE6eitmGgZDv0Sj66gWuuI9P6V7kc4brXdHIuUweHW_ywZdG0kPy9wWxzoJOVDVba9En-4_F9B1qY-S9UqinEELPAteWoGRKys32Bjn1HhvD603t5d1rFi02CGJWMXHsQz1U1qqTPLAR2TtwC3YS2T2Cr074eIpjzKqMNKYgbPV1KFp7XVHggZAra7lKkMvQRILqKzbsk57nK00t4JKfIrj8NU4PEarghCD8xLwrgK8gGehH-M59mZ6ojMIfr3LGGhNMpezFIVYaPcPaCheSqMLnvl0DxYgbyBqbh3s0O662gzinRIHyivDd3q3XQHbEhqSLN1LnC9SlECXcEL80nGwLMzo4nWzhG-xnN_-eS8d50CU4WPL3DbraKhQrGYvjNW6VtH26Ir5N9ftnG52K3WawPal-9UkC4SISjfOEx4IqhjO2UcGFIA_0fA2fZuDmXqpSm8JYhUmsH7-xSOPzrD0C3YydRBBvwTINgRYzqem_5TDQ0cR4CGsunKDZJdr46X2Mh5CiFlhM1Dv3TpfxG_ejJTGkzZD2Jh_NrYtY43dAdg4AP4JMuJvGKWdZoOX8tve1dBuZWzHUG6TfdMkz1YS_FLe4azJIBc1BWhFTytJ6Nlx8FCufIj8WBEEw3-Wvgu_LtGfAcMbuObzPwh0sWz1Z1Uv6AmEhnUQ6DPSKdW3BDoOwm6puUxg_L3vSm0WeOoZWrTFBmazP2q4pDACO3CFz_joUg9LMXm57Wyn3HK8_zCp6qY3Y9U-xL4sfbhNHPz1eVgOI29XqFXCXKbme5TR_pZBVpKUdLXBEIoCx3zmd2MoTCVXucZtKXaMD1W9Bv0eRt_KBpfC7AgCTdtyWbQr1ozsvggokApRfzrRkUp_RswTHM6cq18ePgqe03JyUxO1t2dtGC0iZSx4A0oAMTllAVFeBI8sCIde2imwV2J2LS5j45-hhTfaTXEtp80ZnTS9yhejLqcZhqX9_XkH-Da3ySIe-Mweodmv4Vo07v3vDg9RRyh100AxtgvMP-Gi5E-rMavG4MnTLAcWo2b-NbMOHFsxvdJYBmB23h98v8pr3petaUnV0GQW8s0kCDE8oSuuveZIHVEPkpuejURzqnEdr_JkYNACyvJxpqllfxhMWOq-LS2gxkZeljYAzaeHb5y3CRON5A6yClGDVBcYUy9oFy8prpYbfC8Q2KS4-yTvbayuEvU73jUPC4dW_m_QWJeKrcei4K0__s1_NMAtz8jB9Xp0UklbVlwb4frHCmc4NExBtH3vg2yiIJU7vgipbHUFersAG63ER3MuvXwVUOQ1_Dp567t597pV2CtKnJXF-LBbJc1U_TXSR58m2PyP9Z-FOHaZubJ7AQ9GQvRPpEkl1p7UJs72QK_rrsV4dUSx17tg3SvTgRjR4RTTZMDzm8pPfsTpOwLuczDppMN5QVA6VM0UWCnNaM3KPhn1KI26v_907fVU740iyc1dvLAguCSZxSBd_Aht71cnN9PQ43XxFl7sIjGjvrP1JigW4Ydf4TH7GSzL9GVG4TA-SaHlYt8HnsJEZmdazIXfKqig9Gy1ImM-erodTpEwva8mNy3cCgN1zTyb7b5vE7xxUiAuzmZS7Q9YaggmLU7j93ip1nnI_dw7CvbhgLg8iyhGSzp0Hge3YLx2vOZNLJ6pEqasjgzR_lzKi5nHsKXruDW_I9naolOzDwiBXRNbrIdsU0qf5uhHPrJ4bwWEnI2VcY72ABhU-_pEYmmW2DYSqiTs0jJKTV8QA-RPPsq0iEnj_e__CiKaRJqlACDCXjGi_vtYj0J0gparjzo69mvVny8YyjwPhmQCSZ3qS6ebuY5zibjFool_9mwN21zTlqMWnoXBnhdk6n4PimnJFbo7FBYecmwpyRIqzU3aFswsbzJ-aN0HkIALbb83msp6Sx-iDOGDhmcusYXgskSqE1cyAhUqz6nyPFRV4OC9PMmiZreAEoIwzvxxHgSJ4AI0AG_cMPnXjkTNSrc8hoVBTWcs8h3uHMQeTjrvQuOFauNsDzzeN4VRcu4AE32k1i_6XrpSLnhkZaGrap9b8yb8pSUGyUQ-AzwWUppofewucsw2uc4O6fJ-LDmG9oBFVyYnpkbHHhwfokUOiY77TdEi_Ee-wpwjEIdOgLgx7q0DDaQnEBr-FbAn4duRT4KH86PjPZTscYSB4H9kIuKzGO2P4Zh6WTCM-Sp6S-BdGeokPX2YbRdBuDnSkJkwgUD0Os4l9Ppy2xSElEoIH2pnWvWBwEtYSdFD13qb3dS1EWQ2neBc1weIG8ISNO04ZfpboiolucfSRrK9dxyV7IPa_otdL5EfqkMeqYtaIBL0YKXWP0XUMqY5lFDDP2JapkU8MC9k_pOER1PfLCf03mj52o_hFK1jMd3AjrYW5pw1biKsafbn-JnSUm1RldvaYipT_YKlx0iuOcey7042FmqDvntNy48dHgkujYnDrn50gxpMnp7EbiZNJUNsHESGpHGUPdlaqzIS4jWlBou13gP_XH_oOiQaUFWKbzpRX6PnMQ4nodSmi41Wiy_Onq4YAlYrTjY9RQmrwq_pYz2cKu1G0mFZHgpLoGSTSwbRy5eb-_s3iraY1ug1Ducv5-es1LQMNNpfpxbksjnDHH-fbf1ZQ2U5MuZNtxTKVPTfj8zV4WqGXmFnv0uGlT4HWKx613rPFmsbjxRk9oIK"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:39.159025Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "R273arHaCeakyOgPuYTx8QY",
+  "usage_metadata": {
+   "candidates_token_count": 71,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 71
+    }
+   ],
+   "prompt_token_count": 167,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 167
+    }
+   ],
+   "thoughts_token_count": 829,
+   "total_token_count": 1067,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

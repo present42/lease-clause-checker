@@ -1,0 +1,111 @@
+{
+ "clause_id": "s11",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "77a3d40107aaeb115cc283825dfd99ce39d83e02f4abd2621c59b20284788310",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe rent deposit is held without interest, since it will be applied to the rent for the last month of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:44.503584Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"4\",\n  \"quote\": \"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\",\n  \"reason\": \"Section 106 requires landlords to pay annual interest on rent deposits to tenants. Because this clause denies interest, it is inconsistent with the Act and therefore void under section 4.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4409,
+ "output_tokens": 1329,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "4HD3aoiIML7Mw-UP1o7noAE",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:57 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"4\",\n  \"quote\": \"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\",\n  \"reason\": \"Section 106 requires landlords to pay annual interest on rent deposits to tenants. Because this clause denies interest, it is inconsistent with the Act and therefore void under section 4.\"\n}",
+       "thought_signature": "AY89a18wAg8E0QpjY3H9EfvFKL6FExG0DkbpfCJ7Uer15KUmUmj5o1F_nF7IGTiyKL1QDFXI3kmjm_xLRj6TPa-0ueCFHSe8LFPXGuZUlaAcRytoug0LMPZxHYTyyiMh7_n4-jFD6kwSohzr5K4WgBCyCq72kgZ3U2HgtctoL7Xm7oEX4ubxU7Y6IctVjZrxR-5ywBUvGgziYlCS1vWoogVUoapFDbatxJM5Y0Iurs7LScsrEewfAZapbXzItTIF_GCGLek3FDBDaeedUiqYBdUOsYYKddyxmN_39ZUz8XLriN89cNPRIf9AC7IkLhCq19b3__YfqIr4VT_24qpsB8n80PonAtnDiZ0Xh7pincTSFaLFZh00UNDnhB5P5FuXBOclPfr4esuDuQXJMBtLawqse_gF6zgRlsG1h7STByJXCxeMar1MP-FjWNCGQ6iKoTNAgUNAQIi5xZ3-bqDWGv4qeK4esVdTCOg_kc6eqrDkD7AoA8IaWL1cF8kbJIa_JAxl6rT41WFhxj25NMM8cV9aXl2qIZq461wO79lOrwGu92HImDkGPK27RLK7NG-nn0Rb9Ci97VYRlXmqiKPpBEOVxZnoHwkh5MRpYDkaMmAN--r05QT67w769j2op5zsi1Od0QsefMTJjIs9ct0mqZ9E1-vKxMq2UjhOsBlXRLys_jS_m09UR6NmSGdvOsdJJRQnD7nTpi2OVHxMN18iPB7e-VlCOH2bw3zkQgzI-4A--tpbmAoFjpICE7zcLHs843pY0FDa8EW9h4FzrLp6iUo3U-pWJcBQaLd8-QyjN4_HoTVBc3hJgsxqoMUw7-w0ExSTFND4pf9AduyO4eX6VYtuwamMAs35Akds8WP0KApfmf74ysq8c1bJ8ruj93pO4G_5Vy7XgKej-uIW9nPZ9k0HIDnOnRBYN_QnJn4GEdx7av8_t_KPErrrMF-89iU_DPiWucApaunsGam0eHQjtIi5SCnXnhsh8sY8P7zXbf_z3vcjdVaUjJZBB_XhLhuo_Bsb3p2hxtuND6NRoHNzJqU5TFuF9NPvisVvk_h3mVm8V66auYTZ8puacFh0EvSnnaSAEheoyoHUljHehlvOW5QujsO7bVZ2yT9AHa85sTkMDhOAboPL-DOcKXR9ZLogdPg9VEeUq4ILcIZU1mfsKtzJH4ESGSPF6SZ31Z9CLp-8Q_cgrstJa5r__XNm1n-fzngIOkKjPM2h2wRwnDoJjQEpjJOkOa919VLoc3-rxBc9H4JfOHbRNE9jJfZUqJK_rFrAYSt54lgIoUUAVRL4pws98-VDwXwLEd0mJztJdyANpmxHh13BJ3m4DIahb31Yb1G0U9PzdgHrHQHwdA2X-gdSRYUHHlpodQtgMR5Hd5IdJtipDrtUJcwrJ19meXOlhdJk4AxvLdGPQXWJE2T9KgXC_qvPtqBOcO_IVT8caSiwc6B36tEx3SPzuXsKeqO4TUb1msVOlqayCZINQuIfWkEBEBOVzWaP0M-wdwStW6DnKfes2LgwBbrJrv46zxNwLsDmmglbW26qvKxk0nXCv7CnCLdne5bIPAXJRr0iZoTgzNfMOMJ_4WgF_iiQ8puAxVruHq-B7EDnYDt1XqYccMkSDuJaM0QOvpJbK9S-Hd1DsTJ-QNOutfGkdf55-mZhACqbGmslQCoVF6SQyYcfLvPfDQhpglnZOckQ_F62GFh10IwrPBLEn8nVqDUGL4wFHi6xJ1vNFLIoPNOZQjH3tckprlLqdP-3Yf70PDbqoz7Y8t0EvKnW8lCvUj4AY9_VakuMoCBn01ZYW2ExN5-z0ZbVApqk4A8AlnJy4Ye9IkpdZfBHGRGkzGHNLg2HSJGt_ZWU6ziwUgApD-WVJ3qvnaaMWtsJXkaidgd9Y1Vqs50D1o8W3QKSe4CFo1etHuNc0ctW3Bt3ckhZ2Btu60Xyt6GpJ4cqb7p08q8XHM52Ljgxnp0O9r9VuTOUieI0cnPWYaqynCAp71tT6jrRJ56JQrafxtaOnFwQ0Lhkcf5ZUWqW9N20gZIyaUrkPAQ3yNLfF54AzgKHAEjx5OxXFb86gYHofO36Mcr06q6bUtoBtWQh8qPduwZM8MG3YncGZLzIVsYIZUhRiYLzJaQk6A2BWjKXwi4hEyK0emwBnyR9AOZFOgysmVHeybHHYkJvFJV3ifj8zRV1Y2MiqOBpl0_BGdp0CZajl7OeXYU4o_nh92FMy8AjRdYr5bwT9QKGhFLlYHd6Oi8dn63Ch8a97teIuaddGSq9n3GVi8JAQLmfc08CfGCrmZ_LVfUmc5dHZ9DOJEY6w3g3X5LE41whW8L1kkoOdGnN6SwdFthJnHR_bhibbzorD8u0Ejfjoy2yoOkhfBRTAWRd3h-CtEo399i3x1v0B6QM6shdcuRsVH7rvZr5o33Ev49wQwLUaeEtrVkJGJgH1GKUxXlE-l3N8TDOhX2Yu4_oy4D7lHCjGClqBJZr7chSXoJQjmPIC3b4PDzOah_Ph6vTramvRkSbdJS0aKaO_xzsXLtQHEHtId06KeXQlPC3PC-_dMKI00EklkVz7DpBH22gtUj6SQVjyBUiqbfYano_nrwZreSS7mW2IcpGphVVQ3pmCyxR2fZljAozoz3rRX1Uv5ZS77Z8AFw2Fo6ohxq8R80ENbuQi-Z0MHL8Q9J-dp5QxIW_NUaVgFwC2otI0WZfLwnf6Mwd3Cigtwzpxj1H_VGxHub_bgh5bJRtBqapBctASHbwcOeOFzl7hCnOG_3L2mA3Vlx7vGuWl5cqi7ERmUxafPG8gV9RmKZngC53R7cPG9jrkgFb3dsGCXNYBQA6pXOq8dfc_SzO3HfYqyNu5KM7fcojgHJyt3wEvX_H7cpq2KhJc99ZacKpDOm2DBShY0EoYLY2GNXvVaP-9rgsmwnIY5eHgiG0oOzbdFHP1xeC9mgAho2yEQWY038g3G0KAjLk8N7C17LtSYRDqx3PnGOz0RW8x-K-7yx056lS9sbieagylO-lvm2JvxGKxgA8zyTND7xQPBg7I9ivbSDsAMw5hp87o_cFf9Ru03UFMAnDRr5CZxNqyGJ2krnSVlSUk-XjTHkjAEJI7kTCRn4ATk-ve9fubgC3hBp8M7_5gNKQB83S_7OVEv5vUOG1KuQaJb4qbXorYwyoyeeBADGWcTV7u_yxI_SMQ5LH9QVEjrw0l9tdYXoJ-jDn5wPJH68_NMssgK_QfZFRtkVDvg97cACCppbub6xKDq0m8BYQ7M0_CsIazfT6FxvmY3UH3Yl3LTPz1m8MwF3AGsw10ILftkA18Q1G4u54478F7WBhdvkfAcxVEDv9yW4G-Z4CR55sXzr7iXa5FZ5SPLqu37pzzGqs_Q_I5ShH3CPjiCfPR6-_e42yOgPz_hdT7lYvX64xer_PnQ_yT-Hr4X8lRDvMbnr-Za3nnSAw8BdVJJcxosgQCGzlZ4HONlVCGctD_tOfkZ7gAwTSBTPYVXBrxxw1gaFw7j4IJMdKaJlc9ZlQSKV57rVKkgHrNsdiPavHbccGDKYpXXwUnKecAoTop0E0rTvD0HHMhqemVgxvZtK0K8tcL9VYmp6IDAH5AvqaVTgehjLcO3yfy3h4mkAI1iifwxed04MMnzOpAg3O8TyX5f57r3cB-s-Ljw5DmyuaE-3pHlhp1I8QFhqsGToH2nUomeBqQXFgHLViy6GOAz4hYorrALD5I12qaIlRjoLI2cIpjcydjI-1o9DIXZvt0L9hK2fSebZn7FlyiQlxhQVhYNH0KT9tBYnj47E-q3PUm8rFNesmVS2XIwD5W-reVuxqeCAcjuwV7n18rYzpE__xDNcFlFjq8fldVUSpMeYVhcxADq8HnTCDBsqFdtLqKwwqT6_O9NtM05CKHQlKr_220BhvABlSoumFqY6n4s_fCxs55_LFA13XO-rKyIg2xQL44bpqH3ddziH5NfIB4XE0fxg3dqUc-8xrzzolLCZ_pw80V7P92b5cMY2UzkEdzoWyM5WGaz_liW_RGbRYc0GYK8Xnzo2IEQ54cfvLuDqvymQ_xsNicITBaFAA5VZLtCd9n24mwICFeFQmdQ6kloMKBR6tIva61jKFAQ1HjJDlTVwuJC3kpnwfA6XxqW211v2bgXcc2SNGuVBdZxy4oV8KlLnfrsu2dbcWNdC5-tvK5xPZ2ysBaCcKd0da0XnY0KtB5C6XtZI045ctoRHdk9XnqHcNuXOMB-ioAPxO5xDjyxgoTmNW_qwJXmQatHOMjqgYANfnB4T5zg0FTdZYFhYDyQUEnIdlfP9XhW_V2qqTc-tovK1ZPP_xBIE8kob2Q7XUBfokVZLBR-RoU4-KFIgoCBM8YBHqECywbva8jCrA0FDmC2yughrMBKvm6Wbixxu0IQfGf-XGItanSKRa5SLaagIYVaRgQzxxAO1Q6EoU7t3wcbymLE9An2NvUKmiLfQZFO5fvI6ycLCho3YYWwfSvMTQS1q6nOcVQEkbbLSPcs3msd_53yX_DkekxaBSN46J8h3y_21Bbci2FdNUo-2i3hRDdGNCdzFmYYldvRzQZKpGBP0lqnI24t4F0cYZqkHAnStHg8taTGC1zrh9sOdRUmNWZXFFdGMFJFrYi9bAwuUbuLV7ZgK_skGAafQGIHjzfiZ1b6dCdysyFRoV22efgvIQzIcPeB4d5D2tYerle__JcMW0H2waUqUYVp5nNuWQT5bbdVeQhF5doQrQtK79VwLvtHtl3lUKmAKziQ2uzdFNbYYCdC29-GF0myB9EkwKSeK4P49gOZOmaBXy5MV1z5uP-yLfu7r9rHjjCpzUJeWHlcA2hhIC4dHyGE2-ogv2cGzaRQJ28dag67CKpI2OlRq6QZ6-PpJS3fVpDzv0-9SEmfAsQOxHq_LbAETYpeYghYHI7I_3G6Mv6K8ZpI-uUchBFislFtuRC3hMUCopD3QhXKfKt8VsYd8ebdPVBxY0NSktXD1vsJS6wHr2pAxpSxJKp1n-N82CzE6HJPjyRVmpiWcJ8LukKmlel_fXTX-WAk053Fn4WNywGorSaaEsolj5sXfXaBNcABNWBO_-aEp_3BxK5ZboHOqPA2Y4VVITJW6o4M6YLf_ja_mbb1FsesgWW8_Sy3XA4zVax2E4TDjXxNxfy0F7EsAeDiIfT1ZHjOZxlBltQn9wpBvUet8D8Fw5uWBQRSmA3UB-1lLMg1VRULnNQM3cAEMRRnhNMhi2qbt_Bexou3JL73U_WYHzHmzjkndpptFWRLvWNcrertbDryAdOtA3W6tq4abI9SVHz4cNabbR5213J8bnXQXYy0Wu7JgVBHVT334WOC6y4yBUS6VCbupFUGe3D834DmkruOGY0G-qv-Chh_WQXRGuc3Al1xsHEinZbPPDpcBdZYI7W3S584r_3wy7JbXGs4o1bm1g8aJDRbuyyU9Q7bFy5HSO7WTHEKTAlzkIy0KQzCNPnKWC7UNKNak48QhpX16bc8Zjj9mriBQUna_J54uaB82r_TU6z4J9fAWneEr8jiQp2hHmTOR2ThKsXcnNLVOF_83r44_5O04UUQ_1LsIlZhjM0mIt9wvq5yVZPzoe6a7-acZBq302_4f0s3-R5EoIfKLwEGAQkTMRc-zZ-_inDzCUrfq0U6ZnenQmlTjUoVTszG5EqCd8rqtKLNuDk3UP9JWHeHKdjBHwINukIPaUPAHu3Mb2gw5_cT130EJqykmyDFJ17jzeD4ChrevA4x1zGo4txyBROlJEzflBplZjWUWzsz-SUt7enMwLMiwccSnXzKst_AO4QJR40b8y2JS8WbXD16vyh6D-GlElYVKF_jSInm0UZfwoxS_kpxWR38941ZVv5UwT0h4lKdbDxRS60_mirgWM90-ZFS_pNnINdN5qOnCpMlP61LDLOsWp088-PbGSta1mnx2h_DIm3iBqx7VPA9yl0Z3DLnUxvghMZn5IJ2hZlv3ymgOsZ6EEJTUeOJjXgvV23MP3L-WJZ4rdtfmqICaRRomdQe5YUf1ZoXuMeMZLx_0FWswl8l80R2wU3GJoqF6yDh3sOyVTeHoMwXF5t_IZg1ml7MwC5tSegxMvRTv4u2MHgw_19vHK0uKDIVhOEMxjgus775Z4ig0gIM-rEH0RHBrDATWpkhr2agEDKVqIYqi07Db9RNkh0rRA577F2k49BjLDt9NbHlo3wiNlKDGyg5BIKTmw3H5_9IaufuaPEi7QRVKxfLmYAHO-wRwMIHNNPE_QlyFG5EZcigsL2Lwpfl1SywSfTz0mQ4vPcor6cZt2a0KEw05LkLaUikfXH6y9nV3SLkmqXbzem1WUyhZixpiWPf1ZxymvqkaOj3vTBquGR4z2dW0laTax6Fj6erP6lU7WYy4CuSdli-tIzsdbC9v1HVdBz18NTpFv-n1jtpkr0jI82V8xBcm5KrFgboKnjhxnsEtADsYxh_qvZEkgVkgos3sBXBUMZO3BvrGfcFnmOBw5wQTuxlWevthCWg5OrFh1YHnrJcN4TBGPDQLj-milvZHXMGJEc3COeiH6frkJg5Bfd_Ww0ZhUQQbEh93aPZ37NrnBlb1G2-2qCKnVk32y7oMx3uuGniMKkQToCAwKnOD2LJdUmWijoNR-FaEQ9QTPpbX4Qt-pTzXt28Gf5d1XrAXuamQX_0-eES2HbGQM_9irn8CKcjVyu00p"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:44.787464Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "4HD3aoiIML7Mw-UP1o7noAE",
+  "usage_metadata": {
+   "candidates_token_count": 87,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 87
+    }
+   ],
+   "prompt_token_count": 4409,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4409
+    }
+   ],
+   "thoughts_token_count": 1242,
+   "total_token_count": 5738,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "4",
+   "quote": "a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.",
+   "reason": "Section 106 requires landlords to pay annual interest on rent deposits to tenants. Because this clause denies interest, it is inconsistent with the Act and therefore void under section 4."
+  }
+ }
+}

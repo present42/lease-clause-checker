@@ -1,0 +1,75 @@
+{
+ "clause_id": "c16",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "70db5f03107b1fcc9ebfca1c1ffd85251e41ce79309c423f8f83eeea33a1f0be",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant's dog causes undue damage to the floors or doors because the Tenant was careless, the Tenant must pay to repair that damage.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:09:53.599174Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a lease provision is void only if it conflicts with the Act. While the Act voids \"no-pet\" clauses, it does not shield a tenant from liability for property damage caused by their pet due to the tenant's negligence. \n\nSection 34 of the Act explicitly makes a tenant responsible for the repair of \"undue damage\" to the rental unit or residential complex caused by the \"wilful or negligent conduct of the tenant.\" Because carelessness constitutes negligence, requiring the tenant to pay to repair undue damage caused by their dog as a result of the tenant's carelessness aligns directly with the tenant's statutory obligation.\n\nVerdict: enforceable\nSection: 34",
+ "finish_reason": "STOP",
+ "input_tokens": 190,
+ "output_tokens": 1187,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "kW73atDSLqnXyOgPrajYgAM",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:10:14 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a lease provision is void only if it conflicts with the Act. While the Act voids \"no-pet\" clauses, it does not shield a tenant from liability for property damage caused by their pet due to the tenant's negligence. \n\nSection 34 of the Act explicitly makes a tenant responsible for the repair of \"undue damage\" to the rental unit or residential complex caused by the \"wilful or negligent conduct of the tenant.\" Because carelessness constitutes negligence, requiring the tenant to pay to repair undue damage caused by their dog as a result of the tenant's carelessness aligns directly with the tenant's statutory obligation.\n\nVerdict: enforceable\nSection: 34",
+       "thought_signature": "AY89a18f0yLFopLCit-eyI8LpywtCd1BZir4FoVyHANWmhvnNY_IaJKE4WRfQYHzZVEZU8e68SWvaVz1h8GWz-59E2OFp0_n0kY3ztwQU4I8OHUbRv8j432BzJPECQ1MT6KWdeQFGtvdC-ExtPaBMSX4sJJn0azejNoCL7qBX34z9lwwgSTKqS_3VwSLvAACIvwYk6N5-x0ZX34oqZxpC6xjLH9P-o5xUYflMzFTweBZrReVAoXQdmkeVQbK6M8cIrdtr2b-CEaN4irreC1b9LNh74mNwuMz1aSGFIYQ_VDwSC2MC89CImMddxQ6TF_poR5ixGoOKzy58zF8H3YWvWntJBHkpwM0ljrjaAagAo_uFEioWPa1CAFT9p-JCniq84CDTh7UK8unnEysg-3jtW8vBx_Fxkfxk5YAUxkpO2Nfwf7t1d7IScz1FFB0a7rCYTeCrHQdaK2ddfY9uSGS4QE-0riJVJ8pR9aIlD6jMSoTO6EcXiOEL8pzhdEB5OwEE-kd6I0emmdEyh_HvR4qNF3q2qkSQ2o6bd30YWUDxv7H7DX8U7Brw9xjbupfWP-w1sueqbdTxyM2IfTaVZF8X6m4uKeh3xTCQxSlP44nx7f_j_A4ZjvhGwrLkk-RkmUtTPH7B218b3kI4eKK_vTqpdf6PJ6dHKO8hC7Tk4WzqfWygxjgZ9QMTiGwV03PNm0LUVI1fmzBeomA_x2mm_WPp5okbSZ24GZDuccmVCx1deBJ2GAw6cSHOg-pmgnDDmQxVDfktuXX2Rw3Fpd3XkR4I0IkSM90j81aJudUe3er50bZYFjgfXbzZRinMwMwXjqfRMKk-pcxUZMNg004dwNY0VflP2w3lAafcZgWFB8AWBy-IwP965UQOF43LMyc67mX1C1fHJvL4JoMupRbQeBWUEp18bZoP-PClb3o6BhUJY7jlvLtEFw0c_CJO2y1hilZATjF_sLA7sdF9i0Q-l0AXNW4LVmeEFxlQRkwB6Ukm3ey2zAPfGZqojFrxYQjFPd2Gmt8PJG53EPgZx3CNwpEdGx5sli1HhLSeCQkSMadR6rKMqgru2tsSQJwbKEnOq2S_Q24ju0xbYEw3m5yFQXRI_C0eLO8a4R5sOb9D1sWgxNBsOaqo6RGk5SXCTRg2nh3dkSF98hZzn-Mlp2izIxsC9pa2qdYiIp0rfKUxvSOJ6DIDGoLKHgcX4XoGwIjz6YBKbBqqoxTZAMDBhb4mnq8p0z4uX3-iIs-NGG2VBoXPk375tREUdPGMHASDgP4VSjMSNnxsEGyDRuvJp19AwRyoT_6ccYQUGX327JBwuZgZJaQSX0Ccnkh9CeoOmf1NDvYePqpyaSO4vt59VR2xd5pPnAcPshJdE8VdydfdDO_oEpBjqTfu_dg0Q2z9wLS38oTa5I2_Eb8e8-UUcp86nUwK6odMBftZItoZKqA1YsAeklX9JaPMR77LlYEnKVYlA0J2fiOLJ6Fl3TduNRH1f9DOqNKYCR3Jp-mzMctFsFmwKgTuROzl0d4jhzfjA8M5z0vOIdDeNakWVOz7KndliopIKL28lADuXa1fGphT8Srzc6U5FnQjyrJbsHrnGaE8tWN0nbRFzyfu8hY24yZjk0d3KmdT76hnDjc2mVDU2lYBvV8atJB9BAXKd5PCfTTwH6fbDisK-Dft_NhWjeNeOqq8kwcc2xj4jBS_LsLLU6xb8PewA1f1a8FTVY8Wxv76EGI7LaoyQtMD80Iu0b9BXsX1jzUbD3myMLGawwIQQlct7B-jw7KJwHdJg2ywtoYx3i4fR6lEFXu7h2fBXPziYzRsdVuuPm8fmIP8xQidRyHvZIkM1916kZE1L9701ppPnX2exCzq8XfxFwMG4DGIp3aW6vdnlyahSXdyZPa7rPbEdW5ZUqi-iOgEBtK-Su-slPxJIZP2jkrAaaO6_Z11e3EXCZ3_SBwxroOmsYGjUf5nc9XXO05O3XmZIsZWRsQywes7QisAR-y7PvrQjDz_irzJPKy8sn74DaNWymiPeqvw34dEajx8fwP6Q0AEeQVMB5VPn89j5j22hLKTmPi0aFQrinBXxsaItjxBjcYkkwJkQ1pZQsDZj2KV6dXxxktC6awULPtjORtERq5tqcJus3rlEqKAhx-vbmKMZEoBFz3T4hdlH9NaO92BjHkKxQ3HarNQc0oKkPBeEvLmPeJbT8pvJVg5BAFPh5XfmsOms0l-87lcTY7S_0On7ebO0-5IIBfyx7Qec3n29NqYG29EwtHGO-FV8MCSpzkivKeeyhhUVF7PBOtzZZEbAGSqSnUrqYblTNdT5_MKv8jnaIE1EY02oz7Mp4Cqb2LfB3g9jvwZkUxGLxBUdWFbHp4okqeCFVNpcYsyFDMu_5MDxxG8cM9r-07TyQ0x5DHKGQgYGtJyK2Y6zwnEEQVyUDPK7z1hHUzakmbWs5MnqBJ2ggyxl0E4YuOnvac50ZdVNY9ptQPWnwupoT3PyuOux3lvGf3tBF0D8IPQzFnLde9_PQK2ZWN9hbaczn1X1YFQNoLTV6ZtE91LFCOuxm70uq3cQDCwoBvYG8NMhEPIYrVsfYeZxq4qYyCfL8m7ntwec8dIwDXghaCs_5uA7grS4YZ8b74mByUQDTnkzi46q1_0lD_vK9WJNY6kyzaFkSOuWEiF40u7uxOLWcsEh1qBMdWs4bNZOALPjYiJvnAHsqBjKhKWy6Zcu7RSOCWNBKUjXiBVZJl_Lvmz7WRWCQ_9DV3T0jkAX5I-SfZrPlyOn4jeuBGyg8ycvn0CnxyXJqAqsvVttxnGPCzg8X4AEfi-nrbGAlw9FXssIY2-4Vr6UKg11SIuFZX1y09K37NzfarZ2eXodibMMsnWQzUqyKTCGEoxNtNoHyOogro4kE_R0lPmEiI81V19xxuuu1tN-kVRW1eyJBksqVY6NSSwGSAlIvi6TS_XLdBDJ71ylUR5edsjFuvbZ08qP3pu-ln7PdfZEpxNd1P9o8IrLQFAhM4R-GmVc0zAEi5_5RbiOR_0Kgr9zWn0BRElk3bmblxBBf2b8sCUKS_UELPZcGPbH867PyDn-WOA1mo6nlfUCT3hvtQaGC5yhYFDG1CNRzBXHI2wlgahiaLMtIrBTEA9MTDs0DWnzT5m_XcPpSg9OG_VRiWTiGB1SNc2HpCspskoiLTjAxDVCEMFvzklOm5pODummWeu33aekAcwxCocRmPt2LXogI2LMLtJUQB4eaMWejPcLDGBtWU9f9MXr0s9p5o6bGiRFuVai5cjv66MkKeBf0pttufilJHOPfwTeLBHklp8Tf04MvxPvjCGC1AwL3FEMagAE353G6qqBcjVU-7Cgmbk_ClQ6OkQ_QTE9GnQNIv4nWcT1cLxvIhfC6sLKz8YiHlES3ZNUplCSrbgSC1V5FY7sv3CSO_dYkRgRHTzdHuR3laqnl6J1iurt_w7yMbyJVoEjlCzEQpr8ratYxGUA76uK5UxvM-xW-gOikj7W28zgY1tQjXiWCACvuSh6QdT329h08iS220k_WkA4yQDqUrgQHPdn1wKwV3mwAnVLJV2vGe6alr5Wo4BIi3LwpOiNbTLMbNA4pimzdiUqQeI2pQuZwC8-H2j4kkvM8-d9pWdSAlYPd5J1XykSYxN3DsjBNqp1nRs80VcfsaOnexq9xZ8WZgSbjANg_C1BddA3M-lfXc2YOPd2f3K__8Tp6aGgavyQgOW_l8gskldLs4MCIOTYWebQe2D5czKeclePHIOXtID1C6OBxHX43Ijlj6JaO9wjHkqKt41G9Zr-cOGc41F4nYPOQA7UvaN8gEbBF7aUTHT1IbGoRi3UkxZY0UhC3n1jOHZVSmiorzmYcYUegb5svyVLqckDIuAekGayKXkeXYLrRkCu3DCHWvoGzTCGs9y89kau-Tb7imf0z5_9TwTvSjXAL3RQQV8-ij8WOEsI5a6qmPTDQ6UBx0H3tAOIndEuUhJhej05M1RyahMuQFaatr_10lw7ipynNoTdEb-SBcM27c49Q5-CDnVkNzo61Wz5kkhLqt9qMMmzW2wiL6gahWVwOe3ICA5PzDh2r5657TKn92QfB-jrHgPGZFXp_Qi6GbSTT_NXdF04KM0Zmj442K0kqN5EIJ0tDHTeVJ22oq5_7baTrn9RBsn12qd50yWOmCz0HjI7zEB65Lo8Itfx21vqrBTcrrnY0Buq29Qo1TnmnHzTFr4bPV-PQY9GnzTJKnudUZj-8XsCUC2G5r56Wcb0KeJbhafoK9qWLFYASGMc0YY9pNRKbcNNmiXgBKojNxfHVikt3R2fTFEAby7FsYyqIVCvpgeOMJQLZXJbpFpn3DMGf6moauW_PYyv5qatrl-ZfdIvezZdAy9UZQO7ECBXiAhZepaFcTu8Jge1wDkSOchpbB4UUJG8aIeyaNRKWBGPa5rbuU8xAYWFQKQjyQTZNebZWMVLcGCp7xtix5VFyDeK-7BeDE82tAjnQjs2uatTd9pxFXru1U-l41536rmD2IsbjRtJwaXtImlUxYgyGrdGvIt6KOFE9mJZlQkb07OUgmFHSqAAdscf-hz2JUMt5Tsbum0QvyayfBdB5tVWrTcvS4cTa8ANpPeFwTcgCMyUeRu-yIuBycun9cUvDawWnNtdIpar2hVj7IY6CaMdrJNzPDBH23Cmw-vB3PAThXpY2JTS2vBNeOgH2N6p-JmaGHBB48iyMqf7pHZzoWKoaQgdQOwSy3dMNuSswuGIqMGPhe9kinc37qJbTn-cJfEpniw5pSdFoCxj6K5CKGoAABHSYDBW9gA2tjsdojfxBcnjg5NzvIL1cE_2p7LTcgVEx2lPJOKI97sLri0HUAhVDhtqDzz2ZZpXH_cVmGUuoFA_p8hhW-D0oXRUhHgzlHM4U2Vp3OV5k193ISeXSKqT2ndA1AyZ3uO967nNogNX2xAefZa_7otkmBgHlmI9Uvthu6tDhZYFyO4x2oBV4hrIwLFubx6reZxTMSEaga0qi2gewJOcOSR5kScImV49ZVoWHP4Hu7Sqjri7li_Covn556YGWywILFpC2XbNwpcZB6WckSKgrq94Pnfe1ro495_Trywu3azjeiOSevHExAIxwJsGO_3WZOt4dXCBmzhzAIg9vTQbyMfmqECc2s3xNc7LYBo_S4zvvX3ZFuEfP21E2uYBmpiTVUtq1aFZAQJWku0D2JFuQBeku3LXzJwVtz8f3V32sX7PRwiCXHOKh-XvPb42Kk2ZU5hFdQ12IgiKCr6FwCaqwuPq9Y8WptZIV6obC1kV3tN5hHDhLnDX0wH8IHMJFOxESJowgkth66akHOx1YMl6_ks4jh4jXAPMo3Ab3gFp9f5suydEtcEWNqTdP6oaUZ_5UVoXcavFie9u-nC6P7U1Pr2zFVEC3qeFm_RWUMJnbAFcnHn-hbdCAoII8-wmpC7flfpy-y-jnIc92q_CiAAjEtPxXxkdMyESZRMWRJT5RFDwzUghVFy0O8xnuCn4fncUIvPEoN2NOAgvsSPgnX_G0N1AEasSNMlQ6g4PMtxQryvl2e7AGztX8xpqLFUc4YixnWHhgDaDP9gT1EhVhm5GptrcrrjoOsmwk8MWPJsP5z20DS4vWIAqIy_fJaC5b0g2mGV6AdFogMR-N1TvXPTb_PnhHkjtePNLR7S9SzKBx3Dw7Lz24l1Raz5zcJbPwmSk_2WmTzS0Ug"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:09:53.764240Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "kW73atDSLqnXyOgPrajYgAM",
+  "usage_metadata": {
+   "candidates_token_count": 156,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 156
+    }
+   ],
+   "prompt_token_count": 190,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 190
+    }
+   ],
+   "thoughts_token_count": 1031,
+   "total_token_count": 1377,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

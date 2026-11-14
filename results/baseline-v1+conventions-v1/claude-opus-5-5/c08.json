@@ -1,0 +1,67 @@
+{
+ "clause_id": "c08",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "fbe19c807e15d6f2daf3d62cf13abf3f45efbaccffa510fc163bfe2042337249",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant shall pay for every repair to the unit during the tenancy, whatever the cause.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:13.044526Z",
+ "text": "**Not enforceable, at least not as written.**\n\nUnder the **Residential Tenancies Act, 2006, s. 20(1)**, the landlord must keep the residential complex, including the rental unit, in a good state of repair and fit for habitation, and must comply with health, safety, housing and maintenance standards. Under **s. 20(2)**, this duty applies even if the tenant knew about the disrepair before signing the lease. A clause that makes the tenant pay for \"every repair… whatever the cause\" shifts this statutory duty onto the tenant, so it conflicts with s. 20.\n\nOther sections affect how the clause plays out:\n\n- **Section 4(1)** makes any term of a tenancy agreement that is inconsistent with the Act void.\n- **Section 3(1)** applies the Act despite any agreement or waiver to the contrary.\n- **Section 34** makes the tenant responsible only for undue damage caused wilfully or negligently by the tenant, another occupant or a guest. The landlord can recover those costs because of s. 34, not because of this clause. The clause has no effect for ordinary wear and tear or for repairs the tenant did not cause.\n\nVerdict: not enforceable\nSection: 20",
+ "finish_reason": "end_turn",
+ "input_tokens": 228,
+ "output_tokens": 1311,
+ "raw": {
+  "id": "msg_011CgwRCAepssanLSLabFFcX",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS/RgKEAgTGAI4AUIIdGhpbmtpbmcSDMj/ssHVffrC3AGVxBoMYIHkyEmpUsxEhLmaIjAO+0EnI4b7nwxnV1IxE+dV3rPDYL1NsUNZ3l7YCbxXltBSvyizoAvVA9zxzI5FD6oqmhjNrtRWFiIsxG0AfNvbZQjCJREDib6Vepr3MP5BB8LPBDnmafQBUYTP67qdVoShwq3Dh0S43gEMOpuHMPnaZL05vrk/n/vrIyWG34uAwQEYC/w1LVoxjbIzTvpug7PHNKycq6T38Au1LcFzcpUifIaqMNG7YjQOTMdrEVAwzBv57q0uYfm2e/G+JcGwa7k7oYmPKDpwiVyg8COLt2QQnpPBwRz7m0CmsSUDBIUDV+Gojwy5/QoAIYkRsT3NbcSQa/jUF1AfB5xZ6MMjusjeqBGDGyrWky7/Xj4lJ+4pYveCVcbcdqtddBmXW9bS+ZSTgzM5oF+ZbcXEf4cM7UDQsUsQJI0HfvRTAaMnkRqZJfbbeXIVZ0SWnxPAp9ODBFlPbr4WALPMnNGNHe6ks2nvB2IKPaCLmUBYO79FbwdetqHViUzUr46TqHg0JenMc08fzGOavkWh4LFd3KvTrETbRDYMoZNDryYl+lCS8go19ydMk7EU7A0EOhyANUbovh54kfR6CWwI04urG7ABnZ2P8v4+xoPYvsL/qPht6ibCwQOiuRgbwh+w5eegbqWP81jYAYSuu2FrBD7bbxDqe4lO3TGTrqLNg7Q5gDFcoqoKdVm7oMc9rG/V5yrlODp8S8lFu2OnOwrEmlkc5DOT4CL31qcJA6lNXSbRQidNTy8/UcV/apuY894+7ofasKXw5fUNWgiuSYvKJSKu2jg+eSvViYxfrIRmJJc4wJV2LXQFaANfuc1of3xnGx9lcuD/dS0HjzcrF1sVNatoIDLOomUX9U4BtAWK/g/cbyfttVLVyCDCNhd+bt4qciNamxw4e87jEPZX8Wi8cqwEQDkftZEn4C2YZKx3NrCVXIq6KJ2gAB/UGAqN6RXV/pz8zaecYk06vXezN1+5l5feHFUP4UdfsgWvBR+ibXDpXhxewsvX7AkQE7d/ddyFfoYsnP8zznvpeku5cXTA25rWag+qz/hBRPB/aSzcsps+Ht6nY+RLBMXtUFxM0rrzpTgxkXDozeVgJd7DKkmcDMDGBYOhSqiKNWIN9Udu9ieDlkJgjZ6JwSr0KB5cMdl5zJsO8FqrlntZdV49LTR8Jk3YTyGxr/j/H/8m4ydNpFtf4syjXVj2SB63PP4TQQIdDtlAEloeBQ2dX6kIDPhrEhwBPhxXq93nPeqMoYd/IlqEkO8jnS1DVFq+tC/kD9rGhskzY8XlwLwmajk2V8NdDbexxa8Nu9XuM2ILweppCpn0wuOjhSORoPTQYgYUmMRJjtee3NrH/a6kPO9yJ5pVkVZfUCd7VsQJG/2Gk7TXXJ0eyXP/LpTUSi7iq1AeQxzw5Iln9omg1kT0C2MIwSnvZ3DJkqHcB33RHt12XrlaWu7qGXBXmm1wFG0g2yYPVw0Qc7hXqco1A7JYPmq/kCf6Yu+7ajof5Yobhoc+KEXWVxsFL5WJrDK6yE9j8tvdNnP8t4K2qDHOM4gWBqzlDCZoQsLeFfiie3YdK7ktEZ5kd1x9WGxeQrtEgNd/2d+yFCGj9mri7GEcsWOYVyZE3wI+s4RMnhWEYZl+Y/y03nNP2YOghkKuZnr5kZ7zwQULXqTYQE/46CdRYoRHMC35jORhvCg2Ll0WyxWeOxFBNR6uYuUJkkQjnjmADA8QpSkegHLrAWovZI+M54gL4deFppXltfJE0Aa8HziFSElCzDWro5mRJoa8I6W4hjk6v6m+dZr+N46EXqU9RVMU7l0vacnQEWDss6FGdk4wr11aaS/sITn7VZRE8J+Vf5fltHy6wToc2kIOJi4O7C0ONsTkKSqAbvxuD061zrCTMmycwG/0r2AFIHDi9XX17QCIDIRP5AyWxM+9y4Wvd2Qk4KwoxG8bFqVjokOBZLsX/jMUx6/Nd4m2KrpukHqPkkDdh2XNArlWl7HlhSEgPykCMltQ7X4VurWTo8b9BygXEAR4USjen+ThU/RF8hOEZ51NtdVKAAaJ9mvfN+CSCf8pprRbO9rLDEZd4yuT04WuHgKYsu3xdyIYzfgASP7BztjJobusxShbGkcB8LDdgcC/NhZcwVMUL3ufWDGaO3EuDmzs9bUS8DeijPKk0XBLXPj7h2HKSIl9ptD1x4w6ttIqqIHbU+4hkfxno8EE2M9S0Qx7zybK7209nNxdUvNVcMgVTZR0qU41H2PDuQ0afKvgVf1dR7co9SyY4+ESkkHFWaF7Pc+7qDEpuTa2o146rEu6sBnMdSUJwkQS6dSYus3/KdGrSHXIZBw04fgzKxP5vG20EztwoMzyxgDum817gyBmFNNppJmEBArgpxnfYOX22xt1ddQbfJxZqTTJmT0Gf1RqGAmgdt0XnP2VbHeSb2DNH3J2l2j2KIFFD8IVgQVlJtyYXqkSOxvtipXR89RVwMvISsul7W+vCM732fMQ9e9UQ3aDWcYzmbr5ybdaISIbW6sS8roSmW89qFSYf6cW+uH6of2VZx/6amLjzG7pWZplguK4Bp7e3OyLJUUJiDEMODbPjWMEQum6cJr3X416hG8p9zBLgu/q30PM2RN8AoxWW7MOPO2dxSWF9u0hTVCBYHPmx0RHkhwRv9p0yo1KU97bPR3JE8iGalOeGCXS2+4i/8zvp1gXZXEX3dmSlim0rbVBJOPreRrl9y58cQYQGMiLLmABW7tks/UgzlnaPLx6pfrH+vcyebgPz6/DXaAq7Wvlg7/l2Wdtby21ahP2wbkVRymjgZQ/NLb3ipbzXNhLaFhUp5GAkEua9re//KnRumyMh73SeYHXMz3dLP2NciaHAdZHF296wlOrO4znixIrsPWydiPWVyJ68L+2cwHdO52kZkukFGbs0AEb9VIzgnTbdVhSKSGZH8JRkJFQUKjQsyda/rFDgq8e6Y+4QrNjl4rSuLoVHG2kUwoDWy+RG7buEoI25Hyp4Po5JObimYX67BPuKLM7LhDAw5wikJS+uQigsQSGpeywEg9fIZTMHMMAJX9FfB/OrqqeG6ncpav/CJZ4QQymutuXvzjCEPwU0wyLhbvY3i58ElCAD1nC5uTh48/6HQBTzI2Fw466tDU78TRvZlPKJq0Du3JB2L3pkOuDnk6Je1eDeQCKjfnvKVUDjcxa0jhklqSAbq+a3wmBhdWVzI+N3ooP9yvR9D5xW2EbP52TyLrIeqEnsDzUrJkF3zky+HV8lCCy9RnYIrOfzOz3ADofOSZA03jVrI3rNCPJTjDA/RPcq9uVux44W9+7NABWDQsv4mG015kXzZtMMKRHwjHgXq8qN5UOAJKWVQgOGAIAaFkv/dYNmroPdZgOycgbQjPgVGtEyj+SpVlRRmP3aS1AMxMYcGsGrgtDgEPTHO2M2yg3T1PYAPA6MFW82AQMrx4nwUkHVOyoAp7CC1LE87q6SwiE+1rgzC5F1hl6ws/Yz76SdJCdEUJQWNJFEFXCyj9TRwjl8QLrlVIjVrQtAkVY2soyN5huBh0b2sxV2iER5baRnjk1gxFg5MOMuzDqT0ANu0b3wDGOZGdfm8AnKvbfnuR6XNVM6g/dKuZMHJQrk033KgoukYzBRu6NdvAnbnbM6nIrwTPJI1kMviMDLCyUmNfFKICOK9rd1tNJdoxriYZAvs+FpqtFiqb9bPmWhZAkuHUEB3G7KXRQ0XgRCwhvYCNZUP8bVltaxFboGAJuzz0gTAZWCVz4uKL25MW5Hb/w8Lvq/XEqjv/fsvPsdeiX3FeK/aH9ID58Zb9P5kCwp8Xp97iW8jlkHrQLTsumlRTxFTCbLcwclHLjnUSgwnFCZU1Az622s5lv4/q+u9o6vCs/zqTM7gb9zvkyqD7HZSIiX6TeaI68HXsici3UPsY3oq8Rr/4vOM0nlRQ1bIEPN2lGxoYDB6OMIrV2udNelk3eIdEEEzxGB+sKCxvM0c5QXK8Un5qUa2/FeAcHz+clg4pKGJP3BzK/PqYL8P6xTIOU7de/GNgs/BJm1RkeRy39+M9o4R9a4jJVuMTLvXm5/G5m7MYORfGGzTr7oW3iCWxs/mv34Mol4fAAUAUiuqq0Bor6vC5Kb0qlyjVBGuKWZf7kQn0OQ28TwvSF3w3WSYLQBZqhJDVu889XXmNIGJOj7ls9mrP1bqnvaZKNiKzusRq1Lbk41QIbBT4e9dvA1Z8mln7FwBgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable, at least not as written.**\n\nUnder the **Residential Tenancies Act, 2006, s. 20(1)**, the landlord must keep the residential complex, including the rental unit, in a good state of repair and fit for habitation, and must comply with health, safety, housing and maintenance standards. Under **s. 20(2)**, this duty applies even if the tenant knew about the disrepair before signing the lease. A clause that makes the tenant pay for \"every repair… whatever the cause\" shifts this statutory duty onto the tenant, so it conflicts with s. 20.\n\nOther sections affect how the clause plays out:\n\n- **Section 4(1)** makes any term of a tenancy agreement that is inconsistent with the Act void.\n- **Section 3(1)** applies the Act despite any agreement or waiver to the contrary.\n- **Section 34** makes the tenant responsible only for undue damage caused wilfully or negligently by the tenant, another occupant or a guest. The landlord can recover those costs because of s. 34, not because of this clause. The clause has no effect for ordinary wear and tear or for repairs the tenant did not cause.\n\nVerdict: not enforceable\nSection: 20",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 228,
+   "output_tokens": 1311,
+   "output_tokens_details": {
+    "thinking_tokens": 915
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "s06",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "bf8f5833ee820380d4c8658f8680b66309f2a94c7f608c6e81eb8051db4bd5d7",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nEach year the Landlord will pay the Tenant interest on the rent deposit at the rate of the rent increase guideline in effect when the payment is due.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:52.069635Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120 that is in effect at the time payment becomes due.\",\"reason\":\"The clause matches section 106(6), which requires the landlord to pay annual interest on the rent deposit at the section 120 guideline in effect when payment is due, so it is not inconsistent with the Act and section 4(1) does not void it.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6441,
+ "output_tokens": 516,
+ "raw": {
+  "id": "msg_011Ch1HyDBTj3U5BrVKSegj1",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"A landlord of a rental unit shall pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the guideline determined under section 120 that is in effect at the time payment becomes due.\",\"reason\":\"The clause matches section 106(6), which requires the landlord to pay annual interest on the rent deposit at the section 120 guideline in effect when payment is due, so it is not inconsistent with the Act and section 4(1) does not void it.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6441,
+   "output_tokens": 516,
+   "output_tokens_details": {
+    "thinking_tokens": 346
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "clause_id": "c04",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "b97e8785d0729931790508419f0224e76ccad2deedd6c8f31bd8bd76bd46f10e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant shall not allow any animal kept in the unit to damage the unit or to disturb other residents.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:17:59.075334Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"14\",\"quote\":\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\"reason\":\"Section 14 only voids clauses that prohibit the presence of animals in or about the residential complex. Because this clause permits keeping animals in the unit and merely requires the tenant to prevent them from causing damage or disturbing other residents, it does not conflict with the Act and is allowed.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4530,
+ "output_tokens": 775,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "d3D3atHDCKjIw-UPqcvykAg",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:11 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"14\",\"quote\":\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\"reason\":\"Section 14 only voids clauses that prohibit the presence of animals in or about the residential complex. Because this clause permits keeping animals in the unit and merely requires the tenant to prevent them from causing damage or disturbing other residents, it does not conflict with the Act and is allowed.\"}",
+       "thought_signature": "AY89a1_w2KUhVE4jsv4S7QSIU4gMLkm9EUUoc0sIf6tgTfZdGMNGvyb3I-SmQNORCcH7ugHtPdI6niA2_ImQSEDRy_R2yCtzp5s6MozhhdiKxBCJ1KhAIpu6acCys603e7gfw7dJ5sWoPypkVbKFzrL1IWHsgMyLVmTqUzCTtKKtX2hDRZtF8R8GMfhPBECxuJPmRDn5oK3sD3rLyv8Y5vhdqDVoEJG8R-nkFxT75ZcYbeB8ZLChcwg-1WFGXOJV303LFLGmdyHr7D97jE_lWGhV5T6crAzfa_prvuuaI9tCb9XRs-Q8yOaAmYuhrVf4eui7R7sCN7xO1DdZyZUKjzivcT2o6DUy3GglDpji3RHYCD8aOvsztvACOSR-xBUh2Clb7yTME3gaNO_osk73ixRfDiKLOgLzgEiaCJ1KWEClAGsPW0erXTs6MvKRqnoZHD4ry-WTWSPXqbqB_mw-kdLYOgxUTI7Q64NnP4CxAuSbVJBridbG0SO9oX75I-1tpM63xx2gpTrZc7eCF9uNbhVCNe7Cs1_QUwjy73AM2AfYP_IE_AvjULTI0-HsF6RpCipBCcC6Kxah-ySPRKGCCg8--fZvIzGCPkSwqtSvToAVaMkTNFDBnATe7koZwTgSjo27oxJmZf6X1ehHPX0M1HTvrraVJardiIo1sx-vs020OGxY2TEAv49FyLGZ3XR5Ie_fFSLfkBT_2UxJ2HtCg4o9DE2jFUyaCxQh_5yVX7inTRfF3WauWvL-vIih51tCgPSiTkjeT0gE1xBo1_xMm6yPOudnL6UAfzM7pCBeQGS8Aosu02to31X1RG6LftPaoCcxdH4QPHOYCMYxv-jJ5807EagqFKJBeNQg_96JVn0dnfMy6HH532QzbsCrQTeK-49-BXwi6b12h7joa4DubM0SmEeuSVZ_eTVgNgk5KETfnh9BTaf5ohaPgK_YjbcTpcHLD1C_iEv2X6GNmlJQXjbTEZbIMQS5djN6v5ykCedD_AHlVv9LZZDOh1kLtdVW71RZUP07lqpOYXtIgc_0UhP3dvNUnmtMeO__quxlerYSWBaRLjha3eLnwsGNfZ7Vx0EcBTNOhHJ_3qiMwMzkSul4qpTIJrzPmbc8wkHWcusYE-V82RyTWq_SIZgV9KSZFBogmOrvciox_78EI4USPTnI9lPRhOweW_-wYD-V-ak77nhYjQH9xad1q6n1JxE1k4yr3aVhd3gWCq1U-q7ubw5QNRUlqUtXaoOpf9R2aQB9SlUol-UyeJWalJzHdSgkzOE-r6zbdDAXqUsY4e3pwO7CmjJRVTXWH3DrKzIEKP0eo6GsykuNeM7j_aFkQ4iFuzo2T4KPNlbq6CdiKKkbVeHpIKIC--B5kOVjJovHAPdijyek_epeZZZbr0g59RdikRHGp0AtZZ7CI3ZM4XVdOJG_sjrPN9rXSXOsNYIhhfEBPsdJ6LP-M5dzi2g76W9kPfE0MOvjM-2DTBYcSTmnLy0A0dHVTjR1BY2ZbISJ0OP-yfYQHRJHf_6ABLDTaW3K1x5qe-dUaGJDS07xL7hVJkdIUt4uOYATPhwxKWXLbGz9Hto1LFTkwX-kxcAz-QRqytlOK52lqDIDaMn0wYxW8yIdUBpDo7flFHXQc037Vouq7725_sL2A--SMZ5QhZ0TrjaAP31qV3otW4Saq5-wB7sEwcJiMr-SWyqW9aMRkWtdJK220MgiANGwZrEKFYvlSD4ZjSsN95XJOQyTy9dX6eJrwofMJFr7Fkx6_juNMmG_6eHn5mFiAtTViKz88eB_eHIVNPIpoae9uDPoVaNN7Yeh8SqPSGKA4KCwCbhwFRC6tP0UxZyIqt8qt3FJ22xmyTErwWpRHrPQv7nXevkqnjLGhqxyYa_Vi1MIE0Gcw6IVkGlbyL6XSHBRNuh03avNPHCDjjxnEl4AckXls1AMXypba8bLKaNvhZpAAjgDvqOSiGNI38vszUHVH5V8GxQuoZaYZs98kAusM98F5SJno-6O_0i7NxTidghel_9jFJAjx6aChAOlbkw5k54u2ppYoX8GPpLyNlwSczwAA2TuuNfHzDyggV-c576FccmVBcfwg_J--YRzXZEKJimT5SiRsHGsdVC7bkrSppUGjvwlHIi3xE0TV133FXpHpE8Dbd1c58niOGFNz6xB01cWsuQiD9WbU_RpRpPXtD6JJpHfiiclUkEczVN4KWuocb-HwavwjgNzfO7-cJY1SCB7FX-E6xsueoTq0jcdxlBdkKwCbrtP2elLSQ6NVaw2rjaq-WvSA4XXUSoJ8Up-k5ww2hhzIrNnc-kApylTL_iQh7ascJwS4SuD2AvY2bKBXBPKP_adrFnHCsfD2-NmTzAC3S5MKT8AOKXnRXrY2FtBHymN0RPliJs-bPhyHeAdnsQUIff5lH4LqWru2xw8VOgoZistSv-rB7kN8tKTqmleZQALUq85e6PN5pg2LOu_I9GmQBnrIkQgOKwyM1pL5aJsrO5phIMhJ7AiqaC7e85a0qcOf2xgjcrfnJtp0YLwoOkaNuS4PtbSoErHrXVm_-xUN76GgNTHwvQgwJZGSfJDQ5MCiM_Cbv6moq-vw1UQTkehwhweMwuH3H82nzIbFS0pr53mXip3cGs5zBRNMyFuvzts0PxCzurm3pEJS73qP59bTaNwFMkfuBxMzDIhOSIHpJoj9O7XWGO8RZRgZC18IH5LbOAKi0FBcf1-IJLaMujgHXiRH8j7NzGh-xuJ8e-Wpy3Yj-YwsggndPQyXW9R8m_5IjHFAgsjhRKt7iot36BwYGAip5zfEUbNeQoWQjpQsvLu3I6d5rxv6_b6NplkY2TEsXQimmSIkiyVM5AdPMKXGqbdyP9Utu2BRyUo6Yv7lavxkblDBcxG6r44Sv5PSc81BmLCE8270sxveOi0IRep1COfQ4Mi0V9vdXLrSi5qZJtkM-CVVVBTaD4vRh_tT8m91QMSmdB9IVXDhbpzPySHJawQHEGtvbAdSb7CfvmrrdPjBsQfKoBev9ii1P40Jl4MJLu6LEkUuoEkI8nsNeVN8e1-vDRGLeYijYZMOiN_DfoeAGsfj4-bnlSdmyIaSPFteqndqRmT-jHMF7MLDX6chgRC_EAvLabyYE89t9jXMRi1pUqw5_rQpCkCTH7y44jQfJqPwQ9UpI1vtG6M8AfjdsUvUXd_NFe0teBfzGwQ2k-8Ok9pjyE2Ljz4s-IoQc_1BpkSWYUd7gaPt9lAQI4FM_YCdhLHwX2yqxT7FevDQvNvAnSWAORJLsA5JgRxywL94Vt2oU60I03cG_wk1cPVHF1HKd-vnr5gX5K5QmgzGPqxXEtSVfx2F4EmbaWgKiQqVU8_HDE_xPvPCRf6CA6EU6PMp5D12p8lMYUeCgeJ6CtS4udZJvh_po7TFfJm8jb7cbk1WmYVA2ngr9dEzCBja6uVIpHKu5IRs0ovqHFMGlUOu1p1Q4c6vyFBIavIrvJpYwU15nRNe2IItikTAwBKSC-adfcVvkWmvnEq8IpBV5jmOy5mg_8FuwgAj1qjDFNqbS9nRCEymcRNHAC0t-jviP-XAYkG1eWnAyNrscr6II0BKPsS-N2-nJukCizZqbSvm-3_NBS_8VJDACWdLWCGuM_fTwpmGG8hbeug86Ent7F6PVFG_V_XBiQl1Mcr6XpBFBEFfDzIJtagJfqAoLRGbMLY-shs1DYVxlOHu1aXpgAo0YnAyvE9MArpaATjBV4euXqXQ146E67TcbZ4bQ5rtws4PASTdY7emhlwUfcyPZyIgF1oU7ODmi1Quk5FlYxIpKBlXbjnjiwiqxanCqSvFzAnKXFXtw4y4heOMQAzAR7ka00pqzibF8SKHfS5SpMT4b-5c2fadYcVtYkesMvZJ6_y_5lLECRL3Ku10z2Lg2CDM9qGo5jPwzLe2x7ztyDHzdUtCxq_aK1GrzXNR1-UnYC7Bbqzdf1pcaZmxmbovPohDs17_TwSv_kOXfq6eJHEza7jVxB_dyVCGu1SKUvCcSRnHcEW3QAyx1s4o4sgu5I-MJBa-zV3_6f9G_-lgZEjdH6q3GCERjzxvq_Uwa68LLtxH7jQ6-2eIbDOY9kbcBLrkg7RAV6r0UE9tsOgPeNJiAtG96Dn4rNCtRyRE-Zxx0yrldWSHLFk2hl_84vN8NMXkQ=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:17:59.139729Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "d3D3atHDCKjIw-UPqcvykAg",
+  "usage_metadata": {
+   "candidates_token_count": 107,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 107
+    }
+   ],
+   "prompt_token_count": 4530,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4530
+    }
+   ],
+   "thoughts_token_count": 668,
+   "total_token_count": 5305,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "14",
+   "quote": "A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.",
+   "reason": "Section 14 only voids clauses that prohibit the presence of animals in or about the residential complex. Because this clause permits keeping animals in the unit and merely requires the tenant to prevent them from causing damage or disturbing other residents, it does not conflict with the Act and is allowed."
+  }
+ }
+}

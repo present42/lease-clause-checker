@@ -1,0 +1,67 @@
+{
+ "clause_id": "c12",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "3ba5f21514e24494d67489c15d14b95f4c9bb84a06dc568dc35305b264eed0e9",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: To carry out repairs, the Landlord may enter the unit on 24 hours' written notice stating the reason and the day, at any time between 7 a.m. and 10 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:38.846088Z",
+ "text": "The clause is not enforceable. Section 26 of the *Residential Tenancies Act, 2006* allows a landlord to enter a rental unit to carry out repairs only on at least 24 hours' written notice, and only between 8 a.m. and 8 p.m. unless the tenant consents to another time. The clause permits entry from 7 a.m. to 10 p.m., so it allows entry outside the statutory window without consent.\n\nUnder section 3, the Act prevails over a conflicting lease term. Under section 4, a tenant cannot waive or agree to give up the Act's protections, so the clause is void to the extent it exceeds the 8 a.m. to 8 p.m. limit. The 24-hour notice requirement is consistent with the Act, but the hours are not. The rest of the clause would stand, with entry limited to 8 a.m. to 8 p.m. (or other times the tenant agrees to).\n\nI have quoted section 26 from memory, so please check the current wording on e-Laws (ontario.ca/laws) before relying on it.\n\nVerdict: not enforceable\nSection: 26",
+ "finish_reason": "end_turn",
+ "input_tokens": 254,
+ "output_tokens": 1343,
+ "raw": {
+  "id": "msg_011CgwR9eY3d2qfn8VRduC75",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS1BcKEAgTGAI4AUIIdGhpbmtpbmcSDLPFalTDxH2VKaK1nBoMY76GPBW1WWq0ZcpAIjB7aE3SXvYtt/g8D2j+N5w9ji5WBbyjBZIAtQ24S76vfYIwupk2jR3iY3gsjXA+5Kkq8RY5bL6azYhu+e9I9UUP4BTn3MOy8Gwy2ui79ULRpWqDYkJ8TC7Dj/iZlyWvR1CqcefzRCjTEbM7Qh2O8hW6ru3s/ORmYIqyRQQMdGzleXxIRJiiuRsWCeRhfI5RBZKKZLC/EO+3vRzR1YI9VB9UY1g7Vk+mYPMB3a5Eet1baZtwmKdQ55eNhxoCWgKxo3hEeeSlWxZFrDw0F6YNVC8I+XrrosUADwCHxajnvvpMigd7B5LWqnoGP1DEH9OEgkOTDqdAli1gj/2Y8i6e9TjtPzRKz+oW4B2ghn+aftUjtJZknMmQ2fnLxzb1GtVp+amzTz3yHFy1QLUJ6tUkm/1JmHIZXoVlSa0mI25FOybhHdCwzkiZdbG/Od87EYPZS6KiMmvgJrwEXBJp/RUdo+fT5hn0XWSpSVMCob5SnLAacCMFopJAHzKS3q98STOQWNW+NtliSAnCN88J1wZSULfRylzoNFiYIbAs0zBcFI7vxNovVonfsLrnmwUAuNt1snRQxDjBvm5XdJZfheLiJZWwqJslVtb9eBCrVZnuJhWwXEi5Rzo60MzOiE5f/6Jy61FF3NlGrkHN1UYeixg6R6D8wVpiI+ybKPugd7a7cr3Sj4QI+UIygskbl0pz6tbgQmdR+Zdupx6iPE7cWCLpUaxRFyT91QYnPwZk5ye2swUoy0tX/ZwOJ2OcHtKGf2MU+3M2ELRcu9BPL26KTM09QTVfMkDpPxrteRUIN5+6p6kG8bszD8zBipOXjZQ1E6ie8kSMetiLT3WgfFZW6WGyEAZv9D49fQMfh5etd3tYmItpCUY1i/DxXDcdEJ8wYjhmcN/uGIZl+yXcJGSjL6+HVwcwg1YFnFgo6T3nN6qN8GmTm1qcwp/VyIYJ0OHqF/zGxLyu8GSZ+ozJVarhFVw/0WrDL/7ozx8b63r33EZTIslw07ZNzWN0QopUeQcCATD2AKRgCY0FMj8ySwuxIxwfuAjhYNaue2cm2O3UOOqDb/QnJ8VcdhnFkIkxNficeNCfKdoWXrB0Nj5NW7keysjNNUTTEJLHqs/W/E1XPvlWOvx4dKvSeLamePp0scH6+k+TzVOpXDYEy7bNyFeGNUiooxpELc9F+0+sGiiLxeJBhwLlhg9WdftQxCDzoqCljP0+LVy3Wi2YzVAc485iz2FPPEOtdggRdpx2HPnr+v8r7YM/73fBDPzCxc0OSY0zLm7ZjIYZXZkbbKz8XIwDF8+4L56bucLFGAlLpFnYrIN8EIJr3zhyt8WzOSeIVkKvcWVP42zedFe5TM/P5ThgvGE4zGtyPV1bd/bExWzxuJAAoQTTyoQ5I/mY5eq2kzt1MA4zsfQK9ITA+AzeGaDBLWZmVEU+TtHzlVQnFom+eJiEmMuafYY3TyfqGU5+42qo3Lg1GTu9U046AioPBALNFJRdDXfefXeotcDwdnzTc1B+Cg5ssvGr/TH0KMM/vPfR1CY4/MHbV4T6RTg7QowdOeL3cf1hI9/EFMqt3pawJJAl7VuHfqoAVxO1QxR9cmKPXZaB5hdOyia5KrMZ+e//e//MztgVzh/oI0+NBfiGe6lwpTVxZFm2Q5vSY8JnPIVVILM3/UYvrl7vP76Cu/uTw9EY5eX89HouFxk9yQaYNQlB8MqnIaJV71uEnltoslESctJ/NC9y6s7xhDffdX5IN/GsDUJpc+NX+ZcnK0j9azXcdQAo+cuaAxapyD+6PwXkA+/BIS7O9dXhsfnlfHgEaGxP0iReZFebZ7kZvu5GN8NOzol0xJLiyBmzEtQp36PCd1afFzD//YlshSZWv5ogmNQreOi1mL+pvSfxkfEofA/4YuG6ftWC2VHchu3WdUo2IbpI6WzcilwLSWsC1soyGU1mDe/0h0cCaNnwgo7yaO30b/KfYl81BBcVHxcYAOEZF5WwrSibTc6ROQeiUrLb9nzET5+TUPa6fy84ZTc0YCwSqbjj9DeDju8Ylc/8jK+73PgdbT5iPEgpzEofRpB/DcToFZlYry5XpZy1BzK4gYrYQOfs2NfuYMZuSbJeV6ODwRM1rJmTCtyy6P/jN6GgGLLlF8Qr5IXwgdzoP+rkpPbkfvFyYXa+9JDg5iq0mZI4gy/FLHOmzOdyaVHneQsWQ9u3fOxV3ZVJHuXeQ3rSf9H+m9V8fD7Sh+HxP+oAhz8z8D1F0QVOtwQaqsqFaUG8MSD2drKC0LtPUWowcpoZHdzmvD1YkXLrZeBNArNXzF0qGlhjPhIhYQbu7Ce4lXeM0Euz+Fr6BWVeAbU7ExxAoim0RaM5poc7PRE4UvtHJjtaKvCHtjimyJ/chN91QECyJAP3/2aESdWWpI/qa6oMQH8nLwl89pMIYYEdit0GNXHQgjSMutJOAR2asWajEcmlm1FfSlU92ZXJr/KnB6nLvMyREGvrBfItQFUuAcv+Ypz0RUkDSERn+kK36VZTYF4JOfggYqgDeJRItxJC0TXG3vNijb2t83MI2mm7878NkI7vG8quI/Mj4hEwOTEmbRDFg0mmnMaW3oOtek+p8YBdfA2VGPXvCKV+fdrinwcvZzueJFusNKMb06bcYtexy3QTgmmR1pd/6eyX2B6ZrA28JS00DKQDFUeCoMVluIkQcoNrGzYq4FZOXMMnm32OuvZiqpVsyqALqxQTWMvGxSmrTadQm3BLnuRH6O27Rxu/wVE75LQy3eoCFMHP5VI/dcrQuOYheUSLNpRaKdexHfsXShjgQ93Yi2xfogAzvPB/UIKp9vq8ZKsIT0SIbsN0XVvyRxp1QS0UsmsTlzyl2ryeYFbnupcZbI+oZwyhdwGbuBWrAQeeP17nzuZAHoOTXLGkdp2cfiFGdPR+l8lbrVw4cGwLegPKzvHvkvNKn+blAZc9CWulBr3kG8vgLweS+bG4+5J2ns1UBAYgW9J23dKWEHw73BDePBXLPy+zQCDYwUSZpeaHx7pZXZEiHkFvTEXuAcbqJVrx56XKPMR2VnuAMydKB04huhGAoZHDe2EVOYE+Doreie/oc09XSEvA3UqrW9+mlhBzjRTR+Hil3PAyB3nkEMH8LWjb063HYPKzD5ZOrKpTPtUunNgBRhmsEuEFNDnBLbuJWWt/oMiNk1rBLlpf1cmdodY/p1OyAPoFYa4o9NU/4ApHZU0C1j7DMurJtgfR5cHsVvVIbQPdpE3+eBgz880MYRSCpewSs/fhliM59jtO3FmYZMHoMWUzQmX/fDpqpWqIw7EgAhNvokR0e7VCHaSCs6PgcsWuC89f9dm8DDkVLsVS+PEc9olkht4fbMu1QodIvk4W4GJfqWnZ5BOamFMABEN6e4YT8faqDd6bxmCIumcM+IesOiLw13ClTBkYKiCYIA5frLfjyp9lVgSisxN9pbR1gHB/5MvrpbokJT1NjZDqV1jAbAcxHQLPOQXg/Hga4Iewq+5yz6tvbIBj4YR2VPN2hAPP4bL7qvZNcVQ0n6YwhrgV5NHPEvVbB7lqlJYqZq5oR36Y8UalnXsC5PeY4xJDVZeIzVdLQDR+VJJldX409WCWsPcujDrO9u0nwx07pvyv/RiZ6HMbyerX0XtRs2YSSdJbH7V/jSvLso5fRBxyX4F9Sz9gAby8kVK7nN7F4+tDA424mjRWgqWPp7Ey7paexySbPUqSxmqomZhOJFVXGoSdzEDfryK1DX5U0meQSXigVmhdeyKfFXzFrtzNzyHq1k+GRcvgeYPHjyGaJdwuDIaf8ir1yc0wZ31Ylw6wdaod5hS9Jm67+Ty3af3K9QGERGw3aDjI5XfSoN7r+XVaOPUW5dF5kZatv+rGCSeNlqNCpuA73hq8yQ1vZ8a0wSwKnlI8V0QxSAilFsJgp6EhBYxVxq+EYC+K83is3wW2NuGVnOcHkLuNJNefK1d8LNFKVn/Mq165y7WsDiYEoRFWafxSGAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable. Section 26 of the *Residential Tenancies Act, 2006* allows a landlord to enter a rental unit to carry out repairs only on at least 24 hours' written notice, and only between 8 a.m. and 8 p.m. unless the tenant consents to another time. The clause permits entry from 7 a.m. to 10 p.m., so it allows entry outside the statutory window without consent.\n\nUnder section 3, the Act prevails over a conflicting lease term. Under section 4, a tenant cannot waive or agree to give up the Act's protections, so the clause is void to the extent it exceeds the 8 a.m. to 8 p.m. limit. The 24-hour notice requirement is consistent with the Act, but the hours are not. The rest of the clause would stand, with entry limited to 8 a.m. to 8 p.m. (or other times the tenant agrees to).\n\nI have quoted section 26 from memory, so please check the current wording on e-Laws (ontario.ca/laws) before relying on it.\n\nVerdict: not enforceable\nSection: 26",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 254,
+   "output_tokens": 1343,
+   "output_tokens_details": {
+    "thinking_tokens": 985
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

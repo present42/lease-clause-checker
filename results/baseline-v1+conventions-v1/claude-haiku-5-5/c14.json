@@ -1,0 +1,67 @@
+{
+ "clause_id": "c14",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "8b959039fa68297762cd299e02db1ab163d82ff0d58a833961921a5f9d635ec4",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Landlord lists the building for sale, the Landlord may show the unit to prospective buyers. The Landlord will give the Tenant written notice at least 24 hours ahead saying why, on which day, and at what time between 8 a.m. and 8 p.m. it will come.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:39.468497Z",
+ "text": "The clause is **not enforceable** to the extent it lets the landlord show the unit to buyers merely because the building has been listed for sale.\n\nUnder the Residential Tenancies Act, 2006, a landlord may show a rental unit to prospective purchasers only in the circumstances the Act sets out, such as after a notice of termination has been given for a sale. Listing the building is not enough. The clause's 24-hour written notice and 8 a.m. to 8 p.m. window are the right kind of safeguards, but they cannot make an entry right enforceable where the statute grants none. Section 3 provides that the Act prevails over a conflicting lease term, and section 4 provides that a tenant cannot waive its rights under the Act, so an agreement that purports to give the landlord a broader right is void to that extent.\n\nI'm relying on my recollection of the section numbering, so please confirm the exact wording of section 30 and its conditions on the e-Laws website before relying on this.\n\nVerdict: not enforceable\nSection: 30",
+ "finish_reason": "end_turn",
+ "input_tokens": 286,
+ "output_tokens": 2484,
+ "raw": {
+  "id": "msg_011CgwR9hB2snUdA86pB5Vhe",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable** to the extent it lets the landlord show the unit to buyers merely because the building has been listed for sale.\n\nUnder the Residential Tenancies Act, 2006, a landlord may show a rental unit to prospective purchasers only in the circumstances the Act sets out, such as after a notice of termination has been given for a sale. Listing the building is not enough. The clause's 24-hour written notice and 8 a.m. to 8 p.m. window are the right kind of safeguards, but they cannot make an entry right enforceable where the statute grants none. Section 3 provides that the Act prevails over a conflicting lease term, and section 4 provides that a tenant cannot waive its rights under the Act, so an agreement that purports to give the landlord a broader right is void to that extent.\n\nI'm relying on my recollection of the section numbering, so please confirm the exact wording of section 30 and its conditions on the e-Laws website before relying on this.\n\nVerdict: not enforceable\nSection: 30",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 286,
+   "output_tokens": 2484,
+   "output_tokens_details": {
+    "thinking_tokens": 2155
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

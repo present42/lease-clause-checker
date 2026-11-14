@@ -1,0 +1,67 @@
+{
+ "clause_id": "c12",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "3ba5f21514e24494d67489c15d14b95f4c9bb84a06dc568dc35305b264eed0e9",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: To carry out repairs, the Landlord may enter the unit on 24 hours' written notice stating the reason and the day, at any time between 7 a.m. and 10 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:21.375151Z",
+ "text": "# Not enforceable as written\n\nThe clause conflicts with **section 27 of the Residential Tenancies Act, 2006**, which governs a landlord's entry with written notice.\n\n## What section 27 allows\n\n- **Repairs are a valid reason.** Section 27(1), paragraph 3, lets a landlord enter on at least 24 hours' written notice to carry out a repair or replacement. The clause's purpose and notice period comply.\n- **Notice must state a time within a fixed window.** Section 27(3) requires the written notice to specify the reason for entry, the day of entry, and **a time of entry between 8 a.m. and 8 p.m.**\n\n## Where the clause fails\n\n1. **The hours are too wide.** The clause permits entry from 7 a.m. to 10 p.m. That is one hour earlier and two hours later than the statute allows.\n2. **The notice leaves out the time.** The clause only requires the notice to state \"the reason and the day.\" Section 27(3) also requires a specified time of entry. A notice that just names a day and leaves the landlord free to come at any hour would be defective.\n\n## Effect\n\nUnder section 4, a lease term that is inconsistent with the Act is void. A tenant cannot waive the Act's protections by agreement. The landlord can still enter for repairs, but only by giving notice that complies with section 27(3), with entry between 8 a.m. and 8 p.m. The clause itself cannot be relied on to justify entry outside those hours or on notice that omits the time.\n\nVerdict: not enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 254,
+ "output_tokens": 872,
+ "raw": {
+  "id": "msg_011CgwRCnHCvSADUm7R1AX5x",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "# Not enforceable as written\n\nThe clause conflicts with **section 27 of the Residential Tenancies Act, 2006**, which governs a landlord's entry with written notice.\n\n## What section 27 allows\n\n- **Repairs are a valid reason.** Section 27(1), paragraph 3, lets a landlord enter on at least 24 hours' written notice to carry out a repair or replacement. The clause's purpose and notice period comply.\n- **Notice must state a time within a fixed window.** Section 27(3) requires the written notice to specify the reason for entry, the day of entry, and **a time of entry between 8 a.m. and 8 p.m.**\n\n## Where the clause fails\n\n1. **The hours are too wide.** The clause permits entry from 7 a.m. to 10 p.m. That is one hour earlier and two hours later than the statute allows.\n2. **The notice leaves out the time.** The clause only requires the notice to state \"the reason and the day.\" Section 27(3) also requires a specified time of entry. A notice that just names a day and leaves the landlord free to come at any hour would be defective.\n\n## Effect\n\nUnder section 4, a lease term that is inconsistent with the Act is void. A tenant cannot waive the Act's protections by agreement. The landlord can still enter for repairs, but only by giving notice that complies with section 27(3), with entry between 8 a.m. and 8 p.m. The clause itself cannot be relied on to justify entry outside those hours or on notice that omits the time.\n\nVerdict: not enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 254,
+   "output_tokens": 872,
+   "output_tokens_details": {
+    "thinking_tokens": 366
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

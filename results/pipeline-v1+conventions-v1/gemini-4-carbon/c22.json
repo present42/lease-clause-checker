@@ -1,0 +1,118 @@
+{
+ "clause_id": "c22",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "2a5583c76a5c666c8fd5db6c01c4ac938cf789c37854cc96f6df34380d32b9ec",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nRent is payable monthly. On signing, the Tenant shall pay a rent deposit equal to two months' rent, to be applied to the last two months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:48.052747Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"106\",\n  \"quote\": \"The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for one month.\",\n  \"reason\": \"Section 106(2) restricts a rent deposit to at most one month's rent, and under section 4(1) any lease provision inconsistent with the Act is void. Requiring a deposit equal to two months' rent exceeds this statutory limit.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4543,
+ "output_tokens": 399,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "qHD3avX9BajIw-UPqcvykAg",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:58 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"106\",\n  \"quote\": \"The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for one month.\",\n  \"reason\": \"Section 106(2) restricts a rent deposit to at most one month's rent, and under section 4(1) any lease provision inconsistent with the Act is void. Requiring a deposit equal to two months' rent exceeds this statutory limit.\"\n}",
+       "thought_signature": "AY89a1--ad1shjlVEvQDQsKvAgjKVKlx23NAws0uWc3foTclE_g2P77on43AMrVySsvCd5KHVTMPEeARuOfHU7y9u4q_g_Zdr9OR9q_dEq73zxebxayNf8p37RdjN0T6bOrryCMUar3vXTVyxIHE4gB0R5rk6k6f6JCXdHcOwKDEECP27HfZ5omIoDweXWatHLGpzbHqtNAIG8Ml6C08jd1_RUwFgOzBpgqVFNQkoDJRW7Es9IgcKDvttwz7TU-zjREHez1RQuht-jPnnGMjS5XzbSh5ZJCPxQxqePE-QVCLM9E6gKHLfTv7RyNlfsboe6GvgRyWGvMHnIDmMTYUjAHX55UASz4e6xplIynEL_jT_3slDc0-q2JN23gbxNTPigt7KsEC8tOMuh2taS7g6JasY9YKpu_1S_m8NlqB0oraYFnhnoNtQ-v8r-PR4eqrd1uddeVTwsWwG3fz01HMDU6uApUtNi26bkM-zFQ9xt7a3hGqtuXfzVGOSaCPkeHVlJsq674THTIbLhXD82lh7OoC52T3rUwKk39CBbTwJ7UEGtA4v_lYceo8C-uT0pTLNuZ875Sg_JCWygOeDrGrsymnW_owu5E54VPii0qMTOi3A57Ec3LSBkpiMErq3imGwQa80j6FW_Ne1m6GOtwEIH88vSJX6szHlT7B89o2b8TwKyA5D52YdAEvcGhgH17XPa-PWMuwstQBNm6kp1bYpvQ2EC4R2EXvFtXC09eWl1_fOW6737Eh2CeFNv3y4jLRTuwm9MgVUhLE0rOmeMgaFfaooH8AL4BUlcHFgtNhk7pZfSfiQuBIe2Lvk7RYYGBPmes5XoEWoMe5qgozuqFmHbnGxLdEba0GKueerWgbaE6lYq6NYclkNVDSYOrANtBIDEuqIezhYzmoOgpWZF2CKrQ9Cxld6NXTiTwzh633pJno7y-PJmoUULjRo1FsN6CvP0YQ58rxeMrOzsDtApl5owFv_8-E5pYnSGqRkxfFv27ihOb6m5qMdxw1Qlc67duB5SmCLbL3IPSvSai_VqaGxPdPXnt5RuaOWw5JUB_QbzWpmhmgwPOa5bih4I_K1vcxKegBHw826lhTJFMYK2Zb7yDlucDF13UlDlyt3hhThwCcmJUtIJGKXe1J6951lVeD9rBQvknqLVRrpZ5ldIawSqUKzXP01ocDGpz0khnxoJKPksc1pPVBspxS0h5i_6VSHTFvZkcBrTGvRYEcqROZjcsvzbIYsCceqslZOeD8RKnmqS60EpACFuEWno7dKB272SM4Q0_Mx-rbHhqrkdjSQuD-HY9yaRhIdp96YjbGpoCkMDph9H_YaxC9OEAZN4-z_ANx3kRnfM5WO0Uw54ifJ7ZhZmfjfYJ0LcojKbgH7m_ZlqM4ZuuB-KmHeWOWsD-0LJ7BJGfF6Gj19LZPPFjW9yaCByY="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:48.098037Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "qHD3avX9BajIw-UPqcvykAg",
+  "usage_metadata": {
+   "cache_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 2486
+    }
+   ],
+   "cached_content_token_count": 2486,
+   "candidates_token_count": 134,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 134
+    }
+   ],
+   "prompt_token_count": 4543,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4543
+    }
+   ],
+   "thoughts_token_count": 265,
+   "total_token_count": 4942,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "106",
+   "quote": "The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for one month.",
+   "reason": "Section 106(2) restricts a rent deposit to at most one month's rent, and under section 4(1) any lease provision inconsistent with the Act is void. Requiring a deposit equal to two months' rent exceeds this statutory limit."
+  }
+ }
+}

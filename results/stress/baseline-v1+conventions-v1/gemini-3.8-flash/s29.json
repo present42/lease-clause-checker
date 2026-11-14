@@ -1,0 +1,75 @@
+{
+ "clause_id": "s29",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1d501c62c83de9b31f4c9ebe81f0192f0fb16a27399160697885aca72cb2e30f",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent once in any 12-month period; the first increase may take effect six months after the tenancy begins, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:15:03.557848Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, an initial rent increase cannot take effect until at least 12 months have elapsed since the date the rental unit was first rented to the tenant. A clause allowing a rent increase six months into the tenancy contradicts this statutory requirement and is void.\n\nVerdict: not enforceable\nSection: 119",
+ "finish_reason": "STOP",
+ "input_tokens": 179,
+ "output_tokens": 552,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "x2_3apX5Jb7Mw-UP1o7noAE",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:08 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, an initial rent increase cannot take effect until at least 12 months have elapsed since the date the rental unit was first rented to the tenant. A clause allowing a rent increase six months into the tenancy contradicts this statutory requirement and is void.\n\nVerdict: not enforceable\nSection: 119",
+       "thought_signature": "AY89a19WOkvNzX9FMQHrVACFguNJJjM4JvhA6DUXI-pqf-h6S244n6RiB0Tcxc9m6vSQvggxgsdKVqpgvn4t2R5Bj_ShL1QVnalfC32fc7CxDAC17fbENeDHelQSTzCP1jUrq9VUGSgCRm3gb8oOs9_LSZoZE9xV49a-l67VtystjVBsqaK1JdtP-kd3kK8pfXnGLf4ju_v9iFLwiNh-wh316e0zoByk5fIY3Wmy33UywQLAF2x0bnptlJMH1Xgy9_z6KMCvnJO3N_u8gd5dHM7ISMy8wWrQs0Ud5njUnAqMeh1h3OB2Vfjuh3UhoEfvYrrEHU8rahpjPfM2_FJmX3MnSBDCdjUvs9AOQdJzLL_BiD8fKO6QmJBpdJ0WpywSjybiYfJns9VZ1dtRbeKi5J5NnGohnAFAomQf_-12FM7BUW1mcf05ERwf_6nhFQCPh3MsU4Y-Ke1cF8MqBos1VNmsfO7dbtt5w-vGHWWY9SVCLVlxWWes79foB96bf700BpbM6QaOOlbfVSXCOTmtrgMSIboajoJW8Wx0jwZ6T6-273EKx-m1hAFG3QZ5ij_09rBsxKX5CR0HczPVbb-pBLTcPl75rn2lvgo5HH3fOZj_k9rQ0DIzunCeHli7AGrLhbaVt1fH8H2xxqZRlyK3U-uOHeIP2xq_keuvcS6NIELJkEQLXmqs7QniE1TY0blBAyoRESGxKAg3U7cnOvFaibRzQFmEnnS-qcR-bc3-moPaMO-aXQ5eIAF4lgKgwe3wsqOwqTdiEtSpWazN5MiH9QpDmZS5_7bPOUC5PmnwpUmfq6NnD08Marl-iIaVTA_K28g7ryi6AU_PyH4NPdAhOOo989AgskyWQID-hBCb7qS1CgSElkYD4_7bIVF6iZREl1ZaOFS0epMrT9_l4yrmYkJRpTVj_0JnxYOGK-AzpQQIqgFJ4VwpWVCV_OHgYZJC7yrg30RxuAWzcEncmtZxzspJQgJZsq7Qi9urv_ZM_3a1hgm-d2eXf7zl15pJLDPfdKKVCl2Zx-LPvMlVEyLmjBoTTQEhQ6kWf69i1xOIgxdEGyD2OGGYQFz-sESXYoIoYuKuYfejQode4J4sii0ADT7DK1kChhB7ZEHpDXRpW2txPqO50JU9vKcZr4FT-nVNhSPXACKFAh_X98A9KTxNevzFOISoMkXj62Isj-9jOCYSALRSgSeXbsDzt_WL0OCi_BWKodTleGyvm592HTeYVWIv16xbyK6KCMXaAqm8U1rJYdwE93Hu7UM40hfaILR8tLhUlQWeTzdfSlMGHghfiHTmc6okPH096h6HLMmlpiiSVhhqd7mZC__spDONjczFYaRgu82nimvOQ4NRQRo_JcM-e-AFhbLgK2pyXJeH4BKQUSZpFC3mY8yvA_8exXboQhE7sMELWPUWOMa5LQatiR6TRN274MrfpoUrLHk1wZwxxIExv5H0aqZbUz1nRcAe77Z-N2YsR3HBUl0iRaQHj1qtpo2YcESGILIJKpHqXUqc6JgVWGHtVAK1uF8jtvdxC3bRwOh0kTKduSOOkoaNNW-Kz__2p3xltQsULnjjP1gBNU_nvrzYkFK6wOAcawYC_uyEc25WZZlmKu13WJF9jbwhxhrzJ2j2wUJJ7xin5Le-CkKVEwvWtYXOPBxxGWcpu2xSYOs42srrNYJsOBOOZECK_Z4zCrN_cwlA1UokriSMnlguqTeBCdpnqZJAvn2jmK6w7e8-bDHJBppA3FocUNE2bzZeDY8N1p58zLhclHVvpS0p-m-nG8kVcDnrHZ_M7qfvf_SBmnaTdBBsUgNlOplNhhrwa1xSeL2GkZJtBIicpFpYmSNahMXo4_4DqJW1tlRaCZbT2Nys_4M5m_PdyOPdvvNsupzX_9o5clNgPnvNfHXPLFPp_5IRtaRrrhJ39sGm4FhgPRJ4tMaMcjQ6aVCVanDZoczzoHwERtnAZzybxdLZKg3trdnNXVyhzhToVVW1gfYNN4SodQ6Ek4C_mdYfMolMuAG1ME2Jjta43fAFcs95E-QTsTbtrRFdeHEzch7iIxDo_9BUtjDPifR6Z5-cWFFigcXoIP-ukIKTC8xXap4q4-7aBjbCJeJymph7zebC9Qj4Ic2RQUhtiZURPqP9ewqD2PsiOa0wyRrdvU2kzswmnGrEMigt7lw8kB8Vic2L1oMGJLY73lFj3iITlnWxbaIwIruDzwBGZHRfRhuFgryut4BE5A3N8fnm5hzjkj4ZoZ85WU0cgSeLNy04SFekXRWu50FYZdqBqHPYPlsD7Wu1Pyr7CCqyaOcvbu054lPWiAEugWiy4QUMMmxC9GQlCrhNveKjOgj5PPVLx-n9a56ln5JzPaY9HwrIwjdUlVdPIQWXWpdqufdyysa7m3HIKnf7gl2IW1hb9O7mCPoYsEzu0_W6COATL0liNRzF_fkH_eJ6rlky_Nz_ihFlBrqrK1-iN-GgwdXv9ec6tQwY3aRE-0bkuKzstNAvwcwt170saE7M3yQS9GFOqz3ElINPlYeZy4SV9dSHNO3Jrt4Pp0nvlMEuKD-qOruKsFSCZ8-ssZM5oEGPlTBEvK4BFp8e6KvXVx1nBxdtZNf60OziO1t48d15OM6Y"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:15:03.621717Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "x2_3apX5Jb7Mw-UP1o7noAE",
+  "usage_metadata": {
+   "candidates_token_count": 74,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 74
+    }
+   ],
+   "prompt_token_count": 179,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 179
+    }
+   ],
+   "thoughts_token_count": 478,
+   "total_token_count": 731,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

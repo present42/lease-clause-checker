@@ -1,0 +1,75 @@
+{
+ "clause_id": "c30",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ffffbc321162db9a484ebb6986c87ab7979d1669d7a6e7243165c7c301c09cc6",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent by up to the guideline amount every six months, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:53.218900Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord may only increase rent if at least 12 months have elapsed since the date the tenancy began or since the last rent increase. A provision permitting rent increases every six months is contrary to the Act and void.\n\nVerdict: not enforceable\nSection: 119",
+ "finish_reason": "STOP",
+ "input_tokens": 166,
+ "output_tokens": 476,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "VW73auzbENbYyOgPoNXP2QQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:57 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord may only increase rent if at least 12 months have elapsed since the date the tenancy began or since the last rent increase. A provision permitting rent increases every six months is contrary to the Act and void.\n\nVerdict: not enforceable\nSection: 119",
+       "thought_signature": "AY89a18_UjLim_bFci9JL7EbnQ5ZTk3mkXNput6cPeD4iWkN39incjGoOzqAm_MyE2WuQJjCnAfhF4TLNAWk_HpJ3pl3l7Et_QHqJwBLa70b87W8SWRl8rn-KVl_aYfaurDeDyS_UE0apiesqot_CCV2DuAFp8hKiP_kqX6DliVoBDe-Ei_r33awhKOiAPuMmFetSzxQSgFqzp6NjHhSAYCFEyKgVlnJ8B0FV2lt6T7G9kXDQvT32BVDxx32Yax94uUQIKQx_xmL9c8iYggJQ-CtsMM9O4sMgy28sJfqt0bUmnDdOpOYIY5xuL4JP2Fi4Z6bBj7mSv119HSIPW0wTDM_dziCRNDcW3b3eoYLGEV9aUa5sIG9QnUUI9Si065oBkZ70czY7KUomhOGk7_pSkdTHdtxm2agv-bK31iesPHNBFiI2779ApwGB3xnONYA1kbyLSqo0m3Ie7wLEy3pBI70OrzQQyZRNU52ep2G2YkoFS2VtEuzTKyTx6X8cxa0xYsSW7KFmXbD4dhNTWNkRMJ95IvPAFGPBwvCqqnCEVr_n8KvvutHu5UNX-VbG-P7eyVlI8joNZRgB4cQ_5waWeaMFBPhJzb8A4CirRju61wgPoxXm8DaaS3U1mnE5Z5SwL2G5zfZu4Zv_WGUDH4jVeOCjeLj7Gwno_RxAKv3-JfMjqpgOThU_SzLBCzuIuodE5oGptCF0yVKJpmWS2RmFTQA1LDG7SbSZ2TqHaIA9T4m3LbcUdeKklTqVCTDYylNAB8eFUyPAB-_MeAH2olgBQHa7l_jiZwGWlml5Zh-DJmGOpiX1f3bnK9QjSHAY215GTU1TaTzzio3F2rL0Q0eED5ukzvuVW4QldRMbxLAcW3CINDGtXDDh0dGwI1DGeq2iuojR7skm83tNS-yUS7iaizf26deHvmrrM60HeuxsFKvul--PzHwMhvx53dT_Yz63jj0-F1pHhtPK_n6g3qdBcC11pbKlu__JTAn5VG7SYXhOdkSLsLmMAccP1JlrDNOfv1WLGATR95L--RmtamqcFDVrn49zuaAl7F355TsSLTeApBCoKrT5RvAOTaA2rJusjD1ywca1osATKiMR5w7Jpz1OqS9xEFcEzBp-4trARDIXCjI4QbCPJvNhLki2WN5vS8t3Nc_INjQJyBiaDeQmJzKJTzMblZxiNU7uz60Pu8c0Rlvwz77CH-DZ0AOb0orl7h3HycmTu3QNzL_8_hV2gqwVVrkptBm_7aNCY7ymZrmE7Vq2tkxhDusQfML1t0E7N4XoMAAVN2UuFPh7ch7M8pFzTs9zgynjmLdAHnMQg7vvVr9Od54i6J8tp2GmWLR_ZCR9FDtYaQPnnXqzyhhlbqo7AlNqeFR7Tphd6yiJkIrgLy_bU02NvdDY9Oiq0j2AE-Mg9QqUvnmVIzdg9qdomjywdnH8yAwHk_hIbPlhSDZJ2cY0Ijhw-QJrYsg4w-HXMCmL239Uu_BSvQq_KzXXIpgM48WXXNe_KRE0IdDrIJREA_8WcgTvv9cF5gDCVyRF4KNSNZcAz9p1ahkln0FfcAtaNlEhIqmvTvO41JaLZ69gNfe5u40IY-_waa7J7aPJSub9w8J4whrnXRhdcbpAKCwty8A7BAl2eexO452MDQKHWhzip3BdNlJlqLmq2iEFr7MbUNvNrrNIKDgY9LUXltWQkAJsxCddABBy_tblPHTskCtWnbaM1q_d92DL6Pd9_Yf79nF3rUxOar_jnJWkDOlZA1iZd_i7dvOjZBQWMHbHGaW-rA3mN55mTYZlirxAe-wI5a3fqT6xvTgcdevfpXvSbK36lP_ZFVUrby06r9_dDvm1NxFln9zG58RyIh568cdc34ys-eyNsznJNN8OOVDtFNtMxpd_bf99BOXEPmGftTfgPyWWQcyzkDDj_MB2N9_cr2Mk5hURb0M0hXS5V6c9FVg5TQP3Sh2o79xGpjCslVwhvfIsLr8cJecNRhth7mCNVqVKUnHfiDlDtizt538CN_neqSgIzKE1XqFpPyqIyznGPesAIiqtb6sesthDXeT88Q238XG9Ky7ueHNRICDOWxGC7qnSa_COJx5tYUJKsyDUPPEMfHS2TPfR6wN6L_CKj7niR9K0ebpACqcHOWD3rY="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:53.273900Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "VW73auzbENbYyOgPoNXP2QQ",
+  "usage_metadata": {
+   "candidates_token_count": 70,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 70
+    }
+   ],
+   "prompt_token_count": 166,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 166
+    }
+   ],
+   "thoughts_token_count": 406,
+   "total_token_count": 642,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

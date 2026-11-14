@@ -1,0 +1,67 @@
+{
+ "clause_id": "s22",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "f6b947c6ef154b8bc4b2ebba32930e4d7849aa9024407200148a2053be4a9b54",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: To let a potential mortgage lender view the unit, the Landlord may enter on 12 hours' written notice stating the reason, the day and a time between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:23.536994Z",
+ "text": "The clause is not enforceable as written. Under section 27 of the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit for a listed purpose, and the entry must be preceded by written notice that gives the reason, the date and a time between 8 a.m. and 8 p.m. The notice must be at least 24 hours before entry. This clause provides only 12 hours' notice, which falls short of that requirement, so the landlord's entry right is not validly created on these terms.\n\nSection 3 of the Act reinforces this result. It provides that a tenant's rights under the Act cannot be waived, and any term that purports to contract out of the Act is void. The landlord therefore cannot rely on the tenant's agreement to the 12-hour period to shorten the statutory notice. The tenant could also treat an entry on only 12 hours' notice as unlawful and rely on the Act's remedies for breach of privacy and interference with reasonable enjoyment.\n\nThe landlord could still enter for a lender viewing if it gives proper notice (at least 24 hours, in writing, stating the reason, date and time, between 8 a.m. and 8 p.m.), provided the purpose falls within section 27's permitted purposes. I am citing the notice requirement from memory, so check the current text of section 27 before relying on it.\n\nVerdict: not enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 258,
+ "output_tokens": 2248,
+ "raw": {
+  "id": "msg_011CgycnP1Tn3hFek8DcT3af",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable as written. Under section 27 of the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit for a listed purpose, and the entry must be preceded by written notice that gives the reason, the date and a time between 8 a.m. and 8 p.m. The notice must be at least 24 hours before entry. This clause provides only 12 hours' notice, which falls short of that requirement, so the landlord's entry right is not validly created on these terms.\n\nSection 3 of the Act reinforces this result. It provides that a tenant's rights under the Act cannot be waived, and any term that purports to contract out of the Act is void. The landlord therefore cannot rely on the tenant's agreement to the 12-hour period to shorten the statutory notice. The tenant could also treat an entry on only 12 hours' notice as unlawful and rely on the Act's remedies for breach of privacy and interference with reasonable enjoyment.\n\nThe landlord could still enter for a lender viewing if it gives proper notice (at least 24 hours, in writing, stating the reason, date and time, between 8 a.m. and 8 p.m.), provided the purpose falls within section 27's permitted purposes. I am citing the notice requirement from memory, so check the current text of section 27 before relying on it.\n\nVerdict: not enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 258,
+   "output_tokens": 2248,
+   "output_tokens_details": {
+    "thinking_tokens": 1803
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

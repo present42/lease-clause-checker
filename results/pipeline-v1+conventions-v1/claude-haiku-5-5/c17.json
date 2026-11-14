@@ -1,0 +1,99 @@
+{
+ "clause_id": "c17",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "40a17815bd3d804c463d286c5a454c5ef4062fa20d13f35f709976d604857a80",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nAs a condition of this Agreement, the Tenant agrees that the tenancy will end, and the Tenant will move out, on the last day of the term.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:24.816622Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into\",\"reason\":\"The clause is a tenant's agreement, made as a condition of the tenancy agreement, that the tenancy will end and the tenant will move out on the last day of the term. Section 37(5)(b) makes an agreement to terminate a tenancy void when entered into as a condition of entering the tenancy agreement, and the student and post-secondary exemptions in 37(6) and (7) do not apply to an ordinary private rental.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6439,
+ "output_tokens": 837,
+ "raw": {
+  "id": "msg_011CgyJ6sRYja4hD266sQido",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSphMKEAgTGAI4AUIIdGhpbmtpbmcSDFw5+nKWSszUG/5GbRoM/mv4ypaXG3QJgBjTIjCWcAPsh/i14QyxaS5ryl20SlI64O97Dp0bId+YsozYpXBzNJH79HiJKdCro5uWgskqwxLsR861rHQNk2IkLrqmGhVB132J4yLTxrztr8pywKv9TmwdGeZRnCurEF4TAX1iZLskZ3v8sZD2tur/EiwjqwHGWL5jTPC0pS9ZgBS/Hv53ykszvWn4+TSGhKWeC13T6zifc8ywAj1agM5XU77MyrWa3iBo+TXi0oSndA0nyD6zii+39JpREhH0XqIijz0knYRULu09CLYDczxwtF84Hjv242n9v/7PH7ut7IIGVkr74+0KuMQP49qAWHSeNPKiB1eoajWUZ++V0IO4dZH/eJgoGQih8jY68PW3DgJJGiOJIh44UOl9EJjD33S9LuyC8L0hNaqhJIeq61NsbxcQS5d1rroyxulsB3OukquQy7tEU3g7cVTPlhruVGOgcC7VtLfb+OnNr9FZ1XVnEtuZmTSrZ8cmGxmMZE3L49CVqsJUfLq0QUD2rx1dXGZ3eKh/VgGJmPoanfONElQ47XGAMF1SAe68rWKoirD+FUjaB6fQb5ofpA8Q5x+vVEGTCwUl3qU1O8a2r4gRM15M0aRtkdPeOsmiHP7NyL19Qmp/7euiAZXXvzljCQNHt6+dXlZpgoAchcd2U5Z2a04h+nrT8ukl+BGYfWDsvSBc7DfJ/JR2Vfvb0sjA9kQ2uHXBVedhJtlUZHEyL/r3AWGFXKIqqCRzHJurTE1BrVhiRmWkQJ9/x0CN1PCkz8i2BmYOxNStZRXi/tRZfufN+60DaV7cyCmZEcGyyTryGLzZIJxViBUqBKl0s8JfwXZBbC0F4S+heZM+Qv/G+XSYiQRCH3xS0r4vmC5MVH2Mwj1DWZwt+WcOGNuGwSaj8/7mlAR6jLUUi2QfTFMCgjyz2qiMFF8baFb/tSA09yjL0SAXXoo54i6QC6Qi7re3HMVHP9xVPKB4vQ9l7QmgtzSe9y8O/tuuiS3gJ10+I+xw1uiQIFR21ha3kK+1AcI4WIWpf1qeAW4zFdFpGw6AuSdIFfUDPnIP+IG5M7jDnl/MmrtK/V5ATq/r7ldj/KswCHI9X8c85pIOZeoQQETraXXNOXFFhZdCrbpuNITVb/qntOBSvyO8yl/QBUep0k9rAN33kHsGCadwQBlehQOkygQRUxjW/Se39H29hnay7xEhw+v2f9pH2NsNT2G0YN9wuLR83Hgsrmnf4ZPGeUjBg/vjpIwBm9ivqkBZQTzhSjna3e5QjVHdnvFUNm9fYP8wN2pYabVIfp1RHM3+H1qHrW6lnz+nbYtOSWDDZUM5b+Gojd7YiPHpFRScYeKzoz0ECSzAgT6DkBOtK2tlE/CQ8k6XCJWcS7MG91bMPvV/H+rFnunuvK/7QoDVSYVdL8LGC7cPOaPz2FBpdRKfCmCdtrRTkOY2ZNT2gL4ZpaH7ZapsNii0Ih1JovfALCRG0b01RUIPnG7lehYD/jrA6NcI23tvHbwSOxicg35wOXeKbMMc86tjuRxiZqU3qk58HrzOw5P+rLJyWgZCPCQa1tUPMnnF+kutDfUW4K6lGRiMNCv0fTUoPSPWRxRXRT5noyWshex2ZxOzLtJkvDZHluRAAEZMDnTsUDwSj/CixOZ5O4YcwqupdAEJyT7aQqdV0p44gwMGrkTG04i6NkuI+s0xQxiSpAVsY0TI5wE6lzCTzDXP2Z5VWwmEWnTH+hfByFBAY+XV9GhsOsEkmfaTwfsHeppoQ0MBHb0RLB9mDaMfBFyhflpVVFu93QtFYPjV+56lp/gcelIyLLt1tCxEPp5YMS5GTPXLdFkKuQPZBmIhZlAPYo8Vc2VoyJ9m+sVPTmnDbOQOtoWXQ6ZlUu6vDk6QNZRCAhx18B6bK/ek2B6ZowtnsL1dlti/akhoW4AnfNq5tAtqVx4BB2KxEopHku2xu5kmlEwoEMFMUzXkf7xbZ4Ezh5ispll93nHgJ4HACfvl6LFAasp1c1MX6lenmQ4UDClV2h6xeRtGnzqDj5ZIdZtzWVpnt6Z/ef8/djCTAr1Xo92J4wTyXaNVtP9OvtLaFgKkdN9IJcgfLDdjfTkJUI16ugQoJdCtMrPVzZneg3i7ssK+mysPQTRQ1nKo9bQ+Sk1M+H0VsxKDSyNiIjsCHxOmdpXrCLz7HyRJaVkX25lOZiBhzwYyfcUNgRpoFWwUBbv3sKXWgmZjPIwB+VCxnYzhPxuxhDvGqaAr4rwUSmXtJoMfXFbqzHAvyVyKZoNTb3GQhg1RX8PsQC8Tuq+cDgTZR5IlyJlb/bi64Ofx0evXyAWnv6FOdmX8XTsYiXGeqV5mKHRCeyEUGn6ZxvHco1iV52y0WrOBSza8i4oxZ1L2sPTPDXe7jXiVKduI60+K8IPj5WhsMN+vfhbi2M+lAjIPcR5PO/DyW+S2CZSZPmZ5/7m0Fux+ozlTG8kCZ8wcPHFONcOaL9CPfQkr0AFvAUe0Qfi93Yvc1eTby9a+aF/KS/JKHN/PuTKNpMG7RJQJehRgTglhdFzzJ5raWh5HUoNXc2iS0iqbgDSzLgxtDovp7JMBUsdJXe06WWGY1L6mP269FUjQOQPfdZVWYZuiw+M/1HpY7IFbR2Y9XzBCadmUtuTLjbJ1vjhXIpaQxAwbuT1em90SRZ4HATEak9r87SjXJoAcIFPIRBzq3r5qI/DZpkfEbrX1ZpcSYOnQi+7vx/7ySAzSIsln3P7rRkR7uKiP8TbFhr3aIZdijKuPyG0uvsPtp4YqGHiGMWE1bVzbmWkHMI89j6/LDSvkVN1cBfME6XrVS2TTA7YoOLUqz+H/GaIK7pAGJDicuv8RqaWql2qdM9NwxDB65gOJyZdtSy25twv9O9uvbtNezVDTVSxVlx50b4gVno6H5ysL9XZDMk0/yk0/Y4HrF6fSpIydOguYLTWkV7wcQ+Vpqd9chQ29E+KTcmuL5fpdx7j0k/y/KbsNcyuueAHHgMJDEzHr7O9k0Epa2QRpcMnyidIs5YsB+whI31iIABdyRPVvgJbU4n0rd6GI0855BOAjxTSajsFCov6BTRfxr7IQwQWNoB8/62shjU4B/nK7nkJUXyeMOdd2zei4L3+usoIXZxdZKlJhFcp+WPxSWfP72fdThKI832HZAca18XOswEtSqMOKVAT/a2SXmtpZu8bE/CJnb1nG3SB04z/WWS4//zj15Yn0lympTeY+gloKpTG8L5ws2sD+st3AErbfDQ39sR4hGAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into\",\"reason\":\"The clause is a tenant's agreement, made as a condition of the tenancy agreement, that the tenancy will end and the tenant will move out on the last day of the term. Section 37(5)(b) makes an agreement to terminate a tenancy void when entered into as a condition of entering the tenancy agreement, and the student and post-secondary exemptions in 37(6) and (7) do not apply to an ordinary private rental.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6439,
+   "output_tokens": 837,
+   "output_tokens_details": {
+    "thinking_tokens": 646
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

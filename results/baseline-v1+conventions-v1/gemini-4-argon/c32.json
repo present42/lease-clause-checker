@@ -1,0 +1,74 @@
+{
+ "clause_id": "c32",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "38e21f02b6aeab1871e2bf512b7c55e1e27b58019ec54c4dc0d5f4f3e60cefa7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Any increase in rent during the tenancy will not exceed the annual rent increase guideline.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:52:35.158934Z",
+ "text": "This clause is not enforceable to the extent that it purports to prevent a landlord from obtaining an Above-Guideline Increase (AGI) or an agreed-upon rent increase for new services/capital expenditures as permitted by the *Residential Tenancies Act, 2006* (RTA). \n\nUnder the RTA, while section 120(1) generally limits rent increases to the annual guideline, sections 121, 123, and 126 explicitly confer a statutory right on landlords to increase rent above the guideline by agreement (in exchange for capital expenditures or new services) or by applying to the Landlord and Tenant Board (due to extraordinary increases in municipal taxes, eligible capital expenditures, or security services). \n\nUnder section 4(1) of the RTA, a tenancy agreement cannot waive, restrict, or contract out of any provisions of the Act. Because this clause is drafted as an absolute cap (\"Any increase... will not exceed...\"), it conflicts with the provisions of the Act that permit above-guideline increases, making it void to the extent of that conflict.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "STOP",
+ "input_tokens": 177,
+ "output_tokens": 240,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "k3j3aqPfE6_t0MMPtcKUuQM",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:52:41 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is not enforceable to the extent that it purports to prevent a landlord from obtaining an Above-Guideline Increase (AGI) or an agreed-upon rent increase for new services/capital expenditures as permitted by the *Residential Tenancies Act, 2006* (RTA). \n\nUnder the RTA, while section 120(1) generally limits rent increases to the annual guideline, sections 121, 123, and 126 explicitly confer a statutory right on landlords to increase rent above the guideline by agreement (in exchange for capital expenditures or new services) or by applying to the Landlord and Tenant Board (due to extraordinary increases in municipal taxes, eligible capital expenditures, or security services). \n\nUnder section 4(1) of the RTA, a tenancy agreement cannot waive, restrict, or contract out of any provisions of the Act. Because this clause is drafted as an absolute cap (\"Any increase... will not exceed...\"), it conflicts with the provisions of the Act that permit above-guideline increases, making it void to the extent of that conflict.\n\nVerdict: not enforceable\nSection: 4",
+       "thought_signature": "AY89a18oKYtypI5Ex77GgUwUWdA2NrhMsv-3jrSYZ7S105AF7k4ichaR29m6yFyO9GKcCO0MtSYTFXRxEAs_rNMwAELKjOxKibjzKjBSmYjedY4QjU8YIXDd5tOEmmBo"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:52:35.323491Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "k3j3aqPfE6_t0MMPtcKUuQM",
+  "usage_metadata": {
+   "candidates_token_count": 240,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 240
+    }
+   ],
+   "prompt_token_count": 177,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 177
+    }
+   ],
+   "total_token_count": 417,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "clause_id": "c08",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "fbe19c807e15d6f2daf3d62cf13abf3f45efbaccffa510fc163bfe2042337249",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant shall pay for every repair to the unit during the tenancy, whatever the cause.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:30.905357Z",
+ "text": "The clause is not enforceable. Under the Residential Tenancies Act, 2006, the landlord is responsible for maintaining the rental unit in a good state of repair and fit for habitation (s. 20(1)). A tenancy agreement cannot shift that duty to the tenant. Section 4 voids any term that purports to waive or limit a right or obligation under the Act. The clause's \"whatever the cause\" wording would also make the tenant pay for repairs caused by ordinary wear and tear or by the landlord's own failure to maintain the unit, which the Act does not allow. The only tenant repair duty in the Act is for undue damage the tenant or a person permitted on the premises causes wilfully or negligently (s. 34).\n\nI am citing the sections from memory, so please check the current text on e-Laws before relying on it.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 228,
+ "output_tokens": 1754,
+ "raw": {
+  "id": "msg_011CgwR94pkpLmqrZS8kd5Ai",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable. Under the Residential Tenancies Act, 2006, the landlord is responsible for maintaining the rental unit in a good state of repair and fit for habitation (s. 20(1)). A tenancy agreement cannot shift that duty to the tenant. Section 4 voids any term that purports to waive or limit a right or obligation under the Act. The clause's \"whatever the cause\" wording would also make the tenant pay for repairs caused by ordinary wear and tear or by the landlord's own failure to maintain the unit, which the Act does not allow. The only tenant repair duty in the Act is for undue damage the tenant or a person permitted on the premises causes wilfully or negligently (s. 34).\n\nI am citing the sections from memory, so please check the current text on e-Laws before relying on it.\n\nVerdict: not enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 228,
+   "output_tokens": 1754,
+   "output_tokens_details": {
+    "thinking_tokens": 1470
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

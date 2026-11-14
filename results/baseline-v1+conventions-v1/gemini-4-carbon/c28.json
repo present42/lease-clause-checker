@@ -1,0 +1,75 @@
+{
+ "clause_id": "c28",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "c0a6333a24a6d2653ab18192c65ecbab9a5d042a05c8f2725ca82f3b3e017650",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent by up to the guideline amount once in any 12-month period by giving the Tenant 30 days' written notice.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:10:33.761913Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord cannot increase the rent for a residential rental unit without first giving the tenant at least **90 days'** written notice in the approved form. Any rent increase lacking the required 90-day notice is void under subsection 116(4) (and under section 4, landlords and tenants cannot contract out of the Act's requirements). Because this clause purports to allow a rent increase with only 30 days' written notice, it is void and unenforceable.\n\nVerdict: not enforceable\nSection: 116",
+ "finish_reason": "STOP",
+ "input_tokens": 194,
+ "output_tokens": 1341,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "uW73arrNOf2lw8cPi4yj8Q4",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:11:02 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord cannot increase the rent for a residential rental unit without first giving the tenant at least **90 days'** written notice in the approved form. Any rent increase lacking the required 90-day notice is void under subsection 116(4) (and under section 4, landlords and tenants cannot contract out of the Act's requirements). Because this clause purports to allow a rent increase with only 30 days' written notice, it is void and unenforceable.\n\nVerdict: not enforceable\nSection: 116",
+       "thought_signature": "AY89a1_svVvgyWuCU3fUhj9XgNA71rltBhUpA437USINtEcE1tRoPJEbxnTiMpCxgpHgRd6Vp133E2dcXbSW7VfrtRJG5WXnxJTsRC_-jK195CPNMPJdNPGLyT1d11aVOMztkWveIEb7fFVIGPntAd7TUYf76ZarTq9KGzDWnBJpYRrqHaujkRmce1z33xPSbkggvRAsnvMTb8YnXRlFm_JvAl31kS4kl3fwicL-iZ-b6eoVYJmAoaN7s5VPVw4qMPN_rgUZppXNs9JY6Wiahkfq0-a_1gcPTk86ab4AmBSq-Nr3VN6nPdnLIkO-NbXzBOU-mgZNOmqlvC1kDlR8sQGHIZhZOFa5JEZh7Qfp50GwOsHHh6H718i_T7tg_ymf5-pUCndQeUK-hR64gCzJ-1QoAbTcuasWB0RWpKFgKaQkTfgZ659cvlnJQ6uqVCql4RDgdJ_yPJqBeNu0r7hBEkK_zKSrRB-6mMSiebSGTgi_tC99p1hZPt3S4adWfjLVYQ_l9OcWOKjWJhFo_upJdiA8cqESxfaxkPGvyD-xWV_WpkhtJeVJWh2ONlNsmAsjQPF67etotDZ2pmxrhyAKWc4_7uK7mSTXU7O3Lcq0qZk2ybk6nuMngDu40d9PgaycCZzC_2p9g1upjo_AOzoOxa0XtgTRlSb-k8C0oEYaf_j1XmXD19MGcuVX_zUfLvmrygrX8hB97mwtWNDUPcrAhTWrAw4JP0TRSUewN_tTXj0Wv9brQgYHVIMIXnJMYcdJpzkk9Gl_nMiBo67BdRjVZAMP94Z4TJdKu38cydGKBCeIx8zU2rwrRgn6OAvJZqwNBanTE4dLhDL8DtvdUpWSFRrCt_UCj9Wey4-P8BPjKfUUsoFl76MhOY2ojbgaaCNMEU1U6wxHpwN39kuubnJOtGIaT2aQD8vlikKLvsM4lNQP0hh8n9K5Y0136uUVpD26rIItgsJbk9e-vnAKiInItugUBWiPb04bvX3mM54QZFisDPDD6-1mCOKiiT0Ka3nrmdUvLib7qJmZCPGz1zNQ48BLt9b181cdDvdGnVzIGYpC8GEgLqDK7pihTiLZI6XqBds5gcv0gVC_HNNzDcWZZy7PdU9MLrdLg5brZYff2XF2qGW5OhTvpbtNxOwyJ3EySeDy57WOKz_6SmaG3fYtLhm32P5W_ptEYUl2e1XCr-tDmcFXDZRwBqgUU-5mJ77B1jqQlkMcZfju8krYBpIhE0yRC41patzqMNe6BSUaydzxcicfD9uDG4Qntlg3M8haQATD0V9InQ53HEWzTwLnoQ7L39-RcZ6ZNjjRsiCA50wHG8_gOSnJSqD39IYL1W8O3Yhv_z2CBX0_yMP90huVn4nbfQJD632JP0hOaljeZC4l4HFKhEZ17QOgwVgWqJuJKfC5H7i1hXmd1rBBoFMDsmTFK1HMPs0L-QiH28ra8UJpNHmD5AlBTFGcfX7WgDWPH_2MjSUdzW9gFF24aphmrC8Dc8bfcIHw9pf5cOPJmkYynypiNJHN6DW9LcwT15UgDXEHMtpwLlBmvMoNffucpvhOEVExENCMeVDcVihH6bAz6da4L6YMxtXq6z_4UoMnDh7uKfLAiPxBOOTaL9o7BH-j92FIr_h-d7-ps5R3WzlUjUFNontF9A2YEWBQsUtqHAgAA7Bb1hX5gJd2utiexEoHf0ASq2LDm2yFBYwcsW6QYngffaczXlJUDUBcR7kZnqGdI8HdZGIA5A_BkrTIY9xH62vwbtIawNX561xydfaElvdnZy4Kwi0-4wItbGugxoc_Amb3ER66w8EXAng9zLiKlFkoTxhK9XrmaCjLuVhly8gQKKfjr8BITAeLjRavQAAjtMCUcCCMTyzqfDbWN-cRfSB-qHWmZ9ivcghwK3xUCaePeuoakTCM-7KCh7-ko65r8Z6I6mpqO5a1oHSKdPJfOfWmZo6ES45uWzwFvjbUfutRAyC-pob_q2E4Nf6Au6rRCaHx1xAu7xln4Rx7TYGq2AVysmZ7GXO2YFtnfNvuaKfNwKgrUAKazQNI015AG9ebY7J2EoTPP0qTyvYdK-mM4x-izBtPVgAz-zVCKSmJydwc9GSRZM-hhlKIGHHpDYCyd2YDwqy_xkKgwgsr6YF1JE3caInZwDglO_6FzlmiXu2l-JXAPfxFxz2SQ5vfsZe2EBEPvY8SU0hzLcRO_MVU0KxikSfepUBdymGT-1k-QIptGz0O-u-aWcFyCFDgXhlARum1rLhaYsTrYFg81v9AKBvuL5cCdmB66NAq9yRpQNDSeLWxC7F735by1vNY28baWOFA6wb1EAcMymD0OZYlrjAh3MKVHA8Vm_U_vi6reCUGWmlxIpBoEpiM_9H0Qg1iSHtubKph66g065Uw8htYS1k3v7ECQwUIlEhbX-UH0dZIQYQv-itW4conDAXD0kpKUfKqloFB05DudFIX5dtAFJwUhrZ5V0vsHIfKrcVyAYjfYvSkXe8m5IonNOl3FUK_iYWTIScK9_r7XkBW2oxdhhtsbKm3ySXLdMxBMIGuFakq6xar6bJW14YtfaZ2AiKJmWVzfPEQRKwvCyn7CbRys6tVnTZb2fZao0YdEb2BFS94KYmgAzPfobKn_8zmkWjgQCU9YAT1_5fzFoer4dSS8D_VNT1JeXy5iVVuU0F44LMSAEyFqvtgvItDb4_WePL2dJDPCaRPpd5S13V-pVO_wGBNNa3nhd8eUbvo4_uwnBvyK8VeXM__PQsy_6sz40womlfYN20SwHryRo-sIxLDDhg1aIXjO7ZMu1ZXaaPvu6KOpE4TuaMr8jIZPX64dkeAGN-zK1cstI6iYmaybYMF0osGsEbYH9jBPgiriSm7UywiBzk7g6hIcJFivdmqPpsNzJ8N9POtnmii5kWFge6UGC8iwS9mATVnTx6ZM42DdFZz4DxgwDmxgpthQ5vG6-9byOXtKKt9ZYL-gKlKw2z6TZli-uLCA4XWEpBL23EZ9QXi0zWu4qhDRMZRDeXtEnwuZ-WEbMAGQ5mRgWAuC3Ze0xIu5leU-ShLZsS3QURoJf21fulSXXZZxYeylF-NZYwBHtY5qbZMThJ4bATje-sn6x2zV7VJAPro5ThG1yDUU-AapVAdz1KltOnFj8JsILJta0l08DPd870MK_9KHb9rw0x6qg2D26fcG1IKbkBCm8X0-5gF9_zS7OUK6TuKk8gPYcqQlnyUobp-tdmxLX5bCk0hgxTM9r40w5kkIJGjF2r9HOcC1Q9r3X9X1oQlaeFNU4MhrCAPl34R-r-nYDgwksBUi1q-8pVTb-aLceIBo1xqh359bWqCmN6aVc_T4ok6XRoXy0PZ-To3gzijsWmOsMqX6tQj1ZUBlnQ4zR-s2y8ijlcuB40xeKyUFIPGeNfOw6ELOf2vlKxya1Upjya75mBz1uf0GAXK1FF_aMbJfJtrnedQtt1NlRq6-6PbfhZFt9SfpkbHw0xWFQnJW6OohiZU8LAGx2p5_2RYmV6RA5OdrLzCeP0paFVY02SX9G-vO0iCJHdzCU1dBNJJprj9HyZkKqg4Yk6ksa8YOuBNVE7evvTB8s5f1HBx7DxIPIjJS0rPlQl5WU06MCmar4yAIBx00a_xDnmKK29QkadunsQ2rap69lEpMLcSVw9Xetcw8w3YsuwxKZUQBIGsqYpsh4pHMBL298wqY9QQky9Qmgl5inppdPKGd0ozgLIWNejDu8iIFUBHqsKp6uczPvWyWp9ElL4gFC4O_LTRl7QqQgEzsJyRGZRNV9NSCLpYY22Mq6Kxr7E-8LbcgBEm3-z32jWDXuVy4xRsF0hG-X1c5wvHpqZS5nR0HPV5s1Q23gpXIT8mymk5szsltrHkktsUkW-myIoVvZmoAsF9kuZd5LeT-O2jlQHDjytsTCeTHV3UqbYiXrzqDdbfArYOD81cK5kThmmIidtqkIJULDNkIqQU_aNoXeoDpW3gzSzDDFUynHMlUn-qoS-Z_7jUJHQaCQDDLCKucIWm2tyv6SxYZs5dJUuEbSqlFM_TSrkuwm17kEJYQmm1-CnYv7DfKDl3XcP2oeRljjARYp6mOcVEv89aBvtChJdxCZzectKfe2xnUcjhpGNsrzTqMfrbT_3TsqiW7Kll8ypkRiIe_SOxWzoQf6NUaqBGSZHLeYEjTnL_cZFNV2-RMmBKcdbOk5DDcIa-Uami5Ecp4io4bPKMDQcV9vrDTfwSYU2GHpQ72miUIxdyYguTsRAOFdugF-ofvVRvEkInMdei5qDXbwBqPrQsp6gB3b6zL0PemGcjoLkyFgpLVG2JCERfB1v2AHsDBz3Vk9dGWSGxojNXcnu0VuGZq7FoPh7uY9yiXeU8bfs7789HEQjWYWKIZE6L5vWeNtq3xQHcuB1M_Lfk0-Xx_GGLK9shh6kBu2D3bWHWb85683MCGWHF3WyoCRe-5NIM5rQVmZjU0-boQnqPooqm1ee9GIT7zLlFET8olGNogYbxfG7EVbdYXm_61NzS0Y_RytE5Ts_IW_tFfxd_QPrhcZY3ZxAmIb84otkQRotxls7YN1txxNSfFCMHJnwIRy3tXqCfSmHjD_JR__tTkA2If4bEC2hXw5EjUXkehouoJDXddhHaRxWnJaVujPF-WK3SgpXswwqBB4J7ah0kvIfrsmFH9sH-6wR-azPvTeON08NQV3A6daauP48SGp7ZTl7NtA2hEpnJpSnCNgRj12pU6HQ6V8Pm1ChMN_agcJ-ygaYSssCzVZxTsw24q6LbSnkNafY41lMAxDUItex6nV4znteEBh1-hX915BAyd9jxzL0HZKOr5AAhF_zPtgKUT2FK8Z8uuQvCn5RXyPnv75JsrVxLfBY3cU8hMpHvVfRQ5hlT9bYnRD6T6wnMtwP4fAyxmQCwKLjNFyIJwOIi7gAmrqL4uAf1F0ISCzDL1bznvKRc_YPx4hk4nFlz1647YgGiTGYAlELMTDIuDClhTc4tdLZtCqFUuWcZPSRQPjKOvFpYMu7h6Th1hTAosyzCXEYE-iyhQVDwzY4UxAIsYZdjsqmu-SzPbLOajJq7Agr00gLREu1jJzCgxyxrWuF-i9YdcUpMvb3yzAQ7ixp6elyRBknXjow2UilJSSJ6G_beafqKq5QBXR3y5NSJVVDNr1VZ4HabtTl6bpTTwuYlu-Lm1fQjuFDbVSuukDdAAaWLJN_lwkvowO-W6E3DPW42PahOYhDr0Gy_0eDDkcydk81LFzNoeP9xcHcoyEk8oViLoR3Kz7fCo7Pm_ubzia9s3IzVgxVqH6UYKrqLkGrkxLIrLU3xLeOvY4DSSIRDsjGpvoaLgwBboUbFmSzhyDB_I1299N_4iEZ2xbm210LIYynNAXFWel7q14NGZZaEqx1tpizyOZ0ZppfppBtPF-PAGJmx-6Q2UHMhGwmKuJspbs5vgpmfF7slqExu-U3Yn2WFmaHkqaau7C6kaY9aLEzHtuPlvhfpiAF4r7E3StuWS1BKQt2ucDfHHt-g4YmsWkNTx5UfClKvR60eu18sdaXwTM-EkV_eT7x8urW_wMywzAqCqYs0d4a3dWuBOwuSFriH7roKdTig0P0Ae1XqtYYVeJmK85xlFqXqmXGKd-kHgqx3t0x38p705o4Mqcv-0F2nS44o1dnoYuUup20kgW2_ioq01mYGvwLQTlKVc3Ct7ujf6J7sAHqut33f6pQiY1Y_aAiAn1d_HO5-gWUj-k9roytYUcRmwa1Kz09gt9a7ErHGU-tt7FT1lnrjPvoWg3YRts71LEd3LkSlpPYHcc4Ewq2e_yjcD_ImB_dH2tBg1tcQppy1nWXJ4a0PoRZsCSX4L_3LJ1OxN6MvtHMVAnb6rwpvdsgb2uX0ddF2Gcv34Dv6rmd7gS6LLDpmBZKuQiCppKBiMfnLivw79o8ZtkGuVSbBmyPR2kXwIGvxigbtmhC1hw1VkMVsIhmvpNDpcWw94g9_N70WM06T8Fo5moaKukpKmFmCk3a2FcDLbuFUlpjv3-VULlhPTw=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:10:33.943802Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "uW73arrNOf2lw8cPi4yj8Q4",
+  "usage_metadata": {
+   "candidates_token_count": 129,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 129
+    }
+   ],
+   "prompt_token_count": 194,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 194
+    }
+   ],
+   "thoughts_token_count": 1212,
+   "total_token_count": 1535,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

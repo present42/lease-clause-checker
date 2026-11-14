@@ -1,0 +1,99 @@
+{
+ "clause_id": "s19",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "33c0b1adfeae2d3c1c4638d8291abfc23a877d99ed9b83fb8c739e6cddf6a7aa",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant has seen that the bathroom window does not close and agrees that the Landlord will not have to fix it.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:54.783918Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.\",\"reason\":\"Under section 20(1) the landlord must keep the rental unit in a good state of repair, and section 20(2) says that duty applies even if the tenant knew of the non-repair before signing. The clause waives the landlord's repair duty, which is inconsistent with the Act, so section 4(1) makes it void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6429,
+ "output_tokens": 609,
+ "raw": {
+  "id": "msg_011Ch1HyQPR8ZJBicL6pXKom",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.\",\"reason\":\"Under section 20(1) the landlord must keep the rental unit in a good state of repair, and section 20(2) says that duty applies even if the tenant knew of the non-repair before signing. The clause waives the landlord's repair duty, which is inconsistent with the Act, so section 4(1) makes it void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6429,
+   "output_tokens": 609,
+   "output_tokens_details": {
+    "thinking_tokens": 437
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

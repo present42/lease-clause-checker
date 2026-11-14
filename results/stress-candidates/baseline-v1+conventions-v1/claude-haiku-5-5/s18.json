@@ -1,0 +1,67 @@
+{
+ "clause_id": "s18",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "08ecfee56b86eb4c65c003012e86c17e5b663a27b36b7fbeb00e201c303d781c",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant shall pay the first $100 of every repair to the appliances the Landlord supplies.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:21.219107Z",
+ "text": "The clause is **not enforceable**.\n\nSection 20(1) of the *Residential Tenancies Act, 2006* requires the landlord to maintain the residential complex, including appliances the landlord supplies, in a good state of repair and fit for habitation. The clause shifts the cost of that repair obligation to the tenant, up to $100 per repair. Section 4 provides that a landlord and tenant cannot waive or contract out of the Act's rights and obligations, and any term that purports to do so is void. Because the clause tries to limit the landlord's duty under s. 20, it has no legal effect.\n\nA narrower arrangement would not necessarily fail. A tenant can be held responsible for damage they wilfully or negligently cause (s. 32), but that is a different obligation from a blanket deductible on all repairs. The clause as written is void.\n\nThis analysis is based on my recollection of the Act's section numbering, so please confirm the wording of ss. 4 and 20 on e-Laws (ontario.ca/laws) before relying on it.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 229,
+ "output_tokens": 1480,
+ "raw": {
+  "id": "msg_011CgycnD3ReW51cdvNQXvcu",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQShRwKEAgTGAI4AUIIdGhpbmtpbmcSDABDCtnsE4MQAU+i/RoMkYasVyc+1P//oOD1IjBr5u9p2Hhlx+6dyjtJIOhbPQ5qCilr8KAotYt9lGjQxi6q0q23CjJraUrlZkclP+wqohvCHpKBB8W+pnRQS4JQ3mAproKq1svSpksZoUiqvVkhLT1pZ9IjBqPqtXb50yEipqD0uPus9fS7fWgXAZRkXM/6g9i+RxwgqrIuUarlxRUyyHoOXXHSmCdTORrYQz5/+g6KO1lVebPkNzmibv38yPHVwrP6hON8gwRxWe7bPNyGdtQtsp6fU/zhvEtsJN9nKDOSWJ3RN48tkcq/zTbbxchppYLsX6BTFbtRl+cUBLpR7MTQ9f2LLmdWdGqIIIjbdBMZTIXeCkMFdln15AwZclBQSfoIBRG1u8O1GQ41INLaoYwj22Ng6Ge/4z9TfzUx8fXeMQNf7fcStbM9PglPnW37VU4hPdupjpabggNlac3i37adOhZfzB2Avy5utVetuFifwSiKiDKinY6mRwYvmtrxNA3v9sE+hKQ6U+E6VLBnTAC/KfyWfQECQlRz2FguLTsrl1p/1oa3qlHGVfY1vFkPlgEWmYf7LSOEekwGyyhOQ8saXV49pOyiZPNH4YY7jOGlHDz/JDvzw4k8Ovf8lQ4iMGecupnE334LC3S4N66zxtMdhWSPHC33j7RkhzOXTws2f9tBdikANWiNN+cMWvZYWxD5G/9lDPOZaWm5pXxz3E+mGEEVPoFY+VyLu3TPVCQCTGf9zDT3lZJI1HwGIpLWpLt2jqYcKUtwwBK5goWuc3alutCG4EHbddy8gSo16DbFCeGEhWamDJSaJB1hctrLCAHOcpaAbb8DLfxJuFW/2iHwe5Xko+V3toon3YYB8gfAyTqyvmhxQJRhYwAgCU6QHcYa3fvD6O3wRkdUYqNi4kzZ60tOsbYXrunJUTj8/jcDDNx/5XkcJpUhGsR5KhKgKGuwwGi9kudyv4qAgm8KxJ9+4i1bGT4NJ1uBhL29yj0nBi26UKwB4SEUxEIY5IM3EBKrBPb0dWZ5TMONYo4Z1ujY2NAFHREJlLMjwuXjN66jAV7n4FdHzT8nFE0LQB+iB3FSN2y+vTq8TXJOVGuAe6T226zSZZj5CWplvDjKett7pvzNspX5nYj+38tQ/Gvz6gMHnZBnPReA7BhjwFXDuuw0fnuznWRNVGmxpX6XAFwVcsK7s6DzP2xDB0RSkEfiHsBePY0yNnvDW23fofmS0YVWyc1S0OYm0RWDTSIkkwY0dehfU6I04apFMyeYoXdZjMahAbvtexADWNYDQd5kTarfxmGwBkrcgjgrYpfO3V+bVus3X4Jy7lve1c+Ywn1UGcRtXgo5q657ifpEV239yENpKoN7tBuqeAWBvudvme3qTXA3ov448WlECG2KaDrgVKUPMVNLL2i0MPDG81+2asAi2Wu/mHNa0a9uuY2RtDr2gUisQjFxRr02bKL2ALuvxgI4dttl+5MRgBvkMQ8DF1Z4loe83IHOor3XToOIZOsfYDtXCmy3NgaY89CrKz/1MJjrVa4wGF+dMPsZpjVzqDlwdsHTuzJzP2b/LHGmN8YCVDxz5YP/IGqGvuUkwYvBYJMaZfxrOTdvBulIcEmSNY9UgarIHmNWzfJcHs4Qf02C9kNdqWZ1EC0l2oh1ktyxS4pCRNfB9RLJty7tkboyaNAJLiHXeFfxu35HUtKt1Y/CQRJoZ9DwvYTV7ioopVPDVYuJ/1QpiyNlkcwVrO+cUWslxvEo2jZCEW6WdNin6Yny7734MU3zE1EviEM87Lwbw8e+N0zeqrHEJO0ErUOPB2Y7SoVWGlzvZ+UdewA5ZZlkExD6k9dzImiy/b6zF837463ffq0xMAxevyo9XwupNuuenLQJw+OED8aiLt0XSm7wmvBn+HcLVcaX7+XqV6Ca7O86YfQ4dIrhVdjfA1sIzCOgAIex2Rf2KlPJuzFJjXD3Z/r/kvs5oHomh1maRKxjQiOI/C392aL+NlVHQ3pLSrunPV/mny9y6ge4KysdG9u2EvEZE77urkFL3uAggWYifKBempjiZWbbFmNDp3fDq7YLifckZOjGhW6ijC932LHqr+Civ6bYP1odfZrr4FWDXyDUuAw/ITISK36V17NCuowSkvYvVFp2jcemShJDnqbLpmK9DBpis3ePPqugqoAkbpNqgi2+sS90jh8FqVpS4cKIXi9TTOFT7SFoSxxxJnY1Rh+6Z8G28iMuAMXkcjxtv7VZjaR8nZ7m65IWwvZVOTboJ0NFrp30iWAC3Vej1Oh9PV087iW2C0GXFEPBydKE8/xaTj/ItwqiFl6mWW7XRXwcaYgw65XzfzpIaL4bTC0KZgOkkiIRyyVRn2brnx3wvCg/Z0Mw3gHkBkbEA84roQoDL+J9z3A94bPXB0cDPg204raK/3aNuvHJBeKsEL/CPF4ZG7IdDLZ0DrOj+fODIgCMoMYNu+igxS4sybg/oyOZo2wZGHSWmfn9Gn9ToqfLPK8y8Uq9R26ohRpd9XtqWjoZGKO1nLXCVXlF93u1fRIxh4R5e3TtKlsdbwl2Dd1dVsSH3B8ZW8x+6RW6ZSki1KcDKdxpzL9zGv/0W7eOr4H628eD3eElGgpmGL8rC2rxD0Ugt7YT0VxBRm6s6NmZC5KbiTgC+7oV0MPFlNGg9hvlKHol6s9SfmQwsDXx0dQRWrEXocuNDF3BORhQATLCZT3iSa0us1veDLpPPtIlnVos0CfhH6SAQ5XLeo8EnVe+PzQNiRHjr9aiaAWeBl/x55KX91TWzKTMs7xw+GYvyAD9S38MH4aKPh7TsZmkd5n21OfAhx8oa1rLKmrBfqcsTQeRT3ELVIL/b5TFXkHFIdB8HEk4UQm8BGPJinJCdOi4if68Z5CaPTabBAFzklEd0f5VwEWMIIvCb9TYodAi4SPJNUenoKlfhj3BHoWJxocETGdIjkacgaZWTnfjO7Dkqm8cBJA/v2yrIz+lJkVXNxPHWsHg+NTPneuor6jFbtOqZDZxfNQ1JoVQZ/ITsMS3djfLlIZeUTnDaapOIeeOnm84YkbnpwHFAan/Eb4r8SQzX6v/aGaKfQ99vYE0mWZDvnSP9qXJkOSI7e9/D2wdi0EVBONAN3vHNza86+r8Rk+3ox4teXX3Z9gj6sE5+hIp9qAEbf5VlW6H/zHTTKhjTc6VRc4wRE7joBS2F+t4ggMYbRajO9pAnbOME5C18kdhQ1UrR+IrP6NeLKXymmuvAGIDGnh4LFDHjabLZ16SJH0Z3tF03ap1ncflNV2GTy0+hCBIfB2WSZeN/bQFWlUOjb0cPNw0tE73tSBwuOCTUnhjXUihKuUgC7ruoZb1Sn8uMvyp5zaFQnVoJYpgPvODjc4neG3EmR7zhCE8a6xPlgDi3P5d8whIo2ZNH5m7I8N/ilO3sR5g9ZX6B0lgRnV43kuyLbRBBWVaFMpwh8RrOOT3UWxiiovNZ97Lp+RTAVLc6kngFdsuqKIeplsIOZzr0z7p2h3Qa/suznYqbSA1NavcSRlQFHtfL3+cw54haNyLF9mar72zYxQUbZQ1jjhd1tL4VYW/k04Odr/BEa0iIVE/iwi+AY2g70DvWCNtS24r7oMPJyJ1zE9zcfXtE9BHK1tTuFN2mtBQnDgNRvg/h6odJgbL0QCHV7l4vuEMx7N0H8rmyy6wsL/AaUpGVWYkPcVJlr+fZoY8t/x+H716XafLerOClUjm4hAY7AMjOY7YOpRSitmIstSASinlhMNoOnQMPMIK3RaKLkJzEG2VYxXZNaaVySsMPgJTL4CT+01lBny0SsVc2Ru1D+MYv/YA4o95+UIukG0I2Xz6co3eUiHDRblwi2Gbl9tsEXfw1NRhCWVIGads6Hit93MsuKx0nlxGyUd0x8A8jNEgr5HzEShVaJcIt6wnRQYI/2r/6neCN0QrYV6bcJAyULDGlvEmdYlhaNOPVjxEq159lk5vAPeuRLn2DasPq5TDmTficsHI2sH0dPO60Prnk6GUqY+etK7cotlSwKYZZvNiztNYAA/+l2BSnoahhew1qig7JYyYG4mFtIbyM64Wa0YJLbY2z4JXw8QlP67xYuLDugGnskOjHfIO5XyIwhs3w8LObfVu5pU0irmqGJdPliEdYdkrHezuLy0L888+yPWDKRZrzu7eKQJhOkIYYJxuen5DVZJpScYcBhVdmibXcY45KwNDBfohuQgX08zcC7fQQ1Y+5glM7QC+MyIkHDjKUW/zeglEkSTQzAx4+bz4+9vhpbCWLNgyWiO1XE/qKM0gmA7uyNtQ8P6s1fkL7V8eQbTaQsJ8lRC+2VBvbC1uUc6Ch68nRCI1PV/lACQDSmqZUXBrMWwpMZKV4OWVVnf7LaaK24nyeMV6jJJx2rNxu4aN1Gvl+JRlSp8d+yOSyn5iyXvLNo8wsWUzZVm7itgqSlk+l3xR5x93TNrXqBZOlkFINzDbOMngY5RxWnSqFtBd/GBbGOcm8a88g0Xy/7vT8EU3nDNuV4UZWcSjkIFXNEoAQOd83qyWWtZk3IWXXqdTfUbmyAD3o0cbiRCsaeIqdrAmZMwyATuufgYvn0/g1vomBoCP24CRmnm1dolMP3NE2YScMBYqx1OHJ81e1fIHx1+M5zgIWWzSGYsgxKFBmGm0aaESC2k+BzHk4YOX1evRSJrgltBABlQN8I/iY4reryJdIp5QleRZTGGsbJrAuOFmQbEIE/DMwh9RWqk0Aml0TR08jWCLTDI979CTcwlg3b4G9CHgoWs9GAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable**.\n\nSection 20(1) of the *Residential Tenancies Act, 2006* requires the landlord to maintain the residential complex, including appliances the landlord supplies, in a good state of repair and fit for habitation. The clause shifts the cost of that repair obligation to the tenant, up to $100 per repair. Section 4 provides that a landlord and tenant cannot waive or contract out of the Act's rights and obligations, and any term that purports to do so is void. Because the clause tries to limit the landlord's duty under s. 20, it has no legal effect.\n\nA narrower arrangement would not necessarily fail. A tenant can be held responsible for damage they wilfully or negligently cause (s. 32), but that is a different obligation from a blanket deductible on all repairs. The clause as written is void.\n\nThis analysis is based on my recollection of the Act's section numbering, so please confirm the wording of ss. 4 and 20 on e-Laws (ontario.ca/laws) before relying on it.\n\nVerdict: not enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 229,
+   "output_tokens": 1480,
+   "output_tokens_details": {
+    "thinking_tokens": 1127
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

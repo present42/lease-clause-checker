@@ -1,0 +1,99 @@
+{
+ "clause_id": "clause-1",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "3290a9afdbca0e66510e542169740071d55f3605892fa7c01266384f6494bd2e",
+ "clauses_sha256": "4785be0e862ab7d19a11c723e18bf9402a8b95d637ae290a0b8a636b2d10005b",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nA deposit of one month's rent is payable on signing and will be used as the rent for the final month.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T22:03:45.951399Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"A landlord shall apply a rent deposit that a tenant has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates.\",\"reason\":\"Section 106(2) caps a rent deposit at the lesser of one rent period's rent and one month's rent, so a one-month deposit is within the limit, and section 106(1) allows it to be collected on or before signing. Section 106(10) requires the landlord to apply the deposit to the last rent period, which matches the clause's use of the deposit for the final month.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6422,
+ "output_tokens": 711,
+ "raw": {
+  "id": "msg_011Ch1gcMJy2qwh4RmvjMLtw",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"106\",\"quote\":\"A landlord shall apply a rent deposit that a tenant has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates.\",\"reason\":\"Section 106(2) caps a rent deposit at the lesser of one rent period's rent and one month's rent, so a one-month deposit is within the limit, and section 106(1) allows it to be collected on or before signing. Section 106(10) requires the landlord to apply the deposit to the last rent period, which matches the clause's use of the deposit for the final month.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6422,
+   "output_tokens": 711,
+   "output_tokens_details": {
+    "thinking_tokens": 512
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

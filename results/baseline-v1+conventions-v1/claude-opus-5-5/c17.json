@@ -1,0 +1,67 @@
+{
+ "clause_id": "c17",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "5eb91cee2771d60be9a017e29e33708eb9530215c5b84607dba0e7e2a155034f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: As a condition of this Agreement, the Tenant agrees that the tenancy will end, and the Tenant will move out, on the last day of the term.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:27.039602Z",
+ "text": "**Not enforceable.**\n\n**Why it is void**\n\nThe clause is an agreement to end the tenancy, made when the lease is signed and expressly \"as a condition of this Agreement.\" Section 37 of the *Residential Tenancies Act, 2006* deals with this directly:\n\n- **s. 37(1):** A tenancy may be terminated only in accordance with the Act.\n- **s. 37(4):** An agreement between a landlord and tenant to terminate a tenancy is void if it is made at the time the tenancy agreement is entered into, or as a condition of entering into it.\n\n**Why no exception applies**\n\nThe exceptions in s. 37(5) cover certain student housing and similar situations. You've ruled those out, so s. 37(4) applies in full.\n\n**What happens instead**\n\n- **No eviction at the end of the term:** When the term expires, the tenant does not have to leave. Under s. 38 the tenancy is deemed renewed month-to-month on the same terms.\n- **Ending the tenancy later:** The landlord can end it only with a proper notice on a ground the Act allows, such as personal use or non-payment, and enforcement goes through the Landlord and Tenant Board.\n- **Other terms survive:** Under s. 4, terms that conflict with the Act are void, but the rest of the lease still stands.\n- **Mutual agreement after signing:** A separate agreement to terminate, made later and freely (for example, Form N11), can be valid. One baked into the lease at signing cannot.\n\nVerdict: not enforceable\nSection: 37",
+ "finish_reason": "end_turn",
+ "input_tokens": 243,
+ "output_tokens": 1295,
+ "raw": {
+  "id": "msg_011CgwRDCVyZhathaUMAumWZ",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.**\n\n**Why it is void**\n\nThe clause is an agreement to end the tenancy, made when the lease is signed and expressly \"as a condition of this Agreement.\" Section 37 of the *Residential Tenancies Act, 2006* deals with this directly:\n\n- **s. 37(1):** A tenancy may be terminated only in accordance with the Act.\n- **s. 37(4):** An agreement between a landlord and tenant to terminate a tenancy is void if it is made at the time the tenancy agreement is entered into, or as a condition of entering into it.\n\n**Why no exception applies**\n\nThe exceptions in s. 37(5) cover certain student housing and similar situations. You've ruled those out, so s. 37(4) applies in full.\n\n**What happens instead**\n\n- **No eviction at the end of the term:** When the term expires, the tenant does not have to leave. Under s. 38 the tenancy is deemed renewed month-to-month on the same terms.\n- **Ending the tenancy later:** The landlord can end it only with a proper notice on a ground the Act allows, such as personal use or non-payment, and enforcement goes through the Landlord and Tenant Board.\n- **Other terms survive:** Under s. 4, terms that conflict with the Act are void, but the rest of the lease still stands.\n- **Mutual agreement after signing:** A separate agreement to terminate, made later and freely (for example, Form N11), can be valid. One baked into the lease at signing cannot.\n\nVerdict: not enforceable\nSection: 37",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 243,
+   "output_tokens": 1295,
+   "output_tokens_details": {
+    "thinking_tokens": 791
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

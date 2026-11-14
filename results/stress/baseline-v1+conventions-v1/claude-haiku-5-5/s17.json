@@ -1,0 +1,67 @@
+{
+ "clause_id": "s17",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "0cdca4e3dd908b3e8333391ec503fe43cd82dec6ecbfe5f50307208c4ec36fa9",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the rent is paid after the 5th of the month, a late charge of $50 becomes due.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:20.106288Z",
+ "text": "**Not enforceable.** Under the Residential Tenancies Act, 2006 (Ontario), a landlord cannot charge a late fee for rent paid after the due date. Section 133 prohibits a landlord from collecting a late payment charge of this kind, so the $50 charge cannot be imposed under the lease. Any tenancy agreement term that conflicts with the Act is also of no effect, since the Act applies despite contrary terms in the lease.\n\nA tenant who has been charged a late fee can apply to the Landlord and Tenant Board. I've identified section 133 from memory, so please confirm the exact wording against the current consolidated Act on e-Laws before relying on it.\n\nVerdict: not enforceable\nSection: 133",
+ "finish_reason": "end_turn",
+ "input_tokens": 226,
+ "output_tokens": 1198,
+ "raw": {
+  "id": "msg_011Ch1HvrKnnGVq9qXPVb4Sk",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.** Under the Residential Tenancies Act, 2006 (Ontario), a landlord cannot charge a late fee for rent paid after the due date. Section 133 prohibits a landlord from collecting a late payment charge of this kind, so the $50 charge cannot be imposed under the lease. Any tenancy agreement term that conflicts with the Act is also of no effect, since the Act applies despite contrary terms in the lease.\n\nA tenant who has been charged a late fee can apply to the Landlord and Tenant Board. I've identified section 133 from memory, so please confirm the exact wording against the current consolidated Act on e-Laws before relying on it.\n\nVerdict: not enforceable\nSection: 133",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 226,
+   "output_tokens": 1198,
+   "output_tokens_details": {
+    "thinking_tokens": 958
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

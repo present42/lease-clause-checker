@@ -1,0 +1,75 @@
+{
+ "clause_id": "c27",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "e1fc42b9d4bded219e543cfd570e9466460bc11f9b16bc7314034f5828568a6c",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant may pay rent by post-dated cheques or by pre-authorized debit if the Tenant wishes, but is not required to use either method.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:51.204869Z",
+ "text": "Under section 108 of the *Residential Tenancies Act, 2006*, neither a landlord nor a tenancy agreement may *require* a tenant to provide post-dated cheques or permit automatic/pre-authorized debits. Because the clause explicitly makes these payment methods optional and does not require the tenant to use either method, it does not violate the Act and is enforceable.\n\nVerdict: enforceable\nSection: 108",
+ "finish_reason": "STOP",
+ "input_tokens": 159,
+ "output_tokens": 533,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "U273av_9D6LXyOgPnqy3kA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:56 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under section 108 of the *Residential Tenancies Act, 2006*, neither a landlord nor a tenancy agreement may *require* a tenant to provide post-dated cheques or permit automatic/pre-authorized debits. Because the clause explicitly makes these payment methods optional and does not require the tenant to use either method, it does not violate the Act and is enforceable.\n\nVerdict: enforceable\nSection: 108",
+       "thought_signature": "AY89a1977HkVjkcYFGwiwLQhMLBxWDhLT9Z-ynpaIDC4RrEGs-81KbDDIZ_VxnfGG1ouMr0UsAB9B6_xD7s42qmsg7AxFrWo_DHvoy_5FjkSLxyV_n5QHSYsUde1dj0buIjBPvAC1JxLRarf6O3a41M9xq9ylSMoueEGmm0Bm3zQFaRdvDmFmTazjE3jyKSnRm8fCUOn-PBFbCoox8HEPWAX18q_i18XFUA8nAe7ki4cE5IrHwRGCBzu50rBh6cFdmAZevMtPPr7JP95Knnsv0HIXTXV4Zbtez461Wj5zVuaKZyZSpDCMPLoLyfYZAVeErTUyYAvfjBvGga7H6YxVEEuVD2syicJig-1YbcRCO4WSa56sLeMZCB4k4qH8XVTcJAoaRLaPImIQdZzMUXCwwa8Z_86QwdlCAvcWIIKRgrq-f3ga4axGUzfEEjxoDHncaMHwWQ_4H5xHT_sprW5DwTb_ILkrrzwygWZswsqiOM3bfRJ3ggDkmFD5Mlj8o1xIfnifWbeY_17CI8ZImbXPyR3fEkcgIUQER_2d3uqYHxH8_-1JnIL2mvC3P6nYuCSJTKuGWVp5ATb97IAGRJCQ9N1T_ir_SKnfPDbWn0gCBnNJl-rXAHSwQ4FvJX65O5vaoVPmvuGYDqiRY3-3gYu9J7Y-_fCRNLfxn1zNCYPrlqYsjfE-VVyN2irkCQvFDJA_0v_4vieBrIFJ7fI8ZTwUlHYFd8fgnNwxuVAB9evTbZ-fN5pa4BDgUetkRWath9OxmfJ5KO2bnacpvbp5DBSw1JM_g490OtSUvsrWDqDCi4Z3fRbtUR5A5gOILtRAfJwANLRzSgZyRnzjbjHas-L8fBDKHaPKSWXAlPB2INHSf5AouFw7U62BMcP_MSs-a9DQ59nGvOVvp2I38XxcDrkWv5a4gqNDDWhq_n07EX_1EDEKOG9zE0DAzMNfZ4zRjBCGjhXKmkOXXyqrPU18duJHlvdEJUIz82oy4Ed72GPYhzT-VL0wkU_tif_cRK0aCKn1HKj93gYVH2MP5Um2XwYuJzz1f-Ins86zWENImwGKiWec1m-qDEsW7_7r0hljHadla9B9DnPyE8a4a4kfVSfVx94EEFMQ9gtB6HryNaS5OXIpeVLKWw76nnQFPt_m4wY3FgItq0SIupsrr9Ml5GJnriu7yAGe9IzTc5ya00TsZAB7iuytI7lYfI97j82S3ybiOFDbCQ1lv3J0lTIcga1S8SIVQklrgtEw8d90SWOv3wCVGoo5Gq4jerNbgfBwMk3H7gSAkIeRNsxXuxGMzt9l7PXDqL7cixAJ8Z0eNCrF3oRXBiXh4zWhzRg5KeBzkNKcDPEI96igrWYvCCeeUYTLJJEfrBQk9gSNlFEHun9U96TzDUz_5Aurw677L09ZoQqlp6dxcSAWvK9384NZ8EnBQZ_7H-UaSz9mZHwHRtOEpEiCdBiqbOc_5P_YDRDhBiMuRV056YK86FfR0h_Fo_BuEa2TF-hmroVdFnAIP2yeDu25xaWdCdXofRHmdnQzbamMN28K71X0y2dmFJQ4lX_BJcnAYbPwClRO6ixM1E1x9TpI9palS-ZofePR7wl_bEjDhK-QTLyZ0-5FjwB_zofxzH0yDWXwo-NgnN27xxN-Bm26GfABGAB_PkMIBXMuRffD4NxeBI1vchWCsRyLRT1Cr14TSIULnmM-qtNWHqjlLYMDBp8ZP22QHHII5EnX6_RjWxau1oWLcd77pUMUea53Ain3xVzXjiAKKVuVf8F7moTyut3HSZufNB1osxFpNa-BI2Ew9eOn8x451gL64qTiew-txlrXpU_5ZwQg-1UG2_b1_Yp3oavf5xVwd2GD3lHg8r8IT3kdFVvRVkHHySJp_zSxgfgoGDG9Tjk0T-QH1sASt4cAKrIunfP52rpK3iAxsksQ-DW-e2aKGO60PjFGMFWux_UGbtdYONgAf7ywZD6QgpDHpk0-5e6vKEIhVKCoEDFdS0TeycuP4V-D0cG5gul7kRefsImo9EKUyBPIZ1f_auamhJTFt0ybK5R483D57_VklWZvPV9AIf8N5AMqDknFLbM4g4pGIGRMI7xMC2d493p-pFmPheVqBsBQ_CAGwdLApqspccjbawESQRDWJ0i5xlpQB-m0vHBmxhy4-34Z1FUVLPlzhifqrb_VNY6mKzIqINQd_mFQKDOPbhzEFYLkwSHvO25UiD4V6elmLieDZ1s3XlWXB5S2tFnB0Uq6Qrek2aPy5QRHXBsqmsPBlywKe4hFq6qutmt3rWJGh4i8yE1WsaGThcNJpGMuSAa78ZwF7FFcXsfCTJw0mY4PM8qi4gwea50koKdtHOCTQsaemU3kOU_C8xfRWUg8NH5Pr8s7R3gZm1qNGtWcAB0s3e4VO-e0GjceeB32B7kPa1oUz_4imu-Zdv6tJu4fiA6Fk1NBX4mqrauDwFRzin_tNY-j_UOhbieJ9TvBc7ohV5z-485_PKVZYAoamPLspfDt1ZeCYMCb7IAkmEBdpInYtUZsbjthyH4AHSz6v0SoNANs_nn1acfaiiO3zj0Jb9_uHbf0iDymfsgYp6DyiY="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:51.261887Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "U273av_9D6LXyOgPnqy3kA8",
+  "usage_metadata": {
+   "candidates_token_count": 90,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 90
+    }
+   ],
+   "prompt_token_count": 159,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 159
+    }
+   ],
+   "thoughts_token_count": 443,
+   "total_token_count": 692,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

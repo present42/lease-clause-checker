@@ -1,0 +1,99 @@
+{
+ "clause_id": "c12",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "ecbe0441f38f686115e173e5cd741f1ef5affc35214873ab4f80564d13e72e8e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nTo carry out repairs, the Landlord may enter the unit on 24 hours' written notice stating the reason and the day, at any time between 7 a.m. and 10 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:22.800280Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\",\"reason\":\"Section 27(1) allows entry for repairs on 24 hours' written notice, but section 27(3) requires the notice to set a time of entry between 8 a.m. and 8 p.m. The clause permits entry from 7 a.m. to 10 p.m., which is inconsistent with the Act, so section 4(1) makes it void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6450,
+ "output_tokens": 848,
+ "raw": {
+  "id": "msg_011CgyJ6iq7B2wiriqhyqyrp",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\",\"reason\":\"Section 27(1) allows entry for repairs on 24 hours' written notice, but section 27(3) requires the notice to set a time of entry between 8 a.m. and 8 p.m. The clause permits entry from 7 a.m. to 10 p.m., which is inconsistent with the Act, so section 4(1) makes it void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6450,
+   "output_tokens": 848,
+   "output_tokens_details": {
+    "thinking_tokens": 683
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

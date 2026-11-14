@@ -1,0 +1,110 @@
+{
+ "clause_id": "s03",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "46737a87e1f6e25c0c8f43f1522955a85b72a738a46b9c282df5ff3bb428f10f",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nA prospective insurer of the building may view the unit. The Landlord will give the Tenant written notice at least 24 hours ahead stating the reason, the day and a time between 8 a.m. and 8 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:25:11.288819Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"27\",\n  \"quote\": \"To allow a potential mortgagee or insurer of the residential complex to view the rental unit.\",\n  \"reason\": \"Section 27(1) paragraph 2 and subsection (3) explicitly allow the landlord to enter a rental unit to let a potential insurer view it, provided at least 24 hours written notice is given specifying the reason, day, and a time between 8 a.m. and 8 p.m.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4558,
+ "output_tokens": 132,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "N4D3as67JvnMyOgPj9Kl-Q8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:25:16 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"27\",\n  \"quote\": \"To allow a potential mortgagee or insurer of the residential complex to view the rental unit.\",\n  \"reason\": \"Section 27(1) paragraph 2 and subsection (3) explicitly allow the landlord to enter a rental unit to let a potential insurer view it, provided at least 24 hours written notice is given specifying the reason, day, and a time between 8 a.m. and 8 p.m.\"\n}",
+       "thought_signature": "AY89a1-i1dn9LBvJiILIpsnDWhpubnynEWIV4ikSOK7oHpbEoEo3oUacEwiu3QTh05JJ8tnduB955ibnTi-rQSnAZ-g-1BA6r0zmu3734dn1Eu6zzWC8D5hI4oWmTsE="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:25:11.630222Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "N4D3as67JvnMyOgPj9Kl-Q8",
+  "usage_metadata": {
+   "candidates_token_count": 132,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 132
+    }
+   ],
+   "prompt_token_count": 4558,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4558
+    }
+   ],
+   "total_token_count": 4690,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "27",
+   "quote": "To allow a potential mortgagee or insurer of the residential complex to view the rental unit.",
+   "reason": "Section 27(1) paragraph 2 and subsection (3) explicitly allow the landlord to enter a rental unit to let a potential insurer view it, provided at least 24 hours written notice is given specifying the reason, day, and a time between 8 a.m. and 8 p.m."
+  }
+ }
+}

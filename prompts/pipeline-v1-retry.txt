@@ -1,0 +1,6 @@
+$prompt
+
+Your previous answer was:
+$previous
+
+It failed a check: $problem Answer again. Copy the quote exactly from the section you cite, or answer "unsure" if none of the sections above decides the clause.

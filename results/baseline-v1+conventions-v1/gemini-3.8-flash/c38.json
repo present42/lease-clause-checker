@@ -1,0 +1,75 @@
+{
+ "clause_id": "c38",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "f2c9fff27ea3c313b6ac8f52895ca17505a3cccd51cd30a4dd2e23ac646e3eaf",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If, after the tenancy has begun, the Landlord and the Tenant agree to end it on a date they both choose, neither of them needs to give a notice of termination.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:09:06.212973Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, parties to a tenancy may mutually agree to terminate it, and where such an agreement is reached, no formal notice of termination is required from either party (subsection 37(2)). Because the clause specifies that this agreement occurs *after* the tenancy has begun (avoiding the statutory prohibition against requiring an agreement to terminate as a condition of entering into a tenancy), it is fully consistent with the Act and enforceable.\n\nVerdict: enforceable\nSection: 37",
+ "finish_reason": "STOP",
+ "input_tokens": 165,
+ "output_tokens": 1110,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Ym73avPQGbfFw8cPupjZ4QY",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:09:14 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, parties to a tenancy may mutually agree to terminate it, and where such an agreement is reached, no formal notice of termination is required from either party (subsection 37(2)). Because the clause specifies that this agreement occurs *after* the tenancy has begun (avoiding the statutory prohibition against requiring an agreement to terminate as a condition of entering into a tenancy), it is fully consistent with the Act and enforceable.\n\nVerdict: enforceable\nSection: 37",
+       "thought_signature": "AY89a1-U7Pdaim6jPykjVIX_9ire7wt20hAHELffloBfxxiMZf0G_RRXbt0DgmOvgA8Cgj4PBOc7vzSqK1_RYy0qWyVFKsLU3oXkpJ8Y8OoNv5FU_67x10a3QsQV8wKorBDyJWqEdbmXtYsArEfOHKvb9QZPTWaYRHVXIn4OUpUCWAtRTuQELAlOLNii774xoHSYrYcc8OhC0zFiwWpyEtQzDVuGQZmY2jijC6yIKz1S_Zio1qm5ObwjTfhOOHykpkttj7GJaG3OnJwIzE0fzmMXXS-UXC7pfA1p9aaFj68yAPPuB2lMXQhhee1EOOq5umkW_wYkscriPYeaG4VudzzD_IPlM9JBF_P5k7xn9_9k8tRdL3Ac92fVuAM-6r0SV4uJ4VfjfBhl1_OhBVArGUhpGqdocM36LfHTzg1tKwrWvzzivsvXQ2kV7BBOWPLEbEJ72NsZB1B-b6mqrrrPeDoLoTi5PoppwrCeAo9k-j2oc-3Vo_ZU-WQsJpd6l6jwRuXw072ongwYad107D7g7i_PPuG4kZV9B2EZf8JYWFr_dMeidvQfZOWMg5Ihl1k7GulkJfiAa0zs55F8rZEvvPZSo6C_KCZ7HQA-FgeucSbnyVnv0QJgn1q9cQJgAHLJlstuJ3AYgRJACKwe90DGu8uR9a-hfE-c-bI4uhXmX97PcPT_WwcWISRG5Oc0nvWbnO2T240JiuKIqNXnd77ZtJqzjglzXbRS0dLAMh4f6cw2BakBGdqi85USnFEAfQ5CjAim3Wq7IkpBCv0Cs-kjSEAVRdMrYPEE0PeRohks8_WldlmHZzTRPpU_n9JO0uuyQyogWci8S3ympWcf8eUxyEgm191P2XTbRwMPtLUT8p63ef0uxrnKNtd-pIaqZ2Mo0YI7gAvPxuR_kDM1A-e_okOiwDQZXxdC1GQ7AgaO_y04IoYd9Gx5SCk9uT-L9GEs0P5Yy7vMDERhQ98BGvFCpqPAE7GdZGjrspMmRe3pWruXTN0afu1hrZD7Gh3rqdnyDIsRDpf3rmWJQZjs-Dd4HN50kQjrY6KpmKYXXRqNjXXc-Vrw1I-2FFtVbfU6kOFOxRFRr4rAD1Fly66jV3EwDJODK6YwJhl247Q-ESHk2WfkPUD3qz1tN48j2gsViotUqMUyMBX1UDvLTa7KprVfWF3WyTbjN6_0jozNvsuMtusbmacH0gWApfWv6CqJn7AmBNW_1Kpq1su1dohyiFYr1O1JfpDdy38hOZRutlMREW_2VcPkU-vC_STxiH9LUJdubhMaeOA-Hg1BaP385cs-TtdNlLBKB5WBH7bCXMJm0yT4ARsQsLi42p0_4yNwwyXvAlecwMWY3_NgqI81RSw5eAnoc6iZ22eDAGNROI5fcsvUM7bRHZI0YmG_lbekLZdAYpF4hOxhd171YN4KG7fy413Pm3feL0FYKJ3DZdgeq787bkULDv9IbwbF6lnqApUlNO86j6y6gYRP5k7twHxdDr0HZrVEiQkjJSW2UdDaKuQ3OsYE0MGqYKBjazZsr5Yy_BOpaeMAxbfgch3oQiNYV9dWXtokgFzepWQzvs4chFoy8BP8RpyMuXSxC1vwvjmc1kuh3qHhvhW_A4RGjfmOCIEbpL_mTaIdfJBjQ3JNq5RMNEe65PAhB9HrGa6ndfIDrQSoaj6KgC2IlHH4fb23eTMBb4s4ArYyzrtskUSCcfuEF6NBHGlYAbxZS6f-Xny-QxdAlBMN5TNApwasO4Ut-SI273Otk9k8w3ULV9zixzkPfbkuhDnqYA7DZdyBAY_Mxl9i_yp_BdR5P-L0IhD8Iv9I1NIKaHe-9IOrGZVSbRggNcYMP0NAeM02BepQoYQ6jNuxcomdyhnJMakVd93oUBoceanGCKOGR2u2-6Yx9CquAMMURcOj4kY7Kt6VQI3hdzb-zd-1p23Kh72nFt3uqTELLYfq5-5xZKMxmJq4r8SEdwz8hqo_wTGvk3QmfDbo3fg1pN_sfdySPC9pyNJXkSStnu0V3QWHBjcto47v1UZZisH3UFJHShUDx0KEvrZ4qqUy9SFtf0Fb7nuuZ4EkGw-RIWNeILSkwZYA5UMI6zAq4uJ8ubtVMcdlM1NQ4M9abMGED6G66MjbIY8jVsd57lQnMljj27Uw2Psf_MimXj8KHPVzx3Z5IAJBIMpF8OXDbJEa_aaamQISWkKj-YbS_bys1SPySGIztK8M6Wb9qgd1TnSyTrGQ_pCZ3NpiF9MjxJaDkO1LpC8td2uyOfdyjPJ5VIzmgTxIMLssGfxnKaJyDZwHJxIEyu7aLoSyDt3IvG7ztLazrCA2VxwqmhMzY9OrqdDrFkLAfBH08Wf0AMYC4R9X4plqP4wwEKUqKCnlGKXx1rwBi_Nd5b_FiHEevHjNv5e12asdowZzIvzJyqOE6HtoRX_zBUvT0iM3MK5eSOrn6lApdtcInGwNkTCXmmAh8oalVj-fVHGfJEtGZx_cdS9K6fA9rif2lUuX66bJXfXw5U3dDSv8cMM-T0YnF6AkKeF4uLP7aFp0K5QD7556TvRLB_V1Ea8eJUMWh-Ox7lYn3-Bu0bgogfNuTC1pw2UmNMt1lgYXFlHPrj46Y0KJh_4rWjq4Ty1tH9peKhG9TuJD-1k74nqSLrQQREqds1PaNgN-uuBlTwS45s0XdT0Eus-oSgN_XuAJAaH1_ftnEfiuv_nCwsOWgu8h8_wlAFIL6b5kPs4ci6N1D2yPdjWa-_EPxXTf0xVx52fzxrvLoRIpmRRCbOtgpFGFxWQ1Xtfv9aac9_KPmIOfS5cuqMPpsz9fUEw-htjdSiC_1f7SXye5ImMNhUGH9nEwhtoLnfMOSslDD7v-sBqHZSWepMxGoh-_eh359djdF9WQ5ithnoDIZRBTybumivGYklFXqbkC3aOP2shZaYEXIS7qO3eCd-F4D6H3rrIq3GulwdsPUgEm_II1hrzw1DmwhRlA4He29vquqUCIdqmAuohBUGvdg2rU9ansROpIUTyj5OoMD7YC7u_X_kmv6TzddEt5rTvR7PNHiACOsNed6nZfnSBFPcTt7wIP2TZzoqnI41naScNc0SxClVbNdm-QoGvl49vJU4GDBDXZUBptC04FgZHsmdmid2UIr4jhs64-2Fv8Ve-RLXyjxa7ufkzshMAbB9KlmSHbe6mPyK5CJhUIQZBRxR8ijcL3oBgIW7wEqIHezitmV1J4_IqKIg1qlzFcx5718DWeLVYiFdkrsOZeSHGTUjCsaInZEyKuootfynDv4Gn_9_Kv58qcZdplfKEMu3r7uFqwBdWaUjixqHXjJehTsqQAXCUWeDUc0KkFfkCe_LnEe6zfuuuhq5E3IsSlqcDXiU4w7O9MgEsW4A-J4M19GJZUU4XbdQwVvmVqqIxaig2cNAxHWXMmjilkf92o5htTzxk_i1BBTaQY1eiyXQfevCtw6ayAf-Qhfe2p0aIK8AJnkmfzVUCfmDQbT6yKMpYj2IdyVCR6aOvEiWlJNuBqwa42KBfQEQ2bbCb7x9b2y5lesShulGC-OQry67LAcOdn6WoX237RvXcQUx2cdb6yA5KlGGcF26Ts9a5-TLb-aTwldUNOL-IdA1ptC1TcQ6NEWrMSnwxErA1OiWzodhp9Xr08zbRCFlLAZQprphWYCMdQFofWZXhTCAGWDhhqj1daqQeQy2pbAuYGF5zJ9m7BgaFKdMW2LT-QNxpWc82f-UNGMzffbQdRoOeX9SwqFgXV_YyiQrzmK4TM3A8SbXpwE7D5ytvdKH2d1VfLpJL9gUZQjrDtW6AEssxvKrEDJQzvRA8r-SJT7PZqYYww9JtCRygL3hFbwf_qKqBIy87UDyefx8TZe1CmpV9_hHPxjZFj31BXOz0ZuWQjknoZlYM-9uRz5rl-YrcUgi5B2KusQND5flMebqN9GY9vjZOiYvpjltkxtUuQ6UXZNY63lJp04Mbby4eawwgqo8Eg_wr84sWCnPyPk1hK3kdznbz9rEhstRtthYuk-Q8uUmEqWi_7YoQSEEO5gbtSy9JltCiwqr9P39l3E0ClcPa8dK-WIt2H6gCI1JLTFGqALiCNr_9ziszD3YvEj7C-l1RnvJOMUSg3qu-ahse96AN2rDHwVNSYDhzmifb_QYo4SOAG2UUNGH47M8L4IYLtUlAYNEr2ud_YVcfFNX9IfGrb6ZEnVAhHQz9tdd8fBDn6DGyFXf4XXZr8jiCcWmEATZQpbNvcM3c_afDuqbhkjOUbwOIJrLtDEARp_lS7n4UqC1UA_AwjwESOM9HeiIk5htx2FHuAJvGgeXXf9Q3zAL_UF3NE5k_Q5BwqUt76Wdkv1xfaxUSF31PtAuAbZkBGVRpHzu64mNpkF3JfM8uG3Htky9PLNZRXm6vjXcE8djJS-zm_L3Qz-gyyGOszGPf_R0_bNU1IoznosIC19o8TkfKVEi1IF2X5GpfzxniytNR--m_1kju9TqhWEfsaRtHqZrJN5-NmKL4v0RMaIS_IOyibRhrRK-I2nBMcgxFPdeO7I0coj83wv-rpTGH_MvfRkA34mCTsohrsjBU38PRPHFwnW3b4ROY_LGaq5b4XrL20YhiHFZqKFlhls8NZEY7EkJlFfL8AgsY18kVFHVlpOriSmGIQJiAg1hIHCdjoCKf81QTgljTsNZ9nY5CV9Cr8PwMeqF3lCWTbSqAUKnd8pqRqe_eYEth_oK-9qUs-q3h6J8WuAUGoFsB_-exkHbfN5UG0NW-7SZRoEX_QUr8ik-3p_GnFvO3JpPOenXLcaPzeWoILlhoXNsoQtqAHtFnSv2pT7Sf3HvnBTMjTBKStaj8nzh3ex5bcxFLxG4F79c8_IwOKRd1bk2O3KYiPeTwhyjZnES7c-NnYz89isi9yCBnfyR93J1t6kYyedxtoxUmP5yXZFKGDVGECGQhddN2N0RhCCOptPWd4mKRmy_7X3DR4eEq7bYD8e9Y-MImQa2JH9-vcVgIpcSoLPTtcFKUBYkhXLvIsNNiZzWit5g=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:09:06.419955Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "Ym73avPQGbfFw8cPupjZ4QY",
+  "usage_metadata": {
+   "candidates_token_count": 107,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 107
+    }
+   ],
+   "prompt_token_count": 165,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 165
+    }
+   ],
+   "thoughts_token_count": 1003,
+   "total_token_count": 1275,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

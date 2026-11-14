@@ -1,0 +1,120 @@
+{
+ "clause_id": "s17",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "3743c5f39c5c1a1be4283562c367edea1ffc8eb97d9432d42be3b5bfc51a65b1",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the rent is paid after the 5th of the month, a late charge of $50 becomes due.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:49.163965Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"15\",\n  \"quote\": \"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\",\n  \"reason\": \"Section 15 makes void any tenancy agreement provision stating that a specific sum, such as a late fee, becomes due upon default in paying rent.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4409,
+ "output_tokens": 852,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "5XD3arbjDPzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:55 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"15\",\n  \"quote\": \"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\",\n  \"reason\": \"Section 15 makes void any tenancy agreement provision stating that a specific sum, such as a late fee, becomes due upon default in paying rent.\"\n}",
+       "thought_signature": "AY89a18HS-tKg7u_rqDYz_FI1lDYLV_NdoUTJ69y24i3wHuhGy8EANBMr2Mxs2rcvn9K11LFhwbOiROliMkGwz7XMfsh71TD5vQYHnvjpXvVP2F0BXr8dxKSvP4v21Te5aJJGuEdlDcVZj4Vh-3DUavVXtbraDU_pYhfK1LrEyv1nUdfYawiYCRh57h0HJUXWsdfn56lJc7kPOyZBvqiKaO4LqvLsdCs30XhoZjSVMcPBE6VoSY9_PcdTUjiAGDpvUQOrlPdhTPQbHtJxLh0rYv4DJIoY87DjyKJdRwt6GqArWt1WOeJC1_phHdduzRtzW899c95MdGBcMGqcpcAk0XG-LI_AeGFNCn6h-TGxfsLZ3hRUZCQfaQ0s4DFuWmLoGit1t1VT9LzqZe9V-GTs6Mi03GjbGarSlY0kjeGdHY65GAldrQIHX7s0Ldcl3mrODro0Ie5yxVIR7dTAXAXY2IkRTPu0h7VHECwP2BzCaJ1FWuhVbjpkUsGR9e7ctrsR_RzmiIPnvqpvrecsgnKGcmZEeecL0VjiA_xhbm2g-yKi5hYm1_et9tXQqLKRsAPAAU9QHr5KtUyI6J76Pecl1t_snVJ6b8je0Syupn7MXx3nD-OCXEg2XZalWi8RY4X_Z_seWHB5ueCL4CmblccxosCOKd4tETtf37TP0Vs7ikE9pFNaUO2a1kw-O2hEJq5ziHYBgdlNv6f9lJmRyxjzhuYCR7kwnYXplbM0e_SuS6Krv5kIXPglq39YBqQr3KChxHx1qyBT2nA3o7dEVJpPLmKYDWJ9KgOkBNfUE2IBOFIv7bHkGqHJgiyMb9zx2el6FI4deTY3D2R6_C2QDEHcbO6cfB5vHpphLOsrqLpphC0HJkdpKc8p5_X3AqMg6Q1hEnBZrqtD_FkwGCzixIBDr4OT-8bD8MJuwQzOfBcIdhN9nrSqH527GvV42L-UJMgUFamYldSbIw46OIMgTn9WHYKK9BfEmSSIjuzAmIRDESkMB4L2JJ3xCPctJRNTqD1V4VZ8KWnCFMWxdmZNF2_DTTDK0yRmwN5MLh_LpYfqnfSTdqTITOqcsCbYBtFf9_nMzj1PlX62QLjUDw_SJGR7Mgsc8mQZfWIhLzXoHV_XDbulHQC_6VLCjogwn8CWY_FeAGYO__Uu2ZETl_9t1CqHsv7XfeFdQUVvKjAF0SzoorO5yTnkFy2Ymvc9hWpz293Unbs3hnlXV9w8z_HOErkhbJewGnYASb-3z55NmZGJJYlryxWgYQZzmAy2BLTOa_RfbMrMGQcRPfZvQlHqu0JyC4thpSz5sle001NndpJWD1m7GOHMdKZhy6IVMD2DxQY13HKUXJm-cL2PTfZwjhbiFdfdhWdvSwJS1aal4rbLZcOeTReXq7woSMegB7nHFLDi0dluH90RtqysmGt-gOP1etZytQpYVyY-q_P77eit236N9ti418mOgd0IBnMg-XkCb0vAkp-Dr9jhjjuR1Rhs8XCQO5Te1Ux2ARxA7xPHybEWbb2sc_PShRi1p_VHVbCTqXBRFPPirMaCUSyDdGG9S9kJMRII01egfJJyWNBLw1QD4-2RsldSFtGWQZmBYC_Ir0dt8ivQ3OieRcOIIdaG6DOa2vUWE7kqbfcNBXTI7slGxCLWrNag2s7UhoFI23P2RNjRpjEACsIGzktNy2v3j2CKXfOm4s2PKdbCGL9-jQyMU1QJiPGpp-pNy4P0weQGLoYQOKnPorCimevnSgrxZI7-DcblXq__OfGtw9yPqBBeZaxNjw0DNeFnWBLKxaxfqQ1y2oV5gSuU73SHjLI7vdxG2CwyKfXwaEDTvAQthWR6lN2e87CcyC0-Vi-5FvM8sYXbVNHpZ6Fo8q-eH-qzhQiunY0EbCmxHJoBFqOYROeG3KxNOkmd9T3o2LdCAEnYfANxPAtx8yZyfU6s2ZgfxgbFq5DBW1btC1L7yQdYl7YaeyilFgg0hJlE2dtwX8YX2S5Qk30157iOXas34kGxi-V9tOvJ_9AY7w9ISUUSVCsjpp-yh5YAJHLMzybBti72QqBpxZsY4E1zTihOYa09YLPADkzeK3nucwqgLPFQMbntUt5ggbhCrS2LipfwrFp32e7QYxKBFZq6KvR02mhESmU7j_QOnnvnvI1LBzgsXb76waKDuJgHU_UdzqcjkrOxwJUqt-bkJc23sSFJS5WVV1mm6AHX7FW9EgOweNIfvAd34zloJpCU-Wnat5p5avAZIDt-opF71vpm4YBBAFFbOaybMyRSSEt5NZIVXVKEVTnYN1BvFhBpVMHwpZKIXhDkmU_XiTKNS8AizDU5q6ZHyDJWjZEVPYPDz_FBQKUnWqsFb_QpqurfTrwGHM1jRIBt7WybB7Za2TGIstwWWRMGvot7lygcqAR8ieXPLUVVpixDJDK3IGGPHp7TKwjVPoMEsEbkeRl52rYJLL_-aAhb__uVs4MICmLbr7SSG-xugM4Na2PZgtP5NaUGYO68WmbLzjIYkaShBeE192nxehHsQO_vdDB-LQifE-MVfUdh8E7GSa1AK07MCGVdoSvUmCuWTCqqV-tHUFrVYdkoNAIBs7MkkwbByXTertXwdTD-soNIBWIKo3I2jyKDKA7DdyBDJSJsqZ67qGMem1A85VwI7hwxFK5ZJc1ayNRH_wqxsTYNa_4-Eiiv68x5sNi2Bf_-MgsYLjLumS-xoRY3rK6Mlpbw2yXwp209un3tPzMTt2s9pPylayAoO9UwgPat18glSaoA5Ls-K6_C4a0p_3WEJqQqG51XpXiizuKAi70bVgMGBm9tQcWtO2HjF3JtRnrci2K33pzh2pEwIn8KHy_6gBL91ewesmfdgarfGUzwaEQxi_M0Pvv8FFL4_hHiF3bhwYW2A3qDvzW4z36JKzgpwOpqBu-8NLgIMMWNROMXaTD-l4zDid3MvKTZrP76UYtGJri2mgSoOmuSsnnhsA9sEF5FPTWAbRa1bI5ybSMAIzM0VwbQ0mo8hiSeEAW7yNKaqfi-3-K9U3Rrq6EpsRRuCCxSRaHQ5QsLzw6YRTYAzalVblrGF1jDMM3Uz2rVRb2Mnm8UmcCxiPUlTt4n3EZeE8VDd0UAdF1Pv6IKHjEFQcVvd5wJpYS2E5pWI1lk0L2gegPMsih2qyVox_RZObX1OyDo0sYQcT6Br-z8ks_dqxzMW4PKAWgTvP9zahNPuthVkAP0cKUgtierPh1B0bz3CIe_MD1vptMpFx40RjFEXBocmc_RFlg4Sl30ZjTd-aERWi3cgi8OJ6CyZjIsfSiWNC_IhjEWSqGswFKRPaQ9xupnt6rZnz5QEwXZdMc6jJYWqT6ebMWV1odyuewujPZ0ug_p5k75o7aPwgj9BtaPkKDdEN7zgR9kcvAd3A7w9eeRi2ANVqk_TJs83rhmPdUVT-dy1v7TypaON2OSMTs52y8Aq97lgLxTG9EGotns37aKWWIKci5pSgOIaoCiw4DQID1hEq6_LHYIAXazdZddNO9qB31IOqbCKRQDxmoqi9LfTj5h14jIxIJnWuIMUVEYMi5ltmDkBZEBtwQlf0ia34gluPFMs8fu4CiiOH13tf3QDgZOugQ-jXStCYElkpmiMKGZtO5glix_Do_X0uzS1SvjW_TRPQ-qm3Q2z68h8xcncvwDzR3QckAaE2j91DepSlNPA8DdYc2WDqwDqFog0HIgKEMbPXzQCOnin0U5t1873HX_laDk7KJNdPJBf710qMuKpRH7sqTiVj-GAr1G4ZJrsf4KO8AX4QIOAMHOemgrcfQWUZiOgwtRyWIr-8xU_plOituR00NkQxVO-s86Nj-WaHmZCBCDQdx7NQx9mGZ_gj2GzVUmEO9fQdI4mfjkInGApq3EruNCqqWtdOehnDd0vtNoBm1T9Z5TCibCb0OrivqIqh0jQeI9tFaAdYShqCOz3iiNjIZ3iwvhf6Js0-nAFnssVpHiK5c7TtUcNQ7vaMZz12OWrQzTW_cdz5yzg1Cvq0t07AVstQMPbemQdxOzkhVE9RnZuZ2BC0bbg-ooeRYYvpgokaFySRQymEqjzz5-6rAZFi6jJGffMmtJ_e4Ta2_5mhOVEiqwWnEx8TAxGB5MH_59aCUrkex3FyG8i5eSHkMHqZDxIWgE3tdzQ6BaZ7KKlj5sv3sRucmnzs5o51_tJrIwhQjZ0AdsORRaXa9aELvWTTwITUXI8jd7qSi1iIxDMBKCoP62FGSpem7fL0UYrSbW3Dr7IbQKxGOb1PLCTaiA3TX754NMeBnwhxmxNlSfQzJErvhSGCNQXCgos8j-QYEO7xeTK7KzDgmXkNJa7YeoKc7jAxj_lrEAxh9FiIsLUgTZLC4c6lqehrkZr4IZgfG2rQ1fkOHpqPC_rcrRFyeN5RNCq9z8oqlMbYfHtSMVVNCv_-nlUCb2zKuS2rPYiOM"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 284,
+       "start_index": 54,
+       "uri": "https://www.ola.org/en/legislative-business/bills/parliament-38/session-2/bill-109"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:49.209334Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "5XD3arbjDPzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 111,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 111
+    }
+   ],
+   "prompt_token_count": 4409,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4409
+    }
+   ],
+   "thoughts_token_count": 741,
+   "total_token_count": 5261,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "15",
+   "quote": "A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.",
+   "reason": "Section 15 makes void any tenancy agreement provision stating that a specific sum, such as a late fee, becomes due upon default in paying rent."
+  }
+ }
+}

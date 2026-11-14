@@ -1,0 +1,99 @@
+{
+ "clause_id": "c28",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "ba6aeefc37cad137fb1a9ca6ceebc6966c9d5ec084998ee89ff68764fe025b53",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may increase the rent by up to the guideline amount once in any 12-month period by giving the Tenant 30 days' written notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:30.188260Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"116\",\"quote\":\"A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice\",\"reason\":\"Section 116(1) requires at least 90 days' written notice before a rent increase, but the clause allows only 30 days' notice. Under section 4(1), a tenancy agreement provision inconsistent with the Act is void, so the clause's notice term is void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6438,
+ "output_tokens": 551,
+ "raw": {
+  "id": "msg_011CgyJ7GTNoS4jGTmy6e6KW",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"116\",\"quote\":\"A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days written notice\",\"reason\":\"Section 116(1) requires at least 90 days' written notice before a rent increase, but the clause allows only 30 days' notice. Under section 4(1), a tenancy agreement provision inconsistent with the Act is void, so the clause's notice term is void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6438,
+   "output_tokens": 551,
+   "output_tokens_details": {
+    "thinking_tokens": 401
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

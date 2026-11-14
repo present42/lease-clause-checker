@@ -1,0 +1,74 @@
+{
+ "clause_id": "c21",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "91df827585f4cd338eef655174da7b2d1d6f5354b2bdd38488b07f7e75b25d52",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. On signing this Agreement, the Tenant shall pay a rent deposit equal to one month's rent, which the Landlord will apply to the rent for the last month of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:42.852457Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord is permitted to require a tenant to pay a rent deposit on or before entering into the tenancy agreement. For a monthly tenancy, the deposit cannot exceed the amount of rent for one rental period (one month), and it must be applied only to the rent for the last rent period before the tenancy terminates. Because this clause complies with all of these conditions, it is completely valid.\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 202,
+ "output_tokens": 107,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Inj3aunhOPeuw8cP7a2s-As",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:48 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord is permitted to require a tenant to pay a rent deposit on or before entering into the tenancy agreement. For a monthly tenancy, the deposit cannot exceed the amount of rent for one rental period (one month), and it must be applied only to the rent for the last rent period before the tenancy terminates. Because this clause complies with all of these conditions, it is completely valid.\n\nVerdict: enforceable\nSection: 106",
+       "thought_signature": "AY89a18xUWNVcsk_Y89V-Q4yRNy_zxIz0j06VSFXiQ1eYC1rbYgtyHkvwSpicCsVw6oTgaoVNjvsvxyEIdOinhWBiiM-yrZLCGL_E3CMy7MSYFf6ZgI9LeIBsyQgpDWm"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:42.930025Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "Inj3aunhOPeuw8cP7a2s-As",
+  "usage_metadata": {
+   "candidates_token_count": 107,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 107
+    }
+   ],
+   "prompt_token_count": 202,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 202
+    }
+   ],
+   "total_token_count": 309,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "c13",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "6d77381cc627436c7fa85647cd7a20348ccdde1d11224c05a1d4ced0b74f0025",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord, with its contractor, may enter the unit to replace the kitchen cabinets on 24 hours' written notice giving the reason, the day and a time between 8 a.m. and 8 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:23.277742Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances:\",\"reason\":\"Section 27(1) paragraph 1 permits entry on at least 24 hours' written notice to carry out a repair or replacement in the rental unit, and section 27(3) requires the notice to state the reason, day and a time between 8 a.m. and 8 p.m., which the clause does.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6460,
+ "output_tokens": 659,
+ "raw": {
+  "id": "msg_011CgyJ6kruDUiTJPwEoNx9T",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"27\",\"quote\":\"A landlord may enter a rental unit in accordance with written notice given to the tenant at least 24 hours before the time of entry under the following circumstances:\",\"reason\":\"Section 27(1) paragraph 1 permits entry on at least 24 hours' written notice to carry out a repair or replacement in the rental unit, and section 27(3) requires the notice to state the reason, day and a time between 8 a.m. and 8 p.m., which the clause does.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6460,
+   "output_tokens": 659,
+   "output_tokens_details": {
+    "thinking_tokens": 492
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

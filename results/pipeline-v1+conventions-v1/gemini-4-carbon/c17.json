@@ -1,0 +1,120 @@
+{
+ "clause_id": "c17",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "40a17815bd3d804c463d286c5a454c5ef4062fa20d13f35f709976d604857a80",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nAs a condition of this Agreement, the Tenant agrees that the tenancy will end, and the Tenant will move out, on the last day of the term.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:38.968841Z",
+ "text": "{\"verdict\": \"void\", \"section\": \"37\", \"quote\": \"An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into, (a) at the time the tenancy agreement is entered into; or (b) as a condition of entering into the tenancy agreement.\", \"reason\": \"Subsection 37(5) makes any agreement between a landlord and tenant to terminate a tenancy void if it is made at the time of, or as a condition of entering into, the tenancy agreement. Since the tenancy is not student housing, no exemption applies and the clause is void.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4540,
+ "output_tokens": 1196,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "n3D3aqpU-Z7D5Q-57-7xBw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:00 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\": \"void\", \"section\": \"37\", \"quote\": \"An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into, (a) at the time the tenancy agreement is entered into; or (b) as a condition of entering into the tenancy agreement.\", \"reason\": \"Subsection 37(5) makes any agreement between a landlord and tenant to terminate a tenancy void if it is made at the time of, or as a condition of entering into, the tenancy agreement. Since the tenancy is not student housing, no exemption applies and the clause is void.\"}",
+       "thought_signature": "AY89a19VezbDiMGEomKrR3dMHEffOzT7_7GdPQp7-CBKpCaTmOV_2rzOMVSD8Vwwj97oGdvPqcHTy4Qezinn6KvX7SAObHULOI8_gsGeYB-r24ExpvVwCwvOtFBSdNxn54ze0x0AqBQkpeOZgXJOdCFOGo9aq1mwTlefzp2yjF8t98io7Y-Ms2fTqGhVKFikuAGqTIJk_4RgXsua65vvEF7Shx2DPC6JXrZTAjh-SnPDZjnP_9rZi2kMG_wVQFD3Mx4e7gfAAvcVSXAN_NHiB2NFmncvtr1DxWgCOZMVpYbctf_jU_T_0HAl6-oGCCPqqZtbdjyqdESrPgY3csD35vJVOhzsi1LKGiWbcvB5Sg4KIm1xdm2N8u9OjVSd_-YzvNBoobyjkuPMlWVghRelEHsREqppBPxkDeVcv1v9kyB3CJQziQc0cWk1e4jujaVkVEAxMRkbRmd5dNmg_P6YlfJXqBhMFiz1mn5rDqY7Or9Y405sN6f3vFvT38hEujhw7M_UfBGcJHiYQLVrFoqQN10pH3xc8bkbFkMrUVSC1Xa6axxo8dFuqZyEjf2h4p59zJLCrHMx2YFx9ExwenuYeqm-AE7JJ5q2SD9o6JcmDoOKFezfVvsRMQhO7T_zOiUBlljLZzWu2_rU2H2CphMlA95Si8rukVgKD_zRlPlJ4jmtMjYZ6xEnTRYbjADKE_NIDtwuOLGX0WXUzo1Nf5NOS6h6wUQO9bWYuF9P6QOuIl8I49lQx-eIOtozwXqGm3VevsV2dhPFzQFZO2NEBJ65PUT2IamLL3yctKBqsrqSh2yEXQro65ACoaMNKjQyXuFUEfIEpmTdA3lF8oSu6oxa-UUqR3TrHY0lixFXj7KmfoM9byI_9a6Ca9158XgF7YND4tv0R_NGdvZdjXHJYt1ZccUda4iHgWzZyXTYa6c3hijb5MWYxEwGATd-F7nEb_u0YKv1JHoRLFcXB25E4I41CUN_xNLozfSwTwdCAGNWOuiePBjRcRRZ4uLx7Ls96tH-TMoh-Mhm8fiGx_y7Mg-7_XFSorGnPxyGaTQy-YseueTxLdGu5dZfzQDl-iyKEyCSiBmgKU16dTneBWwBybUBC4BYLLTMUNfwxtq4tD3_HTko5MFK1AtwxIKmyY3Sdd4tls6SPo5RDWCah1-qur6vJqxurVUFyoZN_B3uMCqUzSjVa2zNPtHGUcPFJqV8NNOlq6owRFnkj-IM37XPmi95g0vhnAwEYlWBoh_sWrm7fuxLpVh42M3deqR8qFYvHUlRgGxYkgNr3j7ewUB0CYv8sKPs7epXFc9SfPfMHrXJiDwULNPWePrCfwcGUbxfGu_yQVyM3t6fja7vp659-o--XgRHsNDG2lGWKTPCBbhB5qJ6rkYhGsC5dsT9N7c-s_GXNIWoeKkXnlN7-qfgI7NX41_DWF2DlbFokT1DuLOMOKmrQh-PIHM4ERuQExaxAkodC4yhZqTglTFW2cErzUxTt4XNuJIYk417zqnmYoRLZV7u7IW8By_QCCnKiFcdirgqvfJ72mEuAx99q9wdlHIaMPixox4PffuMrP6ORkCBmXQUIDu0QTfCRsurKdET0bSQHikpuA6VPGO2p_x-93YfSfz_DdSiX7jLPsEYL95OxV7XbHc9dT1QuC_6-J95wkVrqpwWUx8temVMl8VEP34EnB3o17fSPl0RcfHjg6zz_3BcJ3PJ73a-rOtutFHV0StFfRdM4bUaQBgnseDDLsUaYeOS8naiUWTHoviCA_PHAKcv4vKDj28JqLzmZF6PB8fgu91GIcJmSUZSlb0wZJw-uwH2ChSfc2clm5L3dQZv4v0re_J4IkbcTrXbefha_Ye4s43FLOKU1opKx3H2bAONJO65qBCREZIrLi453byA3WES9XtK9llz80xecjQR0ktCb0KHkPU6uiSedbSysoAXY3UPbcpRYie9wQER9QId1rrIKnmA7A2lPFcvre5XQSlj1YQeEcUt-W7QobemvVaBSG_aWU36N4Z4ljdDmmBTIv7sn44iyA2hvdSczxbr1nxWa6qFigQBA3hB6kpBtjE5On8M9QElLap9y-R-4wX-ZPYtiByAdn7tol5GZ3Jd1brjl8VXzlTSv4E_tz4Qpddvge_9MJAGVLkdGRQijRZex9gCy8dBfvy7MRYCPYFIeRYU_RVMJFXDAjScDJhbixHJI0580XG5bNf-5C4GhyU20iRnZRwL86PKP9cXl1yc6hf_tbcQtdZoh9Np0wWOpyX1SUwAhRGtnccsyqKdo-FuNg2AfY_msgr_Fj7SkDJVS5VwuXiA0G-lwUh6UvpEISCzctCqPdKg0Y3o62ZfqIa9uEjJ2KMOJ0JTZtfsIAahq_9GHwdm5A1n0iw8JzZBmxJVocHwHF_k_94-jgY-aMCRTf8_0atu3jOe0pWwKLdjhv_nNQ2r8yhHn8DTiByy8xz5pwFBpdRU1MIE-f1GjhohKkA4XaTt0C-b5wScjKZ4DsRxFGT5Fv6-RbR-fEz_Pb6VBvndHpzQJr014uJnje9B6DWIt2Jv4noJScU1wjH5R7aeXG5irhappuSS5srAV5Xrf3AYyNCgLk9NGfO1SS6U663oZ4IA_AP_GQSwZTtX8Yb4EfmbfkUqpfQeaL_mVFHWpmwzIcaAZ5CUnm79sx64pSUgGT5HIDx118c6kwAFJ4XJPV2YHZW2I43J3Ew_YmDhtQJDNYut2ledJu6lasLT44QmrPs-xFwJbv9prK6AYWv15DiOO_TpOW7hpJ8tAaw-DuRq9RR8u4JpuCtyZh1jjnI5asf2fYUcJNW9aMaJLBVysuVEWy8NrhXcn6J0jw3aYBcay7GEx19g_zbQo4oXubVfzHvFWFfRYkIZKs5qO5HUYBP2GxAnBEnY4yXbZ4kcosSj-pzpcT43mA93RQWWJS4fq2y8WaEv3GCDQFc3WhD5XL-kgeiKW39xNxnkdz-gjUxi_w-U41VEwA8m3wIWge2IqKDIYKphVtxgYa0kHqIdI0DPZLfqner9Jh11-MPwhJTuRqF-2U90aNfxbQ8pASDaqwKSD5v9caQuNfQ98eTcAmdV7ouKs32_b336kuNa2RmfRH4H4R_GV2XrsCr2w5uzEe2dNxz3W-NCXp9-evfp_pgxJov8jolF6sIBPOhnifcSxFIWh59APrhKo0xpOr_oI5bj68yirhoq9JAFtzHSfBA4ZPyiOfWrQxCnJu4WINPPzv46E4npYErcNiJvCnVja45l62eXrjkJ12OhgDpUy5m_51x7TM0oGFvRJo1RFAXdF968NSv0Zu_RzMXw8d0brxTC8s-IEnjS2iKmX6_jjhWw38buiZgRmKTO0dONedJOD7rd1YQmbqF9vi5qxVWnuDs4pCb4V416BRpwlkT3tOpAP2zWQdYbW9spdwrrfK9ovb4IVzNVRF_TiE7wHzuRX3Ak9ZP2Qfar_QKNmr1TYuuvQFqh39Hjr02xetL9x6bJJKbC3IO0iq77eWBwC6YZCRbNOK-seWG4QDEwHB6yuBGJw9hfI8MH3PvqiFk5m7z73SUNBVPnHm4HEffi4lCzBUXPshc5F04xQmzDuA4yUviT70FZVAoH9LrMRVg8iDJFbM7undQVmrijfmd0sL7VK3PEH0LyyXlIntPfg_bMVBcDwOeNi5i9N7c7CzzV9K4suZTLqsYixZzmGtHSAi78CFUn5TX48OgP04DdpnM7Teu40C4mj6Ey-dY-Y7MS49qm-jph2FK4nUVgNkRHYrTIYrChRyjUUN604f307bVXLKrs3Iz18RBHVVZme9Lg6AW3gpd-qcgc5iYSKpqamD3wNF5_opvzCJNNgTcemmdkIwnN3YZk8zO7y-ZoPA1OG91kv38N_CfBvbbbpG0pYUGTaMGXE3wNpkWcFhLc64G4F6U2dVN97HEK--1NYgv4s7qfUxaOloyIlR8Sa83viKENr-ML880Lft0zjZo_wWODSkHGY9ZcQZaYTOcu-rmIUsuoQGWXTYW8DVkSPjyLstNao2yhpnblmSg9ORoxf4SrxoXox9PPjvkwtQaKT4uEEnFNOlbxitTQIWUyju77zRBe6C5I_r2n51BDSIpt20wuSiTFMn6RtogGfXb7zsZ0B5mpnllwDakyLbLTDPJmaLgpuUtsW_7CAZasPlkoAdkOPtB4PFFmAdsU44mxHdXUik4ssSdw-f0NNhw4fX8cOXxbrE7ZcSf_vuucx0566gwnkL7zoks9VVtd6P_UGAood3KY39kiX_Uy_2PDsUqiwNriM-uwEUEgPTJKup78dFsxM_rPTl9JVkoxivI5ANfdq5v9W3UmoJdJi0dJfGh3CUKghM3xc8shUT0uLKiN8n8FIHeKiaXHZYC3ZOAYm0uxZlgHyegu87U7eaToXlSyuKuMSQoL2L5RjM_9kqd-Jm2dxAOYhDSPoPro4jeHxpFj-jISyLNwOgYGXD2tIVXNNuXUEHI5LMuHBli_EbwFhPb1qF_6Crny-2f_zr_rDuwymh3YMg432gsY_jHdokdwGk6TbtEDfjTsX4XEP4SBSGbpq9SfotiwX3zzdgJddRjtbdQyNcgf1dHMcpJ28SJZgzfVXVGZHYFAtRez9brnHkguDcP6nfHV6tWTZdm4a42p1ZqQX01ALFU_FTLuabkZRAAwT7JOjUf5nsrV17zZZFD3BE9mKbC2EqZUlvgWAzwm2PsYXzsv53a6EXhiKwLJk_EYxZE1O_evpl1XdUaTnifINJ1StPoqR2v_oqEsRjY9yomO505lH4Ff0IvsBFe9j5a_7i6PBXzfe6Pe45jZmrYoGt7HBJKei5UjbxXnibTOPySTyXRriCBWb8MxfE-PrgVuB6y9vV-Lg263MD4sqD96E2xp0pFn7uDUrP15IgRplB6ZF4M6Sp0g6oMweiOEtgblTi51Q4Wn1I7GRn8J4x_9uTrNObqgGOeffM5RsvrxzCrXQVI4XJy7hBoEmHNpHJNDvQ2SitazovpxtL9Ui38LSPdWd_ZFm0KbOYX9w31MBqv08skm57Jhw40dLrZz0D_R9KvrKSsTRFvwRPAu_RT379rh32dp6t96tEyOzNgteDWW-tbcTzs8GpPBlV0k1Ad0FkJjh6E4Kxy42sSCZj7rjRK62nM0zT7QUBYY2lug4exSzoGBvVNupazp9fliRLV-cl_W18md2QhZkpIfM824n7XysOg6QkFbcFqDQlq09B4GpG9tFrbAUt8q0U-C4GzczNDCI-ACzZDi3mQX5ybtNlM0jBxhkFS0zXczdKAw5DrSYxbnwGJxWy5M8V-wYSdshf6OPGP49uDOuZkTmHkuUtOLZCEvZaCdtlN2PxTVQMh2-SPn1jFxWETxoGqNhdRu1Vv7gyHyiaNeTz2eAl4El4mmcgy-M3TC0cYgO14YtxIlGhf6sJIGUVd8fNGZmeACpmC4qIo5HUeDjuFgCtTeCz3CBiNg7SQ5JY4BL1DSieSC7czW_JN4DMg3VW3Z314cPDZGZmROaKmQsDBNIP_mPW5JLtjtYaDaOB3wkL3Y4HmZdNJ8xegT9R9TVb6Gof5lfq1WTsOpdUZkFPIDTDUy8k-MvdV09w9_WcNl3_EoKwcU1BbaBt0CvOTUdkLpyPVkTfPjuhXXoVZyBeh0KvcgsiFtX0_dGfb7TYTbvE8NnAMn0xQ99iYsO3NXd2s5j_NqAZYfm_Jsk1D5N1Q9BHll3AzZUfxHo1LRLUJDvyaYlfiReyU9tMkeqwpM9zlHFRPI-o8HR3NdB8rnXOdZceFbl82NeTRV6-L0iNhh83izUpxLW2Oya9gq5oX58G_oQDZqsvDacn1D0XrmohUK2O_UETfihbf9nD83S6Ut8FTiZspOjIe0"
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 256,
+       "start_index": 47,
+       "uri": "https://www.reddit.com/r/OntarioLandlord/comments/1ccy4zx"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:39.010794Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "n3D3aqpU-Z7D5Q-57-7xBw",
+  "usage_metadata": {
+   "candidates_token_count": 142,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 142
+    }
+   ],
+   "prompt_token_count": 4540,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4540
+    }
+   ],
+   "thoughts_token_count": 1054,
+   "total_token_count": 5736,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "37",
+   "quote": "An agreement between a landlord and tenant to terminate a tenancy is void if it is entered into, (a) at the time the tenancy agreement is entered into; or (b) as a condition of entering into the tenancy agreement.",
+   "reason": "Subsection 37(5) makes any agreement between a landlord and tenant to terminate a tenancy void if it is made at the time of, or as a condition of entering into, the tenancy agreement. Since the tenancy is not student housing, no exemption applies and the clause is void."
+  }
+ }
+}

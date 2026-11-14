@@ -1,0 +1,74 @@
+{
+ "clause_id": "c13",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ca4ef1f82b87f8de7735ff5885b3232acd9530b5aaba42dcf79001ba93069e36",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord, with its contractor, may enter the unit to replace the kitchen cabinets on 24 hours' written notice giving the reason, the day and a time between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:28.415534Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit on 24 hours' written notice to carry out a repair or replacement or do work in the rental unit. The written notice must specify the reason for entry, the day of entry, and a time of entry between the hours of 8 a.m. and 8 p.m. The landlord is also legally permitted to be accompanied by an agent or contractor to perform the work. Because the clause accurately reflects the statutory requirements for entry with notice, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "STOP",
+ "input_tokens": 208,
+ "output_tokens": 134,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "FHj3atKHHvqiw8cPiJWfuAw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:32 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit on 24 hours' written notice to carry out a repair or replacement or do work in the rental unit. The written notice must specify the reason for entry, the day of entry, and a time of entry between the hours of 8 a.m. and 8 p.m. The landlord is also legally permitted to be accompanied by an agent or contractor to perform the work. Because the clause accurately reflects the statutory requirements for entry with notice, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 27",
+       "thought_signature": "AY89a18OQSnh1riveAubaNKZVmrbr2UoqD8rMcOGhSQtMLX-PSJAOhdksCr-yhVMkjFepL10cXuazaJr9C32FMvPB7_xO2dOKM21rYsDcEjDV_OJeYexxum39BB18bQu"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:28.492498Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "FHj3atKHHvqiw8cPiJWfuAw",
+  "usage_metadata": {
+   "candidates_token_count": 134,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 134
+    }
+   ],
+   "prompt_token_count": 208,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 208
+    }
+   ],
+   "total_token_count": 342,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "clause_id": "c01",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "053b475985429cca865d90ff2bf7150e162b9bc9a4d8d1e312156aaf5e3deb42",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: No dogs, cats, birds or other animals of any kind may be kept in the rental unit or anywhere in the building.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:24.585404Z",
+ "text": "Under Ontario's *Residential Tenancies Act, 2006*, a landlord cannot restrict or prohibit a tenant from having a pet. Any term in a tenancy agreement that prohibits animals in or around the residential complex is automatically void and has no legal effect. \n\nVerdict: not enforceable\nSection: 14",
+ "finish_reason": "STOP",
+ "input_tokens": 154,
+ "output_tokens": 606,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "OG73atXSOLf0yOgPv8nc8Q8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:29 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under Ontario's *Residential Tenancies Act, 2006*, a landlord cannot restrict or prohibit a tenant from having a pet. Any term in a tenancy agreement that prohibits animals in or around the residential complex is automatically void and has no legal effect. \n\nVerdict: not enforceable\nSection: 14",
+       "thought_signature": "AY89a18_d981dXK2uVjW1aegrp2it3l3Dqk2cGSONZ4bJSrUsAlD4Mi3P5JoFgl-ObnKTJrxPcEFEhwFK36MKT9oSXE8GZHcff0us0W02WbCsOxudVWglsjXjqgXPjQ8_CgXMz519yJwLdzmeaPzMWeZ-Z6HQ_OIfc-3yD5ktEJH7-8NIIXR4NNft3oizvJrB4r3WnqwZspsEmuKs3NtjBP8QkzlLoPtmiUT1Y32FJ1Wxq3PGNCGqPd2tlnBvlBZV3TqxhxKqLi-hD_ippb_GJqmAtkhkb_58uL9fvGzqIJQD5p_UbLEBQjWzwkwDkzbvnV7ZC92b7Cpe2_fObe4lGy_rUlxEQq6KJSOOUKGpWcSfz44QhqbWudU4y4eRQi6n6pUX-p_OAgOCRKnUdzTTzeL0Yfi0pNd0gzkut0toYkoXccP0BsWqWwxv_2H9PTheZ320NwxVyK5un7igjQcSGA9OElsJyLBIMH8P6WZeKk_TrfOnfjU-NbZmc3BSH5S_-HlZe0_8DXJjrNGgsDVF_BSIUqfn2hTC9TY4gpHJ28sjzTXArD4SqFlK5LQRW1RGaF6ABwCSEeRWsMAVhVG_l6es-ohjCskdt8fZuvBpkWseMPbmzKTR2UsgwSpIqBpetjlWvmO9f40qZn2sXRUjfV-z_KBdoFd86TXxS3GAJ-YNMyQlsAxSJJRCKuRQ4njtkR7-XtHOqIy8A7AGbG_4Y53tiCUklk3qHh8nA05TRNW054DX6cjlJmjNbxhdN8ZyzgORs-We1PBPJHGr51j1X5aj8AnVeTXkeHr4TTRdqmevKoB3WFPx8k7sF5GZHS7VdC22iEbAx_teUl4mN65M6WbMHBnhJRVBePuLP6W4OCDOsDP0hOVtIUMPCEMt-3-v1uomKGgIKZZHYhoZ3YjLPscnOUBTViZs9rJIODNThwErQghAF_2uvEfealUiTDkfa2VY34qezaqHNz_R_z9O1LW2mtMEhhhNwdq7JEu_e-gSQcgeKbFOCjOLNtUeA7v3q2sQVtiA2wL3oLhM0Jrz9z4LsIJpdofL3wHl-3z_jyaXUenxi6YdJMtKVP5PhNIlKmirWxKj0DK4Js3kg2XloQCQNscU03UkLIOgsUAa4L_UV8XQKjBdNbzZOzVt-5xG6E_eUpZ59TFsvoOk_1RILamxroSAhKzdSAtqiFDNU1MbCMp4iLN76zFgadpzPte4Xo49ciAgwWQmmfdUfGF3rabtGVI6l1pLL9Ze7auSwAqn_B8mzZb2ozQswJKhzGrCThmAu66Fwh8HPSVbFNUc4QiODCFguei2c5RcgC7o6hFIYr6FURluTChkU1XCJkuWNujwc_i24TWvOKAUu0rNgZSQa4pZYkcFwv5a3H8wbsY_3yZh0RSY3sSNvzT5kfcXQNkhHzKK6f-LCVEd1zZkNqqTXYyf4QjvUFFazotUJtjRcxGD0CKAadO2xHTLrvwFZGvL2R50PVpuvMAs1OV5XUSZdPPfV71jh2P7X31LDLK4TEPkbrt_1tcEpfps6b_GtBsMGo7H9tnUoReAkg71ANDTtF_oSQ4QICvGE_M68-GbH5FuSdngg3EW7jWDc6H-pYC5sAImYXv6219YVjXTd9YaGQYcnMGWSMvw9nUEhfgIsAFZXEXmvTHFQAe72JrQP0SPaflGxaJUwN4Be3KCyQTJEEGNirCOGJg8DIEykgrYuBaGkIG0HL62-vlMG6GobxJRxaVdCVLOSyfRLH6333A5tnavUj9StCWF0lvLkOlXPY285yPFPrlXTZzTqErRlbfCMXn2Bmcss9TrpsKvqSfg_IxsqNpZLyjvi5i_ZVlyyNCLQdEH1AGMPTrvV2BSQsB7a9c3IjmYVsAkw39yylV4Nx45z0GejH_Ve1wO5dgu6j2hapdhjhXG5Bynu69cIIE9IV-OD3dNQk6_T3rtVy-h7S0PE2Px4ST5_m96MMTAcnpYGDlWAtYS6GYgdu8K9X7vgfr3A06Dm7GK8TeaCKwqfne09t3DHpcGlyE_P91B-La7J0DJ7Jf49rd9M2u7oLfgDgGbLUJwYhP1mCFqlRowOptq2CoSu5Wq6HrKoy8hpxxFQ8s3cmjuQj-2lZOTFk8ZgU1i-jlN-H-uxYwK26p-Ty9yP8Yxeup9Ee-LSC5T3X6aED8GijQ_soGY31qpbj4R9Iz7OEh3__vK0RF5VKdJw0nQG5rHSzm5R3UYZ4LdoNX6DdifMtl5VQeD3YlMp8gidGR4EcABxwG4f8qk6NIuXuS18CB_Z_EkWQ9EHOfkhDuYGWg9gE_WB7yYY9mPateQOI3CVajv-BATo2XESEL1g5mylXDSOTl3YNhuQHxu8KAWOZ75fULccGi_McE01k-qRMwxykNvd1GfOVO_UZkfwJDftgFN4AijvNkq4huP0AzWjcqttze9GxzIv44KQQTU79FIJAnMSIio9SnX7oZLlJ-qOB1wEi7J2nKAXjFWWOgbmtkaGkeyFfli6dHWI1DSUO0DorOEBbKJp_TSrmV6bNe6CRRY1JsOR8hq-pPXNYGIwOMxEIRIhouYyvTwccoldMlUbxniaF4JOnPa2dfW2E5JAQ4gykYNtvEG5Y7gaf_hJDPRqBIxsGXlwpM4HTEap7ICtAYZECIH6jfyVDczOOIslUGPM9f0rUF0QJGR09HTF_4Vbcu5i1xGUZIpNfFfAxY9zRu36jxtgCWL5BlwEAS9elaOouy6NbNRbaQ3Otl0Uf5EuIX-r1tByN6av4FqYH0XocA20hWoBlXR8DlT4TmtZBF7P9uwRkPQyzow56Qos8OAZFOoxFJcG6x13GbnzcrQELzSanZlvgedY9M6VA34zm9m-fd6mgt_g5Xpc6ztJv9iHesf9I0m6MJdfUs8JCCIStMS37ewq0PIK-BDOg="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:24.928085Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "OG73atXSOLf0yOgPv8nc8Q8",
+  "usage_metadata": {
+   "candidates_token_count": 65,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 65
+    }
+   ],
+   "prompt_token_count": 154,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 154
+    }
+   ],
+   "thoughts_token_count": 541,
+   "total_token_count": 760,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

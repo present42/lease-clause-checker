@@ -1,0 +1,110 @@
+{
+ "clause_id": "c11",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "274c4a9c83ffbce13b42347a48cd3cf84c210f1c52cd28fe251f3c2d3e83ba6f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nBy signing this Agreement, the Tenant consents to the Landlord entering the unit at any reasonable time without notice.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:19:10.571209Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter a rental unit at any time without written notice, (a) in cases of emergency; or (b) if the tenant consents to the entry at the time of entry.\",\n  \"reason\": \"Section 25 states a landlord may enter a unit only in accordance with sections 26 or 27, and section 26(1)(b) requires that consent to enter without notice be given at the time of entry, not in advance in the tenancy agreement. Because the clause is inconsistent with these entry rules, it is void under section 4(1).\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4530,
+ "output_tokens": 165,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "zn73apTrJaLXyOgPnqy3kA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:19:22 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter a rental unit at any time without written notice, (a) in cases of emergency; or (b) if the tenant consents to the entry at the time of entry.\",\n  \"reason\": \"Section 25 states a landlord may enter a unit only in accordance with sections 26 or 27, and section 26(1)(b) requires that consent to enter without notice be given at the time of entry, not in advance in the tenancy agreement. Because the clause is inconsistent with these entry rules, it is void under section 4(1).\"\n}",
+       "thought_signature": "AY89a1980NYoGqmd8cp7U5FHDJUcMx7ySvTWutXNNXQeCJtIvdACYAV3su782N9armOCQGjDQODy-PCaoZ5p18w1RVYMkDGeYQnwH54mW5iZbA4ytbLp8CdweFshnD0="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:19:10.619924Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "zn73apTrJaLXyOgPnqy3kA8",
+  "usage_metadata": {
+   "candidates_token_count": 165,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 165
+    }
+   ],
+   "prompt_token_count": 4530,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4530
+    }
+   ],
+   "total_token_count": 4695,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "26",
+   "quote": "A landlord may enter a rental unit at any time without written notice, (a) in cases of emergency; or (b) if the tenant consents to the entry at the time of entry.",
+   "reason": "Section 25 states a landlord may enter a unit only in accordance with sections 26 or 27, and section 26(1)(b) requires that consent to enter without notice be given at the time of entry, not in advance in the tenancy agreement. Because the clause is inconsistent with these entry rules, it is void under section 4(1)."
+  }
+ }
+}

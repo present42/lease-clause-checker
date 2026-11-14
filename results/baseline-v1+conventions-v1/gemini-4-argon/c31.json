@@ -1,0 +1,74 @@
+{
+ "clause_id": "c31",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "56c343c0b373c82f0510592aeee5835dc5e86d78a39e75a35303778a1b33d051",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The rent will not be increased during the first 24 months of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:52:33.835760Z",
+ "text": "This clause is not enforceable. Under the *Residential Tenancies Act, 2006*, a landlord has a statutory right to increase the rent once every 12 months, provided they give proper written notice (at least 90 days) and adhere to the annual provincial rent increase guideline. \n\nBecause the Act supersedes any lease agreement, neither the tenant nor the landlord can contract out of or waive the provisions of the Act. Even though this clause favours the tenant by promising a 24-month rent freeze, it is void because it attempts to restrict the landlord's statutory right under section 119 to increase the rent after 12 months.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "STOP",
+ "input_tokens": 178,
+ "output_tokens": 152,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "knj3asOXAq_t0MMPtcKUuQM",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:56:14 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is not enforceable. Under the *Residential Tenancies Act, 2006*, a landlord has a statutory right to increase the rent once every 12 months, provided they give proper written notice (at least 90 days) and adhere to the annual provincial rent increase guideline. \n\nBecause the Act supersedes any lease agreement, neither the tenant nor the landlord can contract out of or waive the provisions of the Act. Even though this clause favours the tenant by promising a 24-month rent freeze, it is void because it attempts to restrict the landlord's statutory right under section 119 to increase the rent after 12 months.\n\nVerdict: not enforceable\nSection: 4",
+       "thought_signature": "AY89a1_wizVJIxtLs005EgRFYX82dnSvW-NqoQTqvfupQSsdYR3H_S2WgKtlDNmMRPznsY52LGFXVtYiVD2yytCd41PC4aUPrMpXGuQXsDFSaYl4FcqvNdZ51ojkAJ-f"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:52:34.035779Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "knj3asOXAq_t0MMPtcKUuQM",
+  "usage_metadata": {
+   "candidates_token_count": 152,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 152
+    }
+   ],
+   "prompt_token_count": 178,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 178
+    }
+   ],
+   "total_token_count": 330,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,19 @@
+SAMPLE RESIDENTIAL LEASE (synthetic, written for this demo; not a real lease)
+
+Unit 4, 120 Example Street, Toronto. Monthly rent: $2,150, due on the first day of each month.
+
+1. A deposit of one month's rent is payable on signing and will be used as the rent for the final month.
+
+2. Pets are not allowed in the apartment or the building.
+
+3. On signing, the Tenant hands over a dated cheque for each month of the lease term.
+
+4. If any rent payment is missed, the rent for the rest of the term becomes due at once.
+
+5. On 24 hours' written notice giving the reason and a time between 8 a.m. and 8 p.m., the Landlord may come in to carry out repairs.
+
+6. The Tenant will pay a non-refundable $250 fee for each set of keys issued at the start of the tenancy.
+
+7. The Tenant is responsible for repairing any damage to the unit caused by the Tenant's own carelessness or that of the Tenant's guests.
+
+8. Whenever rent is a month or more overdue, the Landlord may seize the Tenant's belongings and hold them until it is paid.

@@ -1,0 +1,67 @@
+{
+ "clause_id": "c35",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "41cd7bd523e6c407a0f44696f70d953c0ae1c8bd5f318736d4150f2772ccaa8b",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may drop in from time to time, without arranging it in advance, to see that the unit is being kept in good order. It will always knock first and, if no one answers, may let itself in with its key.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:51.776449Z",
+ "text": "# Is the landlord-entry clause enforceable under Ontario's Residential Tenancies Act, 2006?\n\n**No.** The clause lets the landlord enter without notice for routine inspections. The Act does not allow that.\n\n**Why**\n\n- **Section 25** says a landlord may enter a rental unit only as permitted by sections 26 and 27.\n- **Section 26** lists the only cases where a landlord may enter **without written notice**:\n  - an emergency;\n  - the tenant consents at the time of entry;\n  - in a care home, regular checks on the tenant, if the agreement provides for them;\n  - cleaning, if the agreement requires the landlord to clean (between 8 a.m. and 8 p.m.);\n  - showing the unit to prospective tenants after notice of termination has been given (with conditions).\n\n  A drop-in to \"see that the unit is being kept in good order\" is none of these. Knocking first does not count as consent, especially when the clause lets the landlord enter if no one answers. A care home exception would not apply in any event, since you said the unit is not a care home.\n- **Section 27** allows an inspection only with **at least 24 hours' written notice**. The notice must state the reason and a time between 8 a.m. and 8 p.m.\n- **Section 4** voids any lease term that is inconsistent with the Act.\n\nBecause no section 26 ground covers this kind of entry, the clause is void. A tenant can refuse entry and can file a T2 application to the Landlord and Tenant Board if the landlord enters unlawfully.\n\nVerdict: not enforceable\nSection: 26",
+ "finish_reason": "end_turn",
+ "input_tokens": 257,
+ "output_tokens": 1578,
+ "raw": {
+  "id": "msg_011CgwRF36VuZEu8GGiwjGgu",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "# Is the landlord-entry clause enforceable under Ontario's Residential Tenancies Act, 2006?\n\n**No.** The clause lets the landlord enter without notice for routine inspections. The Act does not allow that.\n\n**Why**\n\n- **Section 25** says a landlord may enter a rental unit only as permitted by sections 26 and 27.\n- **Section 26** lists the only cases where a landlord may enter **without written notice**:\n  - an emergency;\n  - the tenant consents at the time of entry;\n  - in a care home, regular checks on the tenant, if the agreement provides for them;\n  - cleaning, if the agreement requires the landlord to clean (between 8 a.m. and 8 p.m.);\n  - showing the unit to prospective tenants after notice of termination has been given (with conditions).\n\n  A drop-in to \"see that the unit is being kept in good order\" is none of these. Knocking first does not count as consent, especially when the clause lets the landlord enter if no one answers. A care home exception would not apply in any event, since you said the unit is not a care home.\n- **Section 27** allows an inspection only with **at least 24 hours' written notice**. The notice must state the reason and a time between 8 a.m. and 8 p.m.\n- **Section 4** voids any lease term that is inconsistent with the Act.\n\nBecause no section 26 ground covers this kind of entry, the clause is void. A tenant can refuse entry and can file a T2 application to the Landlord and Tenant Board if the landlord enters unlawfully.\n\nVerdict: not enforceable\nSection: 26",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 257,
+   "output_tokens": 1578,
+   "output_tokens_details": {
+    "thinking_tokens": 1059
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

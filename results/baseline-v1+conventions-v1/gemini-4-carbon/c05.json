@@ -1,0 +1,75 @@
+{
+ "clause_id": "c05",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2e8879177fb49d1da349094fb4aeff40b4c49da3701b696993753187a0953047",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If any instalment of rent is not paid when due, the rent for the remainder of the term shall at once become due and payable.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:09:10.333194Z",
+ "text": "This clause is a rent acceleration clause, and it is void under Ontario law. \n\nUnder section 15 of the *Residential Tenancies Act, 2006*, any provision in a residential tenancy agreement stating that all or part of the remaining rent for a term or period of a tenancy becomes immediately due upon the tenant's default in paying rent (or in carrying out another obligation) is explicitly void and cannot be enforced.\n\nVerdict: not enforceable\nSection: 15",
+ "finish_reason": "STOP",
+ "input_tokens": 188,
+ "output_tokens": 906,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Zm73aob8GtbYyOgPoNXP2QQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:09:26 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is a rent acceleration clause, and it is void under Ontario law. \n\nUnder section 15 of the *Residential Tenancies Act, 2006*, any provision in a residential tenancy agreement stating that all or part of the remaining rent for a term or period of a tenancy becomes immediately due upon the tenant's default in paying rent (or in carrying out another obligation) is explicitly void and cannot be enforced.\n\nVerdict: not enforceable\nSection: 15",
+       "thought_signature": "AY89a19gmq84Zwb7-ZjxqM83ziSKq8PmhNVZPbf3cGLuxnD1g9FPv5J1Yp-WGjFz-_efH8ROC40OhTTfBmroe56YvPNcEyhSHgoG3lzDIQA0m1AINmHlyDUG-4Ssjyz_OJwRQ9RKo96bJurMC9nhc0BS3PzaiBklCwB-9Le1ZYkU56w0nNyqessCU_649j_DX5fp82k6rlK_sI8D67lm7hWEjiYNXQYPw21l7ckRrJce3_pZelWsAXbq8dyipLnjZU6nd1giVXbAFit6-jcvBPJXUGDiltlCnP6-Du4OYCzeQSfiF7HPJjD9nfAVWLd5gRW1RRWIUrZ45vFhjp1ZmvgNa4DeElnISn9yElxL6Ju2sV4RTRBV6_H_FJUMlAWj5p7yYNNIE_cOIJPcg-WVsh8bVLOUNxpIWZNIV31p1oMk2LgP8h_fYXKWbOKvL4Ca_N1p0v8qw-Aaxc_tLTyDyovvvZPMeZeYLw4xArP9hMn4L6i7IzAC2vH6vEZGdI-NTR4KEfDFBzisr-ndMFemfRk73-kg7CZX49X1n2ea9NshNASlKRNpUdLIWHd6iucut6Bh0OPAw3keDgnClfqun9qiO-cROfQy2M1-xZm8YoqxwPLxSlkg0Pd9K2_tI5yQuCRFQ7uDMzdT6nMvRnz10TIpp0tpRWR3oGyCOEpxOAkfEaDUnQq5UyiK2C7jxxvnbvQeBfaTNE08j6fGg4F-oXpAStLkSmniEVaPncIY6FSrJfg9nruTLF1opOoRUIeDR-q97O_gV11-J5ghJt4i8v9_ntoZho9tSc14-n1gOm_i0LTXh9teAINPaxxF9wBbaM23vI0Hzsg4Ew7Odg3pEL_-jU-ULDeUhRE73Zcl-4VVGelpdVRgRPV5NdbaVIdV_RsebrkGilkzObO6UGQXCmf721tOIknklwQaxo8a4VtNiN5MPr9b-fIGJ3BZr4fv1acExcWKQLevc0q2sjj4nRAMwjJyu0yrcS36rdPKyGrFWS0Uzr3o906vlI9HS-WNGFKdTZ5_u6BkAE0vK4Wl5AqLWUE9_fYoGchLIBx8daojb5mjY0RFZowbuzes897WbRbwSAESHoUgTAYn9Q-jEXtdI2F6_Qm0NG9rSaqky86RtihGJlbL8YnDYSeOWAhVAil1A7Af6mlUyQobZ52OaEVk2it92IBmQrE8hAowAFjitpr-z-r92VyETx5Y63NIq4bIKvOB86D1VKXLpMxzJOJ91J4nICPByYU5UR9cSy52Ip9tFhm2d8ijqjIY6Ba3Mt6BWM9PXzWiH5vBzDVGDfXGOPiXurznzl8w8u6hH7dJr0L_XcMtDHTFsaBINoqge3D2nN7lE4Hzw9zhqYluCcFj2E87vxVZrfG6amoSbJLAney5PGvKqOjeQjErXdPKnYdkb2n-d9oP3BAOhzc4qt3XhJZt7TIvJ6J4Hn49HMFS9xlDcdbve-OvxqpjKLCEHB7V6oU3_JlzpVMpwDHRhEABo36wsceB_4ngTJGH4eX6-8xJiYn9o24uX_x-OpG4xefu0xTdlRPfEtlupxGiO8neiWv_yNOIwfd3yiExytXqjx9sXQKjKB3dTwJNtD2eTezJnGJ9xaCRh5tFjYeN_KBcjTIWL9vMI7M31f6u8rCwDAslXGyl9IbISsAWwIr1m9RFUqdrxfNM8CBIU7-XJQep6DiOVfhWC2DTOvIcWc-_d2WBD3hwwk0MAq-HyvzUekmF1ocB9a-KIX6IX0FrsFMnMmoqddc94SLtdCPpYnrrmB6NJwyjcubxv5TiZL9F8RSlhti1tePbh-ExrVq0zSulUjXTu_ELGmEqnTrQYT7aCOuuIaIDEBGQXOzr4cFvQNXLFYKbXnll6GEsjesxGhRTByBck09GD4LmQe6PUUQgfs4A6fslb-nZrCNxXmbIskPvGFU7SzGuXuhsJC-ipBSyOlrNz0Snz4m3mDTuCNRLIFfARJCTUsw-APc-KqWj4Y75Eb6dM1nc64QcsgyEhl1T3W36fuOVk3wT8qnkY0PHqUad6B4dxSniniQJ-YNNcl6c3Rmy5e-zTYsVyDPGDxl7rZUiAm8NAp8cfMvXyTUdiWQtsTG64KLYs0yrklIT-v_xo2cuMARYIQY9ua2F2DhWzZKCorseNnuM6nI-O8EZlEi3Hg8MNhadzoiWV6-oCbCcwhB-V5smFXusPTMDyXUn4dqlKFO12h6Ekvb8esSDvUj1em8bVhev39DgVrF3pqXaJWZUJRxyjSdUx_7e-IyTvJLkQa_mcdHOF_8B3H5jJTp14EnW2wQgbg3wa_Ik1jHS1EzFNAsQAoDVvQ-OfOwCUtF-bOpS68xD7MTS7VfP9tqt7I4RGe6Vxtb3IUBmRvU4mRffwO9SS4JQhxghNG66eDL0QlqhO2N201EynOZ0u10FoTAv5KjfwUPz_8lh3GUULkrc67JivOWLutRsESbzRcJOH-t0mz039OKSi5kYgG3NRiUCHj9cjqW1JNh1_91XTzdRqcLhCg-sLBmuRPZlJU_0qXeR-3YlKryNsR1x2y2x9ws1u5bv0sD_cMCViGK2tGABcm2B3JeLnqLV9vmBPjGirg2Xc2lvHcr78XOg6uD-qqkM87D8vWzq5RBm3vBajTuDHxYf_oBuk9V1tKXDiMtHROE7imxoszZdReJ-KZnQvkkKs2iaiMdaE6RaMaAyxD3Pke_XLPi94SJkzU0N5mU_X67y0xGjsJjL6fIlyq8vwVnkbNtWXODJn1DePUuP3c6PJU6WLL3BQSj_hwzsnkPFj-lAdTk3YOcAa-B06La-GxjsXhkqkKSng1CXk4Gc48SXB8KVhUvezmwfJd_SdICOJPQ8erlrQQr_1g0agxmH0aXdTc1VnHmZgmHgDVsHxEUsy4E2Umo78g2XDoJ30FCi8S7VFN8qf4LS8vxT7KW60DZlOCzIAYwM8N2Lt8rEnXwv_h2Z_hTtyrKPEmiFevJCs7ZKLnbOE0ZcXckczCoN8GA2vsDjlzEt9KsVnzZ_fdI86Hl_TwIQR3bpjAoSdnyut0gts89ombMT28_kUiOSXkAjJwjdoA5W-xzbCyf34pqp9JeobPnOonxYEwPojl4TaDlKqhqH_hF0OJxsQx_ZKKqxp5LWx1LE01Bp5n-ZmoRRXMLDAf7irgUC9TzJ4y4XoSOmTg4Vgivtt8_PKHGyygiD7tvY03t-gu7ipALoPHC_GpGkrKvAKtZVmp2ac7VJ_IASG_ReN-2CfDka3j16clEsgWaa2dv4wf797wXAuh1eXhF7_oodxWAwazG3yhB3GiIdJIuafVhseB4ELcTUx9Cvm0CiQsMQBoAbt9CRZxZchwamM-vwLJWGSzUobo4GLHnM7o6rT0kJ6NdoKDzVcRV1NPRPioaVbx-Rwrz6coxNa6pL4kOvKPiYi_k6EbH2iQemHNSVVY_A_ovIKMciDlZUTB-eUdfi1RxjFOyejO3DqCSQNgCTkbDuEVjUFgS568sbR95Ty38n-4VCDvwF2nbQ3O6PFDBGZPShCELK0ylzzbJTUd4U7uwEtmPQsFrvWaDht9HqN1-5glemL8iANXh2qQIO1Lp4_U57jL87CAsR5_DxYm-YDE33y7ZR9g5NZ9cJvsCU_tFVrhTEGivWqoOhBofF4DFqWrMIDu16htL-vpu27MUAkQmbP7MeptapXBDkLcfL-adCjlj00zkLSfsVYTvlFp7IDTl5XyxHfN4AkwLH2S4gu0kxQyAGKm2UibrejaKwEupeBmgQZzbtyr45C6JXKCmlQ08LaDSj-5CDrNmdaeecq5-IGPHUJl96i4RjHeq5S0_ZeK-DHARnrA6BO1e3zlxRW7h7lEOyxhjpT_r9vv65pBgfKP_kHYwvD1HUMyVjB4FYp-v4TxNcoZ79Xhd4VWMqXKA-q0XbW_ZqUfFfeEhBY6EfL6jFH6sPFcdib21ooMAfYK8F7c29AXc4KVDSwrvrc9LinIO6Iia51uLaZQiPY42mLPFjtw02JW89aEJEpR0oBvOsG3sMRXDYGuxhbdp_HQ2i5LSK2zPR1sRS-LG_i755MTleDTobPsg-1KoYhkBp9mJZCs0gjKTFUq0ZviGgdZjVBFE="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:09:10.441862Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "Zm73aob8GtbYyOgPoNXP2QQ",
+  "usage_metadata": {
+   "candidates_token_count": 105,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 105
+    }
+   ],
+   "prompt_token_count": 188,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 188
+    }
+   ],
+   "thoughts_token_count": 801,
+   "total_token_count": 1094,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

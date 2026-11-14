@@ -1,0 +1,111 @@
+{
+ "clause_id": "c20",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "e712c3794eb60c15d7ac53d8db526adf4b51f47f18f54de062c9067a3710a4c5",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nPets are welcome. The Tenant shall pay a refundable pet deposit of $250, which will be returned at the end of the tenancy if there is no pet damage.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:45.684307Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"105\",\n  \"quote\": \"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\n  \"reason\": \"A refundable pet deposit held against potential damage is a security deposit as defined in section 105(2), and section 105(1) prohibits collecting any security deposit other than a rent deposit. Because the clause is inconsistent with section 105, it is void under section 4(1).\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4544,
+ "output_tokens": 457,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "pXD3apuiLPmew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:54 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"105\",\n  \"quote\": \"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\n  \"reason\": \"A refundable pet deposit held against potential damage is a security deposit as defined in section 105(2), and section 105(1) prohibits collecting any security deposit other than a rent deposit. Because the clause is inconsistent with section 105, it is void under section 4(1).\"\n}",
+       "thought_signature": "AY89a19dYhWKwh5IEyCtZeKFPPeOpPfAY-ljK50pFX-JvkKbM_gsEQarO9OYF_XrBkr--NReC7IFa_qfp3cbF9iqg6aK4AUm1XhFxUMUIe5Ef2AmppldWN3RAxxNf0YER7Mw3qodNGLcHmCWyKPDi2Dc1VMhy6hpwYuTqr__yrARiFboaWfIXSmaUEs2FwOwqB8vjaD4M3kE88L6fFYnFIfBziCqspYk4xTtuMjGOeXt-B4Od3o3wgfnkKhW407ep6nh_XPYnCkPaPMAvUPs5ModNmnoMbotr_LB04fbFkF577Zam805oCA97rMh_O9Tozjo0LpHM1H_94mZPfq2fYsjxgdt2okn_udDUKHcKyVADD2qbd0qjXGX27W7_IXTAjar6ZDmx897vKd3A_IS272LbyIoCA5XChlSgKTvI-4Fi5W3Da2M5EubHYggP6CfFdrawI2GtbQDlQwIKDUHj9BhTiaL90M6Tsa-ZVvQ2wrF8Vz6faTDmLdzRPQKsgPQn6-BReY1Ry90zBp-XNFtt-a3Y8daT97h6J_it84ChJ9M-_WBn3I_X8rKncLY0D3ihugGCltwXK-P6aDl7w0H2L12u-QeAbUM0Evz_P_wPrvWYNcB3XTqycV6cQCnOrXdR68sp9t1fJXv8XziPZGyG0_GO7uwfHVmX8WtOVlg9WG3-c88SFrm9Ko5O259MvSFUnkjsjRbpI5udFlNF0jAdBJhYqa9jNU9q1ypCq47ux_5vE2A4Hb6QUV6E_SrpUT7pFdLmhy4V6HFtP1QMdhKfcC7xD07cueutADX-37YkjDmgFP5R5ooBRQfzQbpkEiab9Ydb0tGLBg_NVKw1CmhIQ1SABgdvHj0gchAZClHxqtEysUhL478PQ-q-O8ONK6AVPvOkjZaLgQ2BEo2aXau7kA80kSqcOeF78xDDfnwPI3fjchzRyj6KyFszK5RW4YAV_CEUlkjkL3GVmPx4VCVJ_EJTwxdO65LiQHBLB8Huqq7jcvMLfHkd4GwskrOuYtWb8ayqA8FXLa9qFD1XK7gmZ7nyuONEHMEgUugjaVwWr32M3ABCfy_--mRmjSOTPuvTql543aK-B4ODzObUoztCKXCOzJOV6EnEJDKXI0ilIqSm4aHPlEmp7JdGCIxQStsmTC3t_4y-LMnzW6Uq_mAd3jyy1MVjQpwKFJDoF1YsJnIaePBNjGWBb6EzjOlg07ZsI3iWMkl0D55RndrEo_GD3ZMMlw4Q2KV7ajxOybAMzcRw9eCuB0GS5XXK8N6QVqZanH78sgOZxL4l87jxwjrC85bNpx_n2H5NCsy2uCLCCLX5TjIR_vgX0uuRezXOZCdUxIIPvG3i-TQcGh09jpd7tD_YTCvUjThnD6Byg42SDTlfADdGMFkW_T-QooW2MHKE_BdLaki0y8TIY7AIbiocYSV-YJfye4kKt11cRiSMhCQUdFAZI8VsE3edQbSWgBkqLyL28WSPaogs_Dgezu2M-pJzPzFJBHzpXDtQ1UcokNu-vFGOhMtfJts9JlhTfABKJtOD0NlIoahMN1PB7rbPQu4Uh9iIDZKWkEBOk6FwTw-v4SQA1TFySiyj06xiAsGo3HMS_njiSPkgu2PeEe53GJS7Z4O0hzRA7rrg4l6JUJY2nOVEyXp5fxlr3J2QBTI_jnrQ58b8X0oNVS2iQcS88JY1WxiaMzit00yN2SQH3bEXQBF4gWSB66DdphbYDFUk8eMe-WC6FvAgeU3mauKOZksPxj7Q18sm_w-9rQNnC3vxUibqhbXd6I_96oTS-Yc-qAOwYW-vtp6lLZOSANOHQBoy8zcs4HUOmH_dZ_3hJ45uN9zpk0Id-u-GzRP3OYNf75TzIC2WPqYsBd_RIK__zLbRdSGZQsuOwqQVdF-y2zU5OVWM5ivnqltIqaWrq15WevU5PlZ-qGMB2OlC9JUv5Ly9kZM9VS7Hg=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:45.725275Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "pXD3apuiLPmew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 138,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 138
+    }
+   ],
+   "prompt_token_count": 4544,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4544
+    }
+   ],
+   "thoughts_token_count": 319,
+   "total_token_count": 5001,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "105",
+   "quote": "The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.",
+   "reason": "A refundable pet deposit held against potential damage is a security deposit as defined in section 105(2), and section 105(1) prohibits collecting any security deposit other than a rent deposit. Because the clause is inconsistent with section 105, it is void under section 4(1)."
+  }
+ }
+}

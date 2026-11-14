@@ -1,0 +1,111 @@
+{
+ "clause_id": "c23",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "c6a3646850ff727377eaa41789f73dd458533688fb92fc601fa741c5c7a1fdf9",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nAt the end of the tenancy, the Landlord will apply the rent deposit to any unpaid utility bills and to the cost of cleaning the unit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:49.693144Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord shall apply a rent deposit that a tenant has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates.\",\n  \"reason\": \"Section 106(10) requires the landlord to apply the rent deposit toward the rent for the last rent period before the tenancy terminates. Applying the rent deposit to unpaid utility bills and cleaning costs instead is inconsistent with this requirement and is therefore void under section 4(1).\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4537,
+ "output_tokens": 559,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "qXD3arL8LL7Mw-UP1o7noAE",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:59 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord shall apply a rent deposit that a tenant has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates.\",\n  \"reason\": \"Section 106(10) requires the landlord to apply the rent deposit toward the rent for the last rent period before the tenancy terminates. Applying the rent deposit to unpaid utility bills and cleaning costs instead is inconsistent with this requirement and is therefore void under section 4(1).\"\n}",
+       "thought_signature": "AY89a1-rftgY0jYOEk6IZXR3UfRtDQ7x33dul7XaLLYgoT9xgeE8s5NG10t4vMsvFIKW7fllVL3RhhWDZLdHTFhA-cyXC6VhHOU5Hjk_-DLGwB1ITbJKc6HUDSz97E8DnxdfW6HGtokHufMy_SdcqAfCDacOSwMjd6RKOFTc9i23uQskgBsz1bN-Zm3d4S5_zXrOfoHEYE4KsPm965Ew9zWaArG0afA5hOXwV0GRXA0ieywrjf87xZkbfLMW5kEJtHIXQ--GpJRPlJp1mZY97vI7VX70ntwkPWFFosqGJP_fp5zUxjtccFlszZOJOlj0MuLMSyURh3Lzz4xt97-2JuV_S4Jr5N7Ib_5NxR5SpJO4_hTAInAZteFKdDLp--ZKm0iT7d0j8AgEPXz9SrkWb-lWtlZh19qHL5d9mpu7QQW6BsV3Qz7JkTSN0f-j684fh2f55LvvwSUIoBRa2WP_XK-2OYF0f1NHsw24Dz-w2RbkRkd0nDQmWhgZt7XJ3Ax_jiRq-ju_l3PCnOVY-STcQ8EuPPO-F8NNNIn8h4qEv23RFVennkVkmZu9KyBh75JcNdsfmJ9O41RLTrOH2nu1K9jUG6rEoy_IpBxMDng83LqVuKbI4vWvs98Lzaodr0J9Odj4BJLOnBLVWpg3_awvnCZuu_F1-5TB0RLe1XQ0CqcG5YPwVji2MLPLrAxmxjw6flU4qPjEuLhK8gaCaLb4I3OjNqkZc-fJN4xT6BcciblKNILmnmin0tltjdoP60hhek_haaxi30F7aoDbAdH_-Z-Ux0zWEGgCv2-QWayxiJSFoLzke0gNlUP0e79XDg9dzgAHuKw8mCsCMqcAcD5d18UMCMq2sK7-iEfYNPO5VJs0UYFQPrG2P6u5EJPXHtF3sg4cjkH1MahGwwxhxUu-ddfsbPHtIefKBsbzX4TwKLhXF4AZ11Lyh42dhH1aygDjO7Tin7n3x1D_V34-ouZ6UbY2Eg8JiyCQCtBKOO1ZfJCdSARGFK3ql1OrfUmcllbUPRgYoShifj6PeXsH5ZLRQrC8N-4XYBWz1RGvu9eqGVGq68-Su9qEeWkIvzdgTD6jFarmW8Tu4ugLRjoAetfI9x0vRwk3hMxUr20VL9VnxeP17UKfenKiiLKwEYFtR6YaQN1JxfSyn70TQW_kllr90Nndb38xV5zNBNW2ZEcRqsT81VelMycYyHQflpx-dQHOqyaOI1K9Fe6LpAUtOf6FaUwLIL1lkCb6UaNTssT43qze08kxhnwfmmAhA2SNOC6Kh-ZBtagGqv2LreakQ5jbUI8YTaQs28gOCZ3-JnIjZulqhV2FD_6ipFIEb79r0r_L0AcM47udQuhNG9V6KsogS41UGDLR2YkPPKhbhlsGsttOv_ouFsFYTcY6nMWSZoMTqkQWYkltNEcjySdYRahWYv8YhLhUeDqewlnJL3X1lvcAUS1-3n5lE8wKp_m265xR_V_h1Fozk6-72rYS1gaXUYZhwcfurhNLguaBFthxbySsiOEg11lkf6Jm7u8gXcCOHxIvQHpKGjQShY0QcaWkg4asNC5zf-E-gJUYQ_sN9zrS-HeZa2IoTeN5ZQVSTSL9QTdf18LU2vE4yeLL1etMHNcIxBcD3O_H54kvn0tkJeq1qnLOmK1qZ1PAH0zMxdyB3u5RiWSbbea4OaoFDnvx_qpkx29NY6bpBIKzVkch1s8OzZWu5goPJ5tJTuLLzlEg_2KN2snPG7kVx8H46hjhGwK3uUYTBWZWaMleh8kP2UXHhvKF72YxvR6uLGBZFPSU28sMq7h5ZERHcaYaOaEgoUXPnp6TffsAyst1MHzsQrSnSgfZwsUwUfiP_SA-Gsiy8uwx0S3nZ_mhOp36kle73210ePb-wCQ8f3NfvdVgcu2gO9tVaylU4jxX0_pnhue2nVacoi5QIR_nZtBv0u_ZzMgnLi3eDxO35gNtH2C4nsxkO2FfCEmDUi9zTFOAKUi8t17nB8Z2qGsfmkTfUZX-cHaHycpf2DtLW4MIbVCCk73vLHXnE-PF-p2RlGg2fgrBcE050z_ZAMLjC6G4hppVujuF7mhhoA_hd0DiHjM6RmzI_18vgputcjF5aEpratesjbPi-5aTSD3McjtqvnJpPzQJr5m-7f4_wYhaYEVq47zJuu2fq2C05E7RIBZVNZYPJzjgwJKuIrSucY6Hkdqd72w1vTr116SHp-JN_ia1xYt_vYe-Qpw14zwMwi6WKNB-wZVH4U9iXs0ayl_JAmFfvhLAVuFoNOUoar3oWcVOVAk8Uc_9jiH1HrWoUWIk3kX-DSW-ubz5zofWLb61A7gmlrw5mZR2Xa4YmyS1weTHkqo7ZOVtrp_XItQ16NQFHyk-UJuTso0GAS2rMoMA2MQ8HhuaD2Z2NP4bPIPvO1x9y1J9PdhQK8bGeIERo9yzshh6dnQEiQzcM14c13kcQPvq3Tm-A8f4ZKxypAr5WBxwmiqa4JKXp3YJn85PUTxU34c6Sob97OJMyLjh_5wQAGjw-6Qs35C1glJLfSHhWrmmxqnHS8k="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:49.736818Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "qXD3arL8LL7Mw-UP1o7noAE",
+  "usage_metadata": {
+   "candidates_token_count": 143,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 143
+    }
+   ],
+   "prompt_token_count": 4537,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4537
+    }
+   ],
+   "thoughts_token_count": 416,
+   "total_token_count": 5096,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "106",
+   "quote": "A landlord shall apply a rent deposit that a tenant has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates.",
+   "reason": "Section 106(10) requires the landlord to apply the rent deposit toward the rent for the last rent period before the tenancy terminates. Applying the rent deposit to unpaid utility bills and cleaning costs instead is inconsistent with this requirement and is therefore void under section 4(1)."
+  }
+ }
+}

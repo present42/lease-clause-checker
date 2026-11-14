@@ -1,0 +1,111 @@
+{
+ "clause_id": "c38",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "6077213965bef5054524bed7ff9a1aed7080fe352b3071bda7984b47a4e530b9",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf, after the tenancy has begun, the Landlord and the Tenant agree to end it on a date they both choose, neither of them needs to give a notice of termination.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:19.887068Z",
+ "text": "{\"verdict\": \"allowed\", \"section\": \"37\", \"quote\": \"A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy.\", \"reason\": \"Section 37(3) explicitly allows a landlord and tenant to end a tenancy by mutual agreement without a notice of termination, and because this clause only applies to agreements made after the tenancy has begun, it does not violate section 37(5).\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4544,
+ "output_tokens": 336,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "x3D3at3uOPzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:26 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\": \"allowed\", \"section\": \"37\", \"quote\": \"A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy.\", \"reason\": \"Section 37(3) explicitly allows a landlord and tenant to end a tenancy by mutual agreement without a notice of termination, and because this clause only applies to agreements made after the tenancy has begun, it does not violate section 37(5).\"}",
+       "thought_signature": "AY89a19tNaRsYLCoE8fQJOrmLdl_mtTtESw74kHtaqeInjGbaq41PMeMWeWmreIlwQkHcFGbIUooTKnl1gigCbMAa1iapS7nqo-D897B3MtG4xq7bn8vmP0GFrHCQ4SSrdJkB7AxcOQd9vMzwCNioPgChMonqNjlw9JN7wA5tnjFZDnTelsqvmm8GzE-ncp1Rmm38Af2KmUhmbOjFAjvQK1s_E1E4X1kn0Mi0lvUfHWEzJacK-WK_KDsf2B-SjVJGJ7VUE8dj0A1p3jslmTHP1NfUQu6O-BO_bqXbFCU9LKf8lu6dEFkgnKZCT-ZLf7NAzceD5hfvB-Xv-nWLRZhuF9fEXK7LyIfdfe7JPRLiSRarBWRpGQu32fumgeSD7j3hAK4ESgd838ov5Mo22limzFLidKBDXytgoFJB_kuiDVOt0rcwVB6xF209zbtEREw5wF81AzmJFxity-98JL4hfhzCarHUqxLftWs8S1MJn-nwBuZ-0e9_n0XTNTLHyEuIpH23tpCuVsssQXCpGuAH-DdtBkHMwG8IBeGQSO7MsXy05amKhx3hil14kHQK7f01b8OvIYPDeq0H6hLutDeSsF10_RqEbaYmRuCHPMhCEsGyG3VzZ2Wl4q9HypCcNLS6PncmfGvi8VRZ-oKL_hQqDNj9uVDFrSYqSs2OwNeGAfR-UcI8fwSUlZixEYHoNCWI5CYmbYETZu1SXhppb6ObTMJQlK8zdfGoH2qRkgldWeUcG0QcG49ZoisE7FtAs4XV4STufNbdnzoFuwtqW0tnofYugpP95P8jYl_LnJODZYTaACOMitwXwTXsRjZJOpEpTIxywEpCGg0ihjeLvsN6CygdK_As6SAiopibU9zzKID51rnyl2AtyMr0H6etDTvQzYGyOVpkKiQS995hjzDZrwL8akC1S1uIjrhHjQpm9q5jGyM8IJD_wVySCH7MZYQGaJWhkbscOgq-olFKDVnKKbOg6K-_EQc2J9rRC_KmQrPJRj8XmS7Rv3h-hCoRa0SommMaaiGpKKLJ76YQeRP3ZG8xFqJlzSrDPbhI_vQA50P_Irrvws_kmZ0v4htSFoHYs98VitP8VqQIBmhtF_8g3QdUHXKP1BNXOI8ffcbQ_mxIZsd5B4KwkLr2AR1FM1FxuCVYYdir1-r0q7eWBhlJxonXqVuysVl8r2zzwHiWXdogy6k_oN6WUvaNywDjiIBSWcqKRTdc_elG9Lyri0qrXUlQ3L7t196mwWePFxWKPRrYkn4UPs7rP2beAyt4amYmiQNkcwX3xNP1qTvAuHKJfN9T9P7OAdPXTnjV99SRyWqy3-JVHxW5Kxfz7yxm5otRHr1J7mYtFytAET4mbMT3c0PbcB7nmbhOyfRu0c-rD8="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:19.931677Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "x3D3at3uOPzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 112,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 112
+    }
+   ],
+   "prompt_token_count": 4544,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4544
+    }
+   ],
+   "thoughts_token_count": 224,
+   "total_token_count": 4880,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "37",
+   "quote": "A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy.",
+   "reason": "Section 37(3) explicitly allows a landlord and tenant to end a tenancy by mutual agreement without a notice of termination, and because this clause only applies to agreements made after the tenancy has begun, it does not violate section 37(5)."
+  }
+ }
+}

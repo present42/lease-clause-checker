@@ -1,0 +1,67 @@
+{
+ "clause_id": "c05",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2e8879177fb49d1da349094fb4aeff40b4c49da3701b696993753187a0953047",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If any instalment of rent is not paid when due, the rent for the remainder of the term shall at once become due and payable.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:11.751383Z",
+ "text": "**Not enforceable.** This is an \"acceleration clause.\" It would make all the rent for the rest of the term due at once if the tenant misses a payment, and the *Residential Tenancies Act, 2006* (Ontario) expressly voids it.\n\n**Section 15** states:\n\n> \"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a breach of the tenancy agreement by the tenant is void.\"\n\nThe clause fits this description: on a breach (non-payment of an instalment), it makes the remaining rent for the term immediately due. Section 4 also voids lease terms inconsistent with the Act, but section 15 is the specific rule that decides this clause.\n\nThe landlord still has its ordinary remedies for unpaid rent. It can serve an N4 notice under section 59 and apply to the Landlord and Tenant Board for arrears and possibly eviction. It cannot claim future rent through an acceleration term.\n\nVerdict: not enforceable\nSection: 15",
+ "finish_reason": "end_turn",
+ "input_tokens": 233,
+ "output_tokens": 703,
+ "raw": {
+  "id": "msg_011CgwRC58hbFqK76RfsARdq",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.** This is an \"acceleration clause.\" It would make all the rent for the rest of the term due at once if the tenant misses a payment, and the *Residential Tenancies Act, 2006* (Ontario) expressly voids it.\n\n**Section 15** states:\n\n> \"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a breach of the tenancy agreement by the tenant is void.\"\n\nThe clause fits this description: on a breach (non-payment of an instalment), it makes the remaining rent for the term immediately due. Section 4 also voids lease terms inconsistent with the Act, but section 15 is the specific rule that decides this clause.\n\nThe landlord still has its ordinary remedies for unpaid rent. It can serve an N4 notice under section 59 and apply to the Landlord and Tenant Board for arrears and possibly eviction. It cannot claim future rent through an acceleration term.\n\nVerdict: not enforceable\nSection: 15",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 233,
+   "output_tokens": 703,
+   "output_tokens_details": {
+    "thinking_tokens": 361
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

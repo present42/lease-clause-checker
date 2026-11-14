@@ -1,0 +1,74 @@
+{
+ "clause_id": "c10",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "23346ae996a5b5aeb182d2da4c8d35e6c612256848775f48539ef9dc0c5b1c06",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord will clean the unit every second Friday and may enter without written notice between 10 a.m. and 2 p.m. on those days for that purpose.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:22.314281Z",
+ "text": "Yes, this clause is enforceable. Under section 26(2) of the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to do so. Entry may take place at the times specified in the tenancy agreement, or between 8 a.m. and 8 p.m. if no times are specified. Because this clause creates an obligation for the landlord to clean the unit and specifies permissible hours of entry, it directly aligns with the statutory exception to the notice requirement.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 198,
+ "output_tokens": 134,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Dnj3apTLGJCuw8cPmrSB8AU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:29 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. Under section 26(2) of the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit without written notice to clean it if the tenancy agreement requires the landlord to do so. Entry may take place at the times specified in the tenancy agreement, or between 8 a.m. and 8 p.m. if no times are specified. Because this clause creates an obligation for the landlord to clean the unit and specifies permissible hours of entry, it directly aligns with the statutory exception to the notice requirement.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a18a9N7_HB85h02kbwe4hOh7-4WN3a8wxsCsFGi_HxUcA7lHQwFlMd8JQqtFbEi9m7klHPcs7jFQCM4zwXUCLBFW4iu2tVkv4-f1hSUdw0ZBCTD6_XIduuSZuV31"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:22.402836Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "Dnj3apTLGJCuw8cPmrSB8AU",
+  "usage_metadata": {
+   "candidates_token_count": 134,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 134
+    }
+   ],
+   "prompt_token_count": 198,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 198
+    }
+   ],
+   "total_token_count": 332,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

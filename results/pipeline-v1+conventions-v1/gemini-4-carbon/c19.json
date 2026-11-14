@@ -1,0 +1,111 @@
+{
+ "clause_id": "c19",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "67eac06e02dba3267628627060f17ca73078ddd3df8ae99709ab62e9c7a8c1c7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nOn signing, the Tenant shall pay a damage deposit of $500, to be returned at the end of the tenancy if the unit is left in good condition.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:45.175432Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"105\",\n  \"quote\": \"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\n  \"reason\": \"A damage deposit held to be returned if the unit is left in good condition falls under the definition of a security deposit in subsection 105(2), and subsection 105(1) prohibits collecting any security deposit other than a rent deposit. Because the clause is inconsistent with section 105, it is void under subsection 4(1).\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4543,
+ "output_tokens": 392,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "pXD3av6hDe_r_dQP553DoAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:57 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"105\",\n  \"quote\": \"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\n  \"reason\": \"A damage deposit held to be returned if the unit is left in good condition falls under the definition of a security deposit in subsection 105(2), and subsection 105(1) prohibits collecting any security deposit other than a rent deposit. Because the clause is inconsistent with section 105, it is void under subsection 4(1).\"\n}",
+       "thought_signature": "AY89a18LBNwjL19J0syvTrlV1jZvJuN4QE2Vr5Qsb7nxIp47o_QmiYIheTaiELejB3-MLCE5iETkQgRLk8B3BC8xZzeJzJf1xxSJcapyakDx4e3ePdy7wpcvZpmMaioNeU7LW2BpSlUX-pvJ-Q8pkTT7VY_t0IRAVAZZSVA7CxDeqqZkjtCAG56B26Q1kKK5blk43knA-zPvC_9qFbPhnHet82eA7OHirHmqrl2pRT6blkAHAj5BQ-VOF3FRHBjmQXuqvxe-z_5RbcbsPGpYzBN5nlgA6J7q-U7cKiigwhF072vS6BtGv3jo2urcUoWdgYHlxRroCYTKe0bwLJu0NjLMFAnJf7uH3U56zPErn5ku7pa38wlVQ1BKGaCz3hoEaG7hvyYtAizhU5PY_DI-CWlYUx_GHWdPP1QVTEsO1RvNBG_cRZgpIMnUQ1hrSjPJMLNTmNSPcT9gj_io1oeefjb1BKfOaLWIx4x5ai0_KGddQG_llKovrJg6ou1gSKP3-oln-umVTkOg-JdF05Ily5_mj2oOgjbZ1Y-AwuaC8lGiXUu3IZ6u3zMlDcSiU87JRwWUAGCPfQBPFeFbdh6Xwa7fkxVmVcJQ2rfuTFKhLC50qZIcn-x4eHSjE3-a5kZKRXpxVV0Fzay9TtGPyuQcnDy_ZynOyOmCF4wd0x0JcKeX5EE613EYkjSpZTFZvf6WjF2iyzWZS36jNSpEP6xR6DyRkMl-_hi3HD6FOoooG33MQtRSuV1noPSN3_xIniwMB3JfdnHHGausd5ywI62RgYZx_OXHbrlLuW-4pIH95FcPKM0npTVedMGj4nFHFBFXGBH6S_IeStPySokdhg_JmlVHexcfSDGRkFh8VKIV2sacgNVvYpxv1-xg1s_xiH5o3n_j86BBsOsi0aAY1EyaVd-1yGFnoGxMBRPsuOvGXDLF0dj1xE6iHQyHDqxK-yLEo1XKSjgGvYsGPhrrzgVKEyf5HqybfQlBhWZzDJHi2GpzAWEs7Npl0GyMxYTjbZQoaHFMhYqdQ-zq63R9t6w_8iVGAskW-CsEuUCUvGKG-GWSSEAk6LAVczOi61u48oObkrxa-Qqf11KOszcEVgNp9ZKHsc22FtjKLCCG_yMlI6vBMhaRlen7iyMKGV19qXrsti_iv0OaPCcrY-knt0FD6p6grrz6rImBbxZL0qjE1-I8v2nhZK6GG8zaCxyoxkB9xOWMJmdDC4cmsd04X0V5IZ5Z4hsAhkWivwArUmFFOU1AWZuvvhY7BlbOe1YvoJnZrELMoioYUjyhD7qgJL10c0fyow_ZxODHo_cLnK-xmsagUflvIvW8Cr0r-_b1DOqr1NjgeFzwcn5xbg1psmL6yJa5JsBOLenG4RDsCuYwE3kqcM9dEXouCVJJ9e5s03XcIA_MQMvilwrfi22unL3T5DvqOK9GSNnakLFKXLO084I6M-mvGFCMMrDNUG8jFNQ="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:45.217342Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "pXD3av6hDe_r_dQP553DoAU",
+  "usage_metadata": {
+   "candidates_token_count": 147,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 147
+    }
+   ],
+   "prompt_token_count": 4543,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4543
+    }
+   ],
+   "thoughts_token_count": 245,
+   "total_token_count": 4935,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "105",
+   "quote": "The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.",
+   "reason": "A damage deposit held to be returned if the unit is left in good condition falls under the definition of a security deposit in subsection 105(2), and subsection 105(1) prohibits collecting any security deposit other than a rent deposit. Because the clause is inconsistent with section 105, it is void under subsection 4(1)."
+  }
+ }
+}

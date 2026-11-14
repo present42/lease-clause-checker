@@ -1,0 +1,67 @@
+{
+ "clause_id": "c18",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ceb7c51cf194970e90fc475cc7cb6b21857699b318243d3036e5ce290fa148b7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: For the Landlord's records, the Tenant will sign, together with this Agreement, a notice of termination dated for the last day of the term.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:45.372955Z",
+ "text": "**Verdict: not enforceable**, as far as I can tell. I could not check the statute text, so please verify the section number before relying on it.\n\nThe clause has the tenant sign, with the lease, a notice of termination already dated for the last day of the term. Under the Residential Tenancies Act, 2006, a tenancy ends through the statutory notice process in Part V, which the tenant gives at the appropriate time and in the required form. The Act also applies despite any agreement to the contrary. A pre-signed, pre-dated notice would let the landlord end the tenancy outside those requirements, and it would work as a purported waiver of the tenant's notice protections. A term that does this is void.\n\nVerdict: not enforceable\nSection: 3",
+ "finish_reason": "end_turn",
+ "input_tokens": 239,
+ "output_tokens": 2164,
+ "raw": {
+  "id": "msg_011CgwRA8NMzJSNViPqzoEyZ",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Verdict: not enforceable**, as far as I can tell. I could not check the statute text, so please verify the section number before relying on it.\n\nThe clause has the tenant sign, with the lease, a notice of termination already dated for the last day of the term. Under the Residential Tenancies Act, 2006, a tenancy ends through the statutory notice process in Part V, which the tenant gives at the appropriate time and in the required form. The Act also applies despite any agreement to the contrary. A pre-signed, pre-dated notice would let the landlord end the tenancy outside those requirements, and it would work as a purported waiver of the tenant's notice protections. A term that does this is void.\n\nVerdict: not enforceable\nSection: 3",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 239,
+   "output_tokens": 2164,
+   "output_tokens_details": {
+    "thinking_tokens": 1929
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

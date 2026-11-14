@@ -1,0 +1,67 @@
+{
+ "clause_id": "c19",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "7ad28ea3e8e026a0f75240c9ecae3680ce66cc48ac1919bf04573dd986d97811",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: On signing, the Tenant shall pay a damage deposit of $500, to be returned at the end of the tenancy if the unit is left in good condition.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:46.706090Z",
+ "text": "**Verdict: not enforceable.**\n\nSection 106 of the *Residential Tenancies Act, 2006* prohibits a landlord from collecting a damage deposit. The clause requires the tenant to pay $500 on signing as a damage deposit, which s. 106 forbids. The provision that the deposit is refundable if the unit is left in good condition does not save it, because the prohibition applies to collecting the deposit at all. Under s. 4, a tenant cannot waive the Act's protections by agreement, so the clause has no effect.\n\nThe only lawful deposit in an ordinary Ontario tenancy is a rent deposit, which is governed by s. 107 and cannot exceed one month's rent. It is applied to the last rent period, not held as security for damage.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 244,
+ "output_tokens": 1369,
+ "raw": {
+  "id": "msg_011CgwRAE3uvy9fgSSVtkRXz",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Verdict: not enforceable.**\n\nSection 106 of the *Residential Tenancies Act, 2006* prohibits a landlord from collecting a damage deposit. The clause requires the tenant to pay $500 on signing as a damage deposit, which s. 106 forbids. The provision that the deposit is refundable if the unit is left in good condition does not save it, because the prohibition applies to collecting the deposit at all. Under s. 4, a tenant cannot waive the Act's protections by agreement, so the clause has no effect.\n\nThe only lawful deposit in an ordinary Ontario tenancy is a rent deposit, which is governed by s. 107 and cannot exceed one month's rent. It is applied to the last rent period, not held as security for damage.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 244,
+   "output_tokens": 1369,
+   "output_tokens_details": {
+    "thinking_tokens": 1103
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

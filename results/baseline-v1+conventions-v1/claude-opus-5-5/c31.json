@@ -1,0 +1,67 @@
+{
+ "clause_id": "c31",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "56c343c0b373c82f0510592aeee5835dc5e86d78a39e75a35303778a1b33d051",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The rent will not be increased during the first 24 months of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:48.422145Z",
+ "text": "**Yes, it is enforceable.** The decisive provision is **section 4** of the *Residential Tenancies Act, 2006*: \"Subject to section 194, a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\"\n\nThe clause survives section 4 because it does not conflict with the Act:\n\n- **The Act only sets a minimum.** Section 119(1) says a landlord cannot increase rent earlier than 12 months after the tenancy began or after the last increase. It limits how soon a landlord may raise rent; it does not entitle the landlord to raise rent at the 12-month mark.\n- **The clause gives the tenant more protection.** A 24-month freeze stays within the statutory limit. The landlord is simply waiving a discretion the Act leaves to it. This is not an attempt to contract out of tenant protections, which is what section 4 (and section 3) is aimed at.\n- **The Act's other rent-increase rules still apply after 24 months.** Once the freeze ends, any increase still needs at least 90 days' written notice (s. 116) and must stay within the guideline where it applies (s. 120).\n\nA tenant could rely on the clause to resist or challenge an increase attempted during the first 24 months.\n\nVerdict: enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 219,
+ "output_tokens": 1019,
+ "raw": {
+  "id": "msg_011CgwREmtwr7BNn6YjSgU11",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, it is enforceable.** The decisive provision is **section 4** of the *Residential Tenancies Act, 2006*: \"Subject to section 194, a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\"\n\nThe clause survives section 4 because it does not conflict with the Act:\n\n- **The Act only sets a minimum.** Section 119(1) says a landlord cannot increase rent earlier than 12 months after the tenancy began or after the last increase. It limits how soon a landlord may raise rent; it does not entitle the landlord to raise rent at the 12-month mark.\n- **The clause gives the tenant more protection.** A 24-month freeze stays within the statutory limit. The landlord is simply waiving a discretion the Act leaves to it. This is not an attempt to contract out of tenant protections, which is what section 4 (and section 3) is aimed at.\n- **The Act's other rent-increase rules still apply after 24 months.** Once the freeze ends, any increase still needs at least 90 days' written notice (s. 116) and must stay within the guideline where it applies (s. 120).\n\nA tenant could rely on the clause to resist or challenge an increase attempted during the first 24 months.\n\nVerdict: enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 219,
+   "output_tokens": 1019,
+   "output_tokens_details": {
+    "thinking_tokens": 596
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

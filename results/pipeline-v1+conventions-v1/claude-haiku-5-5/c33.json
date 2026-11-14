@@ -1,0 +1,99 @@
+{
+ "clause_id": "c33",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "1be5d8e7bf532e718c60db31a0118f46d99e9cd2cd728b880d5c2c69c049dd4e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant shall pay rent for the month after the tenancy ends, even if the Tenant has already moved out.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:31.780141Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"Section 134(1.1) bars a landlord from requiring from a former tenant any money purporting to be rent for a period after the tenancy has terminated and the tenant has vacated, so this clause requiring rent after the tenant has moved out is inconsistent with the Act and void under section 4(1).\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6429,
+ "output_tokens": 904,
+ "raw": {
+  "id": "msg_011CgyJ7PCCYB1iCjSfoFjfM",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSshYKEAgTGAI4AUIIdGhpbmtpbmcSDF0D9sHkUx5wVzBYsBoMEK1N9K0Bu2cHPQXQIjC091Fn5EkoBjXhPu6u3BsJZMrFv/66jhF6fjsJenvIuDsdPCt9fG1yQBRgjNZNnuEqzxUkpv5kmgoMbHFg45omBN9+khGq0UHRatWqPb6kONOvEccj6ZGhwuAJL6xNZzL/gP0rS+90eOW/7eDy+q7RUeBVfrGs1juROEJ2MJm90IQ4hTDrnCSY9oLP8mUirdRN4qSRcXhRMAOSrGF67Dw3RW+ws/3q69Sjud7yLOwYFT1VIQ9/2XSG0ll8HR8WXyWf4GoumynN22cGAo+YZUOWkp7Wap4XIEght/9kEpl/tBslSonmVWYvt9mvWL/Ym1YjhY+bcOilTrVeLjoGag/vMUGpFCw+ftjUWLNcTNkMwfaAO3mX3EypG/6/PP5ds9eYiemm3GzLfzV6piTjMsThY5pqdvJR/xX48olq6ceteNQSFHGx6yyufkQlX7Da3+HM3ufse76q5MuatZpmn+3DyEYegVZb85jSo8E5agylXCSRTphMsocnufp0i2pEt38KnX12xnEaAvx38YfoU8Qm/4tz9n8Rw6jn+PbxPiREwnxCd9mpZ7nPu6uPrYbKRJvfClpCpEH+Zns4/iKIbCdUsfzwq6zOGkyMlwkqjX3kW7gIUAYb0qHdH3TU/GmmQrASzLsx6TYbi0kyED33pMOcoi1w1Cof6F/QXBh51Cj+5SuKGQTnU08SRmVRbWNIEQV8WLHwQ1r4u0VuqGN7jU7K2Ub1d0qCsNcU1panUP8OKw/KazR0Q+fllkD2h7tglAnjllU0Arwxb01gxrDUZtled8ISF3tk3jd86JfMiSeclf2ydRz7A3EV6Bx1pnG2NSbvF2ObvtMGX0KM9hDLXssyoEu7gJXY+Yf7kBkq6l5S+u4BCcwwLI0GfJsamzQSid+7Phjv7cnLn+OMLFL8AodDwhDuds5s6L8HlZcvvrak1EDRTg2G6tuGdYyP9qqiTcEuv8/zMw04P2dl9tZ8uxLDY/wPBJoWVCrNon7nlYr+9fiisYlxf38zYYg1+/tfCYEYJ1YCYDKjQFGaOcjA9a4sV4irpMHmDFk/aMIpSl/5AG9CgeCL2165CtM1N7rQldyRWPCpe7MyjmNzbp3S61TX3P9r7czPxOu7S7JNj2rYGBn5YT1hbfUMjg5d+4WfedAHH4qE9GgKnLEeLgMRD6C+7WTRPxdP7SgTAF7yEK7P6CWLzOIzITjWOQI/SJUStBuGOLnjF1rv/V7fvE6Uc9ppWa0il5NPeKIBmXm2lU5K8AM+zWNTJ2eRxBhBcPaQ0n63Xe+Xd0Zazc7f9Uny3umgTpTmVj01Wb83Q+Dq7eHd7+g3NQLKGTBxqd0bVHEBeocqzdoAnwo8An8RmJhaa61kQ/PRXRP8CtlsKbvPIk0WaGXQ7naj4SLfhmfQuuQlu8GaFFPsLXh8XaGrfRta0b/7tjKJQMeaK45gvqNsBLD/VVd6kEG3uzQik/BiGguEOcwZv4nD6snBPxEC66/TZTDdJnyW7fg40YWyJQcWMv91BLaYBh7HKeM504a92V9XA2fJ03pVPR1ljdmpe8kvA3VcVV6wp2e0OobstKh1jb3UOGqGZoY1SYwWu9pnVECLwJwzzrdPDO2qpo7U5q0Pq5V+vO1r3eFCJuYmuNvxj490uXtDe5V/Qta15BisSekiiUcs3MtWVSv3GTN/dO8mo0S62qTY6R02r3sIIvnEmswP/RoXRsFxzR4RlVo3qeEsCvQUwhYiMAmYWk68iDoArnQ1nMO9jnhHlrEMbg4hMlFEFyppOJK5OxWAv54qN3yE2srcV0iQC3Lyj4WojCqKkyn2jkxolZzOaSmIPiIwTeEuMS30EaJ97uRx2p4fg1jnKFdYFnLGHHidmqqbZ+MBIHHW4oApwuRlZFMdpL0Ja8RgsmrsXFiGO9igDFT061qDcAQhl3VP5I2oAMG0xtQGHiDd9wWd16cR+4aV5gdRn89owClWucpIDr/Sc5uHjDc5sOOPidcY3aXXXUv0CeCKm903ggT9i57YWbnVCNXuCOouS/wB8Dqj3BAHuJC4GSGgPVNYb6MKWivqShBGStMBQ9GeqTWVErK5iQEtAjEN6TZx4EJvTSK4yfVa5H0x/w/NLHtJwC7bQVhUtEsM46iffrPRZT7keHY1IITiSjTf03O4yPFMplZgVWUWBXr50U89Izav3LK7UHJCgOuZ12gxkYG3MwZEPpPkUIga02x+x/Xs8DJr1eDlc8gamQahZu9dH3DkmX/npb/xi6bQywDaeC2iaGfZS8bfENljf6rs7fU84YmmUYyQQaO2KqTZ+9hNtzpN8kKq+dZmv3YarBbnblQHmvyU8n88vbFUaP9ldf9AykQzxMa+45iBl3Ar4ub+ra+TAI4XZ6l0TMX+IhTEgRVGwJPN3vcc3XXs+fy3hd/5IL0MR+YL+9R/Z+ssCVc5D1jP0e8ySCFhGesygTJRPFmEd2XK1Lr+MVl+4Q2NkcUOEe+uHyZKicy+ZoP3Dgj7YxnYEFkBna2HIFNRV9sgRBVKChj6hwTDEFqZbYCTjCvMfGQV+MxQfusi6fGOvUndqno/PMMAIQrEedz1BFdp9E6bdFWpcd+PrsT8ME8f+xINaYxEBe6PPo4E7je2qlyPlqVHNWULdhXn/wYssieBXeWpg2Qdhb9NUpNfLTXR/4fJq2rexnUwr2mVUsf7sQsuyeRlCyKVf2Yz+GHDm/ZjsLerhPdM2nbPjMfvWeTSpfx0kL+NH5Xp77eLoIfHplIBLR781OJHlcgoPMPssd70h/z7q2Y/wI5oULK1iF2CrifWFIUVXXU6AjLkfukD2m+Rpfd8QD6N00r3H6Xid3yRSxA8urgOsmE3LfJ1ew34GAIR/mdJK6bKrlCxtza7saX9esyA8KtsozddPvbRlBNTRT9E3aQsND1+T/rjhAF3hpADaUrX94r4NKPV2jbHttcLWav7Og93AUKbRnp37SMz8LueQQEf0q/PXTspKY3j0HxWttczqtwvnM+jSgMCkGZEDxpg5IAD92gZugffPgkbyf/Qmz7dnxCTbkV7bVRGLrgk517D/xTFDTZP0KJHMoSOMHJHpzg+Lviunr+tBLS+FygADvK7HRUkxGXgPZc93d3L4rFNScjtJbrSvnXmj4h9CDmjJJuRkc5mdI3aK/Rc0oyl7PShKuU563r3cRjNjHdxBcg/Rc49t+1d70hH0srndFxszQ9NWrOwivA7FntX0/0UHUlkR1Y0hI8Tfg3Lbmi3JDID65LjNT7ppRGOOmSGWr9yNFHqQjgFOLdicEhJDR9lC4jThMs6yfD4pTH1IRIBQsFZQip4oQr4jtupvUhvrKT2L44xYdmu1wUeDK4G0SxgPwsLbAzs0xGgzgmLPff1L/ucetP7F70FviakLLpV77BqHNto8Bwt12PUNt710oIfr6BAsG7ZSpSbhfDWcgOsPjJRSB4f5pgsYqnWbDlQXZnDhwci16fL1axzYxQ/wAHWqC/mfudzPlmCLlmpBhHDGrl1DDm0Oq5KYdGuyffZovFITUTxw2YgMP5alneGLo1Q8dXPmMqTE2G/FoTKUy+V9DbxQu1ZxdfSpNxA/KtSu2gvZrFrIMUg2nse+tX6mHMAsf2btAphbJjzgB3NmmMIfft3hMKdwVrWFACbrP1FXnTvzN8WL0vYshBfuv0RTZpZs1xJp5vSHTfW505xJsaZOokD/Zk/2wKynlmzwpSIXwJ/MIjTt2DTciiZN8hFDGnusDLkLgP5ghisV2L+9vLYasmvGAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"Section 134(1.1) bars a landlord from requiring from a former tenant any money purporting to be rent for a period after the tenancy has terminated and the tenant has vacated, so this clause requiring rent after the tenant has moved out is inconsistent with the Act and void under section 4(1).\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6429,
+   "output_tokens": 904,
+   "output_tokens_details": {
+    "thinking_tokens": 753
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

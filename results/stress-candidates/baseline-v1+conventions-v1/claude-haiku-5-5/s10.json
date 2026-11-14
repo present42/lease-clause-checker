@@ -1,0 +1,67 @@
+{
+ "clause_id": "s10",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2982a376897e3972668e989571a2a8c244eaa6ccf52c4653c695c29fe5241d6a",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Before any rent increase, the Landlord will give the Tenant at least 90 days' written notice, in the form approved by the Landlord and Tenant Board, setting out the new rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:12.818819Z",
+ "text": "The clause is enforceable. It restates the statutory minimum for rent-increase notice, so it does not reduce any right the Act gives the tenant.\n\nUnder s. 116 of the *Residential Tenancies Act, 2006*, a landlord must give the tenant written notice of a rent increase at least 90 days before the increase takes effect, on the form approved by the Landlord and Tenant Board (Form N1). The clause requires the same 90 days' notice, in the same Board-approved form, before any increase. Its only substantive effect is to confirm an obligation the Act already imposes.\n\nThe clause also does not purport to permit a larger increase than the Act allows. Its only operative requirement is notice, so it does not touch the rent-increase limits under the guideline or the above-guideline rules.\n\nSection 4 is the provision that decides enforceability. It provides that the Act applies despite any agreement, and that a tenant's rights under the Act cannot be waived. A term that is consistent with the Act, or that gives the tenant more protection than the Act requires, is not void under s. 4. This clause meets that test.\n\nVerdict: enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 255,
+ "output_tokens": 1642,
+ "raw": {
+  "id": "msg_011CgycmbAvZ281K32ahGrbf",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSzCEKEAgTGAI4AUIIdGhpbmtpbmcSDBAWlBg5V00TJ/nQXRoMYU9apkKrBLbsXhFDIjBqfFzi1Dxvbi09j3uDzA6a2vrLLbV4Pkrv5A3rk93z1mihLk4qvQPLNakQunLpdC8q6SBt5qEz88Dvcl84oeD8+wkZYJzrNhjOa/TPitiZVXV84Uhmjhwa4o5dmp8Z5z5jaBTWgJ/4uBuwb1BOu4jwcZva09wIty32xcAikbYZ0VSBylEVdfkHkLX5FZKLvs9RbrX1lFEmi5jrmrnRASMsmrlR08VuBqQfbx1ICg+HUx395y7i31gVbU0x8kgp24dIrrp4oEXXOikrzN23kK0CpLoopCj6JBnR8k2anKTIr6Gwvhg2JLc/gvUATut3rrpetA+wyPubMIo5dLQmYEhQOxj97vY7xtqiehpKuutCpDHLaGreMXvgwqx6X2fUr/djd4YZePjA4mHdkfcp54uN55f+HVri0SOGyhuWOJ+82euFrTPNLkqsWc6rf5iwe9jxFG2Wq2uRFnQNye/AN08tk+Miofb+FkrBNOF9eovUvliPtkBt8uCEYHEyHxX1k1J5JtNmDNLKPXigSD+fwEZLhif9bqiMd9PEd2a163F9qeo8ro782wp7gTdkhbn55DHWRtyNB/PkC6SLhTfsCrMMuooICRIRODr730jfC+DcDPP8gy7N6LHYPSnmmyDEy1c+s4UyPJBpvWy7MWNXwZbpbxHYkxeEBZXLWzcSeLBiHe832T0v8+caRH6FiQoafQN/85Gyh4csW3VaJQR8Ir5o/r37adypZ/N3XPlzLgUwwwMvruTJg6YQPmvj0nI8MiOBmA30a+7X6aeYjSmNPh38fqFKBXehWHa/myNm3jZLfuPkuSlSdvKizEkUz0BYB+w6dtTLPeqS8txE6zivp/tjIQ/M4TvxmM0FrJdm0E/iDOXov43RwIirYGsQPBCkqytBqEk2YcDKLSksLdOWbGpIrCz9CBtGFenH4aDqHAwkgdIcDLMNHboFxINu9eXXX9rjOv6SYRccQNZl9jzzCggHR1aABKM6oovoficc9fPC0mikGzU+ayKvlKAUooOq8KTfg9jazSJYJn6cd6BliqMUdQzptwFVYRcTY+sou29nmTxe9BLsxnbeTDk8IQCQTgffKx9d5/lZulUij9VEU3TbPYIZ8U4UJSu0o8J9hDf4yoXypqeArTv9RK/01TQkra4sM8frZ+hIt5fjIoZHlXArU4VEKQ1wfFIjAdGOCIHtUWpotxohxXPh5QRo95J6Lq/DMhA/v9/bfZ5rh0zz6f9Ov2XenbKPaqqiAg4LUXUNU9C5qy64pyI/4JFbFxJn8TLq9KOgrjoIgO1qdekpz4MH3bF2Gp8tCkoxLR4aMxL1Lazg1nrw/lieLiLVK+ylwc9uVHl2jLP01hZoFRbb9SVhEyN2v9Ubn/zQDQuairsNumOPffCw3JItDShUa0eGUQFQlLGhidHOSOmwYBdFkqSMa7vAkAq/SuHCkmQYMbLc5teUTdwXYQFhIsJY0OlhjUXxdUpmxbY130pEpKvrxAmiCU55oQ8loohmjr4iLxilsS/gEPFryu3bsxwhgq1vcO+yF8b+W3biiTRS4kX5YtCLz7MtNV3bVreq/YXlEVUg0G/JBvgmSuQwMQGSVWPtWoZKfRXH9XelZDK9DWmM5/Yihc7oxpI62fK2CxdvBDqt3vkjlxfQVFdGz/QyeqZv254yRb9C9dD9w+ivPFmgjo93JiDmQthDSjTlkPvm083ZLt4cy39Ck239rAhXnp3MIEJbLCZdL4SbLbuJm4MgvBWYdWAQOEZMaV3hz0FZuBTr6odctopfYEm9L7P0L/q9reykn3KqPtGPSEfukCBpkobC15kJc6zVkfDMRBfMtwVl9ZxoKM+iRn+h8QHP2BgUTaQAjyfDHT+0FJ+pj/Rx6nyv/5aJXJ8cvoySaGe7QwATYYzSkwbWKVM7ke8uDxZ7mRxF7VGQfCerpjbrQCyrfNv2zmoLSTb3J8plR4I1pYVrEuTm9hPTQqdUe4Ef23GnvNRWvz8doyer+bXktKgzYRNZrlMlPV/IE7fa9r0adcOp7jFNMEWHWfIRDhICSHDNVN5EjvMbk+KdIlIWNtUpTRDyA7Uw4d47sTkyNFleFTdJa7i75zzwYQVTIIxzN3159r5bPS/IKBphpHMVNnUEN4bwdACxL4ZO6mo7TDe1T1fIh0g+5RS4E9sc5po6uckuqyle3QE0UvdkMIjAwRr4rBqweFMDgu7IXutLMB9+2Ptun8dqVHuBzNbJjRfxTZ+ltrynn8gIzZPD3Y9e4yvbMF+IP8OsZVzMPQuWrzNpUYTwayd7v5cJ+dMDJ8hEo7LUQw8k6WHLmYKhGtoMvgyFmuG3rEdZN1bVJGYyynEdtVSDAhxIBW3bMzooRWW3qzOEm4rtzGWFAuRMX1AYBVH3SVt/V7QOn9cjcO90b2gSdIcmfz+QgjSX62h9/GdlUZFV03omPY2hsjohVLKptefEQ2oS2GVjX1ataGkEq5Pyleqgc3tGT1+xq1phjVlwoSQrHU4ap7r5h60Grxoo/ZGYYBwkaY+iAkXP7PuWzki0zUNM/SoSQy8NUYrY/xrltFp9Cm5tEdBc4YHNVzff26MV5sQ/S/dobS6K+cxZ7VI/k/VoC+2qw3NkA+Xq6I41ivWLfe30vSe3NXovgL73dLlnyqrHffkpY1FUWNBr9D2tK0OqdYZxDrtfpsXh26SKFOPO3Ys3pVMefKE0zYwvbiXP/KI78Nu+4bvvYMFMf1D1YQK/keGS5dupb5stAxRlGTT5PwD0HFAnxv0iuGOKJJwdLT1dbnpnWAwfgwkdVpTNJDAWc03CxuTEXeWCuUW2vL0BFaHzJ+On01InzqWCsL+366ep7F5PHPligRntOVIzdMBH5jeY2FyKDZcL29+mQD/uF1VX+QiycbOn00/0d7P/TXq+5LIWz4dMFWlKUtpXUttZmp9OsPdPBf8F6UV8AYPdAs6aMmz7Z84sM+OVxAKCnZgjF/TP5Ta7VooPmJrzgSy5TmrD2V+LhhFgvhIyCMOBUroKls4xwRwP2C4ZlJBy7qX3lDPl8aV+JnrYNFjGQ3XJh1gWma0r2Y2mjfLew4s1mtC/veKS3w66vJ7pxkeV8pyAFy+9vX02YLEO8NaaF4pLId8Twh0ef6ttqHFta5wBRYyhrNNM3LE8NwIDpUz12ZXqzobH1SmIW1ULhiCSChDJsRHJvClhBUTUq0PY59ySsNRo/lliYFft5YUHmGMXW5qWhXo19LMnC99oldirV0fWjyzah+1w73TSt+xLoTY2xd7ydjDG96Xs4oHXh9j20e4LRcAh5tjBd5DzYHB798weAV51p5jNpLYq/ukLTSPmRHHwXkLmi9h8yHCHQCbK4rVUTl7SE0CedUFOKlvbTmC3AuPaWgzqklIle7/VXuCP7BsEq3kAcaGPkBRrsmKjH9lmBHi5G7XrcJNBESq3TWu33xtgfgRa8hHqgk1jXekI5pO8D8u5KAMwvdrZGYem6aozdBIrkW9rjUfEJDMvPjMYCpneUpGjLeTIdFpv+pww9t6uVz4u6tMoNREZFwGfRPxTRLLtV0wQmwqPgyp1TxO08Jxi75thRVh7422YUwp/ruWUuTzZxuMds44wCfDVY/HZUbjXtHbE09PhWFO1qYS0zb5TB3VC5Vx7SpvHvZkcLltOBvjFAeOlWiMH7wHb72vnYqFKivdXWVI5qlnNMtUdVs93/Eh2Rkn22Xhp2DYF8d8mV9/sxx2j07e4XN1LWngJatBYTYiRt+PUyjLF+FsiBZh+n3/alyohL09vc3/VJkh83mnlVx1SXIOCo4g1I2ABlWra8WA1ABCnY7NH2mZ8ojtderfKwCJbujOWMda/iHQyPG5vkArwoz092f1Trz/0n/PkVU9TDZEJXpaylwTeW8rkd7c2FrvNzPYEV0YZl6J9Ewu2AqyT59yjuojh+yuwgBhY8IyBeuXm7MN621ajSUYypEvb1hklopW0D2v47D3qGEmS8FmtnANiQKy+m0o9kJ4sedSzNEWl7QLQ75fHi3XBdM44mnJEX/CMU6+UM0ZS7ph39Iyo0l8NkxbuQUUiPBaeHM5FGiqBY1rxC7vx3NhBVIa4Kkcbr3wFHaBex9CJ26LBaet0qTLJsiTKBpjqmaZrSxLdxsZUb6BwmajapDZzYb+wIgGjfVbRuF9meDDojSyGt5qqIH5WlxF3jUC44BTU8/ggU6h3SwHY/kfRK0vLaABK2kKDlVoqMn7hcWEZ5GT9EqmGETb94wyQQvIrFA3f/+85OZqt9dlMmbJzmikHJtHbyCsmwhowniQI5ojASa6O0i58sHT7M0ASjTXE6MDY6aOfpggpYyKVCI1t6TqSIOpg1zu6KlCEqHT3otas6fEAvRIEE3ONGWtv1gEiS5QKNDpTukxl8M5sRed27dOvI7oOX99b1u5KoIQTBeBlpcZYGuQt/t3sBCa3mHH8ZNjfoOWJsJUBI34r7mZqUWY5gpJiBEoclCLyAf1wn4rl2puJnlBqvAATk1QeVlkggBfTOb77/+sQsfqRxl/pHbFUPuLlvjPuw/dq9ZJ+fG36p5lmA5u4jZGIrYnxa/d4Lf2ZhdmLIbg0JwniLf0+0v0RsFPrTMp5EYJqINCu3ws3QhWbOGEagGLYdVFAAY4gSs+Vuhp0K0JZmAu0rZf6AOdsB0b0lXJsOsfxkzDJzdSZooY+t/vdMooJyOgAzrPvdRPX3MLJqHAIChgeg26tBjd1vbcoR6EenLaX3ezio8z1KuehPgr8JQCAaJKYrfrAapTYpaE5tThEo4etJyzCQmvVsMLAl9U2NXNwHXLSmgm21ml/KmA5lLWqFb/ceqUDUIa3GvkTGMVD/OE69MVmohJu0pVp8HSbpdfm6gxkxgyuXfYnKqUY/7EIBpVGzXyQhnFb14xKl5YnqJrt/X3MqFgwuGImJaDG0e5ghbe+Xy9181+C0tkzARsqCv7r8ReIo1+EewGnzHmegn5dgoX/3S8sn9Qnxj7VwyZajmWcPmm0FuoHTMrg2Ek5F0vvKvz31D1IO2hys0IgGIeH9I32iskJDTk2sLJFvh/fskRPew/wSuhmPOAJU6VshjLD5+8RJVG58NLYNl9wrmT1fIIAaVQJsc/fDt1B9U9MjFRBOVHXO8wcGs3Xp0iEGWrQ0SmOwgHrnXw9RQGr3fznGWoeYO/n1zkUZRbARXKNDwGTriTgHbeGJU3ImRITexoZJfBgZvUlAzqmtV0RBYBbUM5UvMaaeH1Rx/y8Cy1aSjjRIufniYkI2LPefk+4Bq2PdPxq3Jq3XWduZxPGMUZt+6jYUrZ4XnEs/cK1OUpIasSIuC5EndpUTg5KZrmmNge5WWPkgW+1YugEs7TyG8HnOEOA4cL/e2aWlsxnX9R5ZmAuDegEQW4qqGOCVbvXlSzdhj6oA00SWHLICmXGqKaVPiCU6nxRRzW02Hutr7rUk2JhYd4gP4QRRVSP43zPG2AgVlaW5TBclzN1dO09oaviNhU6YB5kdL2vUdvK/RNqBIi/v7Eus6986/Q2kM9nDNhWrAYCN0yJpVCY7JjQrVpWsyM6ZTlqhy/INZOl9hymFeCQxFPygp2RvemmDGcNx1OfVVFJl3f2nh17oexzkNK3LLs56b3rwBaWY+ixO+r3JOFLgDPDDo7pbQY4CxZl++a7JxEgAYcq+8A+kc4C90tLGAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. It restates the statutory minimum for rent-increase notice, so it does not reduce any right the Act gives the tenant.\n\nUnder s. 116 of the *Residential Tenancies Act, 2006*, a landlord must give the tenant written notice of a rent increase at least 90 days before the increase takes effect, on the form approved by the Landlord and Tenant Board (Form N1). The clause requires the same 90 days' notice, in the same Board-approved form, before any increase. Its only substantive effect is to confirm an obligation the Act already imposes.\n\nThe clause also does not purport to permit a larger increase than the Act allows. Its only operative requirement is notice, so it does not touch the rent-increase limits under the guideline or the above-guideline rules.\n\nSection 4 is the provision that decides enforceability. It provides that the Act applies despite any agreement, and that a tenant's rights under the Act cannot be waived. A term that is consistent with the Act, or that gives the tenant more protection than the Act requires, is not void under s. 4. This clause meets that test.\n\nVerdict: enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 255,
+   "output_tokens": 1642,
+   "output_tokens_details": {
+    "thinking_tokens": 1271
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

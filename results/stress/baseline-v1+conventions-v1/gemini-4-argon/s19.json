@@ -1,0 +1,74 @@
+{
+ "clause_id": "s19",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "42ab157b31b1053907086bd2ab3304629e5a61bc1fb56fd53350dc85dd74b3fc",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant has seen that the bathroom window does not close and agrees that the Landlord will not have to fix it.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T21:00:56.950890Z",
+ "text": "In Ontario, a landlord is strictly responsible for providing and maintaining a residential complex, including the rental unit in it, in a good state of repair and fit for habitation, and for complying with health, safety, housing, and maintenance standards. \n\nUnder subsection 20(2) of the *Residential Tenancies Act, 2006*, this statutory obligation applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement. Furthermore, under section 4 of the Act, any provision in a tenancy agreement that conflicts with the Act is void. Therefore, a tenant cannot waive their right to have the window repaired, even if they knew it was broken before moving in.\n\nVerdict: not enforceable\nSection: 20",
+ "finish_reason": "STOP",
+ "input_tokens": 184,
+ "output_tokens": 167,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "iXr3arfcAcCJyOgPhteoiAc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:01:01 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "In Ontario, a landlord is strictly responsible for providing and maintaining a residential complex, including the rental unit in it, in a good state of repair and fit for habitation, and for complying with health, safety, housing, and maintenance standards. \n\nUnder subsection 20(2) of the *Residential Tenancies Act, 2006*, this statutory obligation applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement. Furthermore, under section 4 of the Act, any provision in a tenancy agreement that conflicts with the Act is void. Therefore, a tenant cannot waive their right to have the window repaired, even if they knew it was broken before moving in.\n\nVerdict: not enforceable\nSection: 20",
+       "thought_signature": "AY89a19XfdmtOIJyYlzWw3MBReCE_pV87Q36b_kYrqa41OzxsHX2xIBPI67s8PU7zCUacr7pMlMIN0D4UgLPQiTtpkZUY8xebs4H69qn0V4R4E2SHD4oR-xvA1Dc0mrB"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:00:57.028215Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "iXr3arfcAcCJyOgPhteoiAc",
+  "usage_metadata": {
+   "candidates_token_count": 167,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 167
+    }
+   ],
+   "prompt_token_count": 184,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 184
+    }
+   ],
+   "total_token_count": 351,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

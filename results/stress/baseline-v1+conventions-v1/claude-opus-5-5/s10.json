@@ -1,0 +1,67 @@
+{
+ "clause_id": "s10",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2982a376897e3972668e989571a2a8c244eaa6ccf52c4653c695c29fe5241d6a",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Before any rent increase, the Landlord will give the Tenant at least 90 days' written notice, in the form approved by the Landlord and Tenant Board, setting out the new rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:30.526025Z",
+ "text": "**Yes, the clause is enforceable.** It restates what the Residential Tenancies Act, 2006 already requires, so nothing in it conflicts with the Act.\n\n**Why it is enforceable**\n\n- **Section 116(1)** says a landlord must not increase a tenant's rent without first giving the tenant at least 90 days' written notice.\n- **Section 116(2)** applies the same rule to an increase in a tenant's rent for a care home service.\n- **Section 116(3)** requires the notice to be in a form approved by the Landlord and Tenant Board and to set out the landlord's intention to increase the rent and the amount of the new rent.\n- **Section 116(4)** makes a rent increase void if the landlord did not give notice in accordance with section 116.\n\nThe clause promises at least 90 days' written notice, in the Board-approved form (Form N1), stating the new rent. That matches section 116(1) and (3). The clause does not reduce the tenant's rights, so **section 4**, which voids lease terms inconsistent with the Act, does not apply. A lease term that mirrors or adds to a tenant's statutory protections is valid and binding.\n\n**Points to keep in mind**\n\n- **The clause is not a complete list of the conditions for a valid increase.** Other rules still apply even though the clause doesn't mention them:\n  - **Section 119** (the 12-month rule): rent can generally be increased only once every 12 months.\n  - **Section 120** (the guideline limit): increases are capped at the annual guideline unless the Board approves more. Many units first occupied for residential purposes after November 15, 2018 are exempt from the guideline limit. You said this unit has no section 6.1 exemption, so the guideline applies.\n- **The clause is effectively redundant.** The landlord would owe 90 days' notice in the approved form even if the lease said nothing. The tenant's real protection comes from section 116 itself, including section 116(4), which voids a non-compliant increase.\n\nVerdict: enforceable\nSection: 116",
+ "finish_reason": "end_turn",
+ "input_tokens": 255,
+ "output_tokens": 887,
+ "raw": {
+  "id": "msg_011Ch1HwcnUunhqcXwGkJfhy",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSzgkKEAgTGAI4AUIIdGhpbmtpbmcSDEpJKpPRjWYev2WqshoMTEnp0cVkTHxfViWyIjCA0RZ1ufw4Tr9eHVBI5Mm53bqzYgSvLZjhXlgQrSglA62f6eyLXTiw45sLZtTbJ80q6wiVcnBl5twOEPufI4XZPUcpI9Pu8zCWL1ZIHePhywNQsBYbbk1eQgfjLbKriuig6BJsh7M4yt7qFeQ2WYBrXR3TUVY5brijHslTaQoXbjmQATAuEF2OYrFpM1bcfIKtOQlhs1zC4COrTaZ0Bw2cMP5GHD+2M7x57ADW2L9eQtJp08C5k8Im159kEQGB0cniBHHHpuFwpgdr4z/MMXToejQDt4FimiFDk+d4KF97qCUyOYOXu7tD4WEp+B0B+2O7ytc90VEWV8jqd60r7VRAXWLuBB9cGvnUP5mmffpZDzwaVAZ6snnJ8GbeL8e3rkALDWa1D6kB/mz9ITmGC3B/csPQRsWnUQo+6bVXTlRcxstCfY/bTVv4cf5H3b5drWq3v2sq/ul12Fmk6M3hys15eqZPC4MelxSKvlAF5VkxINhZSniH3YqkGaRAEfclTrouVeh6wtOYVJQr1E/LtQrWN+QCUuicE64WxP8TYpHAF++REbLn5TcQwwov3OPnO0ANbwnxKeONRRBdxcio3Xi2rPt/6FN0y5DHfN6XIPtBDSmxG8LYvkYkfsuX1uiT9KUR3l7lyLhLh7f5r/DDHBn3Ag5ngCH9StR5hLdAiWqTGYMxVNiOWre5RzB7RNBBhIycXlbFWQQd40a2jq1PqWBamiOzJuXaclPlfRe5opSL3EsDBr4SUcf0HtjQ0sduPAwvwxyPdtl4UhbJ58pvOI5aBVWLx5Ye+xYTSQzK2FBqYhnxkLBEHzksWC3PKawTFamzKxsR4stf4oqPZx4dEw41Ub6vluvV2ff0EsMVCR5ifd7SF0+QAxV23Kk+E5/kvezfG437piPMy03KbfSM+1cifQLpU2hIzGWVjGbgE/XsxCK0mpkD2mqtI3h7jdR5jtS+AfwPndhc/JWVkW6K19cLFwqk1aiYDlld+I4pvgXb9xzRG1EDPKM91LPlTAnDVc/f1Mjn83JpHZyzUwFpTq7gXBvOF65INVQAXncomsbOw8tXAelqcBiq5LxICjo8EPxZKDIrHOdWzpWjU4bTWnqFVpRjZwfsbSJ6JU6G0ZOwac9U1XRR/bLtSrGym0m+KIpeKtMSqiiVgjW12684CgCWpI9Xw5ljWTcE6Tfw9kj7obvlxCfRapORcCl2qCU2y9WAcxVCD88PTE3jBQXqRJBj+UaZbIZfjYRqKgNrMS8ZyZZFciOzPquPbXrhcyapEUTXR4MEBXV3MBAMJC6PWYVdTS+3LKdgl9N/zFqzmjzPMDZq8s7jM8ODjBTnwIyy1zM2/U6otVMBN/B61BeHWiNcF8ZoBqpB6TskGIKZKffe/kJBtkgHu9jfgQXYime/6UVdrVrFaBTbMYK3ovIOBfm2xPaE5Ze0fz0yyRRpyWsdzCPcde83ELuHzw/QyToSkPxm4YmGJJEHZQ4PVC0BhZfFIwo3SfaQVJHYf8FJSYGjCp7Fq4SMEx2scYgIm9l9v55JcFzgu+CrlRpA6wCEIDvX04otwFdkHP9ipDKb0kAYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, the clause is enforceable.** It restates what the Residential Tenancies Act, 2006 already requires, so nothing in it conflicts with the Act.\n\n**Why it is enforceable**\n\n- **Section 116(1)** says a landlord must not increase a tenant's rent without first giving the tenant at least 90 days' written notice.\n- **Section 116(2)** applies the same rule to an increase in a tenant's rent for a care home service.\n- **Section 116(3)** requires the notice to be in a form approved by the Landlord and Tenant Board and to set out the landlord's intention to increase the rent and the amount of the new rent.\n- **Section 116(4)** makes a rent increase void if the landlord did not give notice in accordance with section 116.\n\nThe clause promises at least 90 days' written notice, in the Board-approved form (Form N1), stating the new rent. That matches section 116(1) and (3). The clause does not reduce the tenant's rights, so **section 4**, which voids lease terms inconsistent with the Act, does not apply. A lease term that mirrors or adds to a tenant's statutory protections is valid and binding.\n\n**Points to keep in mind**\n\n- **The clause is not a complete list of the conditions for a valid increase.** Other rules still apply even though the clause doesn't mention them:\n  - **Section 119** (the 12-month rule): rent can generally be increased only once every 12 months.\n  - **Section 120** (the guideline limit): increases are capped at the annual guideline unless the Board approves more. Many units first occupied for residential purposes after November 15, 2018 are exempt from the guideline limit. You said this unit has no section 6.1 exemption, so the guideline applies.\n- **The clause is effectively redundant.** The landlord would owe 90 days' notice in the approved form even if the lease said nothing. The tenant's real protection comes from section 116 itself, including section 116(4), which voids a non-compliant increase.\n\nVerdict: enforceable\nSection: 116",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 255,
+   "output_tokens": 887,
+   "output_tokens_details": {
+    "thinking_tokens": 228
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "clause_id": "c12",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "3ba5f21514e24494d67489c15d14b95f4c9bb84a06dc568dc35305b264eed0e9",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: To carry out repairs, the Landlord may enter the unit on 24 hours' written notice stating the reason and the day, at any time between 7 a.m. and 10 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:33.319745Z",
+ "text": "Under subsection 27(2) of the *Residential Tenancies Act, 2006*, a landlord’s written notice of entry must specify a time of entry between the statutory hours of 8 a.m. and 8 p.m. A lease clause expanding the permissible hours of entry from 7 a.m. to 10 p.m. conflicts with the Act and is void.\n\nVerdict: not enforceable\nSection: 27",
+ "finish_reason": "STOP",
+ "input_tokens": 174,
+ "output_tokens": 700,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "QW73apzuFqnXyOgPrajYgAM",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:39 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under subsection 27(2) of the *Residential Tenancies Act, 2006*, a landlord’s written notice of entry must specify a time of entry between the statutory hours of 8 a.m. and 8 p.m. A lease clause expanding the permissible hours of entry from 7 a.m. to 10 p.m. conflicts with the Act and is void.\n\nVerdict: not enforceable\nSection: 27",
+       "thought_signature": "AY89a1_wMdosJ9D_fNUHk2UEAAZLq6qPnAbCgIvHRgulkK3UE-uq0-Pbog8B8KAv5ziVdjH4JaqJEotc7zsNaNSJks_V8lqmKc0nnTAHrMyIoBSGdRtNP5YVn_CgIIGDsO02gBlAeGF9H5QZSpuGtSzQhC8PSrw_EWv7PJpMQT-HuLZy4hi5XG-N7UzAIABd6ywB_QWVaUu3slqtdp0siXgsIn8Un4oTp473z5fVPPZXLYQ3AdbOi_HVGlpLBDlBQ5O6C1OlYZTlFUBFjCPt9mGUNwxF4lvyRLleW9ZHh4ETIfCW4JqS2uoZd-wmh14Hf668BKwRwcnFATa4oEpQYjFQz5rZT7aJbzFrok4SI2qAOJYGoKHwBIWcVRHFwbGoPt9WuiyqFU0D06Cxnw4-Rthx12RzKklTeSBYORMi2TeiinWht6CZf--tyofNrmqsKA_2xkJiTeFYoggl74UI6aGFv-NMS-7oSV0xBN2BbOQu9S0IqhqWej9BS-KQlgJb8qWGXk1VCAXdcJAE0FppCb1pnow6hXMu9ycPg_VaV-hUrtJOLe86cKHEFUzf6Jx3tq5qETZsApKMG1kvFaXkng8uZzCk0UdEzAHXVhQ6q0Z3gBMOQDxMOZbPiCvmqzT45MCiSRwe8kGiRIkCO8WqmNZN-6SvLYyTHqWNSlM8hFEJ4Keb1CCoEio7cTI-G8Ab5CHl8BVH22nY5DC-TUT-ml6iu2yNCN91dNHieiznWTGHYJNCKXEFR9N-OUW1LZlRZlfJLDQ61TEgkd5LNVeUTSbV6HLqTPxcsLh4x6eOGc2V6FVrWyRQ0XicebsIAqDzzMNYWXE1WRLJb8Id-IaCWUSDxbUgUoDHaNZ8JPK_rJAz5EXouSQMVyfCMLEdKj7Zainf-9G3QflFgIoPjo5D72Z2yyEVnCRNE1qvyw04nVUgwDii0FraWSD7PhIUQ6T7hsjqjni_qCOxGRoDAEtr0q5C2epmrZ9ksZvAjBg7UYlmicQ6TccQZ1YnDXhMDX5-t4qbai5Tt_IZip2muyqml9ajIWR1LNTr44EuSKyeoiDqusRjLDIbLKDQwqs7p2_oM5Ep6DcE0a3IR34Kzr-SLVvknPfjth85ew8CdXXmnawApTP3r6qlFA554efDqKs0tTSFIB2nHrJZd5PJgvC0Obp-iMlxci2F0US5ob_6qBuqwXJyiA0-zYz7INOWVyEp869mzsx7Eje3IblTg0erwSIYswUSy9MyNToZOZiiyELoX6bLoUzFQKJyIts09R3SQSd-o65Sc6oXOsPLcEHpVhgv4npqcneXIvH7qA-FC-Wz34mXHh5c9io7urWxfWbCrtq-2ncOVs60wHTgnvoLdoVmJGmYsnsjKWnS4LlhNKO6L57chegK-Y2FHWOhBVskiR0F-RmzZQbLom_OidOjmsBpELJ6u8zqytL818bwx7o9nkZ8Bx_FWcBAm0Brzu3oONfeOFFtqjqXHQQvIsz1Pmn9BCh6imlBTmJR25mngJfcRzH79Gkwf8C_IoC5w8bInb57y5pMrZRt8gVFSPo0wSCM9tPETFlWzIBY97tButm7cAICUFuxdDHnyLOHco9-398Ua0uD-Wy47tou49JFqnbQ_aXUHu7Vul-ZOQdylkJXri_XlVHFwoXXNxqmOvBqrOIplYUfNU5-pb7sOMe7RZkInalV5zV-OfHiyemVQeuNsr8BhpruakanX2_PNlszSvYg23J8ptVnDlHHgwxaYsOu8MvcshDBJBVOJyNKD22QEhvK0WXRmObLUAc8E7X2oFkn5uClNKRlHskHQKVp7z_W04bepeTTUuI6xpOHSKk17lmePVsbiScEjV8OC-Zi5MTabpw8RX-OyAsw9o-xeutzoppttTD04iB6aWvdv0-iSuTCYLXl5T6Ogp9roLTkasKkQokIGqP9ivBh29X45pdzW0DgBgRxY5Iq5mw2lkfamOoW6NUF_6Leh5C64lKsWxtV8FxPzyI5_lrrW3olT0PzHT3aaj4koLLCJlzM8ZCc5v9CdwQBRi2HLifNYitVAKFme-8dH9S4K7MdaPwPe-A2Wd48unqzQBuAnrcyfNr4ppoEVUdMV6CUhgVd9SvJTCOmftoGM9RcBSZTQJ67kQaDO6itBo_jU-9ZZL1IDGzCfbxKK_K9VTqcoPZQD6m6qha7kzKXAHxk4UihvZ-99rXXcrokurS888bAEvKW5LbOojwq4eU5hJ0PWnf2XZd9XVlmmk8DX9MnB5bP6KdFl3VmynJoMeCiCY4TFuhwytnIhdpBcpfZ83PqpyY8J9yZJ-GvAD9nUFUdWss13VafLiiF__wwH6K7xFxaDEiE0XVrfAzhTOAWdThklwBjDkiVRZAXJYItsqG1dG5XBTTzbzAwyeo2rylm9JwVSrb2tqQoYvb5hSkJ5ZNoRJslHtz4V_oWX90fnJ0-hVRKGmFntn0OF6vWP8mhtv6P5ZyLOMLDtzTYRN1Q3knwOgIcwtHyJGdg_-4St0YY0AhGEAL2k8ggFw2DZx9FQHkHv4WRYzXMMEu9kV8BPqUKjldINWzeqSL43Z2mz3hFWbGGIOE_oC0O1rxKzXvRVrddUcQ_YvslzTN_S_HbfNKob-m2J42HdoOqAHRN2DnQjJuduBt3ktsRQ64n7ZPJI-kb_kM4yp4jnLafFhGhOFgXD_pp-8BrqOd-uv31N5Vo4ObTF15gBui-0MEbRm6X19rkFAUVYRI_eCl58iAdDynGCO3AcQNJaiLbze1XJVxcqeKPTf6kZxE0dXZkvAsLQKnJUkNWCKh9JO1Frge1Aa2G9SEXlhZEy0B0RZ_EapGVdrPdtkvPpXM9RFW54UieMFvaLV-9UWr3_-5n3ywtlOyImledbsQv_G5oBe_B8A=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:33.374556Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "QW73apzuFqnXyOgPrajYgAM",
+  "usage_metadata": {
+   "candidates_token_count": 97,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 97
+    }
+   ],
+   "prompt_token_count": 174,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 174
+    }
+   ],
+   "thoughts_token_count": 603,
+   "total_token_count": 874,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "clause_id": "s05",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1bb09cf0e5b00154cc8e928487d3fdb443a23ea4d3e64dbf3520da035c894d62",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Once the Landlord and the Tenant have agreed that the tenancy will end, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, after informing the Tenant, or making a reasonable effort to inform the Tenant, before each visit.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T21:00:52.455798Z",
+ "text": "This clause is enforceable because it accurately reflects the statutory rule for a landlord's entry without written notice when showing a unit to prospective tenants. \n\nUnder subsection 26(3) of the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit without written notice to show it to prospective tenants if:\n1. The landlord and tenant have agreed the tenancy will be terminated, or one of them has given notice of termination to the other;\n2. The entry occurs between the hours of 8 a.m. and 8 p.m.; and\n3. Before entering, the landlord informs or makes a reasonable effort to inform the tenant of the intention to do so.\n\nBecause the clause aligns with the exact permissions and conditions set out in the Act, it does not contravene the legislation.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 221,
+ "output_tokens": 187,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "hHr3auDULvnMyOgPj9Kl-Q8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:02:05 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is enforceable because it accurately reflects the statutory rule for a landlord's entry without written notice when showing a unit to prospective tenants. \n\nUnder subsection 26(3) of the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit without written notice to show it to prospective tenants if:\n1. The landlord and tenant have agreed the tenancy will be terminated, or one of them has given notice of termination to the other;\n2. The entry occurs between the hours of 8 a.m. and 8 p.m.; and\n3. Before entering, the landlord informs or makes a reasonable effort to inform the tenant of the intention to do so.\n\nBecause the clause aligns with the exact permissions and conditions set out in the Act, it does not contravene the legislation.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a1_S4FRwAUU8DP8fhql1lVQKZPTAYK4N_ZmknjkVO-3CwBelz2bvUnpZsnhZ8jFvsgPSgQvXDM5wlVRDYxp-krqP9-wJiJ2JldF5B3tltMlGNATCsKS-b4WyqG4="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:00:52.764512Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "hHr3auDULvnMyOgPj9Kl-Q8",
+  "usage_metadata": {
+   "candidates_token_count": 187,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 187
+    }
+   ],
+   "prompt_token_count": 221,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 221
+    }
+   ],
+   "total_token_count": 408,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

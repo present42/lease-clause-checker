@@ -1,0 +1,111 @@
+{
+ "clause_id": "s17",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "3743c5f39c5c1a1be4283562c367edea1ffc8eb97d9432d42be3b5bfc51a65b1",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the rent is paid after the 5th of the month, a late charge of $50 becomes due.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:20:19.526974Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"15\",\"quote\":\"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\",\"reason\":\"The clause provides that a specific sum of $50 becomes due when the tenant defaults in paying rent on time. Section 15 makes any tenancy agreement provision void if it causes a specific sum to become due upon a default in paying rent.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4533,
+ "output_tokens": 821,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "A3H3auHuIqjIw-UPqcvykAg",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:39 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"void\",\"section\":\"15\",\"quote\":\"A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.\",\"reason\":\"The clause provides that a specific sum of $50 becomes due when the tenant defaults in paying rent on time. Section 15 makes any tenancy agreement provision void if it causes a specific sum to become due upon a default in paying rent.\"}",
+       "thought_signature": "AY89a19mjgLPJPuzHcOHzuO0oH9UoKuAG7cCXAKjgUJOocwlrlZC-qsyMazFuXaZ3kvPJqnb46_tpnjdnvniPgbtxn8Z3-Bm1S2eih40d8eCqRLfcbPt7vv2hW_kStqgQ5TtRVugz4yzKQIdntDakAf3FvoXSAUV4_H1l_0cBpxu34IQeC6q3khhbYKq57-zD-nErEkVckg39f2VXsLPSWIIoDCC0c2gKHF1SsVF8nTfUBrldyegs-Cdhh-7L5kpdrsFoHr8FPtz1E9rkfH5lAj-UVIT8YjwcUQ5013b-8yShzidWYGvugW-0s6fCxvrBlV6tuB26nFji6yg1t9MQE7wgir8ULulkv9X-Jr6K7MJxc8lcMMEcNQamENQHs5wCAbYz-rrRi6GbUCb8gXcTSvOO7Sy5urAwqVA_ucUOIT0Nh1Aznq6HSsRHEikxUgqA0-IraTlcOcQ0kx6gjnfDmeAKqjm-ocbgrg0ZYqU6NStICeXF_GZYyPxTWA6jTdEGQocXE1SdXEDcNW8naObO8bHUoR7sBnhYoE3zExDV0QDDbZkSRuAsi4BhZqcTwSi30a1NwomFg_i33ox_yHGq9HSqDPM37TAKzDKoLo_1kgFJi2TNVVcG-DzEh_ojDmCxPaDAhE8bplEPxp8jbWf20RP3IvbXMrqrOkGC8ljPQbazp9CPoJHZXmTnGIb9QUHr3ptCQy-XGUlaYgfAkia7_ZXAeoyJZiOtQwJvRzzEDW4YVcBRIc43Ju_QrUZSTtg6MsLrnzOP5GrTmpg_sZ7zCnsgnJ3ojuB0H9LqDSp_xRsU9XDkqVYV18ecViqDmZhSi_QZxbMpcVpPxCf6OyEYOlpVDVHnsIDBO994BnkkhQh6gDcBxbQPu5gU7lWx_0Ln_1T0VsO9NkszIbw2C46Z4M-mBGGbaQCW0SS01XeVYY8qpZx2mi2aj-JWfc6JacRjs63W5cJwrmmzpqHBJlxRE3Bq27CPFeOdgS-oXby7TFN_jwehOuobgTuCtznUs-0Cxd6J2BfTD9ZWw0EIg3liUeJP3iFPdsWJtQzAYJACPjCSUnWeJI75ZUX-nxzJ8DPMOhGwBW5vhuMk7tMlAH-bh4GEKcH7Wp26vUzX4Jn_nhUD-wcp_dlpXXVWu_RvB6uuuI7M7gmp7XQKaQvH2UXA4wHaWOh5DF_ngH8as2M7zgVWf9cxEPu2JbJoWaVY1I9QMRK2X_XKxF3-GJBAVnIgStmCKNin0nM3hjvUllh-lIgflI8BjLriWi7WIn5NFqiZky5QPVV9Ak4mbtCIiqcHwg29bz6Ocm1-XL5VTP9I4eq1JOwAhbLLHcDOgJ2Y7wMOjtoAC1JSZpx1UKuJ61FOR97Zbhnj6uH-9pbUMZi_9jqt9Acn-CYmspSdsc_yNzdw41iLiG79CytRUyJyL4C4WAx_DuxXhVRXnW0fCUbiV7cXfS5nU9jQuLF7nCJX1rW9WEC10vOON80Tz4bFTg6szNg2VsrWfD391Ri1grY5pGacnPNRJ0Ma22efDkd7I6l99wSuZXvXq-Sr8VeBfz8WmM7ZVzQVda3_xCG7e5fmfp-dy4kdfm16_Orr6r505VqoVMHhiufacqZcVojTmHMm5wQCG8sDvWcGzEJDUDbMrQteHEFULWSppaW4IbCRfTNmtyqrhI1nPVcej5EGy0eE-x77TVm1_hI2rTDePiegqGs4zh_PVvwRmuE76MVGeSeec7w4m_6UT-qdcwLqbz5n7sNJ28IXq1Of09P9Q-d4AtJC30cDhrizdj3dGppgpNwdtUXEiNFu8H7N4jdt4ZfY9l7ao0ekJFAUvFrBMdvP-t2KcaBBlY17Mbo4eYtZDS_PDSZEjuNddfFabF3IM5azjb9se11J5sWhCzoZ75bOrwVBb-vLeyzX2B4oKQp8PHHjqHPft4jOR8azeockmhXVOEoY7gFT0wOFzDxM9PyL_NJc70SJILgcvh-UPhXYMyOJtXwgxNRmOvU27yzZ4B8JG3np3rfaS11AStp3L2fWxnWNQYOCma7Fw90YkzMEGnDU3gCu1Mojg1TLyNknR8DGY_pLxIxtDHWFhmh19TF0WalXYjGH6i64ZXSDccw03lnCCnFOJabEXRXUK9xwxnojz6-x5SUykkNlG5bpnZQIKtJE44TU1LarVZzYIFYUqFw0lBhbhBqHM9Zus9qtg1w7MD_gJr16hF_q4SP8gd7LMLPpp4Ua-Llv7pg74jMXSkY72VfaXEZOrKbBxcDlNEhmiRAwZctoqSJYCMLet5yc8iKY4q4R4KvSsWuZi65wP_0Juyg1cUkO2mWkffRIYdKdXXPQ1Jtay0p333QA9-jtg-uY8wSFzIqITnI0dIOSvakHOZi_GIvxXeVLz1uvcDjwOIDWLlZqy0xg5gZbpZ2mTGqG2-fDzFXsKvG8v_PBNVLQZOQzGy1PD7OW09JIklbxThSs6_wtfwirfRyxxSaRiLB50OVTFmTFhd3z1WBhiiVrD4NfLGBc-3rogWXGqBWiMnYrFJV4D9EvyzDt0-4hA93i3sPVcKVDXhQJvcmfokhp7jjA6EaJV0Nbv2ifCIoGZEsh37Ad76TcjANPM4GkDLVJD7LC-wCudkL6g_1wxg3hwsmLD_SQiFahe5R3-Gc1zW5ON7x6d5c5PJXMJk3WhD6zhCtcF-89hsCt-8fLh0pwPCMxbWrfIWS1zj2tpPZhSMGKr7TFP_tPgKq4euwxFQnp0iazOe4TGOwyHehEO7jzJUY-HkhH1SeEcjKX07kDt-Gvf3iQkchSD5viqXr6CqrwBXv43RvxPKcTFQXcMbwf3HABZefGjd174aQMigSGeXlw8fCretVQSomvlYKdnPQgx0l-iZvOOiSvA40cNRacqP-mixwP03jhapr0oSw3vGLiq2zjv9sXy8I3RJh6X3dq6VN0KaC5VW1VTo6Gz_hxt88F6v4pAXXtw_7l81WHlpNsZ3Z6HYymiQJhgBAunRnfA4UGTQisTKXyEVZF9OX-EtzOt8lfM1abpH5Wk7nC1M0xS6zRiiM1q3LGTAPhVxUiQAFcfunEnu3beXq7Q1s26yp1tsCOHSsg660J5xDJVCdd9e4E_DW-xZuY697AfMzNxB5ELHJhBLbL7wnjWV7Vq5hTGAQQ9WynoLiTQzZiCbnW5JGba9AvyHeAhzcaCOfB6CRaJM561jBZUFw5FuFD2S_xR2U8lf2gxl9tKOhUN5qrtKsHvJvl3obU0RWvVqmmnbm2SNxu3lZ-2reJyrlBOAcEsODEQwLVEpxGJldbuinqz5B8xNkWkmDG0DtCq2_5YcMFa7EAkYDkMpAa6Ta2FfkqP2aFHZAF4Zlfjj3xjM9dNvjxTL9MkVOKAOmz4I7Ma6o_gj8AC1BRqe3jdx8G7TPIHD5b5F0_FLRGZFqH_RFwC570tjY7-h4loijzUXn6EfSLLOXh_BA8WUWHmtsLx3eF-3kW-Vz-62otxx2yW43xQagG-2rtFJidqn2quhdCbVL3zA5HaJDd-U3Lf8PGTeufMi3FNSREEpW-RmJJuAwZZDdT19Jxmur3mpRxAd1OqjecbXkoFNRxxW5I9A5ogXEvqQn2L5I7KyVbMRr3CjYFKz3T47iNRyZKkaiUJMWQ8A_P3cvpCCju-CQkUAf_j3SE0XKjtSxEJeS6dh0e1Ua93EOnXmTiSvKYD2GIJNsfiXLeC5dH9YPKEmyTYMQyGb7wFgRHmPmFg5ndQdebIrxlaMF8vliyWxMxrdcRhGfNXJxvny7xhNsv1nZ0aG8EFXFmwBerZDIQ1MyYdrLqv8wMnKgmFkCNcVwRdxAKVMC5M42DUo9ro3uT_bgwif-m2b2RSrgyP5T84xDYxWpKJ_LZq3HXahyfkxXrCDgykM0MZ7fa7AlM17gnkWry7UTArX6xF4sPJBMRcxoU9x1ontafoRfVHBPk-eGUWN-gyVI-USJAmLYd39H5juR2eEVsRjXp040-NjKB34GJR8P0uNx2VeesX_rsPFlO6M18Y8gli72uWEAG3TS23D6JbPh6Kzpll2YPlBhiO7DvWAX3CwcHWopCi4y6ihL0_6NA5wuF-teHEWn8ooGWIqOjmRsvWl_LoWbQbRf1EGaiBumLTsz732j1zP_wGqhK8nn82AMr-LzTvQSUk1IdoXjrIw="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:20:19.571233Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "A3H3auHuIqjIw-UPqcvykAg",
+  "usage_metadata": {
+   "candidates_token_count": 128,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 128
+    }
+   ],
+   "prompt_token_count": 4533,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4533
+    }
+   ],
+   "thoughts_token_count": 693,
+   "total_token_count": 5354,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "15",
+   "quote": "A provision in a tenancy agreement providing that all or part of the remaining rent for a term or period of a tenancy or a specific sum becomes due upon a default of the tenant in paying rent due or in carrying out an obligation is void.",
+   "reason": "The clause provides that a specific sum of $50 becomes due when the tenant defaults in paying rent on time. Section 15 makes any tenancy agreement provision void if it causes a specific sum to become due upon a default in paying rent."
+  }
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "clause_id": "c19",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "7ad28ea3e8e026a0f75240c9ecae3680ce66cc48ac1919bf04573dd986d97811",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: On signing, the Tenant shall pay a damage deposit of $500, to be returned at the end of the tenancy if the unit is left in good condition.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:43.033401Z",
+ "text": "Under the *Residential Tenancies Act, 2006* (RTA), landlords are strictly prohibited from requiring or collecting damage deposits. The only deposits a landlord is permitted to require or collect are a rent deposit (commonly for the last month's rent) governed by section 106 and a refundable key/access device deposit authorized by regulation. \n\nConsequently, a clause requiring a $500 damage deposit is void and unenforceable.\n\nVerdict: not enforceable\nSection: 105",
+ "finish_reason": "STOP",
+ "input_tokens": 163,
+ "output_tokens": 1103,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "S273apG8BYmSyOgPip7BoQk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:51 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006* (RTA), landlords are strictly prohibited from requiring or collecting damage deposits. The only deposits a landlord is permitted to require or collect are a rent deposit (commonly for the last month's rent) governed by section 106 and a refundable key/access device deposit authorized by regulation. \n\nConsequently, a clause requiring a $500 damage deposit is void and unenforceable.\n\nVerdict: not enforceable\nSection: 105",
+       "thought_signature": "AY89a193QLX_hba1EnSoXlL59nuaU_9h1TWPLZZ_QJtJtfXHEHr6pW9F7AY0ScDKjhaGg1PrC7HKb8XyoB7_6xDA64KmRCtdz1SxxCXTGj9fO5kE-uepNvL9rY50lOndyUDwUy4IajjbJUM_EtBwwr9nfmrEJ-QGd1Qv_ck7-npcwea_jjS1tDDSrmHpHi4wfpOiklvN_LNz0eQSshDubyUvRhPpwHGTev2X_28Pdd70zkjRAyknqSB6VH1Rqz8H8knh0_Sw7-AFh6QwKyKcOPmjbDb66_ije8OyXdB3A449rsvkFX4to7Zo2G-RbyBjBF4BXuh5nqHzVAO4FPBwmE3y761hp5cedhTK_VYoGKsbsv1nogHsOy7HUtgHOJLq67NhafqbZCnCjkPMmOS1fzeb0wf35HgTYoNVBVgLYdyaCmPiAGL5hk9CyE-v36jGdSOTK-zCf82_17uF236hQufVte-CTzcnI2xPh1pIWsOm4Gd4TLw1cZOjGAXMGQtmyJtwF6TAFrGRUZ2nfr-C2Ii5d-4g0WIzqDrdQT-skrdu69Ke5BIcdpcNM2Q1ddAXw4cDwPXvpDNMkVQcAPXNjexJT203bG8HqdMYqA-0zwPFJR5gCzk3hDzCv_zFyWJamuOZDsqV6xvMXkGGx6llk4Hliq5ml4dhFpk2rleebDqBpyMtabLXUiXm1ZXcR8ZFp3BcD_tONqLy5CPjw3x7IYWNAaMez2p6b21JpCcPPgFdbo8LUddTGTwfgoVecRtuEIUmd3YqksFFb74HMkWyK7e2vJirG9xWm4sPlhXPVmsE43oY3ruOsPv7iuunA8mPi97xkXIasPaU0KndcF_jsHcP6J0ih8sPldUwkz9480VVl2-F5gBKyMtTrcHQL_8e9laxReMWDFhP3qnQbd0grvb5ZWNbP4gFp835A5hFTecBLN24pYiU0j6OLsWhoVszOu32KFu63UqrsyGzkONTImS1DJ-Bjo2GgDsSonAYGE8VtKutOu28oLR3aCM2AooN3Jl4F8wI-xJIbL_BdiQq9_Da9ITahMpF98_yGC1os_YxUs-rGcZxEhYULXi38QI2lMPemz1rkpcNaWoR9pzOdg_jtIudngQ57D1QvtsdMkLc6hBbc5xJIq9eAGzA9TfJXV8DDcOd-C546ObDNNpTFJqb6HhzNXFu0-samubKtJSS7MeU4TNbfyu37U-JdF5Ab-D4KcXX18KokS8kSNo9PV9qh4MZDMwxQk6CgyqR_vyqv3gudSqtGfN77QozfaC4CUvVPICzPru89C7GB1PKsjcdCLCacdHxlRYylqKQ8tF3KCFGLqHQwHKv8HQ9C90FSexkWiY003d2iddZ9WZ5E3UeRE8_MbddaODU0o3pFtcylGEskq_l_UBIdfrl2KOrWFPCO-fT-Z_I1VONtguPMe4PjTDd7tj7VdRzbxuOBB2JU6-noiRAhWJQEUX1-8mri1uX-TWm1bO_zsDDOyTjyVs2hbX6xgrQp5gw97V3VARx6FDRnsMf0SEku0tL2PJR1jDH1WfCIwjGtC8dnyKiHXi-vqxp9eEH4z_SIYU-SRcnDYZacfck-VXaoT8LPBOBNbN21j1Sar2G-0kgGTxTqp03dIs56msHoMPLua0uSU8CWBaHCRv85TBwd3i37tnuG35_w76VMrkKmGaJnSTJOaE66tTbwVhKSKhAPGyCJVrkRtmZ5ftpQIGQSAHCN_N5r3glTNkSx_oEuy9zruaWIJTZiU3wcA9RWQkDJMOjyumYhAdN2H5mQjhh8nexgOCBL7lx9DnraUJY_PRXlE3zQGHoObZpNb9bEp9tccgU6HNBnbjPUIFtKZSEeVl3iJ4jlTRNG0anazaJ14Fe_J1XK7HE73n6USy56caK92SdeVApXR_7Tc9HF9_soMwRIMHoZ6wph4gn9RUg96DyuNpwBm3HgS9-cTIT0BkW-CGKmFCJHtDbm088PLmNgb30YAnZUbhiaIqRbUwMYIQEyFVbFn78E_kIrLbf6823VprnJnQ_lrNShgeGFFcsrjVEmGZHihAix1li7U1imcbAhphH3mPZFIQj_azA1pDSmxVt0lNu4yd5kUvTSCNzoIBSk5XZv7lRarAsPUpQf7X8qfyKTEly68ZGnZKCjv9q_uzVIceBaRIH2Mq5CP9RVUSqQmlrwq2W0BzjrCNBHAHjX_iyM37lWckbnmCpTkvsrkfUngtKSvRH_2HB7wWPl4aOh2A7j9F8cV21cePhzfBVeod7OcsCXkDCrHMx4yXKrgkeyd3N3REEg6Ijy4Hi_N4E8URKMkwzg8eEq4Tjqtwhca9R0IfAbZrlG-z1_bNUCWQ8FE-uYn87O5sfYul9qFq3DKBImQbL7LKJK1fmPHCioM18xcSB1v-QHc__9t2yQWw-b_ErUTvVl9aaYPqOzIYp7JEP0my4BPdwmGDwt7VT4D1v0kncSzXTYE2kNxikeFkw9nyNYK4NX4AsYOOVytFCCcM7sqFTeIGz2UhrqYlTDa35ROpdXJVVa1umQfZzOBoZ7QR0SrTjG-sfE8Mq7nwF5PVQeIE-FxSi44L4OFgx9-sihPbM593vGhkjEf5Wpo2td4vxDm0SeRYjB8S28IoSfU92-X1ES3WLlOs4w8YDsmIih7ZAK5UUez3_AjGctRsPHFgRYGFYQJKV-xR6PRS1E1Vh-tWAHzpKrVncw4R9q3zWNvtfYJzb2Lk_gJuBLKzzgYIsE9xnrpKzJCLTpBINYtE0cjQpALjh6LN5ZUQNe51h57qD1rRlf0Mp456mz4nsON8wRjHsV0jtKVcd8hA_Rt7Vo1NmBpV--gTMIeQweVZlBskRC_B2yA8ZpGZa8WTfsrvckgY7ajruxLZ50rbS-bTwjBAT8VkAsNSG7r7ynL95h9xAq0ZIL-I6Em0cjCtxgakKxx7_cNN7R0IqBz6E40AV6nlziy2g3XLhi395MmIjhG0rdOLt8Up6HDogCAeeqePahabkCrUHiW6i53VyGN-VH8F3wPJy08rDpD9FxnZp7YJzmDPVibHTELHBmOcTdgwziuiHjQXk-qHKvZj7C9F7LasZpe4olN3ZMPlZAR1QTvmfKw9WWKQtIplu-dTiSVHDtc4-S2HUJ2u6UtPdk6vGY_1VuTYWixa5ymUrYgXJ20oqIbGdtD6vEoAralsBU6c4MpanJKT492PKjcAiKgjKcbqHw8pEGYKrIQHD56hciZJZRQWQ5zfUmTVn7xOWazkzijtUM6ZUMnI0KWK3isv7jBezjS6ThySkBQ5fxD9qg7Xytadpsh-_8Nrv_2-yCqxlVGMVjDNbS5hxH_QKih0-zb5pxD5yffLLnd0v09B8GG26qn5FIQ4hUHoppCnODYotNhVpJu3yCbhhREHrNuOiukuhY1YcNM7-lyIZDYvW64i0oEcKRf3-mB8qFScAz4KTmwSivbbiJQCc363BYmWQqPBhD-fF2tnuXjfSe63LzO3VGjtDmQn2iSR2yPVWuCXJSVRuEsIPxYehSutvmOt0U0HT2esVlKc7mKHVfFiPYeeMbkSCwX4kV6ehQ2lYx0eSwICrohaKa_sMwB2aMuWhTMmR42U0VAvndY-yw9Qb0mO-HxOoZ92cUQkp78lG0VfgfD_hZuIK_WNZ5shdY6T1YYNLokCsAMLnarq0Y481YpUiDClUc-OPTKs3F5BkTUBhOkobyLovSc_KkoISi-13b-0z85DRCB_D7tJ6xQzbwEvyPKpjXfoOAi5HL_I0CND3Kcl_r_M6pL4cSzL7U6C2ac7ovaGYhBh_PHGh8pQo8Y3hUAGgWP1E_tsCUw9A4KBWxdpT9vwMhaGbO556YEtg83qB7-qN0yJll0hIMFbThWUziteAa3C842xePf02l87XEyDedAPRmI3PAT-ALjgMj9RGpJaFBtFFyNYQgjWgyTZ6k6JyvI75JeyqrWW6On0k_kC35T8exL7xd0Hn6CJstFzEAVz-ttmzQTjhJOTwDs_8jXGsfhEFuZzd0CIUGLHbUdrGlxY4eStLfCecDoZJ1DdKSy3FaJ_zwJkYcYDf-j3idJKxXvNxI8Y4aRSvaLJLYC1Pz4b2JwWWtOlfFIb4B_5uVuuwDVi7foHQfZ2fkgWsFhzKZ3793X6KLH4yTOuxfg4efZx0P9WxEKCc32O3yyEng0rjF1bfX58D3HnlqVzy89z6yLb4OlRpzEHxsmS6rlPNL9oigxMKPLGxxk7vJGQHU7sttbHpvgznyMg5p_H8HQoABPgEhQx7yd3agU3Q-Sdvs1C0EUnLJwEEz1XyuIwfwD47J1EG_CklYYla2BA--5rMuHkdAyPIOferrHaRb-15rda88OXny7W9cO53MfcZTz9LQCWo-gtuCcAmQ7mR6uk50gQm7XhM5PqVEdSwKukVRRCyoR_vv6fyXiz2nrJ9kYmlxhXIMwgDSBPQHPxo1rbGbOt_ZAV4CaT1Blpd0mF-yo6J1J268_sBypfO0SfLF6QWZIQSfeJBlmChRUyX6VD9NG9-r5cN0jy7B0Ls0WQrV8KCb1eB7ZyS8JmXZZnM7_2UPuOd9Ju-OrkaLabpYDh5e1m7pBI9P1x2BSn8Rm3yk8ECMbUuURwxUTLpRfEoaEcKH7n-R67BDMZoikKH03wUTsOA8xS6u-SvQRGZsSx-F7N1U9yhuVBc3kwaO-QVPGX3P0jYIu1hHnNRTVrZVDKnmB0IPfVeE-RPNTO_KPULMT1DRDK0YoymU48W8c3i1dnkEFGNHJ3uIk7N-1Blv1fSoclbt-C8W7JXnii1mhcovNNP0sHBWoIEDZGuBmM_R_xAn7-ckFY54GJiv0AtluL3hfmXv3ZkCqgLL2Liv8SVj-gY5SV0bCUCkza3uQohCd_pZD0AvvuETTfimj3dLNn9jdxUx8hDJj2TReID7G1lgWxH_gaZJQH0QZ72nKIaionxb2KX-ehcR1THWCFXzs-psOX_PvAWMSfg3q978VjKO4AF8u_hOj3aB0kHX57EBwlyZOzLlNnx54tvPv1LB5qo6RE3viknhEQLHEQhrAqP-xjP7l5Z366tNiSD1XGaVzjxWaT2eOrYfX8tTCWQcl3VGeMsJ8Gm3R9DfdaRtzmzjzLI3J5zZAA1mR-3rRHyW1aX4p2Aqe2OdHzA2CvwPykz9kAGdW3g0aE3fKhtrFLsFxiIRxK3zgRlKQwdqwrodUGpLvJwz0tdl6vnpS2eMhPWgSuI_0hfWaFPZnZWKcE1c6hQJUDSh0OjRLW7UmI-eD8zol09DI_LvWpcHP7Rg0uteXi2S3eERkOgCDRmca-pMcGdzUfSaBoDoCYlZr8VAg4d-3FjoVsIvrxQjDIZqpmlS9n8cYdcaR2aCzzyT8qd-EsrZL4omRO07qth6D4cWkaZyemtTjoe1rSbaDeAjrgw7Z9JVzBlXOaR3qGjiCiS-UCUCag="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:43.089617Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "S273apG8BYmSyOgPip7BoQk",
+  "usage_metadata": {
+   "candidates_token_count": 104,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 104
+    }
+   ],
+   "prompt_token_count": 163,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 163
+    }
+   ],
+   "thoughts_token_count": 999,
+   "total_token_count": 1266,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

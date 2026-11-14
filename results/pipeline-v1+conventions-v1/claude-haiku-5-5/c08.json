@@ -1,0 +1,99 @@
+{
+ "clause_id": "c08",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "e5f23e9071a052ada2280c197c9acee1065f55011b2be141e7de74fc5e8832db",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant shall pay for every repair to the unit during the tenancy, whatever the cause.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:20.373806Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"Section 20(1) makes the landlord responsible for maintaining the residential complex and rental units in a good state of repair, so a clause requiring the tenant to pay for every repair whatever the cause is inconsistent with the Act and is void under section 4(1). Section 34 only makes a tenant liable for undue damage caused by their own wilful or negligent conduct, which this clause does not limit.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6424,
+ "output_tokens": 724,
+ "raw": {
+  "id": "msg_011CgyJ6ZYkn3ELAxDkE3yse",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"Section 20(1) makes the landlord responsible for maintaining the residential complex and rental units in a good state of repair, so a clause requiring the tenant to pay for every repair whatever the cause is inconsistent with the Act and is void under section 4(1). Section 34 only makes a tenant liable for undue damage caused by their own wilful or negligent conduct, which this clause does not limit.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6424,
+   "output_tokens": 724,
+   "output_tokens_details": {
+    "thinking_tokens": 542
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

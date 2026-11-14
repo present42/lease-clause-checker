@@ -1,0 +1,75 @@
+{
+ "clause_id": "c36",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2af16dc807b6b0d992984b0a5c73ea4dddef619770b3677e023a972b73d67124",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the rent is more than 15 days in arrears, the Landlord may remove and hold any of the Tenant's belongings in the unit until the arrears are paid in full.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:10:54.752510Z",
+ "text": "No, this clause is not enforceable. \n\nThe clause attempts to authorize the common law remedy of distress (seizing and holding a tenant's personal property to compel payment of rent arrears). Under **section 40** of the *Residential Tenancies Act, 2006*, distress is abolished in residential tenancies: a landlord is strictly prohibited from seizing a tenant's property, without legal process, for default in the payment of rent or the breach of any other obligation. (Under section 4 of the Act, any lease provision that conflicts with this prohibition is void.)\n\nVerdict: not enforceable\nSection: 40",
+ "finish_reason": "STOP",
+ "input_tokens": 198,
+ "output_tokens": 1719,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "zm73aoX1N4aow8cP3c-_yQo",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:11:27 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. \n\nThe clause attempts to authorize the common law remedy of distress (seizing and holding a tenant's personal property to compel payment of rent arrears). Under **section 40** of the *Residential Tenancies Act, 2006*, distress is abolished in residential tenancies: a landlord is strictly prohibited from seizing a tenant's property, without legal process, for default in the payment of rent or the breach of any other obligation. (Under section 4 of the Act, any lease provision that conflicts with this prohibition is void.)\n\nVerdict: not enforceable\nSection: 40",
+       "thought_signature": "AY89a19Jmd-pCOeonNstNBSeN4XM2zEiNaqrV6fdrAVj9WakW3yhMIJuPgUc_RN0CV_54ZJf-x_pBPT31vPioktgR1Yx1htLEAxJ-HHdD5pX1fcKamYXI82VdktVPJOmlTd8MKT16293bnrNQcZ3_OGUS4Fros4M0F-me9L0LsA4CmoQbrIyDdS6J62eWKBOntlBExIiSR2fkwgMPVcblSsfZf6zIbjelMpdZ0af3U5kV7Z3alxpra1Yso_bTxEBLjE-EDMtqMfS4ETFEiGgnJvxZAseXmjmqG1yfWpAqD1W1Ov_QkvyTPMgAcFjIkl5_qQzbMRbJMNGcpH6Ax6qisqIKZYvaCII1eWEmZ36N-3vSHMcbIkYvVCznseENeagq4MjtEjQNKK29acNs-4eCfz2s4z72kybd7bK0zLNo5y3jsJxACfUXZdOARj-n1sQ5YYGfnxHlEF5e8j5La71gvGwwYz1oSklES4b024ObdWHloueXEZ3klYyQ6WtZD2aCNYYcf482lFYJVT7vNyACx1sQFztyh7xCrOMGvCneeiQg12EUNnIomHFmqZc_ckOd-d_AcCbJ_QFtKUuCx-u9P7aZutzazwXMyWpY_NOTiD6ezeFImeA-qjtCb2tY5qaAgEEAgRa99E9k0d-dHDPh8jIHodliWpAdJwiQSOhyeC9WCumsp7J1T1J1vx_h-4Z4MCfUGpAj4G0eA3fP6uZUea9AE6ppkX4uZUP0c0TkfnLRsdK75dtAUiB6rYul07tCpRXCw0CH3gaNGW6XSwfLfXTiLO-f_RQGw8u0ElWZ7UDpQrGwrHrggX19Wy7Pu2_lqtOnz7iUWHdWZLMZb8vi5VfXnvSPI9HjpEk8c1ZHTCAWKQgeWDhGrFZ8rmhKvCnT-sR1Uj4TRC1t6sKuKlIbF92--MKkk78CBOtx5MN4H0Ylp8FjFcrqLiKZp-fc6-MY4HW78MCu94PaYiC8yrH47QxmydsoLWQ-rMgvb7-uLUiJuVuLWEEZ8DpHsuy_s-1HyhbnoMLYwQliUo8p6AeRiAMghbj_RjkLAG1aGjv9YR9NxPchPoITbA1Keo4yQ1365LLfEWYwE1xal2LIfKG_6d8GbUPAuj_8ilJvAD-VRP0UcNBrGqGSOYzWIsidjwcsSTAmUup89uTH0zb60Kgf-gpX4uDweegGXZe_IF9Gldc3ySh3zBcQrWMbZCTfm6q9NUQYdM_KtzkXlloNW2kvdmM3wUo1o2alNVrUIxfdj58T4whBotFuCuWS7TYbcNmyKvIKT_xmVxD33RCwEv7Zjw53__Kdf-2bfK7QCpHbuJ40rlt63h4Yw1lF5uilzwNgzJWXTwAVeCdOe_yMEGH1kF0QE8Di87LfqGoq7QjEOwOnX9buYzcQqgiY9_taGSXBuvjFlu8H-UrF5RyP9FyO_wowoR5UJ3u_GqauYYcSkJUKvLijSegGRidXKXWAiTqgU1_sFSL8heZqMZjeQAzpSkeLJIM2yqIJt0ShElUHc-iBcrKbo-xij2dXYo-tXzjqcHBtUJHPdrPOmO0zBFN6Uj5S8bPmw86MpTWWoWD97KaHprU8hPSR-AnsUGmzUCW2HDZ248Hy4nUtv86H9EHWvN-DrYEOwuianhG4_ejDMP_s4BQGFysq0t_5BRUBSzM4-B1VgWzzkdJMv-yRnee3jRwi3ahXWmoch1gc8faHdvvXY_ZxHIWq-fMVConR87wgoGCuZTHJAmcvSd7AbFiL0o-DwlidqRJMOSSujXV3OqeCNSHzQ0dMXtsaazfHsi0KUaQVtV_QP8X6_UXaBfaA1qRQDC_A6GRKgh93hNNGN7Brl05RSuesuliWeulhcT85bsTbyUG_JoDcRQBP386YBefJ3ZXzGl-hh-sgnsXxJ9hnETipkPNQcEAO7uSHL6_gHZA-6MKgJ9unoXRiuybehjd1heljcFpLdE-bHFwU7RhL2csmmJEV0itNeH2AIAnyYUV-u6g6BN_Gu1FVJ1kNLSr55SMTJOVkVtmgNYr_jwi-evwfnG1loCxFd9CE_tk9ZG4nmWmHwwEWyhG3stBVTpypQx1IOfP41T2kOqK8ERPiwdAS0F0LTq_I3_QHkZo81rU_f2XoTPl8NNFGZ8RSTOqPH2g6u188z9Zu1bCcOdib4zOEgd9FZLZ4-4QivC2vG-pG4YJQYqCFK0IQBDJe3pBXixuOwho18hZEq6j2uzH3Ez5YtGDeAAVlVAyxapTzTBs8uYaNk9WAhb1cM-JmgAe9nKD4eIrdJ6Km4xAnM_OCQaFwlmC6H96JKxVjLBADDrgujdB5r9ZMNhEGCIpWKStYPyf8hJGnY-5CU-7D3-0YZBYGqxklI3QIOHGS-bsvknp2FvtgPIsJfsbf4P4h-fBRuTnvyrE2aPia9RcWIaUEzXZ_Q_Lvql6p98jkb6AgES7w1WajMFp4NngyE1LSyqu-5zcog-Q32xls6Gy5K1OEJxoKpvfVBX6-8zIfM9KagCsJpAnEDb01F3x1pY3jM9ewcIofdfraxkvhHva8IgULKAg3i264CXMOrfTCfhW2oWQm-2OGdthokQEw0IqeXlgm1K1zY5zsHKbGMIvnZJp_gx9YFCWBa58OxpMI_k6vdyD1cG6SiBuUM-YR2qF-DY8dKfu9i8D14lehE-QaahtpKWiA-gYcDfbh-enGr0WArciZx5NFiTgzCsENNYjoWF3aSRLznvDYCVT04ZdqZPx8bE2EuOIkfzvkJWNmx1WuZGjPy1fJy3UgHvqvt9FLGiyZc_yuRrM07OAPzlZG_w-V2JOV6v4BMA-y9qF0T724bTaQK7Oy--50Yz4siiKzn3yaEniWFH0ftF8ar2Hk74iUKlNPTXVFqxd09UqLljlP8xm13bHK_oAyDU4KTGqSC3Rc0TE3gjkTKjtt3JLPCdZuaaSY06y-Jcm5-5--DF-NzKHE3GAKfubmImARAXEeRdeTdRFJ08LRNY9i9UWKQ9RiskNp_0l9XJ4Z5HLM8eiOAxoZyMNNviYq24yrKcDuqZqTpTNN3Rn9-qWOov8hKQo3o0svVj8ItedB4D-0xe1iX1_1uEoMdHo1zH-O9ycfUV1dpz03k_BV7hLOnNj9mx61rZgJOJPmSCKxdDhcdQMXJtuD1e2yGvX3Jz7hj3kV8kRT5B7VIEolTdqxbgzZvs7GUVr38cLpSH2zuvNLMI1uMlBosLk1XPlA-gpvRb35_Vs79LKU9gkDNFVYL6PEZb57YaDVhzj-mxWvwAMMiomR8WHqvYAIFM--0XC9-eN33fDDKZbS03ex-QaMPijvbOSopsl77obugRkjQwwVvKAuTGbREjoTIOYGhD9OwZadeenfk1CH5FyntW5wkc-jwTgta_CwAqFgUOLDZIWnFC91Ds_ZQSUuJA2R-hi6ynyidzQ7y0wa8UEzls5g_O_vya6LxCT-0YCNNKgQ5zFqu-PLvxhpiWDbLac-dKqPNeEQYWtc8IZmbv7pG_VWuemvQ2zCLHKu8wIHwF-oezsyvoTz7TqlJz09SaxkNaj_ZaIrX6xBOAz6LtmrIbIXc0XN0yfSWqLlC7mEhXnYouOFeb5r_HzfNkiZHS8jZMb7f7zm5j0jD1wiZtw4EELKvP-uYBfiU9cZnkPr_SnLUIrTasIsJKVNjEr1BRrX0hLBOiYgtdYwcmKR1ZUdFInMBTbLQGA_NNxCB0pOBoeGinfYbiZhsOQNXIJVRE-mZUw_sKU5SgM_IgS3yYJh0zKUjxz4rIMOD5VwClWLH8hxtxpE-Lz05K0eD0jbLcnzldmMLE-XXQiSEc6izCPnfYCBGIFSyKA-vDE5DV5eh4kBUQUsMxxT1ToKH2BmTxU6d5lUiuIKJjfv6Eqkl1U3GnH0YBzoMaw1EBigClkXX86j6ZNJoYmmG3j-P4JBiKmBBZB8oysg9ViMp9RFk9d7bY6f9c7-0tcwdxkilEzXIIGZhw1FYTjQA6M6h6X3eSMsGCXH1qQ36WCMI2SxWuY4GRkSHwjVCEaHzoFE-uxtkS4VS7S9mHJYmWVZoCZupQlXUNjP3yy1Y7-uv9fpdWuMQFumqBCCY2s4vk_fADNa8ISkq1P-3Qd5Lqo17PEiKMp8v_vOOS1ChtK2zvZCoCCsE5yXhJKULSnyPJPg_5yCMjY_1r5kaFYDiGRiYVsRIzkwIynmUGTb0HBCAwZfjmr8BGvdpJzz_omZ5DZx0smULEtNc-7bSPcDFWsreA2aFCrkmZ-heauFTjI6EvDfAizc2jTYb2AF7-fGSkjuXhMgonkPb5tOrR215sp77BTYmMbZQ3WwKzo8713pE3UPjcFPGXXXTyvM24aSvxGNx3fzC_joTj60JkBZCznFVu1K_vpcywizWCIb8GBYm6CjBkKOj0aexXDssEULuC_HtNZQaqyU8a1JLMFc0BLxuo6SWrsG09_9Upc9mZW52IGq9Yp46s7WUBD0vPk03a3u3EHN0CP7rBOr2IYkn6ahe0a27rsRoWvO1GRH2PEn55RqgL89mTpY1gMrdjgrWdx5XXFR9Vh-eH5J_i3iFUCzmwe4Xdf86VihQWxxIgto3tUMLntpvAT5xKv9QBEW0gSm2jt7AcBwuHdPytq_0nBujKtLmhXPRWhuIpwMZ_dojcM0rrqwr6PmpeXFP1t1V0tsPGg8V3vpI6pbNGem5De4gQixfUlkUK3oQfdfKAAlbIUIQyaz4P1h8fGerR8V68XRELWzpawczfDRANuxknAVXPbCleTbKiIx-jk9BkgFrf6wNYfZ66SmuhvEvxMYu2nRv76GSg2-jFk5DXKwEoRlzG1sdx0ZuGJIiNI3aPDE4IXm5WlrFfwm76-5WDZHdBH-OpwZarb2MclL-hWVK7AM8U9p3DT_8FwfldrYKOghX6rOGOn0rINDAuRFxX-WnhPp2ebir1BPNJtZK8MkWA91PEZFiibdvmsQW-iEvzpq9DgXL6OpVmQVxfj82lcsJYWnXLf7CkmXxBJzIHbmq_52xfDiqrbfKwlMvY2x72rJN0Dz59QrksrNNvWgf1CzVWXhyD7yIU1N6-ysjF9AeqZTUwdGe_z87iUb6GXGpsHBlMHhUCvheWKDZyDKRln-vJ6OFRyjS2ffVH9YzzyPuleLDK3hfZfWjEIwe5uhvjSEKkZNRWPea8vVVwk_CVqrbSo1HVVpevB7StxDYJNjUHIiI0rTvnEYX_NW1fv4jDSk4vYeY2sN59i0KKuOM3kTeGu4dQGeSAhw5QAf7VhD9Lw473QrUeR5M6tLmupF2E2YgBs3CeUtM45KXI7fDrPAiJyXkyC4zw6-2iN1joKgYt8gTo_gXbSRK6OFu4vBXUTvwAc06t1ja1FiE4IJk349d9Xj76Ypk-9c6BwE7El5IAGVz7roEA26u1jBWTU7Bj6CXrubNS4WgNUJYa1xmdoCpWhmVxfUTLNP0Tm7XodeNT4xDHLWGUmn3eaz6d_FRVOlIiCC6CmmFqCALA7bDl-Y72_Z16lt3bnfM14JHxF9DkM0cCucPupE6aA6BUwe0ZMRPlZUUxMW7c2C-2pc4us0q_9YXI1HuYNVjkfE0Hv_wHdNH_3EupaN21SyWJBvvt5izBflQAtUGKksKBztfpIK-aQpS2ZlZ-XhLrn6jdM2wfn2-5ZWLNCCokEEUJRtlz5Ojy3cWg8csBCwGZAxmd7W_mPGX_302fmy_I7V6NTiCFpO8pqq0ZbTxSd9UUvqSZGOEGgEIF9q1q0VaP5nHKT3z0OGqIPTB26QRM7Ng4EQjGIWC61OX6QKdp9VVY51nD-Eaxv2UIVMu-3XhlSqg1EAxwLV_ZZZJfp3q4gd_h3_fUoXUgfat9qxlgjKCRDRhDuHZvEh5J9w1-e2BCxJoaGD4k2i2rTsJmWs74v203kO_PSz2YW92J5vn6p_NUeoQkdNHxrWLF-Fr40KyqpACJXC4nyoCidZINr1nfPZOuLN2kv3wi-TNW4D8OVrA9eU1J0qlpleP1mlnwm92sQMCkfMa04QtuDDdlbIg5C2CWO7lJWvXaYp8EVb_rQtoYwuGPWFBCeoj3pCNCqmVVlD8keHVPim1tbUFPXUPNoWKQfJ-TvFCO5qzri0HHpJxNXQLwf-ZA1tB0fBwJ-X93WQVjLF-UkTNIGKpUtlg-835fE3fEMs97SsPQ6LCe2eGEoZS_6UyYxgrE-hkp5nKe_PKevVKKagG_9lLbKVArnWBTqpQXQ9tYga5kdn88rvkL7Nc_jcWRK4hy8dLjhGN9-LfrjFuV5uL4KidyU5dNIaav647dAp-7fXJJR1bUcnwCizX1VYOum9_wel_bVcbMsBewVxYTqkHdPsLag5BhJkwzYjj8NDAB8iJUcBCoCTww7Vr0XLDW7PlEXkgq6gDltUyiyO9xESwkVjrIS8lIrUf-qHXac5cFOuNx25z70icysUP5FhxWfnAWsEIsGpA6OeicTDg_eD5I3LiEm_N3QQuNUbAQGq6UkNshRRfClUZ-B3iVUGauh3o8MsAyyjoLpxpmcKwmhEkqqMaUid0lmSpTQfsa7ohCUA_OhDUa5K3r5KmouKMqKIbg-QRlfSmzLAGi6cX_SQBgDN8SjTHiRJw4JXuE24Xjhks31MCC0M1We9iYf73NEIPHejDiWp-8VjykonVjCl81AYlLO0sUXeRyeFsDXQEc28oDb3pwFGzM9Obhlhbhm4hidThJFD-OtIBmesCervrLzAaGeOctBokALzbOCanRt-XVU66Wz6ZPZKzIjp49unH-zBAHhqsViQLXe7syfKrZgmU9M4PN179XOWwqg8s4c2LLXwF1jIp-79qZGNJJsr3_dXnZALVysTj9eHVMi9skhELfRvaiIrFB0SvBCKZMIoVDaEpU6T5e489j1eNua7aFJ_tLk6Hii3lQAcsC1ANvbR5Bxyr36PaD1Yc1gy6eEMrOZMw61IvW1qu4uzvj7ZB1n0F8EuRLIclkg-novXXwVTNOHrpV7nBf8BsjUVwMYl3tJZeT8Pgfcpg5q1FqpaPbf0Z43unEx2HybP8XegW8n1i2e8DwpgugqXrc3jRCI2Zwu0uFHT7HJDjxAhzsQGtzj9qi4lG94K8QjqaEl5UQZx89ucJIRL5CqOLuennXW6H0Pd9sT-xWlaFIl_1iU18C4Szygv3wgrUrFPQTyXVxOp_NXptGOSqEP7zgg93tbq4qvfxMlLsZOi4Q6lj1rPc6PswnDnVDRw0ZToexwZhQDmyWiKuXCqfOnbjSXurk9duGtqduJ60Nx5KZv6GqEZuiIwP1CLiwfQ_UjUY2QCZAbgR3V2dhdn_8T8WuxcUjhUrfEdHYl7th9KuqFuQYhOQTWo9UXNosNthA-9VVYBjUqlujnK2BOIdvCPYXsgnptnxs4XfHrQ6_0hzGOgm9Hcdo3Ce_TSd6qAhRxFTOPOcUwmnWvlMGRldzQ2Ccfzrh3VudMVmhEZVHH_vxpRh_VS58eLBsuOPjeL9I2S0fYL1JS62TleFS2gNoeF1jfRtGfADSjuyyUNq2xZ7Ns2-HlpduTDG9Aggz6T7Pvq1l41jrW0Kr3PirCFjVxFS-UkUTK9Uoh0r5bNqEqZ65zMeIzn05Rdl7WDLxq5oqZPOkViJLUEzdJn1HSKvSpbAYyWUE5PQYod4OnHLNdUgOVHgfxHt7oVsOfj_8Ojbbco-KsZsxQhhFI0hN4dwcWwJms5tLaUGIyjDTRW8P5IOXAOb62-MI1Llgk3_kgEKVhUhjNEL02RLwXXQlkMSeAb4okwluruLjeQg2O0jo9A26BPQqa_MmzU8bGzbMpd48lvJx3UI4sBZrpZ4q4pMVa4B7Ggxd_rAOe5rhHN6KzSq6oMcIDFfZ9A3GPERwyBbRSSQ-H3z-frTINDmLFS9GC-LEOR55UiLjY2G0AoCqEQoOppG0uJhwESNbKzFXmf3afbGRR7f3XPunx3pFY3OvjBz6aEAX39Bi4qZDiMqkfiPphi3PeR4B8wAfQaBCUDLANuaFGfwkyTzvFoGP4nGUbj0e-8Lqnj24gp6PowhQ-rU8aB7JfIZOcbkfsdrl4EfmEQ9wVUSbCCINSMjpD_ZTSXPATi0El2PHODRaZ0qWpOMCS_3JGxVmE8X_7vvmnQAq4FfHmJV_-1Q0GT9Bfa9CP_esZUeM="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:10:54.916101Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "zm73aoX1N4aow8cP3c-_yQo",
+  "usage_metadata": {
+   "candidates_token_count": 136,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 136
+    }
+   ],
+   "prompt_token_count": 198,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 198
+    }
+   ],
+   "thoughts_token_count": 1583,
+   "total_token_count": 1917,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

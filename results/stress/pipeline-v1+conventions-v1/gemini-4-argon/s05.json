@@ -1,0 +1,119 @@
+{
+ "clause_id": "s05",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "d2f3e152d3b9e129e2d87060e1c6817f2bff6557a57c8c53d4a24df3c02265b7",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nOnce the Landlord and the Tenant have agreed that the tenancy will end, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, after informing the Tenant, or making a reasonable effort to inform the Tenant, before each visit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:25:11.289265Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter the rental unit without written notice to show the unit to prospective tenants if, (a) the landlord and tenant have agreed that the tenancy will be terminated or one of them has given notice of termination to the other; (b) the landlord enters the unit between the hours of 8 a.m. and 8 p.m.; and (c) before entering, the landlord informs or makes a reasonable effort to inform the tenant of the intention to do so.\",\n  \"reason\": \"The clause mirrors the exact requirements of section 26(3) of the Act, which permits a landlord to enter a rental unit without written notice to show it to prospective tenants between 8 a.m. and 8 p.m. once they have agreed to terminate the tenancy, provided the landlord informs or makes a reasonable effort to inform the tenant beforehand. Because it is consistent with the Act, it is not void under section 4.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4569,
+ "output_tokens": 238,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "N4D3avP9JrKbnuEPhqml2AQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:25:17 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"A landlord may enter the rental unit without written notice to show the unit to prospective tenants if, (a) the landlord and tenant have agreed that the tenancy will be terminated or one of them has given notice of termination to the other; (b) the landlord enters the unit between the hours of 8 a.m. and 8 p.m.; and (c) before entering, the landlord informs or makes a reasonable effort to inform the tenant of the intention to do so.\",\n  \"reason\": \"The clause mirrors the exact requirements of section 26(3) of the Act, which permits a landlord to enter a rental unit without written notice to show it to prospective tenants between 8 a.m. and 8 p.m. once they have agreed to terminate the tenancy, provided the landlord informs or makes a reasonable effort to inform the tenant beforehand. Because it is consistent with the Act, it is not void under section 4.\"\n}",
+       "thought_signature": "AY89a19jpCcu7wAwSuaeO5JBBoBAp85Sjiitbv0QoNqUUB564EMWQROnrksZULIaOADD6nJ2O6qZUtZ-QFycAZ9j4KK4GMu8LJEoOeKWCvW0OCDqHNEu3a6u5EiRF8A="
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 492,
+       "start_index": 57,
+       "uri": "http://www.e-maple.net/bbs/topic.html?no=27750"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:25:11.638707Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "N4D3avP9JrKbnuEPhqml2AQ",
+  "usage_metadata": {
+   "candidates_token_count": 238,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 238
+    }
+   ],
+   "prompt_token_count": 4569,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4569
+    }
+   ],
+   "total_token_count": 4807,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "26",
+   "quote": "A landlord may enter the rental unit without written notice to show the unit to prospective tenants if, (a) the landlord and tenant have agreed that the tenancy will be terminated or one of them has given notice of termination to the other; (b) the landlord enters the unit between the hours of 8 a.m. and 8 p.m.; and (c) before entering, the landlord informs or makes a reasonable effort to inform the tenant of the intention to do so.",
+   "reason": "The clause mirrors the exact requirements of section 26(3) of the Act, which permits a landlord to enter a rental unit without written notice to show it to prospective tenants between 8 a.m. and 8 p.m. once they have agreed to terminate the tenancy, provided the landlord informs or makes a reasonable effort to inform the tenant beforehand. Because it is consistent with the Act, it is not void under section 4."
+  }
+ }
+}

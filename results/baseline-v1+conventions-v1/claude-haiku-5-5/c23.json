@@ -1,0 +1,67 @@
+{
+ "clause_id": "c23",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "011f735274d1600edb5b07c5de3aad7a319d00bdacc015216edd4d8fdcd0c397",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: At the end of the tenancy, the Landlord will apply the rent deposit to any unpaid utility bills and to the cost of cleaning the unit.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:51.006616Z",
+ "text": "The clause is not enforceable. Section 106 of the *Residential Tenancies Act, 2006* limits what a landlord may apply a rent deposit to, and it does not allow the deposit to cover unpaid utilities or cleaning costs. The landlord would need to pursue those amounts separately, for example by applying to the Landlord and Tenant Board. The tenant also remains entitled to the deposit, including any interest owed under the Act, less any proper rent arrears.\n\nI'm working from memory of the Act, so please check the current text of s. 106 on e-Laws (ontario.ca/laws) before relying on this.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 245,
+ "output_tokens": 1529,
+ "raw": {
+  "id": "msg_011CgwRAYThTgSWLeueEv3pV",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable. Section 106 of the *Residential Tenancies Act, 2006* limits what a landlord may apply a rent deposit to, and it does not allow the deposit to cover unpaid utilities or cleaning costs. The landlord would need to pursue those amounts separately, for example by applying to the Landlord and Tenant Board. The tenant also remains entitled to the deposit, including any interest owed under the Act, less any proper rent arrears.\n\nI'm working from memory of the Act, so please check the current text of s. 106 on e-Laws (ontario.ca/laws) before relying on this.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 245,
+   "output_tokens": 1529,
+   "output_tokens_details": {
+    "thinking_tokens": 1310
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "clause_id": "s26",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "3c22ebed238be06ff28b231e63528a3971fa40d0c0ca33114cc9a93dae27fd73",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant's guarantor will pay the Landlord $1,000 on signing as security for the Tenant's obligations under this Agreement, to be returned when the tenancy ends.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:55.724530Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"105\",\n  \"quote\": \"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\n  \"reason\": \"Section 105 limits permitted security deposits exclusively to rent deposits under section 106 and defines them to include money paid on behalf of a tenant as security for obligations. A clause requiring a guarantor to provide a security deposit to be returned at the end of the tenancy is contrary to this limitation and therefore void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4423,
+ "output_tokens": 1807,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "63D3auL3LtW9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:10 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"105\",\n  \"quote\": \"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\n  \"reason\": \"Section 105 limits permitted security deposits exclusively to rent deposits under section 106 and defines them to include money paid on behalf of a tenant as security for obligations. A clause requiring a guarantor to provide a security deposit to be returned at the end of the tenancy is contrary to this limitation and therefore void.\"\n}",
+       "thought_signature": "AY89a1_iH656oDKXgG9UKamuWJ-rGFxaCAnkVje9nr5kpQRpJVXa53yULm_ZF8kXKGf-Hkp8_kJ3Xun5f5ivq--CJpzM6M_X6d-LWcqveZuKLxNDM5sExL-GBiD8DykDbkDzOxDwxEey85S2N1mxEQX9x16bGoQKqLafBbbiwK5ZhzRfzzFaCWIVpsXHqijeeL4r185CB_LAaBtRZKkTXq_i3mAQSyWDmraeNZfEUbHDWZ5iwb0Zqj6qOLeP5trrQdMjGu2URXYI7qntvoY6yVvSfnFY9B95Iq2-YG_A6VmXsIpwaHUshzhgQamRAeAMgohc_qKnFM4zxCa1rMgdyO8EamB8bTb1FTM7ubh0-gHKBVI8Se9ipnac2As_Z3lmfCz0Q6zmLUMhjZx8hNbewkK1V535V67TPI5TkHC6DbGdcafJVvTff1AoBRdd9M51UatHCghLiNeracfDv9BRVHWyLZwb948MHmEB7NXowp15H3qaDREi8NAlDmAr6S_HT7umbPUUV3BsIxHOfwSiqTXB-JNoznf36RtCFyrlIKKBQi7Ds4hxPQBJgfIEMEUDDEe9PSJsogFC8YsrUVXZw7Jck7PVyYu9K3WkV5OztuBFhxocUQyln56sUP0mUwhvD35r1wf2dqWLS0wuBN6PF5K1SIlSnLB0DQErabCIKyDYmu_AKL2LqPZyh5YT2-ZXhO1Q2GHKd-qILkAfpk2DzscG8HQDrxozZdPelrH7seADK9A9lh0DzVI0bG1pJaGB78GQp1AHDiAYOw5w07vT4EEoui1tINBxdPN7ZSeCWmiVuSfZnJVQeVMigI-1xOewP8i9ZobST-JwHlMfTnkTM_kY6dixUJxH0UDFIWY81ze37QG3ZR9WsnZhRg-Gg0MwdMEOQzWidf9e30L22M27WJFyfVuqhfeBeEiONk1U69kkeM1ynYtzvS1EjgP7C5TENmzj-KRwQAy30Ivn0_u6lSKb8tM6arEulsxt0KcUgptcgbrv8yH_YnzNcdUYJ8tmONaDzrcmyN6JDUTKSm8z4J9PD9wqPVxdsFl7lqurt_k0bCKZmjK5_8Fw4Cki7QsK6ukWwVBH0Xv2cWvO-Z7KU_-fEjGUYJ8S_Cc7k61IoU4X6vETZTpEbtMta2JGIAC5vRY-VJLd9dVstRZDM3VJdLybX8ZcNHhqQhVUubSX6STuUvBabqh-zRAJ3tfttZFzWxMXjdUjWLp0ML7IjnXeaRItUFtUsL6c2oz5-YcrwnB4Sd0y8TqrIUEE8REOCdcnQVXKLoWT_RJjfVhtcnlfUoD-h0EjXUa0eV3KHJRrv6LO9wN_7xxr8uhmDRLDybpeWur8Ex4V_mYeXRz-k4W4nOVgdkrcwP06ICnThHk9YuiX3MVcN5QfEsJzSJxqlynV3zEkwHj20EUM-ntk2wtb3zvSNMDGBroNCO05tBBdAp7Kt2DWr1Owl4x8oh2YPNxotfL9tL9_AYpV-i4q68h3e_gnYJiQjGGOqHLKdh5RrEJCQBHdu2Oy1t5v8o4fiISzXm0sRM4g3GhpqEOxM6n876mpndnwi64IHhov7Kd-UzaJP4jy0GKia3oH9VgSO1fTnNkspueV0GFtBLvPPA9JADhWgm2N44Iif6_-78lA6gm1RYbn3KAsVkAriVw7b5faKajkyQM0rCnyKmFV0-ePCSmk4HuRmRFa98AYS7DrVxrucm9VF_Fp6va2R6ffvTWNuOJBLpR3PYoBs25RTb4k4natDjc6AhGiSqjo_Mhq4CNzPAlpVhQPZrZYTWME7HvS8z3C4cz8XvPdwNjUF88JLy74v0iiB1TejJfEfDhE5zpBCGkZWwuETILs_MS2KWztBdZcXgsZXt_qcjtWvRpnL6auWUClboFMzymwtmGf39rutTeRMGqNpI02u1bROlU7ZDWXwzdAxozhNXrcWAPu9pQbIG9vl8BfDCYuzENYkHqt0D7tpa09jnJNikagv_p3YbabjI_myIco7UCBa3meXlj0co64KL_h7qpJ0hdOOriKhxnPrlIzUj-sqNBLEQDX07Qf1M_l3F7UXba1eCetse8Gv4DoYy6HmJLpHl_CL1wi4UQYj5lTU8O8PBhuvxux_9cPfEuuV_Z5cM1-sd8Iv0lJR9ZmTKxk-VboB0kSHvCCIyCR5T0NFjnpPBl1gn85TxFlMJpYAfr5zaXn8kKHyzwPnKezAo9FjPM7iZ_TAc7YpLI13uWuJzf4JWcPD3Etun6J6mtRHjfipv7ZB3vUw96M-xivZ7DBEUPL-ZF6WN8Bgmtr2DYVkYc_IY4P-qS-DsEj7VeovJ7ZE4b5xXMXwwpyObne6DkBc67KSJ4ehVFDqtU2WMELxjMZ-w7zggDRsEuM3I-lQczs-qlL1iPua3DReoZQ52aDJMOByFcfteLyB3eGcBLkUq99s0jud24LPUepm3KMPjg1vuKbfQxXKpMaVqvLtLtmPItK2nXjehjKTYv-0-Gvf2w5kDgdBAuuRl3SMZDpO54wbJ2ggpBIjGCCVKLORhV29a-AvBIi81Vg6vej_6Ix8Z-Yo_7VSRtUgXAnes0EuyUOCX1AheJxbNU9hLtpg2O25qWIGYXvZF0p8dCJfM5X3Cu_tydh3utRJ20tVjOktGQoM0ihMuGTXp9UwLs9nq3kS0q2EILhkw4e9S3FKM2l6yx45IzKmwtT67g7HIALbrghU5vr7ysJ2G0cU5_rE9-TSBRtOJnThMoMIvPWHw7uUaksXHtQeO9HTXqQljQSt1chNJdGL-o2FXb-s12PFXdKLb8xgIZyvtuyDioxvnZORMvtsasqf6N8gTWTTDJpKpvMl76w2rCxUnkH5nmMeBKtBAt4EcnqoQimtwcB2MGVQBN93PTDzLTjVxG8CBIyfvpyZsXsTsyLqNb8lXhLP4cFiH7moQ_Joo5p9Yuv0GXofppMApDfGAy7HK5tHm6m4gb0Q8GmtyPVZfgTFE2ML7ZugzhKUdjN-pzZ6Q6Qfb7JMfALtMQhRrY_7YNFvQVm9BuzxBmwvq04TjQFKyt5YeiS_YkJoZieezo7mpfhyjjO-eCIiymdDvyZCJUI42006PDKl9ItFd7IKDcjOfxQhBB2KKqD4ddabLlssikKNtkLkCeE-ew9Gdi_trm5g8aeP3pHSCSxlIHz7GkBPA9lAbDFmtM0TWfa7HcJ4-AwHdNRS5zr5h0mJJnafdFmbdGz0dUuT14CeKaYxcthY62JneNKmBQP0wpdxxpIcpqE3JJvgWiION7zirbLKF3a4wTkVc6M7fTKUaujNZZlE7ATWYNjyBbAmpMfimfKh1cHtduKLw9nVcsa-4-fD_O1ZdypLLBSmf6qjFoSH0incfvs8k-MwJzGCVP2VsFRPcQfYVPlI0ROEiaBB44StUpq-p5IkNGIqnHS7LlkR8mwvmH-xu7KZ_mFNYTRx9ndxpLu4ekBOyWmvU9Pi8AoZ-C3rznOm_h_YitgZLSMg0gchVxUB5StxpcAHm0wvUQT0wjUxREJ_feuK2KUGOjqcqxXvEvIl-KWmPvBjJR7B886cUkFfH1U5XH4mwUPFKPmqDVlMEMcbIqnlkR0gYPPeooZ5Yf4lFIYVDClE2GuFi1ZgmYFMn0zWXWNBBxFM2668uBCqsY1LSvivUxDW5Cj_CkIzp6ZGkBjy2RhtqLGdDzgxPkSwiOAXtsj42bU5sq4FaR3WeiD-gAcylPELE-aPxPttW09rm7Hfdgw_8O0vV4QxJgw466UFP9eSXyrA2fM3g3-0BFGqgN4Pp8pVbYV_9BXgzZtfPqEsveAIMaFc_g3pBlBgXlgeUCv3g4b4jJliCs2ABzxsKO3U0q5VE3ERPLXZHrxPxdVrTlyejECrwl-eSLfUAryuKyLRckWywIfRryMDjjoUNWZcd4MnHQbpy-d5rWJDB5y3438RNAyoXOG1Az6N9EX94E3sq5QA0Dr4rsnxNbnkP-4by1CFa7hL-H3zUaEPhr63JpK3-T9PNpxkGA2emmuguJ7ZOBj_n_bVq9WBl6zDV7__CRcj076vLWoIEK71Mtco2ijMdpP0h-dY_gqkdCzO2StATH8je2VR-SzCAQH21xJgoV7RolmYC0RXSJVCcOoHxrT_xYvKVVOCxvieGLpxBUnmJ5QXnCOVC8NJifand71y4T7gkCUXUmQgIplV7O-ZEJDQrHeHAILMF8Fbl8mU5BQ6sMrmPQqlVRSeC2YZGzySYuJXvwFIunCk6nARAfj1xw-dfXrBd-bVz36KdBtT0PEDC5bks1H3hQhlcb_53ndxp_jlFWyEiPyMv4iAffcnIrB-3eO3mCLAUVPR8ANEberFhc__x2i-zRhP2B2P2GgIB-I0i-dDRpo8xVrku-wnWpgdRF_9Lf7btG8xtQNfg_tGH-hnaXvMfRsImQDLKAtc-WmNZFH8Rf0ceq4M1bX0tfN2VL70-NsJ-PX8U0xin6f8ofZAaK_fNCrbcIwM4ceHtfY6OCDQg1WUQjsU7A77Ky42TpSb8SHJJSeRiwB0rk8G_LxKN2DyAfw5ZsYfafMXgeQwxk24ogXXzzcA_sWGmbtI8f4TIheYCuCIcu5CHZ_f2reeofxyAbeUfAnPn9F_YqTvy1zCDjZMYAcDoj9Cuwj5tC_mYn9cRJ_NxV8keMZBpOZBz8qnzQzBmtxxN8wMKMbbbf2lU6WJriBESoL2Kmg84ucoBD9Au5KIaOnmZ5NPjgd55D_Ra8om8YTz9T2Gk6hVplbccHBXXZ_tO4inMMut05beiUgIjxdU_ErldqIBh8iTjBShgl7yx2nSeOYNmxB27loZearZsELyk_qSbLDf4-qb_Vq6JMYhllKJzD4go8UHOhK2Ot5umkKp88-51_rp8vi0Ope644VbCh-xNr3EncJoyi4qbyaWeoodIRt-GIMTgI12ARHqOzpU905o8lbJGrlevCy_6SfzV4xKrY540YYAwNXtLza9HyOfQO7EjQ3NA4RrrQqKnL8Bz0iX0o6TZDR6FL6JxqN5eeXmOIUm03SXi3e6n-ajXRFWTQpwjh7Y4mZ8iN5EPTxkG6ywRzlfOTqioFhtNgiCXlY-Ahz2ceKeiWifeKvZSAEWc_R_nyqE3dzkOPAWwW1pUt2BRXxjZu8wUC1pMuv0ns6pWgwjJmVJDgD-dkZGsbBLIQnkbMc9UDZvk9VrjxsIOD_73d3b7BdYbalHP6wU8BBF55ZUUQZHYJwFOLNn09zq4J28BfZNY9ypK2FYS48UhKp7LKzSfK2LCMRiPsZBdT-UUHfh77Hxh1JTtjVubF9a9uc8Q-nBKzeVrABHnhWASBZVhrv430yCqc-W7mdrDWQJ_oBpqz2WbcXJuK_wwz3D56IpNHZNymYSz_7NHKylvJUkf4QYaNkRrscDxfQdwb0wZ0c2oDcMv2ZgjIRW4i5xIcpLVBaqGBu4pfkaY7_rBsKh4SBRWDnZUtTshrhgSMVBZmxydurjkYidYwy3v55HVopAvrb7_CfrACuJ3yP0Wc5qZd3x6yPB4djBGff4RENCs-3CaV2OOGYgaETU4JxEe_lPvfOQyHZ0AaSyNJWfLOBdtSpBBBba96wcjC9fraNTDZdj8cBI6DEFjQJqKQg5kPGmhCzHDD5XtmUda-7ADC9Ln42alLKj3zZ_R3UVJpWOyMfbopZJtX6RNNVgE6GVZcU5y9AtaGJoNV1uXnnJIxnvb_hc5qPTsh5J-4vixnWFEiG-qvoF9Y-LXmUBxCU9AiAFloVl_o7bNcWALl-v5Qg2NZHTzbCARbpq07p-LM_A5ihjiNQ_5KtuNdD7s681Eqb9ZFDUw4TClNhRsvuzlyTxizNdls3aGg4lMfAFrqBxML94N2nGg9JgQC4k-LJd6MG3i6fNuUye1TyYiO6dMjGpAG_MshE63HE9W9nxWmCw8rGy8Fzp5KcFjYJLJYKUe-NTSlxYGRXO_cq9kdHLfhu3QRztPE10fa6xd3a0RgNSfsz8J6dVNKmELUm2jWo-PyBvkf-10Hb2a6z9wsOik0on2wzyvwwrMzsG_jGhp8IR7pHXauKew4j0RAgBsO1Lt0jz6T4rAuKXvWanF_WrzNGo6P0fCXKNvYDUMYNjHPC6M9onW5A1igZ17MHJIkFJW6iLVCKVP4Sa_M3kXoyV_Rw6Szq70EBREjS9uQM_JX-QofX8a2LuM7IHaOlFtsSO0RYi3Yy7HkZBDcfUxQbesxTThVNfBC-TEJr4cPgr57Wx56qziRoIlrZvCBDsNi9_b1D5H7zX3AX2NesSwfBnMOl6Mb35ADpkwCqVklUuvuDV5Iyka_UyRm3vhFquk9GoCGEVs_MbeHRs2dY_W4uvKSKc20N1Mq--gdUn_sWD0xcV0xtrI4CNnxwZWsv4r10DTMSA6MPUSw1eP8YKPSDqCqBau7oqHASUZNpopE18XUergTWF62FgTQx7gfyrWfvCZXvJKGdsrMmDxfG2sfxJpPEIIsSXcV6tM-eEC9mHoGDzPORjbO7uXPtqRR5DAzQw-EdxQUlmcu3Zy9tEKus1GTt4BAieRbQFDQmCJfvKMApV2KaPyybKvaMDo0EQDhBc_27dyuL_ry2CZ1EEMe38UFocQIuhIt4oGslBEzQlXJ_eUoAmbZs3TuyYy6CnNSDnsY52eDRnRNoQxkFJ_kORTJ81HOYk5_oeRtAsXAgxL0P63zJZcUe-hnwYT2ompwWkbY7DlYoGHMLFTxVVWp5J3Q8oBGCcJQ-6LOM4NJW3wGWVMirNGjG262ufFw9D8DtV_oNuYLaHEpnRQ-i72aq3oTPo2NcHyuoVUnfJcW0yqJLGw7SUctMLRDhFoafi9yxKrXpUH3mriHL-vopEI3hawxa_Kti2GmSwJ9yaOgMe4MEQSnYsFLukKUUzmblctuJD9ScvK8jX60YhQVvol_n6DSgb_29GwfXOu84OhV6mzxrpGH6FwwZrT3F2cX30_mpPFdDmiTJzskKCEmXx5AysZUcHYpU1E8U6fAGHvudSyFiaCzej-WSxCJXDDMSZBVwILBsivJU1ZcgVW9zaYGLdbR-_yB3vk6nYa13JViDCI6bnNfIzX5l1kYIR6OmndTAbWRum_Kxi_FNUMKygDgsKSrkVDFe8aanGzxbDR7ByH9mOMDKugmmFhThZL7MOSRpALaa5Vt2ANSHBavAAKcqjWdK1kF-vdpF0GtZedSaGRoJFOaTR5YUKZQjBg7J9gwqpgYWHGp-2riMU1icdLYd2iZFV3YfqJzN59BzqUmO0jKi4uR3psFWvThXtBIB2HlQESXRsiptz2xjIt4csdzreUJcXYQUPHaCeMLUHysx11xv9xZ6Av83di10B1qnLpvTvSOnQetVV216IkRKpTexPhy_ajHjgOytXsggkNyHFxyPiHmqeeVLelUHAeAsU8wmUkTA0Ba3uNC6b6EV4dkwJ8kAMU20BD_qxtWvf3ig9I-qJ-5GjtrR5Aa_sumX17q_uUBrcrqlt1MVXGy56EpSewiRqwnQM9RgYDc3FnBFCisE7aCBgCg96Od7OJmg_L8heZOQPTM7FnFlFJwAp6uFTEAOrwPtCz9cdiGyd5PBSYcGK_oKdnX-DD0GA3bIF7Nx6BxofHitubz1wXbYCl4Gn1fxEMwlJmwyMvao0Vsbh4z5hXBMUnjGXaud-D13RwGBYAWhVaKPchC17j3yWT82UKoYykk9rdf-qFdV5AYAyURtLPdjTtsFWekD6SJAlLlAGn7FqeWVLbv9smLOExKGWGFc7muhfzNcJ3MnYuLZKEqSuPAeP-DDrHG1jvJi4-07HLqMJEDDjTDs-QbONsAXjzOB8OpBvDUns1lND8gwAW7HKKyl--NxkJaWqaG9RtpjvEb5UucqncnxeuUxNndRvNZJmfpw5biwuASIOg1V0-8OoEfGBeFg2lhW5jz-52jN7LSuUOlDKesuoaoZ2e8ihfC76BhJ5iAuFt4BZL09YDR_GWvhAsmg3TxYT0WdrUq1Ks3rajMVygq1f95JoKTe4ufLUXdtw3jA4jC3fl5bAdFJWvHNl_Eek0YG6zvAR5Z_9qgssA71kQ6jVgSvSBosseg8hHXDXBFRSzJL38N72Lfw7iA7WS5PhkJ-8RpqO2y_TP_rBoJYle7albpnlKEQW7n-PbiG155P4OAv0ilCqKY1suFIeOTMOW7h8wU1uWyDu2h9dyfIv8jX4YpkaIWAyurqr1MRuPgM05K9ssiOPn8XnTGlcDFUIIhoLDXTkWPmUbNHSBfRmsHFub5tsIHaeJrnHynl4XIExcI9WttlzBjpq3qumNQAVG0JvPYyjvM4yA8WPkdb47uCiOBWmOWEiICfwcdFFNbHmW1VMFfwFC65yfofUOO9YDjOl9om3LPNYrMnb6hSDwcBmHD3sDk6ucu-2HBN55lzs2XZNY7oIIqJR8PVXRojlX_FKS3PMjI6nYhLgPmEE239gVTHFXznGwFPt9VpOWJdomBhZe7fNldpYm_tdnAJE_lwGxe8pzWizIHQW-mzBSsbYXETVDfpQrvA7CDVDWLH1ggQ9I1nrAaxAKbXiztoHLytmFWznYGua2ZJIUREXb_UibzvFvFNvFnU8gvUbdKpL3JqG8G_cXW2UFO1RTkycF30fRiBcEnNmAMOckCKNajDpgVStVvcA3DMSQVlBuv6HQFjek_DSuxEudB7Ln8qM5N-YBZwLcOdcTcS08mXitRZrz97ckPe0b2J1T_0YQhCCOEiLFpS1F1jbHY5AmaTYuUvHd_NMz5-U_pOeeiX1ZOoMVdCGpD9_8tqpRQUIsrISXdwpVQdYQMWFQMEekNTonWAZBINtCvvoK7yX9urrLw36O5E1_5nCPtC3YM03qWo0L-tXDaBfv1hQHmacZK81Fa_XapqxnGsbOc-mNHpwT0GV0EnAYChCBbh_NIpGPX7p9EZVQ5I-ARpDI4ujGR6h1BYrv8wCNxyrVVwtvO1JsQ77A8uJD2kElWGrSVyi9LTuMfxMXMHe5YLnVc6WoDIlYrp_dNazd3yA1khFgOmnMev09awLWAOiyloblg_ONKNOD0P0nOMWvyULyopow=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:55.768994Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "63D3auL3LtW9w-UPidKMiQw",
+  "usage_metadata": {
+   "candidates_token_count": 121,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 121
+    }
+   ],
+   "prompt_token_count": 4423,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4423
+    }
+   ],
+   "thoughts_token_count": 1686,
+   "total_token_count": 6230,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "105",
+   "quote": "The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.",
+   "reason": "Section 105 limits permitted security deposits exclusively to rent deposits under section 106 and defines them to include money paid on behalf of a tenant as security for obligations. A clause requiring a guarantor to provide a security deposit to be returned at the end of the tenancy is contrary to this limitation and therefore void."
+  }
+ }
+}

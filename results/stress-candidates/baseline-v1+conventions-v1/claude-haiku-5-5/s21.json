@@ -1,0 +1,67 @@
+{
+ "clause_id": "s21",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "8f1028c3ac6667fe41e06e1f6cdf59d11b4bb5041c016c487bf2c2ea816859b4",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: To carry out repairs, the Landlord may enter between 8 a.m. and 8 p.m. after telling the Tenant by phone at least 24 hours ahead.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:21.671967Z",
+ "text": "The clause is **not enforceable** as written, because it allows notice by phone.\n\nSection 26 of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) governs a landlord's entry into a rental unit. Entry for repairs is permitted only with the tenant's consent at the time of entry, in an emergency, or where the landlord has given proper notice and the entry falls between 8 a.m. and 8 p.m. The clause's time window (8 a.m. to 8 p.m.) and its 24-hour advance period match section 26. Its method of notice does not.\n\nSection 27 requires that the notice be given in writing and state the purpose and the date and time of entry. A phone call does not meet that requirement. The landlord therefore cannot rely on the clause to enter on telephone notice alone. Under section 3, a lease term that purports to waive or override the Act's protections is void, so the term does not change the statutory requirements. The clause would be enforceable only if the landlord gave written notice meeting section 27, or if the tenant consented at the time of entry.\n\nVerdict: not enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 251,
+ "output_tokens": 1668,
+ "raw": {
+  "id": "msg_011CgycnEz27Jct6aX4AJDuU",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable** as written, because it allows notice by phone.\n\nSection 26 of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) governs a landlord's entry into a rental unit. Entry for repairs is permitted only with the tenant's consent at the time of entry, in an emergency, or where the landlord has given proper notice and the entry falls between 8 a.m. and 8 p.m. The clause's time window (8 a.m. to 8 p.m.) and its 24-hour advance period match section 26. Its method of notice does not.\n\nSection 27 requires that the notice be given in writing and state the purpose and the date and time of entry. A phone call does not meet that requirement. The landlord therefore cannot rely on the clause to enter on telephone notice alone. Under section 3, a lease term that purports to waive or override the Act's protections is void, so the term does not change the statutory requirements. The clause would be enforceable only if the landlord gave written notice meeting section 27, or if the tenant consented at the time of entry.\n\nVerdict: not enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 251,
+   "output_tokens": 1668,
+   "output_tokens_details": {
+    "thinking_tokens": 1302
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

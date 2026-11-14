@@ -1,0 +1,67 @@
+{
+ "clause_id": "c03",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "0c08285f88ba98def017d12203d66fc60317c901aacab6759c08fd6fc1c84b50",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Dogs must be kept on a leash in the lobby, hallways and elevators, and the Tenant shall clean up after any animal in the common areas.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:10.358844Z",
+ "text": "**Yes, this clause is enforceable.**\n\nThe relevant provision is **section 14 of the Residential Tenancies Act, 2006**, which says:\n\n> \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\"\n\nSection 14 voids only clauses that **prohibit** animals (\"no pets\" clauses). This clause does not bar animals from the unit or the building. It accepts that the tenant may keep a dog and sets reasonable rules for the shared spaces:\n\n- **Leashing in the lobby, hallways and elevators** is a safety rule for areas other residents use.\n- **Cleaning up after the animal** is a basic sanitation rule.\n\nNeither rule conflicts with any tenant protection in the Act, so section 4 (which voids provisions inconsistent with the Act) does not apply either. The clause is a valid term of the tenancy.\n\n**Practical note on enforcement:** A landlord cannot evict simply because the tenant broke a lease term. The landlord would have to prove a statutory ground before the Landlord and Tenant Board, such as:\n\n- substantial interference with other tenants' reasonable enjoyment or the landlord's lawful rights (s. 64),\n- damage to the property (s. 62), or\n- a serious problem caused by the animal, such as safety concerns or allergies, which the Board considers under s. 76.\n\nOne unleashed walk through the lobby would not support eviction. Repeated, documented breaches that disturb other residents could.\n\nVerdict: enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 244,
+ "output_tokens": 862,
+ "raw": {
+  "id": "msg_011CgwRByCWYbxgrA4RyKiq9",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, this clause is enforceable.**\n\nThe relevant provision is **section 14 of the Residential Tenancies Act, 2006**, which says:\n\n> \"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\"\n\nSection 14 voids only clauses that **prohibit** animals (\"no pets\" clauses). This clause does not bar animals from the unit or the building. It accepts that the tenant may keep a dog and sets reasonable rules for the shared spaces:\n\n- **Leashing in the lobby, hallways and elevators** is a safety rule for areas other residents use.\n- **Cleaning up after the animal** is a basic sanitation rule.\n\nNeither rule conflicts with any tenant protection in the Act, so section 4 (which voids provisions inconsistent with the Act) does not apply either. The clause is a valid term of the tenancy.\n\n**Practical note on enforcement:** A landlord cannot evict simply because the tenant broke a lease term. The landlord would have to prove a statutory ground before the Landlord and Tenant Board, such as:\n\n- substantial interference with other tenants' reasonable enjoyment or the landlord's lawful rights (s. 64),\n- damage to the property (s. 62), or\n- a serious problem caused by the animal, such as safety concerns or allergies, which the Board considers under s. 76.\n\nOne unleashed walk through the lobby would not support eviction. Repeated, documented breaches that disturb other residents could.\n\nVerdict: enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 244,
+   "output_tokens": 862,
+   "output_tokens_details": {
+    "thinking_tokens": 355
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "clause_id": "s01",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "3c8956f68dd331e7ca83b0bafd3b902d35591fbd2f1d450761147caf8beedaeb",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may come into the unit without written notice whenever the Tenant, at that time, agrees to let the Landlord in.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:19:44.492149Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"if the tenant consents to the entry at the time of entry.\",\n  \"reason\": \"Section 26 permits a landlord to enter a rental unit at any time without written notice if the tenant consents at the time of entry, making the clause valid.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4412,
+ "output_tokens": 882,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "4HD3atTxOfzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:19:59 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"26\",\n  \"quote\": \"if the tenant consents to the entry at the time of entry.\",\n  \"reason\": \"Section 26 permits a landlord to enter a rental unit at any time without written notice if the tenant consents at the time of entry, making the clause valid.\"\n}",
+       "thought_signature": "AY89a18EzOlSslAEbGujGwClpmVWGMzUq7oh6m1G9AFcCYrBrcn1_Zh1nlcYoOJYInFYFwMdpjO1vkptao300qIq3ldcjF19gTcGhvHp-DCsK-exWX54l7Xmx4OxIs6Nrw9B_A5EFVsnovsnmxqWqZ57Nb9eDSMLPgpqvNbJy1MwN3OxIG0UVAyna5hTyw9LHqQdbdcVUEd8hz0MZnB3YColNxkTJMoCZlv--vXR-Nw-cugnGEDYVIoSwxv-2zNfAUQDRfG26EYLKMRaAQI3mgKwIl0ELdZJsSO2Hrou8VWKll_nAdlLgyRNTXCw2ULrrZ0pxkKy5KQdQGckntWK2Nngm4_XoMxZmPP10Gg8pqm0tXV1hNTpePHgp7YLx9Fpe5htqrxTlScTyOrmdxUNdkOwHak-F-R51DCFqhF8qNTay_uvuEBfTA0GGLFUrJGOcvEZBDcOd8Ug9LmFdscGXNb5FuL0htAOxaloZqQcCzUKJEKfrINqO0h439oumumiWbVYdMiGNu5dYD7CCdOysNXMJBBr4t58lxCdsZVXLCkipbSWlHr3EQt3ofn1iae4bbRzvWRlHxn2tJE3q8Plm041yYa8kRYfuTyE0hBodla9Td8-abw60ISl1QmGE3G67twpr3tVUhkN3B2bSaF2npWG_UWzR9yKZgFk5N-Fd0F4Gllx27TEcscPOzHJstw7030JJrVRkCkJydslJf7EFbuYUZB0VwY7vJUmDVt4qYKLUQ8sICUp5pFRCmCQjJskrLTCvzB2QjZa2c70s_ysZhj-M7U_3ngf62yQDmiZszi9EVYxVeECF8dORw0p9SM6O6Le3BkrOVhzNMQ-f9-iXE-2fndSjh_VRCaqWy3HQvW940fJHknhlcIHgoKbSQiNWnHtsZ99opecSyApeM5kP4a1oHiWktQi6n81u-q0HcyN6lP5a2gKjDnzhtCOaDvYF8QAYyqOp3s8SgGVNupdXIjgH7crUqcznzJ5PHslQm7Li1wBiE_C0XT3f3zoLJo0gfZrKp-Pd-UFx3jVjZ_L1GbDC5dp8eoCeea17aXNsstWWUsJDtOdzaRs3jymRqXVFDZoM7ttc_3rdLe5s4LkaXBcQhAAShCV30wM4aW-ZE5wzp7hSn3SF0BD7HnlQ77l8hSUlPl9KDLEY5oFFWGMHbjqGkXF1OOa0GBI-x2RpTdW2f4KOajzlAlXk3_jKkxAj-Wk7YnDE-6mg6HsEsCpqNtakvHl3SEk4_J88T1W5aH4XhRoCBgLmYQrsInfR4fQqQth9_9bZNDJbx5oZ1p23K8VXp4GNMFVTgInUGvFphFBa58mDGCwMG3ONy6e2iyL6wxK5ZBeQTiCCkyqvZl8whp5j3wzOcSQL7OWRbZ8Np7L5GJlZElXJoIsLXCsb_e8fk5PAu_cNKFr-AaYcIrDuPM1IFHMREH9OfOjHJNX0NOU2Yki_RLwIa1aVw4sB1nvk6ezq13vQoTeiiS_NfXX0CuvTfbCUpUiFapW5cG24O8uZIcX2Q9dHbWn6IlaJV0-I0mod3BgSt22TJ03vp1nSyCB522WQyeN6pidgEDBbKkwjDPBgVvMEuMeEabu1R-gcR5SVfU7O_rQcKW2DH5Ro1fdk7D1Q9-AHX2S51EHOktphzVRcmamLK9BGJbr8-aoVPvMoD6ta8Q8cNqyS2OeYMtEjSutXmQXlTfy37I542SIn7XRmeky5qrVZWguuU0MQwjYLVE7g3GdO0IsurBqkewjD_X3J0ylaWjwmWm1AA3Kh-VFdILqeCACXNnI3fSYArZ45mUG02YPyQ-OdmJdqSVIxpDUslV8ZybPKPY1FNEurt_OUJJxMQx5dZ8OOUbrIyOP4UnFD5NMX0x-AfvqGjrQe4VNIJMFA0TFPcHgUBFOD6_ahFyzGzXtj_fdIZrE5T63LTEZq2_d-IeRrRB-5GoLmfP7jXi9ydv3doVyPbqda-IN-Y03331Jxe9aNq5RDhaBktHveUxVG-NhHY_RNXQP4Z-VcT0B_VnWIAss-BjNk2gR6ckyWcRNueW-CgpAGXX0KOXLRs5jXGmrEU7ocEzavp4eGu1lFhBTWrk_lBDKuxWokUFCk0Ua248wFYbFQSwkCWJNByLrd2Opxi5mf6GLpa5BVVaxwGtWugAxW-jrwrQBTOr47gexIPkSZ0wFicR2wJEHy6rMlYT9DUYJQJ8AFUOKshFihtk99faGr8iCpO4V-F63-4FKMuWpKoD6QXi6z6Ov72ovFgDAtR4aNxNHh8cnMMgLX4WjFUUfXDbrS4ps14eHoTxFEn0JtDBIg6kPNe0fx1KgbbRYZX1LJFmreXQ2PFd6yfyTWoBNVH0kIwZsK6Gg7G1vVUeXXcEIKouCsFadSvCAXGQhGmxHdBfAkKHfaYn04i3QYq6Wo9TDGgIeS1HqQ2qgILnIB10_VvcOrlzuvY3cMe_Ti76eRSKVHp2keIKXj6JIrejx6TLmdxkvIU07UCqwAFHbE1BcS-qRXqX2s3t6ygzxZhpyd85OPphnR3LmTHI-hLCvfhJUvDOMEillB7uVETPquwCRmxpnf7U56hTpEk1VnfCsufwKH6kaxW22_SRjng_DpS7-18OACVQoPNqw600W2hOSJ4Fr-pl9xsQnkRSvtGLgsyucF6BkLG2Q2dm3Nh5e9HmkHanaEqXjWEzE0n5zzZ0U7dyEKAil2Ho58cYxZEs4wPrjn8NgGMrCCkFot_PDI868xQ1VHqK5vi-_Ptj4dWvRoHqadVmkp7nO7imerJVw4JMt60y-f45GCBwKaIPGKoc40gz90yPAWCc-fpp6H1FvmEqD5a9cwJENjPlVPN4D840zrQ9vt-DM4ImIXXMBUYBSVlkfrfo3zchXkFYKq9Qv7sIZ7LDetmFRUxt3SLNSEk-5qiMtmuDdMIblyJFxhnMx53DEh3CqiT7PXOpaJaKyJUUdAURyirDw4Jw9Tebx4Eoe4Lvn0_CEOkCkJhl1ghzygHYiMTVY0iChsAS__sCORxwv2dy0tFCtHacNsISjtyS2NJpuhnpe_JHA-iXSn2GhSQGToKk8YAPhBelsVBxDJWUjTqAQafxUXPIG_TsJz-CZVCkRNT0rZhsanzm6hCBx7QgvktFLLidLybFaBEvJkqRjrLqgWVoiUqEIK0uBeyjDNzwOjaqCeyG7nwyC6inwBXFzakWn5dGWNd7e4gAoRYy-fGyyAHTiykUmx9MGsjmG0nkZgK_A8zLlPIaDA2pv5ovZjw9eNarIpfX6v7MoSywmEJA2Srq2z1x1Z2_Mxxu_spNImiq9yhDTjuMB8cVyAbiY0i0s-_kEJWuvSjQIVnjWITGZYsEG0e9U9R9f0EkuivaH3DNausNpXkCwau-5Xtrd27R-5Wts5BkTGxetK6Tb_Fslsdzc7jJmqeaTZw4iw9at6Ek4tdDqhD-wr1MIP-9IopkFxdxaSRcX3r84LTAVHuT24SZ94JTaqdcJPJ3f9AGYdliCjAgEOvbwrqYhpLwN8DHehcVpRQcu69DmAPPj2gsbM8TPZ5MpeovtAY9uldSmbgeQtgFlq8hIMxlHSSPFsCYFEQOb-BxKRJVfiJOwcGmYcCigbyr286NUfSeULysXNKgs_olLZg8JplBYNjw1fqqXXFnffbAAdRttNDbjxQfkwKTrMbWIgeVYekjy5zSbSLTn9gTIY5FI9vCwCgkdezBZ1XDHCyZV6wGa3SYNfY9bkpHo1YWGT6fnYuRYZHcQCIh7vhkbglGgspajuhB8xquoIUumz8B2-qYqjO-RR3usB1aHPYptexlZVlLPhZ2J6VN1C2Wys0QbOA_ytmFcZONYr0GyfQ-DEOV_iX_PXZ22s6T_rTp9km__TOd7Ui-vzxZCRAAkmU6t4acjUUnJtLUHIojC5sBOuE9-BCNvggiYcQVjZdZT_FM-4nl_f-P_gluf3dAusUJaW9JRws-Y7w6NEb9rQcrTx8yfzhpko8xlFU0EL7jkJ8HpnI1CptjcqmMs3C-6biXsbgNmO_6aLRirO_0rRdU44956rFgq9eTlCyHsSO9GOX7k5ZzhH0hV6iEikYnxM76KY1ugl6D3d8xSL6czAKKx4SseX3txCfW4VJUT4VSYw4aRdiwRJM0Nb61UX412n_ObKtkQhLtgdtxK1lKViOlZLfGbxaPcoMtLqCQFls4dwa6JHkV4DtYlpBaLoxv3gbrFJwEer7li26fQGa1MP6uduR2vTu3dqz4CE7P4ZPw01feE_mo56bcc_HLzY34U1dPCUDJUEEbDgw5YmaJpEugCH38nSs74eH5bJ_BzZBrfzLE_UZDN-AD0QU4c910o4txylTAF-CvaERWv5jm3W34Lv414rnI0JOWLyMY="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:19:44.948436Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "4HD3atTxOfzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 79,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 79
+    }
+   ],
+   "prompt_token_count": 4412,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4412
+    }
+   ],
+   "thoughts_token_count": 803,
+   "total_token_count": 5294,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "26",
+   "quote": "if the tenant consents to the entry at the time of entry.",
+   "reason": "Section 26 permits a landlord to enter a rental unit at any time without written notice if the tenant consents at the time of entry, making the clause valid."
+  }
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "clause_id": "s17",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "0cdca4e3dd908b3e8333391ec503fe43cd82dec6ecbfe5f50307208c4ec36fa9",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the rent is paid after the 5th of the month, a late charge of $50 becomes due.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:15:18.114772Z",
+ "text": "No, this clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a landlord is prohibited from charging or requiring a tenant to pay any fee, penalty, or extra charge unless it is specifically permitted by the Act or its regulations. While the regulations allow limited charges for NSF (bounced) cheques—capped at the landlord's actual bank charges plus a maximum $20 administrative fee—flat fees or penalties simply for paying rent late are not prescribed and are illegal (rendering the lease term void under section 4).\n\nVerdict: not enforceable\nSection: 134",
+ "finish_reason": "STOP",
+ "input_tokens": 185,
+ "output_tokens": 994,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "1m_3at6iCu_r_dQP553DoAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:39 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a landlord is prohibited from charging or requiring a tenant to pay any fee, penalty, or extra charge unless it is specifically permitted by the Act or its regulations. While the regulations allow limited charges for NSF (bounced) cheques—capped at the landlord's actual bank charges plus a maximum $20 administrative fee—flat fees or penalties simply for paying rent late are not prescribed and are illegal (rendering the lease term void under section 4).\n\nVerdict: not enforceable\nSection: 134",
+       "thought_signature": "AY89a18hCt5BKE3JqcOKCf-AD_LKFtmdfZevfDJQCTNtJp6kO1vavzhXuq0YCNULMOXtvQ1bHcBHo5uH-SK1pEMd4XWPbhnU7Q07NyPVJPTI5y0brD9yEdC2SYHXmXqENkL-pR2MrNOBr9WZuxP6-V5yRnXVq7Ks8OCaVbAV_qUnLKtoXiichCzEtAq_Wo9mEgOaaDqcIiouGNggewNdFTzUkuKat4PWaHeYW1K2vBL3C_5GiWoBDBiG1ttNBkIkfYMGJLxj8xRGV1wT-OwRo82OSLFDFVcCrIhVV66UkDyjExOHUNSKxGaId__GEby6NyWfnRARARZgscU_Yzxb5qoAbub7kMelBAsM93R66Y4Lcu5YEA-NSS2MMdm97m0Uz8PbBOAVsOALLi_HtNoHECfswSk0xbJg2xEYmP_1kKhLZYcjvgkvuBBegk0-7eE_MaiBkyJXdVBtCZY8VpJ3NFC-Bog9qipMGXlLJkVuKJfcsrICrxoW7PW07W_PbuYSBR7E1N01JfqGO-nJ_erhaSPYyW37EY697j9MCfdJNdEQKnHHkMxS4bXEXJMuTMUSEAvLu3izO-DkZla5DXwMK8HF2-bu4ZZHn5ezOW4aqVt9CUfbpskyAA6zarCEA5suqtWl-8F0cMaAHoImTGAmTtM0J4Y5iPilngK3pnCSEGkWmbvuhoPsZ4q0rYUVJ4yRigndudq3Kb92POhenqTWyoHA6SQx39aOp1RcG2PjiAQNEnALkO9by6BSk3GnZSidxbB7_qd_xMM-9rCpLof8HGKIvW0RbBw7F0tyZ9H0K_eAHL1JjYaaF9zapc73xZCI_oQ8prVskGP4aFxjcIjMcsZdIQBQKpgX73cVb-8gU7Ws3q_0oEna3N8d4Qzmq14lteDY1dGhTYwiLRux00ukdfYh78iF33Ds2dGwtu_97e9Th3lrSu_2B0XaLBLGQKUb5WJNzFf4UDplEII9lDuusC0XWMvX-XkRRZipVsQ5VwuCVUWhSalUXpsD2yoKWgjI7pFJlww1niY1h0azi_HuY7BIY-4JGTkhvmQ_CYH8EeHOHqwpiORYhAoEYPjZS2odVmU6cyUQo1F_FsNORuSbAaX-6unPvYmfbz6B8Aysa52efSmUjljTvqNPorGD9MG1JiQ1S-0B9rJfrlzHLRzgx1rY8ZqWvsT-LIMoNMLriDXtJKWmNTCUBQOpd73yNxkTLnCZ5YfvFnNkv4B4DqS2F6pSXltI767PY5DKm7PqU10fFqecV0TRUKnS7ZU6W6R_RuNmrVH7XfQZqa0OksvTOhIHzSZiVkOtNTf7a3C4gtPPNTM9_bJqREODzt_Qw7RwM0Xxp5r0FIB6StV4ik_j5dgWUG8U-2gcB3blVL9iWQ2yzsuE9jTnX2Pp6oWbfFPE4Nn2qRuX7U6nhdzgy-8RhuORhEXzI-qTLJ-RhM3Dto1HTj1OxK3X1yhiEO7DjNhI1l_jYKf7695hTvmKJmYlijpqQcpd_3hZwuwoG0JOc7XcxQe7z0Mb8gYI-WWmnTttGbH_u9LlQroibvi4QjsplRyeyRQVFyq-R1DTwb_NrhPgLjzR1ji8AGZ8IF8ybGGHJFqfFexN2R1W4DLy4cmBZeNlQzuPaqYXvqPejPma0aHHeG6pSUQ9ymyyxuvkEPMUd3X2_b3eovhqjFyULlxrdWTR4jTAlBjJ7eDZngXjLecLdTaeD59FQ8y9eeJdQ6OIDD2ZX6UWGHWO_wIrJ5GAZWadk1_sYGKikGwcE_Yapvt5A0opaTnhOsILpbsgKmctkHL1z5Rmh_diDE0OGr8e-KHmpcXqSMUILUQrlirnPGB6_s3MB3LjJvSg_5fGFCVcRoX5i6klX0pvb-rN-Z1aXt5HvO5sf6XlUGJYthfpBs3EyrKpHsqm0Jq57o1JfqxI6uMqHr7DjbygHoFk-RqdioRvAaCht_Cm19ExodklTR9WUUjTkrUac6R94wJ4FCnwQ6OMfcG1SAkKqQXWiySKKZ4iNHaWD-rdgPfKuS2osK2dRQSB41CE7NWDiEE4PAjUJrWkbGMlAXH7MA66MKAQpYGXM3aqfGqFMfY7DeK0SrggeL5-RQw49NbfGKq2xascrRfRuyrNMFFgehq5ANWc2OKDX0f7YL4xuo7cA2UFo-8CAFKWrDUfi_cAkDaTB0YWGiKeLSfzgsevce8wqe8_1wbTQ_Mm0yJstf8Zi5qfLepwvW52Io4I9MsJ8L2yWKYSfi7KGmNV3l51O0mU4fU6AJL-1mBfoqbIBxysrM2LHgjb2OwkKf5Ol5fhhZRtSBREOd_lnrh22vfMsfrBiIa32OZCp1ZPdBEwaS0M6-hJfLsAPakzXxS8QIaJsqRr_Y63RKdeoizKAy5eyNZc_d6iYRPjKwTEitFa_n6QFjUW3kFKUXYWyeeD5DW1BQuQxonKpuAbC7NDuxeF0szl3CzfgmTEDv7prnUf4uEwIqABIJqnsXs-9leXNtH_PMRdOb2ptQs8GoAOym01oVCq4KUW6C3krL-6grZXgxSCu2BAaIFsqCxijKtieBqhwkZQuSq30XV5CRIiKpVGJqny-oHR6Av4EfnJakqcAsU-POuzszHnsD7tfT5YkFw185kPwkGEM4f1A1PEiEjbSWjC5a7j9Q4sY180DyyFzBk8pWBzHK7izBZFN2PVA8wi1OfTJqjOzBWYax4d318rya7KJDxEo1hirmyTBWRyySrNAvWw31nfgx7KSAv1PQ533HUiFIOnvUW74_PE732O2Ti9-2bqW17osFFAjVn84P29T83Ue7oXDshGRL_I7-dQ-iWnbehhG4IaGbX1ujJmxpRv1otov0Dq2NvTAJIbOneFalCdCOj2DeFKh9mr53FJrPVZbTDS-vNlZqKYlBCBTcceG6i1okDr2oo3-AEebHLN5ECF_YwWz1QUJhuVFlYdgMJdl9she7B1Z9lT7OXA4_6ZUra03Ego64W6O99zHjpzQ9KR0ItGdlaQGnIecvfnv3cYSCvqHbAN9LBh93PboQ7s4tYYUgXBUgRJ-k_K-_9tbRW2p4yEddfBwxv9ZJbZmf89Hi5xuxt-vT0ON8fTPvo9hKPagkoUDriAdN7uZzmW0jJ6EqCTf6im5A4HS4yJPydTRzfkctXtjyKTJwZAdX_hNOudSbbBwf79bvU1eu_aPYPc7ZFbCWu3XEbTvUb6IpFkRqwbFMKyvbCH1MP1qHiFzGbwV9DBwuLJJ0dGdnSrQAJLxigCrB3rYcyBU997p388QFpIpk0E6XAynAyPtXCv9kSYLnXzXSJWbZacgUTD0JBY5FbLv8UoqEQrHnKL-WcyS5S_fFyEPqkQVUl9dHTtcN-RPmpNDdEBPDt5V3DdmwjA4K7w0ItMeoH4xsPyn4Z4MH7MtxJr0HrLq7D0xV7fL4-4G3y-_qQsMMSqPhqtBML_YV05FMlT8MQODD3Y09Y6Rund20IUQzg72EuF9pNUiXXxI-XuQ6RJEA2YCmZCaN8-8uU-qAA7TuTSv_UHfkgLYXehdFugi9QB5gDBvACG0QwkwWSyBpgmIiAFVfcF-oeblPdUwNhZiBeLIZMtSVxcCbi_EFvDOavZCYxohWzICKIEfZiwBvp9Q3rYgJAEFnmEVRl3k3FOTASdApjl-d7fFtv_LLS-Fo1fBbJA9tVQVGrsgvoJo14kfyg5CiuPT46TeAIA0_XgrFcSfDMkmGnU0ChWfM7BGog31VEfPssv79sIT-FRD3QucVA_mnJm5wplXeAYBuqmhDL010K42uAaohsIpHP8-nFp79lCrdGrtU4xOWZfdu_BPUGcTOqmVPeOD3McGDVLIrK8NsZQTYcnZw6-IAnLMzR6tsmxNQaKq7gYOvXsxVf0vFel4MP6fDtGGAIq-KON7VwF1P78otOPS08glanfoZTS-sju8PPrp_SbPy7vSjC2rJMqrwJs0W_8eLZVBZIIjvpBqGoy-qPHSglxt5eP8Jk71cxidy4tk0wa-JnS07EajRvL8CBTbUfVpFq0QGOIV7SU6PholZxT9SCpC1R7sY7PCavZ-vHLdnTiwaglZYUDOtQ8VARUhklj1cEebWjkM8rqXHgRzTVCYSgDXZSXmxpPY1OxjdkMVzACCVe84AZQYzTAvjL3wXZlqmC-IgNtLk_TwhGBcyppROQ_ZWik3CHlknE-HHKPK9te0qCJugV98rJR4mZv9eU9lX4gEDaFDgASma0la9vocuRFCbe3W-a9L1nhoStA-Z5PfxJI1s4zfmGsnC4pKy4DcFpxJ0r8ACIfX6prNFtBMEBfvP2I6BymNA6ZziUZdmRH5Qmg7J4tdEu_rRkC0kYaB-xceV108KFDYBMbZFz1P4Vh0D4sdOsXNKx8B5qN0sD3dDq5fqXnRe4VdnHZ9yAlp2SlLqFZ4D_zrQqLHKdYuVkBaviI3XIqIvkkn47USRocdVjtGPUfaDddDwtlgeVk9NxCQ8znXt0bPeVBWTfa4YOQnvs75on71AziHsYkCQeJH8P6fvjKjVIZsfHVFmHDt_Mbft2I4fRI2Z8berKuokcPtDPA9XN-yFtofnnfDxD63wcsSlSTgaAdwFTSYpOkmOk="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:15:18.168286Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "1m_3at6iCu_r_dQP553DoAU",
+  "usage_metadata": {
+   "candidates_token_count": 131,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 131
+    }
+   ],
+   "prompt_token_count": 185,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 185
+    }
+   ],
+   "thoughts_token_count": 863,
+   "total_token_count": 1179,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

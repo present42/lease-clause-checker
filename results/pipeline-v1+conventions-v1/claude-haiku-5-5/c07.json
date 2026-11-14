@@ -1,0 +1,99 @@
+{
+ "clause_id": "c07",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "d93b8858584e4b2601400c0707ccf1a866e408d2c2081dc11309e2719903a776",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant viewed the unit before signing and is satisfied with its condition. The Tenant will not ask the Landlord to repair any defect that was visible at the viewing.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:20.373725Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.\",\"reason\":\"The clause has the tenant give up the landlord's repair duty for defects visible at viewing, but section 20(2) makes the landlord's duty under 20(1) apply even where the tenant knew of the non-repair before signing. Under section 4(1), a tenancy agreement provision inconsistent with the Act is void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6448,
+ "output_tokens": 508,
+ "raw": {
+  "id": "msg_011CgyJ6ZUYoCNjF2QTTkio9",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"20\",\"quote\":\"Subsection (1) applies even if the tenant was aware of a state of non-repair or a contravention of a standard before entering into the tenancy agreement.\",\"reason\":\"The clause has the tenant give up the landlord's repair duty for defects visible at viewing, but section 20(2) makes the landlord's duty under 20(1) apply even where the tenant knew of the non-repair before signing. Under section 4(1), a tenancy agreement provision inconsistent with the Act is void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6448,
+   "output_tokens": 508,
+   "output_tokens_details": {
+    "thinking_tokens": 333
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,110 @@
+{
+ "clause_id": "c31",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "66a779e2840f0a8019802e39e8d8beb46fcca728b160beab9246a7b46ba52de8",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe rent will not be increased during the first 24 months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T21:20:22.660284Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"119\",\n  \"quote\": \"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed\",\n  \"reason\": \"Section 119(1) requires that at least 12 months elapse before a landlord may increase the rent, setting a minimum waiting period rather than a mandatory requirement to increase rent at 12 months. Agreeing not to increase the rent for the first 24 months satisfies this minimum requirement and is not inconsistent with the Act.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4526,
+ "output_tokens": 153,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Fn_3aqTKM6fN5OMP4ZyFUA",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:20:36 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"119\",\n  \"quote\": \"A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed\",\n  \"reason\": \"Section 119(1) requires that at least 12 months elapse before a landlord may increase the rent, setting a minimum waiting period rather than a mandatory requirement to increase rent at 12 months. Agreeing not to increase the rent for the first 24 months satisfies this minimum requirement and is not inconsistent with the Act.\"\n}",
+       "thought_signature": "AY89a18is_o_hNB5cCLy60KMqMv20n-x-VQQNpLQ_ptiIWm19ZJg9FoQ6urXNDvA9_DsW23qsxB-2iZizZo7INJNlyIrtdjHFABEdJQqG9sl8LPYOAhjsqg_LIM52Ag="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:20:22.845092Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "Fn_3aqTKM6fN5OMP4ZyFUA",
+  "usage_metadata": {
+   "candidates_token_count": 153,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 153
+    }
+   ],
+   "prompt_token_count": 4526,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4526
+    }
+   ],
+   "total_token_count": 4679,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "119",
+   "quote": "A landlord who is lawfully entitled to increase the rent charged to a tenant for a rental unit may do so only if at least 12 months have elapsed",
+   "reason": "Section 119(1) requires that at least 12 months elapse before a landlord may increase the rent, setting a minimum waiting period rather than a mandatory requirement to increase rent at 12 months. Agreeing not to increase the rent for the first 24 months satisfies this minimum requirement and is not inconsistent with the Act."
+  }
+ }
+}

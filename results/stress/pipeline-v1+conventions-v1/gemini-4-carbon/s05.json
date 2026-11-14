@@ -1,0 +1,118 @@
+{
+ "clause_id": "s05",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "d2f3e152d3b9e129e2d87060e1c6817f2bff6557a57c8c53d4a24df3c02265b7",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nOnce the Landlord and the Tenant have agreed that the tenancy will end, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, after informing the Tenant, or making a reasonable effort to inform the Tenant, before each visit.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:20:05.365229Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"A landlord may enter the rental unit without written notice to show the unit to prospective tenants\",\"reason\":\"Section 26(3) expressly permits a landlord to enter a rental unit without written notice between 8 a.m. and 8 p.m. to show it to prospective tenants once the landlord and tenant have agreed to terminate the tenancy, provided the landlord informs or makes a reasonable effort to inform the tenant before entering. Because the clause mirrors all the statutory conditions in section 26(3), it is consistent with the Act and allowed.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4569,
+ "output_tokens": 616,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "9XD3arO7GqjIw-UPqcvykAg",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:16 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"26\",\"quote\":\"A landlord may enter the rental unit without written notice to show the unit to prospective tenants\",\"reason\":\"Section 26(3) expressly permits a landlord to enter a rental unit without written notice between 8 a.m. and 8 p.m. to show it to prospective tenants once the landlord and tenant have agreed to terminate the tenancy, provided the landlord informs or makes a reasonable effort to inform the tenant before entering. Because the clause mirrors all the statutory conditions in section 26(3), it is consistent with the Act and allowed.\"}",
+       "thought_signature": "AY89a18NA33eDJFGiobVLd-oOh13WgICbvFTebYjfar0Jk3NMZtVFWpNjjGfK4wH0tp_D2U6tQ0VNDUBCSzynlTAt_9e6GfJcuhyJWbgrAtOWz6of2-dBAemlUpzF7OO3yHzBimAJAl1ELle_pJdY5nMgaH39z1Q4yQO7uw4k_kinXLyo0ASxrQoFfCQSOAxIVEJWSBuRMaV6Dp-PmXRCYZXO_BQD3sObVruBFP4yCZe7twR2YDHgrqAz0dqo4UKtSKX31J5gMQQdUps3ROY--l2ln8Ted2SwVg0_mHC_zNTNRCj13ycAdOjAwpYI8nORLaKGwVMZkgwQOOYTJCxwMMGpUZR4YcL0HNWodoG36x5y9kVdRVJqFjwDqidsrqMmEOeSk5JYGTS_mKoVqy9Pf9K73xncIQ-KPdo98ugWYLO49AX2mV-77NlzVdtjn9oXlw43a1VTueZh3JzefSvYY3ul9eCo4GOPLk1ojchamXYrpbBfkSCWwfHpopyrBPq7xgC0jCoHCFuRprUKCJNIY6c2W9H1TvsGydWhTxbjROmudv2Sy5cayV5GbuDU96WaeCqBKtL9676FzKQYsdsF2rQKi3XaCilgbyXrtWurmoqJQIgurXLIwNlAZEaffurhmEqAft34UFStncghV7tklzz_waZJz0w3D0_5XrS3JQR8B4ZJk90dGmggJXHhdpIYyQz4a2jseVG7si-BbJ1dH2lLqRDcAVj1oEJojeieiv0RYFxndtVitAbRps7sfTwTT2bNISH-5Wol4QLWNQ9UTLGSNUcFAFWJmqkYf5qzMsn9EMGaCeeplZtsX6ffd1NKW3LtGhCDQ6Pn3ABAfg9S30iBKx6n0-DakwoF44E1g-ajDHsw9N-16MyYU3L52WAqDCu0XHr2jGhUr6mvmqrRGxtnll9LEzH25qWeNryRiMgDqn-u9LUq0BeeqopR52vLOnbeTvcgwCwrxKrGmRQJw7FriZmruKtvH9TIMFuquz4h7DnEbj6eY08A0rEOtI2_u9HzFaxLfOqsvDs5HVsTJxyS9Iq2Xh_QI6mbuZf4hWGuMqvaVJZR20NnD1vs0QFOFwyzMhScKDUDpbi8sHIFKSpMYEQabHLWsXnYqSObGJ4akYEyp-flhkF6vog2H8aY-7p4zKS9WvnS93j-1iZPP2H9wJgxjXbg4cSxDIhm8XcD72JwFmFjpXLbVXtb5ATIG7cVhxGv7_WLVKfQx0tkhuTS0qPTW0HmEVxKsgZdlKrhojo9h4pphbKz34RwyMMArhE1pJsO_OiJwBndKr36TPKpw4EGPLyut1rarygqf8yVaM3oiGlyEy8IEHXDox70geMaJDVgNqkGth4GlsFh_2McXqUU1GIllNoryXi3vyAa2eN3iFXtraM0Mdk_utPFgPShFCGFWh7rJkn9jV8nsJ883d71xja_0buq6Gzg0V5BGxn0cmpM3SNhNxpQB7-xnrPW0yT8Z0jTMEN172v1qeB5nWZv_MAX8oavk4RRimIwoPJWsIpq6K9nn4h4VJojDkMbJerM7gXAKhLpAb-_tz6Htyfq5F7NWVCw2u1Afei7Cd3WmYI7unIhI8y_sgr8wK6WkCZtxvlNEVerCmxzHB7iNZT6pCDHKKhS9keAwncfO3DsfGrf2aj8iTTufSA225-aobA9jzdZyEUwjLrhlM8ueX2ME0JolKo_wDZUO0sO9QB9qsTB5vJP6GW8nYthFnzd-wsYSCZ9SmBKphcQ-jQ60HXtW_549hDFec3WUc8_9Q6_TWYFrNmlb156-t_wdwYubvds0vKBnhm5LlPbq8leFqpwMVJ3KBMcRAkloiOykwIE1mqthXgSO0CIA_t31jrIWQX-46Et4rquRzkcGhoFsWVHVrNkQKMy6Y4DiQ165qMeOLgLVnclKE3oXfZepbBE2ad9dXlu2UMApeb-ZTCAYRpAGw75Pf-bF8mVGN44SLimrr0G6JY2KQPQwCsL2cbPulPQ4z-BXVyb6Umhmm8FZ6p5T9fh08pMeMQvP5dI6uD4jGDRjeA55yMu5uqUXBna3WOk0ZTZNe4eVEhcxnaQeO6CpluvN-A3UM2l2l-1V3cLbmldj7J4vWLvfLSewKO-hOBUKu_oronjIAto-bYzEAckuT4aevZw93FQT7zdrtf44MyFNxJfeB2bv7zgmGpvS6fObEwWhkB6rT610WQzQ1bEmeitwmo40RN0iTC3lgZiK4OyijIhnIDUuaKKtIbWoMLbX9TBVRrH0CoUL6GzeLGxLTrGaklvDf3g72YEm-wZKOE76KuGdTPfzL26X2_UX0c7HArF935KaQZllM4Xrf-or71ITqtLJafbiuvEJejqvhCfmDPNd4iDKPJv5cqi18cFt2UFAA9e8OFywS-_E9phaGgsuWhoCqQF40tg2zx5_6cCRTDglIS_ObSJLjILmolcwU0waJvQaI_W1l93vlCQEve5nXdLRnXqTbUyMepmk--1-fCSK2wekhm-24Rk9YqtquZwy8FSL-isjnrr5JejRLQlm3kcattQtZkEHpF4ClR8b1YBZYkl_RLirJK17N66LF8dZSVm8i_Q0CEXjbKPCMCJx360enlp2sSbsv0uJ9UPgcq95WrL4CpxU6Dw-EDb11ooQZtYtFHdnpwLzuCbOh1bHK7QFwag6-Pzu8J1NjjEvA5aVRCQOzhpkhABBg="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:20:05.433587Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "9XD3arO7GqjIw-UPqcvykAg",
+  "usage_metadata": {
+   "cache_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 2484
+    }
+   ],
+   "cached_content_token_count": 2484,
+   "candidates_token_count": 142,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 142
+    }
+   ],
+   "prompt_token_count": 4569,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4569
+    }
+   ],
+   "thoughts_token_count": 474,
+   "total_token_count": 5185,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "26",
+   "quote": "A landlord may enter the rental unit without written notice to show the unit to prospective tenants",
+   "reason": "Section 26(3) expressly permits a landlord to enter a rental unit without written notice between 8 a.m. and 8 p.m. to show it to prospective tenants once the landlord and tenant have agreed to terminate the tenancy, provided the landlord informs or makes a reasonable effort to inform the tenant before entering. Because the clause mirrors all the statutory conditions in section 26(3), it is consistent with the Act and allowed."
+  }
+ }
+}

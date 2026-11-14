@@ -1,0 +1,67 @@
+{
+ "clause_id": "s15",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "e5f15b15438f03a87db0d91da95785ec9fcfc1c006441f4ebd3668d3102a2f0f",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant may keep fish in an aquarium, but no other animals.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:14.750335Z",
+ "text": "The clause is generally enforceable under the Residential Tenancies Act, 2006 (RTA). The RTA has no provision on pets, so a no-pets term does not contravene the Act. Section 14(1) voids tenancy agreement provisions only to the extent they contravene the Act, and this clause does not.\n\nTwo caveats apply, though neither comes from the RTA:\n\n- **Human rights law:** Under the Human Rights Code, a landlord must accommodate tenants with disabilities who need a service animal or support animal, even where the lease bans pets. That duty overrides the clause for those animals.\n- **Breach and eviction:** A landlord cannot terminate the tenancy simply because of an unauthorized animal. The RTA's termination procedures for breach apply, and the landlord must give notice and an opportunity to comply before seeking eviction.\n\nVerdict: enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 220,
+ "output_tokens": 1266,
+ "raw": {
+  "id": "msg_011CgycmjPXmXVRPid3SZbCc",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is generally enforceable under the Residential Tenancies Act, 2006 (RTA). The RTA has no provision on pets, so a no-pets term does not contravene the Act. Section 14(1) voids tenancy agreement provisions only to the extent they contravene the Act, and this clause does not.\n\nTwo caveats apply, though neither comes from the RTA:\n\n- **Human rights law:** Under the Human Rights Code, a landlord must accommodate tenants with disabilities who need a service animal or support animal, even where the lease bans pets. That duty overrides the clause for those animals.\n- **Breach and eviction:** A landlord cannot terminate the tenancy simply because of an unauthorized animal. The RTA's termination procedures for breach apply, and the landlord must give notice and an opportunity to comply before seeking eviction.\n\nVerdict: enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 220,
+   "output_tokens": 1266,
+   "output_tokens_details": {
+    "thinking_tokens": 974
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

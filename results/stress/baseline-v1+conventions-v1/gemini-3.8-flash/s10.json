@@ -1,0 +1,75 @@
+{
+ "clause_id": "s10",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2982a376897e3972668e989571a2a8c244eaa6ccf52c4653c695c29fe5241d6a",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Before any rent increase, the Landlord will give the Tenant at least 90 days' written notice, in the form approved by the Landlord and Tenant Board, setting out the new rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:14:56.549941Z",
+ "text": "Yes, this clause is enforceable. It directly reflects and complies with the statutory requirements for a lawful rent increase established by the *Residential Tenancies Act, 2006*, which mandates that a landlord provide at least 90 days' written notice using the form approved by the Landlord and Tenant Board.\n\nVerdict: enforceable\nSection: 116",
+ "finish_reason": "STOP",
+ "input_tokens": 169,
+ "output_tokens": 624,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "wG_3avHrLe_r_dQP553DoAU",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:01 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. It directly reflects and complies with the statutory requirements for a lawful rent increase established by the *Residential Tenancies Act, 2006*, which mandates that a landlord provide at least 90 days' written notice using the form approved by the Landlord and Tenant Board.\n\nVerdict: enforceable\nSection: 116",
+       "thought_signature": "AY89a198k7WSHmyTBRh_grAqdQcIzQdPiEw1H9NoW9DUlbPkTXum0MrqjzF7QVewP64uLhvjhOvXY106FfRIdZnmJiZHwSbvyfUuGG5GnQD_gBuCvYsLgCmxNua3jh2X5tcvpqgPHzSmWm_L2pfZEvoXbxRwrwmPB7ZhhAESmscwO5iEOZO7e19vBetqDXQw5tgFzCCjEB8gUb_-YA55rWk233vWFctuG6T-hWikaC210k2i08yk4TxDXnL47mnEcxkBsz5ris7Q2JSocqegpH5iu1lHcG6sjq-RI9nD2CFFqsgqkUzYg0uiwLaNxgICm4n6g8fSYJYzJzpBc2Da_276as723qsQfqmVQxk4K8EuNIjGSFQxNpkLwkiV4QkL7HO550PXdbo7Wh1TGel2-DKu2OUbIFHgINRj3VssdZ4XsboiVAUIYvzmtNlV0t7aHcSPTgVIHzTvKsBxZ39Sp8OFIF7TJoNYh52LCa8pv-gnCECNnfZc4gboCHXG-pC-V0odEmej40KuUOg1_Wg1d57ok14ug5ZWtbihn318FILfnKDHCn5sdoTIKSik65ww1kb44G9fyv8OmvHXD-agOFrOHgj4XdwFl6Hyau-bkzDYj8rAGd1WIlO5AuCvyz8t3bctUuY4RmwQN7NW9H0SMVMGPaWPTjjW3N1zqRoBCKZYlDEC-nevzzwu-EYe7SsozZbddj19GHI7tDY1sqsYRgsQeVuBJfETALhNbkFF4bPOw6Ava_dNT1DMy5KDjUZqsXFFfW9f5-o1Eq7raIjTuhvD8c50Nx4cuO6L_uZaf_GeinNAPq7Ssafo4imzaVSyRiTPXGG9DzfMPDYwEytWOlgZzg2Xt6PD7gmiI_9RQ8ZA-G0JQnQhgy7MGEcGtL60UgBezAG1CBIH1Gbk3qqcFXEQbbD29pejNzS5Tw8OVblFzXypaDulu5WH78kWcjpouEO6QW0gMooeOrIxlMjS99y7bGUt5mQzL696c7eTJPGUgq7XN8ANtTUVZVUNoWMFvR33NN7cinJ2209Z6_ojUry3A-Jmw8ctUECrh5NoFppLaI5fv7swyBTWKu_oZP1Ll4LoOmZceuP0MJJejVvtMbcY-q6YKcZ5sIWlU2e5aUoaD4eu8I48WveB3i7qBQRZ2jVWaUTSRhrupNWvodVCzXcqWb1sBQaMumDmhY9sFQOMlqZFFdqoQa_zuuy69Ipl_URpET9OGCK2dhO8My6G2EZXnPB3D8vge1Ler7wVZc9F5u9fkw8cf0squ4mYhJCU3VNwURdom3ZAZgkZfBkiddcjlgA7tzd9IC_xMCwI9U0iepSCwPL3YWTq_EGkybtsj_oElGwqYZuuAy4RoEANYQESVp4lfdPox99uVUyVftJa1UtSEsBAkxazETxxMhX1rjRgnxxkkOGGu8FC4kcEtU0M34sYVeW7JAvJ0Y-S4DJwG-pVLdHvHCOazkf2RF2bxE-_BLhfbRrHCd7uAHshd51lHbLefZ5QzfMPJITgYmMdB6vyEFmMx2gpR9C8ZYTK50IsFy0vsYgc1adm5BVm2z2OapvXXfTGxov_TeGnFJ_8UCz-WAoXeetvKis1ITHGsx-QVuDrerrdlCjHddFr4rd5gt54qPbqZnmDo3HzV0PERG2y_2YPeBaGagD6u6aenuVOXr-BElQnL6-2y6_QH1bNJiY4Jkj2KkzQeyH3KoHihbXWqtEBu4GD8CZoXNQI7aiM7LPiPf7SxwvQpmCSXJbc2HgR32eGh6lVUFCJPivev-veXd51bOj_qs40eQFTN2wllPeGsicKL9-Pl2RIS5VrNL5i6jtI7qMo4LP26IpTvRLdb19aXMyDu457VPsQurFCg96wIJFqgoO3x3q2vewcFkSAl-88af46GM_4PpxmHNycodMBhQSzweIeQkhdYrfHYGNLv7qh9HXM-wLstWQQZhDcqvK3YzHiOm2qgaOAjHvHqWP6G3Cz43wWhezcFmI2Ksp9xbyomQVZYcB0CJFtobd7dRZ6silWSRwYcXfgKSuossgJYtPiHLmq_emSudqixMDu-y2EqbIT-7SpFHWeOZ8vJdSmoU0jKMUdrfJBb6Hiv9VdSQYIkjd4aRGA0OsFX8FsXzH7qZORzGQ45EqmfihSrPsyy6NcdGxiDzTSIsU-sgClhQTHjPJ33-_RuVw55ADjDG7sJ5_Yb8p0YI0Jv4uCVV8nIxfeK-vh18S4_L2u8QqbQGNhb5yWtFEkhVTe2nqPPg9TFkTeu7KaYx8oLXuU6bbHmgq_sxr2lhtw0YXq2Ru6XS_7FcIl8d-nDhGK8gXmWQWVfh2sZX0UAxA4-l7SAbq2DBKeENuo1Vr7ccOIdxCdKyB_8alJ60y8W4cscsr7Km28q5gmyYpRJnYMNlSBS1ZfT96u4toRF6Fiuz_mqcXEdl6oyKHqxVLB04BZbpYD_dTICEMdwnjU1howV31d9D0oAKpge7etmMX_JF5UArn5qZ2xnScdZY0VK2vLcPE4eijWFM46J5wMwX-b8hHb08hzjbENdVdfbK3cezsWcYXpsit9w6lX1F7LJJszXMB624b6H3EQIiubG0QNwDwcHaWujDeNTqmGt8IUGwDg2lOFjzuJflaUImao2wT0BarHmEDWTZPXFcX3qX08YoLX_GSIW_Am9YSG7cDmtUpM06fGe6jMb5bdbxRJ_SbC9mvveh7TEMCxnUyYt1bfg8Lj227GaeBuNIR18vM3R2hjYm8U93Gx8cO3lpIKIT-wRIXzgsj8xEOb2TbfymL3fLLkUR_8wYZvFKoNkn69x5JslRt23cP4BmZFPeD2VpPbY31Gw6x7moOZ0FBM79_Q0Y155Gz-AoG9VYhvLJtZHiX5GyXWJCwhDcJlKkmAgC8Vilp0W-YysqoePaVYsnx2KWMQM4WxajWJKdhxtMUI5HztAsptINlmlzGZKjfQQwyO8S1sIpD_HOCIFtJ83EvSoqz-qXVNfQZQCsCWDR_c4u7OUBKcV_lfb1hmvcz8YmUoc_Ddwl89ExIxxZ4ew0UMxasiihEbBdK-uCh49tnve0T1brh-p0YcUV4vu-Nmct6xQWRY7dxFMFY7r6UYdExmGC9D3-jXjnlf6orgJXdcfb9b2kpHcAEAAXjlFt8="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:14:56.751089Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "wG_3avHrLe_r_dQP553DoAU",
+  "usage_metadata": {
+   "candidates_token_count": 74,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 74
+    }
+   ],
+   "prompt_token_count": 169,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 169
+    }
+   ],
+   "thoughts_token_count": 550,
+   "total_token_count": 793,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "clause_id": "s02",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "3d8675bfffaf254010fa3c35a2590a6c7dbd88b6b44b0a626b2db90784a16efa",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord will vacuum and dust the unit once a week and may let itself in for that purpose, without written notice, between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:14:56.548534Z",
+ "text": "Under subsection 26(2) of the *Residential Tenancies Act, 2006*, a landlord is permitted to enter a rental unit without written notice between the hours of 8 a.m. and 8 p.m. if the tenancy agreement requires the landlord to clean the unit at regular intervals and the entry complies with the terms of that agreement. Because the clause specifies that the landlord will clean the unit weekly and enter for that purpose within the statutorily permitted hours, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 168,
+ "output_tokens": 1010,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "wG_3apHaPPzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:08 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under subsection 26(2) of the *Residential Tenancies Act, 2006*, a landlord is permitted to enter a rental unit without written notice between the hours of 8 a.m. and 8 p.m. if the tenancy agreement requires the landlord to clean the unit at regular intervals and the entry complies with the terms of that agreement. Because the clause specifies that the landlord will clean the unit weekly and enter for that purpose within the statutorily permitted hours, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a1_3yxGZMz50sEQrhjEFe8b311cK9_L7ARQuQDB64SnbXwo9nj1KAzt7mXVhJl_HDgE-tdyAH_qVbT8dx0apNzoTEqBeMl6WUn_XqYhjnjWDRNc4ezQK9-zN4CF7rbBaHEAZ_-Rpcbf7Z6efWaaefB2iFlB2WsorbOTvD3knUWn84PEmBblzyHB1A38VLIGnq6pBiaU_wD_WN7LPOpqsc7U-8egDdOmi7V7TRFkRSXoOu7mBrRNyiyzJSumXZQyT8tdcpqPE_9Jc4ggbXtP1KQlRqJtTStyc68ZSqCK_eQ-o8PpE3J3cNRUH-VjvbqX6JDCidUXBb8aQ370sN1wy25fCDNe6b5ddOFbTPkLtAJ7KucZCJewIhdTbfo82AC7YsXxDmIXHaPLGUkSI7aXXYxnfPD1HvS7ZdZd5JFMcHU_8nFVo7XyEahcVYfu5uSVAZTrOQip5eHKvWQjBxJ8hu_2xzISIQvlCyuzZcTpSopNn0iW03F_2bieNReC052EN4lJ--bNbOMN4VvWk3YJ_XWzTgIBOd1fElf4C2ELlLc5xCJsQXiQHKCBpiqtuXUuNAwfIcOPnpgFlMEAteIulACL8Ntp1pep_pFWFsRKwughzMryQ238SMDGRYS-LVY00ysHDtQl6xpmNsWdajL7sTJRILW_9m0fxnku13vEI7wZMDVhxvR-7FfryQCuV6qVxC2o-eP991Mg2Nc42Re7BpKWrFsExL-WQMcDfmpPpzxnYSO_jNnZe7Ai6yqGN5vQmjoeYyd5lTZFQpOjGcPNQZxLDyEeKnmACLar7Lbq_HzREW4TiXNQZZ0F5cAgC2V34wGsNwz6ETh3751_syfKg0cDc7KgzR-0CEFz1oOD1byMZjsdhcj-OaRpq_xPMc8FfNvD-rWDd6gXayY9d7x0dp-14DNLhDnwMlGyuzCC77h4vJo5V75gCa6VK7tZjeTJs_BKkYe9IZXz-razZHSADt5WUnW9Ob7nmeycaX4kIQ4EcnKIbu_4oYSV8hhkEa5CILu_HWj2uCYdrkX1KX7PymmqGRE0P0wgek0l48Gh8sAzt62bVoYhy94gl5b0bfrA5yQcGb7DYilIlqH60W50VLQ4Apomb2rCzpoKCWHx8MZf-G9cANuYLXmU3DIPphqVbuUnNbGtqgieRikLZPstvH4QNcHyvHH-WkOrYpwdxmLplKk4rGsYPq-qzj0wGsKv34GspadieaLCtMDZKVo2aIdZbIdvWZNTlMXERcrZXvm3Mpb6aiLn7-qh2UQwpZ_9jjI2x_LZ2Z8nFu1BWGAztHo2WBMZhR-f44Exupst7vv2cQc1_tVYlqTF02B421DIt5bLe-nB_tKScBpIbYoZ6gLpWQNeAR3zhvnvSNQC45CoQyRV1Sa7W9UwbuibyrHBbo2vIB4FPQltZ32ev3PVTMbX5woVInxAzH0Jfs1RP7ZcVkFTN9gceAZ2aC9XzaOGwE0FDaR9tlFtKkqN7LL05NK_ofJHHCzQUqC_fhG84WGTndvfcRtkRc0emRIezVz_75B9d1ESw8qfZ2A2HXblhZlWPV5DBT65Gt8OhG1Rg0rAeXgKXPnf-BmBDpFjszZD_1iemvGvzpZmkDadLNZ-S0ayYqujwScfhEifNa0QQrLbsElXjKyStFF1VH4Ddvzk4BGDppP5VTB6y_-96DBXJCBe1RbUPyiUInhMr7A_GvZhKspD6IuaQ53_hQaAFAuF9F3ELNuBmLV2m3SY3wi5LzFe79miNn7n9QhOJYnGlxIMly4uchRdDfYLE5eXay3RlU5TLERpKHHuuOIfOOVA7ej1Zy9ptya6GTa5cMwH36qHi3NYSVR313ft-GomVwdguqkJ_hM-pcEmYmVFo77cNPSo8i7ZxHC7651Op8P7CsNOHuvt9JLQb0OprDemPVTLvU2FPp36TC6Mm5lgADrYVzVxR0HXk3SUgfvBL_tUm9BOINKioY0VUrrzeAZ5QmEpOkSVIni68XNYAfuFJqy0_zSROuy7DmFQRJJpb-JmC0qxZVUf1dKKzV3jDI7s-7Q5QqUfpafXkm9mH5MSP9DvQtPWYDKFdfalBMEyXZ3YqO3lOnnfGD-Ybwc7BQWgihKZVXoeS1UIJUER83OPd92GA9BSumuxcIg-O3mraBlq24Va92iU3ZsHcyuam6UpEKsPoIgHgcj-qqL-T70FKToRLN1CzST0r5fSw-0pUh-EPXTg4fDC57CR11PYeEJVdqzl-Cf9PTnHZAVKAzGaaRT4QaJ1P8ZjbwVoR6oJP-bpQ-rXdwmre6GivjUucmW1lTBaKrgfeh-y7rX5bpWY7zjHgSJFl6ln2jBKapjVFaFY5rZappWuwbX9h_zUXDb5PCu0YPTDzt_NWMwg_2p3m3slb1kGRDQ16mJpOd7NKBrvr_WUhnceSFuLr7Y_qG2jFKqc5UI2VJOcIddVwZd_JgE5vJ-OQ88kzgGCFF-1hKi25uNTkmD5gwadvkGuBNxQBj-f1TDhEOIexyOsXODX2rh8fPoYGIfKwg_EGaik5FhN5STnFDS2tnVk_6GU9u0Iww9B_SLv5pE2KrVXhy3b-PPnlpK_8Edfe_gZSf2BAuDOuWsywbnEkKmd_Q0vfz3m2P2Z8OQkgDf0VHAVeZWuv6jgju3qFmXYgWkqo9V3ruBrW2Hzwy2SCdJ4zfLaxiJf60vBU-Bzrhcc1z6uMFFluxz0CCkImfk00ulPIWjD_E4iI6VpsLjZnYG2obx8slo4Ftwp6DeHvMpQKQip6x7urs6fXkDjW2VXPsx709PLXvgKYs3TLYMCjchbcnY4V426EqRvij-Cq53y6pvJplYuIcrgSXEoBLkPNOP1zdF-iQGmkaN4idTLHwJPcG8oq1lAfrEsUlCIZ4sa7Qqhl0Wq67JC-rt6mUe49tg4hSEb6IFRR7BgfDUEq6zV0x-kVgA4Ts3JfBlfhBSb82LVfsZlAEfS3eJK8eUz3YWUrBNK-Nrc_tgbPrYXPR4yxboK6k_N_AZHLvVzC7LfRSbPyRcmoTEg_DyIOTH5110svDSCCgwc_2ZuFDRHpWfnjqBpIZo3nfw-3R049EAXVXfQHLLkDpuajvDuf2NVWdBB7DjIoF_coKNima7i8KgTtpBFJrm3WB9IVTpm_2TkgH87ZY97z8m-h3ryG4fLClYcHCbiYjiTFsi_jrhd8y0NLkW8bd_QOzSY_ygEtuKjYfZhwZ-lhd4O-Rp5l0hatul_vetqsEBb13kfNFUU-kB9MTQY6-FK0kTYNgnT56FUH_BcLZpho-LqE_ImTTltDKk8ydg1W3o2GyJ5LOTSmP2DbVM-TDj9XWXgjBmNHpo_YewMn4Fd_UvDMruTRrFHLpPs1VMNPeHRpuzx7J-dvHC6x7ZTmcyCRONADUCcYLdKfL3AlhM5msqTZN2XxXMHjCL5A6EvQZq9xORGHJemcIg9mCYjH7fR2KWjp0mWy5P2IkszYP_iSsQtUccZR79mmw5moPFn8pmqffZx5dvfCpxURAcVu6UDrdFgIY-LdsW6GObi6PPmkHUDtgMMmmJ6x98RwBm4rIm11Jqjn_D0QGmA0KhabRRtpf_X7v1HeI77qvHsZ6_UXik08HItcDFrndlUkoQs_6AvpGLeq3SgVZJJ5SmgIdl3Ei42ZS0HwTo29T-m0kHIFsN-ZMOjMGgRi59EvTF9bXOTPysS1WAces83jcivVfy0W33-gEI9H9pvtHgZMcM-tFXRy3sBO6VgUwht_nv8UqEyWMrJnAa-DcbdkI_FlX1XCHFHDX2xE-EuNg76aRVDcZ599yyGeGl0hctlqNk39lZF9Nxjhkh0V7z-w8sUkz82-YaucUWCCFRziN3D2af_B-gYHQlJd-z_2spFydSaF7ESKT30C89DnJJyzUMKqKD9X8NjQ8WeMr69rUjH825gmFQusQrHmahEbq5QCpaq5f4gER2z1FLN0u4_7YbMijzY4SVlaPe2xDf0KQsE-2Qtgy7bBVSGNKdSklzDaMEAgxEFnAXbXFV828kzhjygYkioLcBl1mZP-nIzdjcuC0zEu37FMk8gQYXldMMPEdPWUcbOfKBAJMTh31L73PRmgpm-94_ZOh0RE-4rSvkLSAmb9WZhBfP6ewfLqAzYiwCuQs8CjmGRjghKj0EahIwnI8jxK3_nL4ea7DhEJjmZnxB1-IyruC3_Acecm3OUo-Bn8C2ZYTUbHPqJxy9GJ3cs83JDkk-tXotCUPvpENqE1Qqsm4I7WQRxq7MucB5P0YGmH7bUw9gXtb84FZhysCRX_i_Rugkbuv4IJXosx5ZfJUk-VxIdAlMQmO2yVtnWmXmzr3BAlgYXuMNiMCN-qTq308h9tLpbb0NA2Buk9GFr1WbhBOBO-PzCKSVeq-TFDPRm16to1bmpX7fF6q330YpPdT-3FYI-5kaMEG88RBtzpWWNPSnMFAKyQ77dCZch5fCIAceiNs9o02nsyL4wa7VBgk4Xvi2bYA5JJt6J2qcUAIesbvI8-gvj8d6QfKlOUBRhxbzcNummOreXnZbogaQ6tCU_JtGk9S85KVnYqv3HkspgRnOJe"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:14:56.994577Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "wG_3apHaPPzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 117,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 117
+    }
+   ],
+   "prompt_token_count": 168,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 168
+    }
+   ],
+   "thoughts_token_count": 893,
+   "total_token_count": 1178,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

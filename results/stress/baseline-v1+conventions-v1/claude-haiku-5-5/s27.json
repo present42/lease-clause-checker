@@ -1,0 +1,67 @@
+{
+ "clause_id": "s27",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "5450a1b44b525ce02ef60163746690af00f58874b2b3eaf7bfb8de94219d8fe1",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: On signing, the Tenant shall give the Landlord a signed blank cheque, to be kept as security and returned uncashed when the tenancy ends.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:21.482379Z",
+ "text": "**Not enforceable.** Under the Residential Tenancies Act, 2006, a landlord cannot take a security deposit, or any other security, beyond the permitted rent deposit. A signed blank cheque held \"as security\" is a form of security. Because the clause is inconsistent with the Act, it is void and the tenant is not bound by it. The tenant can ask for the cheque back, and the landlord cannot cash it. The Landlord and Tenant Board can order its return.\n\nThe governing provision is **s. 106** of the RTA, 2006, which prohibits landlords from requiring any payment or security other than rent and a permitted rent deposit, whether directly or indirectly. Under s. 105, the only deposit a landlord may take in advance is a rent deposit, capped at one rental period's rent. Ontario does not permit a separate security deposit for damage or other purposes.\n\nI'm confident of the substance (no security deposits beyond a capped rent deposit), but please check the exact wording of ss. 105–106 against the current consolidation on e-Laws before relying on the section number.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 245,
+ "output_tokens": 2343,
+ "raw": {
+  "id": "msg_011Ch1HvxEF2Xoq5fKFh67FV",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSqSwKEAgTGAI4AUIIdGhpbmtpbmcSDJRivQ2a51QemmNk5xoMMjsdU0GxStMgv2JeIjDdUfrTyqj2rT+knjQZ0BNPx6BeGhNxiXbQ1RRh5EO03UsKc+NXckJu6EGOoFm/SvoqxiuMGAQI7/9O147fkaPnA2d6XJhBnFvIgdQKTfo4UM/3gTSxKOGVxl/3YlEoxXt9S2ZcnxKDcAPTIVWNMOlraFOZ0vHsroJw2eUbW3zd4sKNreFLU2dBPAD3UY09Yt9IT9qqObHS7lJULNLZ+baMY13015+SyXq0/9jq2r1QXBftIyt7A3Zizkr9R9oml3KiTNYXw/TwV/Iq09iVR1PcRQm5hfKQZBcLJ5O7OKwcTkMacashnk/JSLuVb4lv4gIig3Mx/CKOxZwAx5XFbsqAevyPI05Q36/IHbL78Qoah5G0pXpIDZ7XpWadfHw/pPdarnxOMpYnEd8/u73lMYWZax9Iq5rSYBOEjUu6btwLvivVeXHsNMTTnctHj5WXnlx+rAATx8V/hqVy/KexugXRq6jSPhXdSmHhVE3jFEleM2FPzujd1BGbdbKLEpOnRwu743fx2ecQjMpMfqKNE8JDQ52zM9RuaEqIdWtc8qwDAqnYARfBq46KIdC6inwXl2eMdhQj9fz1k98wOKxkE4W9tmcYl7pF0OiKQI6zIIewsIypQyG4H+uqnfeXkqhFg6jc6MUzcNybWfIdGazOrjneZnR4pDYWud506Ka8tnbW8sD0oIR4n3UFqK+rEmbuHHlw6hx8G+/oCcsFejkUcNFHRkuzr3wMMdkbUw80E4awiqh1D8/3mJeFfHYh6K4yptrr6Z85zHAp0jJKu0BOmoMalJNCzxCTgRyCCC60ioHom4A71cxlqcUxVgkDjv1t4uX3iRdKVtv6Zr65De1+vOWUkrrSJKT5zc2zeoXC0mKM46lIaHExRz88xgRZ66ccAq9gh4+XZAWD0hVwzmSnWJqyE+32BGhdy7S7slXuyP8ecAKZTXc+yS2MP5aQnTBSriLxJb8O/O9l11N7tqpy2ksf1ZgwII9YyfD8BSh5PLJeSPG3jmmSf6tZSzI96B62Vf7QsJ/cudEFmPu4ZM4WRBuFOtGGgN3tVXp8Mke1uLTUBEI+OVE7Htzs1E19/1bDB01ygWjUSgY2soMSOX3qG6XYpWRCuECViQcjrvyRe/mxlvg0sq9+9vjRbmK5hKQXsh+FxTmJkTTVqWrCwbuFinyw+ZpjsJh4rPvBBs26MbGQtk5RQ598sOawEtC6Q5AQ4zDU4Pub/cpdhIAIxIXH6G0q6/kUINHVg6xh2KqMB/pjXivvzLMcS6YRGoQVrzX+/AtAGCQX9lu9EyYUYPDbyk+2lfKfP0PpPH685mwaZG+BZKYtb22PqOOPP3XHq/GvnmtgZxh86sBgvaEhJIU2erOHOyNYnB933L+ILcGgVCiMT7eGvn3f1XawCs+1cTA45C0gmbng0oDDaCnALA6/dbeDAOewqDweGuPEk0oNLO2BKXI9mSGT2J1IzduiALMak5CylTMVUpvvzBuwQze5nRqAKoxW0gzoKBdGRHGC+BcwH3MWK3LEyf0XLTf1TlFC3GqdMTAmY7tQMZaLOZPv91OA7VZ8/nTNmImR9wXrC4oHMPBQwfUVpZTAZzIOG6buLc16/GGTHhdxDEYWCfBv9Hvw97XZHMcV8QSIceTXcmvmZ28nXLu/TqERqPi8fS2Cif86Zt3e7lwse8SvJzHIw55zeQOmJnZtvB9thSZAUBLBoQMnJcHkmGHg+9xJe6fYm3ngF5tzvUuwJhtl50yZ6zUodF/zqCJ1IJ3a0yo+Zy3IyPNIjC8Z/4qVE8of0JV6gXMbnBWgJiiHIR9TRLnFGi4ZwbY9ulOovdl1YVf4TZVT9WRaffjAV0iqOv6CeIhEcVyHJj8Nh7aIOOdOKJF49fjVHMXXSwbIg0uqPfw3qoUIBWudKMtTDqjNJfIiQt6GQsgXdRFzytffmvcJpbbs8r5eB6A6q+3UngpF3BOedCp8wtycPFubArbhCUBgMovq+/l8FI6G8FZymB3pt4M8tnGttK9chHbcPpvv82p96EyuN/ZCVGDDKVH7TUf4CgsY1D25QxV8Lj4dqVnZ+aYBRUQHJZan7Z8fCzibY1GbY5uYJPMIWm2ugU0fM8M9bPLAnnwoPrpCKhUZPhnaUGfJj+S2YJ3/OCf35/P+bZeY8fqLvoCqNEloxzw83LR4weHPvfxC6w8xjSsjmm0Hmc3VOyluwmMjSuKdSf4HKmWDLg09MoiYX5WUYCUPqf0uKwck6mgyaqKuCCiyxCcu/2XF8SGHFGEyTzgS9wimUB7lCdYQ0Z2RTVZiZEHsvgV/KZjLvem14RDHW0FuW7P30Rr/cjbKLkF6H7BfdazsfJ3/0JYFJ5X5RD/gizQiUaf7STA7nUJfRqqXOjtwQGcryvgFwnjq5HrPeQyAuDsqgTW60E/GJ4WV2sJp+sePzyAA/9M091UVc4682GPVyXyYyj4NZ+90BLqC9hdjzrAY8Pf3/c100tidchATnRRyiS7+W8i8mWuAe3t97drxeJmflZMQI9aLEzdNwkctsvldkeJOcWjGMk6ytE56KdZaj1CQBZbG7/yPGpvglBQs0k23lF9F/mHZpGqXp51nCSe1Z/PE4y7oaHEw0i2gYO0JKH6InydyGnW7hfCd5jR9/ksxrFRq67RV3TppWsNsako4ce4nzXttK6FD9DIeSzx+rNXZqxjH8PpjvhYoM5OChVbzWuKTHC5a5Tu3m/rwqSS5pB0DJmqLH/bz+0SNu5KDrKz2mgumsEeSOVzLyEl7qqAerCbdUm2JoDB1FwTW+wzmqGa9v3aLhn5N1xCCYNs/fx3nfFGNaVMV3SVqjo41QS8XC9kc6hQ0AkSsxB9j0hD0WYW0VNlXPxCcMFsRg6uy9Ovhe57n5BJCx+qbUFAZJzSIidvTZFwAS6GeaHYkuAo0u0ETWFklj7ICVRQj5AX3/sKwN5ulL5cRXVzBVSQ+FODvsT7mA5HJE7uoeXDNvmdGXAmc98o1BrvpLmENq2Gj+7gY31AIw4w8eDfORjT9WRhTkURa517tEP3A0WnU/T8/We41mEZ1W379ZMp8c+UHY8xtNX9bQYtJ/WY9TiMrBJ5cHxBUtSeTmiQwk/f7J6RL3+TIs3NltRuHBEVXeq5CuzFpUmwK/r/GxdrkBgDN9rfnugKgiY4BX6gZu07hp563qoOJFnNe/Wbw+ybJ8YUGNPBzx+Ga9OksfWYcWLxGvbpZHxmArs8X+YBhq1Vth1zhcArvyi6o5OCj4xP4LiAopERLMPOs5OF4GooeQc1I3GoBpW5r/7xejo1orVsWl9JIHQOzCLxXIaVB+iNKT6XQrMTFeMAJvUnq8lmyq+BkGQhxGD7WSfqskMy0x30eC5t1ItBITet2ubxKbZBPufw1oKn8RRV3ogTW9qv2nuHTvuQglFLm8z/ngsZSFwYX1iAfCbcSx0TVCh59Luxiv+E32x23KT1OKeOVqyEFVXp5dOiqaXN6erWgwJrNjTS2wEuc2hu1cDdVPP/wWJEkmRbK+GIoW+PL5amDIvAO8M9HYr6G4g2VXQNW0/px+GHPeWLm/IwMR2CuR92NgdmGl4dnW6LAzRlhfGkyavyGVyb69AuHMrIm1qXBPeAyW89UeArMPBvYXMm+IabBBc5GgiUMqiNI9srhrq450kUVtO12TGjFgcctoqUzVMZv/HRmeClQPRaD4Hs2S+xLMjeDCqNoE8VqaO9L48pkMgbeWlJ67FI71L/epJWONRRvTMZqqlaXHzvMXz5MrLbBi4Brnz+rpybp8eO8I4MhK8R8kub7Vrf11StE/Hbcih/IN4+CzmIPfNmUVkBwBYcnMazOJ4r3SmdTfXXZwQX2lrI2UA90/UCBkES6YedSM4AUite6eNISME/8ubk6eNIO71JiKiPSd+HrkFZn1154lun8Klwux+A9zr6xM13Rscovt++wdqkAK6+ndJDnJM/JqMVQdvfEkw3qQeOf13UfsBH3pd5YksZucPJdlphRj/sVy+KSz1RSXmfdWYiCDY/tYYQMmhQfsyG1/eM0aD6nUaQp+6YiOgFJujaOUhkm3lV9NPnGh8uNmfXm0UMKMeCEpX47pBMLjwMEtKv19ZgdHnM1+cM0WnM39uk2zoNPaTLg5oNc4K6hL6Wz/J12yQifg/bdQa7tdVuFEYHxNJm2aIBv3jXmaCZDcfwqE4glKX7oIBQLS6M+qFcAnp+sCFNKQbi+z1+wZxMltSOeySLqJOnPm5u7FpyYDx0CW0is54ghuW7GwmnjKP+Jan26PzkkfEN3dBF/6JdccvKMnY36ifU1q/dvgulxmalGl3idF/P39IXG/pELr8LYpbVayA2uSbJr7OaOJlgAIFx/NKxsLN50iRJz0f+5tfxZ2jnBhMdWvRlCJSs15+PnHzk3bH1YeLtW/9FTn43ocHauita62d7PW1TLQQT2CCTcfhIUsI6bP601pdEUpirwgp9le4TJmIGmhqLCcE5gL+QaIkis2/KTmj781vWuAHcOnQHai5B6P2RNlbgKZ6k6MoW1Dgeh5uDEbaNQRXQYIDMkgMyhR3LL1L6wr4sVXL+s74b5T8Jt+1wKc36AxQLy794lfk2qhI7E6mtlIRcFzFCHVpkLl1BcrHNGRXKvEJB5nf6MdJxTkstUXpPqeRkDNIJL0WSaSsns/HDWDr7CJz+sav61TT4tNm2eXo3AziDbzHlTu10Wf1dUuBizx04wq+fWHr1B4y8IHdX8dsVdZd67kF2prv8KSPqDtxx5yl28M/RTxP4IibMlM6goMTf3ZC2uTu6oLET98YgG877dbqsK7cg99bdAWsTXbzNeEXoNRqv/7GMTvPLh1gKkSG2GvxcedGIR61lyEL1dVRAr0RXYfv9mb/4JhsoLFiP+jmzHO6OOVleArSXu7mkoAE2iaIPlDPUVIxaqZHYVUnsOOHMd6S/btqW3+RmjgN6GoHiA9aY3qzHHaScvyRfIcNP1Asc0aRGVUqWvuVPDTHiMSi6S1lsRrtYLQbfLqe0oxoPstAT4PRSSuUZwiCCQq7KVfxxsaBbBaExPB1nVEcA+pwzu9OsaTJZm1g9dZ7Y5YVtvPQtOFOEBn9jZL49y5+1yU2W8CvFnjmublos/G/iGORdVI71jIK5cphnY1smw8GsGAtBP+taueizDD5NTy++xuIlmwSbBSBIWLDdoPU5Ypp3QBddV46RKcedifoQGeyA+M3pT9G3YWH1cvfSX9Dup7yMemr6boAS6yX1SS9DpyO0lGsqtfBW1wTO7LJp4i+Qy8ee6dqjyaEJZmm9kVUU3268pubUWDAEpCd8/ZbyammmTyGcIpNSzhyMNR07JhRLRQUEtnhvWDFUcKo3mhwYnqpmlWIpo0A2JT/ZUmSzjHmij4eGkYkt28kyPcyoA7RaFYQbmvwQFPT1cwAkylGNd4wy0ud5NQ2vL3vw+7ytMzBnZbEJrGAizIDUlisYgHUEbb7JHR1k/a9x6x2pod5siMhMs2SBxN5JOp7puJu8Ez9n0aX+Kmb6Dr6CmSPvOrCbSTTGkHj42uefMZ/wU7fMJnMF+RhGbEzNHljTMQ1SzfhRASlLXRoYnKNXFBvyoiwJ0NKvnv3p94fmPtJaYTFVcjW5mouPDhUHvaj9yKtFtDa9uBemmPTp/3lHO4Pn9IB0zyTF8IHsgfnyj9yjojQaBiDj7scU90I2dTfS5EE6NDwpdqUoj+vxuFdBrdBT298x7POmaRUKSzC8Gi05TDJpurLyUjw8h1LkvNtih3Zn8TgHiUvlQ2V411hpDO5Sf1zTeMsLhmDQIrx0rxelYDUfO/xGT2nHOXZWZ4nMlZlLXiXSe/mM0JXd1sodzkTBoFUwlhnRabBgR0Ngpzw84wWuJjvVoq2RaWrqFOPn9LzsaMd2Vdi3aus/o3eotPo171E18J4wWymgZYABwv471Lsu309Z3/2dfxz8Uw8muXmvSLFhJSsgcjCVsybuxDtaKkJA/ny3F8Pe29acSPSWWyJyYiZUkabxm/7LYe9aJDwCTTaGjmFql2AsY9ZKx5GjW06BYX7Zc9BnGpiRxAF/t/47w8EsxpYMgUMcVYg3dSoC3lBtTWfOxmJTUPY/0vR2BijGJp3QIgDMHox5+3MqvFWLwoi8tNddHmeBC0riG4Ij+KhmadFNEsBZj1OVlseKZQsCYpe9+sf7nQsQvsFN11KKPbs/QotKp0Gf9PSFK3a29cxVNlQVs1jHDfI9LgaxJrqY1Gu+ZZgqeiRGiwZayanCfiAx/ULRSIg9ifQhAS/fw+7MLRSmaFUTcmH4AhxJq4uqoFNBTHyAKuT+ROOzlnFyLCnT9hjeE0Y8fUb2goyf24fTG0/f9u5TMuHMnnQq08o6jhHor0vN7FeIbkMb8J1Q9NgzYnVX2uA9oXcfe5t8gjC/ZvVctJPb7tv04vPiggE8K0Xf3aPo69pCU1TvzeBFwkEAXGaKDrep+CyaH/hPiHn9RNvCKjWncb2MsgBinqgNm/2bxbPn74VAS6mI4R5eInVqThV0Mapz1Y/tjBKM9I38voBNgjdnGuQ01iEzZSJ51QS+QQbEVujtFShsjNoQvDHOHMOd2R9lkzV8tgvKmjayQYYURL3QJBh0vlyhZNrlg1C4PDyq54DsugecfvWeA6hBSggSRCUANAVU+OIyZrl6e0X1arwWvTPqNF1vMuB1D+bC6t+gME81TlN7x8EjX1mLP8PdqLUgq4N0+csvifybEfmUxsO55zhBc817tJ+snYzA7VxiFb9sAXbQYuEl2dqyIE1UPO0OUOZDxLZIU5Z/Xbe6/9FoaD6tlp++SdxQ7Ouq0nYK4fHouokfzHpTLKmTdDJ6wzBk55Di8SNEx13V1VnhziRvbiA5g2WACaCEg0BW47WQKEy0PEs01WtGKmeJxGWFVoeDdmPRgN9RgoifgH9ZHrtRfH0IkB1q2StJnCa14BYvS9xEhlFnLnxjri/Br9ZcOObMdxf5/BjarpEjuPyzEW9+Mb44pv9yFNTCgYZO82D1lFAaUMF2rW0ABGKWyjKQuW022eZ8M4f04ff3Bs9WOW1r5dTyikHUKT2siL/X5KDXy/KsAul342J011DsZuaoepuuEziGxT1oXgiHOyi/6EgWulF4KIrjJbIdqUQbTGa736tJ/XL5DQfmnvsRsH2vZ67UbRQCaCudB94K1+/FZUre2gLaOY7tLrJsq2QS+U3CPf9d2ZIOvDpVcCENQ3aKboSW/Yr614+oJH7RvMjEUoZaWrVOMaUmJlEWFftN6rcC2XBZGmbRR4ctjmjGt/NMjhp5BQvafJDjXixEiasxIuhFaDKkjAioaiodOFWQ+KnuWYbYH3ur1+JJLLY6J/Etjaywmg43y25tANkY8AGED1tMgulFwDMJ6VUBdB3TprxX3byN2b5HPQIH0PGixr3VW00iJpGQYBlXCoVplpKV2kg9MCsklrcCrGFLI0pZvR2NFtY/o97o9nT4mmm0UWKmvTFggx5DueSDuZn8GqeCvIjTEr1JwyYgYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.** Under the Residential Tenancies Act, 2006, a landlord cannot take a security deposit, or any other security, beyond the permitted rent deposit. A signed blank cheque held \"as security\" is a form of security. Because the clause is inconsistent with the Act, it is void and the tenant is not bound by it. The tenant can ask for the cheque back, and the landlord cannot cash it. The Landlord and Tenant Board can order its return.\n\nThe governing provision is **s. 106** of the RTA, 2006, which prohibits landlords from requiring any payment or security other than rent and a permitted rent deposit, whether directly or indirectly. Under s. 105, the only deposit a landlord may take in advance is a rent deposit, capped at one rental period's rent. Ontario does not permit a separate security deposit for damage or other purposes.\n\nI'm confident of the substance (no security deposits beyond a capped rent deposit), but please check the exact wording of ss. 105–106 against the current consolidation on e-Laws before relying on the section number.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 245,
+   "output_tokens": 2343,
+   "output_tokens_details": {
+    "thinking_tokens": 1977
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

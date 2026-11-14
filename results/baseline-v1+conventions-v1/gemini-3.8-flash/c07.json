@@ -1,0 +1,75 @@
+{
+ "clause_id": "c07",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ff5e5a075af3f5876c0e239313a4a0be4fdfa51930fee48aaaf27592b819cf58",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant viewed the unit before signing and is satisfied with its condition. The Tenant will not ask the Landlord to repair any defect that was visible at the viewing.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:08:24.597350Z",
+ "text": "Under the *Residential Tenancies Act, 2006* (RTA), this clause is not enforceable. \n\nUnder subsection 20(1), the landlord is strictly responsible for providing and maintaining the rental unit in a good state of repair, fit for habitation, and compliant with all health, safety, and housing maintenance standards. Subsection 20(2) explicitly stipulates that this duty applies even if the tenant was aware of the defect or state of non-repair before entering into the tenancy agreement. A landlord cannot contract out of this statutory duty (any clause that attempts to do so is rendered void under section 4).\n\nVerdict: not enforceable\nSection: 20",
+ "finish_reason": "STOP",
+ "input_tokens": 162,
+ "output_tokens": 1447,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "OW73av2jBMafnuEPl9TYsAw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:08:34 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006* (RTA), this clause is not enforceable. \n\nUnder subsection 20(1), the landlord is strictly responsible for providing and maintaining the rental unit in a good state of repair, fit for habitation, and compliant with all health, safety, and housing maintenance standards. Subsection 20(2) explicitly stipulates that this duty applies even if the tenant was aware of the defect or state of non-repair before entering into the tenancy agreement. A landlord cannot contract out of this statutory duty (any clause that attempts to do so is rendered void under section 4).\n\nVerdict: not enforceable\nSection: 20",
+       "thought_signature": "AY89a1-hKtIT2LM4GcPoMc_oX83xStRFrItXCZZPZpLzWXMwLyw7kfXh6rzOQSzgYarGRVvYoyp7OwlE0L5Se44keaHS1XJymknmFA2X-6URo90SimpQEQKRiP9fJMBFQzS11-LoiGxg1dgyc7xdAGq5HDQffihsBRtrXehjxxhexKaFLPXthhixkwQXBm1ljq66Buaf8aZVwZOOI-1L3Tb3EMQWC3AxdXN47c3Ii1Z-ehk3dv2ngZR5-WsJ1DaDm4cJR8zVawB4_xr82cwu5_5ugrGym0I975tcOmZk-fK2ovBf0mKMoLCU4y7pUgcvCbpJpN8V-l5znajM0essi4Psn8rzS4L39Slpg9SfgNVSDiOl61bvCz_TP0hBLKgomFJtARtojQlZCI-GV1O2K23F7Vj4iED9yzbOQYv5GWSPa0V6a5cRbxVJQhYDr9RQHpRO2vRfjhWHzKS1lk5vMg6h9FM69F292m9_17wSffEhZYH8j7nCwm2SlIany9K_uzqePZfB7zltCICj3XbNwrB8s9jC2Wsa6mej7ViOIObQSjKJYfurGmH978ABFFfVvbvr0k_5aE9okSwPSI19LH8Bu2xeEX5DWtmv7ZnEWBCZL-grbNwdBmzdX3RE-bZvq9Gn1uExAxfWDrL_hfx50RUBxe16JOX-kLzBT3YxE78Lbt6k-lbWcDhtPXRWfwZzSfaVkbd_2BswXG9wn0KQHCd_EBCpTQrchSJfDlNfv80teErnhyJCO94PX9aoZWPGMZUPfJOayEU54opFQEbYdqs0WsquBXbIpw5FgC6b6Gv11fRGZZRpZ0fFOOUT-gyDPsSl-i8zwptC7JsTfs7Pz-fcebOq-0JtavvMbBqvaP4HNaBhhrnABST9-_eYI6U9n8wDMhiZVsiopBB6TvOlUPhJFarAU-rp5jVkjRm8SsTMLBrwOt7IpYfh9h3ZkalIAZJXfmUd6XAZMZ3sWeyoGpLH7z3_7I7TbdrSFQg-E8Xe_oQLKPiFBLJetunoQjvWGDlziaCkMoWK4arIsbFzX88Z0nPh1vyr3CbXd3EG3ZtmPBjVbhU-aL52aTb0vQv9saTGWEG3cGY2tf4KUgbvnOzuiA-3E7TICiGcg-lBqPW6s1-gGiSMSClWudpUol1vcJyjMrzI0GBTJcHBlfUfgddhdadmWU6ne8HG_loncmtMzdtzw3_-F3aOBmJbwp3LP2KQCEG_XCUF6C4F3xfKcxeoE24cmKryRmP-L_GTk2DW7UYl4PHsOQH-UzYCt_KxEgtIs_ZMXWsSkZFtJvvaw7QD_NwtQvuWNyzoOMH9HK6RzozI5n2thqYiH0aUwtW6iQFCynIKQdYZuSxg1SaepOQCWzd0buLztVxlsb-NSSSkXD4QSY5du2hU6FIMIcZ7NwkaZ04xeoZby7fG9WL6ieHWCbFOdc_m1BTIH8S8MMgAo76Ej6SalSxd174EOinHNXXqKBYZaLIUU6QpWVs9KFztLvG9HXIK8MRJd8QBklAnZ77z7oTxclS5CSPDt5Zmrh-wi7JemhMQMf-x5NXSHxL1wWJyL-dpa1j4gF2ML5qtFJXwBb8FeE7s-NN-ppa4-v-rS_yWrK3OiG1lauMStkIGhTMs7phKkYot-v4hb9Q1wnN4zz6BU4uxA4lcG5dofTJaDXy1Jfs5Mcgu0pYskM6N4zUCkJnueKR-22g2y87BW4XqtqF8XNvgVBaiS4x5kjM05eLujCcLS4u9gEgtGDPlhfBjqVkH-bOkVG-NxeMdEEwYG0lLP4hsK0n2goVsITWC_c7SQmmlU-gY2X_TAYilSdNq55Xr_qltY4XVjLqqRqKn6G7T2s5bg0BVY9DUgttl-9k0_D3-7CwWyeI051a8GyBwckzayE3VwmbQEaqWqH71jkdAdVl3EYrNeRfKBRDXVI6G7xawa0Dr9b8oLy4ZM1af-eWMW9YI7v-ksn2dOIDZlxfcT7VnzxMYjJKjy6OEEtTXsMH5RlBaJKOjOtrVU5RUWTRwNlijwTESyeqenLVqbXaGKIfFxGf6PKFzAUsDz_pNrYaP9vcvbpjK8FKRX5pZ3A3s9OLTc4ZRvnmR4fXbo3mKlMhGPNfUBzwsCe_36njxX6AZdymXjphlgRfirD2merL1TgL7DWTxVuD2buqZjM4EyYW3_OzvM8vHeJtn5lxBZZyvUPuE7mas47bTgLTj85np5-VM1kpOp3sdJF8pIH7tQlY3kNZDT7YoGOIJEA1uBU99fMnjNX-mdHHOnHSlNS1X93z7oRg_S-Ft0XsyEqKIUGDbxeQkwCJ219QT0GYDohIwW1HIOeDWn04fVfrL0GaQ7bW_t8jKhKrM5JcRMmW2YfWVRWki-hoUXiXDSFuYJ_2ZHSvKEDP66A1xop0x5i5HzzPWoS9qb5a6cOznlP2cHp2_5PYIodrQFwQVTI-oiQ9Ki4VFqWk2-_6oom9YOftOMo1e1kL9fs2XWxe2yrmIk98d4mRp54fW9OKAlaqd0NoHLUIAkhjlTolh2lkihLJhoewfh9Sm-4SNTH6K9LRd0dZ0QXRLEgFfs7LiTQgfOFD4D7Dd1WQK2lGL85P57hDBdjZCNyirs5ejIAkSKsn5JLddvcQtzER_OnCdzrjZ7N0DKgRlqNbOFtmli2UP2vifdHEatel6iNAwIvfotD3tkqtL_UdUHBiTbQKv3IeRsH9ARHU6CT0aEnm17zgxWuE82DWZGJI6Cd96UKtbqYhhMddUKbpOUCSIIU850OZa29mHbKj-Gu70EWmdZfF1m3iS2p-SYG6a5fRkdtQkexxRTIAfu7Jziz5Q-wWLsdLTSJmamHq0VDMo3bte1zSVHmwhCzfTO8fDRsZvRe5NwkURdLYJXoCuJ-7vvxP9voLHON9Gf6oSb6_hd9hlg-xRBl5_khxRlfpCLnRUZhwZWecddUj1CS799G6Eujn3FoRozxEjYdkSqqK1eO--6RD9Ak_pN-l7qxv80v9Df0GypFT5eTBOanE86suJYbI7iTSn_HJ8Et9pG2ZYwndVgLTyBytFuhDfrzNkTZuzHucbABsRv7Qg6N8AscJ0LR58wjp2p4NKxdcZCRmpP5rmJGJDjCTCClId5pcsnb7b6NaAPkKPIpo6HN_EuhFztC6byFoXzeXwwOW533jtm6o69GntgCORRkfHplj8hMx-WQyW1olJP0KVFhfq_S4GvHYB9wX3fJLU8pEtxfxE2mtLNhUCQD5WacKrRg5Dj2Fal7RXOCDrNdUCvDeCci_d01DymzgAFuKFWtUVsvLY8pM5DTdUwf7fFbnk3Plo6IUNyLS-1ct_Mbfnz-LIVIiwbx6d1CxdsTbKv7xs6JzBfNxUjtgnjG2KKPXDWwWvVQzE_0sxbbljWCcOL0RVQnPEKSvk5YwU49ivf2cXgdscU7VKBP3F3RLHYYfitLKfCqnejZaUzo55MG8Xr26HXroz9mVmaOd7BQLzUKkL3tiaPBj_8nVcNEPykC91VGoCuBSG2cfAQSmqoXvGOPGsN-tAfcPLsbBUr07LPnaAo_WGPDGYGOwrWEW6ryFJHJFtciDI6apAVZ4iR9Kb_SD2u14prDx1spBl7T1p_5kX_fxUML-xkasT5HwDJuN0sw5bfFMc0fGn1Qz42m7CbUjj2DjDDJkxj4SKLFbzx2YeQPgqglNUnEMNnIomeUZuGmG7V9oGzkZbvx69Yxl8EmUcSzt9tdu0XJ6tZP3eGtGhLmcJA_KkpXkIRRp534NH9FUQIToR8DAwZowdtB3TCUc6hOFTibbPdFYESzqHAZ-Vo3SFdY4QN7qQGt20SBLJz0VEiQqx1nBtvVM4SSIHjyWXmqjTwwzabUIpAWCkMx83nQzT4iDJcNRgVKTLqmFSc2V_6M0iP5zQtBJttMBLDzBRuCgh0C4nvK5yNIn14WwwNmG3f4aY6K7XLfdTdPU9QlLsOOeJk-n2mdzlViX1XOUH7atXi6Un4RbGGnljel7sr6MBb-Dh0cEjtcWF94rMfHBJ1smL7PUbt7zM6nkfNqWaeha0L2GAzXp5wjfZRubfDlfLXO9ZKtvMbl1QAvJ4pXkXQcV0zeswZmYJf44cPu1-a879TPbhf3ebw_DAQE1b1beEIVK0NTSC-furuLpA-zMIXoxtHkQDIEzvDjSL1C5CPGaiRPlRR4E958rLL_MNV3S7Vt50Yxi-3OD9na-CUDbb_f5Jls9inOA6mb13zLLbfzZRX8SC0bz78CTsPgX8BmJSMzH_XWG8rrnr20YN1nou6Q2rKZfod2Hjrqmnfi6WCO8PO1ALQKsEF_3bHW3kcKITPkTE6N-xVLAPUDvRURUnSC6NTt6i7G1YSbCUsqYBVOh7bPPaHp5rvVZJUMP_PR4sdlLQnRGQh3whd5yD9wPa49fHGCn3WfNkeBI1nOlcSjyurTIoUAI0Bg_GHIKgskIXYwkR-TofFUSQFKQnYJN3ZceEUWfcvjZKLTx_bblHRWBH3qQM5HYzviq5GRSiPB7yRhKyDwNbjSuQ46SBNiSwvbiPm1jO-diOa727yRsMHLqEP15F_SxnW1wkbVg9XJ4YRyXMu5ZJhwBbKksbcIcUxfhbZ-ZP-1eJgOtOCUkIxjtY6B6_X86WU4_tfq25bjFV6HLdCNJNmPFxLoKzjd9NH70g2fVR66dBtuLRZddIDtYxJ_wqvHgetbs1OskY4HVsovTzRqRRFvc015ZnSRAVg7FzFFtNq9oApn6kqwR7glBrlVtFf4Dyqk4O0QjibRcReyiShn0mDoFr-6aDi_yt6TEd5JY23ullVvvXQTgU1z4ZjjZNMzXKyC83SqpglwxqSMKMUUmZWm7GpCLnVsB3dRN8WhLJ0yjsmb82k2TIbtZxGBkUmivkuIgIUkuHmTviW948YHZ97yII1TIC5Rx6aFaIv9IyVjJMz5fUVHJZfa_11AV6WmA5eLemejEFXpAlJtZ8LMyR0Gbi0QPbK1YkvzB_UlAf5hIZq-MnobtQC6NzgOrRHZplZLP8zEr1glaaJ4wX70UqQKUkkARhEmiEf1bt3hyjb5ZW6325GKWogt35xphpY5i4-K164fsYJn8E107nG13AFM-Zq3lVVD7UezoI3egHmL6FGEz6euhE-TIH13q_teXhuBdnPMvkYioge56a8s_gJgMML_XWNY3E3Y_CcpiUhsfkFSAm692PdSU25w2-c-WcyISt1pJyc84b5YrUNKsDBqKsHWVdqGjnibSt8WplyOlRrkBGvIlde0kOdr0jcOH9HY2CzKch5BEO0mevKaONV9Wa4_tgmuA2-9ZxanFv_TQlxmoRNLv16cd8Vag53_1Vhv0K8G7wkjhUSQT_uJI29nMCBH0dsCS7NcycLfB2fxMY9JbuFWSU4Q3Hn_7Pu1I3DEdgN2bL51E6LXG-mgtofJoEz1j0-DogElWwK8pU6Nq9AhAyk0L8RMXt0MJ1P4AbMlnGARi95yEHXjfsj4koeX31tLRmYi7YXPHu4Le4esCBcqYON_2-ra2uDIGVLKwu56PYNO342dC-RIcTTsbTr2AKNf6wsdTchDV5y_eAD4s6pmhVsbrS4eq1s7t3bfbJeNZwp9Gh3WHh0la2_C1USGibkWWqby0ZG9IVWEgTFHnqwo-smNRLOpmis7NrbkmE9HlyngWv7XDGhhNuY6uo7QHlReFRM_JM30vsRJr0zpTSgaOcZk3XISxKTqdyet8QAHazh5RNp9RG3tpmKuHYnY3705LMXa8mby7YCw6LBEJxJg1oe03kBvEKRng4HCQY6dsiXJEFuEgI5lWlCrBK0MFnMHD0-4A2uKwXUOTaue3230QMh1jUOKULgqZZSYjPbfmUSKBPI2r7fZg2N8xYSXvKYYnY5N-v9Vvr5L_aoyWRoMipYVvytQgB2MsWXq6_ui7tJpH85axvN5lZpgiOTNvtCmagJ5WgkgIGdV6qa8ydNONJW1JjiD_gO40-2tGIJhEoMADv0zKx3FZrAXeJycFV9yqHsuvxidBtg6Iwz2YIDl-sV8ku_f5Wh3SmZwrPeDC7lneiiVgF76wqxBP6c-83Tt4W8_qheLH5U28BiTn0lumjAiFlrtLqRGYH5U_uLDLezGmfpotKmE_7ltbp1R_NZXV_B5PGkT0fQszz_CDoPddbOgfdDcsIjlO0yd74F2LoPZBP8yYyZVBnHorkf-tEWm-c7NmaT70gWbomw9JNBjlqyIHZTP38K20YNaTxkU_fc14cY_0bP8TZg8l2JYuGpAHhoyfUdEVSi6jNYg3nxA_D0uZhmiknoKDtExNougZtRIAQtZgSftb7-EP9wTCLn3WKkbuGgYrbDZTrJKY8JKeUUhayAmo84RIu86-0lptYsbMPO28M04cDHf81W_EYD6hOkmZj60zTu3Xz10HmZihGEhu53FzWT14A4WWXTANTvNCKzToITKDaw2ObSakII9i9JtLAkqgZmxAn9900nPpLK3RsUVKMJB6y9RH_FSG8PKSXyAahE1HcYq-fB4iL9HrSZ9ZWMFErtGQz5aLF07AMDj8hNSJBnmEmzjxp0T7anyX69kaYHcg4jZzTJLA2Qhr0lPUkh_ekbxAueoC77DYgG-x45DGDSbetz4naLPLHZo3o1VRlr5zV2DdYr5XiuISg5JwsLLKxA8ncV5sXDRJIjwQbA2N_8nqaM6HNHyH5kSwa5hiB4fUNfTLkYOzkDG3hAVYtQOwdRhnU3nW-1KihF1kycrDzof-58tzd_CJdKVbwEaC5J97l4R-88btYSIr-Ebcnse128GW0U0SiZo-QrpZ-BD9gVh4AgrEi7ParXLzLb4vrbsrAVGt3SL3kSPrhT1RUMmLX78ULCHy_5WbAmdEHpQeOOajsezkLYxghjyDlyCGuLo1Q_N3SJvePLJ7qT5VM3hfZkZ6_qLCgOtgYAFagLWJFB0QNc3gPRcU2yyBJsyx9Pm2uqtRMNcWlE6H6-L-zQamnmeVQ49ZmyV1roQuu9QVl9ssFOapVzlcNSc5BHb6ayo5BWtCxE7jK8iDOrTO_s2q-A6UITyYOWdYyewFLaU9kG31XxTw9GKJ9_D_8ced4I8Xj-PFo1FoVQCobIMwrCEzTl-JUyV7yFziKlukJSEUqCkZb5OMxHIrljj-J-cnDouWwyRSh2gzt9mKxl0EikZX74fxxlgU4-poVqkshmjpUyUC9WGbNxqBVuKV7Yi2Tpoh9nWOtDi7_qjJRSKY2XiSS7OySkc1UjjJzy-wwdde6GFJogqD9WSLqnrOdZBdAQZDelqXEqbsy4kSk11Wt2Sbe63Mr"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:08:25.070141Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "OW73av2jBMafnuEPl9TYsAw",
+  "usage_metadata": {
+   "candidates_token_count": 141,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 141
+    }
+   ],
+   "prompt_token_count": 162,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 162
+    }
+   ],
+   "thoughts_token_count": 1306,
+   "total_token_count": 1609,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "clause_id": "s06",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "bab55fdcbb96cb7ea4d7625544b657bcbc0ee06a73be3ec854fc916674b852ca",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Each year the Landlord will pay the Tenant interest on the rent deposit at the rate of the rent increase guideline in effect when the payment is due.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:15:10.094375Z",
+ "text": "Yes, this clause is enforceable. It directly mirrors the landlord's mandatory statutory obligation under subsection 106(6) of the *Residential Tenancies Act, 2006*, which requires a landlord to pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the rent increase guideline (determined under section 120) that is in effect at the time the interest payment becomes due. Because the clause is entirely consistent with the Act, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 190,
+ "output_tokens": 831,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "zm_3asmwDr7Mw-UP1o7noAE",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:22 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. It directly mirrors the landlord's mandatory statutory obligation under subsection 106(6) of the *Residential Tenancies Act, 2006*, which requires a landlord to pay interest to the tenant annually on the amount of the rent deposit at a rate equal to the rent increase guideline (determined under section 120) that is in effect at the time the interest payment becomes due. Because the clause is entirely consistent with the Act, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 106",
+       "thought_signature": "AY89a19FUxSzAhUFaLJbV9s7xib_I6JCjJmhQe_uwJBsTVUCKo8ZtQo_1jvcKp1fOuskt6KBa0bwM2XqhoKR_DS68zGouuizk_h7VsqpjeENwQJG21JgKnJQP1w5FAcRMnMM6vh_v9mCimw_tKHcMXG932vnxcYuNTCSoVJF7lsbhDbbMg0571-wFwHAjCBU83CTjTr0ZOWYoab9xAbY29QX0DNUEJgLY39GxTGn4N2bjpumJ9aUFZsr0l9xyj8OdqYakSlOIA5EymNk31kEhY_fbYVwGtb7GwsXCEJWLo_1utoYL7ujo-URPp58wL3qZQO7qMquDXpkl5_2Gt72oMSt0MVr9BXBq6B1BXFf8NFgMpiha_Vr_omeMg0oIN1fKSqEfYJPrzqDru6vzW5MEm3tyXGL5u8-EroJfeQqhy1T64TX7dvIUPG-svQ1daLsBezEZ2OQtq9x_NvdtQOWIlCbp1MzjHmWdxIWgOObCNu4yc0Av0iAwmZaK_IaZDN8TR7KenG9Z-rYOflWqh4kMlN5JQMzldWg1X63MgiG8eoClWOyQZX3Ti4XcvF39tYvgn31MbxMAWbdOY0zavVbaHkNMfCs240mz4lOlVrcNRJbMBbKhbOTcn3VqHNgHdTe96X_vI0YymSFBiVddxqO31Oql2sQd9E5wb1OhYAIBSnSw6pQU5xCjQpBuQQ0KuBKebDSBxqsHr9SZBxoPclpwM2nstgwITqWHShoqDNLBLFLXGtjt77BiHnezuc_lByYSstq5fBMrpR6qg1K8y-DwKhhPk-Y2UE3paFch3-hg9qCDvlG11UCSZvSOTUFQIASZGY49Lx7vqRWr5QQov6fshSZtrobY04NXc4-DpCl8426uHsP3HsH0U5MTRTM0E_b0NifyrnDoXeq-33CZmh6HT2Tak62PE1Y29mE5pcQLQmkGOIN3N5h9jaXBYYOf049UaIAaVlyZ4voREyyW-C09WoYG6K_nPMtndx4xeRLQiFDKGGQNIKBgE9dH-y3bh6aAE9--_R4_xHEO6S6ndt9SV1NRodST8RdJM0iydh32qc9LdSVk3bGzEgYJfaORSlw4ek1nD3ORAiKvSpjNrtr91ZHG5x6BggwhCxpjTLhMAT8gsAm-ddtADFPZM_p5Kksn4_aEmZM8-WwfiKAziICyEwNUvCeudmGiWUiMUahXphNeYPApJOt7vGdbSMB9AXq5dIvqTUUpxMQW_TLd42hhR3Je0HUWsGUZiiCGPFaztLIn0oLvQhnh6yURhhJ-WHfG9OsYd6J5ZvaxFz9uDzpchciHzUTlYi0Q3vPjvE8mIM-r3jRblAvYtH1fqBQriKp4GVfE-zkj3PyAwSr50DAQ6o4mjgoqKDjYmA0LabVedtL-oL7VlCU0u_jPnxrVOkwDSnFZDrSH8VZ6T58JBhnTfwO5_gLMn8N31ZRubagSi_XTsysCII4J-qIj_0gaKEpw2AUK2H8O-xlCdkMxTY7sWZqoKWoQhQ_dTRYA1dsHyVGukmbOuAzd9HkKQ0cXWlHjX3LIuJgT1YqI8HoxnwNtp2USjTh7OHd5TA2BertmK128jQ_VL8lynswivgOUu_0TF2MS1s3RtJDWAzisCd2lYmLwId_LS_64c-wSOEltnchodgSg2xjdRWruyuTK7pOeu4A1vb-GW_Y89Es839wO7mytGG2zXYTwdBO846pmGLQRnPuYup45axaMKm5YVMvqw793irUhA8OoleRx2fJ0z3RvvwaltxOoesEtYZs4DkUdzwKyc_mG21E9VXBAiupTJ0NuQ_thf1d7Me4cK1cncfRAXVacAZNFAsmritzkG9SPTEE8DgnAzvKKMgsSXngiAURAxvKk2DGgILlVvOFTo6mpHes2O7Is6_YN0YajgMsOEHTGeMSc5j-id7Obhz9KK-ln6tax92dwof-SEAE6YLkuVcbPqGoMYPNcYLpko20R4ZO2DZjDrzaTv-z8IHqiOMLq38LLcfKpiRFQW5BB4HncdoDUgeOie50WbTNA_ZPJfwyg_F_2j4Q73xwlzDY9mAdLQtq2qocKVTsgIkNtwU4cZ7ppxksYB_qYJ-atv3GmZEK7vAXnPgcIfY9eAOLu8Xa3YC5Y2AIw05qsl9qz8z3Kk-KLKtt1f9czDdYVaNFSMynLybSFtGe2GjnCvSRGnlbUSn2FRiMPE_fzHpnwDchgAHlFaqGzz6aCrupfb-30YCvjtjgIzbLjTHPvuWFGWIkUOjkLxhDc20nFJ01n730XAnfbjW9K0zXfvyW_9ozmblnHb3sldId89gww7Sh20O5Hw9prgd6QdtkB7nwMM5p3P7fSg45mFIwus7BILIIpVAiUKHqlGmMRNIP4s-cgpjf4xOHmxBHPHQWPnV2UL1Yb64LSmnI5VPwBpC1gu9bqMK6s3TFv624FA5Vo85Ggjwy9YMPgsP3rXRyECd0b6AY1Db3QaLres9-eCKIrjEl1NV-a8e599uVPzViJKndElS75Y7pf9eGS8kDDP3sMGrFg5dPFWXB0Xa7iU9rrSGtJhYeHqqGdNfLtEMwNH-Ld000vGdl0G5BKb_IE7ElEsCCZkk5kepd4HSLuDPw2ba90QKDv6LcG7COzh3i7zIiV6CsmfElgaYtLIt03z2Ta3Tu9WY8N3d4syfvX5Zv9K_DxdpwnH7rr8UI2fMnfm4VVRL9c4uuFsZnja3jiSCARsIrOUi9LmW_WUNoSV6vrtRCdj46b9CgFpfzZqM4oDqJ7-7qs-lbs7EWvXaWOAaaL1LrXuLpZtxfUOgUi268iQqJ23_PQjHRs5UsHLx3_20zv9SdYRuJgIZfeC9-4digiOum3GIQt1mPmVl6at0G3Un7cDc3GrIDvc69NLaakLsh8uASWe8Nzk8xM7IRho92zg-wtk82qyEIWsS1X1nNPAFXdp_r5wCokLeuNfiLWvE-fboNhc72de3BrdO5qphwz-dAO0rmbiFXtMvfaIeJeOVddMmVxRm1iyKI3g-jV2vU1Fgoj4rpiARnFAtHxnKTx37xkkQRLeE5oW-TIFyg2YR0KStD9jv1W-du6cd8YaD_b5FbcgaYR7jAGcVdiVS8ND7AFWoROq-Uf5gs_F60SuI4fNzffSC3heu70_L1MdJ4JqkrnKj8lUyM7nEXxntliHnP1756qAxCahr0DcLslXkGcqSEBBbWOInfmDngBNlGpY_R89k_giGQ49hi7R0cci9DhQLyiINCnMV_0cPnYXT-ioY7uo5l5QQ8yhdErdCumyQT-P91NHZkM18Jgv4QnwlmxRZ9D-myKOOF03Q4zjGmxhDDG21Zkj9wfgZPSNrfPR52_9aVd6AEvJWwWSRfr71cQwJvBIWURGVjLVZUR4mM-Ne7Mcl-ijJL5x4fM7zCWJKgVuGoMASQiAt9SysPa5DyYFIKUPVjhL7CmHm3PG2QXFblTDdoJI4nQWEU_kmazKzu66dDMxvjdXATbUz9XucBAOtSrog8GIGyZWRsZf1RP7sfYtyCjIRF1u68sHYBLuvRM4mG3gP2B4H_KTjhdpu4HXKIW66zpX66S7sXRUfMasLjWC6KxdDwFjEmd9KHaNYsMScYpbUjz0XDFMxMR6HRgYirDweaCEiC9Gy6Lr-kzB1FKQ3Z4bTBbI9kI0nZ06BN9CDBwclRsDjG"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:15:10.235593Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "zm_3asmwDr7Mw-UP1o7noAE",
+  "usage_metadata": {
+   "candidates_token_count": 121,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 121
+    }
+   ],
+   "prompt_token_count": 190,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 190
+    }
+   ],
+   "thoughts_token_count": 710,
+   "total_token_count": 1021,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

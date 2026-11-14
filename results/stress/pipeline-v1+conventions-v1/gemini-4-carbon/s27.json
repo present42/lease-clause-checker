@@ -1,0 +1,111 @@
+{
+ "clause_id": "s27",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "199004619dc1510bbf143074563a8eb910ce89ea95a565fa08fa05af37982b67",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nOn signing, the Tenant shall give the Landlord a signed blank cheque, to be kept as security and returned uncashed when the tenancy ends.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:20:25.812946Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\"reason\":\"A signed blank cheque given to be held as security and returned when the tenancy ends falls within the definition of a security deposit under subsection 105(2) rather than a rent deposit applied to the last rent period under section 106. Because subsection 105(1) prohibits collecting any security deposit other than a lawful rent deposit, the clause conflicts with the Act and is void under subsection 4(1).\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4538,
+ "output_tokens": 698,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "CXH3apGYNPmew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:20:35 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\"reason\":\"A signed blank cheque given to be held as security and returned when the tenancy ends falls within the definition of a security deposit under subsection 105(2) rather than a rent deposit applied to the last rent period under section 106. Because subsection 105(1) prohibits collecting any security deposit other than a lawful rent deposit, the clause conflicts with the Act and is void under subsection 4(1).\"}",
+       "thought_signature": "AY89a1-WBSUEViQe48hm-HPRnGCk7gYjqKzpPlcM8oVqjRtimvIznH5fX5glRdYnMmOIvGg0YN8uG8ENV3WKqhO6HPck-UrIBqAhKvllz8c8gxJphRHwZsBwS8mGVhEk8Cox_kcEbtm6Fmob6kJs4nuSucdZEB2BpwoIYLf3rqNrTp_t83_rOeZKSWOcZv27eNq37LgVnibDWiDTYfRmq0A-ZNXjgRNpoGz7oLkq99TLXRwZghFuU8Il1iKdztzcMHrDIvIHCxxKvWq7VymAdY-ogB1BSUzS9oyBJWSvvVvAAlqN0OIzICB7YzgCt4K1pApm6Xl6ELAhK2RbYV4NdSBeia52ehIOmy8Ko5jThiKdSralQD8EyFL126HySqk6cFEnUCFRdRfyfJCWEsoKCrRGk9-OmNIEt78_YpnBvIbZNxPb5iTgdDy1ag6erSp0xYoRdUhk9L8YNvnKyePPbagw9eJbCKbfA8ghWQm3kivmS4402qdnN2EDtjwLTMQbet7o2WkY5IkXkqYEKBkC6F9La-G1gcQph9AnxRbiVd98rWylCSaKmMVTh1IhcACovvUSkwWnyoBfsudFBulTrgaZlNSA0VRUvLudXICKEZGKWlsxP0689pQ48GUN-Ajriyo01sTtGOmWCvIGGYIFuu2wKdTRYCMSTuX5y6TXYaZ93vtynV72lybGNqxFpr66zhsXJApv_QzTBrGwVipD4KwxHgyEoyQ6h2xc9lUXG6ztsFxzMOrDxcmB0b1CaTTdQaG0bMZj-vpYY8QzUjbTgdJBWq_kPFNW1IwEGNz_Wf7ybdH4FUt4XCiHpCy-yaPDuajyQfluiwnKAlwSh4FU3zdHbUiyqS2l1lEsfIuaBZqyFeHYx7C--gjRXJJAAlUvnnMr122qQGQKKvy65PIKvPb2ZwD6g5LpR5G1MvLL_oczjGWZE5oS9mJNlLLTUKJ6zkOjOzku8-gFTxM7HJfCHsXhjdxNQ0dg4BlcDEOKP800G-1kiNiRSF-NFNyeo0sEk2WQVaB8XnPJ9E0vPgW0k7nq95v-sFAuX0NavxYFOyuU2fsppPhVp22Zl8MnxeqdaaO37j3QkFTSB7zv7il2w_PiSmuF1EcELWD_uXWlAybTIaKqSK2LfmMGOmGcRCUpALDUJjBzK7EOjvz6DI1k0pNbcE70MAeOrXXtyV6Fx3eGlfdHakX7kVxObmq6WGyf0pP-JcZPDO5SuN2wirngS7lhmXy7q6J8ugjEveI2BrGzX0Sa55PJYQMx5KCd_BQE4ffL2zf_nyX84Ji1wezOvEoSUz_FlO3_UlNr6P4zJT2FF2OASYWqZZsJMEwwadV1TCqQSHRbWy4hFP9Q1K0jZHmReqOQ-iQxaN_xFEaBnJbQQwhLj_Whsc2j1EzfQVrvR80mKp1O2B6QKbGQVUKFJA6ymAnWuAg0TSNbyU_4bg3XTISQ46N1iBFN2yfOme0OE34pRWQsv-SSKV73Hc9w_Gc1l6yItF9_PG2ABML3KHmNvRp1AS3ulKokhX0xhPBajXPXguawQUIPkqAnKOMbWNWkQ2Ku6B1lXD27LExDualfqkz8TzHb8baE8bqdk_YfvXZDkAXasBVRMpbPkSZzB1lJehNk9YrqlDCO3DHWPzvLbP1-HiEhiO0QBWoooZ75B6Hy11jTXeAp2Xv5_s9mZXmrk96SkAJ6hlST_CK-RA2QHYQxn2ro0vYTXbNnLj4pQGg-8dZf5cs2UK5Tsx3a9U4EJr5q-93CSFgYSe-Nj_DtNuIC4ik1sSBudWkG8kahHv71hycu9Zl8Is7qaiU4DyZgnsB3q1InNRNNZuctWxRddYCWyOXZ9YvkaSA8j9tVP6NFgoEiHzxPWJBsUwDm6L5I1rMSLwUOVMeCBkgvpvniK98ax7WZlglD-cEJtxlHUOHXqVVqOCOqleLwtJP5AL7qcdHYxRvr0cYqtmjdbCJAX61OtvWB_hWi_xBGBdX1nT-zHcMx7gW-3XxaeswYEU2iAgFcRMpqNcyocQgA6dgleAlCETpfyP08DK-V0pruk5fxiTbLKH52wfvUIg3SdyqMV4TlErGL8vqq3PmWMTSdakoZB5sSQ2SZ0sTkC4pJvYdzCpeB6sq3NJdCXGS47kXRCkwIqVj7K_bFpnfOMixaochNjfJBEj2IXieBJhTJaa3UOKNhRW6dMcoKFQ9qs8biTXmRkTVjOPRUX4Gk49ObpY_2pxVEdtBeXx4ivDLFO3NeLpxNNE5ddlg0xrwSujeXSJaPt4-fo2ufJZwExS8CBgGp_sl4mq8ihVRQRlONIgBCesHWiNHNFVabz7uAcQ4FsRpQGfE1AczO9NEHAkrAEtiGr3PJfEVeLwjM1BLXxpZjS3WkqZxwQHjNTT1MNck6FA9zt17DecBdQQnF5JlXA64TTfKXfH8lp7Rn-1UqclBl6aIbOaL4ZYgETNDUIq4dR10mZWVqWLp-TR1Jn8v9YlmCByPVx76vxGkFd4X-9dRbx6Tr_YT3hy3tAWfk8kVqBKPQNKnEge8rUWt--w-wRJQ1CH8NJa-B6KqluJ8z7FODj8c9_49cGdpkYm8WTMPNcdJO0hVbyfRJFlUPrzQPibDLtWtX7jUWPhdjNYc7XCwkPyubDjHRysbIsDdPYW6toIRQMW0gcM0SCDLy-HixjLZx5tloV21oA-IbdvfJP_nUivEy7B1h8g2Lu4FLmb1I6_vfMIvylNjObFWCidvTi5IXOKh0_cy3gHcHAzfs8M3QtAsYz5U_PNo9nm9c8ZXCmf_NA_uR25M6vD2soxjk_f2-1NI-Pg_BmnI0002GEb77x9bSgH1kB_-tK4V12Lcf2Qm2Yby801w84JuMmcHboEh-FBTPi9vP8ezAg6A5Wd1w6Cz7_s0DbkjWZJZtcMp_8iAfv1X40iHAfyHB4neuyXCQB4bFCKZ2uUSsSuO-K3xJqZcT85K0wCRp9WSVCcG66N7AKfisVq9s6XmX6Pz8KDWqgIIZYo7RcvoLrp5OdF5BfbEHbGnIh1A_-qV6DalXq8vD2Wc66haCok5FVKDJMY5Ndb0lv7QHQCTpL32WHWO-YXJ274nQLshabh9GmTiM67StYkBUNJf3FHo-khsd97EYMP8m-20rNY6Tox76r8eM2GL4fg9-0EoVDd3Ccvrl9Acu8ljO1gGH2pULf9kGR2mddFgv5jGQzS7kT1g0RBz5IKRfE5MyMCAOu5EYbXXB"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:20:25.855057Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "CXH3apGYNPmew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 144,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 144
+    }
+   ],
+   "prompt_token_count": 4538,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4538
+    }
+   ],
+   "thoughts_token_count": 554,
+   "total_token_count": 5236,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "105",
+   "quote": "The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.",
+   "reason": "A signed blank cheque given to be held as security and returned when the tenancy ends falls within the definition of a security deposit under subsection 105(2) rather than a rent deposit applied to the last rent period under section 106. Because subsection 105(1) prohibits collecting any security deposit other than a lawful rent deposit, the clause conflicts with the Act and is void under subsection 4(1)."
+  }
+ }
+}

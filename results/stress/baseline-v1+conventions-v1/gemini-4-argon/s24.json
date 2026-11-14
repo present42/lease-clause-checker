@@ -1,0 +1,83 @@
+{
+ "clause_id": "s24",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "a240ee0c0d3ea5c399a233591caac11f27f0be6fbdbdf406458f84a227e977de",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the Tenant takes a job outside Ontario, the tenancy will end on the Tenant's last day of work in Ontario, and the Tenant will move out that day.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T21:00:58.539198Z",
+ "text": "Under Ontario's *Residential Tenancies Act, 2006*, a tenancy may be terminated only in accordance with the Act. A landlord and tenant cannot agree in advance, at the time the tenancy agreement is entered into, to terminate the tenancy upon a future condition such as the tenant taking a job outside of the province. Because this clause attempts to bypass the statutory termination rules and security of tenure provided by the Act, it is void. \n\nSpecifically, section 37(5) states that an agreement between a landlord and tenant to terminate a tenancy is void if it is entered into at the time the tenancy agreement is entered into (or as a condition of entering into the tenancy agreement). Furthermore, section 37(1) establishes that a tenancy may be terminated only in accordance with the Act, and section 4(1) makes any provision inconsistent with the Act void. Section 37 is the specific controlling section regarding the termination of tenancies and the invalidity of pre-agreed termination clauses in a lease.\n\nVerdict: not enforceable\nSection: 37",
+ "finish_reason": "STOP",
+ "input_tokens": 195,
+ "output_tokens": 225,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "inr3aoj8JbDWyOgPr4jfmA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:04:25 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under Ontario's *Residential Tenancies Act, 2006*, a tenancy may be terminated only in accordance with the Act. A landlord and tenant cannot agree in advance, at the time the tenancy agreement is entered into, to terminate the tenancy upon a future condition such as the tenant taking a job outside of the province. Because this clause attempts to bypass the statutory termination rules and security of tenure provided by the Act, it is void. \n\nSpecifically, section 37(5) states that an agreement between a landlord and tenant to terminate a tenancy is void if it is entered into at the time the tenancy agreement is entered into (or as a condition of entering into the tenancy agreement). Furthermore, section 37(1) establishes that a tenancy may be terminated only in accordance with the Act, and section 4(1) makes any provision inconsistent with the Act void. Section 37 is the specific controlling section regarding the termination of tenancies and the invalidity of pre-agreed termination clauses in a lease.\n\nVerdict: not enforceable\nSection: 37",
+       "thought_signature": "AY89a19oO1nc1kkMM_eC0dJK0Zyp8ztQq7qDwSumsUsKA6ZaoNLbM0e-j1d0wdi8ObRA3JVdrzKL5QCd0r8hk4Yin_c3SyIozuHT_fq1S6gmaV2s2NA9NW-vmMZQ8w8="
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 691,
+       "start_index": 485,
+       "uri": "https://law.stackexchange.com/questions/92095/canada-ontario-confusion-over-move-out-date-vs-termination-of-tenancy"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:00:58.622088Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "inr3aoj8JbDWyOgPr4jfmA8",
+  "usage_metadata": {
+   "candidates_token_count": 225,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 225
+    }
+   ],
+   "prompt_token_count": 195,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 195
+    }
+   ],
+   "total_token_count": 420,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

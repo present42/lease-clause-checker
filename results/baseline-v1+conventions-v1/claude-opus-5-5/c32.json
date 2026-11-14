@@ -1,0 +1,67 @@
+{
+ "clause_id": "c32",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "38e21f02b6aeab1871e2bf512b7c55e1e27b58019ec54c4dc0d5f4f3e60cefa7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Any increase in rent during the tenancy will not exceed the annual rent increase guideline.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:48.546725Z",
+ "text": "**Yes, the clause is enforceable.** The deciding provision is **section 120** of the *Residential Tenancies Act, 2006*.\n\n**Why**\n\n- **Section 120(1)** says a landlord may not lawfully raise the rent during a tenancy by more than the annual rent increase guideline. The only exceptions are an above-guideline increase order (s. 126 or 127) or an agreement under s. 121 or 123.\n- The unit is **not exempt under s. 6.1**. That section exempts units first occupied for residential purposes after November 15, 2018. Since the exemption doesn't apply, s. 120 governs this tenancy, and the clause largely restates what the Act already requires.\n- **Section 4** voids lease terms that are inconsistent with the Act. It does not void this clause, because the clause agrees with s. 120 rather than undercutting tenant protections.\n- To the extent the clause goes further, it is a landlord's promise that favours the tenant. For example, it could be read as giving up the right to seek an above-guideline increase. The Act sets minimum protections for tenants, not maximums, so a landlord can agree to stay within the guideline.\n- Separately, any increase must still follow the Act's other rules: 12 months between increases (s. 119) and 90 days' written notice (s. 116).\n\nVerdict: enforceable\nSection: 120",
+ "finish_reason": "end_turn",
+ "input_tokens": 226,
+ "output_tokens": 952,
+ "raw": {
+  "id": "msg_011CgwREnTRgctarEW8pFRPi",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, the clause is enforceable.** The deciding provision is **section 120** of the *Residential Tenancies Act, 2006*.\n\n**Why**\n\n- **Section 120(1)** says a landlord may not lawfully raise the rent during a tenancy by more than the annual rent increase guideline. The only exceptions are an above-guideline increase order (s. 126 or 127) or an agreement under s. 121 or 123.\n- The unit is **not exempt under s. 6.1**. That section exempts units first occupied for residential purposes after November 15, 2018. Since the exemption doesn't apply, s. 120 governs this tenancy, and the clause largely restates what the Act already requires.\n- **Section 4** voids lease terms that are inconsistent with the Act. It does not void this clause, because the clause agrees with s. 120 rather than undercutting tenant protections.\n- To the extent the clause goes further, it is a landlord's promise that favours the tenant. For example, it could be read as giving up the right to seek an above-guideline increase. The Act sets minimum protections for tenants, not maximums, so a landlord can agree to stay within the guideline.\n- Separately, any increase must still follow the Act's other rules: 12 months between increases (s. 119) and 90 days' written notice (s. 116).\n\nVerdict: enforceable\nSection: 120",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 226,
+   "output_tokens": 952,
+   "output_tokens_details": {
+    "thinking_tokens": 507
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

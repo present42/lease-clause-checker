@@ -1,0 +1,67 @@
+{
+ "clause_id": "s09",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "125d3f81b91d92e153d18331080f04a6ab449df4a054f47d8f7a3f692968a556",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If movers hired by the Tenant carelessly damage the lobby walls beyond normal wear and tear, the Tenant shall pay the reasonable cost of the repair.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:12.553370Z",
+ "text": "The clause is likely enforceable. It restates a tenant's statutory responsibility rather than departing from it.\n\nUnder section 34 of the *Residential Tenancies Act, 2006*, a tenant is responsible for damage to the residential complex caused wilfully or negligently by the tenant or by persons the tenant permits in the complex. Movers hired by the tenant are persons the tenant has permitted into the building. The clause covers only careless damage and only the reasonable cost of repair, so it does not extend liability to damage the tenant did not cause, and it excludes normal wear and tear. Because the clause does not reduce any protection the Act gives the tenant, the rule that the Act prevails over conflicting lease terms is not triggered.\n\nTwo practical limits apply. The landlord must prove the negligence, and the lobby is a common area, so the landlord must show the damage is attributable to the tenant's movers rather than general wear or other causes.\n\nVerdict: enforceable\nSection: 34",
+ "finish_reason": "end_turn",
+ "input_tokens": 252,
+ "output_tokens": 1573,
+ "raw": {
+  "id": "msg_011Cgycma3DBj4SXcddfMHWm",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is likely enforceable. It restates a tenant's statutory responsibility rather than departing from it.\n\nUnder section 34 of the *Residential Tenancies Act, 2006*, a tenant is responsible for damage to the residential complex caused wilfully or negligently by the tenant or by persons the tenant permits in the complex. Movers hired by the tenant are persons the tenant has permitted into the building. The clause covers only careless damage and only the reasonable cost of repair, so it does not extend liability to damage the tenant did not cause, and it excludes normal wear and tear. Because the clause does not reduce any protection the Act gives the tenant, the rule that the Act prevails over conflicting lease terms is not triggered.\n\nTwo practical limits apply. The landlord must prove the negligence, and the lobby is a common area, so the landlord must show the damage is attributable to the tenant's movers rather than general wear or other causes.\n\nVerdict: enforceable\nSection: 34",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 252,
+   "output_tokens": 1573,
+   "output_tokens_details": {
+    "thinking_tokens": 1254
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

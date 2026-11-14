@@ -1,0 +1,75 @@
+{
+ "clause_id": "s11",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "308e2dd537bd31276160af212b9f9bdf08a9db7ce0a57e48dedb84bc4f499bec",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The rent deposit is held without interest, since it will be applied to the rent for the last month of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:14:56.550423Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord is legally obligated to pay the tenant interest annually on the amount of the rent deposit at a rate equal to the provincial rent increase guideline. A landlord cannot waive or avoid this statutory obligation through a clause in the tenancy agreement. Under section 4 of the Act, any provision in a tenancy agreement that conflicts with the Act is void and unenforceable.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 153,
+ "output_tokens": 686,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "wG_3arnJOPmew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:02 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord is legally obligated to pay the tenant interest annually on the amount of the rent deposit at a rate equal to the provincial rent increase guideline. A landlord cannot waive or avoid this statutory obligation through a clause in the tenancy agreement. Under section 4 of the Act, any provision in a tenancy agreement that conflicts with the Act is void and unenforceable.\n\nVerdict: not enforceable\nSection: 106",
+       "thought_signature": "AY89a181IsMMew5zJTwtEcWB1fn3IICoG67sVY_Alg_d_hwHqkr1VpKiim76vakhrXej-HKZkNJL-FaEZhNiAMvi-mqyzZmogpZxpwYM7KUdUO7uFlXgz2nV6TjNaA2zTD2IeuJu1YKQRtT4CqILMQl0cADGFhsp2KsZshudoSB2wgJZQNacdqnS5BuUnAA8tpDSQWCoSZ44L0JKDX5kTDFmWjGqv8ja0iDaAe5JxS_Z-e0QDTvj7XMai69LpT_D-w-wxN7ercbf5cYtRSlc1Ny3mIs68xDoac3tw74KbEtIqZijymVmGNG5QVEqSG8Y6CZd5PrLHmOtGjA4FAY8KuT4ItQNnmBApGwYDwUDQzwVjmdLhCNu8ToaMoFKNbCBt5S7Q-pKv5dvkvWQ_Of7eAL-tXp5_R70EV2nVCA0aCc1u9yYJf0-k7Xa8u7GDuBj3HO0dLd9b4EwFGQPonm9WdSKtHWWO896pQO_ooy8504nuUooM3BUrt6ZIqzdNI9iMWHMDL5bOhi2pVBZeDTzM0urgv35JdZwEecr_UHBKomrkCP7dQbKuBuZX96JWF-YJryEqq-N8X5ZMuRdiCwHpiFcXUhspU6-sSFYPvOpbF0jNeW7pS7qtb_W7yAi0r5xPGqAQ4LM9uRMV1rQlzxNuckU2cbfhz1nqU6-9IiGklU11SmhoyjpxEwj6-5gZnXIt3r76PGzcp_T9sQ-eTGEC4vKbfVM2I_si0IHAYlzZs1sRCa9f_CTM5hA4exIeqhsUHgfUw-N2Vv460NzcBL7hkIrvAATtei7mamZW6j4Oaz2gKFLKhbkoXgNcFZcVzSBL8zgStt2KN6WHIHGg-hvTtC1djNGz2PXvnz0Qej_wgTc5VBQy9G11Zl2ptM3CHJx8yn6BXDD7cgzdPhcG5OCqYVMkVX7hLBV3ZDqkJ52qYBfrypKrkzVPSYAzsU63OfpRKD8dnl2AaGFlK_Hv2_OIff1wsQJud_z6SbbgtQvnBg-x010GLXquBJHPrVTz2cYoZ5JwFWUWgk01WYCPhpWOtajUQiqS1xJ-_M07D7z74K3KYMAX9xvJiWJQYhHB2qh8_B_EblNDiBbf9b1v2jq4cf9Sk19SqYIWSzOJFqAwj1xvoB02TaBPx9r6Ag-S4mR-uS8vi6QmZSnx1m3_V0zIazHVRDZBrgdC21oF-K4QppisrN2a_OZKTEme6AuIzurrjnMnmLb72SZ9pG2C9Bfp6kFJYj763YFzWkg8uA9aYAHjJQ-8TBiwDUP4--AJRgohYM1V5K7MCfVfCEozKxVtN-OIu21l1hM4QzhqzM6t8y3qhAXsNraOcsOfWVITRHrYJOF9ykbo3YBvPgogGongYCLkAYpqlLSKJ9ygVD4ZlFX5eWCoAgP-tru-9WXRlno3kOrLeNBLcnACl6DaihoDMChy-oEZkv0_ZaHaMIYrtzhwXje1aQZPRowLzSsvWGTFkTFDA_hA2Qahq-16FfT398wjX9CYldZ0sOAvgFsQB6l9fcDW1-hn8iIM9Xv-VAzdgrD-eCsUBLoD9txPeo97FZ08fujb63cNORnPnO4kbvBcjkLfLKqYItjLNlYxonFNs8c6mOzbSUcBQWGem4-gFo9WcPSyFx3Nw1drm0KBCE-vf3WrAJ3PZiMawvRsqXYJyVQUXIbFO49ja3WSJtx4Gu7xIcQlLYoAe8GE9HphMzgvu07V8CooLl_PbuXyOTRtUON9tOq4WRPvO1HIy-inUvDZ0xVAUsipF70Qpt03OWt0NrUwA1NDSbVmPkkvcXGIffY_CiEe4hD0ow-KK2v4oq8As0uZg50urbTXPKUUUZ_eNwVnepyVZf_zbCo4buuYuNUK-dMyhhCdERKC_6ar7LRdrPRhZWmkweV5vBFkh-8gl1lWo99YDtGuZxiUeugt9bFCmMrH_bCIh7YeyQvfvyJ5xJbw1XrfylzJjQyjW04_nkvopIbgXmAKuyMGztnLLyn5KP4bTlby2VrOXZ0sAk46geNsJzNI4bUSLxeKDJ7gYHDvN8RdeCXrf_WIV4BrkgGK6zbeT6mtEdHkbTxvkIr0EfkIxbWl-NsTMSNrNXGWt2yePw1ZZ0GwZFAm_IBa3yGf1V2CDcRk2prUdc5y3ifVvYSpIraELnG9SrvlOiEQw0FMcBOKi10RuHn3cbY67sQB6pqDv78vvCdIVWlePUi_kK8bJuxgoWHj4zKwhvH92Fm29iS91gbuKwdYpaGLpN-00cMJwzVTU5_73GRRAUZFK4HW_7ZfVaqkg_ZSkrZQfAt-2Mi5TXjnrD5Ogd7RY3GFlMbVZjHHV6INKnE_4YeXZz89-rmNICNtN2EZexrK26gPxhiAYzi0SsV8RYRbJ6pFe5Kbh_o8q_bYpIYbP8hQwrcZNb9ORd7kEXPJXdQOd9aia_8EyyyGwmhB49Gq6WcKji3mXqgAyw0s4tmQvb_HT-vyguAsH9bCmbYPW1dj1uSKZttioMONbcUItPRFjJFI1D0lf_kojCnE-SwM4vca2YS_pR_XdFO9qsTjaamHYr9tTynxo19yw9SVrDaX3jAObE9JANmNZpicQdY3YmBTSaxVuG0zgdlYJT3ijtJBCFH7GWJkZtkPZAw_dE5SoUBggcSOE8bBJMCkoZb4BzNBhy26x94koFRM8C7mu9fI9uAr8zVfFiTGtNRDuAGW3l_YIyQwPb7AEeFc3QjOScLgqoePUBxWmEjsa3Gp_IcNUBwO_mYNNeT2K9Ergaf41VTIbinrHdqDSa5UnBpdoE7L_qpVS2rJ_B3QgvKtKWVC-skie7XAyhC4uRzsssK8rW_kNyzXo7eJ2XUKXAs5_9J3_SNdBYS71UDZZ_qWz5wA-VjpyvXffqxH0UOKSqqAzN-EuYB_Y8soSLxidHmldBxwzU7oGmESnBOM7Y-TJ8khKaYPhRRI-fGT7cAiUaP2qOTaYVQNfHAmXx8jKP7Bc0e78kbJ9gU4mrE-5REu_PvKGCiFJY3ugwkpKvcn4hziVyGVJ6RS1cPf9FTTMU3Ln2KrvM7T02PjLsnUVHvW2ntuNeYBOXEHc5dfq0AIOCg5XR5d_Y6IYj6_RVa7GLzvAOpX0Em6QF6qbuvxsPpSNEwqlfJSUWPDPS4BaTRITBFKCmAHKkf8tOggrh095u3M1m3DaQvzgdYeUnLsF3Ef3sZ8_C7SmM="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:14:56.926905Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "wG_3arnJOPmew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 96,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 96
+    }
+   ],
+   "prompt_token_count": 153,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 153
+    }
+   ],
+   "thoughts_token_count": 590,
+   "total_token_count": 839,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

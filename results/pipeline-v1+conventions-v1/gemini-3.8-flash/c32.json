@@ -1,0 +1,111 @@
+{
+ "clause_id": "c32",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "be8ad14f66382eb96fd05d28c0330290b063561c57645fd0d58fdb75db5324aa",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nAny increase in rent during the tenancy will not exceed the annual rent increase guideline.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:17:26.049071Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"120\",\n  \"quote\": \"No landlord may increase the rent charged to a tenant, or to an assignee under section 95, during the term of their tenancy by more than the guideline\",\n  \"reason\": \"The clause aligns directly with section 120 of the Act, which prohibits landlords from increasing rent during a tenancy by more than the guideline amount.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4401,
+ "output_tokens": 448,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "VnD3aq7hBdW9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:17:30 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"120\",\n  \"quote\": \"No landlord may increase the rent charged to a tenant, or to an assignee under section 95, during the term of their tenancy by more than the guideline\",\n  \"reason\": \"The clause aligns directly with section 120 of the Act, which prohibits landlords from increasing rent during a tenancy by more than the guideline amount.\"\n}",
+       "thought_signature": "AY89a1-H0LuduXWcJLOAggqLXGC7g1u0V2AxjqeoDNY8LC2_ZS06w7TJZV7vhCqgk00gTJpRmcQKtHRjJXpT0oUPH1FRZpo9K6lw38yzAk6o4MwFBAONbKxpO4bY4IANYcFM4H1jVqsgMRzhijQcGnKq0kWUI2FAZ5n6Duj4cWGasqPNmF8h3GZU2ro7LFD_fUKUaT5xxbG--vTC4mEsMUFF_THv4rP4oc06Fk4FIMI-F4xVIWyndEmkzgkL0FY8jGljg-rxQgPoc0K-f5dqbCGh7TnsTRwExmD6gdC-A8WlIbM0OVdKrAi85Y68bdRtJW5OBAI1lZzNSSq-ZO_p4hNcRHZydmd-tCh2WHv-97qXMPpJBZXpB1xATi5JNSJ-3x0ib1cgGANLvEIzhjXnrEYiwTYxyOA_mhk5n6h0DXbXGFV4TvhyOC19XGzafv4Rlt5ZhoNBBdgypf2GJFel0mw2I-H1nRf3vv6knHS3AE2hpYPEx5GjB9iBQ6okwPe_mSTXtdJmeRY0Wp6LjWRjVy9NZTCVyNQcZPHm9rcEZRoC51bNXUVUPAHoPF7nzIXLzqwbACtLLn0d7C2ndLIo5Fy_G52RwgYrfDTXfkxemxDWN52K2gTo5fVGhuFXzAYpo3sSa4RaMj9YKQ2io809KzkAGzW9wETmDQo3d8LcXYcIKrtOZosvK9djgEPDNWQGBKM3TPP1hUyvOIrSSMpIfzitPUrQCE3oXcbwEnH1l2C0Lv056Ib1SSVNwQc2kVFbBXU5MMAYH4DvE7wXJIolVAYZDMxVkyOscRZQJ9AG9n8Vrdecwi-RRqWT3ye89lRjzGXO9vKdoRThUG8g-n-kSzZvA0Hw59mw4C0IysWrjWvJt1ZJdoP2dRcAxz1hVLSoFBBVcb-G21zuSVI0eZKdkpGtNeAOLg1Dv1yJ_Ly1dnz8_GQpeBt0yKPgSHWt25JCR9GWmCh_7-9ftmZYqkgoJ2YCEkddSnQkmsynO6zAL5PEeYGM-byegcyEr_yO2zDPpNzxse_pBgMX0aNsyvd3JLLRajwivAZiKFTjBiqZsi61tZvwWB1sc2dlm0hiws4O5w1bWAGahXe4jx8lG-LODQMg0dpjZYyho5cd8SJmul_eSXZue-lsdvjwz2080qvyxYxFrcT2bhJBxClODdGftWjbeYoVeSpNUaNYnNa1qCVWMElIObOvLogbZ1drypjPkoJfy3lMAfJAxvgu2FJF7P6HvYoWPmGxqi93u5QkNSLXWNSIx6MQJX3zk6n5oGYyBv_YXhaFYILLAYs9VDoCThYBc-6Ty4fN_WbSP14n_9znRGkxEsb7zflYbEoZtUSRQUjNf0ll1lxrgxDnz-5a7cUKsYFPUO9G7hdjF5K8UgJ2r0yA1Wdba5ULpCCY5o3vUGG9Y9XMSlizTK-KlTgPIVqeCJtTzfZh2bmqa-wJUfuZ86cmbHpcnyQNrNVYyA5-53qmxu6zsXnG_wFCvOwH4Yp4h8i7L78-nqARVJLvdDbmQSK5CmZ3RZNzMbG8HNW-eI7tnrvSJ-cfUCliKctplqrxoHOHoXC5zlBRbaDa7ANVO0NfwscYCsTAYjgRpdd6dnv8tWDLX4_5lkgIzuYvpWt9RRxk4_Pxm20zr9r6yjp2aZErEBWpq0qODXGRCIEYoBb2GLNTzG4nGXdWuXEAMWs1bJB3Cn1MOYr1EUFscx-ET83mwPrXPBMaO_tgjqGqMHXyW0UEEnXkYRqjLxOk8S4aEyuKGFeyXoFF7BmOa20FnGhkLYNfcOSvdXSq4iSUQaJBDoSqYKsIXX13Uy9X48MN9H34IESs84QInE66rE1NXEqQVvso0YbXP9a_W3RzLBom_hQLIiIbU8gaX1GsaTiA9W4452XOrlVQB0cF7ngDd5liR6F2KcY_xdj27ohiqnMCqIeI9Pl4K6xLXmOOEJYgDGYHx3c_rUK2sjQYQBFcNWWym1SpU9uLOwweXhiF1FoUn4_GBSkw5tML0K2zQJxTA21vv8JfH92A45G4o4VqVW0FH35z2mnRC4Cju1b3NdKYARwi01NI15M="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:17:26.094382Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "VnD3aq7hBdW9w-UPidKMiQw",
+  "usage_metadata": {
+   "candidates_token_count": 97,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 97
+    }
+   ],
+   "prompt_token_count": 4401,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4401
+    }
+   ],
+   "thoughts_token_count": 351,
+   "total_token_count": 4849,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "120",
+   "quote": "No landlord may increase the rent charged to a tenant, or to an assignee under section 95, during the term of their tenancy by more than the guideline",
+   "reason": "The clause aligns directly with section 120 of the Act, which prohibits landlords from increasing rent during a tenancy by more than the guideline amount."
+  }
+ }
+}

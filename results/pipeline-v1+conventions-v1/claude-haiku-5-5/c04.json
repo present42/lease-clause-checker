@@ -1,0 +1,99 @@
+{
+ "clause_id": "c04",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "b97e8785d0729931790508419f0224e76ccad2deedd6c8f31bd8bd76bd46f10e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant shall not allow any animal kept in the unit to damage the unit or to disturb other residents.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:20.373284Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"14\",\"quote\":\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\"reason\":\"Section 14 voids only provisions that prohibit the presence of animals, and this clause does not prohibit presence; it only bars animals from damaging the unit or disturbing other residents, which is consistent with the tenant's repair responsibility in section 34, so section 4 does not void it either.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6427,
+ "output_tokens": 899,
+ "raw": {
+  "id": "msg_011CgyJ6ZEQx4Q7rsL75MWdr",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"14\",\"quote\":\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\",\"reason\":\"Section 14 voids only provisions that prohibit the presence of animals, and this clause does not prohibit presence; it only bars animals from damaging the unit or disturbing other residents, which is consistent with the tenant's repair responsibility in section 34, so section 4 does not void it either.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6427,
+   "output_tokens": 899,
+   "output_tokens_details": {
+    "thinking_tokens": 746
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

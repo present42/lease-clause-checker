@@ -1,0 +1,67 @@
+{
+ "clause_id": "c26",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "f7300eea13bf7618dc74988477cffae804bf9dccabba408e99026035b647ea3d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent shall be paid by pre-authorized debit from the Tenant's bank account on the first day of each month.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:41.459569Z",
+ "text": "**Not enforceable** as a mandatory term.\n\nSection 108 of the *Residential Tenancies Act, 2006* says a landlord shall not require a tenant or prospective tenant to:\n\n- (a) provide post-dated cheques or other negotiable instruments for paying rent, or\n- (b) permit automatic debiting of the tenant's account at a financial institution, automatic charging of a credit card, or any other form of automatic payment for rent.\n\nThe clause says rent \"shall be paid by pre-authorized debit.\" That makes automatic debiting compulsory, which is exactly what s. 108(b) prohibits. Because the clause conflicts with the Act, s. 4 makes it void.\n\nThe tenant can still choose to pay by pre-authorized debit and may withdraw that consent at any time. The landlord cannot insist on it, and cannot treat a refusal as a breach or as grounds for eviction. The tenant's obligation to pay rent on the first of the month is unaffected.\n\nVerdict: not enforceable\nSection: 108",
+ "finish_reason": "end_turn",
+ "input_tokens": 232,
+ "output_tokens": 661,
+ "raw": {
+  "id": "msg_011CgwREGBWzKBiJ6qiRqS5Z",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable** as a mandatory term.\n\nSection 108 of the *Residential Tenancies Act, 2006* says a landlord shall not require a tenant or prospective tenant to:\n\n- (a) provide post-dated cheques or other negotiable instruments for paying rent, or\n- (b) permit automatic debiting of the tenant's account at a financial institution, automatic charging of a credit card, or any other form of automatic payment for rent.\n\nThe clause says rent \"shall be paid by pre-authorized debit.\" That makes automatic debiting compulsory, which is exactly what s. 108(b) prohibits. Because the clause conflicts with the Act, s. 4 makes it void.\n\nThe tenant can still choose to pay by pre-authorized debit and may withdraw that consent at any time. The landlord cannot insist on it, and cannot treat a refusal as a breach or as grounds for eviction. The tenant's obligation to pay rent on the first of the month is unaffected.\n\nVerdict: not enforceable\nSection: 108",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 232,
+   "output_tokens": 661,
+   "output_tokens_details": {
+    "thinking_tokens": 324
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

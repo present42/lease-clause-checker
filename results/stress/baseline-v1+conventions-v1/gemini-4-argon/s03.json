@@ -1,0 +1,74 @@
+{
+ "clause_id": "s03",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "9fac44bad34050e6453e2742c030bf9013ec4054c7844d85fccce16233e3bd42",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: A prospective insurer of the building may view the unit. The Landlord will give the Tenant written notice at least 24 hours ahead stating the reason, the day and a time between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T21:00:52.456009Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit with 24 hours' written notice for specific, valid reasons. Subsection 27(1), paragraph 2 explicitly permits a landlord to enter a rental unit to allow a potential mortgagee or insurer of the residential complex to view the rental unit. \n\nFurthermore, subsection 27(3) requires the written notice of entry to specify the reason for entry, the day of entry, and a time of entry between the hours of 8 a.m. and 8 p.m. Because the clause in the lease mirrors the exact statutory permissions and notice requirements set out in the Act, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "STOP",
+ "input_tokens": 210,
+ "output_tokens": 163,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "hHr3aoPaM4mSyOgPip7BoQk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:19:03 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit with 24 hours' written notice for specific, valid reasons. Subsection 27(1), paragraph 2 explicitly permits a landlord to enter a rental unit to allow a potential mortgagee or insurer of the residential complex to view the rental unit. \n\nFurthermore, subsection 27(3) requires the written notice of entry to specify the reason for entry, the day of entry, and a time of entry between the hours of 8 a.m. and 8 p.m. Because the clause in the lease mirrors the exact statutory permissions and notice requirements set out in the Act, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 27",
+       "thought_signature": "AY89a1-2P3YM2asRRChwoKMswa05c7YHLNFH_94ipI6C7L_Yh3-zw8bvCntZ8-UR4eOG8VbH57mz7RUhUHbvAH0yjaHFzlO-tOio0knH57e-NpqwyOG_S6WBY2307Ht7"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:00:52.847107Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "hHr3aoPaM4mSyOgPip7BoQk",
+  "usage_metadata": {
+   "candidates_token_count": 163,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 163
+    }
+   ],
+   "prompt_token_count": 210,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 210
+    }
+   ],
+   "total_token_count": 373,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

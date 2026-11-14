@@ -1,0 +1,75 @@
+{
+ "clause_id": "c09",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "110d86ae214f8e6fa9ee8e48d819317ae1d8d81bac1edc01c77c4a6159197bd0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If there is a fire, a flood, a burst pipe or another emergency in the unit, the Landlord may enter without notice.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:09:26.637730Z",
+ "text": "Yes, this clause is enforceable. \n\nUnder section 4 of the *Residential Tenancies Act, 2006*, a lease provision is void only if it is inconsistent with the Act. Section 26(1)(a) explicitly permits a landlord to enter a rental unit at any time without written notice in cases of emergency. Because a fire, flood, or burst pipe constitutes a genuine emergency, this lease clause simply restates the landlord's lawful statutory right of entry and does not conflict with the Act.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 187,
+ "output_tokens": 619,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "dm73asqPLKLXyOgPnqy3kA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:09:36 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. \n\nUnder section 4 of the *Residential Tenancies Act, 2006*, a lease provision is void only if it is inconsistent with the Act. Section 26(1)(a) explicitly permits a landlord to enter a rental unit at any time without written notice in cases of emergency. Because a fire, flood, or burst pipe constitutes a genuine emergency, this lease clause simply restates the landlord's lawful statutory right of entry and does not conflict with the Act.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a1_Tf7NfKfvU8yLQRSJH0xluOHPb4uXbAFDAcEwsptnlPZGg-xjFveWuPe46hMsd1Xor04yZwUyfTCCw0D_s_CTrDozm8CF6VrA_JTTYSAR-9GULOMW4dwXf-OwCzy2KCERBiadivT4Qt1f5-hRaKl7toMCoAU9ZJteun-8zL5wwSbl_1Hmuxd1adWXN6PeSI1sKIgbTOGkZobCG4gxBNL5zY70_A1xH6BVLcOGrb_7cB6gqyCJSUo9VtqhoeB0_mEJJulv7ecsnuzQN2b0k87CAHH2pyCFjbeeZkvMIFbSRL_MbRIMjZuZ748RPLwvmm1bFCBBFXRnaoVqpn-nHJHUWcFZEwNlf9l4e80LUoMPJrnIv4dECrxQHzkXRIVqw3ZbpLClINBAIxKYUZJZsBNuWS7GXHg2GGUQGTgVNsGy2sBawYDuJhOZVu7eNbdSPcnHdJljN7wcEo7JEjQbVNWSHuvZpeF18PXIUi5A-JTmX2BFi7z5XgfhhMCodXUP9kJ3cSMjayyAUKJdSSueZrFWKckylHvFJ7-7a5TXGQHM_RmWh3Tb9TEQLV0LDPNu8nWVyt8RLTP8pFdKA6rdVktbkhdGcFxZqEQN8JtBrHNaXfKx_Gsna9NqeBsokzzhDIVDBCLphVMA2YBYZ4UQAxjK01lDs_ItCmaIMFjoBxl4MfgRv_R1neFZ_mPbH3CFr69WeBqZ2wquYx_kEfSwIJbayao-atLRVgIIMWY7qHotsQZMU0UUzqQCuYDArMv1mjfnqc_GFSiLKA9EplFuA9dqfG0ddqkY4uAlZSEQoUmhwfdz6NaMD5xcivhHaluUgXaNZ9LG5F5WUj42ESOGgQDyTu6nT-vRkoFC_HLq5U8F5CN2LwHp_z8vLWQAC9K7s1B2Q15kx35aimrmSgupfap4piGqwrKCVgO2EJG-92mXITuuTY7Kd1MYxqI2yKRmbApOHPIwTKPHBkVMefedC1jlQmQ5E5eYAVdSMhalyUWWwqGCSq_9JPi34ghDclXnP4S-xRKja70w7JnhGoMXSmt5_Ug-CoFKhctvMYIGadebRnmQZKIaCk1FtJJ2naji3o2wSYR7zJM9K_7r7onQ21uC8EE6YFSFZl4zgVCuUYj6KdrBl06EZg7sENgKj0-stIZ6C5WTcDxBgYqC3soQWjzcVnieflguyJtgsd0NTfsiH24odIqBtDTPMJ3dvzB12QrNkaux6dytlPvuTPhp4ACoCc5N1AEcDgsjf0fg0zu4Qc6mu_5f1qzAWGU0A_rINgLzdekET-oQgU5CmXCUgoKlbK5KZepk-G8nVicaviWLe_cTSU1btzPU0F811RM8FCR5yixOi0UgVxMSOBS9JzTCw1tJyUhf5VQqaE5s2qUe7bSjny2jZwDOV6seu4jTsU4yT0mUO2l2sn-p0OoXJj_uMmgxxD36V1mZlt2wbR3RhtLmRX6y8HrBSsioSLUssetUklqoU5FZV5Bb-i3otzVyaPqqcpqhOcDBHvb74zV4dCK6QEjFv7rz0UHzkTFH0rR-rT3AmvNxfI2wXI4JMirSMa_2-H9LQZ5I1PvqaLLVYHFhHoLDQa5pSj6vYGirpTgd0SiJgW78-9hLXXrVmMDhLuOV7_PGYZ9fgneaZV-nU9UPB4ACDOjZIBPx1J8i2w3zXmOQVA3fXWKjB4XQ-a4YrbiGBiDG9wKi-JuqHsN1evBA1aJhubrjqB7X_d-sRZ1gKiCT_ZC1qo6mbwPeikbxqqpBuMKcJGNpVHbYlgjDtwyNUlGHirW5u_GonJ-j9aHMfFe50tc-N2fxm_m456PA-bLcWeeD-d4bj60NGhXpQ8Omhqgc52XCdn4-pUD-gH9mfJKk0a3FjZzzWfcJoIuyOitqgD2YR2CbM2ZjE2wV5eVpU3qJysNwbyMpc2Sw7mVZMWKxIlD2OpI8Ml_zIzXUDITHH57qPW0Q0Q9ZDVtSF-LKA58UxFS60v1zfg6qOq0GCySHQ6ggzH8fM06ZHhHrQUY7PZPf13L8QdqQTYE-A5--G4YrH5W2AdKejX3FqDoQwf_GED0qpIBVhvEk_xHG3L0uoNeE9EMZZcDXiAoHoo396Xn2f8UNm1hJyV3cPegu6Z58KJIhf6SGVcoJl61leK3M2iKCQUXYSRalTpvAYXI-J35gJhvkoisLyZ_m-WzqznRrc9LFSf1unmQLFq1VLFHq_Dcx9FLgM-zyKufYKs9CtKvLsh5TersOoUrkG7lAlIPg62Pqvssx-mR7vRJEd4eCRVwF1mUsOrPqR5NIzxal8wd03CoMd9crXrtD4VfmrBnJb6NAud7DCraji0jtVEn83xE7JRSOco4KatAGjF50sq5WX0kOFVY7N6o_40kryTkfhC4X0MPnDZCDnfBeJ50hSoAMaxA3lOlo6-cVbcMtNxZDmgsEPYJ1mRY1Zor4pUnXH_CRoYIlBUbt9jDcm_B11A9wDYqW0-LLg7u5hFQOS_Xo2OmJfXeTuwinCLA0U5oVyYmonSY_TbT6I3-_8IMjwzZ7MNa6cnPidaIsfExXcuKz6z6BTFyoefKXizUDG1Z5stqkMUxdufckmmsN1ZgeczHG1RTHD9wvp6npkhyOFbXu4Lj8hMM37Zqp4xxzU7US7TD60yERpRxcCMmKoAgyBBIvH-hPV4pC7rGI="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:09:26.722890Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "dm73asqPLKLXyOgPnqy3kA8",
+  "usage_metadata": {
+   "candidates_token_count": 122,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 122
+    }
+   ],
+   "prompt_token_count": 187,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 187
+    }
+   ],
+   "thoughts_token_count": 497,
+   "total_token_count": 806,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

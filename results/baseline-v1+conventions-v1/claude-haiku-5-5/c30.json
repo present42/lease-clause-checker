@@ -1,0 +1,67 @@
+{
+ "clause_id": "c30",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ffffbc321162db9a484ebb6986c87ab7979d1669d7a6e7243165c7c301c09cc6",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent by up to the guideline amount every six months, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:58.331374Z",
+ "text": "The clause is not enforceable as written. Under section 116 of the *Residential Tenancies Act, 2006*, a landlord may not increase the rent for a rental unit unless at least 12 months have passed since the last rent increase or since the tenancy began. A clause allowing increases every six months conflicts with that limit. Any increase made in breach of the 12-month rule is invalid, and the tenant can challenge it before the Landlord and Tenant Board.\n\nThe 90-day notice and the approved form are not the problem. Those notice requirements are also in section 116, but the defect here is the six-month frequency. Even if the landlord gives proper notice, the increase cannot take effect before the 12-month period has run. Under section 4, a tenant cannot waive these protections by agreeing to the clause.\n\nVerdict: not enforceable\nSection: 116",
+ "finish_reason": "end_turn",
+ "input_tokens": 249,
+ "output_tokens": 1029,
+ "raw": {
+  "id": "msg_011CgwRB6ci2eADdtxLzk9HQ",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable as written. Under section 116 of the *Residential Tenancies Act, 2006*, a landlord may not increase the rent for a rental unit unless at least 12 months have passed since the last rent increase or since the tenancy began. A clause allowing increases every six months conflicts with that limit. Any increase made in breach of the 12-month rule is invalid, and the tenant can challenge it before the Landlord and Tenant Board.\n\nThe 90-day notice and the approved form are not the problem. Those notice requirements are also in section 116, but the defect here is the six-month frequency. Even if the landlord gives proper notice, the increase cannot take effect before the 12-month period has run. Under section 4, a tenant cannot waive these protections by agreeing to the clause.\n\nVerdict: not enforceable\nSection: 116",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 249,
+   "output_tokens": 1029,
+   "output_tokens_details": {
+    "thinking_tokens": 756
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

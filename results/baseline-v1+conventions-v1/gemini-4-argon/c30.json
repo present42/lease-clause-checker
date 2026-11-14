@@ -1,0 +1,74 @@
+{
+ "clause_id": "c30",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ffffbc321162db9a484ebb6986c87ab7979d1669d7a6e7243165c7c301c09cc6",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent by up to the guideline amount every six months, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:51:45.699600Z",
+ "text": "This clause is not enforceable. Under the *Residential Tenancies Act, 2006*, a landlord is only permitted to increase the rent if at least 12 months have elapsed since the day of the last rent increase for that tenant in that rental unit, or since the day the rental unit was first rented to that tenant. Because this clause attempts to allow rent increases every six months, it conflicts with the Act and is void (pursuant to section 4, which invalidates provisions that conflict with the Act). \n\nThe specific section that establishes the mandatory 12-month rule is section 119.\n\nVerdict: not enforceable\nSection: 119",
+ "finish_reason": "STOP",
+ "input_tokens": 196,
+ "output_tokens": 145,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "YXj3arbMNsCJyOgPhteoiAc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:59:56 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is not enforceable. Under the *Residential Tenancies Act, 2006*, a landlord is only permitted to increase the rent if at least 12 months have elapsed since the day of the last rent increase for that tenant in that rental unit, or since the day the rental unit was first rented to that tenant. Because this clause attempts to allow rent increases every six months, it conflicts with the Act and is void (pursuant to section 4, which invalidates provisions that conflict with the Act). \n\nThe specific section that establishes the mandatory 12-month rule is section 119.\n\nVerdict: not enforceable\nSection: 119",
+       "thought_signature": "AY89a1-J3FuXcugz9BJR9nFG7GOd2hAQxbGoBeZed_6FvRsVT_CdMA2sxIvddr0C_BZ_Y6ZBB_-6senisQCeFTnv30rUXg58H5on47nXDXesH-IHTNPUfUYL5otxV2Bq"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:51:45.894518Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "YXj3arbMNsCJyOgPhteoiAc",
+  "usage_metadata": {
+   "candidates_token_count": 145,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 145
+    }
+   ],
+   "prompt_token_count": 196,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 196
+    }
+   ],
+   "total_token_count": 341,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

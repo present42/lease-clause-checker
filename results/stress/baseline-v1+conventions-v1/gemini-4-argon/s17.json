@@ -1,0 +1,74 @@
+{
+ "clause_id": "s17",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "0cdca4e3dd908b3e8333391ec503fe43cd82dec6ecbfe5f50307208c4ec36fa9",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the rent is paid after the 5th of the month, a late charge of $50 becomes due.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T21:00:56.926080Z",
+ "text": "In Ontario, this clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a landlord is prohibited from charging any penalty, fee, or additional amount for the late payment of rent. A clause in a lease that imposes a late fee is void. (Note: While a landlord can offer a prescribed, lawful *discount* for paying rent on or before the due date under section 111, they cannot frame or enforce an additional charge as a late penalty).\n\nVerdict: not enforceable\nSection: 134",
+ "finish_reason": "STOP",
+ "input_tokens": 185,
+ "output_tokens": 120,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "iHr3apXnPLf0yOgPv8nc8Q8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 21:01:01 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "In Ontario, this clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a landlord is prohibited from charging any penalty, fee, or additional amount for the late payment of rent. A clause in a lease that imposes a late fee is void. (Note: While a landlord can offer a prescribed, lawful *discount* for paying rent on or before the due date under section 111, they cannot frame or enforce an additional charge as a late penalty).\n\nVerdict: not enforceable\nSection: 134",
+       "thought_signature": "AY89a1_YmUUflnRfHEonpI5wZw_KArOcLaEWxLgCf4mnhKJu0BlmSnFF3F4pUkMIZoHJTdmmDU0UCXhzTxqZNgVTHAAO1PP1D0NniNoDKl6o8vJ3TWmYoYzv-536uMQ="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T21:00:56.996245Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "iHr3apXnPLf0yOgPv8nc8Q8",
+  "usage_metadata": {
+   "candidates_token_count": 120,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 120
+    }
+   ],
+   "prompt_token_count": 185,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 185
+    }
+   ],
+   "total_token_count": 305,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

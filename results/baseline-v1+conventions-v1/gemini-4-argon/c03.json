@@ -1,0 +1,74 @@
+{
+ "clause_id": "c03",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "0c08285f88ba98def017d12203d66fc60317c901aacab6759c08fd6fc1c84b50",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Dogs must be kept on a leash in the lobby, hallways and elevators, and the Tenant shall clean up after any animal in the common areas.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:16.621492Z",
+ "text": "This clause is enforceable. While section 14 of the *Residential Tenancies Act, 2006* voids \"no pet\" provisions that prohibit the presence of animals in a rental unit or residential complex, it does not prohibit reasonable rules regulating pet behaviour and the cleanliness of common areas. \n\nFailing to clean up after an animal in the common areas breaches the tenant's statutory obligation regarding ordinary cleanliness, and failing to keep a dog leashed in shared spaces can interfere with the reasonable enjoyment of the premises by the landlord and other tenants (under section 64) or impair the safety of others (under section 66). Specifically, a tenant's duty to clean up after their pet is directly governed by the statutory maintenance standards.\n\nVerdict: enforceable\nSection: 33",
+ "finish_reason": "STOP",
+ "input_tokens": 190,
+ "output_tokens": 168,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "CHj3ap6SO7Ckw8cP_Oe5iAs",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:22 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "This clause is enforceable. While section 14 of the *Residential Tenancies Act, 2006* voids \"no pet\" provisions that prohibit the presence of animals in a rental unit or residential complex, it does not prohibit reasonable rules regulating pet behaviour and the cleanliness of common areas. \n\nFailing to clean up after an animal in the common areas breaches the tenant's statutory obligation regarding ordinary cleanliness, and failing to keep a dog leashed in shared spaces can interfere with the reasonable enjoyment of the premises by the landlord and other tenants (under section 64) or impair the safety of others (under section 66). Specifically, a tenant's duty to clean up after their pet is directly governed by the statutory maintenance standards.\n\nVerdict: enforceable\nSection: 33",
+       "thought_signature": "AY89a19DRPjCIrjfm9RRAZ3qce9t_gi7amrUt797kb71F7HeAWH-3uBORRifWazB60PANkm1gsVtzgRNAa5nCq3Iw-YTjlsfbwD_s4rCVDI6E7-FbBB7rVME8s8zB4dm"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:16.968990Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "CHj3ap6SO7Ckw8cP_Oe5iAs",
+  "usage_metadata": {
+   "candidates_token_count": 168,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 168
+    }
+   ],
+   "prompt_token_count": 190,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 190
+    }
+   ],
+   "total_token_count": 358,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

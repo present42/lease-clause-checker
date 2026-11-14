@@ -1,0 +1,75 @@
+{
+ "clause_id": "c30",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ffffbc321162db9a484ebb6986c87ab7979d1669d7a6e7243165c7c301c09cc6",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent by up to the guideline amount every six months, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:10:36.703777Z",
+ "text": "No, this clause is not enforceable. \n\nUnder **section 119** (specifically subsection 119(1)) of the *Residential Tenancies Act, 2006*, a landlord may increase the rent charged to a tenant only if at least **12 months** have elapsed since the day of the last rent increase for that tenant in that rental unit, or since the day the unit was first rented to that tenant. \n\nEven though the clause complies with the 90-day notice requirement and the guideline cap, permitting rent increases every six months violates the statutory 12-month rule (rendering the term void as inconsistent with the Act).\n\nVerdict: not enforceable\nSection: 119",
+ "finish_reason": "STOP",
+ "input_tokens": 196,
+ "output_tokens": 1019,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "vG73aofrMKO8w8cP9I-d6AI",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:10:54 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. \n\nUnder **section 119** (specifically subsection 119(1)) of the *Residential Tenancies Act, 2006*, a landlord may increase the rent charged to a tenant only if at least **12 months** have elapsed since the day of the last rent increase for that tenant in that rental unit, or since the day the unit was first rented to that tenant. \n\nEven though the clause complies with the 90-day notice requirement and the guideline cap, permitting rent increases every six months violates the statutory 12-month rule (rendering the term void as inconsistent with the Act).\n\nVerdict: not enforceable\nSection: 119",
+       "thought_signature": "AY89a1_0qyzQVeOjAT6PED6i3eKTsl9lqk1AyL0Ayuee7C3Axg9J89zn8uI4BgPIv3WdkK5dPXddCk1T33VcwzWtOTl4zWaXJ4HfyDh5FxCmQ3NL94m-7-yIF5JmIqZFVV7G8B2YN4tEk_Xk72mWmodQODlin3itGeLdc93zcEPMFeBoAITob3ou8xyy53AsiE0DTMpbYOnCccTCaQWMQ1l4ly-WPAXZDHRvmE8taR_pidZk9PGBAU9JU-mx27t8Px5KmfwA5vl4gC9sw8u_AGtTXoXzhBPSGKq3tp21TDhqo0mMG1ZEe-QxMzV4M2e9tM310vRjOmA5372fxCYa0sFd8N1vpNPp4OfHOCct3WkGqzso8QZ01xQsmnqlbTt-P6IDTenEmCWZlFsFLhKCj55ndkVBwiGJ8sqGaI9Mkg3I8TifQjOYwHikBdDoO4DKQaspVp2rksuPu0ecvG63F3ltUQ-iL6XNjKaqrP2937ft0fVaMNE5hmgIB_Q8NKN_kb2rSzD9DAJM0QeQjKLw4DBwcadyTcESx3xKY90nUVeIINQQi9G059EOMpdWEACyfRqwSzkRPzj8WOWtJSyAzjMdm35F5xvnMVCCefPx3ZdqeEd3O0aCa978zDqOZLXPy-uOz50dq6ZjeZqxPpNxVC2K7LEFfgUhDwIge1HienAHerHJ_P3NFGYQaxpa8xkgX5gQ-vQBeWG50aMdjk1uclRQTR3N9VrvWZCGBYKR-OO-S_kLqRhOssVqxkjJGhDOnA58PIVbHEywayKWVQm5HcG9TFJww0QNLSMV64G3f0v9Tc-bYljRphWkA3obhUEbdE820ACFMEDwN1syuUNhx57TmFon6j0sxY8pAOUZ9O1vwBrmRaqSs1eZHY0ngz2dXdrpTm99WOnFAwjwfpg6SiIb7tQ4lmUGlT44f3kAARinFDjw6NbKn2oD3KzToWLemXT7AYum4CZlu2a9gsyxisWVUP7Eu4b4mrO-GXJQ9-SmIU-Zj_XOaBxgG-NKm4_1YkWS-y6RuPi0t1WvCm21cM7qXd_-XEV6389XO5OHMzHg6ro4txoUUT3yvRYxhcPlzPEDoQAJGK3hYys57fbKeRGDd9LWNx6V0IoE1ZVJzF6lWDb-4bwSux55vk3icU8IdIk9z-KUjcm5TBKS4l6qPY4k5gL-F0qYIDMpEmkUW39A3peyDpismIJrb09NDjE1pFLdcSSW1fjZuevq0f1NDENXuxwoZNo5UbVANqJKd6qbhM14NyZTVK1HssngJzc9ug-nAabjTYyfbjFH1Lrsb7s3OdEwvuUK4LoowH_7dG2SSJKWoK6YN5AIfcIVsIHOEiwGRXRz544OTd8aDKsDtYG9Vj3omsB9YvH4-5u5oY1KaElSs0cwgNtNhQ7QHtK7uMPuvfzPWwejawrNX_1Tffl22iKMf5mdQLd0s_ZYa5qXStV7tgOLVrzhKIrEFbmjPkwKg7fGxx8j3fNCtVBiyPcBcUJyYw592dgPJOgeVWCI8wii8NeNfkdlzJZ3IHQVRQ5fM0TQR-nP1S7AFyyH79pY-CYl8wI-1wlTL6cn_JkNvzwkOcAoKX9MzoTY6LPppoT-tNfESo9wKY2ZsL7kvCqKtoiIEaj6p-sQLB68S-3bfphekhTmDPZA04VOIa8KCrFehP9a2cOdGggxLausoXgUbwSVMm3o5bX1jqjYYN5NC1xNcl4ZE8r4Ki_tOHpYib0svpzUgrzk_7WExsdUekWNzinQrD7nzHzP9qLOdY0AOkl4CFpN51CHmy9clJG4jj7_Qs9GH8D6FD_H4OuEvIenveZqOHQRq7HIMPyZV6Hb926ZAqPGhxncOFif8-H7DYZwcRMw5rpxmn2ChfCjmNbYmwlK5zYRjaH9jKvm6KwkWBVSVDbt-DHA6zZC7aYpUxhDjiQCzteCYHXcVNLgrSx2sGm7lwylTsJYyZ5W6WWvvoZMU03N2UzePM8kC77bq7pD-iRHhjajDnrQDR3P8n75R_n75AE9RveC-I2hC5w0mUoCdduof5LBrR7LTAC_QX94KpWkvPTdu9JWynV8R_EIP-Zi_s7XjHnPRyx7O_eW_mww0M_sBLxv77X2KC3SD5wL-RCsj49jL6KAVomRnlbmidH81bEz0G-ZqNJWDH2lrJskavcVSrtxdk2UE76r28nu5EKzM2NKgit-xbN79kLgvAUgsTNXdBoLE5ch8KYI4T5CTrpVoaUK_A_8NLsBE96a08IkT8vPtvQ8XhKvOaaMc_LNKd9yvYZBI_iqpdoWhOtxlphcdJSsoVuD9QUIOwwVJmiAvw27YIRcO9wC1VCTHRrrQuPSmpPOr1FcXhpJodL9FkSbbvUF_5q_iPub70vteRQIbd7mqRI5FMy7KJ8nkMAo0V3O7DPVwR85ufYSHwLOD7a5JQugL5lE8Dtbww_7V2fsrPaJFBu9WFwwJOpB-lR8ZKtngxMF_pTKu7Em-7qk_-uVSDWAQhJWR-Tvld026AAvsSG2Mu_F6NaTOdNg1iaUsLEF6bRIwFuk6cSWbVgSb-OepeDpeXugmYQPBf4sdZRADRrKfrU1M924Pw1GQX3KNtLrueTEAQqwjZaKccQjAsOk9Nl7ZjQFZIRMsh9FH6wfZg9Wdq1zSubjDrXwg8Bimdt7BBhv6xmXlXigVzOUsCHHfSt16N7WKN8Kq5BVNQ_XLFsz3IPsQLCQYNb7TLtJDqmCR3X8c8thxVXy3_LevxEE3XPM8pAoms8rdnWdcApymDF0DeXCm7P7Xqj18qh-xgQQ4vbdeQGp1oPNrmGs91Mo-QYPBcQtWQAlXZPB1pMYpFwbTZJaH0X72xJ49NFmV6coEHiKk_Uo3YyLmt4x-FMklTyroSvLySV_mYi-1FL-EyzORfoAPN2q_NFEJm5Mc_0vtSpfyUV17NVDPaZTaO25BJ9tmDvpq7eT2GtjCwZX-UFIv2fDPTqE1M4e3S2Xm_CncpWxmOjxzDVhMCwLY09bnpdJGJK7BCnEUi8bNcRlN2QE1VfN2AUzPEyugE-BEtCJfYTvMCZiwsdpz8adUbIVkptkPT8JA_z6ak1b5sNDYsEITVLUfiik8-pO9u1EAxLZxOiYSR6KlVfOihlWr0qEoK45ysLtDqOkW1r5y-sdFDUGqX6Azs1RQ07VthT66S9cZUOf3XkNC8WrFTKU_Zq6DDR-2PGev9UWeOvXAh48StHyfNHj2B5TFGW_96adx3am1P8u3E8spBrV6lct7uFy8OKlltJAFcX6ZqCOgvXM5WfjFWoDoiQjBI-zty3z3rZ0rHaPn0gsEsNPDRqd2gQLeWbrSXxAwyL4wcEjowsffVbV5pqBcLiQpwPv0sMf0QMjGWi5V9lnLN7cZCTuNyIPov98_Vt8x762ni6PGNh7ESuncJJeN0dzBecI6qIzateel1ua4SUMQRJHpH8Tz3f70sFaeA9RAG23ENQWf-__TUa5YTdomsjw7PYENd8Gz0ujGopSldb8yPjS4oT3luwVplTJcnevI3S0-5XBBmd8CYaYGZS0hkUvZgdPtta_9i_vGbdMjjCXbw0-QagsqYo7bZCP1wTrUqUw6xKoHDVuk-QQMldcvWJnH4VlcWc7mWssOJmnrdhih17BH5qbhkYAO9AN9NDyY-6sRYOA1JxWSEbk5zY43cuAMgPLzXVPD3pcPdB6M160lqQzPLVy1kCmgEvNpRQUnyGJC2Ey4B3IDQYtCkz60q1FeBbIsSjNnaUMZMhYWOrCJpMECapYpcpaIXxOVXXuO7b8n_1R94d7JjWlvczJKje18BaePDHbXEG7aYkeAJfFVz7u6EJoDMZ4BKlKNQhJZifIfiTmk0spjLwaFUrRxoSTQt0vwUlu0U9k3SWNXuGgouoRasdG5ZGJ99xdSDgA_79SXmjDOU-jI0c1SWYltWSaj7c88Kr7rDZevxPOtFAO3k0BHANTbFF0rgewqJnjvBCEuy1HP_8Ux-jIgBP6T_0ObLlOwP0CnXPHXc83Og2ntmtjA1Rwgx2ZNyPJnM6wdjbjFFFQrhfdgsCHXIx0hHjhdztqREIx6lqGUPynCMyV3zOvBAQ0OFelX6128a9Kfro8MoT4Sji_nt2D--DbVivC60IgjainP70XFlTCkbuupmtX_ksb2K6bOeT7wmRk1_5VpyaBUfqfYXmInW7nXg37472dmTrnHxMuSgNKzDe5fGL1zLU2YO0TjIDXJsqVh_gVIEvk2DvPQedvVc1Hd33HkDxIfsAfPd36W4BZnIlPH0repMubh35RwNJSC7U2TJzlxCnvBK1ZETF_G1RySfyhWzUthvsSEHz4lnM1gFcJcZxOCVFiV7tzfSoD0g5HR9-URVdpJ2LYla-bKtH9vrC1eHwb6kIQlyh1Zj9-YBSmpGhLLg=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:10:36.800135Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "vG73aofrMKO8w8cP9I-d6AI",
+  "usage_metadata": {
+   "candidates_token_count": 156,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 156
+    }
+   ],
+   "prompt_token_count": 196,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 196
+    }
+   ],
+   "thoughts_token_count": 863,
+   "total_token_count": 1215,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,99 @@
+{
+ "clause_id": "s26",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "3c22ebed238be06ff28b231e63528a3971fa40d0c0ca33114cc9a93dae27fd73",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant's guarantor will pay the Landlord $1,000 on signing as security for the Tenant's obligations under this Agreement, to be returned when the tenancy ends.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:55.422090Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\"reason\":\"The clause has the guarantor pay $1,000 as security for all of the tenant's obligations, which is a security deposit under s. 105(2) and not a rent deposit under s. 106, so s. 105(1) bars it and s. 4(1) makes it void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6451,
+ "output_tokens": 756,
+ "raw": {
+  "id": "msg_011Ch1HyT97XQeEEfWRoudKc",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\"reason\":\"The clause has the guarantor pay $1,000 as security for all of the tenant's obligations, which is a security deposit under s. 105(2) and not a rent deposit under s. 106, so s. 105(1) bars it and s. 4(1) makes it void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6451,
+   "output_tokens": 756,
+   "output_tokens_details": {
+    "thinking_tokens": 615
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

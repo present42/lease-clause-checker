@@ -1,0 +1,67 @@
+{
+ "clause_id": "s26",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "6f7bd9f84c2e94efc9febe8a3e3f58694d5aa41e5e0371c3c05f98432caed1b2",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant's guarantor will pay the Landlord $1,000 on signing as security for the Tenant's obligations under this Agreement, to be returned when the tenancy ends.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:27.482173Z",
+ "text": "The clause is most likely **not enforceable**. Section 106 of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) generally prohibits a landlord from collecting or requiring any security deposit or similar payment beyond what the Act permits, which is at most the first rental period's rent as a rent deposit. A $1,000 payment held as security for all of the tenant's obligations, and returnable only when the tenancy ends, falls outside that permitted category. Calling the payer a \"guarantor\" does not change the analysis, because the payment is still a deposit the landlord collects in connection with the tenancy.\n\nTwo related points:\n\n- **Section 4** (no contracting out) would void any term that purports to waive or limit the tenant's rights under the Act, so the clause would not be saved by being agreed to.\n- **The result depends on the rent.** If the rent is such that $1,000 is within what the Act allows as a rent deposit, the analysis changes. Here the amount is treated as an impermissible security deposit.\n\nI'm working from memory and have not checked the current consolidated text, so confirm the wording of s. 106 (and the rent-deposit limit in the preceding sections) on e-Laws before relying on this.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 255,
+ "output_tokens": 1995,
+ "raw": {
+  "id": "msg_011CgycnfqjjWxpAsfxwMWSe",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is most likely **not enforceable**. Section 106 of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) generally prohibits a landlord from collecting or requiring any security deposit or similar payment beyond what the Act permits, which is at most the first rental period's rent as a rent deposit. A $1,000 payment held as security for all of the tenant's obligations, and returnable only when the tenancy ends, falls outside that permitted category. Calling the payer a \"guarantor\" does not change the analysis, because the payment is still a deposit the landlord collects in connection with the tenancy.\n\nTwo related points:\n\n- **Section 4** (no contracting out) would void any term that purports to waive or limit the tenant's rights under the Act, so the clause would not be saved by being agreed to.\n- **The result depends on the rent.** If the rent is such that $1,000 is within what the Act allows as a rent deposit, the analysis changes. Here the amount is treated as an impermissible security deposit.\n\nI'm working from memory and have not checked the current consolidated text, so confirm the wording of s. 106 (and the rent-deposit limit in the preceding sections) on e-Laws before relying on this.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 255,
+   "output_tokens": 1995,
+   "output_tokens_details": {
+    "thinking_tokens": 1578
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

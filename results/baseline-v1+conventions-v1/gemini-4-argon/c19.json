@@ -1,0 +1,74 @@
+{
+ "clause_id": "c19",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "7ad28ea3e8e026a0f75240c9ecae3680ce66cc48ac1919bf04573dd986d97811",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: On signing, the Tenant shall pay a damage deposit of $500, to be returned at the end of the tenancy if the unit is left in good condition.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:38.212686Z",
+ "text": "In Ontario, a landlord is only permitted to collect a rent deposit (commonly known as the last month's rent deposit) and refundable key deposits. Under the *Residential Tenancies Act, 2006*, a rent deposit can only be applied to the rent for the last rent period before the tenancy terminates and cannot be required or used to cover potential damages to the rental unit. Any additional security or damage deposit is illegal and the clause is void.\n\nVerdict: not enforceable\nSection: 105",
+ "finish_reason": "STOP",
+ "input_tokens": 195,
+ "output_tokens": 109,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Hnj3apbhELCkw8cP_Oe5iAs",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:42 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "In Ontario, a landlord is only permitted to collect a rent deposit (commonly known as the last month's rent deposit) and refundable key deposits. Under the *Residential Tenancies Act, 2006*, a rent deposit can only be applied to the rent for the last rent period before the tenancy terminates and cannot be required or used to cover potential damages to the rental unit. Any additional security or damage deposit is illegal and the clause is void.\n\nVerdict: not enforceable\nSection: 105",
+       "thought_signature": "AY89a1-z-35qKiODSo_h6F45gOSFpV8kFhGil8QoMKfjtrh0BTVT5mMUKg99tAK7IsQn2Tf6kMQuXZcmBxRey8t3w1WDoUuP6WZ2Juim4b_2ZKNBRN24FSgahaMfr-Q="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:38.274582Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "Hnj3apbhELCkw8cP_Oe5iAs",
+  "usage_metadata": {
+   "candidates_token_count": 109,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 109
+    }
+   ],
+   "prompt_token_count": 195,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 195
+    }
+   ],
+   "total_token_count": 304,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

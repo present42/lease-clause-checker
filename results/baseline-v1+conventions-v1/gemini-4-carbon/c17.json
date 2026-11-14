@@ -1,0 +1,75 @@
+{
+ "clause_id": "c17",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "5eb91cee2771d60be9a017e29e33708eb9530215c5b84607dba0e7e2a155034f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: As a condition of this Agreement, the Tenant agrees that the tenancy will end, and the Tenant will move out, on the last day of the term.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:09:55.239247Z",
+ "text": "No, this clause is void and cannot be enforced. \n\nUnder **subsection 37(5)** of the *Residential Tenancies Act, 2006*, an agreement between a landlord and a tenant to terminate a tenancy is void if it is entered into at the time the tenancy agreement is entered into, or as a condition of entering into the tenancy agreement (subject only to narrow exemptions such as certain student housing, which do not apply here). Because this termination agreement is made as a condition of entering into the lease, it has no legal effect, and the tenancy will instead automatically renew at the end of the fixed term in accordance with the Act.\n\nVerdict: not enforceable\nSection: 37",
+ "finish_reason": "STOP",
+ "input_tokens": 192,
+ "output_tokens": 1100,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "k273auj0Etv3yOgPmbOE2Ak",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:10:15 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is void and cannot be enforced. \n\nUnder **subsection 37(5)** of the *Residential Tenancies Act, 2006*, an agreement between a landlord and a tenant to terminate a tenancy is void if it is entered into at the time the tenancy agreement is entered into, or as a condition of entering into the tenancy agreement (subject only to narrow exemptions such as certain student housing, which do not apply here). Because this termination agreement is made as a condition of entering into the lease, it has no legal effect, and the tenancy will instead automatically renew at the end of the fixed term in accordance with the Act.\n\nVerdict: not enforceable\nSection: 37",
+       "thought_signature": "AY89a1_oAPDYp0mKT3oAxenZaN6Nn-izXpPl2RVsw49L1FdSGpC9_AcdsEFOjcSriSUmcg8Nmtn2_AkGJkpdAA1EsW5udEYKn1xibI2AJ-HlsOeFMficbFJetKF5Fvb4taujzFzB48yOd0H8wAACAuMv_bs6gfENEgy1jDpqHFZsTdUCf6EDLR_7Nyla2gNPtikRdlP-6Bb37i-mUBse-ObJUKspQ9pEzIF4d8ICr3Oo_FAACslO3J_iBjFS66WrIK9DeXnxaCCQ3yxBEsAN3kjXRNlTYLVoQArVx6wtaHy2mFgqQ---YPdzQwD1l8UepzfbpGp1lmgXK7_fp-uszsA17rI2VBtXY1fagR0SIT5qyekkNyMCOCgPUyQzEb4NfFk1kAPnjiKgXK9nqm7uMsDP8rTXEj0YNXKP2jwkX2zR0pHT4iIAhIhixxG-H-zJfWXuFAHhgwz7haIcNgOEIvubcB3AjOax96NnpfJl3oohlZF-IoQuPuBGR7IpIHAoFG4eVmLa73TMEuyiKz0zBUOHV4Ba8F3kQl-HdaXErJiGxet8505IvK9ivBcZNfZvkFfMHSBQfGaj3Gv4i5gTmmJ3isgGwYRtclfOPRY2zE5k4HmoNlnajpwME_UGlxayzMo5-dNxcbiQQstCg6UdM9JHMF_1P45NOlO0Y0vqyV-eLqFQNEYpvdcFtLNbc-t-opRLCvqaRe88V9di8_IZ9wuDBoLaHeKi5BqQZssJw7FYPteFhwgXJAgVLOrtCNGCJeFcPiz9tiLWEoxVQ35KC12UwAumesU6GqB25QmvlFcPQkoh073FBDeQb8qWJ4z5CpQR7ad2HRlg9JT68etm3u5BZg5bDYcok0OwNHLl5muSF0InPAy2pTRCTz_e2gwgvhGpp5YNuYAyO6E3UEbwec2JPDw3DP_VF5x-dw-nveDHPds1rEg-Rc55J83q1wxKhBm5olHrfrhsbVOXOKs5ajiV31hze7soC6svb0oRdkSoBTO8W6mVg1Jmad2mhjK6iyK4lIkxH6QAMbepI5h2krs1E-QOw4oBtSA40qdOiLK96WBX9ikc1wAmKW0IS0E9_XvADoLDyWYmr01VXOuj-YrjJi8o7nUdQkW0VIYQortURXx-pZOhn5-pkdLMXSWMzqJYaArQQbNMtzGM6KZRUSY0QCdRGSYxbtOXAmNgxGD5cXmK-vJbVJlAs10M48CNA519MrGY27vovpBW1sAvoTYFluye7VnY304daVJPFHeqnGzWre1j8rj9n1xqzdu70hIpXxxj5_vGanQZw_7nD60mR7sc3MDtSpzCHLIQXbxnIh0DXurmhh5-_xQUP0ETN1cjGC8bj_IVy4NwknbOfK182Dy-ugQ0ea_MxuK0m25YV5Q839AZzKvm6BnPa5KgdTN3EIXlgiaHZMDZi_d8ash3e2Ai0zNbZqV3Awa3d8SM39k8rbBgYXX3BG1TBwQWuwMp7XHYxZ8hGBHwXdjYKeMzATWcD99sUlg7AynrHUf9W0Bd0waLjadHzvrdh3VQYjgbKUQsY1_4rB0ZrxlnWMMyhlQz_M9kmIl728zzn6XW0jL7nIvsPtblEptsvWEl9__O6CXcpqQAnsB5NJr2myURwumsSBCmhlTlAQsLeZRy5fKIpBLF9YTZ_6ZsmAEmQO2StWaLdpJT18BgbSZfPnELpU_y5agqcaKdL_pUV05snc-a7WcAFr0CTu9MtxDOtwMyr5YXwnD8y2vCbute9R4xV1srE3ZWFbkg0HTP5l9BfhM8SELtWZumEJMWpPIPr0fmpU_z1hfp_hxbk3EGNsK2IOc7O3LMxjx8nll1MCzSvXKTowuNL9KEEYfHP17ctr57KcbxcQDiB9RDa2QkxbK69ENMd_6MQ7-U9kLpwJEKzcfBXQV9x4PKEoIUggxWi_shmB-rBD6Gv80y-bnCrJqJ3lfC6jMuuJNYxzURfB16mq9p8I5U9Wwvv3gmsQ08hMYV0Z0KsEc9bEqNMZJ44dS-FgN-GqHW5CJttqB-KC9WmkKrn2BjSugyDkx7gazWW0D0Rn7BUIsDwqQmIiesnRXTTn2PSfZ2ntdOhoCgkZ2ouobs4k8aNtnt2VjLlcel_VBSG2iMZoj-V9BVeOjIDoVRo3Cj5SpD4xIdtk2c8wmiAXV3kqhxzI5wkCQLRcrjq2-C0HETPdwWmjoD94P-_-DpROgVl2xa8L6RXNMWgMXXe8sLTkzEzHBxOcoiq8J6EwSS46uB-4UtDlo2No31hTvgZ4NB0nC9rd43BFEBwt57yT_nHmSdeOto33vdbrBUMeTXXr5d65-NOpNOBEDlUEW5z1ieRCy7zYXWZquRMf5G_-z5YwG03lt_lS7y6jtoSi5_maA_TjCN0DObgqB1-5mciHw2WZaNsbvroszY2NtdEIvRTAVNZ4zyiJNGgeHvZMWZWMw5_LAALkuNuVb3LrJTb-2WNJzd4M08sFmRytt9pe5FCqHT-VyqFZoxCLpXvvMYb0zwBX96-7PIXnYU3VCSmtMe3OcaTN5ZiaiTzURgUlsiiTLhF-_vYc3vUOl5ltpa3m-RoiozgnGnEn-cUQGknHOLRtHZn5TOjvaU1AZl0SvjisoQYQ89n2zO_X_R5N5tuxlw6N02vu1-uD24b4vfYI93lIFiMabbakFyFklvHuHi0FAGEnn_QHtL95lNcSY8KgTXJqdfU-kMSkpiYGA5xLQ3vIbjxXwJFsP7GO6B7ifdJ7OUI6s066ZGzTgBZSS0ghoG6TmsLYtixoCKK0YlllMGM4A4TkLOZrAVJglGrmPVxczB3Rbgyc_kpAf3aljegp96XTccFXPI0Ow8WNUXjqHwzOVC8Xc4FxCfSx_QYeSkkeDJjb1KXBO-wJXhK7sP57fRthhZq4vm5Njb_0WqlO7sTqArhSacufMQsAj1EAB5YEUxMfcAeDP3sFYRre7F5rKQgfLS4kdu3kC57vf4K-gEDs7B-UN_-X7lCZF7to9iLWhQLGXghQFVr30mKdEtazQvWCyFaRKatrd0ApkuiF8qVN2QgvG0YBXh0Mzdu1kM9r_ooCMcVjsTWZOXn_DSq0nPmv7Shx0A2ifgBhEgjZL6lNEHJLIMsqEeRKgzi6x7re3qNXH3a6fGLn2X2DtiBkK4ZRcigpnMRxCTsZu0KSh1WvogP47TCsL3F24W41ZeX2TWrMZErQedYVsVQ5QfOJ0htQZIpAHgcBxngMmei5e1g40IJhnJ9mxtXlp6zG-V0JjH6KXM9gyIabt8y0-hIkgamgWEG85aMg9XDx-GLd8rQX8oF7rXziq_JMVnkasDoMP_WDfc-MSoutpryYrkd2ROiNQodkVVhF24B8s_Q9GTh6PgGVga5Sn5rFriQTP74DosQ5NYoHeG0jPBL41MfbgnlXFRhyT3OtRMJldY_z00RLh5C1X_1PMTddBgjLgq3vYdygWMMDNPldbGfj_LE1XS3zSDF_hKJ07F1B-lUyW0y7Ie6VyvrQCdNoDAsb4droMmYayDH-yXgoauePkevU6D2yLsOqn4rMOlnaBH4unadV5MAHKtTU5hrZvOvjwBiJnuWTdVegbxdDU0_LgZDrQCW8db3WtC_-i0vsslny5Z-HNN9mW62ADQZfpqt1EgENhTCrci-BNHQ23TshIQWTkkzrqE77GoaDQm1xrS8P0e8rg1kasfa7RNP-rMkPybkCNSgAUQXOZTXvQIDvnhC0nDIrzg9E9pEDJCWF5MCRAus2lBJrNfb3DQ_nV0Oz2gJJVTlE2OQN5pHLzIsG7yL-AYMOulTImib1GtD0-DMHljWR3Dx96L6hwsbAemjqUnm3YpA2so968iDrGl9xIiSjN-XLU8eoIt4LdtBMM-6XtuA5YzHEQ_oktcJkvDLZ7MotBeSMX4rJUNYCqe3SyfxjwwYLTudqYD-pRLLFNVPRxC3wVDvy-tUZX6mJ4PsrWgmnWTqdqiO5xNOld0jlKxYLkoa8U20Vax1q9zEWpFZxEnZ8YPhx_UEX4eOkHKYGJCSQ_s4llDct2xlMf6JaFUCbupMcjXiud1OXXUD5FUcXFZi2srfnDHo70hs6YnLdquqMA0M1wz7rLFtCf0cqBSZxWeK327BQTpv_VO3tdL0IHunKYcamzzxfigBZyfMoxMFkVh2X2qV7UqyaYnVMPcWTvzh7bMjzkHjXyoBaHLFZZ0MSlAiiY4jHnSYYqxTCK5FdeC4R2qZZ1qh8KQ9IqBAJaWdzc3MCu_fYC54LTQkjoWh016c9R5WcOL1QZgJksYsLXDLntX3WbBEkqvYKlomTU8VW3AdaxXVOKz6Gso6r3eHLQgYEqg57g_BAqrrTYJVS9wUYasabHOCbJQaHD098iPw6Qxrh8DQlzfdGC7rIB4GqiqgSQx5kg1MQFKj0ESeyCcBgEpTdgj7s6Be06mzCgpk7yGIbbMMv0P8RZcXEP2evf8iJZhmbcH70BjOH00uWnKf1PiCAaxe9AX0AVkq057poSJ9265GxtjtRlEUeCdRLgY5v6tfG_ndTlSrK6GdO4anzvAAaT8OvOPsxjKI1JhDXhWjEjylA008a0AWS0x9WwtF15ewObyOB_BMrvc2K0gh4UwX9KqiMUh_AwvMYIYV3sjKDP59OkUAPITsRXz-jqLth3r2lCF4oY3evoFTGjmQYmRRULyD1QOjymXUdeyFXq5Rz-Y7SCNyk_pP1S9QTypLjnE1R1hhSJ0rvXHJ4mpI_cz6YUVb4YTpmLyXO9m1yuoTf00c2Zu0vjvmSFlzSuIxuR3l9YDezEr_JPOBhpHk1iO0JuO55w4rkHPUuJZtvpa7_1YqcnFlrlbXLYwF3IRRgcZD5RF7OEhkz4PLtD7iS8lEztmXid80ha9nSzxnUdDd-BH4I8W3dUPDJh6Sk9gRX90aF117Mk3QMT91wqNuPfKTkgpx1gMFvdmnAp-YLiW6J0dF_ltsD1EwxH0r-GLb5rZcf_ftfvCEKQJWrqWqaAfDq85BgsznYc15MvanstnJMyudRb_X7HndcKIhESGZ8c="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:09:55.309864Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "k273auj0Etv3yOgPmbOE2Ak",
+  "usage_metadata": {
+   "candidates_token_count": 150,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 150
+    }
+   ],
+   "prompt_token_count": 192,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 192
+    }
+   ],
+   "thoughts_token_count": 950,
+   "total_token_count": 1292,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

@@ -1,0 +1,75 @@
+{
+ "clause_id": "c13",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ca4ef1f82b87f8de7735ff5885b3232acd9530b5aaba42dcf79001ba93069e36",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord, with its contractor, may enter the unit to replace the kitchen cabinets on 24 hours' written notice giving the reason, the day and a time between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:09:36.290547Z",
+ "text": "Yes, this clause is enforceable because it complies with the statutory rules governing a landlord's entry with notice under **section 27** of the *Residential Tenancies Act, 2006*. \n\nSpecifically:\n* **Permitted Reason and Notice Period:** Under paragraph 1 of subsection 27(1), a landlord (which includes agents or contractors hired by the landlord to perform the work) may enter a rental unit to \"carry out a repair or replacement or do work in the rental unit\" after giving the tenant at least 24 hours' written notice. Replacing kitchen cabinets falls squarely within this ground.\n* **Contents of the Notice:** Under subsection 27(3), the written notice must specify the reason for entry, the day of entry, and a time of entry between the hours of 8 a.m. and 8 p.m. \n\nBecause the clause tracks the exact requirements of section 27 and does not take away or waive any tenant rights (note that in practice, specifying \"a time\" requires giving a specific time or a reasonable window within those hours), it does not conflict with the Act and is completely valid.\n\nVerdict: enforceable\nSection: 27",
+ "finish_reason": "STOP",
+ "input_tokens": 208,
+ "output_tokens": 1221,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "gG73aqGCFrKbnuEPhqml2AQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:09:59 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable because it complies with the statutory rules governing a landlord's entry with notice under **section 27** of the *Residential Tenancies Act, 2006*. \n\nSpecifically:\n* **Permitted Reason and Notice Period:** Under paragraph 1 of subsection 27(1), a landlord (which includes agents or contractors hired by the landlord to perform the work) may enter a rental unit to \"carry out a repair or replacement or do work in the rental unit\" after giving the tenant at least 24 hours' written notice. Replacing kitchen cabinets falls squarely within this ground.\n* **Contents of the Notice:** Under subsection 27(3), the written notice must specify the reason for entry, the day of entry, and a time of entry between the hours of 8 a.m. and 8 p.m. \n\nBecause the clause tracks the exact requirements of section 27 and does not take away or waive any tenant rights (note that in practice, specifying \"a time\" requires giving a specific time or a reasonable window within those hours), it does not conflict with the Act and is completely valid.\n\nVerdict: enforceable\nSection: 27",
+       "thought_signature": "AY89a1-AiLXX48Ba4hr_WYSABzXa22kBNK7hCr_xyz0xEs6fzjh_MA-0SoEg6RAJb0wc5c7eKTBHvpRD5zi8MctXRyEetPKY5CWIl9NxUPj0Ar8MLr6feDQR0nWtzVyiiFhgmqW8sgBC1_DK6Fj29nY1YnmVQZUfgirxcVwKzbsCFZrPO-fL0nk6hVl0qTfbJdg4KybxSCOLDHbOL2AlOAQffiOCOinN-_JOZfdEh7fMG_miARq59V_AOyrjhNghbHBnEoUC6F8R7OOMmbOzg1_d8ULWytK1u6b_GXSNCsVAWfiFWI5bz9sUrHQN7aCKRhbgDqjUmLdK4ysTBNCQ3CJzCr8A00xvvJiDJIvJmd3S7hH5j0QOhl9At4m1TYJ4s2ZiRGlxoayoG1DfUrrSeIEgaoqKelMNPgDiPDgwJUM2ff03T7mP0Wv7XHNlj3x-FitWVwywZl4kIwFf6usStRdb4a5ZDE2FlG74pYOwn2Q9RcuUVr0nHVkuA6eXKE-l4Lr5nP-ESnZJjo896OXwdv6G6nbU04AQACYCamdBMl2Bv-PR0P10nwGGUhiy9eqLj0URfl3muztIN4rdGeyP9W8KyOqbou22cDtNrLumDJANCA0kCHm_j62dfI23w1dSYwcKzE0F6MbfBJybV9aZIiDk1Ssj97zuqrt5w9_3rDSuRlc9o4njs-3fmk5KURuzhcuX5L7XdO7ySp6Rxq8BNM5i5VcD9n1GzjOPbPPSxDdPrgfgTYeOrGTTOqLB35wzMczMGNVopPXmt3p3lqmQ1h_zUN7Yh4jrdsSTqSJ6YxgcMk1GkXOGrNQgHU7EL8_ESxrNffi8F8KmZijN904fzLPomKAGjaPqUso8_N-SAwYhqMB44MDlMUs7WGEth4Wjov2rNrO3QGUNracx873JehCVUskr_PdQiPL0wr6ChHpM4pNRJBWHxaUhkAA6rX9MuRnsmJA-BJWGV8u0fMfQgUGYFXEDzdOrr6yNPG4OcbNjmbKfvEbIwCTUUj00wtojtOhHKyge-aGV0IIq4nWE8lmIqf8sKDXdR493dLUxvXMe40fbUfNx8hBXrOvnjhIW55Lr-stKT_m-RZjajhAwGerdZ2qDVfzCZfPi8nm7yuWSdkRYAultZJGuYjlUFi5cYsLi-BlH1JzMeS_ShYDgYQOJAZNlKUFk76ADhEKouLvO9YmrP2S7PNwhDF_Nh4l-2wxbINuQ9-ee-ACIrBf7MoQCMahJ99M5Zp40EYTDvDlLTM_o4V7rDTT1_stjwf_BRtyzHV2Y0k89wJQHlzBmlrXRuHiLRNwJyXSLZ0BhOW7F52vrtp2VAzLxXHbBhSQZiEOs1OTgkUjI4Bu7Ib9ZsxrdBNkd8ezf18uHC2KxrztYjNx4tkmOKEpu-yLEFHs4nucqRzF6GDlQk99jK_UA6NoY4k_p6BY30tOY2_-kb7KbxEVE1vKGYpYT-FZC0lMpcO_owWAqOUCgtyrSHFE9EGKXqMV0px0P4zCGB2B_m4VpHyxJ1smHqva2Xgn2_pkXKjqd524RaT_xVmKjelez5g5E5eIR42msogAuG7PQOSB3CcRvAfLlBXjwFAHNUro3TCzJKDLSW2Nn3SMWus03VM16eYDPxPr7MnKxxyCOL0ZMqCPDNrK-c13I2tHLZKnwbR6b2_uwd0_u0vJeSkelIlug-M_sjcahs5xHUDaFwiXbA-NgXdqc4Rn_rtdSV0UUbSsRWT0ip_QaHPaw4Z0UIJfVpwItyF4thSfeM3xlYLtv4LggcXBtAT-Cy3EsSiAJ67yEXsU0fN4n6szLWjX9BBqigLvb-affLZWeJNWXqOBTNpza6_e_GaaU_pVcjaftFzsW-BMDG0jabqjOBnXlh5aE7-eLBUxkOZiCj7pzkhGKLgjbaU9ajdhQmsjw0Du2ZKlehbzeo04eswwBSUlN5Habf3-FZ199AyhNqMAmaB04seuvUd1PYgcvVCsXCOmWWQnJV8A3L1b2Arv3hj9NWvpV2AeVEsd5tfkBF__GXxd5cSgU-ew1hlKc6WqvMmfi8IOY0cH48Uyu13xZgFCIpH04jG5OQ1nlBeU_dbjnKi5ceV9fwv_-Mv_NF0_QjObK8aJzzI_iFJVbohKZmWgAc6pHOpXuz_P2RPMx4q46A2kfw_dsV0FAplRKsobs9_bFngPMguXgtU7RihF_S5UknFLFV9yx4V4lLNiFPBcqvJx531uFH3gvB-ccHzwHvuV5DbtIpkDYILqHmsHNqiPs17VJyAkmIJR92_-qeNqzJYtGaS5zuzgzmKyynJR3QCmnXehShrxxktRJE4IElgf8m0xx5SetEC7EdlHr2ag3gC9v-64xfJENims0IVBEsbJVyY5LuWlA4amWT8lUX3R3drOQM8uT3rByLKrbqjz4241yQVVnMHt9QR9tljWkqebmsxJ9ylF0I1xcL2YRd-SXMGRMc7tFeh6vGnr60eu4aWkch6okov8AJkDagGz-pzPV9areIlpxeUKBNCzG2EOwsLJUq6TwCnKPAZueYblmMkEwmb2Ytiw4zCpQGsaG0YpRc_Rdne6mRxa7PPxpl8avsegBErDg-B778Y4yCnN15rk04-I-1I5Uehmqx4aIzYF6G8nOmzFQQbp1bPVRFnvfy05jyNZpEwinhluwo0a5xUannO8pUr4Lp9KGy2Ix0-WIFNTs2h1yrhcIBGM3hGzogHEMrSOgnsugPmve5SyUc63hqgQzd8bn67s3uSiAQuftvog6jL6M8zaccwjl_ln5H3MXWYz7KK4vVIikiAKCfPKIrMJ9jGgP9l4anoS-s-id5g2ZxJqwo_UNNDSOREJOrq3e_b8ONlIlWPyFpxlQ0uYYn6BxFFV1QhFLwm73iNQIKVsLzHGikwEeFDQu1rYI3MJla7SbJdXNtmmGNkUKaJrGoi1q3ro8uTdxbrxvDdVfegjcJnpjqRCsBmM0SNHInjdAWCCfnk5RoFVPmnArTuKtzqgqc9y1aXGtMsa2ULRWeZvDDcX1UJVxoic1ytZfdlRhVtBvLsRxUtFd5pSx3CwHHaUJWXI-Z-mc_27BfISvBfqnDZbgzozLwbjPelwrot5CyTzrygT6ncj4h6P6Gpdv30IDoZ01DaRAQE8lGPZTkPI4_jNONCqLL-Jmc9RcKztqzbb_f3cBrJWIeE10Up8GcPvtdFHQ-mul6GGqlwFjyxKpWAa5NTnqd5dosWqCjm4b5OFTtgX4olEgAIL7jQfWo4n8TcizAadiBRef44WtVkIT21LVwplY78yqIbBRVdipFQNPMSVOYAbJCqFmeNw0eRI-jW7QjWJHMUH3uIPb2FxaW0TVWSfL301lZ8b9Fh_kQp2wQnYF6l7TT6567cSaOvdtrRxt37Ul6QL5TvEqH8EyZVU4iqOJR20gYhgBGG2hngj9cs1dJXmH5y4dj3Fg713rRDJcZ01FMuC7URvFLSljnleAwx_Cvn0HimjV0ZuL199fbmHKFMAYQtf9d7PAPom2ybVQBft2ZM9OacmAC4Qznl8a7hxSdW-Eeq8w0wFIYJq_YjhQ-CS_DFElPkWq1fVCCmZWhgHxZLJN5uiaVAnhXiSsFt5nkNmWnaKs9OCRYpTWGIzoYWocg1W9fmo4iHEEzY7DxpqggsbrstaVMsGrqXZ3Hg5pFQauhLp5rwgxMSFyKo0k6wcxZ3lXqlDs14M-kEM7LhIXTGk8AdWoztvyvwF47cnrdaUGJeivjUCirksQ3biggJNDzFz4DZ6KaH9x8WbJ4_UirgfhS8ysC2uGvRQC0BjLvrQE6a_eIlclvTHtDZSrzdN4MpiMYsFx9rCDbabhDoe_ygqRv9d4_D9TbDxJDIuzVUUbpGF3tbLZ_Cmhi4C2R1GFIgVpaNOMWCEFo6Hbhi9wvZp7q14imZrOpXvV4slP5aRdGUVi7W4L1TcftCLcaaAI_4PHCnH7jdr8JD0qkM0ye0FzeBl5AcAp4_5GJdD06bbDJJg6SwtCYOUmk6iVVrA6M9UL-UhLAsqnNBAAHNWCfz6gCgruQrpTz_qBItp0LnxlsKEzKBmYF7b5w-gKtJm_Adaa6JO_ZYSgY_usrPDVuNhnHdyVy1xJPFpTHTHeetA08UcLHYC0BKx-mFSkwlpROLz9VVf2gc4mneOgADB9lnUceUKweRZAdL7EnlGTKttDg2xe0o9tYAyQYeHMZifdv47L__Epwf6Bn_W_xTRuOzKXOm-Itoe80N6dTwhcU53TFUu7s6soECYfSRE86QMBsC6Cj2hZSj9jFQ7STL8-MP_YgAheezUWL8XLXFlEIVWDsCjZIq2kjmT86jBW2UQFmAJnrpfWATfu3GPPqpw4VFRUmsPP7wVL3LMOQzmsyD6If-Mb44nzFh1o7EMxM9AxZvsm_URA32wmKlp1D6fSuy1Zel2f8aoR00_eqRvkiv0qgBlu-vA4WMHBhqdQcFEWDH67HxwcTADWwpeFY7zL6958cnW-R5NFzAsA-HlbibCw86xc7kdMSo7eJBzh04yQBLk9VyvYORhe5VYiy_K2BHHqzDypJ2o6aKDpn-Jj-ph-F0P1u-XlpJNtidbKvKT_SxxLhrSYyxrDCfSftWOGWm_MdYbJefbpgX2D2CCqmKXY-ErYd8PfTi7MwSxsPYDl_zIrlfHi1qp9iNI04ju_kAdOSqq43Z3bYLguoPy3qJ3RT6wcN9u-K-O_kW8tdf6er_hEUIkfu980QL4jE_3-BHaKJZmthQI5vbUcJ0zEa7ZZVUMiGjAkEVxnNCeXYL1_UZZz7TXvuI5iXOnUY0sp9CTpX0F0vnMqHgO5Pkc8wLvrWz9jLKtKVPFHKU6RhiZ19OmBe95UppH2Bjg8OqkpuzBiEwSKvDtzNuRWZ5BMpXGTypX_R9FRFchMrwPHYYSC0vxgFcjFFUDmeKKKNvMoLTb4nrMU1dukF-jCMVRQKG0aoGQ="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:09:36.360737Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "gG73aqGCFrKbnuEPhqml2AQ",
+  "usage_metadata": {
+   "candidates_token_count": 257,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 257
+    }
+   ],
+   "prompt_token_count": 208,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 208
+    }
+   ],
+   "thoughts_token_count": 964,
+   "total_token_count": 1429,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

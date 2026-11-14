@@ -1,0 +1,67 @@
+{
+ "clause_id": "c24",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1f02763500505833b2adcae883acbecea1e858e6716558a39401fcbbac1333cf",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. Whenever the rent is lawfully increased, the Landlord may require the Tenant to pay an additional amount so that the rent deposit equals the new monthly rent.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:38.283002Z",
+ "text": "**Yes, the clause is enforceable.** It restates a right the Residential Tenancies Act, 2006 already gives landlords.\n\n**Why**\n\n- **Section 106 permits a rent deposit.** A landlord may require one if it is requested before the tenancy agreement is entered into (s. 106(1)).\n- **The deposit has a cap.** It may not exceed the lesser of one rent period's rent and one month's rent (s. 106(2)). Rent here is payable monthly, so the cap is one month's rent.\n- **The Act allows a top-up after a rent increase.** If the lawful rent increases after the tenant has paid a rent deposit, the landlord may require the tenant to pay an additional amount to increase the deposit up to the amount permitted by s. 106(2) (s. 106(3)).\n- **The clause stays within that rule.** It allows a top-up only after a *lawful* increase, and only until the deposit equals the new monthly rent. That matches the maximum s. 106 allows for a monthly tenancy.\n\n**Limits that still apply**\n\n- The landlord must pay the tenant interest on the deposit each year at the guideline rate (s. 106(6)).\n- The landlord may instead keep that interest to top up the deposit to the new rent (s. 106(7)).\n- The deposit may be applied only to rent for the last rent period before the tenancy ends (s. 106(10)).\n- If the deposit was not originally requested before the agreement was made, s. 106(1) would not support collecting one.\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 260,
+ "output_tokens": 956,
+ "raw": {
+  "id": "msg_011CgwRE2hebkMd5g5D6fV3K",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, the clause is enforceable.** It restates a right the Residential Tenancies Act, 2006 already gives landlords.\n\n**Why**\n\n- **Section 106 permits a rent deposit.** A landlord may require one if it is requested before the tenancy agreement is entered into (s. 106(1)).\n- **The deposit has a cap.** It may not exceed the lesser of one rent period's rent and one month's rent (s. 106(2)). Rent here is payable monthly, so the cap is one month's rent.\n- **The Act allows a top-up after a rent increase.** If the lawful rent increases after the tenant has paid a rent deposit, the landlord may require the tenant to pay an additional amount to increase the deposit up to the amount permitted by s. 106(2) (s. 106(3)).\n- **The clause stays within that rule.** It allows a top-up only after a *lawful* increase, and only until the deposit equals the new monthly rent. That matches the maximum s. 106 allows for a monthly tenancy.\n\n**Limits that still apply**\n\n- The landlord must pay the tenant interest on the deposit each year at the guideline rate (s. 106(6)).\n- The landlord may instead keep that interest to top up the deposit to the new rent (s. 106(7)).\n- The deposit may be applied only to rent for the last rent period before the tenancy ends (s. 106(10)).\n- If the deposit was not originally requested before the agreement was made, s. 106(1) would not support collecting one.\n\nVerdict: enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 260,
+   "output_tokens": 956,
+   "output_tokens_details": {
+    "thinking_tokens": 447
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

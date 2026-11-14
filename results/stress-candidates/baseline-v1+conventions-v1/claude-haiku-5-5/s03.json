@@ -1,0 +1,67 @@
+{
+ "clause_id": "s03",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "9fac44bad34050e6453e2742c030bf9013ec4054c7844d85fccce16233e3bd42",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: A prospective insurer of the building may view the unit. The Landlord will give the Tenant written notice at least 24 hours ahead stating the reason, the day and a time between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:04.283189Z",
+ "text": "The clause is enforceable. It reflects the Act's entry rules for showing a unit to a prospective insurer, and it meets the conditions for that entry: written notice at least 24 hours ahead, a stated reason and day, and a time between 8 a.m. and 8 p.m. Under section 3, a lease cannot waive those statutory protections, but this clause does not try to.\n\nThe controlling provision is **section 30** of the *Residential Tenancies Act, 2006*, which permits a landlord to enter a rental unit to show it to prospective purchasers, mortgagees, and insurers, subject to the notice and time-of-day conditions. The clause tracks those conditions. I'm relying on memory of the section's wording, so confirm the current text on e-Laws before relying on it.\n\nVerdict: enforceable\nSection: 30",
+ "finish_reason": "end_turn",
+ "input_tokens": 265,
+ "output_tokens": 2205,
+ "raw": {
+  "id": "msg_011CgyckyfjqukqsvePJswA9",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. It reflects the Act's entry rules for showing a unit to a prospective insurer, and it meets the conditions for that entry: written notice at least 24 hours ahead, a stated reason and day, and a time between 8 a.m. and 8 p.m. Under section 3, a lease cannot waive those statutory protections, but this clause does not try to.\n\nThe controlling provision is **section 30** of the *Residential Tenancies Act, 2006*, which permits a landlord to enter a rental unit to show it to prospective purchasers, mortgagees, and insurers, subject to the notice and time-of-day conditions. The clause tracks those conditions. I'm relying on memory of the section's wording, so confirm the current text on e-Laws before relying on it.\n\nVerdict: enforceable\nSection: 30",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 265,
+   "output_tokens": 2205,
+   "output_tokens_details": {
+    "thinking_tokens": 1936
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

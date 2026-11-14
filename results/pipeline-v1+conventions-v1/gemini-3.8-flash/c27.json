@@ -1,0 +1,111 @@
+{
+ "clause_id": "c27",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "f66a0cbaa5d0055c3118d10a7eec68549cde9d4aba6089281343f1c8de64d0ac",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Tenant may pay rent by post-dated cheques or by pre-authorized debit if the Tenant wishes, but is not required to use either method.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:17:06.398360Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"108\",\n  \"quote\": \"Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to\",\n  \"reason\": \"Section 108 only prohibits a tenancy agreement or landlord from requiring post-dated cheques or automatic payment methods. Since this clause makes those payment methods entirely optional and explicitly states they are not required, it is permitted.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4415,
+ "output_tokens": 580,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "QnD3at7KG9W9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:17:11 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"108\",\n  \"quote\": \"Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to\",\n  \"reason\": \"Section 108 only prohibits a tenancy agreement or landlord from requiring post-dated cheques or automatic payment methods. Since this clause makes those payment methods entirely optional and explicitly states they are not required, it is permitted.\"\n}",
+       "thought_signature": "AY89a1-DHPt_1m1SKS_mXCKiXY9fLajXM0b2ae6U1Q4HaBUNtCMjlxrSxNTXNVDamDMUHSXnOkCbgd6KSmvZY-yO76p-bs2comV44h-qo-PBDO5Ar0LH5HokgayXBi6Op3NpwZC09BH-37fQaPZVG7bbbsa6c9o43zq4XFB6bSazacrF15Q9p0olCNH1zLpJDhgottcG20xYY00v_qTJ5QTFKOCokFbZBbCqXTcY7IRwpkWKfn9-bBZ_GDpFc3tjKbIpY0sPokkriqTKQ3FuN882NNm1-_AHTJ2yOgPlRTBzaVh_LvHuuFjC2CA8Haag-fjW2xyDpkgcX-LioDM4d96BX2azIsOC7zEvnatBT-uP3xY85FmeymjMDX0TqumioVqHYNQ5_H85OulK8pT8kpsC3mUwJ3-mD4l1SHyEIZSuMxaaP98B0GgXoaq6U2FKqGwwbv6aPZPGTYy9_33L1zN8y6eriHxAH4hSHRlUp2ALMfbRZCcvno4bbMjsY_aAAdNuyI87nHN-f4IC6seyq1kkvBM7I9skxdIB3dX5RnZFxc1r_YVXmpHjXcAV69a_x7TbozSu79ygADHZN-H3k5TbmMjt2DhpMuAUBKwQt030CAt-Xujekfayhc2o1rsDrZYiNI0Si3g65Zk8d7rn8jOuu4yifCzHJ5NtKhZYal4Vvrixb5X8Na86iSUmUMw-aD1vL2vSZCquVdWUtVRI7-D5-8pjSSU75T5kKN8KBOqK0mjP216h1Mse2GWkKnC_we-gY2SPbYaPaQdF2A12TZoMkAhlX3NXo3udsifLU1TTW2oGHmZmPjirblJIj_Ft5RJnj6-yOF_1gqvprhtLBfsi20tabOvjQ5NyQypagI_Gh0HZnvUsGPhc6E9Sz1hmfbAi3tMu9M_7wH4Q1LbMDV9Tcpldl7Tw2WwnIQy2fEwmzzTYx59cKAQBMUoSUEc0GBaTtACYTQcapWl_guNPQhHsofjuRt5cRrrA1uOSvB8iWCIwB6UvWF84LqbevVmq9z1-6T99ehUR8D_iPwbc0mwxv8Ugl6C-SLO7IOyW0TaHhY6ASU5sBKYWEd0Mf2nSBKXTZ1-hFuDc7X6EGtgENSYAErj08pOAwwXn5EUDYNPUTw5boeIxvNyKrxBC8F4UvP2IrilHYN9rIqGMrJ2vVOl8sTu05BNZPmuoOHJLSweC7xLYPf4s6h3Y2isbVHep_vyUUsj6BEqyTq0QYWbcKBOACPOmb203yjGYJwGdd99fmAKHw3INNWdO4did_VH1tPjYiJItfu1plnw6dHO772RGUm883t634nriYM9yRsuOKkOeuppKM3wyg4ODQGyGXLXIenmGCmQup5iqzpSs6Hn1vt7kfItUypM05s-dPRTWxpfzZ9rXRtYLaUcb1yano5xnXSOdJlMtF2GMHDk1D1-3mEhv4nii7Eyu0B9mv_cJKNZk-P-qklgYiVLePBcbbmZJ2QI2bL3Vo5VedvMbwMEAvcKhGn0nNx-WzDNc9UMQcQJ6MjZQSJs6XUPgPtwnM_E8rGOhlCWwzzdaMcWfJ4nQbrmx1kq6bfiDVdTE7rOOv4ywrSgNpzLnqi1nGQIJA3P1xUPzu2pOEGL-OHw2YrIfUEQ7Uh8cYnPJbCTHPZzzzDmK3CLizPlHS4DMKSLZ7VVIVNRiULK70PNgdVObeoPNbNmwl1lVfHcaCKPatFhmTcvXhYXTSe2vVMPnFIGd7A2TEuMnpEZ3cESPiD1RynPUpvQlfcLeG-lfqan9RVua9n0tyYZ_wioAhL5cWfdckfkYpny1Ch1gvKQD6MRxQShChcFS5sEIURr2bGes9kbNJlVVclChlmB7rY1mylvQdhaNrepZ8Y5lytSpUy9YZqm4iL2omKaWZUM5WHgVbcLvu6Ozgg5YHPy1aNrc-w6HX8-uIyp4l-e7p2xG_nRnnaaprFFruWihLvnf9R67pCnJMTzrGidOLD56D8Vtfw5PYbAMyeWf1MgPBtaYlGO8Fz68dXNnl2RvzAhulGTTVe_MHqJjLn7936gVRzQNNyBUd6vfpRjP1ccK4d7lfFN5fw-O_Q53fpSwafDNxOqimIQmKsTKoCQ8SM4-HTYW_I_vmSi1k0SiWpet5eO6lx0GyEv6jMZ0Sk215jXUPqeWg9gQbxxDtyhzYO8srHFjfO397123ikVzmkBmlcqRipOhFre6p6rioWUx3sJvYrhkwoSAD6IRy5llCgl-dkLRAF5Xd6uddWgD6uVh6EaNrQK_BWYx4PCxh3qdOajrq-RXtjZL0hTsE24OBWLOwCm0ilNHEolabHjdsIsqwn0CsQF4Jxs0iluvU_1FYzi-soPlUr76K2hIlRhtsDZZOSv8sALkMTxOg5515UwFXtStswBDpcYXA_Uxd4iesG4peou29eylGKKpkG8YM7olXWIosdUp4iJ9NWca0sgKbLjn02ep7vtuTk2ZbdGSq8p27TuZqDAwmO1GK83YooZPBbm6JZL6UXIa24v0NQQ8GhO_8Y023xWT4K9zTopg_F6RM4wKagZNg5ayxBgKVD4Jko_EDY0TgSf7vy9BgkMacYfv4b0StfJUH2BkEP-qglgEGG2hBlEnENchoJQm-jMdDpmk8EU9q33Qa_XK29Vq8fGx_6CwM5rNzcvdZLnieXY9qxP7_68WIsAVC4JKMRW14502yVsJVRVAb2tAJm1rxFyihDZ-3MzCZi3TirKfY6NeHqZBHhRE2wKB_LoydLo5zGK8DHTJ7W9cf0XfoZGENDZVOPUP8FvZ80JpbLrquC_0vkyJ5sg9hTHStajKH0URLT4i_Brz7GZTOEz_ggBKZv31HQSHMxPO2GAOS6XLekTxu6HwtFFH_YP26QihIteZmL_W6-PPLDZ4kaZ8zuYseavnKMQ2DG79q6Qmn3xEhW2qLwotMR5b353mKichlVzuRBbEchxgbWlt7GiOGYlvKl_rq70fB0qE1a8mWrnJb1DHprYcKTK34agadJzscW9MAxb4CjI4p-bHyq0Jth8bxq0g5FVsIK8I_cc="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:17:06.451934Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "QnD3at7KG9W9w-UPidKMiQw",
+  "usage_metadata": {
+   "candidates_token_count": 94,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 94
+    }
+   ],
+   "prompt_token_count": 4415,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4415
+    }
+   ],
+   "thoughts_token_count": 486,
+   "total_token_count": 4995,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "108",
+   "quote": "Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to",
+   "reason": "Section 108 only prohibits a tenancy agreement or landlord from requiring post-dated cheques or automatic payment methods. Since this clause makes those payment methods entirely optional and explicitly states they are not required, it is permitted."
+  }
+ }
+}

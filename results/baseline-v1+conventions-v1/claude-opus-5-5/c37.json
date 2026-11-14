@@ -1,0 +1,67 @@
+{
+ "clause_id": "c37",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "b2c9c900d70110d94cd097d4afbe5c4d71229cd5927f4dcc35d5ee4faa767c06",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: After either party has given notice to end the tenancy, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, but before each showing will tell the Tenant, or make a reasonable effort to tell the Tenant, that it intends to enter.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:55.877168Z",
+ "text": "**Yes, the clause is enforceable.** It matches the statutory permission in **section 26(3)** of the *Residential Tenancies Act, 2006*.\n\nSection 26(3) lets a landlord enter a rental unit **without written notice** to show it to prospective tenants if all three conditions are met:\n\n1. **(a)** the landlord and tenant have agreed to end the tenancy, or one of them has given the other notice of termination;\n2. **(b)** the landlord enters between **8 a.m. and 8 p.m.**; and\n3. **(c)** before entering, the landlord **informs, or makes a reasonable effort to inform,** the tenant that it intends to enter.\n\nThe clause tracks each condition:\n\n- It applies only after either party has given notice to end the tenancy. This is narrower than (a), which also covers an agreement to end the tenancy.\n- It uses the same 8 a.m. to 8 p.m. window as (b).\n- It keeps the duty to tell the tenant, or make a reasonable effort to tell them, before each showing, as (c) requires.\n\nSection 4 voids lease terms that conflict with the Act. This clause gives the landlord no more than s. 26(3) already allows, and in one respect less. So nothing in it conflicts with the Act, and s. 4 does not void it.\n\nThe landlord's other entry rights, such as entry on 24 hours' written notice under s. 27, are separate and unaffected.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "end_turn",
+ "input_tokens": 290,
+ "output_tokens": 822,
+ "raw": {
+  "id": "msg_011CgwRFKn6HG1tXbv1mdAhp",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQS0AsKEAgTGAI4AUIIdGhpbmtpbmcSDElCZGuF2asV6ZyUhBoMC8v5MbG94UY6IwyFIjBx3wYJwkC3DutiuOCi9VZAmsGlIeyXxlEvAB30COJRTGfBpnIhJrdIWJFwo8wMZgMq7QqnJrMekc7PqkHmDGdIzrYbK6va0v9GvzeTidHwx0IYEtZF74fNA+NeH3d5ysmiCgsF312ICUv4wQWLYGMViQYgajHoZJebbmYhiQBnrP1uuJCcHnK/uf4yU4vGwemzdN1AF0CdLuUpcKF+Et+0zu9ock3QYRJetBeM7e6wpENGBZP1PsaFp59XnL5wWpC+u2vv/z6bFi2DQ8XdQ7wunA0uqIIACBDJt5pNWSRslVtBdsIor0m3Gj+4RjITde/RCmqRJ3B2zpNHoVJ6Q+e6SA7H6LUjK7FkZoFxz323x4qHurwX9EK/d9ewy+yxuHp29DPRW/vQVQxydx8ga3QODkwCH9NGiyqxcP0eciazMLXmmzCJkrvwg4NGSChgKv9m6Wq8wsPNdooOddwvTvf4gxEyHBXBXOBSE/xlnd6gl4YKeKv/d/fSkdByzdqjEbLH4kzE4paC5dDD/0ufiGRp/qR0WP5qcpfP/sWqtTeKXi2ySteLlhRLosWx+cA6bElSkLvo2C/u++NiZe9aMWv0QnwnYsLiZncVdQ1kNo+SP5gwYFswBE9M0v1ldPoArintI+od2GDT3tGHnA+5sms/nsNyOs72K7nice9ZWXSytYOZqaE3lpdJZM6u4WUWoo8kqqnI+hijQ1siy47zRzSw223MBGAggI5xuqlLak1YpkSVMAkC9H8kfxdfV8bosYj0vMTW7T7VGuaSKF5dEKRGXFrHb0c8KVWYYdLXAnvItqXD02WmjB21bAh5tp7GDNsnpBJFsWEDKhyeF8nrbEeswvZEjkoG4EKx0wTE/h7wI+xOOg3eZ45XZ6KtO1bMj1hOyQBuavxL4KeHEX0v8kPZp3WTvJCiV8QfYFGlsTckIIDutnJC12dClHJRWeC1AbtA1b8EI/7vrGQmxMHUVFStlrrnB3xM+TOOL6GyS80GvUls97yPwhKxYgyjB7B7Ph920r80Z5+w3Bqncs4j5IRO5yPe6+kOfQ+Imr97+Ox2x8BsFd9lI4P/m/WhQ6rbBFhTLqG3sKk8zGLws6dKt5NahdlKm3XtOP5ymGI9AH/88/wIr/bFSUorZGqqI5teyvO/k1l4hvBfha769itQQNyZajIFrVhTNtjMGKTXZ+ahhH8avZHpy83AKjXhMsTVQG7HlsGjh1cT64e84w4VjqpQOw93r99aDMK8cZZsMhJxFTkHtKLzkkz015A/W/ykATaJ+Qmb6+KhtqR3jATXul34+LV//nb5sBpIMyQ8FS5d7OccZv2GKpQr+EjAETg5+tRmkwUd+ZaxxYYup/Ojfbru1SZYU3v9L4KbA50fsbiJNoOkh0T1hSrfLzftZVoUiEte0kzIPPNoMEw6Ed/ke1C8PRPGEiDm/TEKs9icIRPp3Ugb25ZxPki6Ie8XSrDE/r4YvaXny0sPiobjF/VqtEk8mKGVcUwgfBXRZO51Kclb73DO9UI7K3kOSMDcm0YZXfrFE2crZbIDNoyYcrCD137bEqg3eAHGzXvq9D2f8Wi8gS33hc5BakKbJPHimfUz/CpFpy1an8FDyrASuifE+BdgV43gDYI+oYilaZle4nD2ne2j/7/I7DkoqBw5e+TRABuVwFRdiq5X9zLWKsuvqv9fwhcxKC3UEyA4FxWQR0FiNCUKx8Wymws/ZK7hpN68vpz/s1XGIqc5TamIg3O/1Gp/Wbo9nubsU9ONr7jrdq7+lwp1YwC8U74GRaBOr3O6mW74YmjxbwGBroHRSuhodeafsVhQTMJvgDzUQyo1FY54S1ni3pqBk/AnmyuCFCc/Qpiu2lfnth9bFnL6fDIG3Tn2ah6FyLGLNNBW9YA80H6zRyAo2Zv2DaZ8BaoOSzxYf+kYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, the clause is enforceable.** It matches the statutory permission in **section 26(3)** of the *Residential Tenancies Act, 2006*.\n\nSection 26(3) lets a landlord enter a rental unit **without written notice** to show it to prospective tenants if all three conditions are met:\n\n1. **(a)** the landlord and tenant have agreed to end the tenancy, or one of them has given the other notice of termination;\n2. **(b)** the landlord enters between **8 a.m. and 8 p.m.**; and\n3. **(c)** before entering, the landlord **informs, or makes a reasonable effort to inform,** the tenant that it intends to enter.\n\nThe clause tracks each condition:\n\n- It applies only after either party has given notice to end the tenancy. This is narrower than (a), which also covers an agreement to end the tenancy.\n- It uses the same 8 a.m. to 8 p.m. window as (b).\n- It keeps the duty to tell the tenant, or make a reasonable effort to tell them, before each showing, as (c) requires.\n\nSection 4 voids lease terms that conflict with the Act. This clause gives the landlord no more than s. 26(3) already allows, and in one respect less. So nothing in it conflicts with the Act, and s. 4 does not void it.\n\nThe landlord's other entry rights, such as entry on 24 hours' written notice under s. 27, are separate and unaffected.\n\nVerdict: enforceable\nSection: 26",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 290,
+   "output_tokens": 822,
+   "output_tokens_details": {
+    "thinking_tokens": 339
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

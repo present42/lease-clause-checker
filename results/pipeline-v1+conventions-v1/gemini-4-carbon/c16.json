@@ -1,0 +1,120 @@
+{
+ "clause_id": "c16",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "4938d774e186dfd34f104e35388742542d1838b07501bfc42da66e5c056d874d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the Tenant's dog causes undue damage to the floors or doors because the Tenant was careless, the Tenant must pay to repair that damage.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:38.445410Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\"reason\":\"Section 34 makes a tenant responsible for repairing undue damage to the rental unit caused by the tenant's negligent (careless) conduct, and the clause does not prohibit pets under section 14. Because the clause reflects the tenant's statutory responsibility under the Act, it is permitted.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4538,
+ "output_tokens": 544,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "nnD3asn_HfzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:48 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\"reason\":\"Section 34 makes a tenant responsible for repairing undue damage to the rental unit caused by the tenant's negligent (careless) conduct, and the clause does not prohibit pets under section 14. Because the clause reflects the tenant's statutory responsibility under the Act, it is permitted.\"}",
+       "thought_signature": "AY89a18sK7Lv81tLSnEAM3mSwgVEHddxdAs99gAvkYavOkvGg8pTYrisWGBdi3iR-0AqlWPHvK0BPiiqBAHqZxszLS7ZrfZCzwAPA1hSjz-qMlqLwbw3f1JmC0jCYqZ-jlXRTUzXA9l26FmeLtSJVLD1Uc1NsYfoFTJYexbUmoH6c4OR47uR2meSbsIcaXUF7jDReS3r9Rrd-z8LGFRFK4x_qbLICVAlgIJ0UZ1RNzYAqxRGlwdcb0pn1Hg0Gfssg9Z4yu-Ryx_5YI0UYu0tDg-fcxnZ3mFVX52dh0HP_0hajRHBQoQcFi_PT6ErhVryHUTRtaHEl7jeLRppeJSYek4-OvrKKsyiI1e5QBrAtg23mP3lW3oLwshaQ2pxKWKL4G_XO-WsRHVIL5DaEOdvguedYKu44HzXlWIp01KJvlGEfSKePq1sl0pbiKJAtIFJ-UlGSbL1V0kuMuRLP1whiDBeXvudZhMj_Ij6juRbE1A4fYjOIsOfz-XkAxVCbWqjUeplRGbWx2uNSXZDpI41hxk5rePsnPovT7dvnfcB24rmSsCwKdl5cd8r8278UNKjOYme8xENPUg3kcz9of_ydfc3yLbIfjx1z1sfWbsGE0Lpoqve5J22e5pfCJ1BdUVo_DZBDPMxNWdsJd5m6WM9E9XBBIr6jCJWaqheIcJOfnIJAGa_taR9nameYnHZwo4WKSug-0PTvr9RhoaGHJpel5K_S0SR_b_4UQBgPP5Z2LgIN2Q5b3r_syAyDYllHGy-OwMCC_LhzK4kRgnQQ-Oq_FxgAaTqTIJoCGlcDra941BZ7Rnbr64--4ETMMgFG-Aqt-M2a2pNy1K7eRVbbg41ZXeY3Ah5aRr83B1Zv2DbHN8nk_w9a9sKh2-rk55jmc9gvSeJRay0qSWrIU-mKRvo5sSeCMkSAsxoqVj-8YYSwkcmA5QheslxxXM-1D8YHu7qHjnF1FKIW1IUkhrCXMz4OF2aIQXB80cgpf6kzHGu9lqGjihx4-3N7bTKCYRHX1lIPwgDLDVKzfCP4wE2ds2EawC9vm48fQthIcn3p00IO1gDcN7DmTy7DxLbAy6lyn3GqfQ1X4nbCtgKXRQJkEdm3ulomVgm9AYXJZfrvimkrd_R72BGMRHwHHM2WH7vtrH_edG4prfI-bkF6qB6uiVcZR8n86qCb40AFeVhpjXfXTQSeSHw-AF_g0sg9595kG4jYDUBvgA8IvCaxn8nupAYP5M71KGlQwedsnrXB4DjF5sHmlw1nNe-tc4ZScJmDaCIVQ7DlLVPKaIBWC67xblbdhbGDAhjJ4rqtNTy85JlYcL3cnWOW8N7Lo5rdlGo_6WX6c2SAkQJxmIZVAxbZnyFaEuIihJWh-1o2fjjq5SXzB8BnIvLohi-iIxmD4zMK42pVTva8s0KBThNLrJmBbY9R9r1RPY3378ky3-aLdWCpPhxtppV1770roD9x5OEsFMFwdMaZkKDDs15JQaFWGN57fw-fWGaE4cIbW_U_hp9bvJ7tc7mylaFI9DNyF-YpcQ4qUBGw0iYgcGo7kbVh58fYWvrlXvAxhdUXkexT56MJrUEOmNJhSKjqvSLawijIvkAhSjpowVRXgzoRRuz2wp8MQPuIDBjvxz_tJmLbQMRU8hxk2Xo1onzZ4Qtg7hgqVw7Qz8cPi_UEZ7vXP29eeDADChX-FMYvYHxwohiNedjFZxxsf4XHaLSGL09s7pF6V7L5MjMTWNSSUcPhJhQQRCUi5ExvveSYu_UpxTFqrOf851ofnSgXYtMSidQDYkefUDRWXgrCiyl3u-zP_a_avlJn6FToxrl9AnXPp_4AilSJqHgzCHrR9j1u_Q2BazWsL07iBilzn4D5tWqt3Nb_yDWaZndO1In7dYXV1jbeM4D1PNssDjzdWMQGyhvbjUb5keREDZLMD0CfXFjGIfQePth5yQ01mxqZ8HLEp5VJsjq1kwVIsAb3GRo8ktZB1BkZK4c4N_E6SOTPn12bVHm8zfp1s47DzaLea127Ae8cu8ToKy9rYqgpsSuRWSA1gOXiEwwXOmIlyXvaNSac3dCAlGk7EvzSIewoMKfX_19c1KlpXXJBpzxaYHa5Hxq37hUY4AygcVL11qf5Mel3HK2bXWBYfPulLV6jswYvUBgVXmzzeaV9vg7gz9BbWUPOasgJ41KNyAJ7UK0pQVg8jB_SC83WaFbCKsP1lBjD19HUf9yArpgTsgc3KuMU-p_UGTgpplKdZjjv6Fd3kCx3QtX02pZCxraFoDxe3twSkNhcFn1EGzaokHIGDLHh2z8trfdQqSp47nnf4UxCeQqkDp-EX0w_6p9wmSMrUC6ZC-EL7YxbQ-uD-O_zqPIG-8OliX_gJA9orRxlWzN4rdgwMnKmp2EWQZPTNcdIRbPnXU8jzZ7hHZawJDk9LUM6bCfSNxITfWyPurnsuw6dmA5m1nLPmac2rs4Q6BfbEq38WRhDHtX3MjqQL5fN98NrML_-VFyOdRKTuMvNXM1XBAyZUtd4AdgTxIji2QorqOa3161cSeRojLpAZfHqP6XJwDWt2Z77uCvzVyv6yIzbF1LUF5pk2fGKBBvkK1u-f2FptVwwDQ="
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 299,
+       "start_index": 45,
+       "uri": "http://www.westca.com/pda/forums/op=view_topic/t=312051/app=weixin/lang=schinese.html"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:38.491465Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "nnD3asn_HfzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 137,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 137
+    }
+   ],
+   "prompt_token_count": 4538,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4538
+    }
+   ],
+   "thoughts_token_count": 407,
+   "total_token_count": 5082,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "34",
+   "quote": "The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.",
+   "reason": "Section 34 makes a tenant responsible for repairing undue damage to the rental unit caused by the tenant's negligent (careless) conduct, and the clause does not prohibit pets under section 14. Because the clause reflects the tenant's statutory responsibility under the Act, it is permitted."
+  }
+ }
+}

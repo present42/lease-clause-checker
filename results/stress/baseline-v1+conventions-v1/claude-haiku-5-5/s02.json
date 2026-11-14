@@ -1,0 +1,67 @@
+{
+ "clause_id": "s02",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "3d8675bfffaf254010fa3c35a2590a6c7dbd88b6b44b0a626b2db90784a16efa",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord will vacuum and dust the unit once a week and may let itself in for that purpose, without written notice, between 8 a.m. and 8 p.m.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:13.240692Z",
+ "text": "**Not enforceable as written.** The entry part of the clause conflicts with the notice rules in the Residential Tenancies Act, 2006 (RTA).\n\nUnder **section 27**, a landlord may enter a rental unit only in the circumstances the section permits. Among other requirements, the landlord must give the tenant written notice before entering, the entry must be between 8 a.m. and 8 p.m., and the notice must state the purpose and the date and time of entry. The section has no exception for routine cleaning, and it has no exception for entry without notice in a pre-signed lease term. Entry without written notice is permitted only in limited situations, such as an emergency or with the tenant's consent given at the time of entry. A standing clause that waives notice in advance does not meet that requirement.\n\nA term that purports to waive the tenant's notice protection is also void under the Act's non-waiver provision (section 4). That provision is supporting rather than the deciding section.\n\nThe clause's promise to vacuum and dust weekly is a separate matter. It is a service the landlord has agreed to provide, and the RTA does not prohibit it as such. The problem is the entry right attached to it. The landlord could still arrange weekly cleaning by giving written notice for each visit, or by obtaining the tenant's consent to a specific visit.\n\nThis is general information rather than legal advice. Check the current text of section 27 and any applicable Ontario Landlord and Tenant Board decisions before relying on it.\n\nVerdict: not enforceable\nSection: 27",
+ "finish_reason": "end_turn",
+ "input_tokens": 249,
+ "output_tokens": 1937,
+ "raw": {
+  "id": "msg_011Ch1HvMdPDQT2V12kpqtfX",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable as written.** The entry part of the clause conflicts with the notice rules in the Residential Tenancies Act, 2006 (RTA).\n\nUnder **section 27**, a landlord may enter a rental unit only in the circumstances the section permits. Among other requirements, the landlord must give the tenant written notice before entering, the entry must be between 8 a.m. and 8 p.m., and the notice must state the purpose and the date and time of entry. The section has no exception for routine cleaning, and it has no exception for entry without notice in a pre-signed lease term. Entry without written notice is permitted only in limited situations, such as an emergency or with the tenant's consent given at the time of entry. A standing clause that waives notice in advance does not meet that requirement.\n\nA term that purports to waive the tenant's notice protection is also void under the Act's non-waiver provision (section 4). That provision is supporting rather than the deciding section.\n\nThe clause's promise to vacuum and dust weekly is a separate matter. It is a service the landlord has agreed to provide, and the RTA does not prohibit it as such. The problem is the entry right attached to it. The landlord could still arrange weekly cleaning by giving written notice for each visit, or by obtaining the tenant's consent to a specific visit.\n\nThis is general information rather than legal advice. Check the current text of section 27 and any applicable Ontario Landlord and Tenant Board decisions before relying on it.\n\nVerdict: not enforceable\nSection: 27",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 249,
+   "output_tokens": 1937,
+   "output_tokens_details": {
+    "thinking_tokens": 1448
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

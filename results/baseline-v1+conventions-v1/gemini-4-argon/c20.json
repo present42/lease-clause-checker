@@ -1,0 +1,74 @@
+{
+ "clause_id": "c20",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1c9703ced85db80e14a216dce1428a62803afee3561d2beef2e222ff2bdeae9b",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Pets are welcome. The Tenant shall pay a refundable pet deposit of $250, which will be returned at the end of the tenancy if there is no pet damage.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:40.157891Z",
+ "text": "In Ontario, a landlord is strictly prohibited from requiring or receiving any security deposit other than a rent deposit (commonly known as the last month's rent deposit). Because the $250 pet deposit is a security deposit for potential damage rather than a lawful rent deposit, this clause contravenes Section 105 of the *Residential Tenancies Act, 2006* (and is consequently void under Section 4).\n\nVerdict: not enforceable\nSection: 105",
+ "finish_reason": "STOP",
+ "input_tokens": 196,
+ "output_tokens": 104,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "IHj3aqaYDZzCw8cPgfms6Qk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:43 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "In Ontario, a landlord is strictly prohibited from requiring or receiving any security deposit other than a rent deposit (commonly known as the last month's rent deposit). Because the $250 pet deposit is a security deposit for potential damage rather than a lawful rent deposit, this clause contravenes Section 105 of the *Residential Tenancies Act, 2006* (and is consequently void under Section 4).\n\nVerdict: not enforceable\nSection: 105",
+       "thought_signature": "AY89a18APKXI2zxzvPIIdhlU6Wpu4OQKeOgu347WoTmdq8rvFMhMLORl585sjEKfJbq13YLm23yNr61iXVbiJOP8l9IkSDHPUyEWcMC7FjRtY0yxMTsmw2f7kOD2T55n"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:40.216102Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "IHj3aqaYDZzCw8cPgfms6Qk",
+  "usage_metadata": {
+   "candidates_token_count": 104,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 104
+    }
+   ],
+   "prompt_token_count": 196,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 196
+    }
+   ],
+   "total_token_count": 300,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

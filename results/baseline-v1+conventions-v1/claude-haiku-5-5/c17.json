@@ -1,0 +1,67 @@
+{
+ "clause_id": "c17",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "5eb91cee2771d60be9a017e29e33708eb9530215c5b84607dba0e7e2a155034f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: As a condition of this Agreement, the Tenant agrees that the tenancy will end, and the Tenant will move out, on the last day of the term.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:41.325651Z",
+ "text": "The clause is **not enforceable** in this form. Under Ontario's Residential Tenancies Act, 2006, a tenant cannot contract out of the Act's protections in advance. Section 5(1) provides that no landlord or tenant may contract out of or waive any provision of the Act except as the Act specifically allows. The clause makes the tenant agree in advance that the tenancy ends automatically at the end of the term and that the tenant will move out, regardless of the Act's rules. Those rules include section 38, under which a fixed-term tenancy whose tenant remains in possession with the landlord's consent continues as a period tenancy, and the landlord's termination and eviction procedures. The clause therefore purports to waive statutory rights and is void.\n\nA tenant who independently chooses to end the tenancy by giving proper notice is in a different position, so the clause would not be read as a bar on that. But a pre-agreed, automatic end of tenancy at the end of the term, as the clause is written, is not enforceable.\n\nI'm working from memory of the Act's numbering and have not checked the current consolidated text, so confirm the section numbers before relying on them.\n\nVerdict: not enforceable\nSection: 5",
+ "finish_reason": "end_turn",
+ "input_tokens": 243,
+ "output_tokens": 2426,
+ "raw": {
+  "id": "msg_011CgwR9q2a12XSzPBdzsQyP",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is **not enforceable** in this form. Under Ontario's Residential Tenancies Act, 2006, a tenant cannot contract out of the Act's protections in advance. Section 5(1) provides that no landlord or tenant may contract out of or waive any provision of the Act except as the Act specifically allows. The clause makes the tenant agree in advance that the tenancy ends automatically at the end of the term and that the tenant will move out, regardless of the Act's rules. Those rules include section 38, under which a fixed-term tenancy whose tenant remains in possession with the landlord's consent continues as a period tenancy, and the landlord's termination and eviction procedures. The clause therefore purports to waive statutory rights and is void.\n\nA tenant who independently chooses to end the tenancy by giving proper notice is in a different position, so the clause would not be read as a bar on that. But a pre-agreed, automatic end of tenancy at the end of the term, as the clause is written, is not enforceable.\n\nI'm working from memory of the Act's numbering and have not checked the current consolidated text, so confirm the section numbers before relying on them.\n\nVerdict: not enforceable\nSection: 5",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 243,
+   "output_tokens": 2426,
+   "output_tokens_details": {
+    "thinking_tokens": 2039
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "clause_id": "c17",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "5eb91cee2771d60be9a017e29e33708eb9530215c5b84607dba0e7e2a155034f",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: As a condition of this Agreement, the Tenant agrees that the tenancy will end, and the Tenant will move out, on the last day of the term.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:34.897956Z",
+ "text": "No, this clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006* (RTA), a tenancy does not automatically end when the fixed term of the lease expires (Under Section 38, it automatically renews as a month-to-month tenancy unless formally terminated in accordance with the Act). \n\nSpecifically, the RTA prohibits landlords and tenants from agreeing in advance, at the time the lease is signed, to terminate the tenancy at a future date. While a landlord and tenant can mutually agree to end a tenancy (typically using an N11 form), Section 37(5) explicitly states that such an agreement is void if it is entered into at the time the tenancy agreement is made or as a condition of entering into the tenancy agreement.\n\nVerdict: not enforceable\nSection: 37",
+ "finish_reason": "STOP",
+ "input_tokens": 192,
+ "output_tokens": 178,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Gnj3avrpO5vk5OMPgajgiA8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:40 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006* (RTA), a tenancy does not automatically end when the fixed term of the lease expires (Under Section 38, it automatically renews as a month-to-month tenancy unless formally terminated in accordance with the Act). \n\nSpecifically, the RTA prohibits landlords and tenants from agreeing in advance, at the time the lease is signed, to terminate the tenancy at a future date. While a landlord and tenant can mutually agree to end a tenancy (typically using an N11 form), Section 37(5) explicitly states that such an agreement is void if it is entered into at the time the tenancy agreement is made or as a condition of entering into the tenancy agreement.\n\nVerdict: not enforceable\nSection: 37",
+       "thought_signature": "AY89a1-AwRP79masGRKs3KwA61hlC-QxM5fLBAPFKEL-S5UjHvakKhf5WVzz6yPsZ2QTAZt6-1AAjfkrK1IZjFrjAOlEQB55VE1KOcTwYuTmbZnKX0mpTlbMAAyXi1y6"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:34.980218Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "Gnj3avrpO5vk5OMPgajgiA8",
+  "usage_metadata": {
+   "candidates_token_count": 178,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 178
+    }
+   ],
+   "prompt_token_count": 192,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 192
+    }
+   ],
+   "total_token_count": 370,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

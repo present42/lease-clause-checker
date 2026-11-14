@@ -1,0 +1,74 @@
+{
+ "clause_id": "c11",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "848c9d23bc2c623aa49a1b16bab0aa83c6a33c8d98c9456a192765013d664d6d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: By signing this Agreement, the Tenant consents to the Landlord entering the unit at any reasonable time without notice.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:23.832003Z",
+ "text": "No, this clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit without written notice only under specific, strict conditions. While one of those conditions is obtaining the tenant's consent, section 26(1)(b) explicitly states that this exception applies only if \"the tenant consents to the entry **at the time of entry**.\" \n\nA tenant cannot give blanket, advance consent in the lease agreement to waive their statutory right to notice of entry. Because this clause attempts to contradict the specific entry rules established by the Act, it is void under section 4(1).\n\nVerdict: not enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 182,
+ "output_tokens": 151,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "D3j3ar_LN5zCw8cPgfms6Qk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:28 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. \n\nUnder the *Residential Tenancies Act, 2006*, a landlord may enter a rental unit without written notice only under specific, strict conditions. While one of those conditions is obtaining the tenant's consent, section 26(1)(b) explicitly states that this exception applies only if \"the tenant consents to the entry **at the time of entry**.\" \n\nA tenant cannot give blanket, advance consent in the lease agreement to waive their statutory right to notice of entry. Because this clause attempts to contradict the specific entry rules established by the Act, it is void under section 4(1).\n\nVerdict: not enforceable\nSection: 26",
+       "thought_signature": "AY89a1_cRNgdvSPwnTZvEpE73gRwV81Ua5xW46WggvbLv4cyM6z1t1MP8c5bJD8rXhh9sKmrQBfS74jBBw5iFydAyY2JRjVJAKcATXrpmF2mAW25wVMExxiR-9ruAUq2"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:23.910783Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "D3j3ar_LN5zCw8cPgfms6Qk",
+  "usage_metadata": {
+   "candidates_token_count": 151,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 151
+    }
+   ],
+   "prompt_token_count": 182,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 182
+    }
+   ],
+   "total_token_count": 333,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

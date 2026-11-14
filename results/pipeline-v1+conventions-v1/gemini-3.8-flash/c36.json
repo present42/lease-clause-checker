@@ -1,0 +1,111 @@
+{
+ "clause_id": "c36",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "2a09aa266cbd204ec4aaab9d011f1c781985a7547486ebac4a7e098970970d80",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the rent is more than 15 days in arrears, the Landlord may remove and hold any of the Tenant's belongings in the unit until the arrears are paid in full.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:17:39.122706Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"40\",\n  \"quote\": \"No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.\",\n  \"reason\": \"Section 40 prohibits landlords from seizing a tenant's personal property for unpaid rent without legal process, making any contractual term purporting to grant such distress rights void.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4423,
+ "output_tokens": 944,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "Y3D3avWZCvmew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:17:47 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"40\",\n  \"quote\": \"No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.\",\n  \"reason\": \"Section 40 prohibits landlords from seizing a tenant's personal property for unpaid rent without legal process, making any contractual term purporting to grant such distress rights void.\"\n}",
+       "thought_signature": "AY89a1_DfUVmGDjTsbWxwI_DIpzAsdleB5JYOyF7io_9ef3LgI-tUbq2Npj8CQi3FF1TGLnLjVi4ZvKNerCOvipMT2BOD0J1yGtusylZ6GVR5uQicCaPzxfzYJjL6-cakEb6kR0WKVTayDvu6CsbaGnK5wqxdx-CuleN9wghZnVojcRjkSaFSYQskLtBRoPum7jPXvjLMbSwDqOoj73CGba503DBcSNn84cHZh0xLbj4DNzzcwuP7zUdZDSoxQ-gHtjznh4x9LRqi_5W_PrPuYKkEm8ii6QZqTDDTyjttWUd8IG_DwnEjO5SKqjaHvFzxrPIMvCfbgD5ATgYykRA7Jnjy-DPsCYQf4MYOTnIihdjqMxm-BYzc2UiroC68UG37ygvrTzUPTmh8_mpwm_fYL0uUUKEhmvrGgFf4rJmGwubxOdRn5-szOYwxV6uWsChSSm138ToRK_kU8hgp1M5MhRURpC2Q_HkLcD0IiWDqwcnD_wTmwYgEPi1e7QrdAayS2zBj7JrDeN_0KeMyd3sB4xetTdchyp36jrYDrv537J1MS1dIKEoGo0FJjVnLl11mM6ig5Q7tCEGrzRB6NVo_mt-8FwqTBl6yyzYZNfs4OFpxdkicrmpwNuC_n6YR4XcwfnbQ2a6_CtaGRuqkYoSMMJEbcnK2i_oHKkIhHQ-xR501tlMnU84EBCjqfpi8SHQjC4AgZyn-HVuDu0o91JLv_r4LERhBwIYoyuQOA7KNUQYcuHGAQAG9cL_l_n0Aqq96c34pBY-sJ_v5hsmswmJf-yphozU5FEgr2nQPRMPTgnJ6ReM3cVvlPTIYuIokbFzRh4UnNdLHlRQS3uBs5ZRtAufLBW2o_ZgYRGbs2kC2DnWs4NUBSfWSd7ZjPVBqN0E4lBdpWa2Qg-QFE3w-EmSFKzAVFvXGwDqLkWycSj0L8lM_eR-WyVhZ2iD_lIshwRkQ376aD2XkY9sADJs9P6t_VnsVLcp5kEmttdvwSELN4Cc2F-vc3_Q_0RrgKmXyiLJSkOj5rfvWsQcbef_BCkjNBAOKS4-tXQiNE09UVoaKnZmdO9wdvwaesm5gfg0mkD-S9FEN8lKxNWMYMLzABoH2J415e4NeUJLrxKI_s1wslTdOnDyQOYrY8eDf1JEL4sUk2zuEvZsVUZ3QoYbfNx6poBxuamPrpDEeMzyb6duKwb_4oYoJp5KCSqK0klIl9fTsUpcD3TWYDrp1vMRdF5h3i93R8sgxU8sSRacYrQxFhEwwtMPr-YXRuV8VMWG95sI0zi0AisofbWOA1o7irgVZJd8xkIhLe33WtrP-XUUVvoaQ3FXzMnqIgzyyKX8b763RIpXhOUGCUEq-hVJCTztT_wGguNpZKNR7muKm-tU_i9CippmN7v9lDW2COk_UyOgubDU7v0uB16OxPecmdJNQDSIeBKa6AowB43t0kEXxi4Inmk_o5_baVfC19D8djBhIVGmwDRfh_t1lG9L9CB_YmH6qrK8B7aRa3vCwet_HDP1bFq-YmFFlJC4LipT3DzpM37-mvz9dVFHRxVf7AAB1Z9TSEg5Piq3qwhxpaI9fFPPvjIe8BnI8WSOHk1E43Y0NkJyKp43jw9u3SNVuvew3iofBOf5knEjmnNjEGXHHp1bxOLQBohH7Z7yb83BUvpj_7htdPVrin98sGFRtoxl8PDM0lRiIm3FtAdonlEPNXTm9ZIGfNdYQwLvbqOmLUBlYHxskdjut7xyZQjJ1gaeEpYExqD7V5qVuoIIK-BrJp0BCZijWI2AEPB4L7We_jtwhYR5n3GBZ-gb_QBjygWubLbt4ands7iMeEb4V0o08j9hzIB51t82LGHLtwI72gT0xMEOxHJFQO8pfElRBtT1txz1daG0g6nz-TGRknBAMiaJbIHngMeCkz8POjsVs8fLnXPHmDNxhI5zKi6TfeixHvnaehvbk5QbbPuIcpSxRIqVg9dQMdL4QL0UV0UbkHtB7thr3Jli1g7M3FqfCVQakr4HyoSXPUTaOgWVMWRyrjSxpniQmVTirw4ZfrCNNNR1PNbW3SlkOo2Z_i8Mdk0Dg9-VvVqC4AZFgPBnrnrYPYmlu3Q3qG4wMatL-4nigHvrKYACKk6op5jpr0c9fsfSOpkxkRTcO4XhvBfrFgygIOvGNvob4cHJnyG5_etKhB4-D8CXERoni8QDDgzQFFxFAsc9toQtrKyXaNMWJKL2dY_PHwiDQ4awN4mnZT9L3Y9ZsqDyTndzgi2zy2Upw3M7gyluDWADqf9Z2c4SmQW_P7t6n4T01AjTZ5biQUgNZXXLKGUl8aQ6K7O1PXx3YiDwcC5wvh4JjBOuSNJp7QLHg9CtTkvIK06OOkLwAarssnpxFAdHouOldOl3iBB4Cqqp7dqZp8l9jONLWNW7Z4XP7xPdsgkpVfar4uefrjzq9m_l-UlhnfBkjtBOacHK4ySpEXYjXOKCTC4HqPescCsSi-JJ4feTNXaeFaMsp6P14QX6q_EX5g5EUf0fTg1pxhZLdnT3m2dsNJEF_BM_jrDVib-gxQ1N9K_HVF-MmwFRyZCbk9NOfnKX4-KLndV58RG-1VbyRbk1gL8IFGKuI4977lHNBUiAm0nRpqMu6spLH0eNE357X3UTT0HVrHKyYFMGHpzUW1k0pSO3W85IMT0AYQuU2pQdey8_Plv0F3pVZnzkc2um_Gje8tcUDAA_7PIbu1OXv3TOWPMbCbdRwlN6wg6uYt0Q0yV5wBkGnoF3pxX2hgYw-xk8IEVQEnmj30-wQp5Cly350pSK0fK6eApmOILTbZXOjKegZPfWUfgJjGMipgewcH-_3IK5Ol0RhS6hVyXlI15fkxX9yKeWR5lOi0FPClCuLhHVjyhVafD7XGL1Ygw4HnY5lHhLJ-dFwcGqJtYGHB5LQYShmT23pQYGaxDAuY3PhTOHuFKT7iHD5x3wP-TzGbuVMwc76XnaSvLv6pV_Ttg_dzgQyPMFLi6kYxskJtfgk0RBCWlEQJiVgMudvnTzbBik8FexKC9t7S2pWQt-gRLpTvedi_duDObLiGA680JFUJpxPk2Gs0YwSk0uVhcff3dVkDA1_hufhAE-neUX-Dmlj2Xk10unBpHvXR3eGSpl8e3IO__HBhLu7E0WU30-iTTCP4TO-xGIbRSem-BnSDoqUYAvgiIV_kd5I-c9-zRLH-Ingu2bXFfVL3_g2fkNom9mFQjKMq0EmXIu3u5bcXRF1v4NKxlGUAyaiFO_EM4pNluAWRNIXY0DpTbxG1vTQTcoxpDH8xZlsXqfDpgPvlbcIHBfYE_RRDjB_rW22bXAvfHavi79VARnZB3xuYdM2Eq0DFDPmTgsTZx_GW9Y3Sf7UEPRRDzUQF2QSsJCBwU-IuwA04uCGokwVl6xQ1g0VeWNriRfsVyZaHe-dtAkWmZ43kXqiixh2sVGBMPdGOxR0ioJTZrpOFClGLWKwxkDEWIfUjtKvbhMcY61c7vebeNRsOZ4mgo2QvhLBEkOeyaEyVT6J_juwN7sSkY7O0Jr1m_B1rbHBAv-4rp1aRfDl_irwh_5IvDUMbrDvq8muNTMrI89tzFOkZv_zRZTxJqZSESHFxjLAnWhzsOMs_uMScakghn7dM097eCB0dk1OQvO59IM-OMDRdD1elt8pQti_vQcGxAOpAchjnHqGdQo1jXKjfzRIjAhLWddh43mwFo-dxeYisHBISRTRlXBecPDHCvShhuTMVtkZKD1m1q04weqDHOSi6lOIqgkAH5RjSvyKH9QGNDWD3HCeiD_W01kSRHVC2qYIo_FhD9OYS58Sq-ucBHo2al6xsfg-w6GK1x1zOz__4VBD6QYLZi-ILzzr63KCThzdp9MalC9HIjQDS5kjWc6HqKAKtEyK_oojP_YYIjTF6urJtClbGOeUHgncRBrIKTfuH6BbUcBweXGoFbmEpthZaemiYiCs2H3zdHH_Ac6xoyHWsH1vVSQEkLGZBpEWzDU_otbzYCeIMFNZhGtJ5mmG8KnubuX6abIyhXuBBjkTyeYVmTPBqxluBX9us3V7dzH4Qt5qI7_RJeBeI96J2GBuHiQylLYTkxc4C2jMoVXUfI2XeKL2MQcBkUhB3SkqX9pPdwhyZv5hHwMUCF_I1RlGjWcjVkFtR-xDmZmC1OZ-SwDye5THvw0DUI1KscWoVqo-P0Jpv0VqtPjdWpry_IjTCDud8YvoSdMGFODCi09ysOyr2k52u0LSJsu0qs9FdJ2maj37hwWTRFBhz3N5e9caTPRp33r-nT5sy4JY9Qcg_9qdxk-eKUiZEMEtC0w-bSgVsoQ9Z3ugyf6KzZatnMxCT0NMlo-dTDk1ntFZ_b6-npmeRTJ4uCTzXnDTkoidPzIv1TQYGa_djjz2xE3Dm4H0DUNDAGbWmUjkbxc8_LXJS1oUKJq4dJeLnlm7VNX4A5xLIQq2LGVo-X2Wz7f3IGsXnPY1VKH-sDAXVaaTJ9JMpBkGfoFWKsqKm9G83eHzWnyU2HoFFXcMwnxzG3Kydoa2AllVJbo9dyAWOieBD3YyemyCEiFi4hjINoS66mL1uOJ7ATnjyTiT2b6H4deJQ2_X7W4mYi4GiL5ZNPrNEJCm8-jUc5-hRNlRKWdlNcwCDTB9oUwI2PkuQDQJIItPJCcojpAxKUicu02sc8R5oeTZQubZ4t08oi8SPXLIPtxK2upVWFoOIN9OWU7GfV7MdIGEkF4UXqNopVsF7BoUQ=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:17:39.167157Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "Y3D3avWZCvmew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 99,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 99
+    }
+   ],
+   "prompt_token_count": 4423,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4423
+    }
+   ],
+   "thoughts_token_count": 845,
+   "total_token_count": 5367,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "40",
+   "quote": "No landlord shall, without legal process, seize a tenant’s property for default in the payment of rent or for the breach of any other obligation of the tenant.",
+   "reason": "Section 40 prohibits landlords from seizing a tenant's personal property for unpaid rent without legal process, making any contractual term purporting to grant such distress rights void."
+  }
+ }
+}

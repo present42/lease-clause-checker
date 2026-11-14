@@ -1,0 +1,67 @@
+{
+ "clause_id": "c09",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "110d86ae214f8e6fa9ee8e48d819317ae1d8d81bac1edc01c77c4a6159197bd0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If there is a fire, a flood, a burst pipe or another emergency in the unit, the Landlord may enter without notice.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:13.540136Z",
+ "text": "**Yes, this clause is enforceable.** It restates a right the landlord already has under the Act.\n\n**Why**\n\n- Under **section 25**, a landlord may enter a rental unit only in accordance with section 26 or 27.\n- **Section 26(1)(a)** lets a landlord enter **without written notice \"in cases of emergency.\"** Unlike most other entries, there is no time-of-day restriction.\n- A fire, a flood or a burst pipe in the unit are clear emergencies. The catch-all \"another emergency\" is bounded by the same concept the statute uses.\n- **Section 4** voids lease terms that are inconsistent with the Act. This clause is consistent with section 26(1)(a), so section 4 does not void it.\n\n**Limits to keep in mind**\n\n- The clause adds nothing beyond the statute. The landlord's right to enter in an emergency exists even if the lease says nothing.\n- It cannot be read to allow entry without notice in non-emergencies, such as routine repairs, inspections or showings. Those require 24 hours' written notice under **section 27**, unless another part of section 26 applies.\n- An entry falsely labelled an \"emergency\" could support a tenant application for interference with reasonable enjoyment or illegal entry. Examples include tenant applications under section 29 and section 233 offences.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "end_turn",
+ "input_tokens": 236,
+ "output_tokens": 796,
+ "raw": {
+  "id": "msg_011CgwRCCs2iuf1HaZXaYH9h",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSvAsKEAgTGAI4AUIIdGhpbmtpbmcSDDZhIZk3Ibmc7wcUXhoMpTTZhl0ew9K9ihhsIjD4smqOh6XwDq+19dAsWKDo4Fbk4ahmi+rFjta1NB0DM4uW38o1mJhGVP5HGe7kjY4q2Qok9qMlLztGfxXFrHXcl5WxBGhSTZ0Zd8TbFEU9ZreP8gFR6ghvwbjc19RV6u569jC/gB+lMwyywxI3bg0j0bxSs8ki1neSkKF4TTDF7k/vbCSxz2QRdJCee2mscCICcLJU3TxC6en2GUvtTU3aoztlB5OKZpbI9oI5wRNvGUT+iCrzEz54MTlpDTSP7+zjzgVTxmDktgcvZY91xvYp0QBZco3XyPfYjcgTIOzbFKExdNYQ2rn258JO1jNjEntN1YFejErg++4xd1I8IXngsEv/SQp7DcPHXFMwPP98gu6C+H5i4v5uNOvEh3vxLMQ+O6SPIIDvjnvisDIRBCzceTcxMpPAOCD9XXWKHhB1xZhBAqvgnqcFw6KBmWaH9HtLAHiZcl6lOd4LYBBajc+BDHKq5kHH6tIt1Cw33B7qv8zQEdYhlzPVD+RWBp5OonMFTOJc5YWlGfJ6zTwB2JwRHkh46RkeI59sr/CCXUTQqjv19XKdwAmY6caY3T85JPdf+qAminzquAVwdcMYvOJM/YxZ4jCa5zBtKlTM1hmg8KkykzViwERAVC02sh7LebJzQx/kVvTmTcJIlr4WLvuFb/kE4FAI106/UTSsLP9/eTdSJSZxekS6S+1QNE8XylrIQcjdMPeA/E2BQJax97cXF9TagTACfae8rPFwKeF3bztR1KIsdUJtUN2oxzcX1LD8MMaPReXL9I3iVMnyrI80ELs/GpN1ftNplI69JEcEhZAKGYrtsE9007l0cNdQ1SkHIxGQN/oybjIPLlguE/nyEpj7UgB6XDk+GJpTR0FgV1gTUqPOMuKN4Typ1SfYZwDP3SQ7zedSKDwbB+NToqBm7cz8jN620C2MpOUMN5j3ji7kGdM3ICew2Sy05aacqqPh5254rkg3rNc/ye+/xUKZY8CuB8vi+Vss2esTynk8XdgbfqCf3rrU1zPpsiDsAOKg/C6Bx/sdR31m8D7UsZnCSyY2Yg/gX5FackK+qt3+hvr5qSrX8rt5XCy0rM5IBBFtdlm32bYWfDi3/gVJMzHaIChcvyTdWNNAcAWi6JKcTmJ3eEMQqkk860mDNA5LVgDXnlC0CGWOINj9nE1oIzNUETKLaYZJ2J6/M8dO6fXYi7wXwzu1CY4U2zeE2K1ZBZlnE0eEuWECUnLBGGVe/pgeL8l3HgJBLYrR+GqfB/BGrmWtdrWKzOAM6B6s3gVyyCuXhNEkWYDt0ddUXvHf0hBkwSmSLWTgNqPtjELvfh4IEVEy1Pxvcmelgs3F7bTK+KaNSaxJWhP85T/PTn8wcv8PB8PHlNO5rW7fZHDc/U81p885cg0491k0aDg32fL9iwYK4Nok/f5uwjlgC+507PH0If4dktyVbHI/InHZqW5QAoayABBlMkvc0v1/J1aIpBq2LbIzzUsxaiKnxq0Tx0ZDO5faXSGBB6PKypMXlsdndLgmuZH+A7Fc0Fv0pbNzeT2JHJ7/sFRRg4IFe7scMl2Dg4hJSk8RnTk8XU3A6LUnlxh+Z8fzAWaHsjf7XXC/WwRodDAkY99QuXkKoxkc+RQQQmve5TZs21SJoP7sgOwgwGNoxQ5M/o9CJGRZ4nbBX5Tr5SkyxEcpi4haTri3YNalmkDgW7ODUuAwl90Xa/nVWNndkyJC1aa3Y4v4nEm3mz1hFY2hf6x6b7NAT5VLuPVKNqxiO3G4mnaNnQHSgjRHqopiVJZdjc1jI1ekwFt0Bjibrhxook4jhdeqOJgApdiNMjBnSD2lodUBjkOM+qFsFdeMe1BSQMZ7oadJY2LWWeCu9s1RU7hLI+xVWetX1VxTHIgI6ahTmtDMhXjcGAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Yes, this clause is enforceable.** It restates a right the landlord already has under the Act.\n\n**Why**\n\n- Under **section 25**, a landlord may enter a rental unit only in accordance with section 26 or 27.\n- **Section 26(1)(a)** lets a landlord enter **without written notice \"in cases of emergency.\"** Unlike most other entries, there is no time-of-day restriction.\n- A fire, a flood or a burst pipe in the unit are clear emergencies. The catch-all \"another emergency\" is bounded by the same concept the statute uses.\n- **Section 4** voids lease terms that are inconsistent with the Act. This clause is consistent with section 26(1)(a), so section 4 does not void it.\n\n**Limits to keep in mind**\n\n- The clause adds nothing beyond the statute. The landlord's right to enter in an emergency exists even if the lease says nothing.\n- It cannot be read to allow entry without notice in non-emergencies, such as routine repairs, inspections or showings. Those require 24 hours' written notice under **section 27**, unless another part of section 26 applies.\n- An entry falsely labelled an \"emergency\" could support a tenant application for interference with reasonable enjoyment or illegal entry. Examples include tenant applications under section 29 and section 233 offences.\n\nVerdict: enforceable\nSection: 26",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 236,
+   "output_tokens": 796,
+   "output_tokens_details": {
+    "thinking_tokens": 350
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,67 @@
+{
+ "clause_id": "s06",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "bab55fdcbb96cb7ea4d7625544b657bcbc0ee06a73be3ec854fc916674b852ca",
+ "clauses_sha256": "e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Each year the Landlord will pay the Tenant interest on the rent deposit at the rate of the rent increase guideline in effect when the payment is due.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T19:52:04.283498Z",
+ "text": "The clause is enforceable. It mirrors the statutory interest obligation rather than departing from it.\n\nSection 107 of the *Residential Tenancies Act, 2006* requires a landlord to pay the tenant annual interest on a rent deposit at the rate set by the rent increase guideline for that year. The clause matches that rule: the landlord pays annually, and the rate is the guideline in effect when payment falls due. Because the clause gives the tenant no less than the Act requires, it does not conflict with section 7, which voids any term that waives or contracts out of the Act's protections. If a term offered less interest than section 107 requires, section 7 would override it, but this clause does not do that.\n\nI have not checked the current text of section 107 or the guideline-rate regulation against a live source, so confirm the exact wording and the timing rule before relying on this.\n\nVerdict: enforceable\nSection: 107",
+ "finish_reason": "end_turn",
+ "input_tokens": 245,
+ "output_tokens": 1561,
+ "raw": {
+  "id": "msg_011CgyckyTqTHdRn6aNCcRcD",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is enforceable. It mirrors the statutory interest obligation rather than departing from it.\n\nSection 107 of the *Residential Tenancies Act, 2006* requires a landlord to pay the tenant annual interest on a rent deposit at the rate set by the rent increase guideline for that year. The clause matches that rule: the landlord pays annually, and the rate is the guideline in effect when payment falls due. Because the clause gives the tenant no less than the Act requires, it does not conflict with section 7, which voids any term that waives or contracts out of the Act's protections. If a term offered less interest than section 107 requires, section 7 would override it, but this clause does not do that.\n\nI have not checked the current text of section 107 or the guideline-rate regulation against a live source, so confirm the exact wording and the timing rule before relying on this.\n\nVerdict: enforceable\nSection: 107",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 245,
+   "output_tokens": 1561,
+   "output_tokens_details": {
+    "thinking_tokens": 1273
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

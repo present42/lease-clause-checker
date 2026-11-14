@@ -1,0 +1,111 @@
+{
+ "clause_id": "c12",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "ecbe0441f38f686115e173e5cd741f1ef5affc35214873ab4f80564d13e72e8e",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nTo carry out repairs, the Landlord may enter the unit on 24 hours' written notice stating the reason and the day, at any time between 7 a.m. and 10 p.m.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:16:14.540687Z",
+ "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"4\",\n  \"quote\": \"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\",\n  \"reason\": \"Section 27(3) mandates that notice of entry specify a time of entry between the hours of 8 a.m. and 8 p.m. Because the clause permits entry between 7 a.m. and 10 p.m., it is inconsistent with the Act and therefore void under subsection 4(1).\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4430,
+ "output_tokens": 1086,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "DnD3as3VI_zlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:16:25 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"void\",\n  \"section\": \"4\",\n  \"quote\": \"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.\",\n  \"reason\": \"Section 27(3) mandates that notice of entry specify a time of entry between the hours of 8 a.m. and 8 p.m. Because the clause permits entry between 7 a.m. and 10 p.m., it is inconsistent with the Act and therefore void under subsection 4(1).\"\n}",
+       "thought_signature": "AY89a19JymivVsfUv9m0-hyME1xcTnwKg6VnPFCn35SP0-plsZ5hjDi10uWbeZFdSPVuXBqJ6wi6ITEz5kDQAEmoA7fSpHTnyxtKAJcxK9iGq9M3C-jQjvNTZsDE9yh1WFCaKkw3-H8QFzU8PWzuZDkEKyEYJzbDbkpc9xGlhtpQO7VifNTRB9JTgQJ1CYbzNIHBTAKiiQbBbT5u8NvDXcSXLc_BeocPpf3IlMANwLLP1WH9tubxZR6j0-srrt4HlJgtewLPDGrIANOBCxk4cx7PXD2PcbeRuxa97uCAzwoP7LH4OZj5_gbaXgQ7NDne7xta3tSv8gUx_lgcWs20WzGaBtbFLrrzQQUyxUeoB3K4e_5O9M_0HJzc88W-ive8m4wJq440q_PrVRxDhKDo7uk2xMw5RUqMQffbVBMSgJxhk2c7YfL5zrjX9rtnF8bQ7pJa6_7CeUg3QuALYqj3WiiwkJlhLBynwtGcXc2S0kIBJ92UsszlUk3-Zw7lkwlxqUImnYt3tvS_PqBFUlhXAeQcu7AJRUk59YKAJ8uWCgEKFsvaKjZ0STCesN2doWteS91MvpVMp_Omv7HuLJo2HBoXQOnuw92cLpLpegOEDi0aZTaTk4UYTtR0o7Q9rkSC48Mbq4DVoRFsVo_hQRpopFDVDt6j_bZvqU--HmD4HzOHhyBjNVbgYXDGS6tn_Uj_sw-g89Ik16JHLsTYSG6QrfdwXiCaS2NaXewddMcOn3JJApT70NYto7-gMcWS8xRABgaPatb8q8QNtNy-_8R_jEjJ8PXp9p0Q3GD9yaYQDRnRQTFlZSFX-PsN528m0DRTP58NibILneF8f2zJf7yTdGasUb-WN2gWHnKoAPTBB7xAICHIZJ0RAE45ABCFZ5fTGT1Pr3BaYbqIjqdwnYHt10-kSk1A_0h80o8m1bi6-g2Cy67LtI_9lKo2RChFHg57qZNJcn2SbGHOOYxPrpRxWp6lfydMNMEaZydW1EZ1UzJaCO5q3XBSd2EmAwJZdrg-3uBDnoDyZtUu32V_Q5znP9CcNwz3LLKZ2rJrrxhlZf1gbsGAMgMYfKw-Wv23YA6YlhjH7froXTkw_F4VZiX0ULFeNgTl20SjbM66FIm4_D09He2OIwOZG1ba5WTwqYrg0kO0jtIgXm3yfIgolDUBefV7B5b8Eh6q1Bdf6tNkcKL0JFrCM2A6697U7-cZtxPVD70r9cYIc2-hxvmVSsWlf0SsbJUQMdmtsLpA0-m9N384PmF8wBabaI_L4XRRXsgFSNzlVX3vrLdHbqBYHDDAfknvQ2R9aIj2ghQ2RrFmJ11d1VLnwRwggWfo4ClQzWdFr7pTUgJfwmYuvTZhpL0eGqJasI-xce5HaBnDky0y-N0ILiq-ZmZVaouASFZ9ng1x9RJml3h1jBnT_n7n1msQyIGn03axYXlu5uDtNSwiEDRD_7TLoV8ahFTjDZKycaVtZkgSPrc-7WBrchX-I0spAPfATQsi4MlJ7mQ1IM3kgPzjNFaCTlAM0fAtcOTAUYl9eAwLich2ojP67MqIXK7HPJedEqj8yRSs8x-LIY60d3NkrSIt4AJ3WoLgQELKUxg53rRlAM2D8hAFNGvxqY7tIeLi9ieHDO4q0mXbQFTtPEnfWY1rHcBu02eC3N6x3YM5JiFf-DNBkneahTctqL17VEfKLB0rfjdwtKBk5OJW4Bu1e1pfA7YXdYYr63GK7lwQtggr57v8a5NHIX1rUPfeDZh0Nn_iQ-CKa9zQ6Cuo28o9i18GRphnT5j1SRLZ_-YFtpaHNz5smVnHwXvcWa0WJL-ESfIOO12lY7j9aSJxdGkQv2b5J9M8Bbm-HBHrrolgkGGdt9syzZL4LyZ1v5baTa-2TQ6fulb1qntT0I6BEkYmGmU_jXSagfzRufzSCtsdNwZuzojh32OQMauqmLrKNrkLtSufqsOLmE_YWSW1kseHUI8yBqp1-Xh9DMpbjfA0PziPXRwS_RzzjvzflVJn9DPwTOzcov3floy8PnGm9EYp5H92p-k674AO6Qwm5FEHFajgawWQSPF1eDMP7m_7mz5xQ9dafot3eS0SEVFYiJCFVQm2Q4pH2opSqCwKr6hPbNktJs-Ls4-bGL970f_Zmt7N_zUHOwoxgAZjiacXpNLG7A2Z22Ok17pHSc0YB7umkPPndBkS8i3HEgeAIncQqBXRz09nTdHkbFgirgd8VACpHgV-cWApWAJtFxY-3JRCRqAsu3MkYC85D2c4oHTyuJxDrLtawcm0v2dIAOEdq8Fy6M-vgVPqW148X5tl3801sP6uIkBW0uMrn_hXlsfVOUj26-vqDzcz11fbWTBfAAx-xhZIasdPPFngFh9iY-sFoh7kmlVCUe2ECTgQpXnNYgIpJPcAIapcfei4NHJen3QLqO0MCaVvH9RJ6J6aeZHYBw44gJNIPSHd2m96jMn_O_e_92eYafuq_aJ1PAaM_GC7nF-S-m-a2Csvm7HOyXlkDaG8Ns8FTKKogJiC0r6pNJh_ShLGg91nzACd6ChhQcGbpB0EQPfWXfa1sR3PtDiq8oyPBuq4veoo3XZTYFiUjUx38jBC01kTqao4GzyeSy9U_AINHEfdy4XRoHAa4422FrFI52n7Na49dNlx4HJxnotZvF1udIMJ294JGu9MAR5WJu-mLwF3AZTlU1tfSDj5u8jKvFHK2eFZShJ2xt9TA0wijnxKCMf-UL8bqt1H1JuUDuLdiTR_4wIES_pQiDeSLAFIYAdPOGdwxfCt7enkdv0dyY2GAUlDI4O6o0zSFhsmfeqf5-FK7CvH7NeqZFuwldugNNJRA_UcPFwiYW4aE6pJTpWmluFyDM_Y_9O5bcLpbWznRANDLp9I_ju-lDvHE0k1VyBxdiqjRTAwhQZQaqlsdskm4EE3eZHZFR2nqWjtaYfxnRgVhu2iC1IPynthqcu-HdZYACePxuSCN5siujXmjz99idKCmaduglRTedsdCU16ZVRx7eYUsD1yUjwMBpv1_hfvNc2aCg2rNBvETGmQueYapyZg2ttAygcr7vLnDZ0cGejhbR_rQ3Iuk-tj5kQQ_fJPzLz-wg1ye37xsFO_mHoKsnSU4m2WUUtYS5SoPm8jcZrUkgFf9kp9Nd4CPAOmvz2e8SNbBb4R4AN7marw5q1RCIKa9bUB7Bd_j0gypEsAz6t_NH913uM3NP4e2fkHYTTSvHnuSOaNCbZ6Ck1dFM0iqP2-WOCxe3cRXM3PPU92nBiWu6GbfApiQzc_BpwZVlfRtdgrjhUyAtyYon8KsEoOL2MTY5g8ljvioawf3_KZZAiDrK24d_ocFtQcMYHTSBflqKFIMapZ5s7nG3Sn-j1mY5VM-tTn2qemLVzcU4TAmXlKyloOCXp58vHz_Zj2nfdcR6jrbPZ0jtV9hbuY5sDa9QvgkquuE6pgPwyvOmyy1a8HIG89eTw-AnYmYewdL8RPLudfH1YnO756WeeZWqe2DKO0hSMXVCxF0L53y1dvQu3FfxAb5h3Gr-uXt_po42kveK3YPij9G_wQQag-9jUTcaHJW1KYNklZoJPj3X6b0lplhrHMMGmkKzB1m48gqp_Fp_psrx6nxTctrHPMs_VxOh5m1gKsZqBsd4Fh1MrW8hfMI0I_xnE9AyW79TSAGskU3HR-cyJr-0dB0qqXzcSOWW9py2hWJCJ6c37IOvgZFvhH_giS0uE1VK1SG1CeWUpCQoq7Xh5CW7PvyDpqW7m_DGjB1M-2HK_vEmZjFRglahm6R4qGNMODZmPK-9NMNzNh9L_YyhQTwKgoSIgAG43-xOyzM54cWEQOBZgUC0h0e15cwIUVndw0taHgtslWXfv9PLG-Sd6SC2_e1ib1oTkAd_RUWj0s1D3D6spRa2sqw27xNwkFWuUEBQ4JBfb9qGK_H4vfdJggOIPmLXHwI8uq1pWreXhqmnCBqLrxkuRRcEQ8E3So1-UFKA6Mng1ausNbcGzbS5Y3g7iZywVuvNmEM1Oq8CFuGQM41SC9k8czOirbY44aBnkOL5b1gu6AvJfVxbMcX0z7rUCXt9_B3KQ1L5CsVMYfZPiCv8mxCSnrweUZZaUpuKWL_7ZR0WO_ZCuRsMgyI9VOh64Ufo-2TCsyPRTo3FARwcM4hjTUJ-LE8TK2NyVeUarT5PD8gVVa6YhdsnVliPG4ugqPSgentjNkG2OE4p_B-Uzyqc9VBGYZsta-K3FjHl3mtW_2LJGDGJn8_dP4YNBX7ZuDHVFEZNPMcPJ6OIzwYm064a2PZD1KZeZnQUd9QRZi3CUPQbALZqJKfvxvcL_9R7krxaAM4CGtfqxL1ruo0XJwnXjvLoc6wyGQBGWso3z_UnaYx8gfjizlmXfdaFjfa-y7UCGETgXVbbS_xk0RkNN-rYfEr-vvANguCmwymgruTmgOrv1HNdWhxYlucV0K6TaHubotPJ8DgepEDgGRyF8uD6IOKVgUJBGIwN-qMl9Hc-Koq6ZHPg8ul3FBAXGlY6C7EpOBmxyTD8FOpDVVUcwoZ2eSXdZ_Nshg3gHHcZ1yrVnW-hZG4iG7XWHKA_fbZNGu44U7bMBZZqadu4TEf0yEC-tmchp9nUn_9zeF5O512ZkmrP9x7PtvxQE8614pl1B2rqu6ZnclwYkOvAyqxPstsZAOWM0QNp2AdjKgJrCPU3Iyj0jYGPsAdo7iJhaLXPFnAGHklvJGFFQkT6T9LLmOAlZrllXx3ioHLk7_1A=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:16:14.584397Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "DnD3as3VI_zlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 120,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 120
+    }
+   ],
+   "prompt_token_count": 4430,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4430
+    }
+   ],
+   "thoughts_token_count": 966,
+   "total_token_count": 5516,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "4",
+   "quote": "a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void.",
+   "reason": "Section 27(3) mandates that notice of entry specify a time of entry between the hours of 8 a.m. and 8 p.m. Because the clause permits entry between 7 a.m. and 10 p.m., it is inconsistent with the Act and therefore void under subsection 4(1)."
+  }
+ }
+}

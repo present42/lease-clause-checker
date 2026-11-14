@@ -1,0 +1,158 @@
+# Rules from the Residential Tenancies Act, 2006, S.O. 2006, c. 17, used by this project.
+#
+# `heading` is the section's headnote as shown on Ontario e-Laws, checked against the cached
+# Act by `lcc statute check-rules`. Source: Ontario e-Laws. Not an official version of the
+# statute. © King's Printer for Ontario, 2006.
+#
+# `paraphrase` is a one-line summary written for this project. It is not statute text and
+# not legal advice; the section itself is the authority. Comments marked "Labelling note"
+# point to other sections of the Act that limit a rule.
+
+rules:
+  - section: "4"
+    heading: "Provisions conflicting with Act void"
+    paraphrase: >-
+      A tenancy agreement term that is inconsistent with the Act or its regulations is void,
+      subject to the exceptions in s. 12.1(11) and s. 194.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK4"
+
+  - section: "14"
+    heading: "“No pet” provisions void"
+    paraphrase: >-
+      A term prohibiting animals in or about the residential complex is void.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK19"
+
+  - section: "15"
+    heading: "Acceleration clause void"
+    paraphrase: >-
+      A term making all or part of the remaining rent, or a specific sum, fall due because
+      the tenant defaulted on rent or another obligation is void.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK20"
+
+  - section: "20"
+    heading: "Landlord’s responsibility to repair"
+    paraphrase: >-
+      The landlord must keep the complex and its units in a good state of repair, fit for
+      habitation and up to health, safety, housing and maintenance standards, even if the
+      tenant knew of the problem before signing.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK26"
+
+  - section: "22"
+    heading: "Landlord not to interfere with reasonable enjoyment"
+    paraphrase: >-
+      During the tenant's occupancy, the landlord must not substantially interfere with the
+      reasonable enjoyment of the unit or complex for all usual purposes by the tenant or
+      members of the tenant's household.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK28"
+
+  - section: "25"
+    heading: "Privacy"
+    paraphrase: >-
+      The landlord may enter a rental unit only as s. 26 or s. 27 allows.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK31"
+
+  - section: "26"
+    heading: "Entry without notice, emergency, consent"
+    paraphrase: >-
+      Without written notice, the landlord may enter in an emergency; with the tenant's
+      consent at the time of entry; to clean, if the agreement requires cleaning at regular
+      intervals, at the agreed times or else between 8 a.m. and 8 p.m.; or, between 8 a.m.
+      and 8 p.m. after informing or trying to inform the tenant, to show the unit to
+      prospective tenants once termination has been agreed or noticed.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK32"
+
+  - section: "27"
+    heading: "Entry with notice"
+    paraphrase: >-
+      The landlord may enter on at least 24 hours' written notice, giving the reason, the day
+      and a time between 8 a.m. and 8 p.m., for listed purposes: repairs or work, viewings by
+      a potential mortgagee, insurer or purchaser, certain inspections, or another reasonable
+      reason specified in the tenancy agreement.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK33"
+
+  - section: "34"
+    heading: "Tenant’s responsibility for repair of damage"
+    paraphrase: >-
+      The tenant is responsible for repairing undue damage to the unit or complex caused by
+      the wilful or negligent conduct of the tenant, another occupant, or a person the tenant
+      let into the complex.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK41"
+
+  - section: "37"
+    heading: "Termination only in accordance with Act"
+    paraphrase: >-
+      A tenancy can be ended only as the Act allows; a tenant's notice of termination, or an
+      agreement to terminate, made when signing the lease or as a condition of it is void,
+      except for some student housing.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK47"
+
+  - section: "40"
+    heading: "Distress abolished"
+    paraphrase: >-
+      The landlord may not, without legal process, seize the tenant's property for unpaid
+      rent or for breach of any other obligation.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK50"
+
+  - section: "105"
+    heading: "Security deposits, limitation"
+    paraphrase: >-
+      The only security deposit a landlord may collect is a rent deposit under s. 106; a
+      "security deposit" is anything held as security for the tenant's obligations or
+      returnable on a condition.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK169"
+
+  - section: "106"
+    heading: "Rent deposit may be required"
+    paraphrase: >-
+      A rent deposit may be required on or before entering the agreement, is capped at the
+      lesser of one rent period and one month's rent, earns annual interest at the guideline
+      rate, and must be applied to the last rent period; when rent rises the landlord may
+      require a top-up to the cap and may keep interest to do so.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK170"
+
+  - section: "108"
+    heading: "Post-dated cheques, etc."
+    paraphrase: >-
+      Neither the landlord nor the agreement may require post-dated cheques or other
+      negotiable instruments, or automatic payments (debit, credit card or otherwise), for
+      rent.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK172"
+
+  # Labelling note: s. 123 (Additional services, etc.) lets rent rise by a prescribed amount
+  # at any time when landlord and tenant agree to add a parking space or a prescribed service,
+  # "despite sections 116 and 119".
+  - section: "116"
+    heading: "Notice of rent increase required"
+    paraphrase: >-
+      Rent may not be increased without at least 90 days' written notice in the
+      Board-approved form; an increase without that notice is void (except an agreed
+      increase under s. 123).
+    source: "https://www.ontario.ca/laws/statute/06r17#BK182"
+
+  - section: "119"
+    heading: "12-month rule"
+    paraphrase: >-
+      Rent may be increased only if at least 12 months have passed since the tenant's last
+      increase or, if none, since the unit was first rented to that tenant (an increase
+      under s. 123 doesn't count).
+    source: "https://www.ontario.ca/laws/statute/06r17#BK186"
+
+  # Labelling note: s. 6.1 (Exemptions from rules relating to rent) disapplies s. 120 for,
+  # among others, a unit in a building where no part was occupied for residential purposes
+  # on or before November 15, 2018.
+  - section: "120"
+    heading: "Guideline increase"
+    paraphrase: >-
+      During the term of their tenancy, rent for a tenant or an assignee may not be increased
+      by more than the annual guideline (at most 2.5 per cent), except under s. 126 or 127 or
+      an agreement under s. 121 or 123.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK188"
+
+  - section: "134"
+    heading: "Additional charges prohibited"
+    paraphrase: >-
+      Unless the regulations allow it, a landlord, or anyone acting for them, may not collect
+      or require a fee, premium, commission, bonus, penalty, key deposit or similar amount,
+      refundable or not, or require payment for goods or services, on top of rent, as a
+      condition of granting or continuing the tenancy.
+    source: "https://www.ontario.ca/laws/statute/06r17#BK207"

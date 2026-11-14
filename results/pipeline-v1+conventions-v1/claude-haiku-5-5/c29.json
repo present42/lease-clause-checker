@@ -1,0 +1,99 @@
+{
+ "clause_id": "c29",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "0ea64f9104edb66de272ecca6620c15372dbfee7124ab1ded3f9d5d8cd41177c",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe Landlord may increase the rent by up to the guideline amount once in any 12-month period, after giving the Tenant at least 90 days' written notice in the form approved by the Landlord and Tenant Board.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:30.485496Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"120\",\"quote\":\"No landlord may increase the rent charged to a tenant, or to an assignee under section 95, during the term of their tenancy by more than the guideline, except in accordance with section 126 or 127 or an agreement under section 121 or 123.\",\"reason\":\"The clause permits only a rent increase up to the guideline, once in any 12-month period, on 90 days' written notice in the Board-approved form, which matches sections 116(1) and (3), 119(1) and 120(1). Nothing in the clause conflicts with the Act, so section 4 does not void it.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6459,
+ "output_tokens": 998,
+ "raw": {
+  "id": "msg_011CgyJ7HiXkVX57ZhzuENBg",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"120\",\"quote\":\"No landlord may increase the rent charged to a tenant, or to an assignee under section 95, during the term of their tenancy by more than the guideline, except in accordance with section 126 or 127 or an agreement under section 121 or 123.\",\"reason\":\"The clause permits only a rent increase up to the guideline, once in any 12-month period, on 90 days' written notice in the Board-approved form, which matches sections 116(1) and (3), 119(1) and 120(1). Nothing in the clause conflicts with the Act, so section 4 does not void it.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6459,
+   "output_tokens": 998,
+   "output_tokens_details": {
+    "thinking_tokens": 799
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

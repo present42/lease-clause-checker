@@ -1,0 +1,99 @@
+{
+ "clause_id": "c20",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "e712c3794eb60c15d7ac53d8db526adf4b51f47f18f54de062c9067a3710a4c5",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nPets are welcome. The Tenant shall pay a refundable pet deposit of $250, which will be returned at the end of the tenancy if there is no pet damage.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:26.863372Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\"reason\":\"The $250 pet deposit is held as security for pet damage, which fits the section 105(2) definition of a security deposit, and it is not a rent deposit under section 106, so the landlord may not collect it. Under section 4(1), a tenancy agreement provision inconsistent with the Act is void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6446,
+ "output_tokens": 724,
+ "raw": {
+  "id": "msg_011CgyJ72Gc16BzJhiUcY2TS",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\"reason\":\"The $250 pet deposit is held as security for pet damage, which fits the section 105(2) definition of a security deposit, and it is not a rent deposit under section 106, so the landlord may not collect it. Under section 4(1), a tenancy agreement provision inconsistent with the Act is void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6446,
+   "output_tokens": 724,
+   "output_tokens_details": {
+    "thinking_tokens": 572
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

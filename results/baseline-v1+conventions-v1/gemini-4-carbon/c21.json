@@ -1,0 +1,75 @@
+{
+ "clause_id": "c21",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "91df827585f4cd338eef655174da7b2d1d6f5354b2bdd38488b07f7e75b25d52",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. On signing this Agreement, the Tenant shall pay a rent deposit equal to one month's rent, which the Landlord will apply to the rent for the last month of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:10:15.002007Z",
+ "text": "Under section 106 of the *Residential Tenancies Act, 2006*, a landlord may require a tenant to pay a rent deposit on or before entering into the tenancy agreement (s. 106(1)). Where rent is paid monthly, the deposit may be up to one month's rent (s. 106(2)), and the landlord must apply it strictly toward the rent for the last rent period before the tenancy terminates (s. 106(10)). Because this clause complies with all of those statutory conditions, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 202,
+ "output_tokens": 809,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "p273apyBC9_IpPIPrpqRsAk",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:10:30 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under section 106 of the *Residential Tenancies Act, 2006*, a landlord may require a tenant to pay a rent deposit on or before entering into the tenancy agreement (s. 106(1)). Where rent is paid monthly, the deposit may be up to one month's rent (s. 106(2)), and the landlord must apply it strictly toward the rent for the last rent period before the tenancy terminates (s. 106(10)). Because this clause complies with all of those statutory conditions, it is valid and enforceable.\n\nVerdict: enforceable\nSection: 106",
+       "thought_signature": "AY89a1-Uf5sLXRCzXYmsGDhpembeaR13eMzWFdRZ2YeKsHbQCu4IzgBGzoNdsZEBGfjX9UCfntKc3RC9d1-A_DMMihnbZNknn2KeeZhK0icDKuw8Pelazh-lP04sPEjdyyI4kkIhWwIK7BhVXqeqz5j3ke2-aiJMC7v2ZwpNwU3UKTAegMG7tf9BIpbr9WxMpbFiLV2dI6hZbn5OcovqSIyPogeWV1sbR-xZLV6e2vS2oStcvC_ZPVrPoxRpwbH-JV2514piNS1Yq4XuaB5yHK-H-uZe8GhhzRYGZuCCzHkC2SyEd5TKOyuJCzX2mIW4l2WpkcDEG3Ax4S3prxvBIo5mb-c6mCqgqBf4LBvjG1glcJkPuWPTSHx3Pfc53feeObRjCB1_2IyAwG-9k2Y5O7cZXGO0SJfNLMATPBsc0Y_2daOew2zKSy-StotbjZfq7fUUYHw_8w6K-XFOERUFzkqiU26ILDG1KyEpdQxe10vx0HrwrM-pCTx46STshxibVFr5spkcgoECuvanXiW66WZcvYRhaQ-dP5aTLg8YvN0qM64cmmulSYLdYpXalKZTwoCSbD28FEBmazEEwePuiaRf-S0qeS7nnS4ZJJdNa-nT02HJhXTQRm2yqzg5pbZqFep4I46i_jZkqiRV3bB91oFw1Of0Jlsj7Z2itmOxGRvfuvWJ0_teTRMYHy3ijThkHLpj15BAx66SUTWuAuQTKmkz0AshwEt3MVmjpT-63VSw-GRjifsfXMjcCfWr_oZ0gko3hWpuoU9HpXIdA3WtIEAY1OZklc_zB4ZZK85eRNziRCKxQMk_Y7Sdn8OGWEwLETdPVDJ_dT4Q9cJggMTywjCy60zU9etdaKJQrD8BDUPTnxUgP0e9FuSPCxpfNelwvSMWcWsK4F8wMX7CYx8WZwQOPnhwsVx9nEy6Om8unvDb0-IGALunDZQuIDEd1gf0U0jZqrn9D6p26aXpBP46qPQlWH6_s-oDfsf62wRhHQG-C2jIYGK_BDlQj8c603c7yCVA2x3rJsYA4UA-8BAsfF73Af6XH54UGf6wuZ9AGNkep8Bvcj053gcc_Mm4hiN6rlDTFBlhoPWZg2c2maK18NvZqczBDovaRs42zP6FEK6euijug4FEzQ10sEFxQcabCnc3EwBass_F9hk3D5bncUnb4zkNzjpV_7XGWH176Ir_ZwKivfeH5bgMxifqVI60U3740wpmOXJgEEWIY0SkTf42YCkMu4IaP2amt3Nac5F_QruIfgJlmYi6hSTBaMF4shU99uonKZ78T7hHv1by5SbQ51StB-y_s0fOapdhEeiROTuqCmPz67HXE7Z7xE8fSQriw2v6FBre7W-lvpsBT4cdjUfvGvifS63cssNC2t939bYfqdgHpUBCqQ1RfmEgpd6GFUsgYOX23XdZAD1sgBO8FCahVzRW2w7mmo8IgOB2y7OJji3RdfLVJ3Yylu8nwUi3TxVYjSkLtp-90-2HVrdQhMuI4Bkv2WNXKPi5XSPUhKypMk3eXM_SqbYFrDpLca6IHmSYMqJtphXVUhjliMdJz_MCjl-m03SW98nvz0QxEKpu84Vj_f6WPP1buH90BL-GX2AWEYuVWrIqJMDlQFxbpPOWJzFAENSUb0RGJWhWYJ00M-iJyxZv7QFSx5fvV_0b4pL-aWyWQMXyykFCcJKy6jPbUIwYqQuNSYZ8K8lUuKSmSuZKJTZ7zn6fDDMBChN6AAuYEfB_5MmLfO1nue_Im4eJC-nu-JY1rFuX-65BqZv7BN_kveTl-Bw18BTM_B7WJTY9jVqZWpHQ__usiHDYXMAKPfg1yJpIo0MG7t3jfE97XT5tcs3iyPYCUoyomBeW-pjG5eyDWyFJb8AKqNvt-M3hOd4_DPEn7SXmyAzSXWq1cIDCTRsAmkMTOS8gWtYp_yJJcYhcEXwjQNQe-pf_2xdKUm11sDUFPJXVcnj0Emr-OxtMSXOluencJs4T-tvDDxsni7ckaYFvm9vayXvqMd19-oV7sT268CtMH4jo1LIzDMOfMzm9U5NyqHT3QEKjzzUeDpNRb1yKIeglKBQBq-fY-5JH1yeLMqlU8YgnXHtbcnS5qgCAbqbdIUUwhpr5_SFersiLQR0DwITJ400Px5sbi9v1WjN9RmYJ__4Yv55k_W2_DeQmKACKAOOq6f6mHFoxc7znrJiIcCiGJre6map8-_9cXDH8Hwrs9_-evH6xaRoujRVMzP5Dl4ePGtNc9rGLlXIWI2RKXrqkRtYRR3lTyMtueGnrUwAl6ObetFx5vdi-dFgus-_39ezKqh158q7v-ywfvJEgl8JAj0htKYmTSstb9wa7qCk7A8iiU6DXVRSaGHKStTI65tI5g7VGTrqbUpA8lQdaywthDfRReulP2rIByzZUyTTZVEUmyAnV-IM4rFuFkSl7em9rkbWc5LUjcvFel0ZayQic1t45fuAncDy9CTQs9ZNXs2odMF95JNThCjhGU6O1ZBQVo3fbjvcPL6wj19blFk1RZY8k4rQGFf2aQGFcb9kH2ROTYxOzVB2hv2Tv6K116h5NZDBwODw1PNzXO7wHuRDZXXi8PY1U5ufu3hPisODbtlagwyrWVECNU6E_vdk2LaPL90PygAP58Yrez86gsijE1ctEV__97-kgHkUKImtu_uqFnB8mQho3I114eYCKpzA3OwQmSaaPlF6k7xQ61tjx5jLVzaT2_m7tZd7OgBJoeVR9PYO6ddTU7Q6myUwK1-8cZ88Nj7cUG0_ccOC6MAZcjpFFQgxS1xRC2m0Ya-apoNaiJhea9pEO1HynOFxaRir7tvfxm1KU2JULdneTSLhw2k1jmq2f7-YRMV1z_ZkZCcySqnvvnvRvHc7Z-aVyEq3n1-LjWhf4zdb7PAtAuLcpj6D1DmiRice_BgoZ3Q9xkbhcuoG0jusObf2cwpQEHcNfZhp2cyVp_rIJ0H9kTNGssn5w0tSuZsHGXAnIzO6fgmlyZCKh_bQGpGlrk1_QlW8DcZQeP0kxc9_MORWwxKIC9rgQWzfHLLcXggTUpzoHPEtIaIIWEhH-sFR26BHHDlF4Wp_WElW_99dd6rcLQSeA4rkVI0V-4-_qyogq1rjZbVe0OnjFSi0Bu_yGi600J2VCBxQzMH2sOrUTx2Lz4VuAejHPmHscdAwUImt0_gk0e2sY-aGxEMJVXoch_y23J0sUP52UhrJW9HIx1CTX9gKYTxvnpEEYpd_RBTN80yIQx0y7QOR8M5Was3PcOMWT_lRb-y_KVyW6wpytdqXowmxEQbr2XBPDezzZy37xWWP033OIqUAfPINOf4VkJjbWyl5D76lJ849-J0LFiJQJDtV1EdpZK6IWjtv37AjvCgLUcsow4-Q2TfvbsXyKnhEJsYknwf97hDw5jbvW0FtnlwMQtoaRBL8kRryE1pu89bngGO0lH1jireDcdPStt-4Mo6KbRYaYMgB-cG1dNE1LpEVascuVlsZQf60T2leQEAo="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:10:15.180380Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "p273apyBC9_IpPIPrpqRsAk",
+  "usage_metadata": {
+   "candidates_token_count": 139,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 139
+    }
+   ],
+   "prompt_token_count": 202,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 202
+    }
+   ],
+   "thoughts_token_count": 670,
+   "total_token_count": 1011,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

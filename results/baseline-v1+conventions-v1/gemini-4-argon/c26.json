@@ -1,0 +1,74 @@
+{
+ "clause_id": "c26",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "f7300eea13bf7618dc74988477cffae804bf9dccabba408e99026035b647ea3d",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent shall be paid by pre-authorized debit from the Tenant's bank account on the first day of each month.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:55.463970Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord cannot require a tenant or prospective tenant to provide post-dated cheques or engage in automatic debiting of an account (such as pre-authorized debit) for the payment of rent. While a tenant and landlord can mutually and voluntarily agree to use automatic debit as a payment method, a mandatory lease clause requiring it is contrary to section 108 of the Act and is therefore void under section 4.\n\nVerdict: not enforceable\nSection: 108",
+ "finish_reason": "STOP",
+ "input_tokens": 185,
+ "output_tokens": 114,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "L3j3avfEIYOJptQPnYfF0Ac",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:59 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord cannot require a tenant or prospective tenant to provide post-dated cheques or engage in automatic debiting of an account (such as pre-authorized debit) for the payment of rent. While a tenant and landlord can mutually and voluntarily agree to use automatic debit as a payment method, a mandatory lease clause requiring it is contrary to section 108 of the Act and is therefore void under section 4.\n\nVerdict: not enforceable\nSection: 108",
+       "thought_signature": "AY89a1-bVdLuZn9rn_90peEp9fqGUcxGDQz5E7tVV8uGH7TAi48rJHoKKAYXlQYpaY7XSiGI30icRvPkklWCvNCvKFTNrHSEMNQTPCu6bjMM0f2JOYbLicDWczd4mvE="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:55.549495Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "L3j3avfEIYOJptQPnYfF0Ac",
+  "usage_metadata": {
+   "candidates_token_count": 114,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 114
+    }
+   ],
+   "prompt_token_count": 185,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 185
+    }
+   ],
+   "total_token_count": 299,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

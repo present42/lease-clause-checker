@@ -1,0 +1,67 @@
+{
+ "clause_id": "c04",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "4a8fda30fdee05564d7fccc283f7fabf46c877a8bd137251b3a3ec6162798aa0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Tenant shall not allow any animal kept in the unit to damage the unit or to disturb other residents.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:11.545389Z",
+ "text": "# Yes, the clause is enforceable\n\n**The deciding section is s. 14 of the *Residential Tenancies Act, 2006*.** Section 14 states: *\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\"*\n\nSection 14 voids only **no-pet clauses**, meaning terms that bar animals from being present at all. This clause does not do that. It accepts that the tenant may keep an animal and regulates only the animal's conduct: no damaging the unit and no disturbing other residents. Because it does not prohibit the presence of animals, s. 14 does not void it. Nothing else in the Act makes it inconsistent under s. 4.\n\n**The clause matches duties the Act already imposes:**\n\n- **s. 34**: The tenant is responsible for undue damage caused by the tenant, another occupant or a person the tenant permits in the complex. Damage caused by the tenant's pet falls under this.\n- **s. 36**: The tenant must not unreasonably interfere with the reasonable enjoyment of the complex by the landlord or other tenants.\n\n**How a landlord enforces it:**\n\n- **Damage**: Through an application or notice under **s. 62**.\n- **Disturbance**: Through an application or notice under **s. 64** (substantial interference with reasonable enjoyment).\n- **Termination**: If the landlord seeks termination over an animal, **s. 76** applies. The Landlord and Tenant Board may terminate only if the animal:\n  - caused or is causing substantial interference or undue damage,\n  - is inherently dangerous, or\n  - causes a serious allergic reaction to another person.\n\nA breach of the clause is not a free-standing ground for eviction. The landlord must still prove one of the Act's statutory grounds. The clause itself, however, is a valid term.\n\nVerdict: enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 231,
+ "output_tokens": 1263,
+ "raw": {
+  "id": "msg_011CgwRC4DsRQYwwmmMVNyzG",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "# Yes, the clause is enforceable\n\n**The deciding section is s. 14 of the *Residential Tenancies Act, 2006*.** Section 14 states: *\"A provision in a tenancy agreement prohibiting the presence of animals in or about the residential complex is void.\"*\n\nSection 14 voids only **no-pet clauses**, meaning terms that bar animals from being present at all. This clause does not do that. It accepts that the tenant may keep an animal and regulates only the animal's conduct: no damaging the unit and no disturbing other residents. Because it does not prohibit the presence of animals, s. 14 does not void it. Nothing else in the Act makes it inconsistent under s. 4.\n\n**The clause matches duties the Act already imposes:**\n\n- **s. 34**: The tenant is responsible for undue damage caused by the tenant, another occupant or a person the tenant permits in the complex. Damage caused by the tenant's pet falls under this.\n- **s. 36**: The tenant must not unreasonably interfere with the reasonable enjoyment of the complex by the landlord or other tenants.\n\n**How a landlord enforces it:**\n\n- **Damage**: Through an application or notice under **s. 62**.\n- **Disturbance**: Through an application or notice under **s. 64** (substantial interference with reasonable enjoyment).\n- **Termination**: If the landlord seeks termination over an animal, **s. 76** applies. The Landlord and Tenant Board may terminate only if the animal:\n  - caused or is causing substantial interference or undue damage,\n  - is inherently dangerous, or\n  - causes a serious allergic reaction to another person.\n\nA breach of the clause is not a free-standing ground for eviction. The landlord must still prove one of the Act's statutory grounds. The clause itself, however, is a valid term.\n\nVerdict: enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 231,
+   "output_tokens": 1263,
+   "output_tokens_details": {
+    "thinking_tokens": 646
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

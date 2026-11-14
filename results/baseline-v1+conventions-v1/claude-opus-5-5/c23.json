@@ -1,0 +1,67 @@
+{
+ "clause_id": "c23",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "011f735274d1600edb5b07c5de3aad7a319d00bdacc015216edd4d8fdcd0c397",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: At the end of the tenancy, the Landlord will apply the rent deposit to any unpaid utility bills and to the cost of cleaning the unit.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:36.847227Z",
+ "text": "**Not enforceable.** Under section 106(10) of the *Residential Tenancies Act, 2006*, a landlord may apply a rent deposit **only to the rent for the last rent period before the tenancy ends**. The Act does not let the landlord use it for unpaid utilities, cleaning, damage or any other charge. Because the clause directs the deposit to those other purposes, it conflicts with the Act. Section 4 makes any lease term inconsistent with the Act void.\n\nRelated points:\n\n- **Other deposits:** Section 105 allows only a rent deposit (s. 106) and a refundable key deposit. A landlord cannot rename the deposit as a \"security\" or \"damage\" deposit to get around this.\n- **Remedies:** The landlord can still pursue unpaid utilities, or undue damage beyond normal wear and tear (s. 89), through an application to the Landlord and Tenant Board or other proper proceedings. It cannot simply keep or redirect the rent deposit.\n- **Section reference:** In the RTA, the main exemptions are in section 5, and partial exemptions are in later sections. This doesn't change the answer, because you've confirmed the tenancy is fully covered.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 245,
+ "output_tokens": 800,
+ "raw": {
+  "id": "msg_011CgwRDvSNQBCHiKHTECkT4",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable.** Under section 106(10) of the *Residential Tenancies Act, 2006*, a landlord may apply a rent deposit **only to the rent for the last rent period before the tenancy ends**. The Act does not let the landlord use it for unpaid utilities, cleaning, damage or any other charge. Because the clause directs the deposit to those other purposes, it conflicts with the Act. Section 4 makes any lease term inconsistent with the Act void.\n\nRelated points:\n\n- **Other deposits:** Section 105 allows only a rent deposit (s. 106) and a refundable key deposit. A landlord cannot rename the deposit as a \"security\" or \"damage\" deposit to get around this.\n- **Remedies:** The landlord can still pursue unpaid utilities, or undue damage beyond normal wear and tear (s. 89), through an application to the Landlord and Tenant Board or other proper proceedings. It cannot simply keep or redirect the rent deposit.\n- **Section reference:** In the RTA, the main exemptions are in section 5, and partial exemptions are in later sections. This doesn't change the answer, because you've confirmed the tenancy is fully covered.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 245,
+   "output_tokens": 800,
+   "output_tokens_details": {
+    "thinking_tokens": 391
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

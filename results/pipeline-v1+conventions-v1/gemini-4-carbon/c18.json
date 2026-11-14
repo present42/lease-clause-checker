@@ -1,0 +1,111 @@
+{
+ "clause_id": "c18",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "036bff178f634bc63a38b118b15d5001bc6d7d2e12206d172039f9e7b7a010f7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nFor the Landlord's records, the Tenant will sign, together with this Agreement, a notice of termination dated for the last day of the term.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:41.209394Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"A tenant’s notice to terminate a tenancy is void if it is given, (a) at the time the tenancy agreement is entered into; or (b) as a condition of entering into the tenancy agreement.\",\"reason\":\"Under section 37(4), a tenant's notice to terminate a tenancy is void if given at the time the tenancy agreement is entered into or as a condition of entering into it. Because this clause requires the tenant to sign a notice of termination together with the tenancy agreement, it is inconsistent with the Act and void pursuant to section 4(1).\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4539,
+ "output_tokens": 770,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "oXD3ar2kD_mew-UPue_u8Qc",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:54 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"A tenant’s notice to terminate a tenancy is void if it is given, (a) at the time the tenancy agreement is entered into; or (b) as a condition of entering into the tenancy agreement.\",\"reason\":\"Under section 37(4), a tenant's notice to terminate a tenancy is void if given at the time the tenancy agreement is entered into or as a condition of entering into it. Because this clause requires the tenant to sign a notice of termination together with the tenancy agreement, it is inconsistent with the Act and void pursuant to section 4(1).\"}",
+       "thought_signature": "AY89a18veVsn6RLhm94mPZ5Xvmsx7I4-gxT9QnKQ-H1dTb9JNOFx6YbxzsKXVp5tXvtt0PT5CXNuqUmG9VozQSlzXDraN_XbTlS5RknkCDLi4qu8XhmyBVbKLbDDnLUp_m0msct6xhSJP8x338I4TUB2PcdYtgfaJ6FmwKUt7Vh8xJf3E8X8t1CZxXJW5Eus8aGPZoOWVA6uAqN4I27OeOiQK7IPA2PU0a04vuzBV3Cr50P4muOz_L-aedHNcPteiB4zJlmTKyACq-2KCM_5ZqtXGayL4ofgvBqvIomYUTLS45VsUmB2IEoNGHN6cL12gyWUyOUdFQlV_nNxeCSzFbG6EEXcZHeplea7svDJvw9EVwHXfgTbdU-5qOd04p5q2bFG5AM7EDqH_10DNYJmHVffDB4IpCJ-7zUy_wDmZcZoD5vqPGF4rrCYrunUjphX03ba40eRdTf4BDbsIyoKH2SyhDXI9HLwBPe73rvA6-T-wBPDLfzmQxpjcTUoMG87ffi1igvnd8y7Mn-JfQ6LszjWjb-N-CbihrNGYDgpVEuxgJMKkyjPyhnRZGLi6gXj4LaI9YPQCL7OPndtsDlqSu8kgxRv4cuAS6HnWzAZV7Fe8sZLSAIQW7lyuR118XHbTNUtKTWrvAbBENOVsJGwJFjhCJ_KudkCuaVCRsxcV0T2pW9grYi8zSfrKXs4b3lJki87_xdr39fBs2wXBtR8a7kUkWxhql6SLM99uHbeBUoqwtIzQYFoV3AxN5N2xHorIihl9j9xinXAkpnXF4RxunhAS4FzUzTp4CDkcpBH1Z03ojwirkgAGqdtdklgB2CUHbM2Tizi1TaRLVN5jjG9MNjcsD8_TWFtqLfzDuGQOhSleRilWj8L054HxLRuvWDbWe6bOc9mIE1hGjR4n3Fa_W_zceSVBtdziyCxF3xFsp4YOUNyl0T_3JFmCHqbXI7PYfEnQRIK4Lm-h8yWM5y6yK_5ItFCltkXAKGK-FBWlnRVHeIpXvzGNJ6v-2Zx4GSBK4_YApnROinCuQMKa50CNQ1y3MfBlSr_hglogr8blQSTYXxd3NWDG40SHPlezU9dkfSvxeBIZ_h-hC17-TGTfzlx4oZ_o7rU5wrTmADU7uh9NNNEd_g3Xqnb3Zum35X7fnlLt-6tz3f2fjbbhQ39MNtiuJcth_Y9EcAve1g8N6t_rn-xGxyE5JIgv_XUxyAzNkmZRMA3aSZuSJM2BFSkZfALatHnj0j7nkaiBajG7xrXxVB0Erw1pW_UEJhbagzTkjLMv9Tubo8t_FRCOVflgubXOtc5RjUU08YqASuVG8WjnlhqM5gsqxuTv4Gp4tFBKAvZokntqaQ-mePS4mbr0KumJv1PxRas5DB1MtcZfbt90zfUco4oImNV2AlfGUFoJee_hkeUUitWYRhytiFnufdX7o163i-Zo45VqHp-WsNIUxld1hi8OF_ONHuvFeor3oCUjmeDLaZQ8zgk7pXDG8VOwY-BdSyBG9Vx2_ZFjKoDwAo5UsdWajFXE4zLzcjBUi5KSJhT4Vf5BNWYcBBZlL05jTIdAYM2roM_MUE7nNZzPOhBUkmbs4uuPUXVctb1H0JHnBZHsdFmN1o3BsZv3e9UdNKpn0btTnO6OeN4fkiY0ZNHsubSQjD9oa1DaD8aOcCb4l0ACXTt5kLjOP1CxpvqYgv3vOAKRl4FTRlRms5kGWSK_xwVb50d45zebiambdkBl1C4EarHl30fZzV4I-oGQyaM_D1tAN2Cyg_kfsk7FaQNHdqn9DwkS-A4xLlNqfoZs31rgcNkTCzNau5NhOre6_NepSN1SUUUfQEj60-BOmFbGukjobOtTiI8IzokWUfLt1ALNrL5GttXSjFif_pP4TYBMG-SLMlVRqp_xbWhrjJYLtEP91R4LRarJO839E_ewCDnbq3NLMaxd_lrGp26Dm70PAcQqEy6L-UecCcSWA9Aoq06cfyTNA5ToHBcPaEXyxnROgm5SkJ5oicSCjbFfdBP14XI8VzzQL2dw2b6LObKi8dLsmGBHqDwoh8Fz6_tsYZ2N4mUZKXF_zWiNq6guzXhgQwEfRUPA6iduwm4vRGXUThigQ5Ryp4tGHiQUh6SpiK1jVvG5YjaKH5hiZ5Q1uk-5Gz3z-EyCrmAWUlOyzuuBsFlNuL2UuJ2ySWm3UeOTf9WlmyNuip4OpQqS5zqRvHEHFhTlZNDFmhvXz86waxiAyW66ANl1jJfYPsw22ko6UfDuHLX4BXKH8I1KzDnZwLnFo0boMEurFrW5BQ8VhsD4tRyrjen5MnZ6m_-apRe7D-_Wsz5CyklZqXFXPCB-DE--tpYR9hvXP2mRasvp9jHJq5gi90SF0fx3xCHopMH6WM0yDUrfExqxNLL2bDcAfPBOIVUtkYoC_bLDwThIpwHrL714dpWuTSM41AivOn4kLVSRVzqewr0Af_r1mqt-rd_dpkXDaGIYTSrNBysy8qTulBoHGTA0IliTI54XEZl0QwAag8k4teS7V1xKqsYbe45ZTyTm-TYUkr8U0t1eSUDwbNI0SBWR3G1QuSYJbUjwEIjP2AN0LWGTcKf83aHw_7pJldh9C1UKIGsInp-4TPLTgzK08LDzJBw2hpWvp-uR4QAq2HPfHro0ZOVCHXLBRR-62wSsmjWZBI49iqT8srBO35IX7GM4RzJMS3TH4rJ_HOkrMoXK8NOcdqAIlIKjtlBFM-cQD9q3pTbZ66YTWE_Q98PKcqGlkfWAdGh-8UTCU7o1vvwTqHppdcMhTXBAWRHiMfTnwOTsjzW70QMq7Ot8MQligdToKQhca08Rx1UV9ozCqrtkiH0uxmXzKzmA_PoYOpaT2JOhvTD65AChExAYKz_ABkfm2XKZ52bfOPjcJ3p6qw_19ngn9tkM9l9A8WaRbC08REKs_maQy5_Wh7Ij98ZOdGOVPAcIIB_ZnKXIiNw-sVna09FiYxmqtf21vTeUCGp59J43aQ5gCH6eJPX0hVXCHOp88UVRynOJhSm3ewfCnA8-JwG76K_DqY23--2uPFv3XM85O6pXCRFKtT_g1wSvBeSmnO4NyjzapwEpMoU2L0IBxdTygS7_gV4PabMGJeBeRu5p-TacOmdIRNh7jGpCA1hD1qe1REBffuCKnQCIZIlLoqn6rJfM75TWHEkwSLgwghHyXqoVTBURJfLyG1COoUBDjEMJLg8n8l-lPohkXid_ZK5TlY3oB807nNs2um4UEkMEzW-yG3-F2QnFH0RQz8l3jJ4mTgoo7jLmuFDQe-ML3_2kv-2-W1uZZqY1YIgxZlEaxuWKlM5ovN5oFmioZH3BSMLMrVyTrWPrx1o01H0r6UVb_A82qlnCvYK_ofJuL3Pgp82kdIc2ZPguCx7GivYf5joW8TD8mlNI7KKTqblITGWmNXIQr3_Dtcl11US0oLGNJliDMwstn5tFYAAbH-JzMuPkZqvZNkKMOAMyeeLfzXVfTojEwn-Cl3s11kvsRy_otvR9086zC3F"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:41.250429Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "oXD3ar2kD_mew-UPue_u8Qc",
+  "usage_metadata": {
+   "candidates_token_count": 148,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 148
+    }
+   ],
+   "prompt_token_count": 4539,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4539
+    }
+   ],
+   "thoughts_token_count": 622,
+   "total_token_count": 5309,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "void",
+   "section": "37",
+   "quote": "A tenant’s notice to terminate a tenancy is void if it is given, (a) at the time the tenancy agreement is entered into; or (b) as a condition of entering into the tenancy agreement.",
+   "reason": "Under section 37(4), a tenant's notice to terminate a tenancy is void if given at the time the tenancy agreement is entered into or as a condition of entering into it. Because this clause requires the tenant to sign a notice of termination together with the tenancy agreement, it is inconsistent with the Act and void pursuant to section 4(1)."
+  }
+ }
+}

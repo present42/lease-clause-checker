@@ -1,0 +1,67 @@
+{
+ "clause_id": "c21",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "91df827585f4cd338eef655174da7b2d1d6f5354b2bdd38488b07f7e75b25d52",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. On signing this Agreement, the Tenant shall pay a rent deposit equal to one month's rent, which the Landlord will apply to the rent for the last month of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:49.337167Z",
+ "text": "**Verdict: enforceable.** The clause requires a rent deposit of no more than one month's rent, applied to the last month's rent. Ontario permits that arrangement.\n\nUnder s. 106 of the *Residential Tenancies Act, 2006*, a landlord may require a rent deposit, but it cannot exceed one month's rent for the unit. This clause is set at exactly one month, so it falls within the limit. Taking the deposit at signing and applying it to the last month's rent is also consistent with how the Act treats rent deposits. Other rules still apply separately. The landlord must pay interest on the deposit under s. 107, and the deposit cannot be used for other purposes. Neither of those makes the clause itself unenforceable.\n\nI cite s. 106 from memory and have not checked the current consolidation, so confirm the section number against the official text on e-Laws before relying on it.\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 264,
+ "output_tokens": 2476,
+ "raw": {
+  "id": "msg_011CgwRARKKY6GthPdGBSHdi",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Verdict: enforceable.** The clause requires a rent deposit of no more than one month's rent, applied to the last month's rent. Ontario permits that arrangement.\n\nUnder s. 106 of the *Residential Tenancies Act, 2006*, a landlord may require a rent deposit, but it cannot exceed one month's rent for the unit. This clause is set at exactly one month, so it falls within the limit. Taking the deposit at signing and applying it to the last month's rent is also consistent with how the Act treats rent deposits. Other rules still apply separately. The landlord must pay interest on the deposit under s. 107, and the deposit cannot be used for other purposes. Neither of those makes the clause itself unenforceable.\n\nI cite s. 106 from memory and have not checked the current consolidation, so confirm the section number against the official text on e-Laws before relying on it.\n\nVerdict: enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 264,
+   "output_tokens": 2476,
+   "output_tokens_details": {
+    "thinking_tokens": 2174
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

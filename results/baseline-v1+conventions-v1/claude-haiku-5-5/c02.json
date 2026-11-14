@@ -1,0 +1,67 @@
+{
+ "clause_id": "c02",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "ca067addf33b890bbd9907fef58e5ed5db51a86026a19f3199841c6560abef63",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Out of consideration for neighbours with allergies, the Tenant agrees not to keep any animal in the unit.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:30.904354Z",
+ "text": "The clause is generally enforceable under the *Residential Tenancies Act, 2006* (RTA). The RTA does not prohibit a landlord and tenant from agreeing to a no-animals term. Section 14(1) makes a tenancy agreement provision void only to the extent that it contravenes the Act or the regulations, purports to waive a right under the Act, or is otherwise inconsistent with it. A general pet ban does none of these things, so it is not void under the RTA.\n\nThe clause's stated purpose, consideration for neighbours with allergies, does not affect its validity under the RTA. The tenant's agreement is still a valid term.\n\nTwo limits apply, though neither comes from the RTA:\n\n- **Human Rights Code:** Under the *Human Rights Code*, a landlord must accommodate tenants with disabilities to the point of undue hardship. A no-animals clause cannot bar a service animal or an assistance animal needed because of a disability, and it may be unenforceable as applied to such an animal.\n- **Enforcement:** A landlord cannot evict for breach of the clause without following the RTA's eviction process through the Landlord and Tenant Board.\n\nVerdict: enforceable\nSection: 14",
+ "finish_reason": "end_turn",
+ "input_tokens": 233,
+ "output_tokens": 1545,
+ "raw": {
+  "id": "msg_011CgwR95MkyxHDabtQUwHKz",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is generally enforceable under the *Residential Tenancies Act, 2006* (RTA). The RTA does not prohibit a landlord and tenant from agreeing to a no-animals term. Section 14(1) makes a tenancy agreement provision void only to the extent that it contravenes the Act or the regulations, purports to waive a right under the Act, or is otherwise inconsistent with it. A general pet ban does none of these things, so it is not void under the RTA.\n\nThe clause's stated purpose, consideration for neighbours with allergies, does not affect its validity under the RTA. The tenant's agreement is still a valid term.\n\nTwo limits apply, though neither comes from the RTA:\n\n- **Human Rights Code:** Under the *Human Rights Code*, a landlord must accommodate tenants with disabilities to the point of undue hardship. A no-animals clause cannot bar a service animal or an assistance animal needed because of a disability, and it may be unenforceable as applied to such an animal.\n- **Enforcement:** A landlord cannot evict for breach of the clause without following the RTA's eviction process through the Landlord and Tenant Board.\n\nVerdict: enforceable\nSection: 14",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 233,
+   "output_tokens": 1545,
+   "output_tokens_details": {
+    "thinking_tokens": 1151
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

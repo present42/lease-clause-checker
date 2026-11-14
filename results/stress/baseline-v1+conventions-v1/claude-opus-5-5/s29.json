@@ -1,0 +1,67 @@
+{
+ "clause_id": "s29",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1d501c62c83de9b31f4c9ebe81f0192f0fb16a27399160697885aca72cb2e30f",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may increase the rent once in any 12-month period; the first increase may take effect six months after the tenancy begins, on 90 days' written notice in the form approved by the Landlord and Tenant Board.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-13T17:06:40.046162Z",
+ "text": "**Not enforceable as written.** The clause conflicts with the Residential Tenancies Act, 2006 (RTA) by allowing the first rent increase six months into the tenancy.\n\n**The deciding section: s. 119(1)**\n\nUnder s. 119(1), a landlord may not increase rent unless at least 12 months have passed since:\n- the last rent increase, if there has been one, or\n- the day the unit was first rented to the tenant, if there has not.\n\nThe clause lets the first increase take effect six months after the tenancy begins. That directly contradicts s. 119(1).\n\n**Why the lease term doesn't change this**\n\nSection 4(1) makes any provision in a tenancy agreement that is inconsistent with the Act void, and the Act applies despite any agreement to the contrary (s. 3(1)). The tenant cannot effectively agree to an earlier increase. An increase taken before the 12-month mark would be void, and the tenant could apply to the Board to recover the excess rent.\n\n**The rest of the clause is consistent with the Act**\n\n- **Once in any 12-month period:** this matches the 12-month rule in s. 119(1).\n- **90 days' written notice in the Board-approved form:** this matches s. 116(1) and (3). If notice is not given properly, the increase is void under s. 116(4).\n\nOnly the six-month first-increase term fails. In practice, the earliest valid first increase is 12 months after the tenancy began, with proper s. 116 notice.\n\nVerdict: not enforceable\nSection: 119",
+ "finish_reason": "end_turn",
+ "input_tokens": 264,
+ "output_tokens": 811,
+ "raw": {
+  "id": "msg_011Ch1HxKRV1LBxqqd2gjewE",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSvgsKEAgTGAI4AUIIdGhpbmtpbmcSDGprYJvZ+3SnX5QVFxoMOEzv8tSV5tU+yUSVIjAyORsFC1osM5p+quHrDcZvCiOPXpjGFpJSEqrMAkj1zJz78xCQSFAzMl0SyJcjIRIq2woD6+V9j0R/bYcrxNOw9jQL3UtuL8Y8TbP7rIsJeYAZCw+620AeaL4b6iHjtsuCfYcFN75PwtzV1CfGhtJvH6HQu9J5z7MGEYnIT0tRQwH/+8AQ3NHkGfDF/4yMG6zVc5hlqp8mcRPxhE+dOsPsrJA4AFAXrwueqYAmQnugthgpW9uC7oiKm1a0ZhzztKOVBds0+yrg1bkElkwaNtjk+6swA1rMkAuMV6Pg5wsEkPM8l5kKgUMl8xEG1cJY6c5CsApNZUQ723nS66l2Jnxq6pEYzpDXFeG+pkaNfhKj9hNFyEoPSZuldapMclEqVlo28t75KILE+r2maFt/a08dWZrI/pdMpIVhGC+7pQs6YA9Ea/off8Yt/QihFetFtClaKHk92wLYxhVzomnzUdreu2i6A8LsZZ7RZ+TPYoQ56fBvHfWhbtxYmjPvkIoYn5bmUekk5LJJGy0Jc1e/hJ7i4Q9ElNpFhxCqaY6UeAMlfLbH1+rUuKFFbyetGdsB/fttMdtenMWUnboybJBB7KHBUK4kclralNHJsTRefkpauOS0Gzg1o/Gy1Y6aCZkqHOzPkgqo1rrXhgDat5a6UjQNfVV6zj2DIIJV6+ZPKbE9VQQZI3F3xfkxzh8qyDYeP3B/PwT6D7+575LIrDvmMo5NlAq1UX/7g52VGiaSZvmNGv6mC3qf9nMQZzXZPibVam7vfbYpld85ybJYuOx8WYoIqG+hGDUcCVZVlXACYWlgK/YNuvXB84UpFRa7SkMU8QbZSNwHfIc+1WQA1pMQuSDu6BASo90Tc2Bzb28yiOAbHhr2fgj9DU8qKlmDO/mW+wFy+jGJZCjumJaOzGXTslHrr3Nth4jOp7hPvURxHY+0RtnhtR6IiBvYfCbjhXq/DVoJWNMUmK8vefcvqxCY6oITAxF5tqpVpOWbn1hrSFEvm6x+XacwZk2hj4dYvIYz3D83KROshfs0M7ZHxFTM+R6H6oUaxLTpM/T7lOwBVQXovwMpzQSJWbk2Ox6/aT+7RmbbU4fbUs6Ry2kSsSbjo5YxPWR0ZR92j93tl3G7/0lGqyjKhPw4QLsuaD99oNLUchMY9xsAcvuh17oHAS7Gj+OAEvT0pewq4VsehEmgvSGZ9qVWMkPCuo2LWTmT0FvHOUHmhKNr2+dqaCYAFIESMPp8rEWf9XSMETP5p/bg8KKymvg+NMX+3B+fxNq2XMDUBTK0XcSRuozedS1zCqSnHpgb5OcNNxVlZ9OS1tF8tRvUxJd6kXgzfM/ID/AIF4DDQnf6HpVG9qt1yUKo0AHX63iRHn14cFMsGhjPbzqrWDE17ebpyLmGMpU6VOOvRl20BLeSJIQm0plgSVoMTWyRw3Stt/qWRhJhwRVnrXHjbZiHXZx8hVC52EEJzTKG0maEMLvvdKybwBBfnRfKt8GnIXYWAn8McRsod+ffj8/xGMKoNB8jcMTAs6Z+2OkulYIXrrNKE22/Xq9CE7s62A1Z9WbnpJeVnxI7zJIScc5txUNWOdRLUsJXrPTC5sVP1B2gQ5khgmOeHPPfvvVJ0NBs8F/ZebRGdRBdXZPqmyroANJqoaojrTvKwZ6iZI6T5xyrQdY/bwToYjn3q8x0s42LQvRx6PXaR5nfIAoLp9fV5rH2TdZ7CXta2XWyUviuA7RvHPg5oj9iqkVLdgTMH/hezPw5LmWD2dmdNr82makaWFnHt2TEaSGfdQg2/jMb1HUjyLNhIbyeKdTfeXTS/kA5/oxKvQ19c+K7p5N82a4yz0BIb46eWiILe+5EjJF/kyjzkHc/1Z4x97VIIVH8pOu1i31fIdsW3zK5rikV1UEeT6oYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**Not enforceable as written.** The clause conflicts with the Residential Tenancies Act, 2006 (RTA) by allowing the first rent increase six months into the tenancy.\n\n**The deciding section: s. 119(1)**\n\nUnder s. 119(1), a landlord may not increase rent unless at least 12 months have passed since:\n- the last rent increase, if there has been one, or\n- the day the unit was first rented to the tenant, if there has not.\n\nThe clause lets the first increase take effect six months after the tenancy begins. That directly contradicts s. 119(1).\n\n**Why the lease term doesn't change this**\n\nSection 4(1) makes any provision in a tenancy agreement that is inconsistent with the Act void, and the Act applies despite any agreement to the contrary (s. 3(1)). The tenant cannot effectively agree to an earlier increase. An increase taken before the 12-month mark would be void, and the tenant could apply to the Board to recover the excess rent.\n\n**The rest of the clause is consistent with the Act**\n\n- **Once in any 12-month period:** this matches the 12-month rule in s. 119(1).\n- **90 days' written notice in the Board-approved form:** this matches s. 116(1) and (3). If notice is not given properly, the increase is void under s. 116(4).\n\nOnly the six-month first-increase term fails. In practice, the earliest valid first increase is 12 months after the tenancy began, with proper s. 116 notice.\n\nVerdict: not enforceable\nSection: 119",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 264,
+   "output_tokens": 811,
+   "output_tokens_details": {
+    "thinking_tokens": 316
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "clause_id": "c36",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2af16dc807b6b0d992984b0a5c73ea4dddef619770b3677e023a972b73d67124",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If the rent is more than 15 days in arrears, the Landlord may remove and hold any of the Tenant's belongings in the unit until the arrears are paid in full.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:53:52.914793Z",
+ "text": "No, this clause is not enforceable. In Ontario, a landlord is strictly prohibited from seizing or holding a tenant's property (a practice legally known as \"distress\" or \"distraint\") to enforce the payment of rent arrears. \n\nSection 40 of the *Residential Tenancies Act, 2006* explicitly states that no landlord shall, without legal process, seize a tenant’s property for a breach of a tenancy agreement or for the non-payment of rent. Furthermore, section 4 of the Act makes any provision in a lease that conflicts with the Act void.\n\nVerdict: not enforceable\nSection: 40",
+ "finish_reason": "STOP",
+ "input_tokens": 198,
+ "output_tokens": 138,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "4Xj3apLHAbf0yOgPv8nc8Q8",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:55:40 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. In Ontario, a landlord is strictly prohibited from seizing or holding a tenant's property (a practice legally known as \"distress\" or \"distraint\") to enforce the payment of rent arrears. \n\nSection 40 of the *Residential Tenancies Act, 2006* explicitly states that no landlord shall, without legal process, seize a tenant’s property for a breach of a tenancy agreement or for the non-payment of rent. Furthermore, section 4 of the Act makes any provision in a lease that conflicts with the Act void.\n\nVerdict: not enforceable\nSection: 40",
+       "thought_signature": "AY89a1__KJqPH_P-TtUh8OuFn3ggdhU9PhH7j3Oqtzl3FDq7p5TqNpG8kzCGkB5lyzySjctkCdc9Tbbfe2VMGBSlt-Eztuk4VHQJc978eicamOtLu4sRTE2z-u9J9Ctt"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:53:53.025490Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "4Xj3apLHAbf0yOgPv8nc8Q8",
+  "usage_metadata": {
+   "candidates_token_count": 138,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 138
+    }
+   ],
+   "prompt_token_count": 198,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 198
+    }
+   ],
+   "total_token_count": 336,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

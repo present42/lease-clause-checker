@@ -1,0 +1,74 @@
+{
+ "clause_id": "c01",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "053b475985429cca865d90ff2bf7150e162b9bc9a4d8d1e312156aaf5e3deb42",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: No dogs, cats, birds or other animals of any kind may be kept in the rental unit or anywhere in the building.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:16.610967Z",
+ "text": "No, this clause is not enforceable. Under the *Residential Tenancies Act, 2006* (RTA), any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void.\n\nVerdict: not enforceable\nSection: 14",
+ "finish_reason": "STOP",
+ "input_tokens": 186,
+ "output_tokens": 63,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "CXj3aqfEBe6gw8cPi5We8QE",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:59:05 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "No, this clause is not enforceable. Under the *Residential Tenancies Act, 2006* (RTA), any provision in a tenancy agreement that prohibits the presence of animals in or about the residential complex is void.\n\nVerdict: not enforceable\nSection: 14",
+       "thought_signature": "AY89a18a4dR_6vevpi71pPpwO5e632UraIEZvb9fRjCu3ZgVMoSkPEw8FtFpoS-0NwY4mcVhFfrgBM3fbYwE092hrVvvp2iJhqDLNFKXKng5M7_0XwWaI8WE_XkyHxff"
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:17.090663Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "CXj3aqfEBe6gw8cPi5We8QE",
+  "usage_metadata": {
+   "candidates_token_count": 63,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 63
+    }
+   ],
+   "prompt_token_count": 186,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 186
+    }
+   ],
+   "total_token_count": 249,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

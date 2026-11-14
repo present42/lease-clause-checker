@@ -1,0 +1,99 @@
+{
+ "clause_id": "c31",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "66a779e2840f0a8019802e39e8d8beb46fcca728b160beab9246a7b46ba52de8",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nThe rent will not be increased during the first 24 months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:31.342791Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"Section 4(1) voids only provisions inconsistent with the Act. A promise that rent will not be increased for 24 months is stricter than the Act requires, since section 120(1) only caps increases at the guideline and section 119 requires 12 months between increases, so the clause is not inconsistent and is not void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6415,
+ "output_tokens": 1018,
+ "raw": {
+  "id": "msg_011CgyJ7MMoeiyyoNLrtcpb5",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"allowed\",\"section\":\"4\",\"quote\":\"a provision in a tenancy agreement that is inconsistent with this Act or the regulations is void\",\"reason\":\"Section 4(1) voids only provisions inconsistent with the Act. A promise that rent will not be increased for 24 months is stricter than the Act requires, since section 120(1) only caps increases at the guideline and section 119 requires 12 months between increases, so the clause is not inconsistent and is not void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6415,
+   "output_tokens": 1018,
+   "output_tokens_details": {
+    "thinking_tokens": 862
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

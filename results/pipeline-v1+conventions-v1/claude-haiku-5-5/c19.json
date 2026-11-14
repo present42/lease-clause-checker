@@ -1,0 +1,99 @@
+{
+ "clause_id": "c19",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "67eac06e02dba3267628627060f17ca73078ddd3df8ae99709ab62e9c7a8c1c7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nOn signing, the Tenant shall pay a damage deposit of $500, to be returned at the end of the tenancy if the unit is left in good condition.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:25.582778Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\"reason\":\"The $500 damage deposit is money held as security for the tenant's performance of obligations, which makes it a security deposit under section 105(2). Section 105(1) allows only a rent deposit collected under section 106, so this damage deposit is prohibited and void under section 4(1).\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6440,
+ "output_tokens": 345,
+ "raw": {
+  "id": "msg_011CgyJ6vnxGVTj9sL9LSYis",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSzQkKEAgTGAI4AUIIdGhpbmtpbmcSDMN59FIi7JlCFQBENRoMNySJwCxrLB0hOkElIjDEpDFSg2chINNnF0vqfzOo7ByDbsfWcLnNEblHp+NWjzGDG1owCpxQJWHlBqYv9vwq6gitb2vTkJuCKp3EmqQJF/5Y8rbrOY3xOPRR1vNhJSZ9uO7Y57odew83kMa4gtu8oGz6CaHExrZb0uAhKx2IKK/w87dHNGuNXBQ/suiho2wjv+2bUd55A2j1omSFegpFYOJRnKBjh/F+3Y819nh7lqPUaz1fEdtCizm1iUeVGK+AgcuqpgoZKueqCMgfGAn8Q/Uwc5yqk7NcYS1MY9M+0Ht7Ri1Bvlz0deueOT6DKijFpUP0xoZNoSEmO8jiwiDd29JrBdDrUHBmYQMm5xUV+AqKJg3yBzy2Zgs7eaFYmzANhF88ueXUocJxcuq98i/2tE6bpraHILwrsp+z99ZJyVM10qmygwXK0rGZM3ojPQHCeHGkGwIwko0Vc+NxIkhmyPpk+ADKEhf1kCDIQ4yk9QxLQao+tGObILzDu//QY+LHZ7vHXyVkJ/UvHkh8uwo5CeY/9qMgz20q+HR+i0/fNDd2UNT0NAKECglLPCUP5gqsNxZJ0MrAnYkYK75ya0A7JLrwLodhlnR40SSucmIlww05sbJbXYKxlElVvYum+w/VjGRNSteEo8y1/6tAoqcPHTQFwzRI3mpF2OKB+DvzeFhcouQ2M2NDQ7r2Oov9nbuHgXnDLJcLoxQPKv5Wi/QDWoeedpsD7pr1RBnTME/eFbe7IAzeEhlkJpjIussWZmDlIHp/qdGE88CaFZ9vRqApPsbGCbb+/LvQTYziBdvlqsuHc3gBxcC4fjXaHxbWhi5IJ3ZT9wLo7TtCa7kFldwfUEE/+pRJbh9q1Iz3tRttEh/YGTff2Qabp8gx562NlbKrre3YUgI46CT3C+ZpDp+uN6+fYCYQi5/auG46E3MOvllnyDc7wyZX2vulCz+LMzvACc53xM+rs11yAjIZL0luB7j/5Tikk2BKcMMWlqNlJeLA6oWE6nqWGeoriYt7U3PaWk62AJRAfqfo/Xxm8ddssvog+E0usQiYVWBrRwhk/VP0nXVXDOCVpbqptZajZNmLIsU3ImMZorWhrOrrOgIVvp7Ib4wp6GYKuFj7aHJmLtxBbFnxFJkP43dCX2yCVVO1nPYIBFgFuPtK9Z/YRG90CyDxBaWLrENMIR6tlkbMma6Ql8HOi+7lYv0nbEPKkWusHPLf2tl5FLgfqCWo1xhkePD6OW5h4/p7USyJA/OZb/N8WlPuP5ZJzSLZUq8sWSREwVybVLHdOlJmImQI3kPuguEMfjfCatbzXaY2Bkpq/QCCWhkeoIyQ0HJi9eURHmBW+u53o+kJDRZBKF4J0nrGp71KXkHXiQ253MGxQN6cmrvuZ0USmsrCth1+7OrOeaBoeSXWg+oVh9u0kC4bA3DICheUSCGUJmpJAbhqIKvwsfaEOjA5eV2MLiyaMRfBmdgxwTtSUtEzs0dtYiGYakHjiTyOGhZZ6eq2o3d4OB0BT1kHIVFziwg9PxoxhhlV+tgnXYV6n+CYkTc2pAcMaYnnJXdbQ6c5i7r8MZ88iV4cRo2MufA/xWO8lFfXgxgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"105\",\"quote\":\"The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106.\",\"reason\":\"The $500 damage deposit is money held as security for the tenant's performance of obligations, which makes it a security deposit under section 105(2). Section 105(1) allows only a rent deposit collected under section 106, so this damage deposit is prohibited and void under section 4(1).\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6440,
+   "output_tokens": 345,
+   "output_tokens_details": {
+    "thinking_tokens": 199
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

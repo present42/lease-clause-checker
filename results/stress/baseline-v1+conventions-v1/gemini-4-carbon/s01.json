@@ -1,0 +1,75 @@
+{
+ "clause_id": "s01",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "8ba06eb1c84a4c6117d6b5a4b94d15bd88cb4fd1b41041be1e9495040ba5cea4",
+ "clauses_sha256": "0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: The Landlord may come into the unit without written notice whenever the Tenant, at that time, agrees to let the Landlord in.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:15:06.245224Z",
+ "text": "Yes, this clause is enforceable. Under subsection 26(1)(b) of the *Residential Tenancies Act, 2006*, a landlord is expressly permitted to enter a rental unit at any time without written notice if the tenant consents to the entry at the time of entry. Because the clause requires the tenant's agreement \"at that time\" (rather than purporting to grant blanket advance consent in the lease itself), it aligns with the Act and is valid.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 186,
+ "output_tokens": 573,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "ym_3apPLEvzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:15:18 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. Under subsection 26(1)(b) of the *Residential Tenancies Act, 2006*, a landlord is expressly permitted to enter a rental unit at any time without written notice if the tenant consents to the entry at the time of entry. Because the clause requires the tenant's agreement \"at that time\" (rather than purporting to grant blanket advance consent in the lease itself), it aligns with the Act and is valid.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a18MYTgpzKtN9qQ3shEdPHuj748s8jTCaCyVELwjSY6bIj5BoE5GzmWNaxLS_GgRQywhOPixy6AYN4FYvRMI4f0YnBWbUd04v8goobZQrVnXPQljstnsTS47YyOSsKWiO91vpyMdjws8Goc3UfWh-ijASUbgkgwfBSBoXG4vZstCrfY4auI9gPzQMbYSAxIJCF_grWVsRYvi5e65WeDd5JB956ugysns6IraSnIOeMwrbh9hnieEFjw1XywwMHdS2YClNdgMXNZ1wRkoSqWSbhWL1rwzuqDrt8I8r44xfuCc9IbzxCmVsa9bmOVM1J_MYzfUkRmUml3jgofAsoiRAuvenyOIEENXwaFs8m2gqyJhAoteiNR0aG0vAm1zq8pw86VnKsGQduoQL_9hug93wdxNrV4TxmSdYB3WtgGomu-rqAYxHvilkTM5DGYeMWmzItRJu3EAmuW1kn52N1edyzDOwIz243Msy7oYBooM4L_2mue7GKnrd2yCd1PSccSpbxgfFDtanpol9_eaij7swuPW79O7sQxTHC7y6ekM2FYs6ebuQBGdjCeodhlvGOW9gf_mNF1v8gq2b3MFdSOUOetHwpSefqKs4_yzCB-aYKAUsfR3meH-qOKAgTclMqkKXwA8uQW49xPRot_w_Hi-9QHP7a5kqTAZu0lJiIKdG65JEfrkHcy2tulFnkq82_Lyyaa_Ib4D36qoe1W23f7qRh5kIJLbVd0zmJ7TAGA8iNnWIpIP9NZnqaqH44GuTHTqdVM5iwfZkcRh7LdnVU6nQ1_f42Sb1wA1rb63wL0IAWoXJc0VWyOSn3LxgurD9gFabEoCXn32I8ZNegzz3adfoBs4iFPeFAT715z6IZRjsJ-7BLNqw508uiPVpm94vKZ5HVXCvY1M2Scr17UhHYLZ-0pX3wASHjH0Mn-tI2q8_CbG2Ov3RLHjAm2Uc_yK5TRH6G8LeDDjkNRz_GULwSZ1SIlLhc5bZdZ0oTMx9LjFqvChLr6yb-X1Qs5XT8f_gKHzsBejWCCEEs2WlfyIwQ2daJrlyRvSxs1Pvcik_tIY8LfKMzEC-yjPFEhNgPHJXjaSfnP0ifjIcJ06jfWGOvvd0xd7sYw2Ho0PJP-u7HfUGJ4G12lmOUPxnyqYpQ-0od6XWSaNwDT4m4iZoBeWTs7oMIW3yenmIALOz0Mu0wlfTBEZtuB2Q_9OinphJcBRtGkIs_WBjC60WdE6yjWwjufooWdSitqX1e7Uf3yOmaS0rJhn4OiOMe6shf2ncyUgUOmg3mOMYJUsp0hw6lebV1Ls-FwjzlRK2o-MpQevSMjKGQCPSSHeFNQoc9QkvawT6o2xR5GJK_2MAqXZtrm20Hf1WfJXilAifwn3YCjzMFoHxIyhJxuOLiZeFkIOKw47qj3Kk0FXOq8FrdZiWXc70lqsA6XlKuSRezqI6mgFCSSZ7aoyRaHlbMaC71MJ0B6nyAnIq5B7hIuSNnNzQtIRTLog5ZVFAzdpQG6F1wIxqx-TZ8CsNBywGoH_Aazu93dhq-YAbc9jfcL458NYStL9zmO6Sl-adGKQgmVkTYnUt-r3LNeKgRHebyDQMijIihT9KJKHyMj363zg8PoWZCdK4kJSVf8HzT1cItF6sK6Xj3OJQ8SM8NFdeko95HjhvNjm4DIPjBqwNe3RifQjAZpCQqpWQaxfjc0ukNGApDLxF3RW8NzZviktHOEtffqqdqeQe0CBvrNQ6lCsxKDKgfm4kw-Zr90Odgh-7-jecggShhLx4Is9P2eBBOxgPdjKtHPLDokdzR6KKkD4TP_0PN3BZH4dmfCr-ynPmriZhZHE3Eqp18Ap1MB3IBp7qCNDnisSwEUuYtYnysIutqwA5EECF6h02doDwV0-BO5lbR_W4sFTeNJdK8u1r6zRi7JDMJ3q0hEiHl14zalikI3BRDSb4052VH-TFv0Jw3E21OELTwqO7eTNx9rdUEv-APerat5yvxGu0Sef1BuDNkEYumjcvOs0CbhHzTmT4JoKmfwrZ9B67gMxxUPkQP91z6sMm71Q07Hra6csW8lKFEYT2E_bmPg2ixAKx7HqBSzgQp2e1FbXfgYvBNGci06yZa1Xag3MOxQXCvz2k-ric7QlLh2IxXLI5DLngpmnx8tDln9Z43bjclEzeFdJRfIUFu9c0rArflublYr1iGp8n733HqXTXClUM6s9VJEVhRSwuDBJMAIAkpUfJQwh0B0bJ5XARh9d7wMMeNrS-byV8F1LF75MTQ=="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:15:06.304531Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "ym_3apPLEvzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 112,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 112
+    }
+   ],
+   "prompt_token_count": 186,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 186
+    }
+   ],
+   "thoughts_token_count": 461,
+   "total_token_count": 759,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

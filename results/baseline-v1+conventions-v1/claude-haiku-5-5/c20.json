@@ -1,0 +1,67 @@
+{
+ "clause_id": "c20",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "1c9703ced85db80e14a216dce1428a62803afee3561d2beef2e222ff2bdeae9b",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Pets are welcome. The Tenant shall pay a refundable pet deposit of $250, which will be returned at the end of the tenancy if there is no pet damage.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:47.551799Z",
+ "text": "The clause is not enforceable. Section 106 of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) prohibits a landlord from directly or indirectly requiring or collecting any amount from a tenant beyond the lawful rent and the permitted deposits. Those permitted deposits are a rent deposit, capped at one month's rent under s. 105, and a key deposit. A pet deposit is neither, so the landlord cannot require it, even if it is labelled refundable. The provision that it will be returned if there is \"no pet damage\" does not change this, because the prohibition applies to collecting the amount at all.\n\nThe tenant can recover an unlawfully collected deposit through the Landlord and Tenant Board. The clause's \"pets are welcome\" sentence is not itself unlawful, and the landlord may still have other remedies for actual damage caused by a pet, such as a claim for damage costs. Those remedies do not depend on a pet deposit. Because I am working from memory, check the current consolidated text of s. 105 and s. 106 on e-Laws before relying on the exact wording.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 250,
+ "output_tokens": 1626,
+ "raw": {
+  "id": "msg_011CgwRAHdUVBXqCCeF1uijF",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSwx4KEAgTGAI4AUIIdGhpbmtpbmcSDED4zm9+q3vveeSw3BoM508tqf0ViNiPlPklIjAwtqJdWvupTwIhNW9XzQOCe3PHfDR8dRxdv1/gkPWKN96qJoufa3PJGp0rEGNU6Woq4B0YfFcPG8Nq6ABNVT75DRikGrzKw9MRn58muIXMkoi/L6bDsJb/dD1CzUzukZUVv+zsAMNWHfKmSg6rmPAykjCCkMFkdNKRzO9Gp2SrdDct5QWJb10TadiTjkzC5EkFDc9gbPIDJLFauJFB1Dtpex93Tywd9ds+fcKG2XPqnzSX89g/LQfvk5nLSUVoz9PNLYn3pVhmknsLYfDSd6QiYxHoq2Dt47WS04BthcgR80woADIOtRHxkCK3Rmk/XFI655U5uwL2k1/ZSbPjY1BPOqpCbIr5gZkEJw2etEMo7eHQDBjAsO9Rv0W1BXVSOSjYvolGroWdKme1XEtLA97XzdeBMm6pxHVce3QfW8uBT2+hRXlu9cppiMplqHWN7TRYO3h4TbZhv2r+JUkETD5lUvh+IX3rBiR7F1sxSeLndaHdM+K0JR64BsT6TRvxpb+Bwj51kMB82mXBOpGHiiL4Z02D5OtyK2webar5R1mDLAvNqeyBEOj8AmS2nmmUNcvCidRjAMeumfCKVkBDu+TsdOSp3xM+77UWXB0kNCc9kTdOcl7Y16LQ3F9uvuaHHOReLLNfPlaaJUJsm6glPCLQVWzQyg1gkjBYTQQTVIbatxKDxT/yiyPckdlN2+DsWcHsA8NNYPBLl+A8BZ31yx4V+lfJNLiQra23VdyAe7iOotsaCMZ+xDPex0XSvU8EHo52sptBnS30FNwYzq3dzSCcWXDlQBDYvgE6zPuIN7zOkg5407Esw5aW7W1y52jr3NKDv0j3hp3nfblg1dr0oEDR+DP6cv1D9KLk6HYIxUauA8ZzegHIi2SkbtvTunTV9VWZvThToHFQON3KlYZwztymApiEcjaKzwfVyAUhgrYFp0a1R65AMwfeRyBlNCgLmXYmzIyBE9nZ5ePwHo6+zRM0BtV8Rj6sfqE9OxOM626gK6D8X5Nsif+2AOre9AznRyqDMYuf6teL+uxKf2GGsCE3/7j5M9BBEe9wmDB0LgkiBHY628tSIi7OaUHHZwtPC6azf2eacpauCtHvQuI3/g31WFRN/8x+zf5/LhaTxzx5zdoZDx3uB7oLTUjWV7TZ/gqPPtUYE9FspFlCczKru9gc2asaHKxcNN+jWroKm7gZptf6wMopL4uqVghew8T21FOdb5fV0Gn0QfQlZIUQ6RjQkKMz7YdKv8t0uKlYRLHNPEJOGUNGTQURIqA3VTqGp43nV7QNInGgRsi32YO2Fu8/hI3sb6u8uC+px2G2IGlIHSrp/XGenScM4rSuszUyRoeQKcBnGCNE6SJLuUo8KWVGUciKCnnTvF19vD/7xAKuajb9k1p7sHEVpsszV68D74BvlJb1AkJ2loC0c9aPC657iyeegGKz5NtdVoN55E0T0cMYJ7GExtxFsVm+DQYLKQCwNc191kbZheG/Rynt8j9Dq1WFpFLRETLv+REv02A81BdglF11aBk01jLRG3hFlXbHWYqspuZUOjb37LlICELruXtQ+g7+8vje9cK8ClpLiLdkg7BldDqTZJszFRLv/L7IV6r4Rckbj4zsIa2HwOwJhNCl0Y1j5kCPt+uxNQWIc0MTqeaV7pIRYtUvat3pTW0mjowTFfsI2zb4TVGLd63Zw87/ar1xqdGvhpBJ8zzteRn1vRfNnx+PyPlxOsXrY0KVCHYdX6MZEsj859ytRCQWmi3852SZhfWtLYja0ULc0hBZbFFct6yPZm5TCp4OIARx9eYH6Rlu8EDIAdBX96QGM3Gsn4+xFF5b5sOIA/T1cIjNkz0u1PnnM1Cs+OoRyIyZ78/nAcWtpFtzUXB9aWcdErFUg+i29o/IgNEp8Yw05Kp/slxao1T+n8SR2j8IR3/ctsFz21y1ZuKpygAGuD+xZGYMiXfKBV3c+qlqTZ8EjrFDTLgqa0qEZTPegCPVc/H9plvr/3JGEdU5oiEYDKkC32eDWnK41d7NpTrbKBU8f0u5OFsxH51UVwOsjETrynOVItVp/AJasZUTOpa9yTW0KqKdBykaqzhnk7CSmjPRfmP1SzcdMQXf7EROCtNiKe5djOamsWS+B77gVQiB526J/oGnbvOeiIDFg9nSCnye6tZP2YCdwqn+F5EGfxCHJq9kreYrpiHQUtes2MxFhk2Z1qztn8hTOWW9uTlB+Wj3nUXO1Py0PSrZMVblNGHbVfMyLaVuvomBBAIhg/i7BbFZAPXBDfbmGUZdLqRa6XE9kZ6GjGtAq8Dfapr2wa+PSZxrf5McoSmYr1nKtDKEPepXjB6qOMpUmxTfXUMeuJkb25AOU1tLqiC1yCw0dFYxcJfNOgrORdhVIUXWf2wBsSN6Xy13dW7IUrk+Zz0JcWZeLT3X0g2WcNlcuurAN+kkpK/UAy2DF5+e1OLCyarA/f37s73U5S9uSyKdDfce4PQhMqpCbFToVp82ulw8LYqkn5r8s8jwIynKsR0j6ADxJA1TMM3vGr19lduuMpbzaYUcyz5TpJdy18tDAYUqLjtJgAg+QbipgBhh4G7tEeotleyXyuXKWQxyDxR0dN57b56BUHQ24fRvkYJI8oJbI7l/2Oiuv4CvnPnTbLw7vv9SPLYskTz6q52WDASqRjVFRJWtzyYMFdHnzrzyLY1pRvNX/pDc+EFJB4u0Lv37BGh8IJbAwDuSiIIarHuh+56ZVSI5da9nIbkVIuSPCNhW95arRDZHCyoHAl9sCWL7VGT+l9S/SdqREh5ioKN5H937Ui4urELgzKcN2XBiuZr2mG0iQ65RpKCZ4ezoZo1YQL6lB5uQO4pFcumGlz7ZmIlLttGyTXSkzEdyEpvbp+JMd0kasWH6BAf5SjQ3Sz2DMe1Vu17+AIS+qgkyM72ZGGeERAQn1/ctgmKE7uILSCByq/+IhLFt65eBwUPISF01zSgQmqrZxhGhC0E4IVcVhzUniS6JrmNfUbYc/CnsKnVkHWWq9oYKenUjzMgtJabxfOwID3qL661pr3ITadMQMXhRlhyO5RQjI4xjy7l3e2DKiSoimpvKsGq5fmajfZuodaa/Um/DPxZKzzUZvufIKjo10KassqUWg6orTZdsyqERTvJ5FpO25HcnihuO6pVg2U0+5yVcqpdaCFx6mct6270BCEQwtmeJyEq8b7x4SRVCILZeNaM6VgL7GP4ZvB6zeO2fRnkfVvDuV36US6dVSxNHwqVx8Ru2q/fE81lGB4ZnbtIVFNU0TNO2iGCg9/+8imQIA6BjU9aS/QHMn0iPekBXHrdiiG0SI9PlDyZ6+OC/xju1fUrek26e9v3GFQFsihRoUzhYrdu/o2pO6JH3rE0NsxguGoZ+pnRBsssEaL88PphHFqZ+bwaaTWwK7NURULxtDiyCw9hCCNlonLSyAV7PTf18Tw3b33Y78T/kcFrMPOIgaSQrPHlwYhf74EKZ+v19AqpX//xiEPUKzHue3ZLwynWxDHHB9gitoKRRboCYsZXCiRKnowk6AHSG7euFp+ymRJmbwRYxgV1EL/wGGEKh431azCBtCwOUSNyLRo6+XxWtH99MC93n7CA6+v5xjL65oXvshVqlORWlsThMt9UZ9ds4XRNaITbQsPh3Fo1fIPtYBX5Vptb9WVK6mG3/wvv4K4Yc3Gz7E0ujB3wTX4ZswoEs0y80ehmddzgVtJn6pYStgBhYK7fc1u534mqg1HOvKtzL/uTZshQ80jSt4+HoFXThmpZikpo8TIEwyBXywC7SmSOlY3J/bF/mjrrvidQ54dXzaEy2jgq41ZtxN+r2lWgt1uQEdbFqC+D0RaG6YDyLEttqlWpzyozVYubmKwmoDZtEtV6J3PS3TT4mMf8FGnvNmz0ekK/edNO8EBKCn8/TMohvSjLpUfpioIpW4EnNfQvMsjj+l4ZwR9XXnHe7sW+TuEHYcnqM2kDPzSOeGetdawKHq004Bo+nXv5hqd7fpE790kS4CRrQVvaeHbSz/S04fqXhluFllcheMWMeUVHhFTHQQkmdzEVp22KfvLHQ+j2JahkHobh3jPkUPDDn0YZMN/sOpGQE1DrrAUXpZom0jEZAF/0n0+um+vh7SFV7IPbeclq08DYuNwY5GsHayZ+LNzE9jugs2X2lZ3KjmihX6WSQU+M/x8+X3IjVzyedB6tE51P2d1BkDg7I33zZkkkoBIG8/2EFAJuLz6n9Aj+3buTqaHfeEa/+9CqFR2L0r9QfWZOfOzN+QpjyrkmGKOKwQgwscT+weJdaG87RVa0G1ex2QBrYdmOpFZDUw6WaLD5HNLoPGkTe8HbGRROE0s3WnyQ/YcX7PuJAB7rzwrRVVkcYRY3lLTRNZ7DtG7TWhS7DmpVB9IpR9vqr+nq33KR7nbnwkgSKMqKnhVCJAPsTAae2Ve+PNcMVv0+YphuZdlfhXdlJEkNiI4LCOzHFA3aJrpPFi56OGjzHCWIcM7vxpdTtXf2HhbM8OaXg5lpZNqowTbTKqNrd4o9/SkvIuR9eMkq7Z2YEfh4mj+E9M8LsC/HTBSnO1HHY5JyCHqPY+rH6GC+PM1PcRa0iE8j2c4Ms71SgFQqFevZUyskv1XeLvUMD7hoORcywUA7ibLZn5WGBAqAamKZP5Ca0SGXlg1f2XoNxYGkSXtSSu4C4L8fkhoKcjzXstIsf+y8fd04/O2y9KtV2ucPfvAhyVuqzPvRAz0L3VMCIByUXybcOH54o7rgShvrZqKulV+ZPVT7BsgrS9W7Me4N3dCZd2BPaLftupn6iaPcq3wDJPdbZbVlZN1TwHEtp5GRgKUzjx3az4uivFcZDILkj6P2Ob4yZgLT9bOvAn7KiDByNg9e3YM0TW1o2GCOZLzlz805nqg3Cn4VThhu2D9T7+rlUYV07RfFAIgB5Ii7RvojaQ7Ut1m8qCCWex4ICgPReHJs0KxdN27y6PlSwZ0ENoeu63vCMw5DtKbrj/lJTDqd2kUxuqtseSlnp7SSAzlMwDhycyKAhuQu9Hn1mRNIhqELl2RBMLqSvt1Hc5Bp3qYb/J8MI6q3Ip34HjVPfgShA3oZ9sbfkUPIuCDSAJEqgwej0zfxc+zjJRY78yC98Zfd4kGIsI9l/qAhOgPD/+cVmWVhIFYlKdK9ckcflGAE=",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "The clause is not enforceable. Section 106 of the *Residential Tenancies Act, 2006* (S.O. 2006, c. 17) prohibits a landlord from directly or indirectly requiring or collecting any amount from a tenant beyond the lawful rent and the permitted deposits. Those permitted deposits are a rent deposit, capped at one month's rent under s. 105, and a key deposit. A pet deposit is neither, so the landlord cannot require it, even if it is labelled refundable. The provision that it will be returned if there is \"no pet damage\" does not change this, because the prohibition applies to collecting the amount at all.\n\nThe tenant can recover an unlawfully collected deposit through the Landlord and Tenant Board. The clause's \"pets are welcome\" sentence is not itself unlawful, and the landlord may still have other remedies for actual damage caused by a pet, such as a claim for damage costs. Those remedies do not depend on a pet deposit. Because I am working from memory, check the current consolidated text of s. 105 and s. 106 on e-Laws before relying on the exact wording.\n\nVerdict: not enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 250,
+   "output_tokens": 1626,
+   "output_tokens_details": {
+    "thinking_tokens": 1246
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

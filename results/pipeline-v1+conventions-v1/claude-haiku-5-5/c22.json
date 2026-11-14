@@ -1,0 +1,99 @@
+{
+ "clause_id": "c22",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "2a5583c76a5c666c8fd5db6c01c4ac938cf789c37854cc96f6df34380d32b9ec",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nRent is payable monthly. On signing, the Tenant shall pay a rent deposit equal to two months' rent, to be applied to the last two months of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:27.434350Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for one month.\",\"reason\":\"The clause requires a rent deposit of two months' rent, but section 106(2) caps a rent deposit at the lesser of one rent period's rent and one month's rent. Under section 4(1), a tenancy agreement provision inconsistent with the Act is void.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6447,
+ "output_tokens": 406,
+ "raw": {
+  "id": "msg_011CgyJ74dVL3RfLtK164fcm",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSqwoKEAgTGAI4AUIIdGhpbmtpbmcSDERiEQLgssK3E+l7uBoM7K/utUz+IwY360cFIjCLkM7/uVnEI9ok1PdZi1Xss0csuYSvu3qoiyhLMLl3Bkv13RjDcEKrrnhYPkLcxT4qyAlAE0Y9BAVdekw5+KEHLNxgsJPslvrYVfr4tt6hJw2McKEYS+ymVKSBV0VBB3v6mC2d2RwDkmU2sh8cC7bsmiSsKxL1OuXhf51DX1adzOHsNKorVOBThRw/e67HREzKiOfmTlbHzsRic+OqmKIloRWzzEh077WSEkzd+ie00CArYhMmWYna7BLd8fDUAwM388sIBscHzyJXA/k/IJPlFawUpWQmhGki9cgtwanSDkuJAfc/95B0mqCvswWJhKhNbuHCmWkm1J6WhBHMFA9XMs1juJsiw/F1di0nocROx2cbSoop9ijNp9spHmXDF6Uvi3CWAxKOq5KhT3NqXLIGCx0EadxYVMSwvqhZYqt75JhNCrubvex3Kr5/047ZOvp0I0+RHK5NDra+pecDmQ7WBrdUdnKXpdqtFsILXYSxfJf2xPa5cDBILIhYjdwyJcrlzY/9cWCLWf2vB8yYIFFKF7y0E70Yl+flw83gwUT9UFD4rTrgKE/Nxg37XMLYg34pvd/lK38adcQYwO/N9ujnHHiOAMZb/pk1Oh4H9gRg0G4wtd7qLMG9B4VYYJVZ/ByzeQ4gjBNWVV1cCSQ3HM9C8mp8WTCTwFDKpyZd0844dAQZyaNwDRykXJ2FD3nAN3uMSEE7wHu5u8VEi2Q8k3WFs/rYbsmMhltN/fusJJTHzxeNL7tg0ZZr6CeR83d/k8LAqEg4nEWd9C2AUYxlk8L5NerUZh0lLxQXXngSJrbA3LMt1wI9Qpm08qdOUxucPfdSqABmv3WBHaGQjpX4a3ULJDvj6uh4dHO7s2J+48oua3ps0kFtd1fR/RuBazdry49OZakKmc8vC2u6Rt7k3dDKCwREhobJ+iS1vIWQ393OVCnAu+AFwjR+W/PWNwasBaR+RR8NZbSbQ+N0dUIh2PSdU6fsUJNqJCKf6phh90OOQeZu+C40suZkBOVI15svojgwS+DaY+GOLwcjiQNsRP/5aTxPa0GTTgm8TDmyczOAC54asiihP9H7iL7UA9/BL/+5i6B/EJZ/hRzODrPEAd+ABseM6DTZUUz6Yd5W7X44ddc1t2yvtc5WJKbkU5MVWNAkijZpwaDXX5wwRklJ2e4dKmcqaIdD9Cr2En1ADV7QE3SxRMLj3/NXfyq4AF4AjsUNSzLOtIEg9uISnGDWZZQFMDqb7NQ8SzEECC/Lm4XRbyA3OBUK8UVicl5Sm36TA43JLzB3cQX5DX95kcLypouzQLby7sYl8HI5nz5stUQXdqn0tAhcLADTCaru+1UaMuxW+Eh8mtSiBLWCogB373RdNABH0PVGrwuyU3AOyOkCUAdL1ZZOAueez0fR6pWXSjG9gSmF59DUgmeXt610Uys3VZNn3MKyUehE6ukXXSHKvCH9qkNPlCbDQC9NvabCn/6r43KHrQ33pNp1uaEbLYgwiMdaHfhKI1v7wAwJrqTA8+jNwfEiB9nzPiPbLLGLE609N0/uLLyselHbDcdDvYr5o0Ee/ytXczgcD8SIdit1gJgKah+/+XYF10uwmff1VzKgB0QFDDeuXpeAyVGn9oDPuvD48DNLuyexeyMFj/g7aMlynFrv8DUjVxPkyDjx9BztO7CrO9SKRE4+mhFf1Q4pEOTWaCWAHPbWqFgYAQ==",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"106\",\"quote\":\"The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for one month.\",\"reason\":\"The clause requires a rent deposit of two months' rent, but section 106(2) caps a rent deposit at the lesser of one rent period's rent and one month's rent. Under section 4(1), a tenancy agreement provision inconsistent with the Act is void.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6447,
+   "output_tokens": 406,
+   "output_tokens_details": {
+    "thinking_tokens": 254
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

@@ -1,0 +1,74 @@
+{
+ "clause_id": "c09",
+ "model_key": "gemini-4-argon",
+ "model_id": "gemini-4-argon",
+ "served_model": "gemini-4-argon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "110d86ae214f8e6fa9ee8e48d819317ae1d8d81bac1edc01c77c4a6159197bd0",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-argon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If there is a fire, a flood, a burst pipe or another emergency in the unit, the Landlord may enter without notice.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:50:20.818120Z",
+ "text": "Yes, this clause is enforceable. Under section 26(1)(a) of the *Residential Tenancies Act, 2006*, a landlord is explicitly permitted to enter a rental unit at any time without written notice in cases of emergency. Because this lease clause accurately reflects the statutory rule and does not conflict with the Act, it is valid.\n\nVerdict: enforceable\nSection: 26",
+ "finish_reason": "STOP",
+ "input_tokens": 187,
+ "output_tokens": 88,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "DHj3aq3GNsqlw8cP7M2xwQ0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:50:24 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Yes, this clause is enforceable. Under section 26(1)(a) of the *Residential Tenancies Act, 2006*, a landlord is explicitly permitted to enter a rental unit at any time without written notice in cases of emergency. Because this lease clause accurately reflects the statutory rule and does not conflict with the Act, it is valid.\n\nVerdict: enforceable\nSection: 26",
+       "thought_signature": "AY89a195hAuOWfC1_gM0YTuugjPQt-QzRo8AvUpIXKNMrJ8xGbk2tKrQJpTYiaJcTUasfJaNwK1pMjVv3DkVyO1lAqdDOL6vbo9a2nrl4XqI7e0o3XXCbgFgdipWfG8="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:50:20.893741Z",
+  "model_version": "gemini-4-argon",
+  "response_id": "DHj3aq3GNsqlw8cP7M2xwQ0",
+  "usage_metadata": {
+   "candidates_token_count": 88,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 88
+    }
+   ],
+   "prompt_token_count": 187,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 187
+    }
+   ],
+   "total_token_count": 275,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

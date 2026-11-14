@@ -1,0 +1,67 @@
+{
+ "clause_id": "c21",
+ "model_key": "claude-opus-5-5",
+ "model_id": "claude-opus-5-5",
+ "served_model": "claude-opus-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "91df827585f4cd338eef655174da7b2d1d6f5354b2bdd38488b07f7e75b25d52",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-opus-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. On signing this Agreement, the Tenant shall pay a rent deposit equal to one month's rent, which the Landlord will apply to the rent for the last month of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:59:34.145513Z",
+ "text": "# Is a last-month's-rent deposit clause enforceable in Ontario?\n\n**Yes. The clause is enforceable.** Section 106 of the Residential Tenancies Act, 2006 expressly allows it.\n\n## Why\n\n- **Requiring a deposit:** Under s. 106(1), a landlord may require a tenant to pay a rent deposit on or before entering into the tenancy agreement.\n- **Amount:** Under s. 106(2), the deposit cannot exceed the lesser of one rent period's rent and one month's rent. Rent here is paid monthly, so one month's rent is exactly the maximum.\n- **Use of the deposit:** Under s. 106(10), the landlord must apply the deposit to the rent for the last rent period before the tenancy ends. This is what the clause says.\n\nSection 105 bans other security deposits. A rent deposit that complies with s. 106 is one of the permitted exceptions.\n\n## Obligations the clause doesn't mention\n\nThese still apply, because the Act overrides inconsistent lease terms (s. 4):\n\n- **Annual interest:** The landlord must pay the tenant interest on the deposit every year at the rent increase guideline rate (s. 106(6)). Alternatively, the landlord may apply that interest to top up the deposit to match a lawful rent increase (s. 106(7)).\n- **Increases with rent:** The landlord may require the tenant to top up the deposit when the rent lawfully increases (s. 106(5)).\n\nThe clause's silence on interest doesn't invalidate it. The statutory duty to pay interest applies regardless.\n\nA side note on your premises: the Act's main exemptions are in ss. 5 to 8. Either way, an ordinary private tenancy like this one is fully covered.\n\nVerdict: enforceable\nSection: 106",
+ "finish_reason": "end_turn",
+ "input_tokens": 264,
+ "output_tokens": 1025,
+ "raw": {
+  "id": "msg_011CgwRDirMnTi73SxtDbAo4",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "# Is a last-month's-rent deposit clause enforceable in Ontario?\n\n**Yes. The clause is enforceable.** Section 106 of the Residential Tenancies Act, 2006 expressly allows it.\n\n## Why\n\n- **Requiring a deposit:** Under s. 106(1), a landlord may require a tenant to pay a rent deposit on or before entering into the tenancy agreement.\n- **Amount:** Under s. 106(2), the deposit cannot exceed the lesser of one rent period's rent and one month's rent. Rent here is paid monthly, so one month's rent is exactly the maximum.\n- **Use of the deposit:** Under s. 106(10), the landlord must apply the deposit to the rent for the last rent period before the tenancy ends. This is what the clause says.\n\nSection 105 bans other security deposits. A rent deposit that complies with s. 106 is one of the permitted exceptions.\n\n## Obligations the clause doesn't mention\n\nThese still apply, because the Act overrides inconsistent lease terms (s. 4):\n\n- **Annual interest:** The landlord must pay the tenant interest on the deposit every year at the rent increase guideline rate (s. 106(6)). Alternatively, the landlord may apply that interest to top up the deposit to match a lawful rent increase (s. 106(7)).\n- **Increases with rent:** The landlord may require the tenant to top up the deposit when the rent lawfully increases (s. 106(5)).\n\nThe clause's silence on interest doesn't invalidate it. The statutory duty to pay interest applies regardless.\n\nA side note on your premises: the Act's main exemptions are in ss. 5 to 8. Either way, an ordinary private tenancy like this one is fully covered.\n\nVerdict: enforceable\nSection: 106",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-opus-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 264,
+   "output_tokens": 1025,
+   "output_tokens_details": {
+    "thinking_tokens": 432
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

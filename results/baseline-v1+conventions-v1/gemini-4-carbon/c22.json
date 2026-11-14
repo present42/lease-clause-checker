@@ -1,0 +1,75 @@
+{
+ "clause_id": "c22",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "f7fe038a85530764bd5b73c776176291e020cb20cf47f66d54608ba2513b4b25",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: Rent is payable monthly. On signing, the Tenant shall pay a rent deposit equal to two months' rent, to be applied to the last two months of the tenancy.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n",
+  "config": {
+   "max_output_tokens": 16000
+  }
+ },
+ "requested_at": "2026-11-13T20:10:15.111000Z",
+ "text": "Under the *Residential Tenancies Act, 2006*, a landlord is permitted to collect a rent deposit, bus its amount is strictly capped. Because rent under this lease is payable monthly, the maximum lawful rent deposit is one month's rent (subsection 106(2)), and it can only be applied to the single last rent period before the tenancy terminates (subsection 106(10)). Requiring a rent deposit equal to two months' rent contravenes section 106 of the Act, rendering the requirement void and unenforceable.\n\nVerdict: not enforceable\nSection: 106",
+ "finish_reason": "STOP",
+ "input_tokens": 195,
+ "output_tokens": 1009,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "p273auqPEpT50MMPnLmjyAQ",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:10:36 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "Under the *Residential Tenancies Act, 2006*, a landlord is permitted to collect a rent deposit, bus its amount is strictly capped. Because rent under this lease is payable monthly, the maximum lawful rent deposit is one month's rent (subsection 106(2)), and it can only be applied to the single last rent period before the tenancy terminates (subsection 106(10)). Requiring a rent deposit equal to two months' rent contravenes section 106 of the Act, rendering the requirement void and unenforceable.\n\nVerdict: not enforceable\nSection: 106",
+       "thought_signature": "AY89a1-wunk-bgzpq9eYSXzLJ_6kMNkjdpdaYEnubC8EEKLQB161gxGZI3LyHuD_fKcZaKarRuZROkFb8_YyO-m_aojagNWwcFGK44e9TObo24IDn-JaUUWwiwrggKJ3j5FqJHyvQCgBNaeyqX37VqUkkKRHp4oBL7KzOpTHHEfCbvmg3V2nz8efrXN5z3AxYGfHRhvMGQ3llvdyVxIqTenAtmf2DD6mv7mQXt6SKdQl8td_klbDn4a93svmyvzpytXEJNRkqxJm5R_1boNjTaeFo2gA8HoKGE-jPI2rlpt-v9jNJV5fft5muxPYDNiOujqAtB0l35uCxxdInAD13SW0NptURLlQrE-NSmIqDGxW8kX9klXnCQD7GhKr6m85RzlU9B00fJf2Q9UD4T1mI6zkcAGBE_KSoskDDA4NaeXJI6-wFL6K8C0SiD58VTfwc00p6xskbUCS655trzejw2BbWzH6vWVpVaZn305r8S1cRGA_igmFmFQmAFe7os1HvMET48CyU2ZKDfcm_ro1LKITwZcGxrZcHZaxwRtfn0-vrVRA56Ru2D_39YxQKKSoKHZAZAyg_rqe-qmagKVGLiv-EHAPcU8qM6spt0DYO7skyzPhsK6K2Z7GE6CNUitB6wQACucIR0oWHxqfiEIYr-8-hxth-UIEI4mfIpr13WFxo7sgQ2PHaBqdVajnpBGcr8CZTrvmWBcDrSLFxl1gN4yVXbxjL6HD7agMG6fC-kxzkZrUH-HSP6jCRi-7cpQd3gWRgzRwa0dEv2-2L2CSSmwKh_z7gdDlvntaZkylrd1-EfnhPOwpOuDEvzOGReCK84geY9OPMHiLT9SZGyg24uThu2IyRrlYOUNqdXnwYflUbDiBFKWiJBLQP5xuQoryV_QR54wEBuv-ctIDC0ShdRKCE-9ehK93rdIqj7zhl8OObAd36MbJpX_keuuNSBogCDK9Its3DvVJVgagX2sz_9NiOZja86YWZmxW_sSBvERCTvZEeuqhVDB7gmNwjKK7TQ5AwGXidl1vqUmXcu9O3GtZYyyZGgne1tEiiGHt43bpBamlUhS7hOWZR57UMb5zzFYG81AsKTivTice9b10V-rKnG31GZwaYtopAl7H71haty5oeV4MdVp054ET6y2C-NXaHCOMSG9mZNabBRuTOsUKYELvj4viTR7x0U39A2Es7G6WBQAG133QiaJLhXrHJkI8yxW0Y68qZDc-IjT8k1i14sp5Ejo3N4VDInnoarA6qmvwIF3xGwDHnOVnKmpsLEUgiVsCPFTzXmBLLmFaKtC4nc7kYg5aLek4facIOH4hUbXR9fHwIgY8WZ4qzd_BlI5wmS4UqBFYZqKzE7I9Ho44gxhhGNXY5NcU5KY82r6MygBPw_AQw5FPn52CIwWWb_AnXMvvpXKiJkaDJ5xny2vmvdVotuzoQOZ2CL7t4oZngyq2-m2JxGg0YybalrYX0eUp1FMKTX5CNrvrD6f_yNcVzwupG-YnQfx8we24_nRvdhOSQjzGVTksqwAwXw-VLU-mGctO_wl7xpq91T8UcM9gd4i9bCUa3pRKqIfG9jtZWEdZ-wxuDPaMOs7-wS58xVkIKoT0Y6tJvaEB3djfU24Uvt_UajkBt-SdQQkMRUO9h9-G7gVnKZqZiNkYptCRfsGrPd47_hKj4pW1adQoQgQE0olBTgbFAG3Xx0zeIJzEN_PRV_8wUyUIo-jCyNcynTVX6WtOFxIU7SqaFcQypYfRHQRaxaTUFC4RJufZb_u7JYvJpO5_mDUXsfWMRnQGhI9EHLU6t0ZmpA5maEvgiIp36FKPdy-_YBRkBSah_1g0fsoV8Yyu5zQ54AVKB9eaovgVEMUDQI-Rhq2PfMIK0hQijKY29IzKdlPWY1-ik16zSl7p7_lZrK_W7NVANFEMqa5elK8o6apSH29HV7hu3C5PAoogiIvTn_nQAcb-iYAflol-8AHQ_kU5egxZvKyg_MIE6fTFg32bN9h2W51V4XspMwC7tqNPTnwj_-Psk_8OEicffAgL9W7Ct1QLYof-lyvtZsGqgDR8YKN_fEXv1QFPEo5Ed6GSu4wXrBv5NKiFg-F7yDtFQDg2BaT_rqU0HZ5C2AEZ1N7G-A1Yg6ks0nNtkxn3vGhaPfIvwtBFj7AHvQrU2z-Cc-Czs-5-bpnZ7p6u_hsANUccf_9ol76ih-gkTLDB5aMrwXDZG2Bs9SDK4sw9HmzLrsZXJuRaSV6r1WpcExppoOKSMPjckBpnkEyUiYDDcXKSl7tc95UNDA-zou4v_AtbN70Bol9ke7SgaqeaSQuUrTh8_TFbk6_DmsAhHC6nkwOWCMDDLZcCjgT4_W_kK4X6NWemay8m7gfjm-wURVLhimZbRfm-SqNkHZu355y_pt_2TTlDluV9cLDRCu-ND4pNCotd2RYzs-kwXP5SazYgSwblJq_MEGYJ1REE1_a5m8iwbyFoF8_PHJmbWTLUDYru31J5ViIo0rvj05Du9ubAxt3kDDz_5ti9iWxZy9A33K1Lgt9bMM7ur8TiPGZwu_zPERil4qDw1-NyUl41t2nBsWNJNejBC9qRqIl8iBwDQbcl42VFlItHmnSy2GP1PGYEWdeeZiVTmejhviSIgCrOII9o46tzBkNMEPSXTxeXXqKpsq_Afja9PMesIYzi-DtYbbw8KggY_InGAuP0oV7H5Qfy3nAwXUNzGp2BCKxbusnRVDzeGBDFHEqG-T0-jLmiYCfPKMqEn35tiu8uE9rLWgl8uoPMu5-TEpJPwF9FsTsbVRqpor1sfvpiv_vmAlZjOu4q2vKAn8519GtE2Sn4y5W4e_FgbeL9j0ch84IuBmaUK7K9KoXSGNS0_1ocvfuSN51X7_rO8i0qw4FtFf1jdk7Wp50fB6DpX01femAAXhHwtpayuSqo4CSnVNAOq2ZBP8rPW4O_G9c7P56T3YxDYxOYJdUjBVySCafFTW722p9ihteCiCYBJMbNY8_PmV_CNWWuMSuOLDDgbfEkPaZgs8Ess4NTfH5nkX10s-6fup89yN1328kkoUazDwfTJcRxnvHU1ZOifkEgEBhszlV6q3W7BP3VPntRLKQbIVYSlce1iWQhxztBSGbQ8zF3lQPoISUUueYwuB-F5P_Hm0My6MFIsAYL5QUzyrNKg9QY8CqQLG2SHobbZBJCDi4dQB-x1_kuNhFfpk2UwERKLItNqAThCNs51TRq-lg-Tslwt8pwRpvpisK0Qf3YNpu9VAwz-zQsozqiNS_VpoS5P5DxfY1Cxo3EEqQbvjat21vsw1dxyeSJ_3pqz7zonk1HaFVophJZpr3gXztAxfFTH8LAyZJPhJ5VoJoM3-F1PTznFhQnmzJggy2RlqLmZhHVmSNMo5MXJvLcsIL97lHOx96Tmi7UaaSpgP5dC7if3VwyGo3KBu8pMWb5Cgr4J05y0kvvwxdZ7Pb0wQBB2cmNMIohN860OpeZnx2r48WIF30wPXKFIk6z0K8Kjn6yUWrKN_x8RrE_ArvjP2hPdAfZrAiMcmzl6ezVHXT5cqB_VRubjbBkLJb9Ozx2UW1R4gqUzHBUmibJDlTJJEorPU-IQ6CrUFKGTY82C6HEvJJfSmWBn57XjeNrPrmg_TNQ1PkjvmthiWstlWJClZl4TWgKfVgzjUVfPoeLZ-3ku3KQQD1PtZK-v3sA-xQb2VMHNQ3rEHSyqRyjyK569wJsN62R5iALOb4KTyB2SvQ2uiVCJ4sLrrdM4kzeVIBBTfKJ9eScN8YczhFO3SswLa4cNyQJZKzzhZbQrru5iM72x5c7tUu4Z8-h17H9VGEvhCH39wsB2XS7BgELFveznDn-k1RnE0ubbG1FpEz-Gr5YtLM8perNOPwhomTt1DVMd7RpH-IjdSLrWzlVG3J4aQbQ0wsfwt3gjd6GP8wSC6ulgVGdzQLXzY7PMhCp02YUJj4OCWUucwX-GHJbY5GmaixLoxD-QWt6EUENxNELtzlK3kN5N9l66fBqKHIK-uBao-lB3MJw0sqhdcyXQ01bF60TRCbjWrhbRkp-_b3nbOud9x4GnM7vhj9JB-C2vPkqTcSFMPH-JOE4ySa9ARVDrtdOCc-Jy7t5GbAw2C-n5jB8P5g_BU8pVEZIosvYOxI1MtIttJGL403FsqeFeRs16C828XZvZGTc82QZyIAGFUfofkvEjKpF2ge0TZtfSceJWw3PTTdeWxTeWTYiqzLqc2lcR3H5-VW-2fX6xOvdyLzrqGKL-1RR8eC7pP06k-4UUyUyhLXFwp5_GkF2n-OD414OtXbi3m39q4ppDcIRL5BLK-cP1-nCzI_Cm3Azz7qNeeq-YlaXCG47MzvVejrAxR20D0j_aofkpfCN3K2l-e5CuQSKXMk2jr3MvzbeqgEJ8WyoODHQlrjFPX0KMk7OzwdriLUcn9mLr-Yv7lDsVyl8S-cLy4CcMHEy5341WJ8TsIqqvaqbFR6dQVNdywn8sz2cBnGEKzd2Lqscsg7wCv4fK2TjEN7KmXCx1cY="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:10:15.296938Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "p273auqPEpT50MMPnLmjyAQ",
+  "usage_metadata": {
+   "candidates_token_count": 131,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 131
+    }
+   ],
+   "prompt_token_count": 195,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 195
+    }
+   ],
+   "thoughts_token_count": 878,
+   "total_token_count": 1204,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": []
+ }
+}

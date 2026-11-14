@@ -1,0 +1,99 @@
+{
+ "clause_id": "c18",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "036bff178f634bc63a38b118b15d5001bc6d7d2e12206d172039f9e7b7a010f7",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium",
+   "format": {
+    "type": "json_schema",
+    "schema": {
+     "type": "object",
+     "properties": {
+      "verdict": {
+       "type": "string",
+       "enum": [
+        "void",
+        "allowed",
+        "unsure"
+       ]
+      },
+      "section": {
+       "type": "string"
+      },
+      "quote": {
+       "type": "string"
+      },
+      "reason": {
+       "type": "string"
+      }
+     },
+     "required": [
+      "verdict",
+      "section",
+      "quote",
+      "reason"
+     ],
+     "additionalProperties": false
+    }
+   }
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nFor the Landlord's records, the Tenant will sign, together with this Agreement, a notice of termination dated for the last day of the term.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-12T15:47:25.326190Z",
+ "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"A tenant’s notice to terminate a tenancy is void if it is given,\",\"reason\":\"The clause requires the tenant to sign a notice of termination together with the agreement, so the notice is given at the time the tenancy agreement is entered into. Section 37(4) makes such a tenant's notice void, and the student and post-secondary exemptions in 37(6) and 37(7) do not apply to an ordinary private tenancy.\"}",
+ "finish_reason": "end_turn",
+ "input_tokens": 6435,
+ "output_tokens": 464,
+ "raw": {
+  "id": "msg_011CgyJ6uZ2mWpjPjiXUiPC9",
+  "container": null,
+  "content": [
+   {
+    "signature": "CAQSrgsKEAgTGAI4AUIIdGhpbmtpbmcSDL594UYFwaSqNrMaehoMzWRTRA7CnH3ITM+qIjAnvPuZNucHj2yYbJ/3lRDqWwWccH+7ev6QIGrWtYOXabK2Gs2LKcQ/m/osR0EC6ioqywqa4zNLF9TnOHp5Mmv87INfsDPZ2Yji+nhC/2U2pzU37sHl+BVuLkDdXUSNKtUiSsagrbP9yhyU+0KM6DhUzJRgRoI4lkHBQOPdiQzDu5E7JQ7Pugt2rMg+vj9gimfKXCizyNR4b//oLNjBO6DQG33F8nSkSDUz02B81GYfyPU/fAQSWn54tv3zsa1GpoY+Uq8sh0YPNf4tdgfmotOWI+oVwdIFjw8GfFnVBH1jTg8hfkwOdyowyzlfQ2Js9NFRYC3+uxMMdc5yiEaVCwjymBLbeKsplgWV0wtKyzhsGHgMW84myW7gwuk7DeMNJlwaFbg/cYRfP/EU9yCSdNCTFFViZ8Lqy8kJGtyTsCjGpVEZkPxFkaaEdIgtw+ZZV2P719DNRXpy+PEtiSDzUiQ7y/4JmpBW1+mfXjMRfwC+knRyHb/jPEIaDfHbJF7ThLFUxZJFYU7GCfHnM+PvgBRjNAe/l4mhX5KpqicXoCPUJtWFkVn7Y+p4jWAigg2gni9rOIayHZNgzq5jYsxOAJI9jIbAbZDmjINhDrqHVOXNtOxCwftIHp2BiVq/3lVt1hy2bY1TGo0mZtLrh7PdboSAidfVWLY7sbWB+3hqgaLX7ygVami73nhLmyL5RFcy1fEn8MjdkslnFlOm9E4GrT1xV1QnujuadLJp5pEVO131CRtjG1Z07la0BKoersyuggOTiMdieAeKSGmNHfoA4D6dh5sveoKW/G2AoJODouHL6soHJMBjp4+3BhznYSjPXnrgf1V25AoC54x9gweMwtIoLOO7ouQhJWjs0dVbEBemGsZi5AxqVMga5JTmSTnGfGS5Ejoazw03S3C2/tab2+3N4YBByFL6vmNyptlsfpRNIBIDi6EoVwFfPlbtn/XYQivRwYf8+GJp8B1RxZQsZTT5sQQPLlsOt9CKN6/lagrFHVJm5qws2g0ZAwzZF/CjXHB9EmChXRWWJt8Zyh63u+PxGpN/DfuJG9sMJSDBCW2pjvbvtfgJPTlQdaDLkGhZwxhDLfZDbaupaLD5AlxT03kAipK2E25Q1bbOVq3mp63/ak07L6A5Xr9JUlsxFr5MZYwppDs4zFJ5A1RU8v2pf25ynlN1O1U/ync/krYduqDiw7bYgfeD8fYccjprVcAaksWi0w72q8OVGweBMZQBGS8ASXCSBZ8XqmQ5SZoRyjnCxs1VJfMPtdynIsi2AlACzurnFjrJORP5gwnP4wu1P1afxAKktIUHUpB6V1OnLTzXHC5o0mDiUyoGSHCpUR86ru0sBCUZThpnjRRyHqjpXfAAaFeGX2K988Yu3HCaVLCwKP+SCtltmhKVwWvXeMwMqqnNFp2Qev15AZcf7FGbbmU+ohWM/bcnRIf/z5Q4WyNonZhyYPKMh8c+ze/aekTu+68u55tl9xSXZ1Q+7+Nvz23ornLUI6f8CiQe7EmdEnzD1g308VDWdVytmexozMBS5Mmu2B+i6QbiuWpHvDbiT2++MLyo0T5UXibsxSV76iakTjfzrCFPKx3SjZk3dW4ihL70elB3E7BzZwARk0aKxY1AlEr5GVIC2YsAebFLyNM4osDaR9BLo69RLD1IEhSeKd6hEqVbkqUL+DlNnXVZ4R+3vOWIIEVqVbDnpXSAItu+QGzqh3/kY/TEaySsBqexKHU4Frzkzg6ytAxIeJvzH4G8wN1h5zq85lFB0fkfiU+Pq7asG9qiz+CJKBJZcnqqIihsFodrhh6EfO1lo3c8NN6DhoBxslm2/XDm+ye5LN2FgBjvQycldCpGhbqCGerO/qiMSjz1cN2Hs3+JTXSwcRgB",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "{\"verdict\":\"void\",\"section\":\"37\",\"quote\":\"A tenant’s notice to terminate a tenancy is void if it is given,\",\"reason\":\"The clause requires the tenant to sign a notice of termination together with the agreement, so the notice is given at the time the tenancy agreement is entered into. Section 37(4) makes such a tenant's notice void, and the student and post-secondary exemptions in 37(6) and 37(7) do not apply to an ordinary private tenancy.\"}",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 6435,
+   "output_tokens": 464,
+   "output_tokens_details": {
+    "thinking_tokens": 307
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

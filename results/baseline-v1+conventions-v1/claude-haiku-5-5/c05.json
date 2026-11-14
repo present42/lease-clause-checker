@@ -1,0 +1,67 @@
+{
+ "clause_id": "c05",
+ "model_key": "claude-haiku-5-5",
+ "model_id": "claude-haiku-5-5",
+ "served_model": "claude-haiku-5-5",
+ "prompt_version": "baseline-v1+conventions-v1",
+ "prompt_sha256": "2e8879177fb49d1da349094fb4aeff40b4c49da3701b696993753187a0953047",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "claude-haiku-5-5",
+  "max_tokens": 16000,
+  "output_config": {
+   "effort": "medium"
+  },
+  "messages": [
+   {
+    "role": "user",
+    "content": "Is this clause enforceable in a residential lease in Ontario? Cite the section.\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nClause: If any instalment of rent is not paid when due, the rent for the remainder of the term shall at once become due and payable.\n\nEnd your answer with these two lines:\nVerdict: enforceable (or: Verdict: not enforceable)\nSection: <the number of the one section of the Residential Tenancies Act, 2006 that decides it>\n"
+   }
+  ]
+ },
+ "requested_at": "2026-11-11T15:58:30.904980Z",
+ "text": "**No, the clause is not enforceable.** It is an acceleration clause, and under the *Residential Tenancies Act, 2006* (RTA), a tenancy agreement cannot contract out of the Act's protections.\n\nSection 4 of the RTA makes void any waiver of a right or provision under the Act, including a waiver made in a tenancy agreement. The clause would have the tenant give up the statutory process for ending a tenancy for non-payment, including the Board's power to relieve a tenant from eviction (s. 83). It would also make the whole remaining rent due at once, when the Act allows the landlord to recover only rent that is actually owing. The landlord's remedies for non-payment are those the Act provides, such as giving notice and applying to the Landlord and Tenant Board. A term that tries to replace them is void.\n\nThis is a general answer based on my understanding of the statute, not legal advice. Check the current text of the RTA and any relevant Board decisions before relying on it.\n\nVerdict: not enforceable\nSection: 4",
+ "finish_reason": "end_turn",
+ "input_tokens": 233,
+ "output_tokens": 1607,
+ "raw": {
+  "id": "msg_011CgwR957NQHbgm5ifzWhRj",
+  "container": null,
+  "content": [
+   {
+    "signature": "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",
+    "thinking": "",
+    "type": "thinking"
+   },
+   {
+    "citations": null,
+    "text": "**No, the clause is not enforceable.** It is an acceleration clause, and under the *Residential Tenancies Act, 2006* (RTA), a tenancy agreement cannot contract out of the Act's protections.\n\nSection 4 of the RTA makes void any waiver of a right or provision under the Act, including a waiver made in a tenancy agreement. The clause would have the tenant give up the statutory process for ending a tenancy for non-payment, including the Board's power to relieve a tenant from eviction (s. 83). It would also make the whole remaining rent due at once, when the Act allows the landlord to recover only rent that is actually owing. The landlord's remedies for non-payment are those the Act provides, such as giving notice and applying to the Landlord and Tenant Board. A term that tries to replace them is void.\n\nThis is a general answer based on my understanding of the statute, not legal advice. Check the current text of the RTA and any relevant Board decisions before relying on it.\n\nVerdict: not enforceable\nSection: 4",
+    "type": "text"
+   }
+  ],
+  "diagnostics": null,
+  "model": "claude-haiku-5-5",
+  "role": "assistant",
+  "stop_details": null,
+  "stop_reason": "end_turn",
+  "stop_sequence": null,
+  "type": "message",
+  "usage": {
+   "cache_creation": {
+    "ephemeral_1h_input_tokens": 0,
+    "ephemeral_5m_input_tokens": 0
+   },
+   "cache_creation_input_tokens": 0,
+   "cache_read_input_tokens": 0,
+   "inference_geo": "global",
+   "input_tokens": 233,
+   "output_tokens": 1607,
+   "output_tokens_details": {
+    "thinking_tokens": 1274
+   },
+   "server_tool_use": null,
+   "service_tier": "standard",
+   "speed": "standard"
+  }
+ }
+}

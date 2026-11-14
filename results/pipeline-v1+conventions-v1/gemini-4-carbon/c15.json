@@ -1,0 +1,120 @@
+{
+ "clause_id": "c15",
+ "model_key": "gemini-4-carbon",
+ "model_id": "gemini-4-carbon",
+ "served_model": "gemini-4-carbon",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "172064c4b075665d5881c52252a2aa51043551a50bb42f81e30d12bcab6f9781",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-4-carbon",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nIf the Tenant, an occupant or a guest of the Tenant damages the unit on purpose or through carelessness, beyond normal wear and tear, the Tenant shall pay the reasonable cost of the repair.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:18:28.442671Z",
+ "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\"reason\":\"The clause is consistent with section 34 of the Act, which makes the tenant responsible for repairing undue damage (damage beyond normal wear and tear) caused wilfully or negligently by the tenant, an occupant, or a guest. Because it merely reflects the tenant's statutory obligation to cover the reasonable cost of such repairs rather than imposing an unlawful penalty or shifting general maintenance duties, it is permitted.\"}",
+ "finish_reason": "STOP",
+ "input_tokens": 4547,
+ "output_tokens": 759,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "lHD3at7kHfzlotkPgKis-Q0",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:18:45 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\"verdict\":\"allowed\",\"section\":\"34\",\"quote\":\"The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.\",\"reason\":\"The clause is consistent with section 34 of the Act, which makes the tenant responsible for repairing undue damage (damage beyond normal wear and tear) caused wilfully or negligently by the tenant, an occupant, or a guest. Because it merely reflects the tenant's statutory obligation to cover the reasonable cost of such repairs rather than imposing an unlawful penalty or shifting general maintenance duties, it is permitted.\"}",
+       "thought_signature": "AY89a18ddK_BSSzlgMZHTib9p9b-znbfIc9s3ZKbVx9ZzppxrkHXDKHCJcSyEM8CbUsmqxFqWCjkO-jPy7UNADN0hiow_sBa5ZWfUXaHoZ3l_75KOUBfWGby6zIT7YPmJ31M_yqZsk6BrKPG-s9JBxYepRV0JGGJNU47Dvurem0PUZknakVpSgoUGrPjfOuFux9_erRMJhTQyL9GZzmvEEFWEOK87lYO4-lgDPalAfATv8n0F6akCgtlZVBG9WH2TC51wvmEprjmxSBt-4LBNZZlV4D4arwbn8GqDmkYgci3b-eXV3j45JQDFBBQh7JIQNiXT1eZF9acIjjvZ7-f5M8WtLxgX7A5HMHq2yn0wmOBUvsoJL5b1iwa7lw59eu9VQRWafksocqV5glXlCnhIk5NmvI08rCZfqdTIGe-QS_ocLBxY6HwLYtEOUjDw0fBtdfb7utO7IiNtlL4KWdCe5JY2ByFwkHYMdmQ_VofUOiP7x-y_8KNxvByujqG8nsauknDze0JD5wHchv60fU749dFRGovP3fkfuXLrD0ddWkTbCAEDb-7TfaVxqsJo3EGfftmmUuxfq4pjf7_Cm0UjspnIKhm_813ULgbKU_TQbGTZCtTBnwtKgzjCxAlSwK36nd6lJ53zwNuYMrMcuZN86NUP1JeZmepCPzQO2QzFWkB0eMiwHQ9Ot-_c_H6XQ6OTokxxYId4en6JPSlQ0aNcLm_joOyw8Ve2sXepSayrZrYNa36cnIukk5HBtYAn0Ybgfru-jVwWZMHzSsptFE7SsctezVGLI-UFO2bQzZV1qdKRN4XYjx7T-tdykMjyYU7S6FuEjLr_h08cr1z3cZujA6mkZ3SqQ2G-vvyJWKFP0j_LWARupkJpaoiUIEvxNR6fuLNBZFffUnODscmCffvYULw_9xS4X0Kt56KRFhPlHdVo0qxDN3GdR2_ar5VzMENPtaTRAsqc4CKW2x_vMoCMaTg9JPqtLDUb2BwDVM8SB19bSYd-CMBqoWVhWtwo2JmjZIIVsnJkOd7Ho0diIeBDCtcFV-1EgFkDBRMMnr-jk5OEjKy2IyY2m6PBCf0sxTMHhZn6mRFftK87x8O5Hrg1mBwyKWaZfOLgC0iVt-wH_HVcAZpOVQP880CmL2PKdLwapP3HQKyaUhn7LpNqIqa8PC46J996eXYNUtw2vHxTO6gA1PcQM7h0W2fdvk5HPhWPzKcEuPDigvvQTWHL1OEpAEISgOtale4MfD1LcL4JAdjPwjg26nnwx00xCEG-Ws2dbPqgl7P92gPuEtP4Uu-VTG3XIGiAkgW6rWfNDKKW4tRn6UHgWsDywgnGnKQj4j-XByTLMQ69pRSRENHuU8iIDYbNG70L-S_tR7paU05hj0M0HzA1Lrq3FkWdo91K6suhYMieDVMOEOR6-0Ef92dfAXx3k3XrlRZ6Bg8DFNwGwd935z19ofpqd425kIUgbrnt3sqJf_OpbpWY-ZWr5LJUZCimYofgUC_Y4HystE3Ifo5l_CnuSa4jgK1_6giJOXbpiqsaoO_liVUMLBFfgwlmNVr3YXvJ1bzSTcP4KJExj6VCWfWi0yBSA3j1cIiPt8S68TvqZ57rFI0bEN9CPnLFAMqbMhfABcbU_jXU5hEiCxGfHd8_5RTn3lfYUSY0PIsb4_BZdKPFjdIfcC_U-xu8hcOra7MFNPN1ef0vZlJxKBXurUT9HWDia3A39BUPhX4o6Ir-q5mbBw9m-T9j073iQsOxE_M4KIQZhSJ8vK-4IL2KhC7erLjZCde7IGTebv1MGDes7UhXSKPo-Gx9-iUgLoE9xxYvCoZFe4tFqQXcWDhos_LKLjW80Tu5EGIFMCEvs9ZpAZkSM28YlqI5L7hu5dNH3v4oBM-IQMvgfEerjGfz2U3fSqTJDgHVqHzzszpRkHwLfUs3uVyd--YMGcSNgjzFLlvHCv3R5yYefckuUL60BagSo3FJSsuOl6aUAfE1AK6C_7myc-0aNVBFOAqs13wOkKRk7wmH_JHvgOEi_fFeZQSoZi-cUn3z3n-v0s0Tbc24m5NusAtrzWy51vgq8rRU6etO-gj1zXQrCBv1_UAUktJAzvWWFwgTUhR2-jnYjx1IoSEtp4LPcvf69IbYvuWLZcviaZ0RFNPNbE47NpHU1Rp693oyYzNzZu2VI7-7KgrLl-iQtfjH1lDJ6c87_avKQI1flf3TKj1yJ6z4nI0hk6dI0UTySauKfupq-sLIj35YcxLjcywiHFkOsIxFWyeCQ1NnYXGVev6rxiNlEaE_7GMuSZ4TK5xMOateedev3y8NJwhFqqXjZKXLm1c-MJOIxZ_cb-OM3sh8UdC-nE5pO18x95ol-jNF_7h-e83GkFNhPwaHmigB4eZQpsTliSIUz7qa0Iri8NWCmMOdXmN63_7vWCE18yYtwc1rT2lmE5DaaOgz8Z7jdIM4BtSdfZn09DE_7zmL_EUvTzFAAVzFZSCWkHLbmQHN_5-GNzrWOjR0BYtc3GWKsrBPiZeokqx2wd1b3y4_WQgVurBg34_daQG_y-04H0BC1Xe35_tIpDDADAs6hSUURvQXjpAlagPTEgijDxj1XoHA4MxclIV3d3NoWcLTMuaGYn2fgp9GPMdvQ6vJB2uBcOA0sDB9QejcgchkvXc3PWGB-LJExuxrOZXLlVU4Kd_7PPJX-Gqp0VXXA-BNnD7v-A3FAWqxETGs2r3QuOyQSJBo1mL258Y0aPBeSvAnvSw1m2GN7kSVCCmJX_sfFb8AX2gnJUshUwlCBJM4X5bM78gwHEEGAAVTfrga-0xKXptjPhAPelIX8E382wWtU-hA2NZGa74kZl8kv0mJMqVn13TDTEKK36VeLz_KvlgagHxOdhofYkIRLTbYN2-NeljnHkXn9E3GV3WqB2mcITMopO_lIstTf2ubUJ6oPU9GP4K6X5OvfYDIOA5OA-xWQujXjkaRbns1IizEk92sWVy3TKRxQFzFSUPvIkZ01idCzLEk5FU8ABEpnZpzCpHusU1Hw-dqkz6FT8Qj3SwIBwtqA5znr8GCiYTTCGFpV2qOjRFOpYZqSZgvzJcPA6OXWLX6Wmih_qWfj3tkgHu2pcl5kIyNyT4yTt_wexuJAEqLIL3lh2RyLltXNZukjosCrMMYflyZDZJ7ioXSbvODxI_jfG21ELEprgBK9MFS8YbafBeLxHZnSXKAnrQtSRZ2CldkfNhiIVK7s4whEjcE89J8zNgyuMWytMvuALTG-UhG8-LyHZlJCRMEK0LeXYyuLltRSwtjLGBfggmuKbP6irsQoEOl4uec3msPnmPDTHRcdxb3SjkERMP9cN6N1KzpbWJl7dVk-Gdj4qWBF_jws5S_pVEILQVbYiU72MBmv8kOMJpiRJJ8lYNR91FnAvZDIEYEZwT1lIcLmSaIK11HdZD3Tju0pG_g8MjLCqkb_ZsDDwNdYg1FGOH-3y2r1meFduXkEAVZwhcE2SISNQ_AEUJ2gXD354QltzeCaT4AwBPhTJsk7rPmCGmDK5xefs35ryQkIMLd5RstCeU7A=="
+      }
+     ],
+     "role": "model"
+    },
+    "citation_metadata": {
+     "citations": [
+      {
+       "end_index": 299,
+       "start_index": 45,
+       "uri": "http://www.westca.com/pda/forums/op=view_topic/t=312051/app=weixin/lang=schinese.html"
+      }
+     ]
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:18:28.488030Z",
+  "model_version": "gemini-4-carbon",
+  "response_id": "lHD3at7kHfzlotkPgKis-Q0",
+  "usage_metadata": {
+   "candidates_token_count": 158,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 158
+    }
+   ],
+   "prompt_token_count": 4547,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4547
+    }
+   ],
+   "thoughts_token_count": 601,
+   "total_token_count": 5306,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "34",
+   "quote": "The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the residential complex by the tenant.",
+   "reason": "The clause is consistent with section 34 of the Act, which makes the tenant responsible for repairing undue damage (damage beyond normal wear and tear) caused wilfully or negligently by the tenant, an occupant, or a guest. Because it merely reflects the tenant's statutory obligation to cover the reasonable cost of such repairs rather than imposing an unlawful penalty or shifting general maintenance duties, it is permitted."
+  }
+ }
+}

@@ -1,0 +1,111 @@
+{
+ "clause_id": "c21",
+ "model_key": "gemini-3.8-flash",
+ "model_id": "gemini-3.8-flash",
+ "served_model": "gemini-3.8-flash",
+ "prompt_version": "pipeline-v1+conventions-v1",
+ "prompt_sha256": "a5eb3d29ce1fb399c10fe30eb68ee182d6388c0d521f55e03bd4552d625da991",
+ "clauses_sha256": "4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917",
+ "request": {
+  "model": "gemini-3.8-flash",
+  "contents": "Does the Residential Tenancies Act, 2006 (Ontario) make this clause of a residential tenancy agreement void?\n\nRead the clause as a term of an ordinary private residential tenancy in Ontario that the Residential Tenancies Act, 2006 covers: the rental unit has no exemption under section 6.1, and it is not student housing, a care home, a co-operative or a mobile home park.\n\nDecide using only the sections of the Act below. They are a selection, not the whole Act.\n\n<sections>\n[The headings and text of sections 4, 14, 15, 20, 22, 25, 26, 27, 34, 37, 40, 105, 106, 108, 116, 119, 120, 134 of the Act, from e-Laws; SHA-256 170f924284b858615f0e872622e0e1150d171bcaeffe1a8e61a2ea40a42b0e8c. Left out of saved records.]\n</sections>\n\n<clause>\nRent is payable monthly. On signing this Agreement, the Tenant shall pay a rent deposit equal to one month's rent, which the Landlord will apply to the rent for the last month of the tenancy.\n</clause>\n\nAnswer with:\n- verdict: \"void\" if the Act makes the clause void, \"allowed\" if the Act permits it, or \"unsure\" if these sections don't let you decide.\n- section: the number of the one section that decides it, such as \"14\", without a subsection. Empty if unsure.\n- quote: the words of that section that decide it, copied exactly: one continuous passage from a single subsection, at least five words, with nothing left out, added or changed. Not a heading. Empty if unsure.\n- reason: one or two sentences.\n",
+  "config": {
+   "max_output_tokens": 16000,
+   "response_mime_type": "application/json",
+   "response_json_schema": {
+    "type": "object",
+    "properties": {
+     "verdict": {
+      "type": "string",
+      "enum": [
+       "void",
+       "allowed",
+       "unsure"
+      ]
+     },
+     "section": {
+      "type": "string"
+     },
+     "quote": {
+      "type": "string"
+     },
+     "reason": {
+      "type": "string"
+     }
+    },
+    "required": [
+     "verdict",
+     "section",
+     "quote",
+     "reason"
+    ],
+    "additionalProperties": false
+   }
+  }
+ },
+ "requested_at": "2026-11-13T20:16:41.272305Z",
+ "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord may require a tenant to pay a rent deposit with respect to a tenancy if the landlord does so on or before entering into the tenancy agreement.\",\n  \"reason\": \"Section 106 permits a landlord to require a rent deposit of up to one month's rent on or before entering into the agreement, which must be applied toward the last rent period.\"\n}",
+ "finish_reason": "STOP",
+ "input_tokens": 4427,
+ "output_tokens": 634,
+ "raw": {
+  "sdk_http_response": {
+   "headers": {
+    "x-goog-request-id": "KXD3arK4E9W9w-UPidKMiQw",
+    "content-type": "application/json; charset=UTF-8",
+    "vary": "Origin, X-Origin, Referer",
+    "content-encoding": "gzip",
+    "date": "Fri, 13 Nov 2026 20:16:45 GMT",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "alt-svc": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000",
+    "transfer-encoding": "chunked"
+   }
+  },
+  "candidates": [
+   {
+    "content": {
+     "parts": [
+      {
+       "text": "{\n  \"verdict\": \"allowed\",\n  \"section\": \"106\",\n  \"quote\": \"A landlord may require a tenant to pay a rent deposit with respect to a tenancy if the landlord does so on or before entering into the tenancy agreement.\",\n  \"reason\": \"Section 106 permits a landlord to require a rent deposit of up to one month's rent on or before entering into the agreement, which must be applied toward the last rent period.\"\n}",
+       "thought_signature": "AY89a184fNv34m_rHm7ykur1-gqZHsvS74Zs88HByoIsZop_FAn9KswlKDXQnqTxxKa929gRcDl8PZfqwfN-f0d9qtk0OAK10tQHBNCyuciXTO9x6nybjqmbZwFXe4efAfR52SuG__rHszJhsRb6ayh5TWVmR4PPu_f8wq6Xqq_LUVMgOO4auuGfU2dV2z_0KstHtsywFdYVo5McGKrSy2BsniuijFb2xn51mg61p7_ddwYX8ptWvQRIsNEo9KzF2amGvu1dH7OckBELSaSSaFx07amIhByJLj7K-tUgSPhpo_7wVk3hnNNG34Jps2vkhyEihJ6OtLyc9uwqcE5evRUHWXLXbmglsLit88ftS809_mUQXeWR6PvPdRtGJgixmM4INQD15njMr934x4upS2kmOAc8MiNp1u6Xxw6gKwRevqqBg0aZEuw8zuGT-dIpPtDW1Jezb5IwV2yhFj6oCySmVU4kERFPbR8sCaOdUCQn27EGRzAu780jgQ-2zHPfhvLUd85erIWRPpthOMFk9ZxvrDEaZ140V2oFuqqxRFbEA9KYHTReYUdWSOGg5Ui1VahpzeVKlxFQ80TYNGrtmVz7qdWjySqCS-r4jK6N3ryStMzdSqFKFkPUH7dxiJVxM2rLhGm2XVNEKObFW2pq8RPCb8WdbHFcgm8W799O6n3rQ7DjtYBIbHKZMSZXCpUbveeK4zlAkgi6DM_t-xQDlE5UIhineFxP38XQvuEZFGm4AIvJZs4TdX4BUSYxrLOv5XeEYdtmS1wHgeAeSCXMfOeiZj6KT_OHuMN86CQEhaopU7d4yPrOWj_bCr1JBRQ6G9FM3gITnKBrl1WeIFkHRs1ibPUZL3IomJaazKDGmELiYEoRPLTWfp5mBp-M3A5Ue7fKRqycT-TfsGEwQ8Rquq9zwNjZ5o7HkVUI8S0QiKH7Tf8bnZA3u1nGKg2WmLUY-i_CVT8puC0J7IKyQPOj40Lsph-2e5zaiwF2lLPQdGu2r3PiQFHx9fFhnOpxDeMtHsKGtWykHm3oqW0-sLcO3EUHguuNPvVfPA_m0y30IdOqHSU7bt1fM34YhQ1t83eEpGBdt3TkkFavqG7qoOQvQqxX9uAJITEOuTqvNOYxcN3i_dGiQSKhAjeR3mNZxWOJfzrZyYi4sEMX2_7DwJ39yvbpqkcXwur8cJjrRFiMYxicoTYyZofepTA9ttO_wwEqxDye3MqAdPtPuvMR4hOCILsc6jAhez7ER1V1tqDy6sVBh1xUNDzNxv0Dkwb0shjVtdnAgqz-yTFoQk0AwxDsPZb5ffhgLAj0Kw4W4oq5e6YD6-3p6FQZBHbwD3ON5TgSk8DSNtL9n2Y3digbUGJ-LUATz69EIFe_ORt1CFDI-BacdvPhHnnGffW-OzHOFxkbup0UJyGMCX4CPSWQG0gaSPnITkWGMnzzPDbKeF6IV-7PZJSc05upUO_eovsim1X9bpFwPernVMtpKH6UzCMs4VSuBNsrqdH9N6WQ32-xi1-3SJ1NCOGBA9l0W7c_fGGn9g6CXI49D03wp0tbtmsf56-BE-uW-upU03k6tNa7ll0lSIc0BddCTI6AkpMYHTAPYtzs8zZjnQQFQpeeCfjo8fTQYi357IfCXXmBUBbPDpQ2Zdkpd3pw5fFvJtDdQVHEsN_exjh5pboVITHKGGdHbcJ8Ohu875HEMaO_brNeE4s3ycRpNaEprEFhWHJR-5V9QJmbJMswWdqdOg9D2j74VWvGSaGZ4OAfwZSEdF8Szu0y8wCAQcLEPKd79HV09bG8qREdFOtGBtxHgVQHHS-pqcf3K5Io5aboL2oCJcIMkdt6Nt0T5accEoB_3BP_zpkNb4oDLJDxUxJYPlN5usNgI-F6KIpINKiiXB0OdoGrBEMFaR41N2WNkWPkjyPoAQCLbwy6P6HFSxnvdfAWavSMOYoql55j1qbJiusgdhZlrxaAzvAkgIuEqluCK9F2TsMBz4CnliOs8cfz1HlWiMUhJ3I3NyU7Ne2_YJOctWEh5zWFNeF-zY_XAo1awyLGv6lYIXq-Wyq8xR0iQ5JxvMdf5xaSXQCQ8HTGPZJT6tzGcG5a-EdHV3MpAJ5CZFhdApUqLw6tJ7V3Z7bJj9DuqQj66V7iXiV5uZwpSE0OAzl1ePGLozQhsADMJv0sBMDnvz1_kiwjm3xtzIeF2jDAoP6S2RUijfnfU5SV4mUI1OkSzNbiA-aeVA-GBqKGQe63igk8_QcNeVHH83NenZuYKl8OCwFERvmdRfiwbYQZ6gsaU-8lej3sfDhz-mQyBNDttbrjhJZgQzDpzcj8FMGKGFCtDBIBb3Ne8LA5zeTlmN-XzRaya30WOZF0kbb5__BmHnRzi1AH0TKy3fknRtUAL5iiC4cBSJ_Iw5SQ4ZmrhSlzfqNqPPbwAHrxaPnuDcEByggFNTTzfIhEAriwi8mtUegspIPQEg9zJb_7SI4OmWAFIG9Ft5gz-uZMtHcNfUajseg9pfLcVcFr2XlOCet3WzomI6eLDsgl77kXxgWGRZilXZ4LDaKzHwBshYQwCCiPznz8WR0nwriZVC2W-S7MNa-Ef4DKR5VAgNlHBUdS4Y1hkn-L0Ajwfq_ATTzzg_EUJtS2fCx2TjvkMp1WuAy_1QDxxTJR7FAbOYuLgmJLV6cioljEFxFAUNS2ebTssSjf1RWTVIvkgqbDaXWLIeNU8u_wv5XzQpvo66ASU2NS5Qj9AP-Aw0VRTkyWyk6e-rrvXdcvj3KdqyVNucX2BAscbD9X66kEZgbN9_-m9UyDzB4rQEygijXz3W8wE0_n3RsGvzv47C1YOtYi0np0OVCVWTB53zMkm_3JzMhLBYR_0vqREawoSwnVxYY7sBQilxI3pA9YqRmsD17AX_NWWz0mUOk7mD5bMYpP8fHO8Um6nilVKJYBiW-1lcWMHC3QT1hffLuzy92GvL7V_QrF1XCYR9uSTGdhJuV6KVI-2wZpJrO185pe9viuuFpZmk7ptXYsSAKQyiu0Cr_jantSGN44ZO9sXoKM-XNZ8S0adrWvHR8Ithd9GHfAThzJ5IMehqpOZVjHN_h1saM32mO908eF-mCtSkWyVe0NeRQ2qTMSC55LyZThUAlc9ORPdeBuXMvOr4WIknX1_Ui2lLouPW8g6a5YBM0L8bY="
+      }
+     ],
+     "role": "model"
+    },
+    "finish_reason": "STOP"
+   }
+  ],
+  "create_time": "2026-11-13T20:16:41.318514Z",
+  "model_version": "gemini-3.8-flash",
+  "response_id": "KXD3arK4E9W9w-UPidKMiQw",
+  "usage_metadata": {
+   "candidates_token_count": 103,
+   "candidates_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 103
+    }
+   ],
+   "prompt_token_count": 4427,
+   "prompt_tokens_details": [
+    {
+     "modality": "TEXT",
+     "token_count": 4427
+    }
+   ],
+   "thoughts_token_count": 531,
+   "total_token_count": 5061,
+   "traffic_type": "ON_DEMAND"
+  },
+  "automatic_function_calling_history": [],
+  "parsed": {
+   "verdict": "allowed",
+   "section": "106",
+   "quote": "A landlord may require a tenant to pay a rent deposit with respect to a tenancy if the landlord does so on or before entering into the tenancy agreement.",
+   "reason": "Section 106 permits a landlord to require a rent deposit of up to one month's rent on or before entering into the agreement, which must be applied toward the last rent period."
+  }
+ }
+}
