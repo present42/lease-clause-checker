@@ -18,6 +18,12 @@ text, with every quote it gives checked in code, let it answer as well as a heav
 > you have a question about your tenancy, contact a lawyer, a community legal clinic, or the
 > Landlord and Tenant Board.
 
+![lcc check replaying the saved answers for the sample lease: a verdict, section, checked quote
+and e-Laws link for each clause](demo/check.gif)
+
+`lcc check` on [the sample lease](samples/lease_short.txt), replaying its saved answers
+(recorded with [demo/check.tape](demo/check.tape); see [Check a lease](#check-a-lease)).
+
 ## Why
 
 A chatbot answer can sound right and still cite the wrong section of the law, or no section at
