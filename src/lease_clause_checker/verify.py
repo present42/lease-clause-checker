@@ -18,6 +18,7 @@ from dataclasses import dataclass
 from itertools import pairwise
 from typing import Literal
 
+from lease_clause_checker import wording
 from lease_clause_checker.statute import Section
 
 QuoteCheck = Literal["verified", "too_short", "heading", "not_found", "no_quote", "no_such_section"]
@@ -32,6 +33,11 @@ MIN_QUOTE_WORDS = 5
 MARKER = re.compile(r"\(\w+(?:\.\w+)?\)")
 # A subsection starts a line of section text: "(1) ", "(1.1) ".
 SUBSECTION_START = re.compile(r"^\(\d+(?:\.\d+)?\) ", re.MULTILINE)
+# An ellipsis marking an omission in a quote: "…", "...", ". . ." or either in brackets.
+ELLIPSIS = re.compile(r"\[\s*(?:…|\.\s?\.\s?\.)\s*\]|…|\.\s?\.\s?\.")
+# A change marked in brackets, such as "[t]he" or "[A]".
+BRACKETS = re.compile(r"\[([^\[\]]*)\]")
+WORD = re.compile(r"\w+")
 # Curly single quotation marks and apostrophes (U+2018-U+201B) become ', double ones
 # (U+201C-U+201F) become ".
 QUOTATION_MARKS = str.maketrans("\u2018\u2019\u201a\u201b\u201c\u201d\u201e\u201f", "''''\"\"\"\"")
@@ -45,11 +51,110 @@ def check_quote(quote: str, section_number: str, sections: dict[str, Section]) -
     if section is None:
         return "no_such_section"
     if quote_in_text(wanted, section.text):
-        words = [token for token in wanted.split() if not MARKER.fullmatch(token)]
-        return "verified" if len(words) >= MIN_QUOTE_WORDS else "too_short"
+        return "verified" if word_count(wanted) >= MIN_QUOTE_WORDS else "too_short"
     if any(_contains(heading, wanted) for heading in (section.heading, *section.headnotes)):
         return "heading"
     return "not_found"
+
+
+def word_count(quote: str) -> int:
+    """The quote's words, not counting markers such as "(2)" or ellipses."""
+    tokens = ELLIPSIS.sub(" ", normalise(quote).strip('"')).split()
+    return sum(not MARKER.fullmatch(token) for token in tokens)
+
+
+def check_quote_with_conventions(
+    quote: str, section_number: str, sections: dict[str, Section]
+) -> QuoteCheck:
+    """`check_quote`, but forgiving the marks a careful quotation uses for a change it makes.
+
+    - An ellipsis ("…", "...", "[…]") marks an omission: it splits the quote into pieces that
+      must appear in order, as whole words, within one subsection.
+    - A bracketed change passes only if it is cosmetic (`wording.same_but_cosmetic`). Standing
+      alone ("[A] landlord"), the brackets stand for as many Act words as they hold, or one,
+      and must differ from them only in case, number or articles. Inside a word ("[T]he",
+      "tenant[s]"), the bracketed letters must be the Act's, but for case; a plural ending
+      ("[s]", "[es]") may also be absent from the Act.
+    - The quote's first letter may differ in case from the Act's.
+
+    An unmarked omission or change still fails, and so do empty brackets. Strict `check_quote`
+    is what the pipeline uses; this is for reporting a quote both ways.
+    """
+    strict = check_quote(quote, section_number, sections)
+    if strict in ("verified", "no_quote", "no_such_section"):
+        return strict
+    wanted = normalise(quote).strip('"')
+    pieces = [piece.strip() for piece in ELLIPSIS.split(wanted) if piece.strip()]
+    if not pieces or any(not m.group(1).strip() for m in BRACKETS.finditer(wanted)):
+        return strict
+    patterns = [_Piece.of(piece, first=i == 0) for i, piece in enumerate(pieces)]
+    section_text = sections[section_number].text
+    if not any(_in_order(patterns, normalise(part)) for part in subsections(section_text)):
+        return strict
+    words = [
+        token
+        for piece in pieces
+        for token in BRACKETS.sub(lambda m: m.group(1), piece).split()
+        if not MARKER.fullmatch(token)
+    ]
+    return "verified" if len(words) >= MIN_QUOTE_WORDS else "too_short"
+
+
+@dataclass(frozen=True)
+class _Piece:
+    """One piece of a quote between ellipses, as a regular expression, with the text of each
+    standalone bracket, whose match is checked after the expression finds a candidate."""
+
+    pattern: re.Pattern[str]
+    brackets: tuple[str, ...]
+
+    @classmethod
+    def of(cls, piece: str, *, first: bool) -> "_Piece":
+        parts: list[str] = []
+        brackets: list[str] = []
+        end = 0
+        if first and piece[0].isalpha():
+            parts.append(f"[{piece[0].upper()}{piece[0].lower()}]")
+            end = 1
+        for bracket in BRACKETS.finditer(piece, end):
+            parts.append(re.escape(piece[end : bracket.start()]))
+            inside = bracket.group(1)
+            before = piece[bracket.start() - 1] if bracket.start() else " "
+            after = piece[bracket.end()] if bracket.end() < len(piece) else " "
+            if before.isalnum() or after.isalnum():
+                letters = f"(?i:{re.escape(inside)})"
+                plural = inside.lower() in ("s", "es") and not after.isalnum()
+                parts.append(f"(?:{letters})?" if plural else letters)
+            else:
+                most = max(1, len(inside.split()))
+                parts.append(rf"(?P<b{len(brackets)}>\S+(?: \S+){{0,{most - 1}}})")
+                brackets.append(inside)
+            end = bracket.end()
+        parts.append(re.escape(piece[end:]))
+        return cls(re.compile(rf"(?<!\w){''.join(parts)}(?!\w)"), tuple(brackets))
+
+    def find(self, text: str, start: int) -> re.Match[str] | None:
+        """The first match from `start` whose standalone brackets differ from the Act's words
+        only cosmetically."""
+        found = self.pattern.search(text, start)
+        while found is not None:
+            if all(
+                wording.same_but_cosmetic(WORD.findall(found.group(f"b{i}")), WORD.findall(inside))
+                for i, inside in enumerate(self.brackets)
+            ):
+                return found
+            found = self.pattern.search(text, found.start() + 1)
+        return None
+
+
+def _in_order(pieces: list[_Piece], text: str) -> bool:
+    start = 0
+    for piece in pieces:
+        found = piece.find(text, start)
+        if found is None:
+            return False
+        start = found.end()
+    return True
 
 
 def quote_in_text(quote: str, section_text: str, *, fold_quotation_marks: bool = True) -> bool:
@@ -61,17 +166,29 @@ def quote_in_text(quote: str, section_text: str, *, fold_quotation_marks: bool =
     always collapsed. With `fold_quotation_marks=False`, a straight apostrophe does not match
     the Act's curly one.
     """
-    return any(_contains(part, quote, fold_quotation_marks) for part in _subsections(section_text))
+    return any(_contains(part, quote, fold_quotation_marks) for part in subsections(section_text))
 
 
 def subsection_of(quote: str, section_text: str) -> str | None:
     """The marker, such as "(2)", of the first subsection that contains `quote` ("" if the
     section has no numbered subsections); None if none does."""
-    for part in _subsections(section_text):
+    for part in subsections(section_text):
         if _contains(part, quote):
-            marker = SUBSECTION_START.match(part)
-            return marker.group(0).strip() if marker else ""
+            return subsection_marker(part)
     return None
+
+
+def subsections(section_text: str) -> list[str]:
+    """The section's text split before each subsection marker; one part if it has none."""
+    starts = [match.start() for match in SUBSECTION_START.finditer(section_text)]
+    bounds = [0, *starts, len(section_text)]
+    return [section_text[start:end] for start, end in pairwise(bounds) if end > start]
+
+
+def subsection_marker(part: str) -> str:
+    """The marker, such as "(2)", that starts a part from `subsections`; "" if none does."""
+    marker = SUBSECTION_START.match(part)
+    return marker.group(0).strip() if marker else ""
 
 
 @dataclass(frozen=True)
@@ -102,7 +219,7 @@ def first_difference(quote: str, section_text: str) -> Difference | None:
     act_word = None
     if matched:
         prefix = " ".join(words[:matched])
-        for part in _subsections(section_text):
+        for part in subsections(section_text):
             found = re.search(rf"(?<!\w){re.escape(prefix)}(?!\w)\s*(\S+)?", normalise(part))
             if found:
                 act_word = found.group(1)
@@ -121,9 +238,3 @@ def _contains(text: str, quote: str, fold_quotation_marks: bool = True) -> bool:
     quote = normalise(quote, fold_quotation_marks=fold_quotation_marks)
     text = normalise(text, fold_quotation_marks=fold_quotation_marks)
     return re.search(rf"(?<!\w){re.escape(quote)}(?!\w)", text) is not None
-
-
-def _subsections(section_text: str) -> list[str]:
-    starts = [match.start() for match in SUBSECTION_START.finditer(section_text)]
-    bounds = [0, *starts, len(section_text)]
-    return [section_text[start:end] for start, end in pairwise(bounds)]

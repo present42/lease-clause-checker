@@ -1,7 +1,14 @@
 import pytest
 
 from lease_clause_checker.statute import Section
-from lease_clause_checker.verify import Difference, check_quote, first_difference, subsection_of
+from lease_clause_checker.verify import (
+    Difference,
+    check_quote,
+    check_quote_with_conventions,
+    first_difference,
+    subsection_of,
+    subsections,
+)
 
 # Sample Act section 2.1 (see tests/fixtures/elaws_sample.html):
 #   (1) A landlord may require a gadget deposit if,
@@ -130,3 +137,68 @@ def test_a_section_without_numbered_subsections_has_an_empty_marker(
     sections: dict[str, Section],
 ) -> None:
     assert subsection_of("prohibiting widgets is void", sections["1"].text) == ""
+
+
+def test_subsections_split_before_each_marker_with_no_empty_part() -> None:
+    assert subsections("(1) One.\n(2) Two.") == ["(1) One.\n", "(2) Two."]
+    assert subsections("No subsections.") == ["No subsections."]
+
+
+CONVENTIONS = {
+    "27": Section(
+        "27",
+        "Entry with notice",
+        "(1) A landlord may enter a rental unit in accordance with written notice given to the "
+        "tenant at least 24 hours before the time of entry.\n"
+        "(2) The written notice under subsection (1) shall specify the reasons for entry.",
+        "BK33",
+    )
+}
+
+
+@pytest.mark.parametrize(
+    "quote",
+    [
+        "a landlord may enter a rental unit",  # first letter's case changed
+        "A landlord may enter … at least 24 hours before the time of entry",
+        "A landlord may enter ... written notice given to the tenant",
+        "A landlord may enter [...] written notice given to the tenant",
+        "[T]he written notice … shall specify the reasons for entry",
+        "[The] written notice under subsection (1) shall specify",
+        "landlord may enter [the] rental unit in accordance",  # an article changed
+        "landlord may enter [A Rental] unit in accordance",  # two words for two, case only
+        "The written notice[s] under subsection (1) shall specify",  # a plural ending
+        "… a landlord may enter a rental unit …",  # ellipses at both ends
+    ],
+)
+def test_marked_changes_pass_with_conventions_but_not_strictly(quote: str) -> None:
+    assert check_quote(quote, "27", CONVENTIONS) == "not_found"
+    assert check_quote_with_conventions(quote, "27", CONVENTIONS) == "verified"
+
+
+@pytest.mark.parametrize(
+    "quote",
+    [
+        "The written notice shall specify the reasons",  # unmarked omission
+        "A landlord may enter … The written notice",  # pieces in two subsections
+        "the written notice … A landlord may enter",  # pieces out of order
+        "at least 24 hours … A landlord may enter",  # out of order within one subsection
+        "landlord may enter a [dwelling] unit in accordance",  # a bracket can't change a word
+        "A landlord [does not] enter a rental unit",  # nor add a negation
+        "A landlord [can] enter a rental unit",  # nor stand for a different word
+        "[un]written notice given to the tenant at least",  # nor add letters inside a word
+        "[] landlord may enter a rental unit",  # empty brackets
+        "…",  # a bare ellipsis is no quote of anything
+        "A landlord may enter a rental unit with notice",  # unmarked change
+        "may enter [the] unit in accordance",  # a one-word bracket for two Act words
+        "a Landlord may enter a rental unit",  # only the first letter's case may change
+    ],
+)
+def test_unmarked_changes_fail_with_conventions(quote: str) -> None:
+    assert check_quote_with_conventions(quote, "27", CONVENTIONS) == "not_found"
+
+
+def test_conventions_count_words_across_pieces() -> None:
+    assert check_quote_with_conventions("A landlord … the tenant", "27", CONVENTIONS) == "too_short"
+    assert check_quote_with_conventions("", "27", CONVENTIONS) == "no_quote"
+    assert check_quote_with_conventions("A landlord may", "99", CONVENTIONS) == "no_such_section"
