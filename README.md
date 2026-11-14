@@ -233,11 +233,11 @@ Main test set, 38 clauses. The pipeline's question and JSON answer with no statu
 - **quote verified**: of the answers with a verdict, those whose quote passed the check.
 - With the statute in the prompt, 150 of 151 first pipeline answers with a verdict on the main set had a quote that passed.
 
-#### How the quotes that are not word for word differ from the Act
+#### How the quotes that failed the check differ from the Act
 
-Each closed-book quote that is not word for word in the section it cites, sorted by code ([quotediff.py](src/lease_clause_checker/quotediff.py)) into the first category that fits. **Passes with quoting conventions**: word for word once an ellipsis, brackets around a cosmetic change, or a changed first capital are read as the marks of a quotation. **Cosmetic**: lines up with the cited section and differs only in articles, punctuation, case, grammatical number (a plural and its verb) or paragraph markers. **Wrong section cited**: a version of another section, not of the cited one. **Meaning changed**: lines up with the cited section, but a content word is changed, added or dropped. **Not in the Act**: lines up with no subsection of the Act. A quote lines up with a subsection when at least half its words match it in order and they make up at least a quarter of the Act's words they span. The categories describe wording, not law: a cosmetic difference is not a wrong statement of the law, and whether a changed word changes the meaning is a question for a reader. Every quote, with its difference from the Act, is in [quote-review.md](results/closedbook-v1+conventions-v1/quote-review.md) (`uv run lcc closedbook quotes`). The categories have not yet been checked by hand.
+Each closed-book quote that failed the strict check against the section it cites, sorted by code ([quotediff.py](src/lease_clause_checker/quotediff.py)) into the first category that fits. **Drops a negation** (shown only if a quote does): word for word, or but for cosmetic differences, but starting right after a "no", "not", "neither" or "nor" that it leaves out; a narrow check of the one word before the quote, not of a negation's scope. **Passes with quoting conventions**: word for word once an ellipsis, brackets around a cosmetic change, or a changed first capital are read as the marks of a quotation. **Cosmetic**: lines up with the cited section and differs only in articles, punctuation, case, grammatical number (a plural and its verb) or paragraph markers. Number counts as cosmetic because Ontario statutes are read that way: “Words in the singular include the plural and words in the plural include the singular” ([Legislation Act, 2006, s. 67](https://www.ontario.ca/laws/statute/06l21#BK79); e-Laws consolidation from 11 December 2025, read on 14 November 2026; not an official version of the statute, © King's Printer for Ontario, 2006). That is a rule for reading a statute, not for quoting one. **Wrong section cited**: a version of another section, not of the cited one. **Content words differ**: lines up with the cited section, but a content word is changed, added or dropped. **Not in the Act**: lines up with no subsection of the Act. A quote lines up with a subsection when at least half its words match it in order and they make up at least a quarter of the Act's words they span. The categories describe wording, not law: a cosmetic difference is not a wrong statement of the law. Whether a different word changes what the Act says is to be judged by hand and reported apart from these counts. Every quote, with its difference from the Act, is in [quote-review.md](results/closedbook-v1+conventions-v1/quote-review.md) (`uv run lcc closedbook quotes`). The categories have not yet been checked by hand. No quote has yet been read by hand for meaning.
 
-| model | answers with a verdict | not verbatim | passes with quoting conventions | cosmetic | wrong section cited | meaning changed | not in the Act | no quote |
+| model | answers with a verdict | failed the check | passes with quoting conventions | cosmetic | wrong section cited | content words differ | not in the Act | no quote |
 |---|---|---|---|---|---|---|---|---|
 | Claude Haiku 5.5 | 23 | 22 | 0 | 0 | 2 | 9 | 10 | 1 |
 | Claude Opus 5.5 | 38 | 13 | 0 | 4 | 0 | 8 | 1 | 0 |
@@ -336,6 +336,9 @@ What this project does as a result:
   numbers, headings, paraphrases and short quotes: in docs, in CLI output, and as each test
   clause's decisive words (`data/clauses.jsonl` and `data/clauses_review.md`). The cache records a
   SHA-256 of the text, so results can name the exact version they used.
+- One sentence of another statute is quoted: s. 67 of the Legislation Act, 2006 (S.O. 2006,
+  c. 21, Sched. F), in the Results' note on grammatical number, with its own notice and its
+  e-Laws consolidation date.
 - Wherever statute text is shown, it carries the notice "Not an official version" and
   "© King's Printer for Ontario, 2006". The copyright page asks for "the year of first
   publication of the legal materials"; 2006 is the year in the Act's citation (S.O. 2006, c. 17).
@@ -361,6 +364,39 @@ cp .env.example .env   # only needed for live API runs
 `.env` is read from the current directory, so run commands from the repo root. The default test
 run is offline and free. Tests that call a real API are marked `live` and run only with
 `uv run pytest -m live`.
+
+## Related work
+
+Checking a legal quotation against its source is not new, and neither is serving Canadian law
+to a language model. Work this project sits beside:
+
+- **Quotation checking.** Thomson Reuters added Quick Check Quotation Analysis to Westlaw Edge
+  in April 2020
+  ([announcement](https://www.thomsonreuters.com/en/press-releases/2020/april/thomson-reuters-adds-quick-check-quotation-analysis-to-westlaw-edge.html)).
+  It compares the quotations in a brief with the US case law they cite and shows the
+  differences side by side.
+- **Canadian legal text for models.** [A2AJ](https://a2aj.ca/) (Access to Algorithmic Justice)
+  serves open Canadian legal data, including through an MCP server, and added Ontario statutes
+  in April 2026 ([announcement](https://a2aj.ca/news/2026-04-07-ontario-bc-legislation/)). It
+  describes its texts as "unofficial copies collected through automated processes"
+  ([data page](https://a2aj.ca/data/)). Third-party MCP servers wrap the CanLII API (for
+  example [this one](https://www.vaquill.ai/blog/canlii-mcp-server-canadian-legal-research));
+  I haven't found one published by CanLII itself.
+- **Grounded citations.** Anthropic's Citations API
+  ([announcement](https://www.anthropic.com/news/introducing-citations-api)) has Claude cite
+  passages of the documents in its request and return the cited text.
+- **Hallucination in legal research tools.** Magesh, Surani, Dahl, Suzgun, Manning and Ho,
+  "Hallucination-Free? Assessing the Reliability of Leading AI Legal Research Tools", *Journal of
+  Empirical Legal Studies* 22(2): 216–242 (2025),
+  [doi:10.1111/jels.12413](https://doi.org/10.1111/jels.12413), found that commercial
+  retrieval-augmented legal research tools still hallucinate, though less often than a
+  general-purpose chatbot.
+
+What this project adds to these: statute text taken from Ontario's own e-Laws service, recorded
+with its consolidation and retrieval date; an open, deterministic quote check whose code anyone
+can read and re-run, with each difference labelled as cosmetic or as a change in content words;
+and an evaluation of how often four models' quotes of the Residential Tenancies Act pass it,
+with and without the statute in the prompt.
 
 ## Limitations
 

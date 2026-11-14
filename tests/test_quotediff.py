@@ -63,6 +63,12 @@ SECTIONS = {
             "14", "verbatim",
         ),
         ("is void", "14", "too_short"),
+        ("landlord shall, without legal process, seize a tenant", "40", "drops_negation"),
+        # A cosmetic change doesn't hide the dropped "No".
+        (
+            "Landlord shall without legal process seize the tenant’s property",
+            "40", "drops_negation",
+        ),
         ("", "14", "no_quote"),
         ("a provision in a tenancy agreement prohibiting the presence", "14", "conventions"),
         (
@@ -74,20 +80,20 @@ SECTIONS = {
         ("require a tenant to provide post-dated cheques for payment of rent.", "108", "cosmetic"),
         (
             "A landlord may enter a rental unit in accordance with notice given to",
-            "27", "meaning_changed",
+            "27", "content_words_differ",
         ),
         (
             "A landlord may enter a rental unit in accordance with oral notice given",
-            "27", "meaning_changed",
+            "27", "content_words_differ",
         ),
         ("the presence of animals in or about the residential complex is void", "27", "wrong_cite"),
         ("No landlord shall, without legal process, seize a tenant", "27", "wrong_cite"),
         ("A landlord shall seize the property of a tenant at any time", "40", "not_in_act"),
         # A paragraph marker starting a line of the Act is layout; one inside a line is a word.
         ("A landlord shall not seize property for arrears under", "60", "cosmetic"),
-        ("seize property for arrears under subsection 59; or", "60", "meaning_changed"),
+        ("seize property for arrears under subsection 59; or", "60", "content_words_differ"),
         ("under the following circumstances: To carry out a repair", "80", "cosmetic"),
-        ("under the following circumstances: carry out a repair", "80", "meaning_changed"),
+        ("under the following circumstances: carry out a repair", "80", "content_words_differ"),
         # Under 5 words is too short to check, even if only an article changed.
         ("seize the tenant’s property", "40", "too_short"),
         # A cited number that isn't a section of the Act.
@@ -100,7 +106,7 @@ SECTIONS = {
             "14", "cosmetic",
         ),
         # Only words of 3 letters or more can differ by a plural "s" ("it", "its").
-        ("end a tenancy unless its is terminated under this Act", "60", "meaning_changed"),
+        ("end a tenancy unless its is terminated under this Act", "60", "content_words_differ"),
         # Half the quote's words must line up: 6 of 13 is not enough.
         (
             "A landlord may enter whenever the tenant is away on a long holiday",
@@ -117,7 +123,7 @@ def test_each_quote_gets_the_first_category_that_fits(
 def test_a_dropped_critical_word_is_never_cosmetic_and_is_named() -> None:
     result = classify("in accordance with notice given to the tenant at least", "27", SECTIONS)
 
-    assert (result.category, result.critical) == ("meaning_changed", ("written",))
+    assert (result.category, result.critical) == ("content_words_differ", ("written",))
 
 
 def test_a_quote_that_lines_up_only_with_another_section_is_a_wrong_cite_with_changed_words() -> (
@@ -204,4 +210,22 @@ def test_a_dropped_leading_negation_is_flagged() -> None:
         "a landlord shall, without legal process, seize a tenant’s property", "40", SECTIONS
     )
 
-    assert (result.category, result.critical) == ("meaning_changed", ("no",))
+    assert (result.category, result.critical) == ("content_words_differ", ("no",))
+
+
+def test_a_dropped_negation_elsewhere_is_not_the_same_words() -> None:
+    # s. 40's words without its "No", cited to s. 14: a wrong cite, but with words changed.
+    result = classify("landlord shall, without legal process, seize a tenant", "14", SECTIONS)
+
+    assert (result.category, result.found_in, result.words_changed) == ("wrong_cite", ("40",), True)
+
+
+def test_only_cosmetic_opening_words_are_looked_behind_for_a_negation() -> None:
+    section = Section("71", "Test", "This shall not ever apply to any landlord.", "BK81")
+    changed = align("never apply to any landlord", section)  # "never" for "ever": a change
+    cosmetic = align("Ever apply to any landlord", section)  # case only
+
+    assert changed is not None
+    assert cosmetic is not None
+    assert changed.dropped_negation is None
+    assert cosmetic.dropped_negation == "not"

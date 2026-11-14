@@ -126,7 +126,7 @@ def test_the_verdict_counts_whether_or_not_the_quote_passes(
     categories = {r.clause.id: r.quote and r.quote.category for r in model_run.closed_book}
     assert categories == {
         "c01": "verbatim",
-        "c02": "meaning_changed",
+        "c02": "content_words_differ",
         "c03": "heading",
         "c04": None,  # unsure: no quote to sort
         "c05": "no_quote",
@@ -134,7 +134,7 @@ def test_the_verdict_counts_whether_or_not_the_quote_passes(
     page = quotereview.review_page([model_run], {}, "NOTICE", prompt.version)
     rows = [line for line in page.splitlines() if line.startswith("| c0")]
     assert [row.split(" | ")[0] for row in rows] == ["| c02", "| c03", "| c05"]
-    assert "| right | s. 1 | meaning changed | s. 1 |" in rows[0]
+    assert "| right | s. 1 | content words differ | s. 1 |" in rows[0]
     assert "| A provision [-in a tenancy agreement-] prohibiting widgets is void. |" in rows[0]
     assert "Statute words in this file: NOTICE" in page
     [summary] = [line for line in page.splitlines() if line.startswith("| Claude Haiku")]

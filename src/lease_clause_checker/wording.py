@@ -3,8 +3,10 @@ conventions (`verify.check_quote_with_conventions`) and the quote classifier (`q
 
 Two runs of words are the same but for cosmetics when, after dropping punctuation and articles,
 their words pair up one to one and each pair differs at most in case or grammatical number
-("reason"/"Reasons", "is"/"are"). A word in `CRITICAL_WORDS` is content like any other, so
-adding or dropping one is never cosmetic.
+("reason"/"Reasons", "is"/"are"). Number follows the Legislation Act, 2006, s. 67: "Words in
+the singular include the plural and words in the plural include the singular", a rule for
+reading Ontario statutes. A word in `CRITICAL_WORDS` is content like any other, so adding or
+dropping one is never cosmetic.
 """
 
 ARTICLES = frozenset({"a", "an", "the"})

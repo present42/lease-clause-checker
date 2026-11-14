@@ -4,6 +4,9 @@ The categories, each tried in this order:
 
 - `no_quote`: the answer gave none.
 - `verbatim`: word for word in the cited section (`verify.check_quote`).
+- `drops_negation`: word for word, or but for cosmetic differences, in the cited section, but
+  only right after a negating word that it leaves out ("landlord shall …" from "No landlord
+  shall …"; `verify.negation_before`).
 - `heading`: found only in a heading or headnote of the cited section (`verify.check_quote`).
 - `too_short`: under `verify.MIN_QUOTE_WORDS` words, found or not: too short to show anything.
 - `conventions`: word for word once the usual marks of a quotation are read as marks (an
@@ -17,8 +20,9 @@ The categories, each tried in this order:
   content words changed (`Classified.words_changed`). A quote that is word for word or
   cosmetic in another section is a wrong cite even if it also lines up, with changes, with the
   cited one.
-- `meaning_changed`: lines up with a subsection of the cited section, but a content word is
-  changed, added or dropped. Whether that changes what the provision means is for a reader.
+- `content_words_differ`: lines up with a subsection of the cited section, but a content word
+  is changed, added or dropped. Whether that changes what the provision means is for a reader
+  (`quotereview` keeps that judgement as part of the hand check).
 - `not_in_act`: lines up with no subsection of the Act: paraphrased or invented.
 
 "Lines up" is `Alignment.lined_up`. The classification describes wording only: a cosmetic
@@ -37,12 +41,13 @@ from lease_clause_checker.statute import Section
 Category = Literal[
     "no_quote",
     "verbatim",
+    "drops_negation",
     "heading",
     "too_short",
     "conventions",
     "cosmetic",
     "wrong_cite",
-    "meaning_changed",
+    "content_words_differ",
     "not_in_act",
 ]
 # A word or one punctuation mark, so "void." matches "void". An apostrophe is a token of its own,
@@ -184,6 +189,26 @@ class Alignment:
     def cosmetic(self) -> bool:
         return all(change.cosmetic for change in self.changes)
 
+    @property
+    def dropped_negation(self) -> str | None:
+        """The negating word right before where the quote starts in the Act, which the quote
+        leaves out (`verify.negation_before`). The quote starts at its first matched token, or
+        as many tokens before it as the quote has unmatched opening tokens, if those differ
+        from the Act's only cosmetically ("Landlord" for "landlord"). None otherwise."""
+        first_a, first_b, _ = self.blocks[0]
+        start = first_a - first_b
+        if start < 0:
+            return None
+        if first_b:
+            lead = Change(
+                tuple(t.key for t in self.act[start:first_a]),
+                tuple(t.key for t in self.quote[:first_b]),
+            )
+            if not lead.cosmetic:
+                return None
+        before = " ".join(token.key for token in self.act[:start])
+        return verify.negation_before(before, len(before))
+
     def wdiff(self) -> str:
         """The aligned stretch as text: the Act's words that the quote drops or changes as
         `[-…-]`, the quote's own as `{+…+}`."""
@@ -272,6 +297,8 @@ def classify(quote: str, cited: str, sections: dict[str, Section]) -> Classified
         return Classified("no_quote", strict, marked, None)
     if strict == "verified":
         return Classified("verbatim", strict, marked, here)
+    if strict == "drops_negation":
+        return Classified("drops_negation", strict, marked, here)
     if strict == "heading":
         return Classified("heading", strict, marked, here)
     if strict == "too_short" or verify.word_count(quote) < verify.MIN_QUOTE_WORDS:
@@ -279,6 +306,8 @@ def classify(quote: str, cited: str, sections: dict[str, Section]) -> Classified
     if marked == "verified":
         return Classified("conventions", strict, marked, here)
     if here is not None and here.lined_up and here.cosmetic:
+        if here.dropped_negation is not None:
+            return Classified("drops_negation", strict, marked, here)
         return Classified("cosmetic", strict, marked, here)
     elsewhere = {
         number: align(quote, section) for number, section in sections.items() if number != cited
@@ -287,12 +316,17 @@ def classify(quote: str, cited: str, sections: dict[str, Section]) -> Classified
         number
         for number, alignment in elsewhere.items()
         if verify.check_quote_with_conventions(quote, number, sections) == "verified"
-        or (alignment is not None and alignment.lined_up and alignment.cosmetic)
+        or (
+            alignment is not None
+            and alignment.lined_up
+            and alignment.cosmetic
+            and alignment.dropped_negation is None
+        )
     )
     if same_words:
         return Classified("wrong_cite", strict, marked, elsewhere[same_words[0]], same_words)
     if here is not None and here.lined_up:
-        return Classified("meaning_changed", strict, marked, here)
+        return Classified("content_words_differ", strict, marked, here)
     others = [a for a in elsewhere.values() if a is not None and a.lined_up]
     if others:
         closest = max(others, key=lambda a: a.matched_words)

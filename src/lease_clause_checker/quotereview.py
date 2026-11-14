@@ -3,9 +3,11 @@ quote differs from the Act (`quotediff.classify`), a page listing every one with
 from the Act, and the hand check of each.
 
 The hand checks live in their own file, `CHECKS_FILE`, beside the page: one row per quote, keyed
-by model and clause, whose `hand_check` column a person fills in with "agree" or the category
-they would give instead. Writing the page adds a row for any new quote and keeps every hand
-check already written, so regenerating never erases one.
+by model and clause. A person fills in `hand_check` with "agree" or the category they would
+give instead, and `meaning_changed` with "yes" or "no": the code sorts wording, and only a
+reader can say whether a different word changes what the provision means. Writing the page
+adds a row for any new quote and keeps every hand check already written, so regenerating never
+erases one.
 """
 
 import csv
@@ -21,12 +23,13 @@ from lease_clause_checker.report import ModelRun
 
 REVIEW_FILE = "quote-review.md"
 CHECKS_FILE = "quote-hand-check.csv"
-CHECKS_COLUMNS = ("model", "clause", "category", "hand_check", "note")
+CHECKS_COLUMNS = ("model", "clause", "category", "hand_check", "meaning_changed", "note")
 LABELS: dict[Category, str] = {
+    "drops_negation": "drops a negation",
     "conventions": "passes with quoting conventions",
     "cosmetic": "cosmetic",
     "wrong_cite": "wrong section cited",
-    "meaning_changed": "meaning changed",
+    "content_words_differ": "content words differ",
     "not_in_act": "not in the Act",
     "no_quote": "no quote",
     "too_short": "too short",
@@ -37,19 +40,21 @@ ALWAYS_SHOWN: tuple[Category, ...] = (
     "conventions",
     "cosmetic",
     "wrong_cite",
-    "meaning_changed",
+    "content_words_differ",
     "not_in_act",
 )
 
 
 class HandCheckError(ValueError):
-    """The hand-check file has a value that isn't "agree" or a category."""
+    """The hand-check file has a value it doesn't allow."""
 
 
 @dataclass(frozen=True)
 class HandCheck:
     hand_check: str
     """"" if not checked yet, "agree", or the category the checker would give instead."""
+    meaning_changed: str
+    """"" if not judged yet, "yes" or "no": whether the quote changes what the Act says."""
     note: str
 
     def agrees(self, category: Category) -> bool:
@@ -76,11 +81,11 @@ def columns(runs: Sequence[ModelRun]) -> list[Category]:
 
 
 def summary_table(runs: Sequence[ModelRun]) -> str:
-    """One markdown row per model: answers with a verdict, how many quotes are not verbatim,
-    and how they differ from the Act."""
+    """One markdown row per model: answers with a verdict, how many quotes failed the strict
+    check, and how they differ from the Act."""
     shown = columns(runs)
     lines = [
-        "| model | answers with a verdict | not verbatim | "
+        "| model | answers with a verdict | failed the check | "
         + " | ".join(LABELS[c] for c in shown)
         + " |",
         "|---" * (3 + len(shown)) + "|",
@@ -98,21 +103,33 @@ def summary_table(runs: Sequence[ModelRun]) -> str:
 
 
 def hand_check_line(runs: Sequence[ModelRun], checks: HandChecks) -> str:
-    """How many quotes have been checked by hand, and how many of those the check agreed with."""
+    """How many quotes have had their category checked by hand, and how many of those the check
+    agreed with; then how many were read for meaning, and how many of those change what the Act
+    says, also among those the code sorted as "content words differ"."""
     rows = [(run.spec.key, result.clause.id, q) for run in runs for result, q in failed(run)]
-    done = [(checks[m, c], q) for m, c, q in rows if (m, c) in checks and checks[m, c].hand_check]
+    found = [(checks[m, c], q) for m, c, q in rows if (m, c) in checks]
+    done = [(check, q) for check, q in found if check.hand_check]
     if not done:
-        return "The categories have not yet been checked by hand."
-    agreed = sum(check.agrees(quote.category) for check, quote in done)
-    if len(done) < len(rows):
-        return (
-            f"{len(done)} of the {len(rows)} quotes have been checked by hand so far; the hand "
-            f"check agreed with the category on {agreed} of them."
+        line = "The categories have not yet been checked by hand."
+    else:
+        agreed = sum(check.agrees(quote.category) for check, quote in done)
+        so_far = "" if len(done) == len(rows) else " so far"
+        line = (
+            f"{len(done)} of the {len(rows)} categories have been checked by hand{so_far}; the "
+            f"hand check agreed with {agreed} of them."
         )
-    return (
-        f"Every one of the {len(rows)} quotes was checked by hand; the hand check agreed with the "
-        f"category on {agreed}."
-    )
+    judged = [(check.meaning_changed, q.category) for check, q in found if check.meaning_changed]
+    if not judged:
+        return f"{line} No quote has yet been read by hand for meaning."
+    changes = sum(meaning == "yes" for meaning, _ in judged)
+    line += f" Read by hand for meaning, {changes} of {len(judged)} quotes change what the Act says"
+    content = [meaning for meaning, category in judged if category == "content_words_differ"]
+    if content:
+        line += (
+            f" ({content.count('yes')} of the {len(content)} that the code sorted as "
+            f"{LABELS['content_words_differ']})"
+        )
+    return line + "."
 
 
 def write_review(
@@ -131,8 +148,10 @@ def write_review(
     writer = csv.writer(out, lineterminator="\n")
     writer.writerow(CHECKS_COLUMNS)
     for model, clause, category in rows:
-        check = checks.get((model, clause), HandCheck("", ""))
-        writer.writerow((model, clause, category, check.hand_check, check.note))
+        check = checks.get((model, clause), HandCheck("", "", ""))
+        writer.writerow(
+            (model, clause, category, check.hand_check, check.meaning_changed, check.note)
+        )
     path.write_text(out.getvalue(), encoding="utf-8")
     (folder / REVIEW_FILE).write_text(
         review_page(runs, checks, notice, prompt_version), encoding="utf-8"
@@ -146,13 +165,16 @@ def load_checks(path: Path) -> HandChecks:
     with path.open(encoding="utf-8", newline="") as file:
         checks = {}
         for row in csv.DictReader(file):
-            hand = row["hand_check"].strip()
+            where = f"{path}: {row['model']} {row['clause']}"
+            hand = row["hand_check"].strip().lower()
             if hand not in ("", "agree", *LABELS):
                 raise HandCheckError(
-                    f"{path}: {row['model']} {row['clause']}: hand_check {hand!r} is not "
-                    f"'agree' or one of {', '.join(LABELS)}"
+                    f"{where}: hand_check {hand!r} is not 'agree' or one of {', '.join(LABELS)}"
                 )
-            checks[row["model"], row["clause"]] = HandCheck(hand, row["note"].strip())
+            meaning = (row.get("meaning_changed") or "").strip().lower()
+            if meaning not in ("", "yes", "no"):
+                raise HandCheckError(f"{where}: meaning_changed {meaning!r} is not 'yes' or 'no'")
+            checks[row["model"], row["clause"]] = HandCheck(hand, meaning, row["note"].strip())
     return checks
 
 
@@ -163,11 +185,12 @@ def review_page(
     hand check, by model."""
     total = sum(len(failed(run)) for run in runs)
     lines = [
-        "# Closed-book quotes that are not word for word",
+        "# Closed-book quotes that failed the check",
         "",
         f"Generated by `uv run lcc closedbook quotes` (and `make report`) from the saved "
         f"`{prompt_version}` answers on the main test set; do not edit. {total} quotes: every "
-        "answer with a verdict whose quote is not word for word in the section it cites. The "
+        "answer with a verdict whose quote failed the strict check against the section it "
+        "cites. The "
         "categories, and the order they are tried in, are defined in "
         "[quotediff.py](../../src/lease_clause_checker/quotediff.py). They describe wording "
         "only: a cosmetic difference is not a wrong statement of the law, and whether a changed "
@@ -176,8 +199,8 @@ def review_page(
         f"Hand checks are kept in [{CHECKS_FILE}]({CHECKS_FILE}): fill in `hand_check` with "
         "`agree` or the category you would give instead (one of "
         + ", ".join(f"`{c}`" for c in LABELS)
-        + "), add a note if useful, and regenerate. "
-        + hand_check_line(runs, checks),
+        + "), `meaning_changed` with `yes` or `no` (does the quote change what the Act says?), "
+        "add a note if useful, and regenerate. " + hand_check_line(runs, checks),
         "",
         "In the **quote vs the Act** column, `[-…-]` marks the Act's words that the quote drops "
         "or replaces and `{+…+}` the quote's own words; the rest is in both. It runs from the "
@@ -202,7 +225,7 @@ def review_page(
             "|---|---|---|---|---|---|---|---|---|",
         ]
         for result, quote in rows:
-            check = checks.get((run.spec.key, result.clause.id), HandCheck("", ""))
+            check = checks.get((run.spec.key, result.clause.id), HandCheck("", "", ""))
             lines.append(_row(result, quote, check))
     return "\n".join(lines) + "\n"
 
@@ -224,7 +247,12 @@ def _row(result: ClosedBookResult, quote: Classified, check: HandCheck) -> str:
         others = ", ".join(f"s. {n}" for n in quote.found_in)
         changed = ", words changed" if quote.words_changed else ""
         category += f" ({others}{changed})"
-    hand = f"{check.hand_check}: {check.note}" if check.note else check.hand_check
+    parts = [
+        check.hand_check,
+        f"meaning changed: {check.meaning_changed}" if check.meaning_changed else "",
+        check.note,
+    ]
+    hand = "; ".join(part for part in parts if part)
     cells = (
         result.clause.id,
         verdict,

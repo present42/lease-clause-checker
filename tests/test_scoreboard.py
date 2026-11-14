@@ -614,7 +614,7 @@ def closed_book_run(
 ) -> ModelRun:
     """Right on every clause with the deciding section; the first `unsure` clauses are unsure,
     the next `quotes_fail` have a quote that fails its check (the first `cosmetic` of them sorted
-    as cosmetic, the rest as meaning changed), and the last `wrong` get the wrong verdict (with
+    as cosmetic, the rest as content words differ), and the last `wrong` get the wrong verdict (with
     a verified quote)."""
     results = []
     for i, c in enumerate(CLAUSES):
@@ -629,7 +629,7 @@ def closed_book_run(
         attempt = Attempt(record(spec, c.id, answer.model_dump_json()), answer, check)
         quote = None
         if check is not None:
-            category: Category = "verbatim" if check == "verified" else "meaning_changed"
+            category: Category = "verbatim" if check == "verified" else "content_words_differ"
             if check != "verified" and i < unsure + cosmetic:
                 category = "cosmetic"
             quote = Classified(category, check, check, None)
@@ -960,7 +960,7 @@ def test_the_closed_book_section_sorts_the_failed_quotes_once_every_model_has_ru
     text = scoreboard.render(replace(full_board(), closed_book=tldr_closed_book()), "chart.svg")
 
     assert "The categories have not yet been checked by hand." in text
-    assert "#### How the quotes that are not word for word differ from the Act" in text
+    assert "#### How the quotes that failed the check differ from the Act" in text
     assert "(results/test-v1/quote-review.md)" in text
     [opus] = table_rows(text, "Claude Opus 5.5 | 24 | 4")
     assert opus[1:] == ["24", "4", "0", "1", "0", "3", "0"]
@@ -970,4 +970,4 @@ def test_the_closed_book_section_sorts_the_failed_quotes_once_every_model_has_ru
     partial = tldr_closed_book()
     del partial[ARGON.key]
     text = scoreboard.render(replace(full_board(), closed_book=partial), "chart.svg")
-    assert "How the quotes that are not word for word" not in text
+    assert "How the quotes that failed the check" not in text
