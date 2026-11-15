@@ -29,4 +29,4 @@ Question 1 is `meaning_changed` in `../quote-hand-check.csv` (does the quote say
 
 Model for every reviewer and for the suggestions: Claude Opus 5.5 (`claude-opus-5-5`).
 
-The Act's text the reviewers searched (`act_sections.json` in the prompts) is not included. Statute words quoted in these files: Source: Ontario e-Laws. Not an official version of the statute. © King's Printer for Ontario, 2006. The judgements are the author's reading, not legal advice.
+The Act's text the reviewers searched (`act_sections.json` in the prompts) is not included. Statute words quoted in these files: Source: Ontario e-Laws. Not an official version of the statute. © King's Printer for Ontario, 2006. The judgements were drafted by Claude, reviewed blind by Claude Opus and approved by the author; not legal advice.

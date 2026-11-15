@@ -108,15 +108,15 @@ def label_note(record: Record) -> str:
     """Who made the labels (category, meaning changed, misleads), in the owner's words, with
     round 2's agreement from the record."""
     return (
-        "Claude drafted the labels, Claude Opus reviewed them blind in two rounds "
+        "Claude drafted the hand-check labels, Claude Opus reviewed them blind in two rounds "
         f"({record.agreed(2)} of {record.rows} agreed independently), and the author approved "
         "them; not reviewed by a lawyer."
     )
 
 
 RECHECK_NOTE = (
-    "Still to come: the author's own re-check of 20 rows. It is not fully blind, as the author "
-    "had seen some of Claude's suggestions."
+    "Still to come, by Wednesday 18 November 2026: the author's own re-check of 20 rows. It is "
+    "not fully blind, as the author had seen some of Claude's suggestions."
 )
 """The slot for the author's re-check, until its results are in the record."""
 

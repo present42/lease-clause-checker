@@ -44,9 +44,9 @@ four written rules, Claude's suggestions at each stage, and each round's blind r
 with the rows and prompt each reviewer was given (see its
 [MANIFEST.md](closedbook-v1+conventions-v1/hand-check/MANIFEST.md)). `make report` computes the
 agreement figures from that record (`handcheck.py`) and checks that the final suggestions are
-the CSV. Claude drafted the labels, Claude Opus reviewed them blind in two rounds, and the
-author approved them; they are not legal advice and were not reviewed by a lawyer. The notes
-quote the Act.
+the CSV. Claude drafted the hand-check labels, Claude Opus reviewed them blind in two rounds,
+and the author approved them; they are not legal advice and were not reviewed by a lawyer. The
+notes quote the Act.
 Source: Ontario e-Laws. Not an official version of the statute. © King's Printer for Ontario,
 2006.
 

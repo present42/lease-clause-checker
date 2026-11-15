@@ -1116,9 +1116,9 @@ def test_the_short_version_gives_one_answer_a_table_and_the_hand_check() -> None
     assert lines[-2] == (
         "**The 14 closed-book quotes that failed,** from 3 of the 4 models: 14 state a real "
         "provision of the Act; 14 of those change the rule, and 1 of those 14 would mislead "
-        "about the clause they were quoted for. Claude drafted the labels, Claude Opus reviewed "
-        "them blind in two rounds (1 of 4 agreed independently), and the author approved them; "
-        "not reviewed by a lawyer. " + handcheck.RECHECK_NOTE
+        "about the clause they were quoted for. Claude drafted the hand-check labels, Claude Opus "
+        "reviewed them blind in two rounds (1 of 4 agreed independently), and the author approved "
+        "them; not reviewed by a lawyer. " + handcheck.RECHECK_NOTE
     )
 
 

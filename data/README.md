@@ -8,8 +8,9 @@ one-line paraphrase written for this project, and a link to the section.
 
 ## `clauses.jsonl`: the main test set
 
-**Status: frozen on 11 November 2026, before any model saw it.** Two reviewers (the project
-owner and a second reviewer) checked every label, so every clause has `reviewed: true`.
+**Status: frozen on 11 November 2026, before any model saw it.** The author reviewed every
+label by hand, with LLM assistance (main set 11 Nov, stress set 13 Nov). No lawyer has
+reviewed them. Every clause has `reviewed: true`.
 
     SHA-256  4570d03b345c4232c2514d9f1d98ce03a0f98f6ee9f9fa54baddfe53ce8bf917  (38 clauses)
 
@@ -72,8 +73,9 @@ so the SHA-256 depends only on the content.
 
 ## `stress.jsonl`: the stress set
 
-**Status: frozen on 13 November 2026.** The project owner and a second reviewer checked every
-label, so every clause has `reviewed: true`.
+**Status: frozen on 13 November 2026.** The author reviewed every label by hand, with LLM
+assistance (main set 11 Nov, stress set 13 Nov). No lawyer has reviewed them. Every clause
+has `reviewed: true`.
 
     SHA-256  0519e3fbb53fb3c0e871f7f50a9bd48f8bca8aadb8e78d8ac43045341265dee5  (14 clauses)
 
@@ -95,14 +97,14 @@ and labelling conventions are the same as in `clauses.jsonl`.
 How it was made:
 
 1. 31 candidates were written as variants of the main set's near-miss patterns. Before any
-   model under test answered them, a Claude Opus 5.5 reviewer agent read every draft label
-   against the Act (12 November 2026). One candidate ("Guests of the Tenant may not bring
-   animals into the building") was dropped because s. 14 could fairly be read as protecting
-   only the tenant's own animals. Four were reworded to close a gap the agent found (s05, s18,
-   s23 and s26 in the final numbering), three gained an accepted section, and five were
-   re-tagged `clear`. The remaining 30 were numbered s01–s30:
-   `stress_candidates.jsonl`. They keep `reviewed: false`, because that flag means the
-   two-person review, which only the clauses kept below had.
+   model under test answered them, an LLM reviewer read every draft label against the Act
+   (12 November 2026). One candidate ("Guests of the Tenant may not bring animals into the
+   building") was dropped because s. 14 could fairly be read as protecting only the tenant's
+   own animals. Four were reworded to close a gap the reviewer found (s05, s18, s23 and s26 in
+   the final numbering), three gained an accepted section, and five were re-tagged `clear`.
+   The remaining 30 were numbered s01–s30: `stress_candidates.jsonl`. They keep
+   `reviewed: false`, because that flag means the author's review by hand, which only the
+   clauses kept below had.
 
        SHA-256  e7df924b43c745101666db1e3bcf9f22b7a7c4f44ca51a3ba6927d8b4e04fb76  (candidates)
 
@@ -112,10 +114,10 @@ How it was made:
    broke: 3 on the verdict and 13 on the section only. To re-score that run:
    `uv run lcc baseline report --clauses data/stress_candidates.jsonl --draft --results
    results/stress-candidates --models claude-haiku-5-5 --details`.
-3. The owner and a second reviewer checked the 16 labels and dropped 2: s07, which was lawful
-   only because the Act is silent, not by its words, and s14, because a recurring transfer the
-   tenant sets up is arguably not "automatic debiting" under s. 108(b). The other 14, unchanged
-   apart from `reviewed: true`, are this set.
+3. The author reviewed the 16 labels by hand, with LLM assistance, and dropped 2: s07, which
+   was lawful only because the Act is silent, not by its words, and s14, because a recurring
+   transfer the tenant sets up is arguably not "automatic debiting" under s. 108(b). The other
+   14, unchanged apart from `reviewed: true`, are this set.
 
 Ids are the candidates' ids, so each clause can be traced to its selection-run answer. Gemini
 3.8 Flash, the other light model, could not be run when the set was chosen (the Gemini API

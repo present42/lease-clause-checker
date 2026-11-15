@@ -23,7 +23,7 @@ Redline of s. 15 against the quote, from a run with no statute text in the promp
 
 With the statute in the prompt, every quote is checked and the model is asked once more if it fails: the verdicts are the final answers, the quotes the first. Quotes count only answers with a verdict, and word for word means in the section the answer cites.
 
-**The 59 closed-book quotes that failed,** from all four models: 51 state a real provision of the Act; 40 of those change the rule, and 10 of those 40 would mislead about the clause they were quoted for. Claude drafted the labels, Claude Opus reviewed them blind in two rounds (46 of 59 agreed independently), and the author approved them; not reviewed by a lawyer. Still to come: the author's own re-check of 20 rows. It is not fully blind, as the author had seen some of Claude's suggestions.
+**The 59 closed-book quotes that failed,** from all four models: 51 state a real provision of the Act; 40 of those change the rule, and 10 of those 40 would mislead about the clause they were quoted for. Claude drafted the hand-check labels, Claude Opus reviewed them blind in two rounds (46 of 59 agreed independently), and the author approved them; not reviewed by a lawyer. Still to come, by Wednesday 18 November 2026: the author's own re-check of 20 rows. It is not fully blind, as the author had seen some of Claude's suggestions.
 <!-- short:end -->
 
 **[The explorer](docs/details.md#explore-the-saved-answers)**: every saved answer, each quote set
@@ -67,6 +67,8 @@ content words.
 - **Not an official version.** The Act's text is a dated copy from Ontario e-Laws.
 - **Small and synthetic.** 38 invented lease clauses and one statute: enough to show the
   failure, not to estimate how often it happens.
+- **Clause labels.** The author reviewed every label by hand, with LLM assistance (main set
+  11 Nov, stress set 13 Nov). No lawyer has reviewed them.
 
 ## More
 
