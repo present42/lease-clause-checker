@@ -10,7 +10,8 @@ Assembled 2026-11-15 from the session that ran the check. The reviewers' start t
 3. **Claude's second suggestions** (`claude_suggestions_round2.json`), revised under the four rules (`rules.md`).
 4. **Round 2 review** (2026-11-15 01:15 UTC). Two more fresh reviewers (reviewer-2a, reviewer-2b), blind, same split, with `rules.md`.
    - Agreement with `claude_suggestions_round2.json`: **46 of 59 rows** (13 differ). On 12 of the 13, the reviewer's answer was adopted; on Haiku c34 Claude's category was kept (both questions agreed).
-5. **Final** (`claude_suggestions_final.json`), approved by the owner on 2026-11-15. Because it adopts those 12 answers, it differs from round 2's reviewers only on Haiku c34; that is not an independent agreement figure. The independent figure is 46 of 59.
+5. **Final** (`claude_suggestions_final.json`), approved by the owner on 2026-11-15. Because it adopts those 12 answers, it differs from round 2's reviewers only on Haiku c34; that is not an agreement figure. The figure to report is round 2's 46 of 59, with its limits: the same model family drafted the labels, and the rules were written after round 1 on these rows.
+6. **Amendments by the author** (`amendments.json`), 2026-11-15, after the record was assembled. Two notes in `../quote-hand-check.csv` were reworded: Opus c26's, to record that the quote gives paragraph (a) of s. 108 for a clause about paragraph (b), and Opus c23's, out of the first person. Each entry keeps the note before and after. No category or answer changed, and every file above is as it was.
 
 ## How rows were compared
 
@@ -25,6 +26,7 @@ Question 1 is `meaning_changed` in `../quote-hand-check.csv` (does the quote say
 | `reviewer-*_prompt.txt` | Each reviewer's exact prompt, with the local scratch directory replaced by `<scratch>/`. The `prompt_sha256` in each reviewer's file is the hash of the original, unredacted prompt. |
 | `round*_reviewer-*.json` | Each reviewer's answers, with reviewer, round, model, start time, prompt hash and input file |
 | `claude_suggestions_*.json` | Claude's suggestions at each stage |
+| `amendments.json` | The author's later changes to notes in `../quote-hand-check.csv`: row, note before and after, by whom, date, why. `lcc report` and `lcc site` stop if a note no longer reads as its last amendment left it |
 | `act_source.json` | The Act copy the reviewers searched: consolidation, retrieval date, SHA-256, notice. The full text itself is not included; it is the repo's cached e-Laws copy whose content has that SHA-256 (`content_sha256` in the cache) |
 
 Model for every reviewer and for the suggestions: Claude Opus 5.5 (`claude-opus-5-5`).

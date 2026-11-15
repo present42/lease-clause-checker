@@ -28,10 +28,10 @@ claude-opus-5-5,c18,cosmetic,too_short,,,"The whole quote is “as a condition o
 claude-opus-5-5,c19,cosmetic,agree,no,,
 claude-opus-5-5,c20,not_in_act,content_words_differ,yes,yes,An invented sentence for the s. 105(1) rule. “Except in accordance with this section” replaces what the section actually says: the only deposit allowed is a rent deposit under s. 106.
 claude-opus-5-5,c22,content_words_differ,agree,no,,Adds “a period of” before “one month”. Same meaning.
-claude-opus-5-5,c23,content_words_differ,agree,no,,"“A person has paid” for “a tenant has paid”, and “The landlord” for “A landlord”. Slightly broader wording, the same rule in practice. I lean no."
+claude-opus-5-5,c23,content_words_differ,agree,no,,"“A person has paid” for “a tenant has paid”, and “The landlord” for “A landlord”. Slightly broader wording, the same rule in practice. Leans no."
 claude-opus-5-5,c24,content_words_differ,agree,yes,no,“Up to the lawful rent” for “up to the amount permitted by subsection (2)”. That loses the “lesser of one rent period and one month” cap.
 claude-opus-5-5,c25,content_words_differ,too_short,,,"The whole quote is “A landlord shall not require a tenant or prospective tenant to”. It stops at “to”, before saying what can’t be required, so it states no rule. (It also drops “nor a tenancy agreement”, but there is no rule left to judge.)"
-claude-opus-5-5,c26,content_words_differ,agree,yes,yes,Same as Opus c25: “nor a tenancy agreement” is gone.
+claude-opus-5-5,c26,content_words_differ,agree,yes,yes,"Gives paragraph (a), on post-dated cheques, for a clause about paragraph (b), automatic debit. It also drops “nor a tenancy agreement”."
 claude-opus-5-5,c27,content_words_differ,too_short,,,The whole quote is “A landlord shall not require a tenant or prospective tenant”. Stock opening only; it states no rule.
 claude-opus-5-5,c37,cosmetic,agree,no,,
 gemini-3.8-flash,c05,content_words_differ,agree,yes,no,"Heavily rewritten s. 15. Among other changes it drops “or a specific sum”, which narrows the rule."

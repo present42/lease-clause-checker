@@ -1,0 +1,20 @@
+{
+ "amendments": [
+  {
+   "row": "claude-opus-5-5__c26",
+   "before": "Same as Opus c25: “nor a tenancy agreement” is gone.",
+   "after": "Gives paragraph (a), on post-dated cheques, for a clause about paragraph (b), automatic debit. It also drops “nor a tenancy agreement”.",
+   "by": "the author",
+   "date": "2026-11-15",
+   "why": "The note did not record that the quote gives paragraph (a) for a clause about paragraph (b)."
+  },
+  {
+   "row": "claude-opus-5-5__c23",
+   "before": "“A person has paid” for “a tenant has paid”, and “The landlord” for “A landlord”. Slightly broader wording, the same rule in practice. I lean no.",
+   "after": "“A person has paid” for “a tenant has paid”, and “The landlord” for “A landlord”. Slightly broader wording, the same rule in practice. Leans no.",
+   "by": "the author",
+   "date": "2026-11-15",
+   "why": "Reworded from the first person: the notes are Claude's drafts, approved by the author."
+  }
+ ]
+}
