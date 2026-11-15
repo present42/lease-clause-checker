@@ -15,6 +15,7 @@ from lease_clause_checker import (
     check,
     closedbook,
     elaws,
+    explorer,
     handcheck,
     pipeline,
     quotereview,
@@ -72,6 +73,7 @@ DEFAULT_README = Path("README.md")
 DEFAULT_DETAILS = Path(scoreboard.DETAILS)
 DEFAULT_CHART = Path("results/scoreboard.svg")
 DEFAULT_PROMPTS_DIR = Path("prompts")
+DEFAULT_SITE_DIR = Path("site")
 # Each frozen set's saved answers have their own directory, so the sets never mix.
 RESULTS_DIRS = {
     FROZEN_CLAUSES_SHA256: Path("results"),
@@ -107,6 +109,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             return _report_pipeline(args, specs)
         if args.command == "report":
             return _write_report(args)
+        if args.command == "site":
+            return _write_site(args)
         if args.command == "mcp":
             # Imported here: the MCP SDK takes a moment to load, and only this command needs it.
             from lease_clause_checker.mcp_server import build_server
@@ -137,6 +141,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         UnfrozenClausesError,
         scoreboard.ReportDataError,
         scoreboard.MissingMarkersError,
+        explorer.SiteExportError,
         quotereview.HandCheckError,
         handcheck.RecordError,
         check.LeaseFormatError,
@@ -232,6 +237,13 @@ def _parser() -> argparse.ArgumentParser:
         "mcp",
         help="run the MCP server (stdio): get_section and verify_quote on the cached Act (offline)",
     )
+
+    site = commands.add_parser(
+        "site", help="export the saved answers as the static explorer's page and data (offline)"
+    )
+    site.add_argument("--out", type=Path, default=DEFAULT_SITE_DIR)
+    site.add_argument("--prompts", type=Path, default=DEFAULT_PROMPTS_DIR)
+    site.add_argument("--rules", type=Path, default=DEFAULT_RULES_PATH)
 
     for name, description in (
         ("baseline", "the plain-prompt baseline on the test set"),
@@ -438,6 +450,34 @@ def _write_report(args: argparse.Namespace) -> int:
     args.details.write_text(details, encoding="utf-8")
     args.chart.write_text(scoreboard.render_chart(board.main), encoding="utf-8")
     print(f"Wrote {args.readme}, the results in {args.details} and the chart {args.chart}.")
+    print(NOT_LEGAL_ADVICE)
+    return 0
+
+
+def _write_site(args: argparse.Namespace) -> int:
+    """Export the scored answers and the subsections they quote for the static explorer."""
+    board, sections, versions = _load_board(args)
+    act = elaws.load_act(elaws.cache_path(args.cache_dir))
+    closed_book = RESULTS_DIRS[FROZEN_CLAUSES_SHA256] / versions["closedbook"]
+    data = explorer.build(
+        board, sections, act, versions, len(load_rules(args.rules)), closed_book.as_posix()
+    )
+    sets = {"main": board.main.clauses, "stress": board.stress.clauses}
+    folders = {
+        ("main", "baseline"): RESULTS_DIRS[FROZEN_CLAUSES_SHA256] / versions["baseline"],
+        ("main", "pipeline"): RESULTS_DIRS[FROZEN_CLAUSES_SHA256] / versions["pipeline"],
+        ("main", "closedbook"): RESULTS_DIRS[FROZEN_CLAUSES_SHA256] / versions["closedbook"],
+        ("stress", "baseline"): RESULTS_DIRS[FROZEN_STRESS_SHA256] / versions["baseline"],
+        ("stress", "pipeline"): RESULTS_DIRS[FROZEN_STRESS_SHA256] / versions["pipeline"],
+    }
+    explorer.check_counts(data, explorer.saved_counts(folders, sets))
+    explorer.write(data, args.out)
+    quoted = sum(len(s["subsections"]) for s in data["act"]["sections"].values())
+    print(
+        f"Wrote the explorer to {args.out}: {len(data['clauses'])} clauses, "
+        f"{len(data['answers'])} answers ({len(data['models'])} models' saved answers on the main "
+        f"and stress sets) and {quoted} quoted subsections of the Act."
+    )
     print(NOT_LEGAL_ADVICE)
     return 0
 

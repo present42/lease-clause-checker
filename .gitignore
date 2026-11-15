@@ -24,3 +24,6 @@ CLAUDE.md
 
 # OS
 .DS_Store
+
+# Explorer export (`lcc site`; published on the gh-pages branch)
+site/

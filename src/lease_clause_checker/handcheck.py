@@ -87,6 +87,21 @@ class Record:
                 raise RecordError(f"{key[0]} {key[1]}: the hand check is not the final suggestion")
 
 
+def method_sentence(record: Record) -> str:
+    """How the hand check was made, in the owner's words, with the agreement figures from the
+    record. `RecordError` unless the record has rounds 1 and 2, which the words describe."""
+    if sorted(record.rounds) != [1, 2]:
+        raise RecordError(f"the record has rounds {sorted(record.rounds)}, not 1 and 2")
+    rows, agreed = record.rows, record.agreed(2)
+    return (
+        "I worked four rows by hand to set four written rules. Claude suggested an answer for "
+        "every row; in two rounds, fresh Claude Opus reviewers judged the rows blind, each row "
+        f"by one reviewer per round. Under the rules, round 2 agreed with the suggestions on "
+        f"{agreed} of {rows} rows; on {record.adopted(2)} of the other {rows - agreed} the "
+        "reviewer's answer was adopted. The owner approved the result."
+    )
+
+
 def load_record(folder: Path) -> Record | None:
     """The record in `folder`, or None if there is none; `RecordError` if it is incomplete or
     inconsistent."""

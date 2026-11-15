@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lease Clause Explorer</title>
+<meta name="description" content="The saved answers from the Lease Clause Checker evaluation of Ontario lease clauses, replayed: verdicts, cited sections, quotes checked word for word against the Residential Tenancies Act, 2006, and a hand check of the quotes that failed.">
+<link rel="stylesheet" href="explorer.css">
+<script src="explorer.js" defer></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <p class="eyebrow"><a href="{{repository}}">Lease Clause Checker</a></p>
+    <h1>Explorer</h1>
+    <p class="lede">The saved answers from the evaluation, replayed from the repository: language
+      models judging synthetic Ontario lease clauses under the Residential Tenancies Act, 2006.
+      No model is called on this page.</p>
+    <ul class="caveats" aria-label="Read before you rely on anything here">
+      <li><strong>Checks wording, not legal meaning.</strong> A quote that passes is word for word
+        in the section it cites; that says nothing about whether the reasoning is right.</li>
+      <li><strong>Word for word is not complete.</strong> A quote can pass and still stop before
+        the list item or condition that decides the clause; such quotes are flagged.</li>
+      <li><strong>Not an official version.</strong> The Act's text is a dated copy from Ontario
+        e-Laws.</li>
+      <li><strong>Not legal advice.</strong> These are model outputs scored against test labels,
+        and they may be wrong. For a question about a tenancy, contact a lawyer, a community legal
+        clinic or the Landlord and Tenant Board.</li>
+    </ul>
+    <nav class="tabs" aria-label="Views">
+      <a href="#/story" data-view="story">The short version</a>
+      <a href="#/exhibit" data-view="exhibit">Right verdict, quote not word for word</a>
+      <a href="#/closed" data-view="closed">Closed book, clause by clause</a>
+      <a href="#/clauses" data-view="clauses">Every answer</a>
+      <a href="#/hand" data-view="hand">Hand check</a>
+    </nav>
+  </div>
+</header>
+<p class="sr-only" id="status" role="status" aria-live="polite"></p>
+<main class="wrap" id="main" tabindex="-1">
+  <p class="loading">Loading the saved answers…</p>
+  <noscript><p>This page needs JavaScript to show the answers. The raw answers are in the
+    repository's <a href="{{repository}}/tree/main/results">results folder</a>.</p></noscript>
+</main>
+<footer class="site-footer">
+  <div class="wrap" id="footer"></div>
+</footer>
+</body>
+</html>

@@ -235,26 +235,37 @@ class Alignment:
         end = end_a + len(tail) if end_b < len(self.quote) and _has_word(tail) else end_a
         return self.act[:start], self.act[end:]
 
-    def wdiff(self, *, whole: bool = False) -> str:
-        """The aligned stretch as text: the Act's words that the quote drops or changes as
-        `[-…-]`, the quote's own as `{+…+}`. With `whole`, the rest of the subsection too, so
-        the words left out before and after the quote show as dropped."""
-        parts = []
+    def pieces(self, *, whole: bool = False) -> list[tuple[str, tuple[Token, ...]]]:
+        """The aligned stretch as (kind, tokens) pieces: "same" for tokens in both (as the Act
+        has them), "del" for the Act's tokens that the quote drops or changes, "ins" for the
+        quote's own. With `whole`, the rest of the subsection too, as "del", so the words left
+        out before and after the quote show as dropped."""
+        pieces: list[tuple[str, tuple[Token, ...]]] = []
         before, after = self.outside if whole else ((), ())
         before = tuple(_without_paragraph_markers(before))
         if before:
-            parts.append(f"[-{_join(before)}-]")
+            pieces.append(("del", before))
         for region in self.regions:
             if region.same:
-                parts.append(_join(region.act))
+                pieces.append(("same", region.act))
                 continue
             if region.act:
-                parts.append(f"[-{_join(region.act)}-]")
+                pieces.append(("del", region.act))
             if region.quote:
-                parts.append(f"{{+{_join(region.quote)}+}}")
+                pieces.append(("ins", region.quote))
         if after:
-            parts.append(f"[-{_join(after)}-]")
-        return " ".join(parts)
+            pieces.append(("del", after))
+        return pieces
+
+    def segments(self, *, whole: bool = False) -> list[tuple[str, str]]:
+        """`pieces` with each piece's tokens joined into text."""
+        return [(kind, _join(tokens)) for kind, tokens in self.pieces(whole=whole)]
+
+    def wdiff(self, *, whole: bool = False) -> str:
+        """`segments` as text: the Act's dropped or changed words as `[-…-]`, the quote's own as
+        `{+…+}`."""
+        marks = {"same": "{}", "del": "[-{}-]", "ins": "{{+{}+}}"}
+        return " ".join(marks[kind].format(text) for kind, text in self.segments(whole=whole))
 
 
 @dataclass(frozen=True)

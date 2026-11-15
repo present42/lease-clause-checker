@@ -20,10 +20,11 @@ from typing import Any, Literal, TypeVar
 
 from lease_clause_checker import baseline, handcheck, pipeline, quotereview, verify
 from lease_clause_checker.clauses import Clause
-from lease_clause_checker.closedbook import CLOSED_BOOK_PROMPT
+from lease_clause_checker.closedbook import CLOSED_BOOK_PROMPT, ClosedBookResult
 from lease_clause_checker.evaluation import baseline_run, pipeline_run
 from lease_clause_checker.models import DROPPED_MODELS, MAX_OUTPUT_TOKENS, MODELS, ModelSpec
 from lease_clause_checker.pipeline import Result
+from lease_clause_checker.quotediff import Alignment
 from lease_clause_checker.report import ModelRun
 from lease_clause_checker.runs import Store
 from lease_clause_checker.scoring import Answer, Score
@@ -287,64 +288,115 @@ def replace_block(readme: str, block: str, start_marker: str = START, end_marker
     return readme[:start] + block.rstrip("\n") + readme[end + len(end_marker) :]
 
 
-def render_short(board: Board, notice: str) -> str:
-    """The README's short version, markers included: three numbers and one closed-book answer,
-    each from the saved answers. `notice` is the statute text's source notice."""
+@dataclass(frozen=True)
+class ShortNumbers:
+    """The three numbers the README's short version and the explorer's opening view lead with."""
+
+    clauses: int
+    pipeline_right: dict[str, int]
+    """Verdicts right with the pipeline on the main set, by model name."""
+    closed_book: ModelRun
+    """`SHORT_EXAMPLE`'s model's closed-book run."""
+    closed_right: int
+    closed_with_verdict: int
+    closed_verified: int
+    """Of the closed-book answers with a verdict, those whose quote passed the check."""
+    hand_check: quotereview.Judged
+    example: ClosedBookResult
+    """`SHORT_EXAMPLE`'s answer."""
+    example_right: bool
+
+
+def short_numbers(board: Board) -> ShortNumbers:
+    """`ShortNumbers` from the saved answers; `ReportDataError` if any part is missing."""
     clauses = board.main.clauses
     n = len(clauses)
-    pipeline_right = {
-        spec.name: sum(_hits(board.main.run("pipeline", spec), clauses, _verdict_right))
-        for spec in MODELS
-    }
-    perfect = [name for name, right in pipeline_right.items() if right == n]
-    others = [f"{name}: {right} of {n}" for name, right in pipeline_right.items() if right != n]
     model_key, clause_id = SHORT_EXAMPLE
     run = board.closed_book.get(model_key)
     if run is None or len(run.scores) != n:
         raise ReportDataError(f"short version: {model_key}'s closed-book run is not complete")
     with_verdict = [r for r in run.closed_book if r.answer.verdict not in ("unsure", None)]
-    verified = sum(r.attempt.check == "verified" for r in with_verdict)
-    counts = quotereview.judged(_closed_book_runs(board), board.quote_checks)
-    if counts is None:
+    judged = quotereview.judged(_closed_book_runs(board), board.quote_checks)
+    if judged is None:
         raise ReportDataError("short version: the hand check is not finished")
     [example] = [r for r in run.closed_book if r.clause.id == clause_id]
     if example.quote is None or example.quote.alignment is None or example.answer.verdict is None:
         raise ReportDataError(f"short version: {model_key} {clause_id} has no aligned quote")
     score = next(s for s in run.scores if s.clause.id == clause_id)
-    check = board.quote_checks.get((model_key, clause_id))
+    return ShortNumbers(
+        clauses=n,
+        pipeline_right={
+            spec.name: sum(_hits(board.main.run("pipeline", spec), clauses, _verdict_right))
+            for spec in MODELS
+        },
+        closed_book=run,
+        closed_right=sum(_hits(run, clauses, _verdict_right)),
+        closed_with_verdict=len(with_verdict),
+        closed_verified=sum(r.attempt.check == "verified" for r in with_verdict),
+        hand_check=judged,
+        example=example,
+        example_right=_verdict_right(score),
+    )
+
+
+def render_short(board: Board, notice: str) -> str:
+    """The README's short version, markers included: three numbers and one closed-book answer,
+    each from the saved answers. `notice` is the statute text's source notice."""
+    numbers = short_numbers(board)
+    n, counts, example = numbers.clauses, numbers.hand_check, numbers.example
+    verified, checked = first_pipeline_checks(board)
+    perfect = [name for name, right in numbers.pipeline_right.items() if right == n]
+    others = [f"{name}: {r} of {n}" for name, r in numbers.pipeline_right.items() if r != n]
+    alignment = example.quote.alignment if example.quote else None
+    assert alignment is not None  # short_numbers checks it
+    check = board.quote_checks.get((numbers.closed_book.spec.key, example.clause.id))
     lines = [
         SHORT_START,
         f"**In numbers** ({n} synthetic lease clauses, so small counts; "
         f"[full results]({DETAILS}#results)):",
         "",
-        f"- **With the statute in the prompt and every quote checked:** {_and_list(perfect)} "
-        f"{'each ' if len(perfect) > 1 else ''}got {n} of {n} verdicts right"
-        + (f" ({'; '.join(others)})." if others else "."),
-        f"- **Without it (closed book):** {run.spec.name} still got "
-        f"{sum(_hits(run, clauses, _verdict_right))} of {n} verdicts right, but only {verified} "
-        f"of its {len(with_verdict)} quotes were word for word in the section it cited.",
+        "- **With the statute in the prompt (each quote checked, one retry if it fails):** "
+        f"{_and_list(perfect)} {'each ' if len(perfect) > 1 else ''}got {n} of {n} verdicts "
+        "right"
+        + (f" ({'; '.join(others)})" if others else "")
+        + f"; {verified} of {checked} first answers' quotes passed the check.",
+        f"- **Without it (closed book):** {numbers.closed_book.spec.name} still got "
+        f"{numbers.closed_right} of {n} verdicts right, but only {numbers.closed_verified} of "
+        f"its {numbers.closed_with_verdict} quotes were word for word in the section it cited.",
         f"- **Hand check of the {counts.quotes} closed-book quotes that failed:** "
         f"{counts.rules} state a real provision of the Act; {counts.changes} of those change the "
-        f"rule, and {counts.misleads} would mislead about the clause they were quoted for"
+        f"rule, and {counts.misleads} of those {counts.changes} would mislead about the clause "
+        "they were quoted for"
         + (f" ({counts.unsure} unsure)" if counts.unsure else "")
         + " (the author's reading, not legal advice).",
         "",
-        f"**One closed-book answer.** {run.spec.name} on clause {clause_id}, "
-        f"\u201c{example.clause.text}\u201d, said {example.answer.verdict} "
-        f"({'right' if _verdict_right(score) else 'wrong'}) and cited s. "
-        f"{example.quote.alignment.section}. Its quote against the whole of "
-        f"s. {example.quote.alignment.section}{example.quote.alignment.subsection}, with "
-        "`[-…-]` for the Act's words it leaves out or replaces and `{+…+}` for its own:",
+        f"**One closed-book answer.** {numbers.closed_book.spec.name} on clause "
+        f"{example.clause.id}, \u201c{example.clause.text}\u201d, said {example.answer.verdict} "
+        f"({'right' if numbers.example_right else 'wrong'}) and cited s. {alignment.section}. "
+        f"Its quote against the whole of s. {alignment.section}{alignment.subsection}, with "
+        "the Act's words that it leaves out or replaces ~~struck through~~ and its own in "
+        "**bold**:",
         "",
-        "```text",
-        example.quote.alignment.wdiff(whole=True),
-        "```",
+        "> " + _markdown_diff(alignment),
         "",
     ]
     if check is not None and check.note:
         lines += [f"Hand check: {check.note}", ""]
-    lines += [f"Statute words: {notice}", SHORT_END]
+    lines += [notice, SHORT_END]
     return "\n".join(lines)
+
+
+def _markdown_diff(alignment: Alignment) -> str:
+    """The quote against its whole subsection in Markdown: the Act's words it leaves out or
+    replaces struck through, its own in bold."""
+    marks = {"same": "{}", "del": "~~{}~~", "ins": "**{}**"}
+    return " ".join(
+        marks[kind].format(_markdown_escape(text)) for kind, text in alignment.segments(whole=True)
+    )
+
+
+def _markdown_escape(text: str) -> str:
+    return re.sub(r"([\\`*_~\[\]<>|#])", r"\\\1", text)
 
 
 _LOCAL_LINK = re.compile(r"(\]\()(?!https?:|mailto:|#|/|\.\./)([^)\s]+)\)")
@@ -415,7 +467,7 @@ def _tldr_closed_book_quotes(board: Board) -> str:
             raise ReportDataError(
                 f"TL;DR: {spec.name} pipeline {board.main.missing('pipeline', spec)}"
             )
-    verified, checked = _first_pipeline_checks(board)
+    verified, checked = first_pipeline_checks(board)
     names, counts = _and_list(list(failed)), _and_list([str(c) for c in failed.values()])
     if len(failed) == 1:
         (count,) = failed.values()
@@ -477,7 +529,7 @@ def _stops_early(
     return early, len(passed)
 
 
-def _first_pipeline_checks(board: Board) -> tuple[int, int]:
+def first_pipeline_checks(board: Board) -> tuple[int, int]:
     """(verified, checked) over every model's first pipeline answer with a verdict on the main
     set."""
     first = [
@@ -972,7 +1024,7 @@ def _closed_book_table(board: Board) -> str:
         "- **quote verified**: of the answers with a verdict, those whose quote passed the check.",
     ]
     if not any(board.main.missing("pipeline", spec) for spec in MODELS):
-        verified, checked = _first_pipeline_checks(board)
+        verified, checked = first_pipeline_checks(board)
         lines.append(
             f"- With the statute in the prompt, {verified} of {checked} first pipeline answers "
             "with a verdict on the main set had a quote that passed."
@@ -1037,17 +1089,14 @@ def _hand_check_method(record: handcheck.Record | None, folder: str) -> str:
     """How the hand check was done, from its record; "" if there is none."""
     if record is None:
         return ""
-    if sorted(record.rounds) != [1, 2]:
-        raise ReportDataError(f"the hand-check record has rounds {sorted(record.rounds)}, not 1, 2")
-    rows, agreed = record.rows, record.agreed(2)
+    try:
+        sentence = handcheck.method_sentence(record)
+    except handcheck.RecordError as error:
+        raise ReportDataError(f"the hand-check record: {error}") from error
     where = f"{folder}/{handcheck.RECORD_DIR}"
     return (
-        "I worked four rows by hand to set four written rules "
-        f"([{handcheck.RULES}]({where}/{handcheck.RULES})). Claude suggested an answer for every "
-        "row; in two rounds, fresh Claude Opus reviewers judged the rows blind, each row by one "
-        f"reviewer per round ([the record]({where}/{handcheck.MANIFEST})). Under the rules, round "
-        f"2 agreed with the suggestions on {agreed} of {rows} rows; on {record.adopted(2)} of the "
-        f"other {rows - agreed} the reviewer's answer was adopted. The owner approved the result. "
+        f"{sentence} ([The rules]({where}/{handcheck.RULES}); "
+        f"[the full record]({where}/{handcheck.MANIFEST}).) "
     )
 
 

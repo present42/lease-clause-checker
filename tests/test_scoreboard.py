@@ -1073,13 +1073,15 @@ def test_the_short_version_gives_three_numbers_and_one_answer(
     monkeypatch.setattr(scoreboard, "SHORT_EXAMPLE", (OPUS.key, "c05"))
 
     text = scoreboard.render_short(short_board(), "NOTICE")
+    # First pipeline quotes: Argon's run stands in from the closed book, with no pipeline
+    # attempts, so 3 models x 24; Haiku's first c14 quote fails.
 
     lines = text.splitlines()
     assert (lines[0], lines[-1]) == (scoreboard.SHORT_START, scoreboard.SHORT_END)
     assert (
-        "- **With the statute in the prompt and every quote checked:** Claude Haiku 5.5, Claude "
-        "Opus 5.5 and Gemini 3.8 Flash each got 24 of 24 verdicts right (Gemini 4 Argon: 23 of "
-        "24)." in lines
+        "- **With the statute in the prompt (each quote checked, one retry if it fails):** "
+        "Claude Haiku 5.5, Claude Opus 5.5 and Gemini 3.8 Flash each got 24 of 24 verdicts right "
+        "(Gemini 4 Argon: 23 of 24); 71 of 72 first answers' quotes passed the check." in lines
     )
     assert (
         "- **Without it (closed book):** Claude Opus 5.5 still got 24 of 24 verdicts right, but "
@@ -1087,14 +1089,14 @@ def test_the_short_version_gives_three_numbers_and_one_answer(
     )
     assert (
         "- **Hand check of the 14 closed-book quotes that failed:** 14 state a real provision of "
-        "the Act; 14 of those change the rule, and 1 would mislead about the clause they were "
-        "quoted for (the author's reading, not legal advice)." in lines
+        "the Act; 14 of those change the rule, and 1 of those 14 would mislead about the clause "
+        "they were quoted for (the author's reading, not legal advice)." in lines
     )
     assert (
-        "A provision in a tenancy agreement prohibiting [-widgets-] {+gadgets+} is void." in lines
+        "> A provision in a tenancy agreement prohibiting ~~widgets~~ **gadgets** is void." in lines
     )
     assert "Hand check: Widgets, not gadgets." in lines
-    assert "Statute words: NOTICE" in lines
+    assert lines[-2] == "NOTICE"
 
 
 def test_the_short_version_needs_a_finished_hand_check(monkeypatch: pytest.MonkeyPatch) -> None:
