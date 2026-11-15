@@ -21,14 +21,14 @@ async def _call(server: Any, name: str, arguments: dict[str, str]) -> Any:
         return await client.call_tool(name, arguments)
 
 
-def test_the_server_lists_two_read_only_tools_with_output_schemas(cache_dir: Path) -> None:
+def test_the_server_lists_three_read_only_tools_with_output_schemas(cache_dir: Path) -> None:
     async def tools() -> Any:
         async with Client(build_server(Statutes.load(cache_dir))) as client:
             return (await client.list_tools()).tools
 
     listed = {tool.name: tool for tool in anyio.run(tools)}
 
-    assert set(listed) == {"get_section", "verify_quote"}
+    assert set(listed) == {"get_section", "verify_quote", "check_text"}
     for tool in listed.values():
         assert tool.annotations is not None
         assert tool.annotations.read_only_hint is True
@@ -39,6 +39,17 @@ def test_the_server_lists_two_read_only_tools_with_output_schemas(cache_dir: Pat
     assert summary["description"] == "What was found, in a sentence or two."
     section = listed["get_section"].input_schema["properties"]["section"]
     assert "s. 27(2)" in section["description"]
+    check_text = " ".join((listed["check_text"].description or "").split())
+    assert "gives no verdict on any clause or tenancy term" in check_text
+    findings = listed["check_text"].output_schema["$defs"]["Finding"]["properties"]
+    assert findings["status"]["enum"] == [
+        "checked",
+        "uncited",
+        "citation_only",
+        "no_such_section",
+        "other_statute",
+        "unpaired_mark",
+    ]
 
 
 def test_verify_quote_returns_the_category_diff_and_notice(cache_dir: Path) -> None:
@@ -57,6 +68,23 @@ def test_verify_quote_returns_the_category_diff_and_notice(cache_dir: Path) -> N
     )
     assert "King's Printer for Ontario" in data["source"]["notice"]
     assert data["scope"].startswith("Checks wording")
+
+
+def test_check_text_reports_each_quote_and_citation(cache_dir: Path) -> None:
+    server = build_server(Statutes.load(cache_dir))
+    text = (
+        'Section 1 says "A provision in a tenancy agreement prohibiting gizmos is void." See s. 9.'
+    )
+
+    result = anyio.run(_call, server, "check_text", {"text": text})
+
+    assert result.is_error is False
+    checked, missing = result.structured_content["findings"]
+    assert (checked["status"], checked["result"]["category"]) == ("checked", "content_words_differ")
+    assert (missing["status"], missing["summary"]) == (
+        "no_such_section",
+        "The Act has no in-force section 9.",
+    )
 
 
 def test_an_unknown_section_is_a_tool_error_the_model_can_read(cache_dir: Path) -> None:
@@ -81,15 +109,14 @@ def test_lcc_mcp_serves_the_cached_act_over_stdio(cache_dir: Path) -> None:
     section, check = anyio.run(session)
 
     assert section.structured_content["text"] == VERBATIM
-    assert check.structured_content["category"] == "verbatim"
+    [finding] = check.structured_content["findings"]
+    assert finding["result"]["category"] == "verbatim"
 
 
 async def _stdio_session(params: StdioServerParameters) -> tuple[Any, Any]:
     async with Client(params) as client:
         section = await client.call_tool("get_section", {"act": "RTA", "section": "1"})
-        check = await client.call_tool(
-            "verify_quote", {"act": "RTA", "section": "1", "quote": VERBATIM}
-        )
+        check = await client.call_tool("check_text", {"text": f'Section 1 reads "{VERBATIM}"'})
         return section, check
 
 

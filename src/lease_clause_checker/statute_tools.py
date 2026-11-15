@@ -1,21 +1,23 @@
 """The statute tools the MCP server exposes (`mcp_server.py`), as plain functions on the cached
-Act: look a section up, and check a quote from it.
+Act: look a section up, check a quote from it, and check every citation and quote in a draft.
 
 Everything here reads the e-Laws cache that `lcc statute fetch` writes, a copy that is not an
 official version of the Act; nothing calls a network or a model. The check is
 `verify.check_quote` (and its quoting-conventions variant), and the sorting and word-level diff
-are `quotediff.classify`, so the tools give the answers the evaluation scores. They check
-wording, not legal meaning.
+are `quotediff.classify`, so the tools give the answers the evaluation scores; finding the
+citations and quotes in a draft is `drafts.read_draft`. They check wording, not legal meaning,
+and give no verdict on any clause.
 """
 
 import re
+from collections import Counter
 from dataclasses import dataclass
 from pathlib import Path
-from typing import assert_never
+from typing import Literal, assert_never
 
 from pydantic import BaseModel, ConfigDict
 
-from lease_clause_checker import elaws, pipeline, quotediff, verify
+from lease_clause_checker import drafts, elaws, pipeline, quotediff, verify
 from lease_clause_checker.statute import Section, parse_sections
 
 SCOPE = (
@@ -38,6 +40,14 @@ RTA_NAMES = frozenset(
         elaws.ACT_CODE,
     }
 )
+# What a draft may call the Act beside a citation: "s. 14 of the Act", "Ontario's Residential
+# Tenancies Act".
+_IN_A_DRAFT = frozenset({"act"})
+_TITLE_ENDINGS = (" residential tenancies act", " residential tenancies act, 2006")
+# How many other sections to name when a quote with no citation is in several.
+_LISTED = 3
+# The statute citation after an Act's title: ", S.O. 2006, c. 17".
+_STATUTE_CITATION = re.compile(r",\s*(?:R\.)?S\.O\.\s*\d{4},\s*c\.\s*(?:[A-Z]+\.)?\d+(?:\.\d+)?$")
 
 
 class UnknownActError(LookupError):
@@ -132,6 +142,45 @@ class QuoteResult(_Documented):
     source: Source
 
 
+Status = Literal[
+    "checked", "uncited", "citation_only", "no_such_section", "other_statute", "unpaired_mark"
+]
+
+
+class Finding(_Documented):
+    """One quote or citation found in a draft."""
+
+    line: int
+    """The line of the draft it starts on, from 1."""
+    citation: str | None
+    """The citation as read, such as "s. 27(2)"; None for a quote with no citation."""
+    statute: str | None
+    """The statute named beside the citation, as written; None if none is named."""
+    quote: str | None
+    """The quoted words, without the quotation marks; None for a citation with no quote."""
+    status: Status
+    """checked: a quote checked against the section cited with it. uncited: a quote with no
+    citation in its sentence, checked against the section whose wording is closest, if any.
+    citation_only: a citation of an in-force section, with no quote. no_such_section: a
+    citation, with no quote, of a section or subsection the Act doesn't have in force.
+    other_statute: a citation of another statute, and any quote with it; not checked.
+    unpaired_mark: a quotation mark with no partner in its paragraph; not read."""
+    summary: str
+    """What was found, in a sentence or two."""
+    result: QuoteResult | None
+    """The quote's check, as verify_quote gives it; None if nothing was checked."""
+
+
+class TextCheck(_Documented):
+    findings: list[Finding]
+    """Every quote and every citation outside a quote, in the order they appear; a citation
+    that a quote goes with is reported with the quote."""
+    summary: str
+    """Counts of what was found."""
+    scope: str = SCOPE
+    source: Source
+
+
 @dataclass(frozen=True)
 class Statutes:
     """The cached Act, parsed once."""
@@ -158,7 +207,7 @@ class Statutes:
         number, marker = split_citation(section)
         found = self.sections.get(number)
         if found is None:
-            raise UnknownSectionError(f"The Act has no in-force section {number}.")
+            raise UnknownSectionError(_no_section(number))
         part = _subsection(found, marker) if marker is not None else None
         if marker is not None and part is None:
             raise UnknownSectionError(f"Section {number} has no in-force subsection {marker}.")
@@ -200,6 +249,107 @@ class Statutes:
             found_in=list(result.found_in),
             dropped_negation=result.dropped_negation,
             source=self.source,
+        )
+
+    def check_text(self, text: str) -> TextCheck:
+        """Every quote and section citation in `text` (see `drafts` for how they are found and
+        paired), each quote checked as `verify_quote` checks it."""
+        draft = drafts.read_draft(text)
+        paired = {q.citation for q in draft.quotations if q.citation is not None}
+        found = [(q.start, self._check_quotation(draft, q)) for q in draft.quotations]
+        found += [
+            (c.start, self._check_citation(draft, c)) for c in draft.citations if c not in paired
+        ]
+        found += [(mark, _unpaired(draft, mark)) for mark in draft.unpaired_marks]
+        findings = [finding for _, finding in sorted(found, key=lambda pair: pair[0])]
+        return TextCheck(findings=findings, summary=_tally(findings), source=self.source)
+
+    def _check_quotation(self, draft: drafts.Draft, quotation: drafts.Quotation) -> Finding:
+        citation = quotation.citation
+        status: Status
+        if citation is None:
+            status = "uncited"
+            said, result = self._locate(quotation.text)
+        elif not self._is_this_act(citation.statute):
+            status, said, result = "other_statute", _not_checked(citation), None
+        else:
+            result = self.verify_quote(self.act.title, citation.cited, quotation.text)
+            status, said = "checked", result.summary
+        return Finding(
+            line=draft.line(quotation.start),
+            citation=citation.cited if citation else None,
+            statute=citation.statute if citation else None,
+            quote=quotation.text,
+            status=status,
+            summary=said,
+            result=result,
+        )
+
+    def _locate(self, quote: str) -> tuple[str, QuoteResult | None]:
+        """A quote with no citation, checked against the section whose wording is closest: the
+        one the classifier finds when the cited section is none."""
+        located = quotediff.classify(quote, "", self.sections)
+        if located.category == "too_short":
+            return (
+                "No citation goes with it, and it is too short to look up (under "
+                f"{verify.MIN_QUOTE_WORDS} words).",
+                None,
+            )
+        if not located.found_in:
+            return (
+                "No citation goes with it, and its wording is close to no subsection of the Act, "
+                "so it may not quote the Act.",
+                None,
+            )
+        closest, *others = located.found_in
+        result = self.verify_quote(self.act.title, closest, quote)
+        where = f"s. {closest} has the closest wording"
+        if others:
+            listed = ", ".join(f"s. {n}" for n in others[:_LISTED]) + (
+                f" and {len(others) - _LISTED} more" if len(others) > _LISTED else ""
+            )
+            where = f"its words are in s. {closest} (checked here) and also {listed}"
+        return f"No citation goes with it; {where}. {result.summary}", result
+
+    def _check_citation(self, draft: drafts.Draft, citation: drafts.Citation) -> Finding:
+        status: Status
+        if not self._is_this_act(citation.statute):
+            status, said = "other_statute", _not_checked(citation)
+        else:
+            number, marker = split_citation(citation.cited)
+            section = self.sections.get(number)
+            if section is None:
+                status, said = "no_such_section", _no_section(number)
+            else:
+                status = "citation_only"
+                heading = f" (e-Laws heading: {section.heading})" if section.heading else ""
+                missing = (
+                    f" It has no subsection {marker}; the citation was read as s. {number}."
+                    if marker is not None and _subsection(section, marker) is None
+                    else ""
+                )
+                said = (
+                    f"s. {number}{heading} is in force; no quote goes with this citation, so "
+                    f"there is nothing to check.{missing}"
+                )
+        return Finding(
+            line=draft.line(citation.start),
+            citation=citation.cited,
+            statute=citation.statute,
+            quote=None,
+            status=status,
+            summary=said,
+            result=None,
+        )
+
+    def _is_this_act(self, statute: str | None) -> bool:
+        """Whether a statute named beside a citation in a draft is this Act; no name means it
+        is."""
+        if statute is None:
+            return True
+        name = _STATUTE_CITATION.sub("", statute).lower()
+        return name in RTA_NAMES | _IN_A_DRAFT | {self.act.title.lower()} or name.endswith(
+            _TITLE_ENDINGS
         )
 
     def _require(self, act: str) -> None:
@@ -277,6 +427,50 @@ def summary(result: quotediff.Classified, section: str) -> str:
             return f"Not in {where}, and close to no subsection of the Act."
         case _:
             assert_never(result.category)
+
+
+_UNCHECKED: tuple[tuple[Status, str], ...] = (
+    ("uncited", "Quotes with no citation"),
+    ("citation_only", "Citations with no quote"),
+    ("no_such_section", "Citations of no in-force section"),
+    ("other_statute", "Citations of another statute, not checked"),
+    ("unpaired_mark", "Quotation marks with no partner, not read"),
+)
+
+
+def _tally(findings: list[Finding]) -> str:
+    """How many quotes there are, by category, and how many quotes and citations had no check
+    against a cited section."""
+    quotes = [f for f in findings if f.quote is not None]
+    labels = Counter(f.result.label for f in quotes if f.result is not None)
+    by_label = ", ".join(f"{label} {n}" for label, n in labels.most_common())
+    statuses = Counter(f.status for f in findings)
+    parts = [f"Quotes: {len(quotes)}" + (f" ({by_label})." if by_label else ".")]
+    parts += [f"{label}: {statuses[status]}." for status, label in _UNCHECKED if statuses[status]]
+    return " ".join(parts) + " Wording only: no verdict on any clause."
+
+
+def _no_section(number: str) -> str:
+    return f"The Act has no in-force section {number}."
+
+
+def _unpaired(draft: drafts.Draft, mark: int) -> Finding:
+    return Finding(
+        line=draft.line(mark),
+        citation=None,
+        statute=None,
+        quote=None,
+        status="unpaired_mark",
+        summary=(
+            f"A quotation mark ({draft.text[mark]}) with no partner in its paragraph; any quote "
+            "it opens or closes was not read."
+        ),
+        result=None,
+    )
+
+
+def _not_checked(citation: drafts.Citation) -> str:
+    return f"Cites {citation.statute}, which this server doesn't have; not checked."
 
 
 def _subsection_note(

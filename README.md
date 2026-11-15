@@ -88,7 +88,8 @@ Work in progress. These exist:
   ([check.py](src/lease_clause_checker/check.py); see [Check a lease](#check-a-lease)), and
   `lcc quote check`, the quote check on its own (see [Check a quote](#check-a-quote)).
 
-- an MCP server, `lcc mcp`, that gives a model the Act's sections and checks its quotes
+- an MCP server, `lcc mcp`, that gives a model the Act's sections and checks its quotes, one
+  at a time or every quote and citation in a draft
   ([mcp_server.py](src/lease_clause_checker/mcp_server.py); see
   [Use the quote check from Claude](#use-the-quote-check-from-claude-mcp)).
 
@@ -159,8 +160,8 @@ Not legal advice: this checks the wording only, not what it means.
 
 ### Use the quote check from Claude (MCP)
 
-`lcc mcp` runs an MCP server over stdio with two read-only tools on the cached e-Laws copy of
-the Act (not an official version):
+`lcc mcp` runs an MCP server over stdio with three read-only tools on the cached e-Laws copy
+of the Act (not an official version):
 
 - `get_section(act, section)`: a section's in-force text, with its heading, e-Laws link,
   consolidation period, retrieval date and the King's Printer notice. A subsection in the
@@ -170,6 +171,15 @@ the Act (not an official version):
   conventions, cosmetic, wrong section cited, content words differ, not in the Act), a one-line
   summary and a word-level diff against the Act. The whole cited section is searched; the
   summary says if the quote is in another subsection than the one cited.
+- `check_text(text)`: every quote (in double quotation marks) and section citation in a
+  draft, such as a memo. Each quote is checked as `verify_quote` checks it, against the
+  citation right after it in its sentence (`"… is void" (s. 14)`), else the nearest one before
+  it in the sentence. A quote with no citation is checked against the section whose wording is
+  closest, and a citation with no quote is reported as in force or not. Citations of another
+  statute ("s. 67 of the Legislation Act, 2006") are listed and not checked, and so is a
+  quotation mark with no partner in its paragraph. The rules are in
+  [drafts.py](src/lease_clause_checker/drafts.py). It reports wording only and gives no
+  verdict on any clause.
 
 `act` is `"RTA"`; the server has only the Residential Tenancies Act, 2006. The tools read the
 cache under the repository's `.cache/` and call no network or model. They check wording, not
@@ -487,6 +497,15 @@ prompt.
   subsection begins "No landlord shall"), but it looks only at that one word: "shall, without
   legal process, seize a tenant's property" still passes. The check shows that the words are
   in the Act, not that they are quoted in full.
+- `check_text` pairs quotes and citations by fixed rules
+  ([drafts.py](src/lease_clause_checker/drafts.py)), not by reading the draft. It takes every
+  quote beside a citation to be a quote of the Act, so a quoted lease clause in a sentence with
+  a citation is checked against that section. It
+  reads only double quotation marks (not single quotation marks or indented block quotes),
+  reads a range such as "ss. 14-16" as its first section, and tells a statute's title from the
+  words before it with a short list of words such as "See" and "Under". A citation with no
+  statute named beside it, or with "the Act", is read as a citation of the Residential
+  Tenancies Act, even in a sentence about another statute.
 - The quote check proves that a quote appears in the cited section. It does not prove that the
   legal reasoning is right, or that the section is the one that decides the clause.
   A quote of five words or more passes even when it stops short of the decisive words, such as

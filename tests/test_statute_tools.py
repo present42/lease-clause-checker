@@ -1,3 +1,4 @@
+from dataclasses import replace
 from pathlib import Path
 
 import pytest
@@ -12,6 +13,8 @@ from lease_clause_checker.statute_tools import (
     split_citation,
     summary,
 )
+
+VERBATIM = "A provision in a tenancy agreement prohibiting widgets is void."
 
 
 @pytest.fixture
@@ -228,3 +231,160 @@ def test_a_dropped_negation_behind_a_cosmetic_change_is_named() -> None:
     assert summary(result, "40") == (
         "Matches s. 40 but for cosmetic differences, but it leaves out the “No” right before it."
     )
+
+
+MESSY_MEMO = """Memo: the no-widget clause
+
+The clause reads "Tenant shall keep no widgets on the premises." Section 1 voids it. Under s. 1
+a no-widget term is void, and s. 2.1(1) lets the landlord ask for a deposit, but "The deposit
+shall exceed one month’s rent" applies too.
+
+The Act puts it plainly: "A provision in a tenancy agreement prohibiting widgets is void."
+
+A deposit is allowed where "[t]he tenant agrees in writing … the deposit is returned" (RTA,
+s. 2.1(1)). Compare the Legislation Act, 2006, s. 67 and ss. 2.1(3) and 9 of the Act.
+"""
+
+
+def test_check_text_finds_and_checks_every_quote_and_citation(statutes: Statutes) -> None:
+    found = statutes.check_text(MESSY_MEMO).findings
+
+    assert [(f.line, f.status, f.citation, f.statute) for f in found] == [
+        (3, "uncited", None, None),  # a quote of the lease, not the Act
+        (3, "citation_only", "s. 1", None),
+        (3, "citation_only", "s. 1", None),
+        (4, "checked", "s. 2.1(1)", None),  # two citations before it in a sentence: the later
+        (7, "uncited", None, None),
+        (9, "checked", "s. 2.1(1)", "RTA"),  # an ellipsis and a bracket
+        (10, "other_statute", "s. 67", "Legislation Act, 2006"),
+        (10, "citation_only", "s. 2.1(3)", "Act"),
+        (10, "no_such_section", "s. 9", "Act"),
+    ]
+    lease, _, _, deposit, plainly, writing, other, subsection, section = found
+    assert lease.result is None
+    assert "close to no subsection of the Act, so it may not quote the Act" in lease.summary
+    assert deposit.result is not None
+    assert deposit.result.category == "content_words_differ"
+    assert deposit.result.critical_words == ["not"]
+    assert deposit.summary.endswith("(The quote is closest to s. 2.1(2), not the cited s. 2.1(1).)")
+    assert plainly.result is not None
+    assert (plainly.result.section, plainly.result.category) == ("1", "verbatim")
+    assert plainly.summary == (
+        "No citation goes with it; s. 1 has the closest wording. Word for word in s. 1."
+    )
+    assert writing.result is not None
+    assert (writing.result.strict, writing.result.category) == ("not_found", "conventions")
+    assert (
+        other.summary == "Cites Legislation Act, 2006, which this server doesn't have; not checked."
+    )
+    assert subsection.summary == (
+        "s. 2.1 (e-Laws heading: Gadget deposits) is in force; no quote goes with this citation, "
+        "so there is nothing to check. It has no subsection (3); the citation was read as s. 2.1."
+    )
+    assert section.summary == "The Act has no in-force section 9."
+
+
+def test_a_checked_quote_is_what_verify_quote_gives(statutes: Statutes) -> None:
+    text = 'Under s. 2.1(2), the deposit may "exceed one month’s rent."'
+
+    [finding] = statutes.check_text(text).findings
+
+    assert finding.result == statutes.verify_quote("RTA", "s. 2.1(2)", "exceed one month’s rent.")
+    assert finding.result.category == "drops_negation"
+
+
+def test_check_text_counts_what_it_found_and_gives_no_verdict(statutes: Statutes) -> None:
+    assert statutes.check_text(MESSY_MEMO).summary == (
+        "Quotes: 4 (content words differ 1, verbatim 1, passes with quoting conventions 1). "
+        "Quotes with no citation: 2. Citations with no quote: 3. Citations of no in-force "
+        "section: 1. Citations of another statute, not checked: 1. Wording only: no verdict "
+        "on any clause."
+    )
+    assert statutes.check_text("No quotes here.").summary == (
+        "Quotes: 0. Wording only: no verdict on any clause."
+    )
+
+
+@pytest.mark.parametrize(
+    "named",
+    [
+        "RTA, s. 1",
+        "s. 1 of the Act",
+        "Residential Tenancies Act, 2006, S.O. 2006, c. 17, s. 1",
+        "Ontario's Residential Tenancies Act, s. 1",
+    ],
+)
+def test_the_act_by_any_of_its_names_is_checked(statutes: Statutes, named: str) -> None:
+    [finding] = statutes.check_text(f"See {named}.").findings
+
+    assert finding.status == "citation_only"
+
+
+def test_a_quote_cited_to_another_statute_is_not_checked(statutes: Statutes) -> None:
+    text = '"Words in the singular include the plural" (Legislation Act, 2006, s. 67).'
+
+    [finding] = statutes.check_text(text).findings
+
+    assert (finding.status, finding.result) == ("other_statute", None)
+    assert finding.quote == "Words in the singular include the plural"
+
+
+def test_a_short_quote_with_no_citation_is_not_looked_up(statutes: Statutes) -> None:
+    [finding] = statutes.check_text('A "no widget" term.').findings
+
+    assert finding.summary == (
+        "No citation goes with it, and it is too short to look up (under 5 words)."
+    )
+
+
+@pytest.mark.parametrize(
+    ("copies", "also"),
+    [
+        (1, "also s. 10."),
+        (3, "also s. 10, s. 11, s. 12."),
+        (5, "also s. 10, s. 11, s. 12 and 2 more."),
+    ],
+)
+def test_a_quote_with_no_citation_names_every_section_that_has_its_words(
+    statutes: Statutes, copies: int, also: str
+) -> None:
+    repeated = {
+        str(10 + i): replace(statutes.sections["1"], number=str(10 + i)) for i in range(copies)
+    }
+    more = Statutes(statutes.act, statutes.sections | repeated)
+
+    [finding] = more.check_text(f'"{VERBATIM}"').findings
+
+    assert finding.summary == (
+        f"No citation goes with it; its words are in s. 1 (checked here) and {also} Word for word "
+        "in s. 1."
+    )
+
+
+@pytest.mark.parametrize(
+    "text",
+    [
+        "Human Rights Code, R.S.O. 1990, c. H.19, s. 2 applies.",
+        "Commercial Tenancies Act, R.S.O. 1990, c. L.7, s. 1",
+        "Under section 1 of the HRC, a person has rights.",
+    ],
+)
+def test_a_citation_of_another_statute_by_its_full_cite_or_acronym_is_not_checked(
+    statutes: Statutes, text: str
+) -> None:
+    [finding] = statutes.check_text(text).findings
+
+    assert finding.status == "other_statute"
+
+
+def test_an_unpaired_quotation_mark_hides_no_quote_in_the_next_paragraph(
+    statutes: Statutes,
+) -> None:
+    text = f'The tenant wrote "no. Then he left.\n\nSection 1 says "{VERBATIM}"'
+
+    stray, quote = statutes.check_text(text).findings
+
+    assert (stray.line, stray.status) == (1, "unpaired_mark")
+    assert stray.summary.startswith('A quotation mark (") with no partner in its paragraph')
+    assert quote.result is not None
+    assert (quote.line, quote.citation, quote.result.category) == (3, "s. 1", "verbatim")
