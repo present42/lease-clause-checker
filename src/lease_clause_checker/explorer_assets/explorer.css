@@ -14,7 +14,6 @@
   --insert-wash: #e8eefb;
   --ok: #17663a;
   --track: #e3e6ea;
-  --tag-wash: #eef0f3;
 
   --serif: "Source Serif 4", "Source Serif Pro", Georgia, "Times New Roman", serif;
   --sans: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -27,13 +26,13 @@
   :root:not([data-theme="light"]) {
     --paper: #0e1114; --sheet: #171b20; --ink: #e8eaed; --graphite: #a7afba; --rule: #2d343d;
     --strike: #ff8e84; --strike-wash: #3a1d1b; --insert: #93b4ff; --insert-wash: #1a2540;
-    --ok: #74d39c; --track: #2a3038; --tag-wash: #222830;
+    --ok: #74d39c; --track: #2a3038;
   }
 }
 :root[data-theme="dark"] {
   --paper: #0e1114; --sheet: #171b20; --ink: #e8eaed; --graphite: #a7afba; --rule: #2d343d;
   --strike: #ff8e84; --strike-wash: #3a1d1b; --insert: #93b4ff; --insert-wash: #1a2540;
-  --ok: #74d39c; --track: #2a3038; --tag-wash: #222830;
+  --ok: #74d39c; --track: #2a3038;
 }
 
 * { box-sizing: border-box; }
@@ -68,6 +67,7 @@ main:focus { outline: none; }
   .brand { min-height: 48px; }
   .tabs { padding-right: var(--s5); }
   .tabs.overflows { mask-image: linear-gradient(to right, #000 85%, transparent); }
+  .tabs.overflows.scrolled { mask-image: linear-gradient(to right, transparent, #000 32px, #000 85%, transparent); }
   .tabs a { min-height: 44px; }
 }
 .notice-bar { border-bottom: 1px solid var(--rule); font-size: 13px; color: var(--graphite); }
@@ -78,14 +78,19 @@ main:focus { outline: none; }
 .hero { padding-top: var(--s6); padding-bottom: var(--s5); }
 h1 { margin: 0; font: 600 clamp(38px, 5.4vw, 60px)/1.04 var(--serif); letter-spacing: -0.015em; }
 .lede { margin: var(--s3) 0 0; max-width: 72ch; font-size: 18px; line-height: 1.55; color: var(--graphite); }
-body:not([data-view="story"]) .hero { padding-top: var(--s5); padding-bottom: var(--s2); }
-body:not([data-view="story"]) .hero h1 { font-size: 30px; }
+body[data-view="story"] .hero { padding-top: var(--s5); padding-bottom: var(--s4); }
+body[data-view="story"] h1 { font-size: clamp(36px, 4.2vw, 54px); }
+/* On the other views the title is a quiet line, so the view's own heading leads. */
+body:not([data-view="story"]) .hero { padding-top: var(--s4); padding-bottom: 0; }
+body:not([data-view="story"]) .hero h1 { font: 500 12px/1.4 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--graphite); }
 body:not([data-view="story"]) .hero .lede, body:not([data-view="story"]) .hero .eyebrow { display: none; }
 @media (max-width: 600px) {
   .hero { padding-top: var(--s5); padding-bottom: var(--s4); }
   .lede { font-size: 16px; }
   .eyebrow { font-size: 11px; }
-  body:not([data-view="story"]) .hero h1 { font-size: 24px; }
+  body[data-view="story"] .hero { padding-top: var(--s4); padding-bottom: var(--s3); }
+  body[data-view="story"] h1 { font-size: 34px; }
+  .lede { font-size: 15px; line-height: 1.5; }
 }
 
 main.wrap { padding-bottom: var(--s7); }
@@ -96,11 +101,20 @@ h3 { margin: var(--s6) 0 var(--s2); font: 600 20px/1.3 var(--serif); }
 .intro { max-width: 72ch; color: var(--graphite); margin: 0 0 var(--s4); }
 
 /* ---- Exhibits: the clause, the Act, what the model quoted, and the punchline ---- */
-.exhibits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s7) var(--s6); padding: var(--s2) 0 var(--s8); }
+.exhibits { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--s7) var(--s6); padding: 0 0 var(--s5); }
 .exhibits > .exhibit.lead { grid-column: 1 / -1; }
-@media (max-width: 980px) { .exhibits { grid-template-columns: 1fr; gap: var(--s7); padding-bottom: var(--s7); } }
 .exhibit { min-width: 0; }
-.exhibit.lead { max-width: 980px; }
+/* The two cards share rows, so their Act boxes start level. */
+.exhibit:not(.lead) { display: grid; grid-row: span 2; grid-template-rows: subgrid; row-gap: 0; }
+@media (max-width: 980px) {
+  .exhibits { grid-template-columns: 1fr; gap: var(--s7); }
+  .exhibit:not(.lead) { display: block; }
+}
+/* The lead exhibit on a wide screen: the clause and verdict beside the Act and the quote. */
+@media (min-width: 1100px) {
+  .exhibit.lead { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: var(--s7); align-items: start; }
+  .exhibit.lead .exhibit-text { padding-top: var(--s2); }
+}
 .exhibit .label { margin-bottom: var(--s2); }
 .exhibit h2 { margin: 0 0 var(--s3); font-size: 22px; }
 .exhibit.lead h2 { font-size: 30px; }
@@ -108,6 +122,7 @@ h3 { margin: var(--s6) 0 var(--s2); font: 600 20px/1.3 var(--serif); }
 .clause { margin: 0 0 var(--s3); padding: var(--s2) 0 var(--s2) var(--s4); border-left: 3px solid var(--ink); font-size: 17px; line-height: 1.5; }
 .exhibit.lead .clause { font-size: 18px; }
 .verdict-line { margin: 0 0 var(--s4); font-size: 15px; }
+.verdict-line .tag { margin-left: 8px; }
 .verdict-line b { font-weight: 600; }
 .tag { display: inline-block; margin-left: 6px; padding: 0 7px; font: 600 11px/1.7 var(--mono); letter-spacing: 0.05em; text-transform: uppercase; border: 1.5px solid currentColor; border-radius: 2px; vertical-align: 1px; white-space: nowrap; }
 .tag.ok { color: var(--ok); }
@@ -117,42 +132,52 @@ h3 { margin: var(--s6) 0 var(--s2); font: 600 20px/1.3 var(--serif); }
 .box + .box { border-top: 0; }
 .box figcaption { display: flex; justify-content: space-between; gap: var(--s3); flex-wrap: wrap; padding: var(--s2) var(--s4); border-bottom: 1px solid var(--rule); font: 500 12px/1.5 var(--mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--graphite); }
 .box figcaption b { color: var(--ink); font-weight: 500; }
+.box figcaption .heading { font: 400 13px/1.5 var(--sans); letter-spacing: 0; text-transform: none; }
 .box .statute { padding: var(--s3) var(--s4) var(--s4); }
 .box.quote { border-left: 3px solid var(--insert); }
 .box .notice { padding: 0 var(--s4) var(--s3); margin: 0; }
-.statute { margin: 0; font: 400 19px/1.7 var(--serif); overflow-wrap: anywhere; }
+.statute { margin: 0; font: 400 19px/1.6 var(--serif); overflow-wrap: anywhere; }
 .exhibit:not(.lead) .statute { font-size: 17px; }
 @media (max-width: 600px) { .statute, .exhibit:not(.lead) .statute { font-size: 17px; line-height: 1.65; } }
 
 /* In the Act box: the words each edit drops, marked as it drops them, and a tagged item. */
 .act-box .tok { transition: color 0.3s, background-color 0.3s; }
 .act-box .tok.lost { color: var(--strike); background: var(--strike-wash); text-decoration: line-through 1.5px var(--strike); }
-.act-box .tok.tagged { background: var(--tag-wash); }
-.act-box .tok.tagged.lost { background: var(--strike-wash); }
+.act-box .tok.tagged { text-decoration: underline dotted var(--graphite); text-underline-offset: 5px; }
+.act-box .tok.tagged.lost { text-decoration: line-through 1.5px var(--strike); }
 .lost-key { color: var(--strike); background: var(--strike-wash); padding: 0 2px; }
 .item-tag { display: inline-block; margin: 0 6px 0 0; padding: 0 6px; font: 500 11px/1.7 var(--mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink); border: 1px solid var(--ink); border-radius: 2px; vertical-align: 2px; }
 
 /* In the quote box: each edit's dropped words strike through, then fold away; its added words
    type in. */
-.quote-box del, .quote-box ins { transition: font-size 0.45s ease, opacity 0.35s ease, color 0.25s; }
+.quote-box del, .quote-box ins { transition: opacity 0.35s ease, color 0.25s; }
 .quote-box .statute del { text-decoration: none; color: inherit; }
 .quote-box .statute del.striking { color: var(--strike); text-decoration: line-through 1.5px var(--strike); }
-.quote-box .statute del.folding { font-size: 0; opacity: 0; }
+.quote-box .statute del.fading { opacity: 0; }
+.quote-box .statute { overflow: hidden; }
 .quote-box .statute del.gone { display: none; }
 .quote-box .statute ins { color: var(--insert); text-decoration: underline double var(--insert); text-decoration-skip-ink: none; text-underline-offset: 4px; }
 .quote-box .statute ins:empty { display: none; }
 .quote-box .statute ins.typing::after { content: ""; display: inline-block; width: 1px; height: 1em; margin-left: 1px; background: var(--insert); vertical-align: -0.15em; }
 /* The space before a dropped word goes with it, but is not struck through. */
 .quote-box .sp { display: inline-block; white-space: pre; }
-.replay-bar { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s2) var(--s3); margin: var(--s3) 0 0; }
+.replay-bar { display: flex; flex-wrap: wrap; align-items: flex-start; gap: var(--s2) var(--s3); margin: var(--s3) 0 0; }
 .replay-bar button { min-height: 36px; padding: 0 var(--s3); font: 500 13px/1 var(--sans); color: var(--ink); background: var(--sheet); border: 1px solid var(--ink); border-radius: 2px; cursor: pointer; }
 .replay-bar button:hover { background: var(--ink); color: var(--sheet); }
 .replay-bar button:disabled { opacity: 0.45; cursor: default; background: var(--sheet); color: var(--ink); }
-.replay-status { flex: 1 1 16em; margin: 0; font: 400 13px/1.45 var(--mono); color: var(--graphite); min-height: 1.45em; }
+.replay-status { flex: 1 1 16em; margin: 0; padding-top: 9px; font: 400 13px/1.45 var(--mono); color: var(--graphite); min-height: 1.45em; }
 .punchline { margin: var(--s4) 0 0; padding: var(--s3) 0 0; border-top: 2px solid var(--ink); font: 400 19px/1.5 var(--serif); transition: opacity 0.6s ease; }
 .exhibit:not(.lead) .punchline { font-size: 17px; }
 .punchline.waiting { opacity: 0; }
 .more { margin: var(--s3) 0 0; font-size: 14px; display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); }
+.exhibits-note { margin: 0 0 var(--s8); max-width: 90ch; font-size: 14px; color: var(--graphite); }
+@media (max-width: 600px) { .exhibits-note { margin-bottom: var(--s7); } }
+/* Phone: tap targets at least 44 pixels high. */
+@media (max-width: 600px) {
+  .replay-bar button { min-height: 44px; }
+  .replay-status { padding-top: 12px; }
+  .more a, .notice-bar a, .method a, .exhibits-note a { display: inline-block; padding-block: 11px; }
+}
 @media (prefers-reduced-motion: reduce) {
   .quote-box del, .quote-box ins, .act-box .tok, .punchline { transition: none; }
 }
@@ -195,6 +220,7 @@ table.numbers { width: 100%; border-collapse: collapse; font-size: 15px; font-va
   .numbers tbody tr:first-child { border-top: 2px solid var(--ink); }
   .numbers tbody th, .numbers tbody td { display: block; border: 0 !important; padding: 6px 10px; }
   .numbers tbody th { grid-column: 1 / -1; padding-left: 0; font-size: 16px; padding-bottom: var(--s2); }
+  .numbers tbody td:not(.closed-col) { padding-left: 0; }
   .numbers tbody td::before { content: attr(data-label); display: block; font: 500 11px/1.4 var(--mono); letter-spacing: 0.04em; text-transform: uppercase; color: var(--graphite); }
   .numbers tbody td.closed-col::before { color: var(--strike); }
   .bar { max-width: none; }
@@ -217,6 +243,8 @@ table.numbers { width: 100%; border-collapse: collapse; font-size: 15px; font-va
   .funnel li:nth-child(even) { padding-left: var(--s3); }
   .funnel b { font-size: 30px; }
 }
+.hand-method { margin-top: var(--s5); }
+.hand-method + .hand-method { margin-top: var(--s3); }
 .method { margin: var(--s4) 0 0; font-size: 14px; line-height: 1.6; color: var(--graphite); max-width: 72ch; }
 .method strong { color: var(--ink); font-weight: 600; }
 
@@ -346,11 +374,11 @@ body[data-view="story"] .site-footer .caveats { display: none; }
 /* ---- The preview image (#/card): 1200 by 630 ---- */
 body.card-mode .masthead, body.card-mode .notice-bar, body.card-mode .hero, body.card-mode .site-footer { display: none; }
 body.card-mode { background: var(--sheet); }
-body.card-mode main { max-width: 1200px; height: 630px; overflow: hidden; padding: 34px 64px; }
+body.card-mode main { max-width: 1200px; height: 630px; overflow: hidden; padding: 30px 64px; display: flex; flex-direction: column; justify-content: center; }
 body.card-mode .card-eyebrow { margin: 0 0 14px; font: 500 20px/1.4 var(--mono); letter-spacing: 0.05em; text-transform: uppercase; color: var(--graphite); }
 body.card-mode .card-title { margin: 0 0 22px; font: 600 54px/1.05 var(--serif); }
 body.card-mode .redline { border-left-width: 4px; padding: 18px 24px; }
-body.card-mode .redline-title { font-size: 17px; }
+body.card-mode .redline-title { font-size: 17px; text-transform: uppercase; letter-spacing: 0.05em; }
 body.card-mode .statute { font-size: 34px; line-height: 1.5; }
 body.card-mode .card-foot { margin: 22px 0 0; font: 400 27px/1.4 var(--serif); }
 body.card-mode .card-foot .small { display: block; margin-top: 6px; font: 400 18px/1.4 var(--sans); color: var(--graphite); }

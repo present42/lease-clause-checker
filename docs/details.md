@@ -263,7 +263,7 @@ subsection and replays the model's edits one at a time, in reading order: the dr
 strike through and fold away (and are marked in the Act's box), the added words type in. The
 edits come from the same alignment as the redline (`exhibits.replay`, from `Alignment.runs`),
 and the export stops unless they end at the saved quote, token for token. Each replay plays
-once when it comes into view; Replay plays it again, and Next change, or the right arrow key,
+once when it comes into view, one at a time; Replay plays it again, and Next change, or the right arrow key,
 steps one edit at a time (the left arrow steps back). With reduced motion the page shows the
 finished state. Then come the four-model table and the hand check's counts. Its other views:
 - **Misquotes**: the closed-book answers with a right verdict whose quote is not word for word,

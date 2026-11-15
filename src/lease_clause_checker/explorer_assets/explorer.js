@@ -367,7 +367,10 @@ function tableBox(table, label) {
 }
 
 function markOverflow() {
-  for (const strip of document.querySelectorAll(".tabs")) strip.classList.toggle("overflows", strip.scrollWidth > strip.clientWidth + 1);
+  for (const strip of document.querySelectorAll(".tabs")) {
+    strip.classList.toggle("overflows", strip.scrollWidth > strip.clientWidth + 1);
+    strip.classList.toggle("scrolled", strip.scrollLeft > 4);
+  }
   for (const box of document.querySelectorAll(".table-box")) {
     const wrap = box.querySelector(".table-wrap");
     box.classList.toggle("overflows", wrap.scrollWidth > wrap.clientWidth + 1);
@@ -403,6 +406,14 @@ function tokenNodes(tokens, first, unstruck = false) {
     out.push(text);
   });
   return out;
+}
+
+// An edit's words cut to their first five and last three if long, for the status line.
+function shortened(said) {
+  return said.replace(/\u2018([^\u2019]*)\u2019/g, (whole, words) => {
+    const list = words.split(" ");
+    return list.length > 10 ? `\u2018${list.slice(0, 5).join(" ")} … ${list.slice(-3).join(" ")}\u2019` : whole;
+  });
 }
 
 function tokenText(tokens, first) {
@@ -462,8 +473,11 @@ class Player {
       const edit = this.edits[a];
       edit.del = el("del", {}, edit.drop ? tokenNodes(this.act.slice(edit.drop[0], edit.drop[1]), j === 0, true) : []);
       edit.ins = el("ins");
-      edit.full = edit.add ? tokenText(quote.slice(edit.add[0], edit.add[1]), edit.add[0] === 0) : "";
-      p.append(edit.del, edit.ins);
+      const added = edit.add ? tokenText(quote.slice(edit.add[0], edit.add[1]), edit.add[0] === 0) : "";
+      edit.full = added.trimStart();
+      // The space before added words is not underlined; it shows only with them.
+      edit.space = el("span", { hidden: true }, added === edit.full ? "" : " ");
+      p.append(edit.del, edit.space, edit.ins);
     });
     return p;
   }
@@ -483,14 +497,19 @@ class Player {
     const edit = this.edits[k];
     edit.del.className = done ? "gone" : "";
     edit.ins.textContent = done ? edit.full : "";
+    edit.space.hidden = !done;
     edit.ins.classList.remove("typing");
     for (const span of edit.lost) span.classList.toggle("lost", done);
   }
 
   say(k) {
     const n = this.edits.length;
-    this.status.textContent =
-      k < 0 ? `${n} edits turn the Act's words into the quote.` : k >= n ? `All ${n} edits made: the box now holds the quote, word for word.` : `Edit ${k + 1} of ${n}: ${this.edits[k].said}`;
+    if (k < 0 || k >= n) {
+      this.status.textContent = k < 0 ? `${n} edits turn the Act's words into the quote.` : `All ${n} edits made: the box now holds the quote, word for word.`;
+      return;
+    }
+    const said = this.edits[k].said;
+    this.status.replaceChildren(el("span", { "aria-hidden": "true" }, `Edit ${k + 1} of ${n}: ${shortened(said)}`), sr(`Edit ${k + 1} of ${n}: ${said}`));
   }
 
   render(pos) {
@@ -515,11 +534,18 @@ class Player {
     if (edit.drop) {
       edit.del.className = "striking";
       await this.wait(800, run);
-      edit.del.className = "striking folding";
-      await this.wait(450, run);
+      edit.del.className = "striking fading";
+      await this.wait(350, run);
+      const before = this.quoteBox.offsetHeight;
       edit.del.className = "gone";
+      const after = this.quoteBox.offsetHeight;
+      if (before !== after) {
+        this.quoteBox.animate([{ height: `${before}px` }, { height: `${after}px` }], { duration: 400, easing: "ease-out" });
+        await this.wait(400, run);
+      }
     }
     if (edit.full) {
+      edit.space.hidden = false;
       edit.ins.classList.add("typing");
       const step = Math.min(45, 900 / edit.full.length);
       for (let i = 1; i <= edit.full.length; i++) {
@@ -584,22 +610,29 @@ function exhibitArticle(ex, n, lead) {
   const article = el(
     "article",
     { class: lead ? "exhibit lead" : "exhibit", "aria-labelledby": `exhibit-${n}` },
-    el("p", { class: "label" }, `Exhibit ${n} · `, el("b", {}, model.name), ` · clause ${clause.id} · closed book`),
-    el("h2", { id: `exhibit-${n}`, tabindex: "-1" }, ex.label),
-    el("blockquote", { class: "clause" }, `“${clause.text}”`),
-    el("p", { class: "verdict-line" }, `${who}'s verdict: `, el("b", {}, ex.verdict), ", ", el("span", { class: "right" }, "right")),
-    el("figure", { class: "box act-box" }, el("figcaption", {}, el("b", {}, `The Act, ${where}`), el("span", {}, DATA.act.sections[alignment.section].heading)), player.actBox),
-    el("figure", { class: "box quote quote-box" }, el("figcaption", {}, el("b", {}, `What ${who} quoted`), el("span", {}, "from memory")), player.quoteBox),
     el(
       "div",
-      { class: "replay-bar" },
-      el("button", { type: "button", class: "replay" }, "Replay"),
-      el("button", { type: "button", class: "next", "aria-keyshortcuts": "ArrowRight" }, "Next change"),
-      el("p", { class: "replay-status", "aria-live": "polite" }),
+      { class: "exhibit-text" },
+      el("p", { class: "label" }, `Exhibit ${n} · `, el("b", {}, model.name), ` · clause ${clause.id} · closed book`),
+      el("h2", { id: `exhibit-${n}`, tabindex: "-1" }, ex.label),
+      el("blockquote", { class: "clause" }, `“${clause.text}”`),
+      el("p", { class: "verdict-line" }, `${who}'s verdict: `, el("b", {}, ex.verdict), ",", el("span", { class: "tag ok" }, "right")),
     ),
-    el("p", { class: "punchline waiting" }, ex.punchline),
-    el("p", { class: "notice" }, "In the Act, ", el("span", { class: "lost-key" }, "red"), " marks the words the quote leaves out; in the quote, ", el("ins", {}, "blue"), " words are its own. ", DATA.notice),
-    el("p", { class: "more" }, el("a", { href: `#/closed/${ex.clause}/${ex.model}` }, "This answer in the grid"), el("a", { href: `#/exhibit/${ex.model}` }, `${model.name}'s other misquotes`)),
+    el(
+      "div",
+      { class: "exhibit-boxes" },
+      el("figure", { class: "box act-box" }, el("figcaption", {}, el("b", {}, `The Act, ${where}`), el("span", { class: "heading" }, DATA.act.sections[alignment.section].heading)), player.actBox),
+      el("figure", { class: "box quote quote-box" }, el("figcaption", {}, el("b", {}, `What ${who} quoted`), el("span", {}, "from memory")), player.quoteBox),
+      el(
+        "div",
+        { class: "replay-bar" },
+        el("button", { type: "button", class: "replay" }, "Replay"),
+        el("button", { type: "button", class: "next", "aria-keyshortcuts": "ArrowRight" }, "Next change"),
+        el("p", { class: "replay-status", "aria-live": "polite" }),
+      ),
+      el("p", { class: "punchline waiting" }, ex.punchline),
+      el("p", { class: "more" }, el("a", { href: `#/closed/${ex.clause}/${ex.model}` }, "This answer in the grid"), el("a", { href: `#/exhibit/${ex.model}` }, `${model.name}'s other misquotes`)),
+    ),
   );
   player.attach(article);
   PLAYERS.push(player);
@@ -611,15 +644,27 @@ function exhibitArticle(ex, n, lead) {
 function watchExhibits() {
   const seen = new Map();
   const ratios = new Map();
+  // Exhibits that come into view together play one after the other, not at once.
+  const queue = [];
+  let busy = false;
+  const playNext = async () => {
+    if (busy || !queue.length) return;
+    busy = true;
+    const player = queue.shift();
+    await player.play();
+    busy = false;
+    if (PLAYERS.includes(player)) playNext();
+  };
   const once = new IntersectionObserver(
     (entries) => {
       for (const entry of entries) {
         const player = PLAYERS.find((p) => p.quoteBox === entry.target);
         if (entry.isIntersecting && player && !seen.has(player)) {
           seen.set(player, true);
-          if (!REDUCED.matches) player.play();
+          if (!REDUCED.matches) queue.push(player);
         }
       }
+      playNext();
     },
     { threshold: 0.6 },
   );
@@ -717,8 +762,21 @@ function storyView() {
   const hand = DATA.hand_check;
   const sum = (key) => story.rows.reduce((total, row) => total + row[key], 0);
   const exhibits = story.exhibits.map((ex, i) => exhibitArticle(ex, i + 1, i === 0).article);
+  const misleading = DATA.answers.filter((a) => a.method === "closedbook" && a.attempts[0].hand_check && a.attempts[0].hand_check.meaning_changed === "yes" && a.attempts[0].hand_check.misleads_here === "yes");
+  const split = DATA.models.map((m) => `${shortModel(m.name)} ${misleading.filter((a) => a.model === m.key).length}`).join(", ");
   return [
     el("section", { class: "exhibits", "aria-label": "Answers replayed as edits of the Act" }, exhibits),
+    el(
+      "p",
+      { class: "exhibits-note" },
+      `These are ${story.exhibits.length} of the ${misleading.length} closed-book quotes that the hand check found would mislead (${split}), chosen by the author; each came with a right verdict. `,
+      el("a", { href: "#/hand/misleads" }, `All ${misleading.length}`),
+      ". The edits are computed from the word-by-word difference between the Act's subsection and the quote: they show what differs, not how the model wrote it. In the Act, ",
+      el("span", { class: "lost-key" }, "red"),
+      " marks the words the quote leaves out; in the quote, ",
+      el("ins", {}, "blue"),
+      ` words are its own. ${DATA.notice}`,
+    ),
     el(
       "section",
       { class: "band", "aria-labelledby": "numbers-title" },
@@ -1035,13 +1093,13 @@ function handView(filter) {
   );
   return [
     heading(HEADINGS.hand),
-    hand ? el("p", { class: "method" }, el("b", {}, "How it was done. "), hand.method, " ", el("a", { href: hand.record }, "The full record"), ", ", el("a", { href: hand.csv }, "the CSV"), ".") : null,
-    hand ? el("p", { class: "method" }, hand.recheck) : null,
     el(
       "p",
       { class: "intro" },
       `For each of the ${hc.quotes} closed-book quotes that failed the word-for-word check: does it state a rule from the Act, does it change what the Act says, and would it mislead on the clause it was quoted for? Of the ${hc.quotes}, ${hc.rules} state a rule; ${hc.changes} of those change it, and ${hc.misleads} would mislead${hc.unsure ? ` (${hc.unsure} unsure)` : ""}; those rows are highlighted. Not legal advice, and not reviewed by a lawyer.`,
-    ),
+    ),    hand ? el("p", { class: "method hand-method" }, el("b", {}, "How it was done. "), hand.method, " ", el("a", { href: hand.record }, "The full record"), ", ", el("a", { href: hand.csv }, "the CSV"), ".") : null,
+    hand ? el("p", { class: "method" }, hand.recheck) : null,
+
     el(
       "nav",
       { class: "model-picker", "aria-label": "Filter" },
@@ -1161,6 +1219,7 @@ async function start() {
   window.addEventListener("hashchange", route);
   window.addEventListener("resize", markOverflow);
   document.addEventListener("keydown", onKey);
+  document.querySelector(".tabs").addEventListener("scroll", markOverflow, { passive: true });
   // The notice bar's link: the caveats in full, on this view or at the foot of the page.
   document.querySelector(".to-caveats").addEventListener("click", (event) => {
     event.preventDefault();
