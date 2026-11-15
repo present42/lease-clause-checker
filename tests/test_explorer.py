@@ -5,7 +5,7 @@ from typing import Any
 
 import pytest
 
-from lease_clause_checker import explorer, handcheck, scoreboard
+from lease_clause_checker import explorer, handcheck, quotediff, scoreboard
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.closedbook import ClosedBookResult
 from lease_clause_checker.elaws import CachedAct
@@ -156,6 +156,18 @@ def mini_data(board: Board | None = None) -> dict[str, Any]:
     return explorer.build(board or mini_board(), SECTIONS, ACT, PROMPTS, 18, "results/c-v1")
 
 
+def redline(data: dict[str, Any], alignment: dict[str, Any]) -> list[tuple[str, str]]:
+    """The redline as the page builds it: (text, kind) for each token, "same" and "del" from the
+    exported subsection, "ins" from the quote."""
+    section = data["act"]["sections"][alignment["section"]]
+    act = section["subsections"][alignment["subsection"]]
+    tokens = []
+    for kind, start, end in alignment["redline"]:
+        source = alignment["quote"] if kind == "ins" else act
+        tokens += [(source[i][0], kind) for i in range(start, end)]
+    return tokens
+
+
 def answer(
     data: dict[str, Any], method: str, clause_id: str, model: str = HAIKU.key
 ) -> dict[str, Any]:
@@ -202,10 +214,14 @@ def test_a_verified_quote_lines_up_in_full_and_says_whether_it_stops_early() -> 
 
 
 def test_a_changed_quote_marks_its_own_words() -> None:
-    [only] = answer(mini_data(), "closedbook", "c01")["attempts"]
+    data = mini_data()
+    [only] = answer(data, "closedbook", "c01")["attempts"]
 
     assert only["alignment"]["subsection"] == "(2)"
-    assert [text for text, _, same in only["alignment"]["quote"] if not same] == ["reason", "and"]
+    assert [text for text, kind in redline(data, only["alignment"]) if kind == "ins"] == [
+        "reason",
+        "and",
+    ]
     assert only["category"] == "content words differ"
 
 
@@ -233,7 +249,10 @@ def test_a_failed_quote_names_the_other_sections_that_hold_it_word_for_word() ->
     [cited] = answer(data, "closedbook", "c02")["attempts"]
     first, retry = answer(data, "pipeline", "c02")["attempts"]
 
-    assert (cited["check"], cited["found_in"], "alignment" in cited) == ("not_found", ["14"], False)
+    assert (cited["check"], cited["found_in"]) == ("not_found", ["14"])
+    # A wrong citation is set against the section its words come from, not the one cited.
+    assert (cited["section"], cited["alignment"]["section"]) == ("27", "14")
+    assert "ins" not in {kind for _, kind in redline(data, cited["alignment"])}  # same words
     assert first["found_in"] == []
     assert "found_in" not in retry
 
@@ -283,8 +302,14 @@ def test_the_story_holds_the_short_versions_numbers_and_answer() -> None:
         2,
     )
     assert [row["model"] for row in story["rows"]] == [spec.name for spec in MODELS]
-    assert story["punchline"] == "it is narrower"
-    assert story["columns"] == list(scoreboard.SHORT_COLUMNS)
+    assert story["lead"] == (
+        "Claude Haiku 5.5 called clause c01 void under s. 27, which is right. But it is narrower."
+    )
+    assert story["table_title"] == "Four models, 2 synthetic lease clauses"
+    assert story["column_groups"] == [
+        ["With the statute in the prompt", ["Verdicts right", "Quotes word for word"]],
+        ["Without it (closed book)", ["Verdicts right", "Quotes word for word"]],
+    ]
     assert story["table_note"] == scoreboard.SHORT_TABLE_NOTE
     assert story["failed_from"] == scoreboard.failed_from(
         [scoreboard.ShortRow(**row) for row in story["rows"]]
@@ -300,15 +325,15 @@ def test_the_story_holds_the_short_versions_numbers_and_answer() -> None:
         "unsure": 0,
     }
     example = story["example"]
-    assert (example["clause"], example["section"], example["subsection"]) == ("c01", "27", "(2)")
-    tokens = example["tokens"]
-    assert tokens[0] == ["The", " ", "same"]  # the page ignores what comes before the first
-    assert [text for text, _, kind in tokens if kind == "ins"] == ["reason", "and"]
-    last_kept = max(i for i, (_, _, kind) in enumerate(tokens) if kind != "del")
-    assert " ".join(text for text, _, _ in tokens[last_kept + 1 :]) == (
+    assert (example["clause"], example["alignment"]["section"]) == ("c01", "27")
+    assert example["alignment"]["subsection"] == "(2)"
+    tokens = redline(mini_data(), example["alignment"])
+    assert tokens[0] == ("The", "same")
+    assert [text for text, kind in tokens if kind == "ins"] == ["reason", "and"]
+    last_kept = max(i for i, (_, kind) in enumerate(tokens) if kind != "del")
+    assert " ".join(text for text, _ in tokens[last_kept + 1 :]) == (
         "and a time of entry between the hours of 8 a . m . and 8 p . m ."
     )
-    assert example["note"] == "A narrower rule."
 
 
 def test_the_page_settings_and_the_pipeline_count_come_from_the_data() -> None:
@@ -316,6 +341,7 @@ def test_the_page_settings_and_the_pipeline_count_come_from_the_data() -> None:
 
     assert data["settings"] == {
         "repository": explorer.REPOSITORY,
+        "pages": explorer.PAGES,
         "rule_sections": 18,
         "min_run": 4,
         "min_quote_words": 5,
@@ -440,22 +466,52 @@ def test_a_clause_id_in_both_sets_stops_the_export() -> None:
 
 def test_write_replaces_an_earlier_export_and_names_the_repository(tmp_path: Path) -> None:
     site = tmp_path / "site"
-    data: dict[str, Any] = {"settings": {"repository": "https://example.org/repo"}, "answers": [1]}
+    data: dict[str, Any] = {
+        "settings": {"repository": "https://example.org/repo", "pages": "https://example.org/p/"},
+        "answers": [1],
+    }
     explorer.write(data, site)
     (site / "old-asset.js").write_text("stale")
     explorer.write(data | {"answers": []}, site)
 
     names = sorted(p.name for p in site.iterdir())
-    assert names == [".lcc-site", "data.json", "explorer.css", "explorer.js", "index.html"]
+    assert names == [
+        ".lcc-site",
+        "data.json",
+        "explorer.css",
+        "explorer.js",
+        "index.html",
+        "og.png",
+    ]
     assert '"answers":[]' in (site / "data.json").read_text()
     page = (site / "index.html").read_text()
     assert explorer.REPOSITORY_SLOT not in page
+    assert explorer.PAGES_SLOT not in page
     assert 'href="https://example.org/repo"' in page
+    assert 'content="https://example.org/p/og.png"' in page
 
 
 def test_write_refuses_a_folder_with_no_earlier_export(tmp_path: Path) -> None:
     (tmp_path / "notes.txt").write_text("mine")
 
     with pytest.raises(explorer.SiteExportError, match="holds no earlier export"):
-        explorer.write({"settings": {"repository": "r"}, "answers": []}, tmp_path)
+        explorer.write({"settings": {"repository": "r", "pages": "p"}, "answers": []}, tmp_path)
     assert (tmp_path / "notes.txt").exists()
+
+
+def test_every_redline_is_the_quote_against_its_whole_subsection() -> None:
+    data = mini_data()
+    alignments = [
+        (attempt, attempt["alignment"])
+        for a in data["answers"]
+        for attempt in a.get("attempts", [])
+        if attempt.get("alignment")
+    ]
+
+    assert alignments
+    for attempt, exported in alignments:
+        section = SECTIONS[exported["section"]]
+        python = quotediff.align(attempt["quote"], section)
+        assert python is not None
+        expected = [(t.text, kind) for kind, tokens in python.pieces(whole=True) for t in tokens]
+        assert redline(data, exported) == expected

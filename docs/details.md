@@ -251,17 +251,25 @@ uv run lcc site                                  # writes site/ (gitignored)
 python3 -m http.server 8000 --directory site     # then open http://localhost:8000
 ```
 
-It opens on the short version at the top of the README: the four-model table, and Claude
-Opus 5.5's closed-book answer on c05 set against the whole of s. 15. Its other views:
-- the closed-book answers with a right verdict whose quote is not word for word, each quote
-  beside the subsection of the Act it lines up with best, with the differences marked;
-- a grid of every closed-book verdict and quote check;
-- every answer to each clause, by method and model;
-- the hand check of the closed-book quotes that failed, with how it was made.
+It opens on the short version at the top of the README: Claude Opus 5.5's closed-book answer on
+c05 as a redline of s. 15, then the four-model table. Its other views:
+- **Misquotes**: the closed-book answers with a right verdict whose quote is not word for word,
+  by model;
+- **Grid**: every closed-book verdict and quote check;
+- **By clause**: every answer to each clause, by method and model, for the main test set and the
+  hard cases (the stress set);
+- **Hand check**: the closed-book quotes that failed, with how the check was made; the ones that
+  would mislead are highlighted.
 
-Every view shows four caveats at the top: the check reads wording, not legal meaning; a quote
-that passes can still stop before the words that decide the clause (such quotes are flagged);
-the Act's text is not an official version; and nothing on it is legal advice.
+Every quote is shown as one redline against the whole subsection it lines up with, the same one
+the README shows (`Alignment.pieces(whole=True)`): the Act's words that the quote leaves out or
+replaces struck through in red, including those before and after it, and the quote's own words
+underlined in blue. A one-line strip under the title gives the caveats (not legal advice; checks
+wording, not legal meaning; word for word is not complete; not an official version), and the
+opening view and the foot of every page give them in full.
+
+The preview image for links to the page, `explorer_assets/og.png`, is the page's `#/card` view;
+`make og` remakes it (it needs Google Chrome).
 
 `lcc site` builds it from the same scored answers as `make report`: the four models' answers on
 the main and stress sets, by every method. It leaves out Gemini 4 Carbon's records, the

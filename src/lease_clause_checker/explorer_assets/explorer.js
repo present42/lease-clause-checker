@@ -1,8 +1,9 @@
 "use strict";
 // The explorer: renders data.json (written by `lcc site`), routed by the URL hash:
-// #/story, #/exhibit/<model>, #/closed/<clause>/<model>, #/clauses/<clause> and #/hand/<filter>.
-// Nothing is computed here that the export did not already decide: verdicts, scores, quote
-// checks, alignments, the hand check and every count shown come from data.json.
+// #/story, #/exhibit/<model>, #/closed/<clause>/<model>, #/clauses/<clause>, #/hand/<filter>,
+// and #/card (the preview image's layout). Nothing is decided here that the export did not
+// already decide: verdicts, scores, quote checks, alignments and the hand check come from
+// data.json, and every count shown is counted from it.
 
 let DATA;
 let METHODS;
@@ -21,24 +22,31 @@ const SECTION_RESULTS = {
   not_in_act: "not an in-force section of the Act",
   none: "no section",
 };
+// Each view's tab and its heading.
 const VIEWS = {
-  story: "The short version",
-  exhibit: "Right verdict, quote not word for word",
-  closed: "Closed book, clause by clause",
-  clauses: "Every answer",
+  story: "Summary",
+  exhibit: "Misquotes",
+  closed: "Grid",
+  clauses: "By clause",
   hand: "Hand check",
+};
+const HEADINGS = {
+  exhibit: "Right verdict, quote not word for word",
+  closed: "Without the statute: every verdict and quote check",
+  clauses: "Every answer, clause by clause",
+  hand: "Hand check of the closed-book quotes that failed",
 };
 
 function methods() {
   return {
-    baseline: { name: "Baseline", note: "A plain question; the model answers without the statute text, in prose." },
+    baseline: { name: "Plain question", note: "Asked whether the clause is enforceable, with no statute text; the model answers in prose. (The repository calls this the baseline.)" },
     pipeline: {
-      name: "Pipeline",
-      note: `The text of the ${DATA.settings.rule_sections} rule sections in the prompt; the quote is checked in code, with one retry if it fails.`,
+      name: "With the statute",
+      note: `The text of the ${DATA.settings.rule_sections} sections the test set is about in the prompt; the model must quote the section that decides the clause, the quote is checked in code, and a failed one is asked again once. (The repository calls this the pipeline.)`,
     },
     closedbook: {
-      name: "Closed book",
-      note: "The pipeline's question with no statute text in the prompt; the quote is checked, with no retry.",
+      name: "Without the statute (closed book)",
+      note: "The same question with no statute text in the prompt, so the model quotes from memory; the quote is checked, with no second try.",
     },
   };
 }
@@ -50,7 +58,7 @@ function el(tag, attrs, ...children) {
     if (key === "class") node.className = value;
     else node.setAttribute(key, value === true ? "" : value);
   }
-  for (const child of children.flat()) {
+  for (const child of children.flat(Infinity)) {
     if (child === undefined || child === null || child === false) continue;
     node.append(child instanceof Node ? child : document.createTextNode(String(child)));
   }
@@ -77,6 +85,11 @@ function sectionLink(number) {
   return el("a", { href: section.url, rel: "noopener" }, sectionName(number));
 }
 
+// A model's name, with a short form ("Opus 5.5", "Flash 3.8") that narrow screens show instead.
+function modelName(name) {
+  return [el("span", { class: "long-name" }, name), el("span", { class: "short-name" }, name.replace(/^Claude /, "").replace(/^Gemini ([\d.]+) (\w+)$/, "$2 $1"))];
+}
+
 // "a", "a and b", "a, b and c".
 function andList(items) {
   return items.length < 3 ? items.join(" and ") : `${items.slice(0, -1).join(", ")} and ${items[items.length - 1]}`;
@@ -84,13 +97,12 @@ function andList(items) {
 
 // ---- Marked text ------------------------------------------------------------------------------
 
-// A run of marked words: highlighted (in both), struck (the Act's, left out) or underlined (the
-// quote's own), each with words a screen reader says.
+// A run of a redline: plain (in both), struck (the Act's, not in the quote) or underlined (the
+// quote's own), the marked ones with words a screen reader says.
 function marked(kind, text) {
-  if (kind === "same") return el("mark", { class: "same" }, sr("[lines up: "), text, sr("]"));
-  if (kind === "del") return el("del", {}, sr("[the Act, left out: "), text, sr("]"));
+  if (kind === "del") return el("del", {}, sr("[in the Act, not in the quote: "), text, sr("]"));
   if (kind === "ins") return el("ins", {}, sr("[the quote's own words: "), text, sr("]"));
-  return el("span", { class: kind === "context" ? "context" : null }, text);
+  return el("span", {}, text);
 }
 
 // Tokens are [text, before, ...]: `before` is "\n" at a line start, " " after a space, "" if
@@ -112,28 +124,43 @@ function renderRuns(tokens, kindOf) {
   return out.flatMap((r) => [r.before === "\n" ? el("br") : r.before ? " " : "", marked(r.kind, r.text)]);
 }
 
-function quoteView(alignment) {
-  const tokens = alignment.quote;
-  return renderRuns(tokens, (i) => (tokens[i][2] ? "plain" : "ins"));
+// The quote against its whole subsection, the one redline every view and the README show:
+// the export gives runs of [kind, start, end] into the subsection's tokens ("same", "del") and
+// the quote's ("ins").
+function redlineTokens(alignment) {
+  const act = DATA.act.sections[alignment.section].subsections[alignment.subsection];
+  const tokens = [];
+  for (const [kind, start, end] of alignment.redline) {
+    const source = kind === "ins" ? alignment.quote : act;
+    for (let i = start; i < end; i++) tokens.push([source[i][0], source[i][1], kind]);
+  }
+  return tokens;
 }
 
-function actView(alignment) {
-  const tokens = DATA.act.sections[alignment.section].subsections[alignment.subsection];
-  const same = alignment.same;
-  const start = same[0][0];
-  const end = same[same.length - 1][1];
-  const inSame = (i) => same.some(([a, b]) => i >= a && i < b);
-  return renderRuns(tokens, (i) => (inSame(i) ? "same" : i >= start && i < end ? "del" : "context"));
+function redline(alignment, attempt) {
+  const tokens = redlineTokens(alignment);
+  const where = `s. ${alignment.section}${alignment.subsection}`;
+  let title = `Redline: ${where} → the model's quote`;
+  if (attempt && attempt.check === "verified") title = `Word for word in ${where}; struck: the rest of ${where}, which the quote leaves out`;
+  else if (attempt && attempt.section !== alignment.section) title = `Redline: ${where}, where the quote's words come from (it cites s. ${attempt.section}) → the model's quote`;
+  return el(
+    "div",
+    { class: "redline" },
+    el("p", { class: "redline-title" }, title),
+    el("p", { class: "statute" }, renderRuns(tokens, (i) => tokens[i][2])),
+    el("p", { class: "notice" }, DATA.notice),
+  );
 }
-
 
 function legend() {
   return el(
-    "ul",
-    { class: "legend", "aria-label": "Marks" },
-    el("li", {}, el("mark", { class: "same" }, "green"), " words line up with the Act"),
-    el("li", {}, el("ins", {}, "yellow, underlined"), " words are the quote's own, not in the Act at that point"),
-    el("li", {}, el("del", {}, "red, struck"), " words are in the Act but missing from the quote"),
+    "p",
+    { class: "legend" },
+    "In a redline, ",
+    el("del", {}, "struck red"),
+    " words are in the Act but not in the quote, ",
+    el("ins", {}, "underlined blue"),
+    " words are the quote's own, and the rest is in both.",
   );
 }
 
@@ -166,7 +193,7 @@ function alignmentText(attempt) {
   const alignment = attempt.alignment;
   if (!alignment || attempt.check === "verified") return "";
   const sub = `s. ${alignment.section}${alignment.subsection}`;
-  if (alignment.matched_words === alignment.quote_words && alignment.same.length > 1) {
+  if (alignment.matched_words === alignment.quote_words && alignment.passages > 1) {
     return ` Every word of it is in ${sub}, in order, but not as one passage: the Act has words between them.`;
   }
   return ` ${alignment.matched_words} of its ${alignment.quote_words} words line up, in order, with ${sub}.`;
@@ -205,52 +232,37 @@ function attemptView(attempt, clause, title) {
     const list = attempt.found_in.map((n) => `s. ${n}`).join(", ");
     parts.push(el("p", { class: "check-line" }, `These words are word for word in ${list}, not in the section cited.`));
   }
-  if (attempt.quote && attempt.check) parts.push(comparePanes(attempt, clause));
   if (attempt.hand_check) parts.push(handCheckLine(attempt.hand_check));
+  if (attempt.quote && attempt.check) parts.push(quoteBlock(attempt, clause));
   if (attempt.reason) parts.push(el("p", { class: "reason" }, el("b", {}, "The model's reason: "), attempt.reason));
   return el("div", { class: "attempt" }, parts);
 }
 
-function comparePanes(attempt, clause) {
+function quoteBlock(attempt, clause) {
   const alignment = attempt.alignment;
-  const quotePane = el(
-    "div",
-    { class: "pane" },
-    el("p", { class: "pane-title" }, "The model's quote (spacing and quotation marks evened out)"),
-    el("p", { class: "statute" }, "“", alignment ? quoteView(alignment) : attempt.quote, "”"),
-  );
-  let actPane;
+  if (alignment && (alignment.lined_up || attempt.check === "verified")) return redline(alignment, attempt);
+  const quote = el("p", { class: "statute" }, "“", attempt.quote, "”");
   if (alignment) {
-    actPane = el(
+    return el(
       "div",
-      { class: "pane" },
-      el("p", { class: "pane-title" }, `The Act, s. ${alignment.section}${alignment.subsection}`),
-      el("p", { class: "statute" }, actView(alignment)),
-      el("p", { class: "notice" }, DATA.notice),
-    );
-  } else if (clause && attempt.section === clause.section) {
-    actPane = el(
-      "div",
-      { class: "pane" },
-      el("p", { class: "pane-title" }, `No run of words lines up. The label's decisive words, s. ${clause.section}`),
-      el("p", { class: "statute" }, "“", clause.quote, "”"),
-      el("p", { class: "notice" }, DATA.notice),
-    );
-  } else {
-    actPane = el(
-      "div",
-      { class: "pane" },
-      el("p", { class: "pane-title" }, "The Act"),
-      el(
-        "p",
-        {},
-        attempt.check === "no_such_section"
-          ? "There is no such section to compare with."
-          : `No run of ${DATA.settings.min_run} or more words lines up with any subsection of the section cited.`,
-      ),
+      { class: "redline" },
+      el("p", { class: "redline-title" }, "The model's quote"),
+      quote,
+      el("p", { class: "check-line" }, `Only ${alignment.matched_words} of its ${alignment.quote_words} words line up with s. ${alignment.section}${alignment.subsection}, scattered: too few to show as a redline.`),
     );
   }
-  return el("div", { class: "compare-grid" }, quotePane, actPane);
+  if (attempt.check === "no_such_section") {
+    return el("div", { class: "redline" }, el("p", { class: "redline-title" }, "The model's quote"), quote, el("p", { class: "check-line" }, "There is no such section to compare it with."));
+  }
+  const parts = [
+    el("p", { class: "redline-title" }, "The model's quote"),
+    quote,
+    el("p", { class: "check-line" }, `No run of ${DATA.settings.min_run} or more words lines up with any subsection of the section cited.`),
+  ];
+  if (clause && attempt.section === clause.section) {
+    parts.push(el("p", { class: "redline-title" }, `The label's decisive words, s. ${clause.section}`), el("p", { class: "statute" }, "“", clause.quote, "”"), el("p", { class: "notice" }, DATA.notice));
+  }
+  return el("div", { class: "redline" }, parts);
 }
 
 function handCheckLine(hand) {
@@ -263,7 +275,13 @@ function handCheckLine(hand) {
       parts.push(hand.misleads_here === "yes" ? "; would mislead on this clause" : hand.misleads_here === "unsure" ? "; unsure whether it would mislead on this clause" : "; would not mislead on this clause");
     }
   }
-  return el("p", { class: "hand-line" }, parts.join(""), ". ", hand.note ? el("span", { class: "note" }, hand.note) : null);
+  const misleads = hand.meaning_changed === "yes" && hand.misleads_here === "yes";
+  return el(
+    "div",
+    { class: misleads ? "callout misleads" : "callout" },
+    hand.note ? el("p", { class: "callout-note" }, hand.note) : null,
+    el("p", { class: "hand-line" }, parts.join(""), ". Not legal advice."),
+  );
 }
 
 function outcomeView(answer) {
@@ -315,7 +333,7 @@ function answerCard(answer, { showClause = true, showModel = true } = {}) {
     }
     card.append(attemptView(attempt, clause, title));
   });
-  if (answer.gave_up) card.append(el("p", { class: "check-line" }, "Both answers failed the check, so the pipeline answered unsure."));
+  if (answer.gave_up) card.append(el("p", { class: "check-line" }, "Both answers failed the check, so the answer counts as unsure."));
   return card;
 }
 
@@ -325,55 +343,84 @@ function heading(text) {
   return el("h2", { tabindex: "-1", class: "view-heading" }, text);
 }
 
+// The caveats in full: on the opening view and at the foot of every page; the header has them
+// in one line.
+const CAVEATS = [
+  ["Checks wording, not legal meaning.", "A quote that passes is word for word in the section it cites; that says nothing about whether the reasoning is right."],
+  ["Word for word is not complete.", "A quote can pass and still stop before the list item or condition that decides the clause; such quotes are flagged."],
+  ["Not an official version.", "The Act's text is a dated copy from Ontario e-Laws."],
+  ["Not legal advice.", "These are model outputs scored against test labels, and they may be wrong. For a question about a tenancy, contact a lawyer, a community legal clinic or the Landlord and Tenant Board."],
+];
+
+function caveatsList() {
+  return el("ul", { class: "caveats" }, CAVEATS.map(([head, text]) => el("li", {}, el("strong", {}, head), " ", text)));
+}
+
+// A table in a box that scrolls sideways, with a hint shown when it doesn't fit (`markOverflow`).
+function tableBox(table, label) {
+  return el(
+    "div",
+    { class: "table-box" },
+    el("p", { class: "scroll-hint", "aria-hidden": "true" }, "Scroll sideways to see every column →"),
+    el("div", { class: "table-wrap", tabindex: "0", role: "region", "aria-label": label }, table),
+  );
+}
+
+function markOverflow() {
+  for (const strip of document.querySelectorAll(".tabs")) strip.classList.toggle("overflows", strip.scrollWidth > strip.clientWidth + 1);
+  for (const box of document.querySelectorAll(".table-box")) {
+    const wrap = box.querySelector(".table-wrap");
+    box.classList.toggle("overflows", wrap.scrollWidth > wrap.clientWidth + 1);
+  }
+}
+
 function storyView() {
   const story = DATA.story;
   const ex = story.example;
   const clause = INDEX.clauses.get(ex.clause);
-  const model = INDEX.models.get(ex.model);
   const n = story.clauses;
   const hc = story.hand_check;
   const hand = DATA.hand_check;
-  const right = (count, unsure) => `${count} of ${n}` + (unsure ? ` (${unsure} unsure)` : "");
-  return [
-    heading("Right verdicts, quotes not word for word"),
+  const right = (count, unsure) => [`${count} of ${n}`, unsure ? el("span", { class: "unsure-note" }, ` (${unsure} unsure)`) : null];
+  const groups = story.column_groups;
+  const table = el(
+    "table",
+    { class: "grid numbers-table" },
     el(
-      "p",
-      { class: "intro" },
-      `${DATA.models.length} models judged ${n} synthetic Ontario lease clauses under the Residential Tenancies Act, 2006, each quoting the section that decides the clause: once with the statute in the prompt, and once without it (closed book).`,
+      "thead",
+      {},
+      el("tr", {}, el("td", {}), groups.map(([group, headings]) => el("th", { scope: "colgroup", colspan: headings.length }, group))),
+      el("tr", {}, el("th", { scope: "col" }, "Model"), groups.map(([, headings]) => headings.map((h) => el("th", { scope: "col" }, h)))),
     ),
     el(
-      "table",
-      { class: "grid numbers-table" },
-      el(
-        "thead",
-        {},
+      "tbody",
+      {},
+      story.rows.map((r) =>
         el(
           "tr",
           {},
-          story.columns.map((h) => el("th", { scope: "col" }, h)),
-        ),
-      ),
-      el(
-        "tbody",
-        {},
-        story.rows.map((r) =>
-          el(
-            "tr",
-            {},
-            el("th", { scope: "row" }, r.model),
-            el("td", {}, right(r.with_right, r.with_unsure)),
-            el("td", {}, `${r.with_verified} of ${r.with_checked}`),
-            el("td", {}, right(r.without_right, r.without_unsure)),
-            el("td", {}, el("b", {}, `${r.without_verified} of ${r.without_with_verdict}`)),
-          ),
+          el("th", { scope: "row" }, modelName(r.model)),
+          el("td", {}, right(r.with_right, r.with_unsure)),
+          el("td", {}, `${r.with_verified} of ${r.with_checked}`),
+          el("td", {}, right(r.without_right, r.without_unsure)),
+          el("td", {}, el("b", {}, `${r.without_verified} of ${r.without_with_verdict}`)),
         ),
       ),
     ),
+  );
+  return [
+    el("h2", { tabindex: "-1", class: "view-heading lead" }, story.lead),
+    el("p", { class: "clause-line" }, el("b", {}, `Clause ${clause.id}: `), `“${clause.text}” `, el("span", { class: "muted" }, "The model had no statute text in its prompt (closed book).")),
     el(
-      "p",
-      { class: "note" },
-      story.table_note,
+      "article",
+      { class: "card story" },
+      redline(ex.alignment),
+      legend(),
+      el("p", { class: "card-links" }, el("a", { href: `#/closed/${ex.clause}/${ex.model}` }, "This answer in the grid"), " · ", el("a", { href: "#/hand/misleads" }, `The ${hc.misleads} quotes that would mislead`)),
     ),
+    el("h3", {}, story.table_title),
+    tableBox(table, story.table_title),
+    el("p", { class: "note" }, story.table_note),
     el(
       "p",
       {},
@@ -384,28 +431,13 @@ function storyView() {
       hand ? `${hand.labels} ${hand.recheck} ` : "",
       el("a", { href: "#/hand" }, "See the hand check"),
     ),
-    el("h3", {}, `One closed-book answer: ${model.name} on ${clause.id}`),
-    el("article", { class: "card story" },
-      el("p", { class: "clause-text" }, clause.text),
-      el("p", { class: "meta" }, el("span", {}, "Said ", el("b", { class: "verdict" }, ex.verdict), ` (${ex.right ? "right" : "wrong"})`), el("span", {}, "citing ", sectionLink(ex.section))),
-      el("p", { class: "pane-title" }, `The quote against the whole of s. ${ex.section}${ex.subsection}`),
-      legend(),
-      el("p", { class: "statute" }, renderRuns(ex.tokens, (i) => ex.tokens[i][2])),
-      el("p", { class: "notice" }, DATA.notice),
-      ex.note ? el("p", { class: "hand-line" }, el("b", {}, "Hand check: "), ex.note) : null,
-      el("p", {}, el("a", { href: `#/closed/${ex.clause}/${ex.model}` }, "This answer in the closed-book grid")),
-    ),
+    el("h3", {}, "Read before you rely on anything here"),
+    caveatsList(),
     el(
       "p",
       { class: "explore" },
       "Explore all answers: ",
-      el("a", { href: "#/exhibit" }, VIEWS.exhibit),
-      " · ",
-      el("a", { href: "#/closed" }, VIEWS.closed),
-      " · ",
-      el("a", { href: "#/clauses" }, VIEWS.clauses),
-      " · ",
-      el("a", { href: "#/hand" }, VIEWS.hand),
+      Object.keys(HEADINGS).map((view, i) => [i ? " · " : "", el("a", { href: `#/${view}` }, HEADINGS[view])]),
     ),
   ];
 }
@@ -422,7 +454,18 @@ function exhibitCounts(model) {
   const answers = closedBook(model);
   const right = answers.filter((a) => a.outcome === "correct");
   const failed = right.filter((a) => a.attempts[0].check !== "verified");
-  return { total: answers.length, right, failed };
+  const unsure = answers.filter((a) => a.outcome === "unsure" || a.outcome === "no_verdict");
+  const minor = (label) => failed.filter((a) => a.attempts[0].category === label).length;
+  return { total: answers.length, right, failed, unsure, cosmetic: minor("cosmetic"), conventions: minor("passes with quoting conventions") };
+}
+
+// How many of a model's misquotes differ only cosmetically or by quoting conventions, which is
+// not a wrong statement of the law.
+function minorLine(c) {
+  const parts = [];
+  if (c.cosmetic) parts.push(`${c.cosmetic} cosmetic`);
+  if (c.conventions) parts.push(`${c.conventions} only by quoting conventions`);
+  return parts.length ? `of which ${andList(parts)}` : "none cosmetic";
 }
 
 function exhibitView(modelKey) {
@@ -441,17 +484,19 @@ function exhibitView(modelKey) {
         "a",
         { href: `#/exhibit/${m.key}`, "aria-current": m.key === modelKey ? "true" : null },
         el("span", { class: "name" }, m.name),
-        el("span", { class: "count" }, el("strong", {}, c.failed.length), ` of ${c.right.length} right verdicts (${c.total} clauses)`),
+        el("span", { class: "count" }, el("strong", {}, c.failed.length), " misquoted / ", el("strong", {}, c.right.length), " right verdicts"),
+        el("span", { class: "count small" }, minorLine(c)),
+        el("span", { class: "count small" }, `of ${c.total} clauses` + (c.unsure.length ? `; ${c.unsure.length} unsure, with no quote` : "")),
       );
     }),
   );
   return [
-    heading(VIEWS.exhibit),
+    heading(HEADINGS.exhibit),
     el(
       "p",
       { class: "intro" },
-      "Closed book, each model answered the pipeline's question without the statute text in the prompt. ",
-      "Code then checked its quote against the section it cited. These answers got the verdict right, ",
+      "Without the statute text in the prompt (closed book), each model said whether a clause is void and quoted the section that decides it. ",
+      "Code then checked the quote against the section it cited. These answers got the verdict right, ",
       "but the quote is not word for word in that section. Not word for word is not always wrong law: ",
       "some differ only cosmetically.",
     ),
@@ -459,9 +504,9 @@ function exhibitView(modelKey) {
     el(
       "p",
       { class: "compare" },
-      `With the statute in the prompt, ${pipe.verified} of ${pipe.checked} first pipeline answers with a verdict on the main set, from the ${DATA.models.length} models, had a quote that passed the same check.`,
+      `With the statute in the prompt, ${pipe.verified} of ${pipe.checked} first answers with a verdict on the main set, from the ${DATA.models.length} models, had a quote that passed the same check.`,
     ),
-    el("h3", {}, `${model.name}: ${chosen.failed.length} of ${chosen.right.length} right verdicts with a quote that failed`),
+    el("h3", {}, `${model.name}: ${chosen.failed.length} of its ${chosen.right.length} right verdicts had a quote that failed`),
     legend(),
     chosen.failed.length
       ? el("div", { class: "cards" }, chosen.failed.map((a) => answerCard(a, { showModel: false })))
@@ -496,14 +541,14 @@ function closedView(clauseId, modelKey) {
     { class: "selected-panel", id: "selected", "aria-label": "The chosen answer" },
     selected
       ? [el("h3", { tabindex: "-1", id: "selected-heading" }, `${INDEX.models.get(selected.model).name} on ${selected.clause}`), legend(), answerCard(selected)]
-      : el("p", { class: "empty" }, "Choose a cell to see the answer, its quote and the Act's words side by side."),
+      : el("p", { class: "empty" }, "Choose a cell to see the answer and its quote against the Act."),
   );
-  const head = el("tr", {}, el("th", { scope: "col" }, "Clause"), models.map((m) => el("th", { scope: "col" }, m.name)));
+  const head = el("tr", {}, el("th", { scope: "col" }, "Clause"), models.map((m) => el("th", { scope: "col" }, modelName(m.name))));
   const rows = clauses.map((c) =>
     el(
       "tr",
       {},
-      el("th", { scope: "row", class: "clause-cell" }, el("b", {}, c.id), c.text.length > 90 ? `${c.text.slice(0, 88)}…` : c.text),
+      el("th", { scope: "row", class: "clause-cell" }, el("b", {}, c.id), el("span", { class: "snippet" }, c.text.length > 90 ? `${c.text.slice(0, 88)}…` : c.text)),
       models.map((m) => {
         const answer = INDEX.answers.get(answerKey("closedbook", m.key, c.id));
         if (!answer) return el("td", {}, "not run");
@@ -518,16 +563,20 @@ function closedView(clauseId, modelKey) {
     ),
   );
   return [
-    heading(VIEWS.closed),
+    heading(HEADINGS.closed),
     el(
       "p",
       { class: "intro" },
       `${METHODS.closedbook.note} Each cell shows the verdict (✓ right, ✗ wrong, ? unsure) and whether the quote passed the check. `,
-      "Main test set only.",
+      `The main test set of ${DATA.clauses.filter((c) => c.set === "main").length} clauses only.`,
     ),
     panel,
-    el("div", { class: "table-wrap" }, el("table", { class: "grid" }, el("thead", {}, head), el("tbody", {}, rows))),
+    tableBox(el("table", { class: "grid" }, el("thead", {}, head), el("tbody", {}, rows)), "Every closed-book answer"),
   ];
+}
+
+function setSize(name) {
+  return DATA.clauses.filter((c) => c.set === name).length;
 }
 
 function clausesView(clauseId) {
@@ -536,8 +585,8 @@ function clausesView(clauseId) {
   const select = el(
     "select",
     { id: "set-filter" },
-    el("option", { value: "main", selected: setName === "main" }, "Main test set"),
-    el("option", { value: "stress", selected: setName === "stress" }, "Stress set"),
+    el("option", { value: "main", selected: setName === "main" }, `Main test set (${setSize("main")} clauses)`),
+    el("option", { value: "stress", selected: setName === "stress" }, `Hard cases (${setSize("stress")} clauses)`),
   );
   select.addEventListener("change", () => {
     const first = DATA.clauses.find((c) => c.set === select.value);
@@ -568,7 +617,7 @@ function clausesView(clauseId) {
     el("h3", { tabindex: "-1", id: "clause-heading" }, `${clause.id}: ${clause.label}`),
     el("p", { class: "clause-text" }, clause.text),
     el("p", { class: "meta" }, el("span", {}, "Decided by ", sectionLink(clause.section), accepted)),
-    el("div", { class: "pane" }, el("p", { class: "pane-title" }, `The label's decisive words, s. ${clause.section}`), el("p", { class: "statute" }, "“", clause.quote, "”"), el("p", { class: "notice" }, DATA.notice)),
+    el("div", { class: "redline" }, el("p", { class: "redline-title" }, `The label's decisive words, s. ${clause.section}`), el("p", { class: "statute" }, "“", clause.quote, "”"), el("p", { class: "notice" }, DATA.notice)),
     el("p", { class: "reason" }, el("b", {}, "Why: "), clause.rationale),
     el("h3", {}, "Answers"),
     legend(),
@@ -602,8 +651,15 @@ function clausesView(clauseId) {
     }),
   );
   return [
-    heading(VIEWS.clauses),
+    heading(HEADINGS.clauses),
     el("div", { class: "set-filter" }, el("label", { for: "set-filter" }, "Clauses:"), select),
+    el(
+      "p",
+      { class: "set-note" },
+      setName === "main"
+        ? `The ${setSize("main")} invented clauses the results are about, labelled and frozen before any model under test answered them.`
+        : `${setSize("stress")} more invented clauses, kept because Claude Haiku 5.5's plain-question answer got them wrong, so that model's plain-question score on them is low by design. They are reported apart. (The repository calls them the stress set.)`,
+    ),
     el("div", { class: "clause-browser" }, list, detail),
   ];
 }
@@ -615,18 +671,11 @@ function handView(filter) {
     .filter((a) => a.method === "closedbook" && a.attempts[0].hand_check)
     .filter((a) => filter !== "misleads" || a.attempts[0].hand_check.misleads_here === "yes");
   const yesNo = (value) => (value === "yes" ? "yes" : value === "no" ? "no" : value || "—");
+  const columns = ["Model", "Clause", "Quote", "Code's category", "Hand category (if different)", "States a rule", "Changes what the Act says", "Misleads on its clause", "Note"];
   const table = el(
     "table",
     { class: "grid hand" },
-    el(
-      "thead",
-      {},
-      el(
-        "tr",
-        {},
-        ["Model", "Clause", "Quote", "Code's category", "Hand check", "States a rule", "Changes what the Act says", "Misleads on its clause", "Note"].map((h) => el("th", { scope: "col" }, h)),
-      ),
-    ),
+    el("thead", {}, el("tr", {}, columns.map((h) => el("th", { scope: "col" }, h)))),
     el(
       "tbody",
       {},
@@ -634,37 +683,51 @@ function handView(filter) {
         const attempt = a.attempts[0];
         const h = attempt.hand_check;
         const quote = attempt.quote.length > 120 ? `${attempt.quote.slice(0, 118)}…` : attempt.quote;
+        const misleads = h.meaning_changed === "yes" && h.misleads_here === "yes";
         return el(
           "tr",
-          {},
-          el("td", {}, INDEX.models.get(a.model).name),
+          { class: misleads ? "misleads" : null },
+          el("td", {}, modelName(INDEX.models.get(a.model).name)),
           el("th", { scope: "row" }, el("a", { href: `#/closed/${a.clause}/${a.model}` }, a.clause)),
           el("td", { class: "quote-cell" }, quote ? `“${quote}”` : "no quote"),
           el("td", {}, h.code_category),
-          el("td", {}, h.category === h.code_category ? "agrees" : h.category),
+          el("td", {}, h.category === h.code_category ? "" : h.category),
           el("td", {}, h.states_a_rule),
           el("td", {}, h.states_a_rule === "no" ? "—" : yesNo(h.meaning_changed)),
-          el("td", {}, h.meaning_changed === "yes" ? yesNo(h.misleads_here) : "—"),
+          el("td", {}, h.meaning_changed !== "yes" ? "—" : misleads ? el("span", { class: "badge" }, "Misleads") : yesNo(h.misleads_here)),
           el("td", { class: "note" }, h.note),
         );
       }),
     ),
   );
   return [
-    heading(VIEWS.hand),
+    heading(HEADINGS.hand),
+    hand ? el("p", { class: "method" }, el("b", {}, "How it was done. "), hand.method, " ", el("a", { href: hand.record }, "The full record"), ", ", el("a", { href: hand.csv }, "the CSV"), ".") : null,
+    hand ? el("p", { class: "method" }, hand.recheck) : null,
     el(
       "p",
       { class: "intro" },
-      `The ${hc.quotes} closed-book quotes that failed the word-for-word check, read by hand: does the quote state a rule from the Act, does it change what the Act says, and would it mislead on the clause it was quoted for? Of the ${hc.quotes}, ${hc.rules} state a rule; ${hc.changes} of those change it, and ${hc.misleads} would mislead${hc.unsure ? ` (${hc.unsure} unsure)` : ""}. Not legal advice.${hand ? ` ${hand.labels} ${hand.recheck}` : ""}`,
+      `For each of the ${hc.quotes} closed-book quotes that failed the word-for-word check: does it state a rule from the Act, does it change what the Act says, and would it mislead on the clause it was quoted for? Of the ${hc.quotes}, ${hc.rules} state a rule; ${hc.changes} of those change it, and ${hc.misleads} would mislead${hc.unsure ? ` (${hc.unsure} unsure)` : ""}; those rows are highlighted. Not legal advice, and not reviewed by a lawyer.`,
     ),
-    hand ? el("p", { class: "method" }, el("b", {}, "How it was done. "), hand.method, " ", el("a", { href: hand.record }, "The full record"), ", ", el("a", { href: hand.csv }, "the CSV"), ".") : null,
     el(
       "nav",
       { class: "model-picker", "aria-label": "Filter" },
       el("a", { href: "#/hand", "aria-current": filter !== "misleads" ? "true" : null }, el("span", { class: "name" }, `All ${hc.quotes}`)),
       el("a", { href: "#/hand/misleads", "aria-current": filter === "misleads" ? "true" : null }, el("span", { class: "name" }, `The ${hc.misleads} that would mislead`)),
     ),
-    el("div", { class: "table-wrap" }, table),
+    tableBox(table, "The hand-checked quotes"),
+  ];
+}
+
+// The preview image's layout (#/card, not in the tabs): the opening line and redline alone, at
+// 1200 by 630 pixels; `make og` saves it as og.png.
+function cardView() {
+  const story = DATA.story;
+  return [
+    el("p", { class: "card-eyebrow" }, "Right verdict, misquoted law · Lease Clause Checker"),
+    el("h2", { tabindex: "-1", class: "view-heading lead" }, story.lead),
+    redline(story.example.alignment),
+    el("p", { class: "card-foot" }, el("del", {}, "Struck red"), ": in the Act, not in the quote · ", el("ins", {}, "underlined blue"), ": the quote's own · not legal advice"),
   ];
 }
 
@@ -682,16 +745,22 @@ function route(event) {
   else if (view === "closed") nodes = closedView(a, b);
   else if (view === "clauses") nodes = clausesView(a);
   else if (view === "hand") nodes = handView(a);
+  else if (view === "card") nodes = cardView();
   else {
     current = "story";
     nodes = storyView();
   }
   main.replaceChildren(...nodes.flat().filter(Boolean));
+  document.body.classList.toggle("card-mode", current === "card");
+  markOverflow();
   for (const tab of document.querySelectorAll(".tabs a")) {
-    if (tab.dataset.view === current) tab.setAttribute("aria-current", "page");
-    else tab.removeAttribute("aria-current");
+    if (tab.dataset.view === current) {
+      tab.setAttribute("aria-current", "page");
+      const strip = tab.parentElement; // on a phone the tabs scroll sideways: keep this one in sight
+      strip.scrollLeft = Math.max(0, tab.offsetLeft - strip.offsetLeft - 16);
+    } else tab.removeAttribute("aria-current");
   }
-  document.title = `${VIEWS[current]}: Lease Clause Explorer`;
+  document.title = `${VIEWS[current] || "Card"} · Right verdict, misquoted law`;
   if (!event) return; // the first render: leave focus where the browser put it
   document.getElementById("status").textContent = VIEWS[current];
   const again = was && [...main.querySelectorAll("[href], [id]")].find((node) => node.getAttribute("href") === was || node.id === was);
@@ -712,6 +781,7 @@ function footer() {
   const prompts = Object.entries(DATA.prompts).map(([method, version]) => `${METHODS[method].name}: ${version}`).join("; ");
   const repo = DATA.settings.repository;
   document.getElementById("footer").replaceChildren(
+    caveatsList(),
     el(
       "p",
       {},
@@ -727,11 +797,11 @@ function footer() {
       el("code", {}, "lcc site"),
       " from the saved answers in the ",
       el("a", { href: repo }, "repository"),
-      `: the ${DATA.models.length} models' answers on the main and stress sets.`,
+      `: the ${DATA.models.length} models' answers on the main test set and the hard cases.`,
       DATA.dropped_models.length
         ? ` ${andList(DATA.dropped_models)}, run first and then left out of the comparison as a top-tier model, is not shown; its records are kept in the repository.`
         : "",
-      " The stress-candidate selection run and the lease-check demo are not shown. Not legal advice.",
+      " The run that chose the hard cases and the lease-check demo are not shown. Not legal advice.",
     ),
   );
 }
@@ -752,6 +822,7 @@ async function start() {
   footer();
   route();
   window.addEventListener("hashchange", route);
+  window.addEventListener("resize", markOverflow);
 }
 
 start();

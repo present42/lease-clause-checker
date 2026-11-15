@@ -36,6 +36,10 @@ ASSETS = Path(__file__).parent / "explorer_assets"
 REPOSITORY = "https://github.com/present42/lease-clause-checker"
 REPOSITORY_SLOT = "{{repository}}"
 """Where the page's HTML names the repository; `write` fills it in."""
+PAGES = "https://present42.github.io/lease-clause-checker/"
+"""Where the page will be published (GitHub Pages), for the preview image's absolute link."""
+PAGES_SLOT = "{{pages}}"
+"""Where the page's HTML names that address; `write` fills it in."""
 MARKER = ".lcc-site"
 """A file `write` leaves in the folder, so the next export knows it may replace the folder."""
 
@@ -82,9 +86,11 @@ def build(
         for number in (
             answer["section"],
             *(attempt.get("section") for attempt in answer.get("attempts", [])),
+            *(a["alignment"]["section"] for a in answer.get("attempts", []) if a.get("alignment")),
         )
         if number in sections
     }
+    story = _story(board, used)
     act_sections: dict[str, dict[str, Any]] = {
         number: {
             "heading": sections[number].heading,
@@ -96,13 +102,13 @@ def build(
     for (number, marker), part in sorted(used.items(), key=lambda item: _order(item[0])):
         act_sections[number]["subsections"][marker] = [[t.text, t.before] for t in part]
     verified, checked = scoreboard.first_pipeline_checks(board)
-    story = _story(board)
     _check_hand_rows(answers, story["hand_check"])
     return {
         "notice": elaws.NOTICE,
         "prompts": prompts,
         "settings": {
             "repository": REPOSITORY,
+            "pages": PAGES,
             "rule_sections": rule_sections,
             "min_run": quotediff.MIN_RUN,
             "min_quote_words": verify.MIN_QUOTE_WORDS,
@@ -192,6 +198,7 @@ def write(data: dict[str, Any], out: Path) -> None:
     for asset in sorted(ASSETS.iterdir()):
         if asset.suffix == ".html":
             text = asset.read_text(encoding="utf-8").replace(REPOSITORY_SLOT, repository)
+            text = text.replace(PAGES_SLOT, data["settings"]["pages"])
             (out / asset.name).write_text(text, encoding="utf-8")
         elif asset.is_file():
             (out / asset.name).write_bytes(asset.read_bytes())
@@ -215,22 +222,22 @@ def _check_hand_rows(answers: list[dict[str, Any]], counts: dict[str, int]) -> N
         )
 
 
-def _story(board: Board) -> dict[str, Any]:
+def _story(board: Board, used: dict[SubsectionKey, list[quotediff.Token]]) -> dict[str, Any]:
     """The opening view: the short version's numbers and its closed-book answer, with the
     quote set against the whole subsection it comes from."""
     numbers = scoreboard.short_numbers(board)
     example = numbers.example
     alignment = example.quote.alignment if example.quote else None
     assert alignment is not None  # short_numbers checks it
-    check = board.quote_checks.get((numbers.closed_book.spec.key, example.clause.id))
     judged = numbers.hand_check
     return {
         "clauses": numbers.clauses,
         "rows": [asdict(row) for row in numbers.rows],
-        "columns": list(scoreboard.SHORT_COLUMNS),
+        "column_groups": [[group, list(headings)] for group, headings in scoreboard.SHORT_GROUPS],
         "table_note": scoreboard.SHORT_TABLE_NOTE,
         "failed_from": scoreboard.failed_from(numbers.rows),
-        "punchline": scoreboard.short_punchline(board, numbers),
+        "lead": scoreboard.short_lead(numbers, scoreboard.short_punchline(board, numbers)),
+        "table_title": scoreboard.short_table_title(numbers),
         "hand_check": {
             "quotes": judged.quotes,
             "rules": judged.rules,
@@ -241,16 +248,7 @@ def _story(board: Board) -> dict[str, Any]:
         "example": {
             "model": numbers.closed_book.spec.key,
             "clause": example.clause.id,
-            "verdict": example.answer.verdict,
-            "right": numbers.example_right,
-            "section": alignment.section,
-            "subsection": alignment.subsection,
-            "tokens": [
-                [token.text, token.before, kind]
-                for kind, tokens in alignment.pieces(whole=True)
-                for token in tokens
-            ],
-            "note": check.note if check else "",
+            "alignment": _alignment(alignment, used),
         },
     }
 
@@ -339,6 +337,8 @@ def _attempt(
     if classified is not None and classified.category != "verbatim":
         entry["category"] = quotediff.LABELS[classified.category]
     alignment = quotediff.align(given.quote, section)
+    if classified is not None and classified.category == "wrong_cite" and classified.alignment:
+        alignment = classified.alignment  # the section the words come from, not the one cited
     if attempt.check == "verified":
         if alignment is None or alignment.matched_words != alignment.quote_words:
             raise SiteExportError(
@@ -358,15 +358,33 @@ def _alignment(
     alignment: Alignment, used: dict[SubsectionKey, list[quotediff.Token]]
 ) -> dict[str, Any]:
     used.setdefault((alignment.section, alignment.subsection), list(alignment.act))
-    lined_up = {b + i for _, b, size in alignment.blocks for i in range(size)}
     return {
         "section": alignment.section,
         "subsection": alignment.subsection,
-        "quote": [[t.text, t.before, i in lined_up] for i, t in enumerate(alignment.quote)],
-        "same": [[a, a + size] for a, _, size in alignment.blocks],
+        "quote": [[t.text, t.before] for t in alignment.quote],
+        "redline": _redline(alignment),
+        "lined_up": alignment.lined_up,
+        "passages": len(alignment.blocks),
         "matched_words": alignment.matched_words,
         "quote_words": alignment.quote_words,
     }
+
+
+def _redline(alignment: Alignment) -> list[list[Any]]:
+    """The quote against its whole subsection, as `Alignment.pieces(whole=True)` gives it (the
+    one redline the README shows too), in runs of [kind, start, end]: "same" and "del" index
+    the subsection's tokens, which the export holds, and "ins" the quote's."""
+    where = {id(t): i for i, t in enumerate(alignment.act)}
+    where |= {id(t): i for i, t in enumerate(alignment.quote)}
+    runs: list[list[Any]] = []
+    for kind, tokens in alignment.pieces(whole=True):
+        for token in tokens:
+            i = where[id(token)]
+            if runs and runs[-1][0] == kind and runs[-1][2] == i:
+                runs[-1][2] = i + 1
+            else:
+                runs.append([kind, i, i + 1])
+    return runs
 
 
 def _hand(check: quotereview.HandCheck, classified: Classified) -> dict[str, str]:

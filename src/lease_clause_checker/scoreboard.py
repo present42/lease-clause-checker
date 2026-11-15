@@ -50,14 +50,20 @@ SHORT_PUNCHLINE = ("15", "read alone, its quote states the rule s. 15 makes void
 """What `SHORT_EXAMPLE`'s quote does, in the owner's words, and the section the words are about:
 the short version prints them only over a right verdict citing that section, as the deciding
 section, with a quote the hand check found changes the rule."""
+SHORT_GROUPS = (
+    ("With the statute in the prompt", ("Verdicts right", "Quotes word for word")),
+    ("Without it (closed book)", ("Verdicts right", "Quotes word for word")),
+)
+"""The short version's table headings, by condition: the explorer groups them in two rows."""
 SHORT_COLUMNS = (
     "Model",
-    "With the statute in the prompt: verdicts right",
-    "Quotes word for word",
-    "Without it (closed book): verdicts right",
-    "Quotes word for word",
+    *(
+        f"{group}: {heading.lower()}" if i == 0 else heading
+        for group, headings in SHORT_GROUPS
+        for i, heading in enumerate(headings)
+    ),
 )
-"""The short version's table headings, in the README and the explorer."""
+"""The same headings in one row, as the README's table has them."""
 SHORT_TABLE_NOTE = (
     "With the statute in the prompt, every quote is checked and the model is asked once more if "
     "it fails: the verdicts are the final answers, the quotes the first. Quotes count only "
@@ -395,11 +401,9 @@ def render_short(board: Board, notice: str) -> str:
     record = board.hand_check_record
     if record is None:
         raise ReportDataError("short version: the hand check has no record of how it was made")
-    model = numbers.closed_book.spec.name
     lines = [
         SHORT_START,
-        f"**{model} called clause {example.clause.id} {example.answer.verdict} under "
-        f"s. {example.answer.section}, which is right. But {punchline}.**",
+        f"**{short_lead(numbers, punchline)}**",
         "",
         "> " + _markdown_diff(alignment),
         "",
@@ -408,8 +412,7 @@ def render_short(board: Board, notice: str) -> str:
         "leaves out or replaces; **bold**, the quote's own. The clause: "
         f"\u201c{example.clause.text}\u201d {notice}",
         "",
-        f"**{_number_word(len(numbers.rows)).capitalize()} models, {n} synthetic lease "
-        f"clauses** (small counts; [full results]({DETAILS}#results)):",
+        f"**{short_table_title(numbers)}** (small counts; [full results]({DETAILS}#results)):",
         "",
         "| " + " | ".join(SHORT_COLUMNS) + " |",
         "|---|---:|---:|---:|---:|",
@@ -450,6 +453,24 @@ def short_punchline(board: Board, numbers: ShortNumbers) -> str:
             "short version: the punchline needs a hand check finding the quote changes the rule"
         )
     return punchline
+
+
+def short_lead(numbers: ShortNumbers, punchline: str) -> str:
+    """The line above the short version's redline: the example's answer, then `punchline`."""
+    example = numbers.example
+    return (
+        f"{numbers.closed_book.spec.name} called clause {example.clause.id} "
+        f"{example.answer.verdict} under s. {example.answer.section}, which is right. But "
+        f"{punchline}."
+    )
+
+
+def short_table_title(numbers: ShortNumbers) -> str:
+    """The short version's table title: "Four models, 38 synthetic lease clauses"."""
+    return (
+        f"{_number_word(len(numbers.rows)).capitalize()} models, {numbers.clauses} synthetic "
+        "lease clauses"
+    )
 
 
 def failed_from(rows: Sequence[ShortRow]) -> str:
