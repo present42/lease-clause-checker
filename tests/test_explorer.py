@@ -251,6 +251,24 @@ def test_a_short_quote_is_not_looked_up_in_other_sections() -> None:
     assert only["found_in"] == []
 
 
+def test_a_quote_found_but_too_short_is_not_looked_up_and_states_no_rule() -> None:
+    board = mini_board()
+    run = board.closed_book[HAIKU.key]
+    short = closed_book(C02, "27", "the day of entry")  # in s. 27(2), but 4 words
+    board = replace(
+        board,
+        closed_book=board.closed_book
+        | {HAIKU.key: replace(run, closed_book=[run.closed_book[0], short])},
+        quote_checks=board.quote_checks | {(HAIKU.key, "c02"): HandCheck("agree", "", "", "")},
+    )
+
+    [only] = answer(mini_data(board), "closedbook", "c02")["attempts"]
+
+    assert only["check"] == "too_short"
+    assert "found_in" not in only  # only a quote not found is looked up elsewhere
+    assert only["hand_check"]["states_a_rule"] == "no"
+
+
 def test_the_story_holds_the_short_versions_numbers_and_answer() -> None:
     story = mini_data()["story"]
 
@@ -380,6 +398,21 @@ def test_the_hand_rows_must_agree_with_the_story() -> None:
 
     with pytest.raises(explorer.SiteExportError, match="1 misleading; the story counts 8 and 2"):
         explorer._check_hand_rows(data["answers"], counts)
+
+
+def test_an_export_whose_hand_rows_disagree_with_the_story_stops() -> None:
+    board = mini_board()
+    run = board.closed_book[HAIKU.key]
+    # The quote now passes, so the story no longer counts it, but its hand check is still there.
+    passed = closed_book(C02, "14", VERIFIED_14)
+    board = replace(
+        board,
+        closed_book=board.closed_book
+        | {HAIKU.key: replace(run, closed_book=[run.closed_book[0], passed])},
+    )
+
+    with pytest.raises(explorer.SiteExportError, match="8 hand-checked rows"):
+        mini_data(board)
 
 
 def test_a_clause_id_in_both_sets_stops_the_export() -> None:
