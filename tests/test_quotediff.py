@@ -1,7 +1,7 @@
 import pytest
 
 from lease_clause_checker import verify
-from lease_clause_checker.quotediff import Category, align, classify, tokens
+from lease_clause_checker.quotediff import Category, LeftOut, align, classify, tokens
 from lease_clause_checker.statute import Section
 
 SECTIONS = {
@@ -268,3 +268,160 @@ def test_a_whole_wdiff_shows_what_the_quote_leaves_out_at_its_ends(
 
     assert alignment is not None
     assert alignment.wdiff(whole=True) == whole
+
+
+LEFT_OUT = {
+    "acceleration": Section(
+        "15",
+        "Acceleration clause void",
+        "A landlord may charge rent. A provision in a tenancy agreement providing that the rent "
+        "becomes due upon a default of the tenant is void. Another rule follows.",
+        "BK20",
+    ),
+    "list": Section(
+        "27",
+        "Entry with notice",
+        "(1) A landlord may enter a rental unit under the following circumstances:\n"
+        "1. To carry out a repair in the rental unit.\n"
+        "2. To show the rental unit to a buyer.\n"
+        "3. To let an insurer view the rental unit.\n"
+        "(2) Subject to subsection 12.1 (11), the landlord shall give written notice.\n"
+        "(3) The notice shall give a time of entry between 8 a.m. and 8 p.m.",
+        "BK33",
+    ),
+    "letters": Section(
+        "7",
+        "Letters",
+        "The following apply to a unit described below:\nA. a unit owned by a co-operative, "
+        "if its members live in it.\nB. a unit owned by a charity.",
+        "BK8",
+    ),
+    "definitions": Section(
+        "2",
+        "Definitions",
+        "In this Act,\n“Board” means the Landlord and Tenant Board; (“Commission”)\n"
+        "“vital service” means hot or cold water, fuel or electricity; (“service essentiel”)",
+        "BK2",
+    ),
+    "long": Section(
+        "80",
+        "Long",
+        "If the landlord and the tenant agree in writing on the amount and the day and the place, "
+        "(a) the landlord may keep the deposit; or (b) the tenant may ask for it back from the "
+        "landlord at the end of the term in writing, as long as the tenant is not in arrears.",
+        "BK90",
+    ),
+    "cut": Section(
+        "81",
+        "Cut",
+        "If the landlord and tenant agree on (a) the amount of the deposit and the day it is paid "
+        "and the place it is kept, as set out in (b) the form that the tenant has signed, the "
+        "landlord may keep the deposit.",
+        "BK91",
+    ),
+    "sixteen": Section(
+        "82",
+        "Sixteen",
+        "One two three four five six seven eight nine ten eleven twelve thirteen fourteen "
+        "fifteen sixteen the landlord may keep the deposit.",
+        "BK92",
+    ),
+}
+
+
+@pytest.mark.parametrize(
+    ("section", "quote", "left_out"),
+    [
+        (  # the sentence's head and tail, not the sentences around it, nor its full stop
+            "acceleration",
+            "the rent becomes due upon a default by the tenant",
+            LeftOut("A provision in a tenancy agreement providing that", "is void"),
+        ),
+        (  # words the quote adds at its ends don't hide what it leaves out
+            "acceleration",
+            "Under the law, a provision in a tenancy agreement providing that the rent becomes due "
+            "upon a default of the tenant in any way at all",
+            LeftOut("", "is void"),
+        ),
+        (  # a list is one sentence with the words that lead into it
+            "list",
+            "A landlord may enter a rental unit under the following circumstances:",
+            LeftOut("", "1. To carry out a repair in the … To let an insurer view the rental unit"),
+        ),
+        (  # in a list item: the lead-in, not the other items or the item's own "2."
+            "list",
+            "To show the rental unit to a buyer.",
+            LeftOut("A landlord may enter a rental unit under the following circumstances", ""),
+        ),
+        (  # in a list item: the lead-in and the item's own words, not the next item
+            "list",
+            "the rental unit to a buyer",
+            LeftOut(
+                "A landlord may enter a rental unit under the following circumstances … To show", ""
+            ),
+        ),
+        (  # "12.1" is a number, not a full stop
+            "list",
+            "the landlord shall give written notice.",
+            LeftOut("Subject to subsection 12.1 (11)", ""),
+        ),
+        (  # "a.m." before a lower-case word ends no sentence, and "p.m." keeps its full stop
+            "list",
+            "The notice shall give a time of entry",
+            LeftOut("", "between 8 a.m. and 8 p.m."),
+        ),
+        (
+            "list",
+            "The notice shall give a time of entry between 8 a.m. and 8",
+            LeftOut("", "p.m."),
+        ),
+        (  # "A." starts a list item too
+            "letters",
+            "a unit owned by a co-operative, if its members",
+            LeftOut("The following apply to a unit described below", "live in it"),
+        ),
+        (  # each definition is its own sentence, and its quotation marks stay
+            "definitions",
+            "means hot or cold water, fuel or electricity",
+            LeftOut("“vital service”", "(“service essentiel”)"),
+        ),
+        ("acceleration", "A landlord may charge rent.", LeftOut("", "")),
+        (  # a lone article is not worth naming
+            "acceleration",
+            "provision in a tenancy agreement providing that the rent becomes due",
+            LeftOut("", "upon a default of the tenant is void"),
+        ),
+        (  # sixteen words are shown whole
+            "sixteen",
+            "the landlord may keep the deposit.",
+            LeftOut(
+                "One two three four five six seven eight nine ten eleven twelve thirteen fourteen "
+                "fifteen sixteen",
+                "",
+            ),
+        ),
+        (  # long stretches keep their ends, with "(a)" whole
+            "long",
+            "the landlord may keep the deposit",
+            LeftOut(
+                "If the landlord and the tenant agree in … amount and the day and the place, (a)",
+                "or (b) the tenant may ask for it … long as the tenant is not in arrears",
+            ),
+        ),
+        (  # a cut at either end never splits "(a)" or "(b)"
+            "cut",
+            "the landlord may keep the deposit.",
+            LeftOut(
+                "If the landlord and tenant agree on (a) … (b) the form that the tenant has signed",
+                "",
+            ),
+        ),
+    ],
+)
+def test_left_out_names_the_words_of_the_quote_s_sentence_it_leaves_out(
+    section: str, quote: str, left_out: LeftOut
+) -> None:
+    alignment = align(quote, LEFT_OUT[section])
+
+    assert alignment is not None
+    assert alignment.left_out == left_out

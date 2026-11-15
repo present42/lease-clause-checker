@@ -330,3 +330,35 @@ def test_check_gives_no_finding_for_a_failed_call(
 
     assert findings == []
     assert len(summary.failures) == 3
+
+
+def test_a_verbatim_quote_that_stops_early_is_shown_with_the_warning(
+    sections: dict[str, Section],
+) -> None:
+    one, two, _ = clauses()
+    early = json.dumps(
+        {
+            "verdict": "allowed",
+            "section": "2.1",
+            "quote": "A landlord may require a gadget deposit if,",
+            "reason": "Because.",
+        }
+    )
+    findings = [
+        check.Finding(one, (attempt(one, early, sections),)),
+        check.Finding(two, (attempt(two, answer(), sections),)),
+    ]
+
+    blocks = check.render(findings, [one, two], sections, color=False).split("\n\n")
+    flat = " ".join(blocks[0].split())
+
+    assert findings[0].attempts[0].passed
+    assert (
+        "Warning: word for word, but it may stop before the words that decide it. The Act goes "
+        "on: “(a) the tenant agrees in writing; and (b) the deposit is returned at the end of "
+        "the tenancy.”"
+    ) in flat
+    assert flat.index("Warning:") < flat.index("https://")
+    assert "Warning" not in blocks[1]  # s. 1 is quoted whole
+    coloured = check.render(findings, [one, two], sections, color=True)
+    assert f"\033[{check.WARNING}m" in coloured

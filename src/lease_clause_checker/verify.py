@@ -97,9 +97,23 @@ GOES_ON_WORDS = 20
 @dataclass(frozen=True)
 class Ending:
     completeness: Completeness
+    subsection: str
+    """The marker of the subsection the quote was found in, such as "(2)"; "" if the section
+    has no numbered subsections."""
     goes_on: str
     """The Act's words after the quote in its subsection, without a leading comma, colon or
     semicolon, up to `GOES_ON_WORDS` with "…" if more follow; "" if no word follows."""
+
+    @property
+    def warning(self) -> str | None:
+        """For stops_early, the warning a reader sees, with what the Act goes on to say; else
+        None. The MCP tools, `lcc quote check` and `lcc check` all give it in these words."""
+        if self.completeness != "stops_early":
+            return None
+        return (
+            "Warning: word for word, but it may stop before the words that decide it. The Act "
+            f"goes on: \u201c{self.goes_on}\u201d"
+        )
 
 
 def ending(
@@ -125,14 +139,18 @@ def ending(
             if negation_before(text, found.start()) is not None:
                 continue
             rest = text[found.end() :]
+            marker = subsection_marker(part)
             if not WORD.search(rest):
-                return Ending("ends_cleanly", "")
+                return Ending("ends_cleanly", marker, "")
             words = rest.lstrip(" ,:;").split()
             goes_on = " ".join(words[:GOES_ON_WORDS]) + (" …" if len(words) > GOES_ON_WORDS else "")
             last = WORD.findall(wanted)[-1].lower()
             open_end = wanted.endswith(",") or last in OPEN_ENDINGS
             before_item = any(start >= found.end() for start in items)
-            return Ending("stops_early" if open_end or before_item else "ends_cleanly", goes_on)
+            completeness: Completeness = (
+                "stops_early" if open_end or before_item else "ends_cleanly"
+            )
+            return Ending(completeness, marker, goes_on)
     return None
 
 

@@ -211,7 +211,7 @@ def test_the_summary_notes_a_quote_outside_the_cited_subsection(
 ) -> None:
     result = statutes.verify_quote("RTA", section, quote)
 
-    assert result.summary.endswith(note)
+    assert result.summary.split(" Words of its sentence")[0].endswith(note)
     assert result.cited_subsection == split_citation(section)[1]
 
 
@@ -432,3 +432,89 @@ def test_check_text_shows_the_warning_and_counts_it(statutes: Statutes) -> None:
     assert uncited.result is not None
     assert uncited.result.warning is not None
     assert uncited.summary.endswith(uncited.result.warning)
+
+
+def test_verify_quote_names_the_words_a_quote_leaves_out_of_its_sentence(
+    statutes: Statutes,
+) -> None:
+    changed = statutes.verify_quote(
+        "RTA", "1", "A provision in a tenancy agreement banning widgets"
+    )
+
+    assert changed.category == "content_words_differ"  # reported only: no category changes
+    assert (changed.left_out_in, changed.left_out_before, changed.left_out_after) == (
+        "s. 1",
+        None,
+        "is void",
+    )
+    assert changed.summary.endswith(
+        " Words of its sentence in s. 1 that it leaves out: after it, \u201cis void\u201d."
+    )
+    item = statutes.verify_quote("RTA", "2.1", "the tenant agrees in writing, and")
+    assert item.left_out_before == "A landlord may require a gadget deposit if"
+    assert item.left_out_after is None  # the next item, "(b)", is another item
+    early = statutes.verify_quote("RTA", "2.1", "A landlord may require a gadget deposit if,")
+    assert early.left_out_after is not None
+    assert early.warning is not None
+    assert "Words of its sentence" not in early.summary  # the warning says how the Act goes on
+    whole = statutes.verify_quote("RTA", "1", VERBATIM)
+    assert (whole.left_out_in, whole.left_out_before, whole.left_out_after) == ("s. 1", None, None)
+    assert "Words of its sentence" not in whole.summary
+    for quote in ("widgets is void.", "Landlords must repaint every spring season."):
+        result = statutes.verify_quote("RTA", "1", quote)  # too short; close to nothing
+        assert (result.left_out_in, result.left_out_before, result.left_out_after) == (
+            None,
+            None,
+            None,
+        )
+
+
+def test_a_verbatim_quote_s_left_out_words_come_from_the_subsection_it_was_found_in(
+    statutes: Statutes,
+) -> None:
+    twice = Section(
+        "12",
+        "Twice",
+        "(1) The landlord may require the tenant to pay rent under this Act.\n"
+        "(2) The landlord may require the tenant to pay rent if the tenant agrees.",
+        "BK12",
+    )
+    tool = Statutes(statutes.act, {"12": twice})
+
+    result = tool.verify_quote("RTA", "12(2)", "The landlord may require the tenant to pay rent")
+
+    assert result.verbatim
+    assert result.aligned_with == "s. 12(1)"  # the closest alignment: a tie, the first
+    assert (result.left_out_in, result.left_out_after) == ("s. 12(2)", "if the tenant agrees")
+
+
+def test_left_out_words_are_named_only_where_a_quote_lines_up_and_nest_their_quotation_marks(
+    statutes: Statutes,
+) -> None:
+    filler = " ".join(f"word{i}" for i in range(60))
+    tool = Statutes(
+        statutes.act,
+        {
+            "50": Section(
+                "50", "Far", f"A landlord may require {filler} the tenant to pay rent.", "B"
+            ),
+            "2": Section(
+                "2",
+                "Definitions",
+                "In this Act,\n“vital service” means hot or cold water, fuel or electricity; "
+                "(“service essentiel”)",
+                "BK2",
+            ),
+        },
+    )
+
+    scattered = tool.verify_quote("RTA", "50", "A landlord may require … the tenant to pay rent.")
+    defined = tool.verify_quote("RTA", "2", "means hot or cold water, fuel or electricity")
+
+    assert scattered.category == "conventions"
+    assert (scattered.left_out_in, scattered.left_out_before) == (None, None)  # 60 words apart
+    assert defined.summary.endswith(
+        "Words of its sentence in s. 2 that it leaves out: before it, \u201cIn this Act, "
+        "\u2018vital "
+        "service\u2019\u201d; after it, \u201c(\u2018service essentiel\u2019)\u201d."
+    )

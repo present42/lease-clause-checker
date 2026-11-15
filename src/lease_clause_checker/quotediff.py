@@ -78,9 +78,12 @@ STRAY_GAP = 10
 # fewer, and the words are scattered over the subsection (see `Alignment.lined_up`).
 LINED_UP_SHARE = 0.5
 SPAN_SHARE = 0.25
+# A left-out stretch of more than twice this many words is shown as its first and last this
+# many, with "…" between.
+SHOWN_WORDS = 8
 # A paragraph marker starting a line of the Act, as tokens joined by spaces: "( a )", "( 1 . 1 )",
 # or a numbered or roman paragraph "1 ." / "ii .".
-PARAGRAPH_MARKER = re.compile(r"(?:\( \w+(?: \. \w+)? \)|(?:\d+|[ivx]+) \.)(?= |$)")
+PARAGRAPH_MARKER = re.compile(r"(?:\( \w+(?: \. \w+)? \)|(?:\d+|[ivx]+|[A-Z]) \.)(?= |$)")
 
 
 @dataclass(frozen=True)
@@ -235,6 +238,34 @@ class Alignment:
         end = end_a + len(tail) if end_b < len(self.quote) and _has_word(tail) else end_a
         return self.act[:start], self.act[end:]
 
+    @property
+    def left_out(self) -> "LeftOut":
+        """The words of the quote's sentence in the subsection that come before and after the
+        tokens it matches: what the quote leaves out of its own sentence (`LeftOut`). Report
+        only: no category or check depends on it."""
+        act = self.act
+        first = self.blocks[0][0]
+        last, _, size = self.blocks[-1]
+        end = last + size
+        ends = {i for i in range(len(act)) if _ends_unit(act, i)}
+        start = max((i + 1 for i in ends if i < first), default=0)
+        stop = end if end - 1 in ends else min((i + 1 for i in ends if i >= end), default=len(act))
+        # The list items of the sentence, by the index of their marker (the subsection's own
+        # marker, at its start, is not one).
+        items = [i for i in range(start + 1, stop) if _marker_size(act, i)]
+        mine = [i for i in items if i < first]
+        if mine:  # the quote is in a list item: its lead-in and its own item, not the others
+            lead = act[start : items[0]]
+            own = act[mine[-1] + _marker_size(act, mine[-1]) : first]
+            later = [i for i in items if i >= end]
+            tail = act[end : later[0]] if later else act[end:stop]
+        else:  # the quote is in the lead-in, or there is no list: the whole sentence
+            lead, own, tail = act[start:first], (), act[end:stop]
+        if start == 0 and lead and _marker_size(lead, 0):
+            lead = lead[_marker_size(lead, 0) :]
+        head = " … ".join(part for part in (_shortened(lead), _shortened(own)) if part)
+        return LeftOut(head, _shortened(tail))
+
     def pieces(self, *, whole: bool = False) -> list[tuple[str, tuple[Token, ...]]]:
         """The aligned stretch as (kind, tokens) pieces: "same" for tokens in both (as the Act
         has them), "del" for the Act's tokens that the quote drops or changes, "ins" for the
@@ -266,6 +297,17 @@ class Alignment:
         `{+…+}`."""
         marks = {"same": "{}", "del": "[-{}-]", "ins": "{{+{}+}}"}
         return " ".join(marks[kind].format(text) for kind, text in self.segments(whole=whole))
+
+
+@dataclass(frozen=True)
+class LeftOut:
+    """What a quote leaves out of its sentence in the Act (`Alignment.left_out`), each part
+    shortened to its first and last `SHOWN_WORDS` words if long."""
+
+    before: str
+    """The sentence's words before the quote; "" if the quote starts its sentence."""
+    after: str
+    """The sentence's words after the quote; "" if the quote ends its sentence."""
 
 
 @dataclass(frozen=True)
@@ -402,6 +444,81 @@ def _far(first: tuple[int, int, int], second: tuple[int, int, int]) -> bool:
 
 def _join(tokens: tuple[Token, ...]) -> str:
     return "".join((token.before and " ") + token.text for token in tokens).strip()
+
+
+# A paragraph marker as `_marker_size` reads it: `PARAGRAPH_MARKER`, or a capital letter and a
+# full stop ("A."), which the Act uses for some lists. Here only, so no category depends on it.
+_ITEM_MARKER = re.compile(r"(?:\( \w+(?: \. \w+)? \)|(?:\d+|[ivx]+|[A-Z]) \.)(?= |$)")
+# Words that are not worth naming on their own as left out.
+_ARTICLES = frozenset({"a", "an", "the"})
+# Punctuation left off either end of a left-out stretch, so a note can quote it cleanly.
+_EDGE_MARKS = frozenset({",", ";", ":", "."})
+
+
+def _ends_unit(tokens: tuple[Token, ...], i: int) -> bool:
+    """Whether the sentence, or the definition, that `tokens[i]` is in ends with it.
+
+    A full stop, question mark or exclamation mark ends a sentence, but not as the point of a
+    number ("12.1"), of an abbreviation followed by a lower-case word ("8 a.m. and"), or of a
+    marker that starts a line ("1."), nor at the end of a list item that another item follows:
+    a list is one sentence with the words that lead into it. A definition ends where the next
+    line starts without a marker after a line that ends with ";" or with a bracketed French
+    term (s. 2: “Board” means the Landlord and Tenant Board; (“Commission”))."""
+    following = tokens[i + 1] if i + 1 < len(tokens) else None
+    new_line = following is not None and following.before == "\n"
+    if new_line and not _marker_size(tokens, i + 1) and _ends_definition(tokens, i):
+        return True
+    if tokens[i].key not in {".", "?", "!"}:
+        return False
+    if i > 0 and _marker_size(tokens, i - 1):
+        return False
+    if following is None:
+        return True
+    if not following.before or _marker_size(tokens, i + 1):
+        return False
+    return not following.key[0].islower()
+
+
+def _ends_definition(tokens: tuple[Token, ...], i: int) -> bool:
+    """Whether `tokens[i]` is the ";" or the bracketed French term that ends a line of
+    definitions."""
+    return tokens[i].key == ";" or (tokens[i].key == ")" and i > 0 and tokens[i - 1].key == '"')
+
+
+def _marker_size(tokens: tuple[Token, ...], i: int) -> int:
+    """How many tokens the `_ITEM_MARKER` that starts a line at `tokens[i]` has; 0 if none
+    does."""
+    if tokens[i].before != "\n":
+        return 0
+    marker = _ITEM_MARKER.match(" ".join(token.key for token in tokens[i : i + 5]))
+    return len(marker.group().split()) if marker else 0
+
+
+def _shortened(tokens: tuple[Token, ...]) -> str:
+    """`tokens` as text without `_EDGE_MARKS` at either end, or their first and last
+    `SHOWN_WORDS` words with "…" between if they have more than twice that many; "" if they
+    have no word other than an article."""
+    while tokens and tokens[0].key in _EDGE_MARKS:
+        tokens = tokens[1:]
+    while tokens and tokens[-1].key in _EDGE_MARKS and not _abbreviation_end(tokens):
+        tokens = tokens[:-1]
+    words = [i for i, token in enumerate(tokens) if _is_word(token.key)]
+    if all(tokens[i].key.lower() in _ARTICLES for i in words):
+        return ""
+    if len(words) <= 2 * SHOWN_WORDS:
+        return _join(tokens)
+    start, end = words[SHOWN_WORDS - 1] + 1, words[-SHOWN_WORDS]
+    while start < len(tokens) and not tokens[start].before:  # keep "(b)" or "rent," whole
+        start += 1
+    while end > start and not tokens[end].before:
+        end -= 1
+    return f"{_join(tokens[:start])} … {_join(tokens[end:])}"
+
+
+def _abbreviation_end(tokens: tuple[Token, ...]) -> bool:
+    """Whether `tokens` end with the full stop of an abbreviation such as "p.m.": one after a
+    single letter."""
+    return len(tokens) > 1 and tokens[-1].key == "." and len(tokens[-2].key) == 1
 
 
 def _has_word(tokens: tuple[Token, ...]) -> bool:

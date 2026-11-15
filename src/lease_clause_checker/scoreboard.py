@@ -511,7 +511,8 @@ def _stops_early_line(board: Board, closed_book: list[ModelRun]) -> str:
     return (
         "- A quote that passes the word-for-word check can still stop before the list item "
         "that decides the clause. A rough rule in code (`verify.ending`, shown as a warning by "
-        f"the MCP tools) flags {p_early} of the {p_passed} passing first pipeline quotes and "
+        f"`lcc check`, `lcc quote check` and the MCP tools) flags {p_early} of the {p_passed} "
+        "passing first pipeline quotes and "
         f"{c_early} of the {c_passed} passing closed-book quotes as possibly stopping early. "
         "These are upper limits, not counts: the rule flags every passing quote with a list "
         "item after it, including quotes that already hold the item that applies. They have "

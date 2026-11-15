@@ -256,7 +256,12 @@ def test_quote_check_explains_each_failure(
 @pytest.mark.parametrize(
     ("section", "quote", "out"),
     [
-        ("1", "A provision in a tenancy agreement prohibiting widgets", "in s. 1.\nSource:"),
+        (
+            "1",
+            "A provision in a tenancy agreement prohibiting widgets",
+            "in s. 1.\nWords of its sentence in s. 1 that it leaves out: after it, “is void”."
+            "\nSource:",
+        ),
         (
             "s. 2.1(2)",
             "the tenant agrees in writing; and",
@@ -271,3 +276,34 @@ def test_quote_check_names_the_subsection_it_found(
 
     assert exit_code == 0
     assert f"VERIFIED: the quote appears word for word {out}" in capsys.readouterr().out
+
+
+def test_quote_check_warns_when_a_verbatim_quote_may_stop_early(
+    cache_dir: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    quote = "A landlord may require a gadget deposit if,"
+    exit_code = main(["--cache-dir", str(cache_dir), "quote", "check", "2.1", quote])
+
+    out = " ".join(capsys.readouterr().out.split())
+    assert exit_code == 0  # a warning, not a failure
+    assert "VERIFIED" in out
+    assert (
+        "Warning: word for word, but it may stop before the words that decide it. The Act goes "
+        "on: “(a) the tenant agrees in writing;"
+    ) in out
+    assert "after it" not in out  # the warning already says how the Act goes on
+
+
+def test_quote_check_names_the_words_a_failed_quote_leaves_out_of_its_sentence(
+    cache_dir: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    quote = "the tenant agrees in writing, and"  # "," for the Act's ";"
+    exit_code = main(["--cache-dir", str(cache_dir), "quote", "check", "2.1", quote])
+
+    out = " ".join(capsys.readouterr().out.split())
+    assert exit_code == 1
+    assert out.startswith("NOT VERIFIED")
+    assert (  # the list's lead-in, without the marker "(a)" or the next item
+        "Words of its sentence in s. 2.1(1) that it leaves out: before it, “A landlord may "
+        "require a gadget deposit if”."
+    ) in out

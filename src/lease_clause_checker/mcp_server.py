@@ -53,7 +53,8 @@ VERIFY_QUOTE = cleandoc(
     and a note says if the quote is in another subsection than the one cited. A verbatim quote
     that may stop before the words that decide it (a list item follows it in its subsection, or
     it ends on a comma or a word such as "to" or "if") gets a warning with what the Act goes
-    on to say; the warning doesn't change the check. {SCOPE}
+    on to say, and the words of the quote's sentence in the Act that it leaves out before or
+    after it are named; neither changes the check or the category. {SCOPE}
     """
 )
 CHECK_TEXT = cleandoc(

@@ -11,7 +11,7 @@ and give no verdict on any clause.
 
 import re
 from collections import Counter
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from pathlib import Path
 from typing import Literal, assert_never
 
@@ -29,6 +29,10 @@ _GIVEN_SUBSECTION = re.compile(r"\(\d+(?:\.\d+)?\)")
 _SECTION_NUMBER = re.compile(r"\d+(?:\.\d+)?")
 # Categories whose quote is in the Act but for marks or cosmetics.
 _IN_THE_ACT = frozenset({"verbatim", "drops_negation", "conventions", "cosmetic", "too_short"})
+# Double quotation marks made single, for words quoted inside a quotation.
+_NESTED = str.maketrans('\u201c\u201d"', "\u2018\u2019'")
+# Categories with no sentence worth naming left-out words of.
+_NO_SENTENCE = frozenset({"too_short", "heading", "no_quote", "not_in_act"})
 # Short names a caller may use for the one Act this server has; its own title also works.
 RTA_NAMES = frozenset(
     {
@@ -145,6 +149,17 @@ class QuoteResult(_Documented):
     None if the quote is not verbatim."""
     warning: str | None
     """For stops_early: what the Act goes on to say, as a warning; else None."""
+    left_out_in: str | None
+    """The subsection whose sentence `left_out_before` and `left_out_after` come from, such as
+    "s. 15": where a verbatim quote was found, else `aligned_with`. None if no subsection is
+    close enough to say, or the quote is too short or only in a heading."""
+    left_out_before: str | None
+    """The words of the quote's sentence in that subsection that come before the words it
+    matches, which it leaves out; for a quote in a list item, the list's lead-in and the
+    item's words before it. Shortened with "…" if long. None if there are none, or only
+    articles. Reported only: it changes no check or category."""
+    left_out_after: str | None
+    """The same for the words of its sentence (or list item) after it."""
     scope: str = SCOPE
     source: Source
 
@@ -242,6 +257,12 @@ class Statutes:
             if result.strict == "verified"
             else None
         )
+        warning = ending.warning if ending else None
+        sentence = _sentence_alignment(quote, found, result, ending)
+        left_out = sentence.left_out if sentence is not None else quotediff.LeftOut("", "")
+        before, after = left_out.before or None, left_out.after or None
+        left_out_in = f"s. {sentence.section}{sentence.subsection}" if sentence else None
+        note = left_out_note(before, after, left_out_in, warned=warning is not None)
         return QuoteResult(
             section=number,
             cited_subsection=marker,
@@ -252,7 +273,9 @@ class Statutes:
             with_conventions=result.with_conventions,
             category=result.category,
             label=quotediff.LABELS[result.category],
-            summary=summary(result, number) + _subsection_note(found, marker, result),
+            summary=summary(result, number)
+            + _subsection_note(found, marker, result)
+            + (f" {note}" if note else ""),
             aligned_with=aligned_with,
             matched_words=alignment.matched_words if alignment is not None else None,
             quote_words=alignment.quote_words if alignment is not None else None,
@@ -261,7 +284,10 @@ class Statutes:
             found_in=list(result.found_in),
             dropped_negation=result.dropped_negation,
             completeness=ending.completeness if ending else None,
-            warning=_warning(ending),
+            warning=warning,
+            left_out_in=left_out_in,
+            left_out_before=before,
+            left_out_after=after,
             source=self.source,
         )
 
@@ -467,14 +493,46 @@ def _tally(findings: list[Finding]) -> str:
     return " ".join(parts) + " Wording only: no verdict on any clause."
 
 
-def _warning(ending: verify.Ending | None) -> str | None:
-    """For a quote that stops early, what the Act goes on to say; else None."""
-    if ending is None or ending.completeness != "stops_early":
+def left_out_note(before: str | None, after: str | None, where: str | None, *, warned: bool) -> str:
+    """A sentence naming the words a quote leaves out of its sentence in the Act at `where`
+    (such as "s. 15"), before and after the words it matches (`QuoteResult.left_out_before`
+    and `_after`); "" if there are none. With `warned`, the stops-early warning already says
+    how the Act goes on, so only the words before the quote are named."""
+    if where is None:
+        return ""
+    parts = [
+        f"{side}, \u201c{_nested(words)}\u201d"
+        for side, words in (("before it", before), ("after it", None if warned else after))
+        if words
+    ]
+    if not parts:
+        return ""
+    return f"Words of its sentence in {where} that it leaves out: {'; '.join(parts)}."
+
+
+def _nested(words: str) -> str:
+    """`words` with their own double quotation marks made single, to go inside a quotation."""
+    return words.translate(_NESTED)
+
+
+def _sentence_alignment(
+    quote: str,
+    section: Section | None,
+    result: quotediff.Classified,
+    ending: verify.Ending | None,
+) -> quotediff.Alignment | None:
+    """The alignment whose sentence the left-out words come from: for a verbatim quote, the
+    subsection it was found in (`ending`), as the closest alignment can be another subsection
+    with the same words; else the classifier's, if it lines up. None for a quote too short to
+    show anything, found only in a heading, or close to no subsection."""
+    if result.category in _NO_SENTENCE or result.alignment is None:
         return None
-    return (
-        "Warning: word for word, but it may stop before the words that decide it. The Act goes "
-        f"on: \u201c{ending.goes_on}\u201d"
-    )
+    if ending is not None and section is not None:
+        part = _subsection(section, ending.subsection) if ending.subsection else section.text
+        found = quotediff.align(quote, replace(section, text=part or section.text))
+        if found is not None:
+            return found
+    return result.alignment if result.alignment.lined_up else None
 
 
 def _with_warning(result: QuoteResult) -> str:

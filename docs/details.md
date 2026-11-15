@@ -148,12 +148,43 @@ may get a wrong or `unsure` answer. Two of the eight clauses, from a run on 14 N
 
 `lcc quote check` runs the pipeline's quote check on one quote, offline, against the cached
 Act. It exits 0 if the quote verifies and 1 if it doesn't, and says where a failed quote first
-leaves the Act's wording. Changing one word of the s. 14 quote above:
+leaves the Act's wording, and which words of the quote's sentence in the Act it leaves out
+before and after it. Changing one word of the s. 14 quote above:
 
 ```text
 $ uv run lcc quote check 14 "A provision in a tenancy agreement prohibiting the presence of dogs in or about the residential complex is void."
 NOT VERIFIED: The quote does not appear word for word in section 14.
 The first 10 words match the Act; then the quote has “dogs” where the Act has “animals”.
+Source: Ontario e-Laws. Not an official version of the statute. © King's Printer for Ontario, 2006.
+Not legal advice: this checks the wording only, not what it means.
+```
+
+Claude Opus 5.5's closed-book quote for clause c05 fails at "tenancy,"; it also leaves out the
+words of s. 15 that make such a provision void. The left-out words are the rest of the quote's
+sentence in the Act before and after the words it matches (for a quote in a list item, the
+list's lead-in and the rest of its own item). They are a report: they change neither the check
+nor the quote's category.
+
+```text
+$ uv run lcc quote check 15 "all or part of the remaining rent for a term or tenancy, or a specific sum, becomes due and payable if the tenant defaults in the payment of rent due"
+NOT VERIFIED: The quote does not appear word for word in section 15.
+The first 11 words match the Act; then the quote has “tenancy,” where the Act has “period”.
+Words of its sentence in s. 15 that it leaves out: before it, “A provision in a
+tenancy agreement providing that”; after it, “or in carrying out an obligation
+is void”.
+Source: Ontario e-Laws. Not an official version of the statute. © King's Printer for Ontario, 2006.
+Not legal advice: this checks the wording only, not what it means.
+```
+
+A quote that passes can still stop before the words that decide the clause. It still exits 0,
+with a warning (from `verify.ending`, a rough rule) and the Act's next words:
+
+```text
+$ uv run lcc quote check 108 "Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to,"
+VERIFIED: the quote appears word for word in s. 108.
+Warning: word for word, but it may stop before the words that decide it. The Act
+goes on: “(a) provide post-dated cheques or other negotiable instruments for
+payment of rent; or (b) permit automatic debiting of the tenant's …”
 Source: Ontario e-Laws. Not an official version of the statute. © King's Printer for Ontario, 2006.
 Not legal advice: this checks the wording only, not what it means.
 ```
@@ -171,8 +202,9 @@ of the Act (not an official version):
   conventions, cosmetic, wrong section cited, content words differ, not in the Act), a one-line
   summary and a word-level diff against the Act. The whole cited section is searched; the
   summary says if the quote is in another subsection than the one cited. A verbatim quote that
-  may stop before the words that decide it gets a warning with the Act's next words; the
-  warning doesn't change the strict check.
+  may stop before the words that decide it gets a warning with the Act's next words, and the
+  words of the quote's sentence that it leaves out before or after it are named; neither
+  changes the strict check or the category.
 - `check_text(text)`: every quote (in double quotation marks) and section citation in a
   draft, such as a memo. Each quote is checked as `verify_quote` checks it, against the
   citation right after it in its sentence (`"… is void" (s. 14)`), else the nearest one before
@@ -321,7 +353,7 @@ Main test set, 38 clauses. The pipeline's question and JSON answer with no statu
 
 - **quote verified**: of the answers with a verdict, those whose quote passed the check.
 - With the statute in the prompt, 150 of 151 first pipeline answers with a verdict on the main set had a quote that passed.
-- A quote that passes the word-for-word check can still stop before the list item that decides the clause. A rough rule in code (`verify.ending`, shown as a warning by the MCP tools) flags 39 of the 150 passing first pipeline quotes and 21 of the 78 passing closed-book quotes as possibly stopping early. These are upper limits, not counts: the rule flags every passing quote with a list item after it, including quotes that already hold the item that applies. They have not yet been checked by hand.
+- A quote that passes the word-for-word check can still stop before the list item that decides the clause. A rough rule in code (`verify.ending`, shown as a warning by `lcc check`, `lcc quote check` and the MCP tools) flags 39 of the 150 passing first pipeline quotes and 21 of the 78 passing closed-book quotes as possibly stopping early. These are upper limits, not counts: the rule flags every passing quote with a list item after it, including quotes that already hold the item that applies. They have not yet been checked by hand.
 
 #### How the quotes that failed the check differ from the Act
 
@@ -547,10 +579,13 @@ prompt.
   A quote of five words or more passes even when it stops short of the decisive words, such as
   the opening words of a list without the item that applies.
 - The quote categories have known gaps, found in the hand check of the 59 closed-book quotes.
-  None is fixed yet; for verbatim quotes, #1 and #3 are partly covered by a warning (below):
-  - Words a quote leaves out before or after the words it matches are neither shown nor checked
+  None is fixed yet; #1 is reported and, for verbatim quotes, #1 and #3 are partly covered by a
+  warning (below):
+  - Words a quote leaves out before or after the words it matches don't count in its category
     ([#1](https://github.com/present42/lease-clause-checker/issues/1)). Gemini 3.8 Flash's c09 quote of s. 26(1) is sorted as cosmetic although it
-    stops before "(a) in cases of emergency; or (b) if the tenant consents".
+    stops before "(a) in cases of emergency; or (b) if the tenant consents". `lcc quote check`
+    and the MCP tools name the words of the quote's sentence that it leaves out, where the quote
+    lines up with a subsection, as a report only.
   - Openings shared by many provisions can line a quote up with the wrong subsection, or hide
     its source ([#2](https://github.com/present42/lease-clause-checker/issues/2)): Claude Haiku 5.5's c25 quote about a postdated cheque lines up
     with s. 106(4), not s. 108.
@@ -564,9 +599,10 @@ prompt.
   Fixing them could move the closed-book category table and the summary's count of quotes that
   differ only cosmetically or by quoting conventions. For verbatim quotes, #1 and #3 are a
   warning beside the strict check (`verify.ending`), not a condition of passing it, so no
-  verified-quote count moves. It only looks at where a quote ends, so it doesn't yet cover the
-  quotes sorted as cosmetic or conventions, or words dropped before a quote. No verdict or
-  section score depends on the categories.
+  verified-quote count moves. It only looks at where a verbatim quote ends. For a quote that
+  lines up with a subsection, the words of its sentence that it leaves out are named, by a
+  rough rule for where a sentence ends, but not counted.
+  No verdict or section score depends on the categories.
 - 38 clauses are few. When two methods both score 38 of 38, the test set can't tell them
   apart, and a perfect score still allows an error rate of several per cent (see Notes under
   Results).

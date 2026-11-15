@@ -52,7 +52,12 @@ from lease_clause_checker.statute import (
     parse_sections,
     select_sections,
 )
-from lease_clause_checker.statute_tools import Statutes, UnknownSectionError, split_citation
+from lease_clause_checker.statute_tools import (
+    Statutes,
+    UnknownSectionError,
+    left_out_note,
+    split_citation,
+)
 from lease_clause_checker.verify import (
     Difference,
     check_quote,
@@ -669,6 +674,8 @@ def _check_quote(cache_dir: Path, section_arg: str, quote: str) -> int:
     sections = parse_sections(act.content_html)
     section, given = split_citation(section_arg)
     result = check_quote(quote, section, sections)
+    # The MCP tool's reading of the same quote, for what the check alone doesn't say.
+    tool = Statutes(act, sections).verify_quote(act.title, section_arg, quote)
     if result == "verified":
         found = subsection_of(normalise(quote).strip('"'), sections[section].text) or ""
         print(f"VERIFIED: the quote appears word for word in s. {section}{found}.")
@@ -683,6 +690,12 @@ def _check_quote(cache_dir: Path, section_arg: str, quote: str) -> int:
     if result == "drops_negation":
         word = dropped_negation(normalise(quote).strip('"'), sections[section].text)
         print(f"The Act has “{word}” right before the quote, and the quote leaves it out.")
+    left_out = left_out_note(
+        tool.left_out_before, tool.left_out_after, tool.left_out_in, warned=bool(tool.warning)
+    )
+    for line in (left_out, tool.warning):
+        if line:
+            print(textwrap.fill(line, check.terminal_width()))
     print(elaws.NOTICE)
     print("Not legal advice: this checks the wording only, not what it means.")
     return 0 if result == "verified" else 1

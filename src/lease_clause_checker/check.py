@@ -21,7 +21,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Literal
 
-from lease_clause_checker import elaws, pipeline
+from lease_clause_checker import elaws, pipeline, verify
 from lease_clause_checker.models import ModelSpec
 from lease_clause_checker.pipeline import Attempt, PipelinePrompt
 from lease_clause_checker.providers import Complete
@@ -37,6 +37,7 @@ WIDTH = 96
 LABEL_WIDTH = 9
 COLOURS = {"void": "1;31", "allowed": "1;32", "unsure": "1;33", "failed": "1"}
 DIM = "2"
+WARNING = "33"
 
 Verdict = Literal["void", "allowed", "unsure"]
 
@@ -209,6 +210,9 @@ def _block(
         section = sections[answer.cited_section]
         lines.append(_wrap(f"s. {section.number}, {section.heading}", indent, width))
         lines.append(_paint(_wrap(f"“{answer.quote}”", indent, width), DIM, color))
+        ending = verify.ending(answer.quote, section.number, sections)
+        if ending is not None and ending.warning is not None:
+            lines.append(_paint(_wrap(ending.warning, indent, width), WARNING, color))
         lines.append(indent + elaws.section_url(section.anchor))
     elif answer is not None:  # unsure: its reason is the only thing to show
         lines.append(_wrap(f"Unsure because: {answer.reason}", indent, width))
