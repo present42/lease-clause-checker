@@ -290,6 +290,21 @@ class Alignment:
             pieces.append(("del", after))
         return pieces
 
+    def runs(self, *, whole: bool = False) -> list[tuple[str, int, int]]:
+        """`pieces` as (kind, start, end) runs of token indices: "same" and "del" index `act`,
+        "ins" `quote`. A run ends where its kind changes or its tokens stop being consecutive."""
+        where = {id(t): i for i, t in enumerate(self.act)}
+        where |= {id(t): i for i, t in enumerate(self.quote)}
+        runs: list[tuple[str, int, int]] = []
+        for kind, tokens in self.pieces(whole=whole):
+            for token in tokens:
+                i = where[id(token)]
+                if runs and runs[-1][0] == kind and runs[-1][2] == i:
+                    runs[-1] = (kind, runs[-1][1], i + 1)
+                else:
+                    runs.append((kind, i, i + 1))
+        return runs
+
     def segments(self, *, whole: bool = False) -> list[tuple[str, str]]:
         """`pieces` with each piece's tokens joined into text."""
         return [(kind, _join(tokens)) for kind, tokens in self.pieces(whole=whole)]
@@ -485,6 +500,17 @@ def _ends_definition(tokens: tuple[Token, ...], i: int) -> bool:
     """Whether `tokens[i]` is the ";" or the bracketed French term that ends a line of
     definitions."""
     return tokens[i].key == ";" or (tokens[i].key == ")" and i > 0 and tokens[i - 1].key == '"')
+
+
+def item_marker_size(tokens: tuple[Token, ...], i: int) -> int:
+    """How many tokens the list item's marker ("(b)", "2.") that starts a line at `tokens[i]`
+    has; 0 if no marker starts there."""
+    return _marker_size(tokens, i)
+
+
+def join(tokens: tuple[Token, ...]) -> str:
+    """`tokens` as text, one space where any whitespace was."""
+    return _join(tokens)
 
 
 def _marker_size(tokens: tuple[Token, ...], i: int) -> int:

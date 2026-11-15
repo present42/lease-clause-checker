@@ -15,6 +15,7 @@ from lease_clause_checker import (
     check,
     closedbook,
     elaws,
+    exhibits,
     explorer,
     handcheck,
     pipeline,
@@ -147,6 +148,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         scoreboard.ReportDataError,
         scoreboard.MissingMarkersError,
         explorer.SiteExportError,
+        exhibits.ExhibitError,
         quotereview.HandCheckError,
         handcheck.RecordError,
         check.LeaseFormatError,
@@ -434,7 +436,7 @@ def _write_report(args: argparse.Namespace) -> int:
     readme = args.readme.read_text(encoding="utf-8")
     readme = scoreboard.replace_block(
         readme,
-        scoreboard.render_short(board, elaws.NOTICE),
+        scoreboard.render_short(board, elaws.NOTICE, exhibits.load()),
         scoreboard.SHORT_START,
         scoreboard.SHORT_END,
     )
@@ -465,7 +467,13 @@ def _write_site(args: argparse.Namespace) -> int:
     act = elaws.load_act(elaws.cache_path(args.cache_dir))
     closed_book = RESULTS_DIRS[FROZEN_CLAUSES_SHA256] / versions["closedbook"]
     data = explorer.build(
-        board, sections, act, versions, len(load_rules(args.rules)), closed_book.as_posix()
+        board,
+        sections,
+        act,
+        versions,
+        len(load_rules(args.rules)),
+        closed_book.as_posix(),
+        exhibits.load(),
     )
     sets = {"main": board.main.clauses, "stress": board.stress.clauses}
     folders = {

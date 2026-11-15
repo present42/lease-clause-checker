@@ -1,4 +1,5 @@
 import json
+import re
 import xml.etree.ElementTree as ET
 from dataclasses import replace
 from datetime import UTC, date, datetime
@@ -8,7 +9,7 @@ from unittest.mock import Mock
 
 import pytest
 
-from lease_clause_checker import handcheck, quotereview, scoreboard
+from lease_clause_checker import exhibits, handcheck, quotereview, scoreboard
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.closedbook import ClosedBookResult
 from lease_clause_checker.models import MODELS, ModelSpec, model_by_key
@@ -1053,7 +1054,7 @@ def test_relink_prefixes_links_to_repo_files_only(markdown: str, relinked: str |
 def short_board(misleads: str = "yes") -> scoreboard.Board:
     """`tldr_board`, with Argon's pipeline wrong on one clause, Flash's pipeline unsure on c01,
     Opus's closed-book c05 quote lined up with s. 14, and every failed closed-book quote
-    hand-checked: all change what the Act says, and one (Opus c01) would mislead."""
+    hand-checked: all change what the Act says, and two (Opus c01 and c05) would mislead."""
     flash = tldr_board().main.run("pipeline", FLASH)
     unsure = unsure_result(CLAUSES[0], FLASH, gave_up=False)
     flash = replace(
@@ -1075,29 +1076,30 @@ def short_board(misleads: str = "yes") -> scoreboard.Board:
         )
         for key in quotereview.failed_categories(runs)
     }
-    checks[OPUS.key, "c05"] = quotereview.HandCheck("agree", "yes", "no", "Widgets, not gadgets.")
+    checks[OPUS.key, "c05"] = quotereview.HandCheck("agree", "yes", "yes", "Widgets, not gadgets.")
     return replace(
         b, closed_book=closed_book, quote_checks=checks, hand_check_record=hand_check_record()
     )
 
 
-@pytest.fixture
-def short_example(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(scoreboard, "SHORT_EXAMPLE", (OPUS.key, "c05"))
-    monkeypatch.setattr(scoreboard, "SHORT_PUNCHLINE", ("14", "read alone, it bans gadgets"))
+EXHIBIT = exhibits.Exhibit(
+    model=OPUS.key,
+    clause="c05",
+    label="Swapped the thing",
+    punchline="Verdict: void, right. Read alone, it bans gadgets.",
+)
 
 
-@pytest.mark.usefixtures("short_example")
-def test_the_short_version_gives_one_answer_a_table_and_the_hand_check() -> None:
-    text = scoreboard.render_short(short_board(), "NOTICE")
+def test_the_short_version_gives_the_exhibit_a_table_and_the_hand_check() -> None:
+    text = scoreboard.render_short(short_board(), "NOTICE", (EXHIBIT,))
     # First pipeline quotes: Argon's run stands in from the closed book, with no pipeline
     # attempts; Haiku's first c14 quote fails.
 
     lines = text.splitlines()
     assert (lines[0], lines[-1]) == (scoreboard.SHORT_START, scoreboard.SHORT_END)
     assert lines[1] == (
-        "**Claude Opus 5.5 called clause c05 void under s. 14, which is right. But read alone, "
-        "it bans gadgets.**"
+        "**Claude Opus 5.5 on clause c05, with no statute text in the prompt. Verdict: void, "
+        "right. Read alone, it bans gadgets.**"
     )
     assert lines[3] == (
         "> A provision in a tenancy agreement prohibiting ~~widgets~~ **gadgets** is void."
@@ -1115,53 +1117,48 @@ def test_the_short_version_gives_one_answer_a_table_and_the_hand_check() -> None
     assert lines[table + 7] == scoreboard.SHORT_TABLE_NOTE
     assert lines[-2] == (
         "**The 14 closed-book quotes that failed,** from 3 of the 4 models: 14 state a real "
-        "provision of the Act; 14 of those change the rule, and 1 of those 14 would mislead "
+        "provision of the Act; 14 of those change the rule, and 2 of those 14 would mislead "
         "about the clause they were quoted for. Claude drafted the hand-check labels, Claude Opus "
         "reviewed them blind in two rounds (1 of 4 agreed independently), and the author approved "
         "them; not reviewed by a lawyer. " + handcheck.RECHECK_NOTE
     )
 
 
-@pytest.mark.usefixtures("short_example")
 @pytest.mark.parametrize(
     ("change", "error"),
     [
         ({"hand_check_record": None}, "no record of how it was made"),
-        ({"SHORT_PUNCHLINE": ("15", "anything")}, "about s. 15; the answer cites s. 14"),
-        ({"_verdict_right": lambda score: False}, "a right verdict citing the deciding section"),
-        ({"meaning_changed": "no"}, "finding the quote changes the rule"),
-        ({"section_result": "also_accepted"}, "a right verdict citing the deciding section"),
+        ({"clause": "c99"}, "exhibit claude-opus-5-5 c99: no saved closed-book answer"),
+        ({"model": "nobody"}, "exhibit nobody c05: no saved closed-book answer"),
+        ({"_verdict_right": lambda score: False}, "c05: the verdict is not right"),
+        ({"meaning_changed": "no"}, "c05: the hand check must find"),
+        ({"misleads_here": "no"}, "c05: the hand check must find"),
+        ({"punchline": "Verdict: allowed, right. No."}, "must start 'Verdict: void, right.'"),
+        ({"punchline": "Verdict: void. No."}, "must start 'Verdict: void, right.'"),
+        ({"tag": exhibits.Tag(item="(z)", note="n")}, "c05: s. 14 has 0 items (z)"),
     ],
 )
-def test_the_short_version_refuses_what_the_answers_do_not_support(
+def test_the_short_version_refuses_an_exhibit_the_answers_do_not_support(
     monkeypatch: pytest.MonkeyPatch, change: dict[str, object], error: str
 ) -> None:
     board = short_board()
+    exhibit = EXHIBIT.model_copy(
+        update={k: v for k, v in change.items() if k in exhibits.Exhibit.model_fields}
+    )
     if "hand_check_record" in change:
         board = replace(board, hand_check_record=None)
-    if "section_result" in change:
-        opus = board.closed_book[OPUS.key]
-        scores = [
-            replace(sc, section_result="also_accepted") if sc.clause.id == "c05" else sc
-            for sc in opus.scores
-        ]
-        board = replace(
-            board, closed_book=board.closed_book | {OPUS.key: replace(opus, scores=scores)}
-        )
-    if "meaning_changed" in change:
-        key = (OPUS.key, "c05")
-        check = replace(board.quote_checks[key], meaning_changed="no", misleads_here="")
-        board = replace(board, quote_checks=board.quote_checks | {key: check})
-    for name in ("SHORT_PUNCHLINE", "_verdict_right"):
+    key = (OPUS.key, "c05")
+    for name in ("meaning_changed", "misleads_here"):
         if name in change:
-            monkeypatch.setattr(scoreboard, name, change[name])
+            check = replace(board.quote_checks[key], **{name: str(change[name])})
+            board = replace(board, quote_checks=board.quote_checks | {key: check})
+    if "_verdict_right" in change:
+        monkeypatch.setattr(scoreboard, "_verdict_right", change["_verdict_right"])
 
-    with pytest.raises(scoreboard.ReportDataError, match=error):
-        scoreboard.render_short(board, "NOTICE")
+    with pytest.raises(scoreboard.ReportDataError, match=re.escape(error)):
+        scoreboard.render_short(board, "NOTICE", (exhibit,))
 
 
-def test_the_short_version_needs_a_finished_hand_check(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(scoreboard, "SHORT_EXAMPLE", (OPUS.key, "c05"))
-
+def test_the_short_version_needs_a_finished_hand_check() -> None:
     with pytest.raises(scoreboard.ReportDataError, match="hand check is not finished"):
-        scoreboard.render_short(short_board(misleads=""), "NOTICE")
+        scoreboard.render_short(short_board(misleads=""), "NOTICE", (EXHIBIT,))

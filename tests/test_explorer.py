@@ -5,7 +5,7 @@ from typing import Any
 
 import pytest
 
-from lease_clause_checker import explorer, handcheck, quotediff, scoreboard
+from lease_clause_checker import exhibits, explorer, handcheck, quotediff, scoreboard
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.closedbook import ClosedBookResult
 from lease_clause_checker.elaws import CachedAct
@@ -144,16 +144,18 @@ def mini_board() -> Board:
     return Board(ScoredSet([C01, C02], runs), stress, ModelRun(HAIKU, [], []), closed_runs, checks)
 
 
-@pytest.fixture(autouse=True)
-def short_example(monkeypatch: pytest.MonkeyPatch) -> None:
-    monkeypatch.setattr(scoreboard, "SHORT_EXAMPLE", (HAIKU.key, "c01"))
-    # The punchline's checks are scoreboard's (test_scoreboard.py); c01 here cites s. 27, not
-    # the deciding s. 14, which they would refuse.
-    monkeypatch.setattr(scoreboard, "short_punchline", lambda board, numbers: "it is narrower")
+EXHIBIT = exhibits.Exhibit(
+    model=HAIKU.key,
+    clause="c01",
+    label="Narrowed it",
+    punchline="Verdict: void, right. It is narrower.",
+)
 
 
 def mini_data(board: Board | None = None) -> dict[str, Any]:
-    return explorer.build(board or mini_board(), SECTIONS, ACT, PROMPTS, 18, "results/c-v1")
+    return explorer.build(
+        board or mini_board(), SECTIONS, ACT, PROMPTS, 18, "results/c-v1", (EXHIBIT,)
+    )
 
 
 def redline(data: dict[str, Any], alignment: dict[str, Any]) -> list[tuple[str, str]]:
@@ -302,9 +304,6 @@ def test_the_story_holds_the_short_versions_numbers_and_answer() -> None:
         2,
     )
     assert [row["model"] for row in story["rows"]] == [spec.name for spec in MODELS]
-    assert story["lead"] == (
-        "Claude Haiku 5.5 called clause c01 void under s. 27, which is right. But it is narrower."
-    )
     assert story["table_title"] == "Four models, 2 synthetic lease clauses"
     assert story["column_groups"] == [
         ["With the statute in the prompt", ["Verdicts right", "Quotes word for word"]],
@@ -324,8 +323,15 @@ def test_the_story_holds_the_short_versions_numbers_and_answer() -> None:
         "misleads": 1,
         "unsure": 0,
     }
-    example = story["example"]
-    assert (example["clause"], example["alignment"]["section"]) == ("c01", "27")
+    [example] = story["exhibits"]
+    assert {k: example[k] for k in ("model", "clause", "label", "punchline", "verdict")} == {
+        "model": HAIKU.key,
+        "clause": "c01",
+        "label": "Narrowed it",
+        "punchline": "Verdict: void, right. It is narrower.",
+        "verdict": "void",
+    }
+    assert example["alignment"]["section"] == "27"
     assert example["alignment"]["subsection"] == "(2)"
     tokens = redline(mini_data(), example["alignment"])
     assert tokens[0] == ("The", "same")
@@ -334,6 +340,39 @@ def test_the_story_holds_the_short_versions_numbers_and_answer() -> None:
     assert " ".join(text for text, _ in tokens[last_kept + 1 :]) == (
         "and a time of entry between the hours of 8 a . m . and 8 p . m ."
     )
+
+
+def played(data: dict[str, Any], exhibit: dict[str, Any], *, done: bool) -> list[str]:
+    """The quote box as the page plays it: before any edit, or after every one."""
+    alignment, replay = exhibit["alignment"], exhibit["replay"]
+    act = data["act"]["sections"][alignment["section"]]["subsections"][alignment["subsection"]]
+    shown: list[str] = []
+    for kind, start, end in replay["box"]:
+        if kind == "same":
+            shown += [token[0] for token in act[start:end]]
+            continue
+        edit = replay["edits"][start]
+        source, part = (alignment["quote"], edit["add"]) if done else (act, edit["drop"])
+        if part:
+            shown += [token[0] for token in source[part[0] : part[1]]]
+    return shown
+
+
+def test_an_exhibit_replays_from_the_act_to_the_saved_quote_token_for_token() -> None:
+    data = mini_data()
+    [exhibit] = data["story"]["exhibits"]
+    act = data["act"]["sections"]["27"]["subsections"]["(2)"]
+    start, end = exhibit["replay"]["act"]
+
+    assert played(data, exhibit, done=False) == [token[0] for token in act[start:end]]
+    assert played(data, exhibit, done=True) == [t.text for t in quotediff.tokens(CHANGED_27)]
+    assert [edit["said"] for edit in exhibit["replay"]["edits"]] == [
+        "dropped: \u2018under subsection (1)\u2019",
+        "changed \u2018reasons\u2019 to \u2018reason\u2019",
+        "changed \u2018,\u2019 to \u2018and\u2019",
+        "dropped: \u2018and a time of entry between the hours of 8 a.m. and 8 p.m.\u2019",
+    ]
+    assert (exhibit["replay"]["tag"], exhibit["replay"]["tag_note"]) == (None, None)
 
 
 def test_the_page_settings_and_the_pipeline_count_come_from_the_data() -> None:

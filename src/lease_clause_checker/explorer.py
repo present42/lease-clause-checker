@@ -17,13 +17,21 @@ import json
 import re
 import shutil
 from collections import Counter
-from collections.abc import Iterator
+from collections.abc import Iterator, Sequence
 from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 from urllib.parse import quote
 
-from lease_clause_checker import elaws, handcheck, quotediff, quotereview, scoreboard, verify
+from lease_clause_checker import (
+    elaws,
+    exhibits,
+    handcheck,
+    quotediff,
+    quotereview,
+    scoreboard,
+    verify,
+)
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.models import DROPPED_MODELS, MODELS
 from lease_clause_checker.pipeline import RETRY_SUFFIX, Attempt
@@ -58,12 +66,14 @@ def build(
     prompts: dict[str, str],
     rule_sections: int,
     closed_book_folder: str,
+    configured: Sequence[exhibits.Exhibit],
 ) -> dict[str, Any]:
-    """Everything the page shows: the opening story, clauses, answers with their alignments,
-    the hand check, the subsections the alignments use, and the heading and link of every
-    section cited. `prompts` holds each method's prompt version; `rule_sections` is how many
-    sections the pipeline's prompt holds; `closed_book_folder` is where the closed-book answers
-    and their hand check are, relative to the repository, such as "results/closedbook-v1"."""
+    """Everything the page shows: the opening story with its exhibits (`configured`), clauses,
+    answers with their alignments, the hand check, the subsections the alignments use, and the
+    heading and link of every section cited. `prompts` holds each method's prompt version;
+    `rule_sections` is how many sections the pipeline's prompt holds; `closed_book_folder` is
+    where the closed-book answers and their hand check are, relative to the repository, such as
+    "results/closedbook-v1"."""
     if not board.closed_book:
         raise SiteExportError("no closed-book run is saved, so the explorer has no story")
     ids = [c.id for scored in (board.main, board.stress) for c in scored.clauses]
@@ -90,7 +100,7 @@ def build(
         )
         if number in sections
     }
-    story = _story(board, used)
+    story = _story(board, used, configured)
     act_sections: dict[str, dict[str, Any]] = {
         number: {
             "heading": sections[number].heading,
@@ -222,13 +232,14 @@ def _check_hand_rows(answers: list[dict[str, Any]], counts: dict[str, int]) -> N
         )
 
 
-def _story(board: Board, used: dict[SubsectionKey, list[quotediff.Token]]) -> dict[str, Any]:
-    """The opening view: the short version's numbers and its closed-book answer, with the
-    quote set against the whole subsection it comes from."""
-    numbers = scoreboard.short_numbers(board)
-    example = numbers.example
-    alignment = example.quote.alignment if example.quote else None
-    assert alignment is not None  # short_numbers checks it
+def _story(
+    board: Board,
+    used: dict[SubsectionKey, list[quotediff.Token]],
+    configured: Sequence[exhibits.Exhibit],
+) -> dict[str, Any]:
+    """The opening view: the short version's numbers and the exhibits, each quote set against
+    the whole subsection it comes from and as the edits that turn that subsection into it."""
+    numbers = scoreboard.short_numbers(board, configured)
     judged = numbers.hand_check
     return {
         "clauses": numbers.clauses,
@@ -236,7 +247,6 @@ def _story(board: Board, used: dict[SubsectionKey, list[quotediff.Token]]) -> di
         "column_groups": [[group, list(headings)] for group, headings in scoreboard.SHORT_GROUPS],
         "table_note": scoreboard.SHORT_TABLE_NOTE,
         "failed_from": scoreboard.failed_from(numbers.rows),
-        "lead": scoreboard.short_lead(numbers, scoreboard.short_punchline(board, numbers)),
         "table_title": scoreboard.short_table_title(numbers),
         "hand_check": {
             "quotes": judged.quotes,
@@ -245,10 +255,34 @@ def _story(board: Board, used: dict[SubsectionKey, list[quotediff.Token]]) -> di
             "misleads": judged.misleads,
             "unsure": judged.unsure,
         },
-        "example": {
-            "model": numbers.closed_book.spec.key,
-            "clause": example.clause.id,
-            "alignment": _alignment(alignment, used),
+        "exhibits": [_exhibit(shown, used) for shown in numbers.exhibits],
+    }
+
+
+def _exhibit(
+    shown: scoreboard.ShownExhibit, used: dict[SubsectionKey, list[quotediff.Token]]
+) -> dict[str, Any]:
+    exhibit, replay = shown.exhibit, shown.replay
+    return {
+        "model": shown.spec.key,
+        "clause": shown.result.clause.id,
+        "label": exhibit.label,
+        "punchline": exhibit.punchline,
+        "verdict": shown.result.answer.verdict,
+        "alignment": _alignment(shown.alignment, used),
+        "replay": {
+            "act": list(replay.act),
+            "box": [list(part) for part in replay.box],
+            "edits": [
+                {
+                    "drop": list(edit.drop) if edit.drop else None,
+                    "add": list(edit.add) if edit.add else None,
+                    "said": edit.said,
+                }
+                for edit in replay.edits
+            ],
+            "tag": list(replay.tag) if replay.tag else None,
+            "tag_note": exhibit.tag.note if exhibit.tag else None,
         },
     }
 
@@ -371,20 +405,10 @@ def _alignment(
 
 
 def _redline(alignment: Alignment) -> list[list[Any]]:
-    """The quote against its whole subsection, as `Alignment.pieces(whole=True)` gives it (the
-    one redline the README shows too), in runs of [kind, start, end]: "same" and "del" index
-    the subsection's tokens, which the export holds, and "ins" the quote's."""
-    where = {id(t): i for i, t in enumerate(alignment.act)}
-    where |= {id(t): i for i, t in enumerate(alignment.quote)}
-    runs: list[list[Any]] = []
-    for kind, tokens in alignment.pieces(whole=True):
-        for token in tokens:
-            i = where[id(token)]
-            if runs and runs[-1][0] == kind and runs[-1][2] == i:
-                runs[-1][2] = i + 1
-            else:
-                runs.append([kind, i, i + 1])
-    return runs
+    """The quote against its whole subsection, as `Alignment.runs(whole=True)` gives it (the
+    one redline the README shows too): [kind, start, end] runs, "same" and "del" indexing the
+    subsection's tokens, which the export holds, and "ins" the quote's."""
+    return [list(run) for run in alignment.runs(whole=True)]
 
 
 def _hand(check: quotereview.HandCheck, classified: Classified) -> dict[str, str]:
