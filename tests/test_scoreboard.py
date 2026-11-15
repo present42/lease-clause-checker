@@ -1018,12 +1018,12 @@ def test_the_hand_check_method_comes_from_its_record() -> None:
     text = scoreboard._failed_quotes(runs, {}, hand_check_record())
 
     assert (
-        "Under the rules, round 2 agreed with the suggestions on 1 of 4 rows; on 2 of the other 3 "
-        "the reviewer's answer was adopted. The owner approved the result." in text
+        "Under the four rules, a second blind round agreed with the suggestions on 1 of 4 rows; "
+        "on 2 of the other 3 the reviewer's answer was adopted. I approved the result." in text
     )
     assert f"({folder}/{handcheck.RULES})" in text
     assert f"({folder}/{handcheck.MANIFEST})" in text
-    assert "I worked four rows by hand" not in scoreboard._failed_quotes(runs, {})
+    assert "I worked four rows by hand with Claude" not in scoreboard._failed_quotes(runs, {})
 
 
 def test_the_hand_check_method_describes_two_rounds() -> None:

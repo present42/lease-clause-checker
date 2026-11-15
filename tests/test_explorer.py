@@ -387,7 +387,7 @@ def test_the_hand_check_links_to_its_record_and_csv() -> None:
 
     hand = mini_data(replace(mini_board(), hand_check_record=record))["hand_check"]
 
-    assert hand["method"].startswith("I worked four rows by hand")
+    assert hand["method"].startswith("I worked four rows by hand with Claude")
     assert hand["record"] == f"{explorer.REPOSITORY}/tree/main/results/c-v1/hand-check"
     assert hand["csv"] == f"{explorer.REPOSITORY}/blob/main/results/c-v1/quote-hand-check.csv"
 

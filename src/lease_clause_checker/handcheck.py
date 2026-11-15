@@ -94,11 +94,13 @@ def method_sentence(record: Record) -> str:
         raise RecordError(f"the record has rounds {sorted(record.rounds)}, not 1 and 2")
     rows, agreed = record.rows, record.agreed(2)
     return (
-        "I worked four rows by hand to set four written rules. Claude suggested an answer for "
-        "every row; in two rounds, fresh Claude Opus reviewers judged the rows blind, each row "
-        f"by one reviewer per round. Under the rules, round 2 agreed with the suggestions on "
-        f"{agreed} of {rows} rows; on {record.adopted(2)} of the other {rows - agreed} the "
-        "reviewer's answer was adopted. The owner approved the result."
+        "I worked four rows by hand with Claude to set the approach. Claude then suggested an "
+        "answer for every row. A first round of blind Claude Opus review, each row judged by one "
+        "reviewer, surfaced three unclear points, which I settled as written rules; a fourth rule "
+        "came from rows where the reviewers caught dropped sentence endings. Under the four "
+        f"rules, a second blind round agreed with the suggestions on {agreed} of {rows} rows; on "
+        f"{record.adopted(2)} of the other {rows - agreed} the reviewer's answer was adopted. "
+        "I approved the result."
     )
 
 
