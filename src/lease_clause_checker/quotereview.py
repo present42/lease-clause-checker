@@ -36,6 +36,8 @@ CHECKS_COLUMNS = (
 )
 LABELS: dict[Category, str] = {c: label for c, label in quotediff.LABELS.items() if c != "verbatim"}
 """Every category but `verbatim`, as the table's columns."""
+NOT_A_RULE: frozenset[str] = frozenset({"no_quote", "not_in_act", "too_short", "heading"})
+"""Categories of a quote that states no rule from the Act's operative text."""
 ALWAYS_SHOWN: tuple[Category, ...] = (
     "conventions",
     "cosmetic",
@@ -62,6 +64,10 @@ class HandCheck:
 
     def agrees(self, category: Category) -> bool:
         return self.hand_check in ("agree", category)
+
+    def category(self, category: Category) -> str:
+        """The category the hand check gives to a quote the code sorted as `category`."""
+        return category if self.hand_check == "agree" else self.hand_check
 
 
 HandChecks = dict[tuple[str, str], HandCheck]
@@ -106,50 +112,87 @@ def summary_table(runs: Sequence[ModelRun]) -> str:
     return "\n".join(lines)
 
 
+def failed_categories(runs: Sequence[ModelRun]) -> dict[tuple[str, str], Category]:
+    """The code's category of every quote that failed the check, by (model key, clause id)."""
+    return {
+        (run.spec.key, result.clause.id): quote.category
+        for run in runs
+        for result, quote in failed(run)
+    }
+
+
 def hand_check_line(runs: Sequence[ModelRun], checks: HandChecks) -> str:
     """How many quotes have had their category checked by hand, and how many of those the check
-    agreed with; then how many were read for meaning, and how many of those change what the Act
-    says, also among those the code sorted as "content words differ"; then how many of those
-    would mislead on the clause being checked, and how many are unsure."""
+    agreed with; then, from the hand check alone, how many state a rule from the Act, how many
+    of those change what it says, and how many of those would mislead on the clause being
+    checked. A meaning judgement on a quote that states no rule is not counted, and said so."""
     rows = [(run.spec.key, result.clause.id, q) for run in runs for result, q in failed(run)]
     found = [(checks[m, c], q) for m, c, q in rows if (m, c) in checks]
     done = [(check, q) for check, q in found if check.hand_check]
     if not done:
         line = "The categories have not yet been checked by hand."
-    else:
-        agreed = sum(check.agrees(quote.category) for check, quote in done)
-        so_far = "" if len(done) == len(rows) else " so far"
-        line = (
-            f"{len(done)} of the {len(rows)} categories have been checked by hand{so_far}; the "
-            f"hand check agreed with {agreed} of them."
+        meanings = [check.meaning_changed for check, _ in found if check.meaning_changed]
+        if not meanings:
+            return f"{line} No quote has yet been read by hand for meaning."
+        return (
+            f"{line} Read by hand for meaning, {meanings.count('yes')} of {len(meanings)} quotes "
+            f"change what the Act says{_misleads_line([check for check, _ in found])}"
         )
-    judged = [(check.meaning_changed, q.category) for check, q in found if check.meaning_changed]
-    if not judged:
-        return f"{line} No quote has yet been read by hand for meaning."
-    changes = sum(meaning == "yes" for meaning, _ in judged)
-    line += f" Read by hand for meaning, {changes} of {len(judged)} quotes change what the Act says"
-    content = [meaning for meaning, category in judged if category == "content_words_differ"]
-    if content:
+    agreed = sum(check.agrees(quote.category) for check, quote in done)
+    complete = len(done) == len(rows)
+    states = [check.category(quote.category) not in NOT_A_RULE for check, quote in done]
+    rules = [check for (check, _), rule in zip(done, states, strict=True) if rule]
+    uncounted = sum(
+        bool(check.meaning_changed)
+        for (check, _), rule in zip(done, states, strict=True)
+        if not rule
+    )
+    unread = sum(not check.meaning_changed for check in rules)
+    changes = sum(check.meaning_changed == "yes" for check in rules)
+    scope = (
+        f"Of the {_quotes(len(rows))}"
+        if complete
+        else f"Of the {_quotes(len(done))} checked so far"
+    )
+    line = (
+        f"{len(done)} of the {len(rows)} categories have been checked by hand"
+        f"{'' if complete else ' so far'}; the hand check agreed with the code's category for "
+        f"{agreed}. {scope}, {len(rules)} {_verb(len(rules), 'state')} a rule from the Act"
+        + (f" ({unread} not yet read for meaning)" if unread else "")
+        + f", {changes} {_verb(changes, 'change')} what it says"
+        + _misleads_line(rules)
+    )
+    if uncounted:
         line += (
-            f" ({content.count('yes')} of the {len(content)} that the code sorted as "
-            f"{LABELS['content_words_differ']})"
+            f" A meaning judgement on {_quotes(uncounted)} that {_verb(uncounted, 'state')} no "
+            "rule is not counted."
         )
-    return f"{line}.{_misleads_line(found, changes)}"
+    return line
 
 
-def _misleads_line(found: list[tuple[HandCheck, Classified]], changes: int) -> str:
-    """For the quotes that change what the Act says, how many would mislead on the clause being
-    checked, how many would not, and how many are unsure; "" if none changes it."""
+def _quotes(count: int) -> str:
+    return f"{count} quote" if count == 1 else f"{count} quotes"
+
+
+def _verb(count: int, verb: str) -> str:
+    """`verb` agreeing with `count` quotes: "1 states", "2 state"."""
+    return f"{verb}s" if count == 1 else verb
+
+
+def _misleads_line(checks: list[HandCheck]) -> str:
+    """How many of the quotes that change what the Act says would mislead on the clause being
+    checked, with those unsure and those not yet judged apart."""
+    changes = [check.misleads_here for check in checks if check.meaning_changed == "yes"]
     if not changes:
-        return ""
-    judged = [check.misleads_here for check, _ in found if check.misleads_here]
-    question = "Whether each would mislead on the clause being checked"
-    if not judged:
-        return f" {question} has not yet been judged."
-    waiting = "" if len(judged) == changes else f", not yet judged {changes - len(judged)}"
+        return "."
+    question = "would mislead on the clause being checked"
+    if not any(changes):
+        return f"; whether each {question} has not yet been judged."
+    unsure = changes.count("unsure")
+    waiting = changes.count("")
     return (
-        f" {question}, in the author's reading (not legal advice): yes {judged.count('yes')}, "
-        f"unsure {judged.count('unsure')}, no {judged.count('no')}{waiting}."
+        f", and {changes.count('yes')} {question} (the author's reading, not legal advice; "
+        f"{unsure} marked unsure" + (f", {waiting} not yet judged" if waiting else "") + ")."
     )
 
 

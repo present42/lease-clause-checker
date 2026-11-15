@@ -1,0 +1,419 @@
+{
+ "author": "Claude (Opus 5.5, model id claude-opus-5-5), main session",
+ "stage": "before round 1 review (2026-11-14 ~19:40 Toronto)",
+ "suggestions": [
+  {
+   "id": "claude-haiku-5-5__c02",
+   "category": "no_quote",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "The answer gave no quote."
+  },
+  {
+   "id": "claude-haiku-5-5__c04",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "claude-haiku-5-5__c05",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "claude-haiku-5-5__c06",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "Drops “except Part V.1”, an exception, and adds “other arrangement”, which the Act doesn’t say. The clause is a no-repairs term, and the quote still says an agreement can’t override the Act. The dropped exception isn’t what decides it."
+  },
+  {
+   "id": "claude-haiku-5-5__c07",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "claude-haiku-5-5__c08",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "claude-haiku-5-5__c10",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "Same as Haiku c06, and adds “release”. Haiku got this verdict wrong (the clause is allowed), but the cause is leaning on s. 3 instead of s. 26, not the changed words."
+  },
+  {
+   "id": "claude-haiku-5-5__c11",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Only the stock opening “A landlord may enter a rental unit” matches s. 27(1), which is about entry with 24 hours’ written notice. The Act mentions consent in s. 26(1)(b) (“if the tenant consents to the entry at the time of entry”), but Haiku’s sentence, “without the tenant’s consent only if”, isn’t a version of that either."
+  },
+  {
+   "id": "claude-haiku-5-5__c12",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "claude-haiku-5-5__c15",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "yes",
+   "reason": "The quote stops at “by the tenant”. The Act goes on to name “another occupant of the rental unit or a person permitted in the residential complex”, and the quote also drops “the repair of”. A narrower rule than the Act’s. The clause covers damage by the tenant, an occupant or a guest. The quote stops at “the tenant”, so it backs only part of the clause."
+  },
+  {
+   "id": "claude-haiku-5-5__c16",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "Drops “caused by the wilful or negligent conduct of”. Read alone, the tenant is responsible for any undue damage, not only damage caused by fault. The clause charges only for damage the tenant caused through carelessness, which the Act allows either way. It would mislead on a clause that charged for damage with no fault."
+  },
+  {
+   "id": "claude-haiku-5-5__c18",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "claude-haiku-5-5__c19",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "claude-haiku-5-5__c20",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "claude-haiku-5-5__c25",
+   "category": "wrong_cite",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "yes",
+   "reason": "Corrected after a closer look. The code lined it up with s. 106(4) through stock words, but the distinctive part, “provide a postdated cheque”, is s. 108: “Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to, (a) provide post-dated cheques or other negotiable instruments for payment of rent”. So it is s. 108’s rule, cited as s. 106, and it drops “nor a tenancy agreement”, like Opus c25. The clause is a lease term requiring post-dated cheques. Without “nor a tenancy agreement”, the quote covers only the landlord’s own demand, not the lease."
+  },
+  {
+   "id": "claude-haiku-5-5__c28",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "claude-haiku-5-5__c29",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "“Is not permitted to” for “shall not”, and it stops early. Same rule."
+  },
+  {
+   "id": "claude-haiku-5-5__c30",
+   "category": "wrong_cite",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Words from s. 119(1), cited as s. 116. Same rule, less a paragraph marker."
+  },
+  {
+   "id": "claude-haiku-5-5__c32",
+   "category": "wrong_cite",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "“No landlord shall” became “a landlord shall not”. The code flags the negation words, yet the meaning is the same. Words from s. 110, cited as s. 116. A good stage example of why a person decides."
+  },
+  {
+   "id": "claude-haiku-5-5__c34",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "Drops “except Part V.1” and “with respect to rental units in residential complexes, despite any other Act”. Under A that is a dropped exception; whether it matters here is the second question. The clause lets the landlord enter at any time. The quote still says a lease can’t override the Act; the dropped exception isn’t what decides it."
+  },
+  {
+   "id": "claude-haiku-5-5__c35",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Borderline. A nine-word fragment, “A landlord may enter a rental unit only if”. It echoes s. 25 (“A landlord may enter a rental unit only in accordance with section 26 or 27”) but stops before saying anything. I lean “not in the Act”; “wrong section cited” (s. 25) is also defensible."
+  },
+  {
+   "id": "claude-haiku-5-5__c36",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "claude-opus-5-5__c05",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Reworded throughout (“due and payable if the tenant defaults in the payment of rent”), but the rule is the same."
+  },
+  {
+   "id": "claude-opus-5-5__c07",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Only articles, capitals, number or punctuation differ."
+  },
+  {
+   "id": "claude-opus-5-5__c16",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Adds “its” before “residential complex”. Same meaning."
+  },
+  {
+   "id": "claude-opus-5-5__c18",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Only articles, capitals, number or punctuation differ."
+  },
+  {
+   "id": "claude-opus-5-5__c19",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Only articles, capitals, number or punctuation differ."
+  },
+  {
+   "id": "claude-opus-5-5__c20",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "claude-opus-5-5__c22",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Adds “a period of” before “one month”. Same meaning."
+  },
+  {
+   "id": "claude-opus-5-5__c23",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "“A person has paid” for “a tenant has paid”, and “The landlord” for “A landlord”. Slightly broader wording, the same rule in practice. I lean no."
+  },
+  {
+   "id": "claude-opus-5-5__c24",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "unsure",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "“Up to the lawful rent” for “up to the amount permitted”. The permitted amount is a cap set elsewhere in s. 106; “lawful rent” is a different measure. Your call. Rent here is monthly, so the cap and one month’s rent come to the same amount. No difference for this clause."
+  },
+  {
+   "id": "claude-opus-5-5__c25",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "yes",
+   "reason": "Drops “nor a tenancy agreement”. Those words are what make a lease clause void; the quote only binds the landlord. The clause is a lease term requiring post-dated cheques. “Nor a tenancy agreement” is the part that voids a lease term, so the quote doesn’t back the verdict on its face."
+  },
+  {
+   "id": "claude-opus-5-5__c26",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "yes",
+   "reason": "Same as Opus c25: “nor a tenancy agreement” is gone. The clause is a lease term requiring pre-authorized debit. Without “nor a tenancy agreement”, the quote covers only the landlord’s own demand, not the lease."
+  },
+  {
+   "id": "claude-opus-5-5__c27",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "Same as Opus c25: “nor a tenancy agreement” is gone. Same omission as c25 and c26, but this clause only offers the methods as an option and is allowed. The deciding word, “require”, survives. Same omission, different harm: a good pair for the talk."
+  },
+  {
+   "id": "claude-opus-5-5__c37",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Only articles, capitals, number or punctuation differ."
+  },
+  {
+   "id": "gemini-3.8-flash__c05",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "unsure",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "Heavily rewritten: adds “any”, “any specified”, “on the due date” and “on default of any other obligation”. The gist is close, but it states conditions the Act doesn’t. Your call. The clause is a plain acceleration clause, and the rewritten quote still says that is void."
+  },
+  {
+   "id": "gemini-3.8-flash__c06",
+   "category": "conventions",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Passes once legal quoting conventions are allowed (a capital in brackets, an ellipsis)."
+  },
+  {
+   "id": "gemini-3.8-flash__c09",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Only articles, capitals, number or punctuation differ."
+  },
+  {
+   "id": "gemini-3.8-flash__c10",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Only articles, capitals, number or punctuation differ."
+  },
+  {
+   "id": "gemini-3.8-flash__c11",
+   "category": "conventions",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Passes once legal quoting conventions are allowed (a capital in brackets, an ellipsis)."
+  },
+  {
+   "id": "gemini-3.8-flash__c12",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Adds “specific” and drops “under subsection (1) or (2)”. Same rule."
+  },
+  {
+   "id": "gemini-3.8-flash__c15",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Adds “rental unit or” before “residential complex”. Same rule."
+  },
+  {
+   "id": "gemini-3.8-flash__c18",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Corrected after a closer look. The code lined it up with s. 37(10), but the quote, “A notice of termination given by a tenant is void if it is given,” is a rewording of s. 37(4): “A tenant’s notice to terminate a tenancy is void if it is given,”. Right section, words changed, same rule. Open “All of s. 37” below to compare."
+  },
+  {
+   "id": "gemini-3.8-flash__c20",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "gemini-3.8-flash__c22",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "gemini-3.8-flash__c23",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "Drops “or to a former landlord” and adds “under subsection (1) or (2)”. A narrower rule than the Act’s. The clause applies the deposit to utilities and cleaning. The quote still says it goes to the last period’s rent; the former-landlord case doesn’t arise."
+  },
+  {
+   "id": "gemini-3.8-flash__c25",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Only articles, capitals, number or punctuation differ."
+  },
+  {
+   "id": "gemini-3.8-flash__c26",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "Replaces “automatic charging of a credit card or any other form of automatic payment” with “credit union or caisse populaire”. Credit cards and other automatic payments drop out of the rule. The clause is pre-authorized debit from a bank account, and that part of the rule survives. Credit cards don’t come into it."
+  },
+  {
+   "id": "gemini-3.8-flash__c28",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "Drops “written”. Read alone, any notice would seem to do. The clause already gives written notice. What fails is 30 days instead of 90, and the quote keeps the 90."
+  },
+  {
+   "id": "gemini-3.8-flash__c29",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "Drops “written”, and adds “existing” and “in the approved form”. The clause gives 90 days’ written notice on the Board’s form, so neither the dropped “written” nor the added form wording changes the answer."
+  },
+  {
+   "id": "gemini-3.8-flash__c32",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "Drops “during the term of their tenancy”. Read alone, the guideline cap seems to cover more increases than the Act says. The clause is itself about increases during the tenancy, so the dropped words don’t matter here."
+  },
+  {
+   "id": "gemini-3.8-flash__c33",
+   "category": "conventions",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Passes once legal quoting conventions are allowed (a capital in brackets, an ellipsis)."
+  },
+  {
+   "id": "gemini-3.8-flash__c34",
+   "category": "conventions",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Passes once legal quoting conventions are allowed (a capital in brackets, an ellipsis)."
+  },
+  {
+   "id": "gemini-3.8-flash__c38",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Only articles, capitals, number or punctuation differ."
+  },
+  {
+   "id": "gemini-4-argon__c17",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Joins s. 37(3) and s. 37(5) into one sentence. Each part matches its subsection and the rule is the same, but it is two subsections shown as one quote. Note it as a splice."
+  },
+  {
+   "id": "gemini-4-argon__c18",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Nothing in the Act lines up with it."
+  },
+  {
+   "id": "gemini-4-argon__c24",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "reason": "Corrected after a closer look. The code lined it up with s. 106(1), but it is a rewording of s. 106(3): “If the lawful rent increases after a tenant has paid a rent deposit, the landlord may require the tenant to pay an additional amount to increase the rent deposit up to the amount permitted by subsection (2).” Right section, so agree with the code’s category. It drops the cap, “up to the amount permitted”, so question 1 is yes. The clause tops the deposit up to the new monthly rent, which is within the cap here. The dropped cap doesn’t change the answer for this clause."
+  },
+  {
+   "id": "gemini-4-argon__c33",
+   "category": "wrong_cite",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Words from s. 86, cited as s. 134, with “rental” added. Same rule, wrong place."
+  },
+  {
+   "id": "gemini-4-argon__c37",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "reason": "Only articles, capitals, number or punctuation differ."
+  }
+ ]
+}

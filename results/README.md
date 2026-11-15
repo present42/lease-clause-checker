@@ -37,4 +37,15 @@ Haiku 5.5) on [samples/lease_short.txt](../samples/lease_short.txt), in a direct
 the first 16 hex digits of the lease's SHA-256. `lcc check` reuses them, so the example replays
 without an API key. Answers for any other lease go to the gitignored `.cache/check/`.
 
+The hand check of the closed-book quotes that failed the check is in
+`closedbook-v1+conventions-v1/`: `quote-hand-check.csv` holds the result, one row per quote
+(`quote-review.md` is generated from it), and `hand-check/` the record of how it was made: the
+four written rules, Claude's suggestions at each stage, and each round's blind reviewer answers
+with the rows and prompt each reviewer was given (see its
+[MANIFEST.md](closedbook-v1+conventions-v1/hand-check/MANIFEST.md)). `make report` computes the
+agreement figures from that record (`handcheck.py`) and checks that the final suggestions are
+the CSV. The judgements are the author's reading, not legal advice. The notes quote the Act.
+Source: Ontario e-Laws. Not an official version of the statute. © King's Printer for Ontario,
+2006.
+
 The answers are model outputs, not legal advice.

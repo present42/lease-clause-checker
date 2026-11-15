@@ -15,6 +15,7 @@ from lease_clause_checker import (
     check,
     closedbook,
     elaws,
+    handcheck,
     pipeline,
     quotereview,
     scoreboard,
@@ -459,19 +460,21 @@ def _load_board(
     }
     closed_book_runs = {key: run for key, run in closed_book.items() if run.scores}
     checks: quotereview.HandChecks = {}
+    record = None
     if len(closed_book_runs) == len(MODELS):
-        checks = quotereview.write_review(
-            list(closed_book_runs.values()),
-            RESULTS_DIRS[FROZEN_CLAUSES_SHA256] / closed_book_prompt.version,
-            elaws.NOTICE,
-            closed_book_prompt.version,
-        )
+        folder = RESULTS_DIRS[FROZEN_CLAUSES_SHA256] / closed_book_prompt.version
+        runs = list(closed_book_runs.values())
+        checks = quotereview.write_review(runs, folder, elaws.NOTICE, closed_book_prompt.version)
+        record = handcheck.load_record(folder / handcheck.RECORD_DIR)
+        if record is not None:
+            record.check_against(checks, quotereview.failed_categories(runs))
     board = scoreboard.Board(
         main_set,
         stress_set,
         scoreboard.restrict(selection, stress_set.clauses),
         closed_book_runs,
         checks,
+        record,
         sections,
     )
     versions = {

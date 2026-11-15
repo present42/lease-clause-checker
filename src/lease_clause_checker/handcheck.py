@@ -1,0 +1,141 @@
+"""The record of how the closed-book quotes that failed the check were judged by hand
+(`RECORD_DIR`, described in its MANIFEST.md), and the agreement figures computed from it.
+
+Claude suggested an answer for every quote (`suggestions_<stage>.json`); in each round, fresh
+reviewers judged the quotes blind, each quote by one reviewer (`round<n>_reviewer-*.json`); the
+final suggestions are what `quotereview.CHECKS_FILE` holds. A reviewer's answer agrees with a
+suggestion under `agrees`, the rule in MANIFEST.md.
+"""
+
+import json
+from collections.abc import Mapping
+from dataclasses import dataclass
+from pathlib import Path
+from typing import Any
+
+from lease_clause_checker.quotediff import Category
+from lease_clause_checker.quotereview import NOT_A_RULE, HandCheck, HandChecks
+
+RECORD_DIR = "hand-check"
+"""Beside `quotereview.CHECKS_FILE`."""
+MANIFEST = "MANIFEST.md"
+RULES = "rules.md"
+STAGES = ("round1", "round2", "final")
+"""Claude's suggestions: before round 1, before round 2 (under the rules), and final."""
+MEANING = "q1_says_something_the_act_doesnt"
+MISLEADS = "q2_misleads_on_this_clause"
+
+
+class RecordError(ValueError):
+    """The record is incomplete or inconsistent with itself or with the hand checks."""
+
+
+@dataclass(frozen=True)
+class Judgement:
+    category: str
+    meaning_changed: str
+    """"" for a category that states no rule (`NOT_A_RULE`), whatever was written."""
+    misleads_here: str
+
+
+def agrees(first: Judgement, second: Judgement) -> bool:
+    """The category matches, whether the quote changes what the Act says matches, and, where
+    both say it does, whether it misleads on the clause matches."""
+    if (first.category, first.meaning_changed) != (second.category, second.meaning_changed):
+        return False
+    return first.meaning_changed != "yes" or first.misleads_here == second.misleads_here
+
+
+@dataclass(frozen=True)
+class Record:
+    suggestions: Mapping[str, Mapping[str, Judgement]]
+    """By stage (`STAGES`), then by row id ("<model key>__<clause id>")."""
+    rounds: Mapping[int, Mapping[str, Judgement]]
+    """Every reviewer's answers in each round, by row id."""
+
+    @property
+    def rows(self) -> int:
+        return len(self.suggestions["final"])
+
+    def agreed(self, round_number: int) -> int:
+        """How many of the round's answers agree with the suggestions it was compared with."""
+        suggested = self.suggestions[f"round{round_number}"]
+        answers = self.rounds[round_number]
+        return sum(agrees(suggested[row], answers[row]) for row in answers)
+
+    def adopted(self, round_number: int) -> int:
+        """Of the rows where the round's answer differs from the suggestion, how many the final
+        answer takes from the reviewer."""
+        suggested = self.suggestions[f"round{round_number}"]
+        answers, final = self.rounds[round_number], self.suggestions["final"]
+        return sum(
+            not agrees(suggested[row], answer) and agrees(final[row], answer)
+            for row, answer in answers.items()
+        )
+
+    def check_against(
+        self, checks: HandChecks, categories: Mapping[tuple[str, str], Category]
+    ) -> None:
+        """Raise `RecordError` unless the final suggestions are the hand checks, row for row.
+        `categories` gives the code's category of each row, which "agree" stands for."""
+        final = self.suggestions["final"]
+        if set(final) != {_row_id(key) for key in categories}:
+            raise RecordError("the final suggestions are not the quotes that failed the check")
+        for key, category in categories.items():
+            check = checks.get(key)
+            if check is None or _from_check(check, category) != final[_row_id(key)]:
+                raise RecordError(f"{key[0]} {key[1]}: the hand check is not the final suggestion")
+
+
+def load_record(folder: Path) -> Record | None:
+    """The record in `folder`, or None if there is none; `RecordError` if it is incomplete."""
+    if not (folder / MANIFEST).exists():
+        return None
+    suggestions = {
+        stage: _by_row(_read(folder / f"claude_suggestions_{stage}.json")["suggestions"], stage)
+        for stage in STAGES
+    }
+    rounds: dict[int, dict[str, Judgement]] = {}
+    for path in sorted(folder.glob("round*_reviewer-*.json")):
+        data = _read(path)
+        number = int(data["round"].removeprefix("round"))
+        answers = _by_row(data["answers"], path.name)
+        if len(answers) != data["rows"]:
+            raise RecordError(f"{path.name}: {len(answers)} answers, but rows says {data['rows']}")
+        shared = rounds.setdefault(number, {}).keys() & answers.keys()
+        if shared:
+            raise RecordError(f"{path.name}: rows judged twice in round {number}: {sorted(shared)}")
+        rounds[number].update(answers)
+    rows = set(suggestions["final"])
+    for name, judged in [*suggestions.items(), *((f"round {n}", r) for n, r in rounds.items())]:
+        if set(judged) != rows:
+            raise RecordError(f"{name} does not cover the same rows as the final suggestions")
+    return Record(suggestions, rounds)
+
+
+def _read(path: Path) -> Any:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _by_row(entries: list[dict[str, str]], where: str) -> dict[str, Judgement]:
+    judged = {entry["id"]: _judgement(entry) for entry in entries}
+    if len(judged) != len(entries):
+        raise RecordError(f"{where}: a row appears twice")
+    return judged
+
+
+def _judgement(entry: Mapping[str, str]) -> Judgement:
+    category = entry["category"]
+    meaning = "" if category in NOT_A_RULE else entry[MEANING].strip().lower()
+    return Judgement(category, meaning, entry[MISLEADS].strip().lower())
+
+
+def _from_check(check: HandCheck, category: Category) -> Judgement:
+    resolved = check.category(category)
+    return Judgement(
+        resolved, "" if resolved in NOT_A_RULE else check.meaning_changed, check.misleads_here
+    )
+
+
+def _row_id(key: tuple[str, str]) -> str:
+    return f"{key[0]}__{key[1]}"

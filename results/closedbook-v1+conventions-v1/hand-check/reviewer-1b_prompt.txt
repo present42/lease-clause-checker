@@ -1,0 +1,31 @@
+You are an independent reviewer for a hand check in an LLM-evaluation project. Language models were asked, without the statute in front of them, whether synthetic Ontario lease clauses are void or allowed under the Residential Tenancies Act, 2006, and to quote the section that decides it. Each quote below failed a word-for-word check against the Act. Code has already sorted each failure into a category. Your job is to judge each row yourself, carefully and independently.
+
+FILES (read-only; do not modify anything anywhere except the one output file):
+- Rows to judge: <scratch>/rows_B.json (24 rows)
+- The whole Act, every in-force section, as {section number: {heading, text}}: <scratch>/act_sections.json
+- Write your result to: <scratch>/verdicts_B.json
+
+Do not use the web. Do not open or edit anything in ~/public_project. Use only these files.
+
+HOW TO READ A ROW. `quote_diff_against_lined_subsection` shows the model's quote against the subsection the code matched it to: `[-…-]` = the Act's words missing from the quote, `{+…+}` = the model's own words, the rest is in both. To recover the model's quote, keep the plain and {+…+} text and drop the [-…-] text. If the code found nothing, the diff is just the quote in quotation marks. `model_verdict_correct` says whether the model's void/allowed verdict was right. `label_section` and `also_accept` are the sections the test set accepts for that clause.
+
+IMPORTANT: the code matches by shared words, so its "lined up with" subsection can be wrong. Stock openings like "A landlord may enter a rental unit" or "a landlord shall not require a tenant to" appear in many sections. For every row, strip the stock words, find the quote's distinctive words, and search the whole Act (act_sections.json) for where they really come from, starting with the clause's label section. Known example: a quote "a landlord shall not require a tenant to provide a postdated cheque" was matched to s. 106(4) by shared stock words, but its distinctive part is s. 108's rule, so it is s. 108 with a wrong citation.
+
+DECIDE, FOR EACH ROW:
+1. `source`: the subsection the quote's words really come from (e.g. "s. 108(a)", "s. 37(4)"), or "none" if no part of the Act says this, or a list if it splices several subsections.
+2. `category`, one of:
+   - `cosmetic` — differs only in articles (a/the), capitals, grammatical number (notice/notices, is/are), punctuation or paragraph markers like ", (a)".
+   - `conventions` — would pass under legal quoting conventions (a bracketed capital like "[A]", an ellipsis "…" for omitted words) and is otherwise exact.
+   - `content_words_differ` — comes from the cited section (any subsection of it), with words added, dropped or changed beyond cosmetic.
+   - `wrong_cite` — its words come from a different section than the one cited (with or without word changes).
+   - `not_in_act` — no part of the Act says this; only stock words match. A loose paraphrase whose distinctive content clearly corresponds to one provision is NOT not_in_act: it belongs to that provision (content_words_differ or wrong_cite).
+   - `drops_negation` — the quote is verbatim except it leaves out a "no/not/neither/nor" just before it.
+   - `no_quote`, `too_short` (a fragment too short to state any rule), `heading` (quotes only a heading).
+3. `q1_says_something_the_act_doesnt` — only for rows whose words come from the Act (not for not_in_act / no_quote / too_short / heading; use "" there). Compare the quote with its true source, judged against the Act's text, not against the clause: "yes" if someone relying on the quote would get a different rule — broader, narrower, a dropped condition, limit or exception, or the opposite; "no" if it is the same rule reworded or merely cut off before a list of conditions without stating a different rule. Check the TAIL of each sentence especially: limits and conditions ("up to…", "if…", "except…", "during…") usually sit at the end. Cosmetic rows are "no".
+4. `q2_misleads_on_this_clause` — only when q1 is "yes", else "". Read the clause. "yes" if the change touches what decides THIS clause, so someone relying on the quote could get this clause wrong or not see why the verdict holds; "no" if the change is harmless for this clause; "unsure" if it genuinely needs legal knowledge you don't have. Example: dropping "nor a tenancy agreement" from s. 108 misleads on a lease term that REQUIRES post-dated cheques (the missing words are what void a lease term), but not on a term that only OFFERS them as an option.
+5. `confidence`: "high", "medium" or "low".
+6. `reason`: one or two plain sentences naming the exact words that drive your call.
+
+Be rigorous and independent. Do not default to the code's category; it is often right but sometimes wrong. Do not rubber-stamp: if a row is genuinely borderline, say so with confidence "low" and explain both readings.
+
+OUTPUT: write verdicts_B.json as a JSON array, one object per row, in input order, with keys: id, source, category, q1_says_something_the_act_doesnt, q2_misleads_on_this_clause, confidence, reason. Validate that it parses and has 24 entries. Your final message: just "done" plus the count of rows where your category differs from code_category.

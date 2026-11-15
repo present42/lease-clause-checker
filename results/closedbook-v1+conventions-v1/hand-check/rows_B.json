@@ -1,0 +1,428 @@
+[
+ {
+  "id": "gemini-3.8-flash__c05",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c05",
+  "clause_text": "If any instalment of rent is not paid when due, the rent for the remainder of the term shall at once become due and payable.",
+  "clause_label": "void",
+  "label_section": "15",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 15",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 15",
+  "code_words_matched": "28 of 47",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "A provision in a tenancy agreement providing that all or {+any+} part of the remaining rent for a term or {+any specified+} period [-of a tenancy or a specific sum-] becomes due [-upon a-] {+on+} default {+in payment of rent on the due date or on default of any other obligation+} of the tenant [-in paying rent due or in carrying out an obligation-] is void."
+ },
+ {
+  "id": "gemini-3.8-flash__c06",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c06",
+  "clause_text": "The Tenant accepts the unit in its present condition. The Landlord is under no obligation to make any repairs to the unit during the tenancy.",
+  "clause_label": "void",
+  "label_section": "20",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 4",
+  "code_category": "conventions",
+  "code_lined_up_with": "s. 4(1)",
+  "code_words_matched": "16 of 17",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "[-a-] {+A+} provision in a tenancy agreement that is inconsistent with this Act or the regulations is void."
+ },
+ {
+  "id": "gemini-3.8-flash__c09",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c09",
+  "clause_text": "If there is a fire, a flood, a burst pipe or another emergency in the unit, the Landlord may enter without notice.",
+  "clause_label": "allowed",
+  "label_section": "26",
+  "also_accept": [],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 26",
+  "code_category": "cosmetic",
+  "code_lined_up_with": "s. 26(1)",
+  "code_words_matched": "12 of 13",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "A landlord may enter [-a-] {+the+} rental unit at any time without written notice"
+ },
+ {
+  "id": "gemini-3.8-flash__c10",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c10",
+  "clause_text": "The Landlord will clean the unit every second Friday and may enter without written notice between 10 a.m. and 2 p.m. on those days for that purpose.",
+  "clause_label": "allowed",
+  "label_section": "26",
+  "also_accept": [],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 26",
+  "code_category": "cosmetic",
+  "code_lined_up_with": "s. 26(2)",
+  "code_words_matched": "27 of 28",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "A landlord may enter [-a-] {+the+} rental unit without written notice to clean it if the tenancy agreement requires the landlord to clean the rental unit at regular intervals"
+ },
+ {
+  "id": "gemini-3.8-flash__c11",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c11",
+  "clause_text": "By signing this Agreement, the Tenant consents to the Landlord entering the unit at any reasonable time without notice.",
+  "clause_label": "void",
+  "label_section": "26",
+  "also_accept": [
+   "4",
+   "25",
+   "27"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 4",
+  "code_category": "conventions",
+  "code_lined_up_with": "s. 4(1)",
+  "code_words_matched": "16 of 17",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "[-a-] {+A+} provision in a tenancy agreement that is inconsistent with this Act or the regulations is void."
+ },
+ {
+  "id": "gemini-3.8-flash__c12",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c12",
+  "clause_text": "To carry out repairs, the Landlord may enter the unit on 24 hours' written notice stating the reason and the day, at any time between 7 a.m. and 10 p.m.",
+  "clause_label": "void",
+  "label_section": "27",
+  "also_accept": [
+   "4",
+   "25"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 27",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 27(3)",
+  "code_words_matched": "29 of 30",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "The written notice [-under subsection (1) or (2)-] shall specify the reason for entry, the day of entry and a {+specific+} time of entry between the hours of 8 a.m. and 8 p.m."
+ },
+ {
+  "id": "gemini-3.8-flash__c15",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c15",
+  "clause_text": "If the Tenant, an occupant or a guest of the Tenant damages the unit on purpose or through carelessness, beyond normal wear and tear, the Tenant shall pay the reasonable cost of the repair.",
+  "clause_label": "allowed",
+  "label_section": "34",
+  "also_accept": [
+   "89"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 34",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 34",
+  "code_words_matched": "44 of 47",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "The tenant is responsible for the repair of undue damage to the rental unit or residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in the {+rental unit or+} residential complex by the tenant."
+ },
+ {
+  "id": "gemini-3.8-flash__c18",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c18",
+  "clause_text": "For the Landlord's records, the Tenant will sign, together with this Agreement, a notice of termination dated for the last day of the term.",
+  "clause_label": "void",
+  "label_section": "37",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 37",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 37(10)",
+  "code_words_matched": "9 of 14",
+  "code_critical_words": "not",
+  "quote_diff_against_lined_subsection": "[-a-] {+A+} notice of termination given by [-the tenant; or (b)-] a tenant [-sublets the rental unit to a person who-] is [-not a student of a post-secondary educational institution that-] {+void if it+} is [-a party-] {+given,+}"
+ },
+ {
+  "id": "gemini-3.8-flash__c20",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c20",
+  "clause_text": "Pets are welcome. The Tenant shall pay a refundable pet deposit of $250, which will be returned at the end of the tenancy if there is no pet damage.",
+  "clause_label": "void",
+  "label_section": "105",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 105",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“A landlord shall not require or receive a security deposit from a tenant, other than a rent deposit of a kind described in section 106.”"
+ },
+ {
+  "id": "gemini-3.8-flash__c22",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c22",
+  "clause_text": "Rent is payable monthly. On signing, the Tenant shall pay a rent deposit equal to two months' rent, to be applied to the last two months of the tenancy.",
+  "clause_label": "void",
+  "label_section": "106",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 106",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“The amount of a rent deposit shall not exceed the amount of one month’s rent, where the rent is payable monthly or less frequently, or the amount of one week’s rent, where the rent is payable on a weekly basis.”"
+ },
+ {
+  "id": "gemini-3.8-flash__c23",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c23",
+  "clause_text": "At the end of the tenancy, the Landlord will apply the rent deposit to any unpaid utility bills and to the cost of cleaning the unit.",
+  "clause_label": "void",
+  "label_section": "106",
+  "also_accept": [
+   "4",
+   "105"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 106",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 106(10)",
+  "code_words_matched": "28 of 33",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "A landlord shall apply a rent deposit that a tenant [-has paid-] {+provides+} to the landlord {+under subsection (1)+} or [-to a former landlord-] {+(2)+} in payment of the rent for the last rent period before the tenancy terminates."
+ },
+ {
+  "id": "gemini-3.8-flash__c25",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c25",
+  "clause_text": "Before moving in, the Tenant shall give the Landlord twelve post-dated cheques covering the first year's rent.",
+  "clause_label": "void",
+  "label_section": "108",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 108",
+  "code_category": "cosmetic",
+  "code_lined_up_with": "s. 108",
+  "code_words_matched": "27 of 27",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to [-, (a)-] provide post-dated cheques or other negotiable instruments for payment of rent {+.+}"
+ },
+ {
+  "id": "gemini-3.8-flash__c26",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c26",
+  "clause_text": "Rent shall be paid by pre-authorized debit from the Tenant's bank account on the first day of each month.",
+  "clause_label": "void",
+  "label_section": "108",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 108",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 108",
+  "code_words_matched": "22 of 25",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "permit automatic debiting of the tenant’s or prospective tenant’s account at a financial institution, [-automatic charging of a-] credit [-card-] {+union+} or [-any other form of automatic payment-] {+caisse populaire+} for [-the-] payment of rent."
+ },
+ {
+  "id": "gemini-3.8-flash__c28",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c28",
+  "clause_text": "The Landlord may increase the rent by up to the guideline amount once in any 12-month period by giving the Tenant 30 days' written notice.",
+  "clause_label": "void",
+  "label_section": "116",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 116",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 116(1)",
+  "code_words_matched": "33 of 33",
+  "code_critical_words": "written",
+  "quote_diff_against_lined_subsection": "A landlord shall not increase the rent charged to a tenant for a rental unit without first giving the tenant at least 90 days [-written-] notice of the landlord’s intention to do so."
+ },
+ {
+  "id": "gemini-3.8-flash__c29",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c29",
+  "clause_text": "The Landlord may increase the rent by up to the guideline amount once in any 12-month period, after giving the Tenant at least 90 days' written notice in the form approved by the Landlord and Tenant Board.",
+  "clause_label": "allowed",
+  "label_section": "116",
+  "also_accept": [
+   "119"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 116",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 116(1)",
+  "code_words_matched": "32 of 38",
+  "code_critical_words": "written",
+  "quote_diff_against_lined_subsection": "A landlord shall not increase the rent charged to [-a-] {+an existing+} tenant for a rental unit without first giving the tenant at least 90 days [-written-] notice of the landlord’s intention to do so [-.-] {+in the approved form.+}"
+ },
+ {
+  "id": "gemini-3.8-flash__c32",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c32",
+  "clause_text": "Any increase in rent during the tenancy will not exceed the annual rent increase guideline.",
+  "clause_label": "allowed",
+  "label_section": "120",
+  "also_accept": [],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 120",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 120(1)",
+  "code_words_matched": "22 of 22",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "No landlord may increase the rent charged to a tenant, or to an assignee under section 95, [-during the term of their tenancy-] by more than the guideline"
+ },
+ {
+  "id": "gemini-3.8-flash__c33",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c33",
+  "clause_text": "The Tenant shall pay rent for the month after the tenancy ends, even if the Tenant has already moved out.",
+  "clause_label": "void",
+  "label_section": "134",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 4",
+  "code_category": "conventions",
+  "code_lined_up_with": "s. 4(1)",
+  "code_words_matched": "16 of 17",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "[-a-] {+A+} provision in a tenancy agreement that is inconsistent with this Act or the regulations is void."
+ },
+ {
+  "id": "gemini-3.8-flash__c34",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c34",
+  "clause_text": "The Landlord may enter the unit at any time and for any reason without notice to the Tenant.",
+  "clause_label": "void",
+  "label_section": "25",
+  "also_accept": [
+   "4",
+   "26",
+   "27"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 4",
+  "code_category": "conventions",
+  "code_lined_up_with": "s. 4(1)",
+  "code_words_matched": "16 of 17",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "[-a-] {+A+} provision in a tenancy agreement that is inconsistent with this Act or the regulations is void."
+ },
+ {
+  "id": "gemini-3.8-flash__c38",
+  "model": "Gemini 3.8 Flash",
+  "clause_id": "c38",
+  "clause_text": "If, after the tenancy has begun, the Landlord and the Tenant agree to end it on a date they both choose, neither of them needs to give a notice of termination.",
+  "clause_label": "allowed",
+  "label_section": "37",
+  "also_accept": [],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 37",
+  "code_category": "cosmetic",
+  "code_lined_up_with": "s. 37(3)",
+  "code_words_matched": "19 of 19",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "A notice of termination need not be given if a landlord and [-a-] tenant have agreed to terminate a tenancy."
+ },
+ {
+  "id": "gemini-4-argon__c17",
+  "model": "Gemini 4 Argon",
+  "clause_id": "c17",
+  "clause_text": "As a condition of this Agreement, the Tenant agrees that the tenancy will end, and the Tenant will move out, on the last day of the term.",
+  "clause_label": "void",
+  "label_section": "37",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 37",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 37(5)",
+  "code_words_matched": "24 of 43",
+  "code_critical_words": "not",
+  "quote_diff_against_lined_subsection": "[-(5) An agreement between-] {+A notice of termination need not be given if+} a landlord and {+a+} tenant {+have agreed to terminate a tenancy, but an agreement+} to terminate a tenancy is void if it is entered into [-, (a)-] at the time the tenancy agreement is entered into {+.+}"
+ },
+ {
+  "id": "gemini-4-argon__c18",
+  "model": "Gemini 4 Argon",
+  "clause_id": "c18",
+  "clause_text": "For the Landlord's records, the Tenant will sign, together with this Agreement, a notice of termination dated for the last day of the term.",
+  "clause_label": "void",
+  "label_section": "37",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 37",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“A notice of termination need not be given if a landlord and a tenant have agreed to terminate a tenancy, unless the agreement to terminate was entered into when the tenancy agreement was entered into or as a condition of entering into the tenancy agreement, in which case the agreement to terminate is void and a landlord or a tenant shall not give a notice of termination when the tenancy agreement is entered into or as a condition of entering into the tenancy agreement and any such notice is void.”"
+ },
+ {
+  "id": "gemini-4-argon__c24",
+  "model": "Gemini 4 Argon",
+  "clause_id": "c24",
+  "clause_text": "Rent is payable monthly. Whenever the rent is lawfully increased, the Landlord may require the Tenant to pay an additional amount so that the rent deposit equals the new monthly rent.",
+  "clause_label": "allowed",
+  "label_section": "106",
+  "also_accept": [],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 106",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 106(1)",
+  "code_words_matched": "12 of 18",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "A landlord may require a tenant to pay [-a-] {+more to the+} rent deposit [-with respect to a tenancy-] if the [-landlord does so-] {+lawful rent increases+}"
+ },
+ {
+  "id": "gemini-4-argon__c33",
+  "model": "Gemini 4 Argon",
+  "clause_id": "c33",
+  "clause_text": "The Tenant shall pay rent for the month after the tenancy ends, even if the Tenant has already moved out.",
+  "clause_label": "void",
+  "label_section": "134",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 134",
+  "code_category": "wrong_cite",
+  "code_lined_up_with": "s. 86",
+  "code_words_matched": "31 of 32",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "A landlord is entitled to compensation for the use and occupation of a rental unit by a tenant who does not vacate the {+rental+} unit after his or her tenancy is terminated {+.+}"
+ },
+ {
+  "id": "gemini-4-argon__c37",
+  "model": "Gemini 4 Argon",
+  "clause_id": "c37",
+  "clause_text": "After either party has given notice to end the tenancy, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, but before each showing will tell the Tenant, or make a reasonable effort to tell the Tenant, that it intends to enter.",
+  "clause_label": "allowed",
+  "label_section": "26",
+  "also_accept": [],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 26",
+  "code_category": "cosmetic",
+  "code_lined_up_with": "s. 26(3)",
+  "code_words_matched": "17 of 18",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "A landlord may enter [-the-] {+a+} rental unit without written notice to show the unit to prospective tenants if,"
+ }
+]

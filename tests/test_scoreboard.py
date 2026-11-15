@@ -8,7 +8,7 @@ from unittest.mock import Mock
 
 import pytest
 
-from lease_clause_checker import scoreboard
+from lease_clause_checker import handcheck, scoreboard
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.closedbook import ClosedBookResult
 from lease_clause_checker.models import MODELS, ModelSpec, model_by_key
@@ -993,3 +993,41 @@ def test_passing_quotes_that_stop_early_are_counted_as_an_upper_limit() -> None:
         "flags 92 of the 95 passing first pipeline quotes and 77 of the 77 passing closed-book "
         "quotes as possibly stopping early" in text
     )
+
+
+def hand_check_record(rounds: tuple[int, ...] = (1, 2)) -> handcheck.Record:
+    """Four rows; round 2 agrees with its suggestions on one, and on two of the other three the
+    final answer is the reviewer's."""
+    same, other = (
+        handcheck.Judgement("cosmetic", "no", ""),
+        handcheck.Judgement("wrong_cite", "", ""),
+    )
+    suggested = dict.fromkeys("abcd", same)
+    reviewed = {"a": same, "b": other, "c": other, "d": other}
+    final = {"a": same, "b": other, "c": other, "d": same}
+    return handcheck.Record(
+        {"round1": suggested, "round2": suggested, "final": final},
+        dict.fromkeys(rounds, reviewed),
+    )
+
+
+def test_the_hand_check_method_comes_from_its_record() -> None:
+    runs = list(tldr_closed_book().values())
+    folder = f"results/{runs[0].records[0].prompt_version}/{handcheck.RECORD_DIR}"
+
+    text = scoreboard._failed_quotes(runs, {}, hand_check_record())
+
+    assert (
+        "Under the rules, round 2 agreed with the suggestions on 1 of 4 rows; on 2 of the other 3 "
+        "the reviewer's answer was adopted. The owner approved the result." in text
+    )
+    assert f"({folder}/{handcheck.RULES})" in text
+    assert f"({folder}/{handcheck.MANIFEST})" in text
+    assert "I worked four rows by hand" not in scoreboard._failed_quotes(runs, {})
+
+
+def test_the_hand_check_method_describes_two_rounds() -> None:
+    runs = list(tldr_closed_book().values())
+
+    with pytest.raises(scoreboard.ReportDataError, match="rounds \\[1, 2, 3\\]"):
+        scoreboard._failed_quotes(runs, {}, hand_check_record((1, 2, 3)))

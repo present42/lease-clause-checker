@@ -1,0 +1,629 @@
+[
+ {
+  "id": "claude-haiku-5-5__c02",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c02",
+  "clause_text": "Out of consideration for neighbours with allergies, the Tenant agrees not to keep any animal in the unit.",
+  "clause_label": "void",
+  "label_section": "14",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "wrong",
+  "model_cited": "none",
+  "code_category": "no_quote",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": ""
+ },
+ {
+  "id": "claude-haiku-5-5__c04",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c04",
+  "clause_text": "The Tenant shall not allow any animal kept in the unit to damage the unit or to disturb other residents.",
+  "clause_label": "allowed",
+  "label_section": "14",
+  "also_accept": [],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 14",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“it purports to alter the rights, obligations or restrictions in this Act”"
+ },
+ {
+  "id": "claude-haiku-5-5__c05",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c05",
+  "clause_text": "If any instalment of rent is not paid when due, the rent for the remainder of the term shall at once become due and payable.",
+  "clause_label": "void",
+  "label_section": "15",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 4",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“any attempt to do so does not affect the rights under this Act”"
+ },
+ {
+  "id": "claude-haiku-5-5__c06",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c06",
+  "clause_text": "The Tenant accepts the unit in its present condition. The Landlord is under no obligation to make any repairs to the unit during the tenancy.",
+  "clause_label": "void",
+  "label_section": "20",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 3",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 3(1)",
+  "code_words_matched": "10 of 13",
+  "code_critical_words": "except",
+  "quote_diff_against_lined_subsection": "This Act [-, except Part V.1,-] applies [-with respect to rental units in residential complexes, despite any other Act and-] despite any agreement {+, waiver+} or [-waiver-] {+other arrangement+} to the contrary."
+ },
+ {
+  "id": "claude-haiku-5-5__c07",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c07",
+  "clause_text": "The Tenant viewed the unit before signing and is satisfied with its condition. The Tenant will not ask the Landlord to repair any defect that was visible at the viewing.",
+  "clause_label": "void",
+  "label_section": "20",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 3",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“this Act applies despite any agreement, waiver or assignment to the contrary”"
+ },
+ {
+  "id": "claude-haiku-5-5__c08",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c08",
+  "clause_text": "The Tenant shall pay for every repair to the unit during the tenancy, whatever the cause.",
+  "clause_label": "void",
+  "label_section": "20",
+  "also_accept": [
+   "4",
+   "34"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 3",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“this Act applies despite any agreement, waiver or other arrangement to the contrary”"
+ },
+ {
+  "id": "claude-haiku-5-5__c10",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c10",
+  "clause_text": "The Landlord will clean the unit every second Friday and may enter without written notice between 10 a.m. and 2 p.m. on those days for that purpose.",
+  "clause_label": "allowed",
+  "label_section": "26",
+  "also_accept": [],
+  "model_verdict_correct": "wrong",
+  "model_cited": "s. 3",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 3(1)",
+  "code_words_matched": "9 of 12",
+  "code_critical_words": "except",
+  "quote_diff_against_lined_subsection": "[-This-] {+The+} Act [-, except Part V.1,-] applies [-with respect to rental units in residential complexes, despite any other Act and-] despite any agreement {+, waiver+} or [-waiver-] {+release+} to the contrary."
+ },
+ {
+  "id": "claude-haiku-5-5__c11",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c11",
+  "clause_text": "By signing this Agreement, the Tenant consents to the Landlord entering the unit at any reasonable time without notice.",
+  "clause_label": "void",
+  "label_section": "26",
+  "also_accept": [
+   "4",
+   "25",
+   "27"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 27",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 27(1)",
+  "code_words_matched": "9 of 14",
+  "code_critical_words": "written",
+  "quote_diff_against_lined_subsection": "A landlord may enter a rental unit [-in accordance with written notice given to-] {+without+} the tenant [-at least 24 hours before-] {+'s consent only if+}"
+ },
+ {
+  "id": "claude-haiku-5-5__c12",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c12",
+  "clause_text": "To carry out repairs, the Landlord may enter the unit on 24 hours' written notice stating the reason and the day, at any time between 7 a.m. and 10 p.m.",
+  "clause_label": "void",
+  "label_section": "27",
+  "also_accept": [
+   "4",
+   "25"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 3",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“Despite any agreement, waiver or other arrangement to the contrary, this Act applies”"
+ },
+ {
+  "id": "claude-haiku-5-5__c15",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c15",
+  "clause_text": "If the Tenant, an occupant or a guest of the Tenant damages the unit on purpose or through carelessness, beyond normal wear and tear, the Tenant shall pay the reasonable cost of the repair.",
+  "clause_label": "allowed",
+  "label_section": "34",
+  "also_accept": [
+   "89"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 34",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 34",
+  "code_words_matched": "15 of 21",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "[-The-] {+A+} tenant is responsible for [-the repair of-] undue damage to the rental unit or residential complex caused [-by the wilful-] {+wilfully+} or [-negligent conduct of the-] {+negligently by the tenant+}"
+ },
+ {
+  "id": "claude-haiku-5-5__c16",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c16",
+  "clause_text": "If the Tenant's dog causes undue damage to the floors or doors because the Tenant was careless, the Tenant must pay to repair that damage.",
+  "clause_label": "allowed",
+  "label_section": "34",
+  "also_accept": [
+   "89"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 34",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 34",
+  "code_words_matched": "15 of 17",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "[-The-] {+A+} tenant is responsible for [-the repair of-] undue damage {+done+} to the rental unit or [-residential complex caused by the wilful or negligent conduct of the tenant, another occupant of the rental unit or a person permitted in-] the residential complex by"
+ },
+ {
+  "id": "claude-haiku-5-5__c18",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c18",
+  "clause_text": "For the Landlord's records, the Tenant will sign, together with this Agreement, a notice of termination dated for the last day of the term.",
+  "clause_label": "void",
+  "label_section": "37",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 5",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“Any waiver by a tenant or landlord of a right under this Act is void”"
+ },
+ {
+  "id": "claude-haiku-5-5__c19",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c19",
+  "clause_text": "On signing, the Tenant shall pay a damage deposit of $500, to be returned at the end of the tenancy if the unit is left in good condition.",
+  "clause_label": "void",
+  "label_section": "105",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 105",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“A landlord shall not collect a damage deposit or any other security deposit”"
+ },
+ {
+  "id": "claude-haiku-5-5__c20",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c20",
+  "clause_text": "Pets are welcome. The Tenant shall pay a refundable pet deposit of $250, which will be returned at the end of the tenancy if there is no pet damage.",
+  "clause_label": "void",
+  "label_section": "105",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 106",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“No landlord shall collect or require or accept a security deposit or any other amount in addition to the rent deposit”"
+ },
+ {
+  "id": "claude-haiku-5-5__c25",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c25",
+  "clause_text": "Before moving in, the Tenant shall give the Landlord twelve post-dated cheques covering the first year's rent.",
+  "clause_label": "void",
+  "label_section": "108",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 106",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 106(4)",
+  "code_words_matched": "9 of 12",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "a landlord [-under subsection 47 (1) of the Mortgages Act-] shall not require a tenant to [-pay-] {+provide+} a [-rent deposit-] {+postdated cheque+}"
+ },
+ {
+  "id": "claude-haiku-5-5__c28",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c28",
+  "clause_text": "The Landlord may increase the rent by up to the guideline amount once in any 12-month period by giving the Tenant 30 days' written notice.",
+  "clause_label": "void",
+  "label_section": "116",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 4",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“the Act applies despite any agreement, waiver or other arrangement to the contrary”"
+ },
+ {
+  "id": "claude-haiku-5-5__c29",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c29",
+  "clause_text": "The Landlord may increase the rent by up to the guideline amount once in any 12-month period, after giving the Tenant at least 90 days' written notice in the form approved by the Landlord and Tenant Board.",
+  "clause_label": "allowed",
+  "label_section": "116",
+  "also_accept": [
+   "119"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 116",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 116(1)",
+  "code_words_matched": "9 of 13",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "[-A-] {+a+} landlord [-shall-] {+is+} not {+permitted to+} increase the rent [-charged to a tenant-] for a rental unit"
+ },
+ {
+  "id": "claude-haiku-5-5__c30",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c30",
+  "clause_text": "The Landlord may increase the rent by up to the guideline amount every six months, on 90 days' written notice in the form approved by the Landlord and Tenant Board.",
+  "clause_label": "void",
+  "label_section": "119",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 116",
+  "code_category": "wrong_cite",
+  "code_lined_up_with": "s. 119(1)",
+  "code_words_matched": "11 of 11",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "at least 12 months have elapsed [-, (a)-] since [-the day of-] the last rent increase"
+ },
+ {
+  "id": "claude-haiku-5-5__c32",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c32",
+  "clause_text": "Any increase in rent during the tenancy will not exceed the annual rent increase guideline.",
+  "clause_label": "allowed",
+  "label_section": "120",
+  "also_accept": [],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 116",
+  "code_category": "wrong_cite",
+  "code_lined_up_with": "s. 110",
+  "code_words_matched": "15 of 26",
+  "code_critical_words": "no, not",
+  "quote_diff_against_lined_subsection": "[-No-] {+a+} landlord shall {+not+} increase the rent [-charged to a tenant-] for a rental unit {+that is charged under a tenancy agreement or otherwise+} , except in accordance with this Part"
+ },
+ {
+  "id": "claude-haiku-5-5__c34",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c34",
+  "clause_text": "The Landlord may enter the unit at any time and for any reason without notice to the Tenant.",
+  "clause_label": "void",
+  "label_section": "25",
+  "also_accept": [
+   "4",
+   "26",
+   "27"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 3",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 3(1)",
+  "code_words_matched": "11 of 11",
+  "code_critical_words": "except",
+  "quote_diff_against_lined_subsection": "This Act [-, except Part V.1,-] applies [-with respect to rental units in residential complexes, despite any other Act and-] despite any agreement or waiver to the contrary."
+ },
+ {
+  "id": "claude-haiku-5-5__c35",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c35",
+  "clause_text": "The Landlord may drop in from time to time, without arranging it in advance, to see that the unit is being kept in good order. It will always knock first and, if no one answers, may let itself in with its key.",
+  "clause_label": "void",
+  "label_section": "25",
+  "also_accept": [
+   "4",
+   "26",
+   "27"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 27",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 27(1)",
+  "code_words_matched": "7 of 9",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "A landlord may enter a rental unit [-in accordance-] {+only if+}"
+ },
+ {
+  "id": "claude-haiku-5-5__c36",
+  "model": "Claude Haiku 5.5",
+  "clause_id": "c36",
+  "clause_text": "If the rent is more than 15 days in arrears, the Landlord may remove and hold any of the Tenant's belongings in the unit until the arrears are paid in full.",
+  "clause_label": "void",
+  "label_section": "40",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 4",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“Despite any agreement, waiver or other arrangement, a tenant of a rental unit cannot waive any of the rights under this Act and any such waiver is void.”"
+ },
+ {
+  "id": "claude-opus-5-5__c05",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c05",
+  "clause_text": "If any instalment of rent is not paid when due, the rent for the remainder of the term shall at once become due and payable.",
+  "clause_label": "void",
+  "label_section": "15",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 15",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 15",
+  "code_words_matched": "23 of 30",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "all or part of the remaining rent for a term or [-period of a-] tenancy {+,+} or a specific sum {+,+} becomes due [-upon a default of-] {+and payable if+} the tenant {+defaults+} in [-paying-] {+the payment of+} rent due"
+ },
+ {
+  "id": "claude-opus-5-5__c07",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c07",
+  "clause_text": "The Tenant viewed the unit before signing and is satisfied with its condition. The Tenant will not ask the Landlord to repair any defect that was visible at the viewing.",
+  "clause_label": "void",
+  "label_section": "20",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 20",
+  "code_category": "cosmetic",
+  "code_lined_up_with": "s. 20(2)",
+  "code_words_matched": "12 of 13",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "[-applies-] {+apply+} even if the tenant was aware of a state of non-repair"
+ },
+ {
+  "id": "claude-opus-5-5__c16",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c16",
+  "clause_text": "If the Tenant's dog causes undue damage to the floors or doors because the Tenant was careless, the Tenant must pay to repair that damage.",
+  "clause_label": "allowed",
+  "label_section": "34",
+  "also_accept": [
+   "89"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 34",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 34",
+  "code_words_matched": "27 of 28",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "The tenant is responsible for the repair of undue damage to the rental unit or {+its+} residential complex caused by the wilful or negligent conduct of the tenant"
+ },
+ {
+  "id": "claude-opus-5-5__c18",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c18",
+  "clause_text": "For the Landlord's records, the Tenant will sign, together with this Agreement, a notice of termination dated for the last day of the term.",
+  "clause_label": "void",
+  "label_section": "37",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 37",
+  "code_category": "cosmetic",
+  "code_lined_up_with": "s. 37(4)",
+  "code_words_matched": "8 of 9",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "as a condition of entering into [-the-] {+a+} tenancy agreement"
+ },
+ {
+  "id": "claude-opus-5-5__c19",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c19",
+  "clause_text": "On signing, the Tenant shall pay a damage deposit of $500, to be returned at the end of the tenancy if the unit is left in good condition.",
+  "clause_label": "void",
+  "label_section": "105",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 105",
+  "code_category": "cosmetic",
+  "code_lined_up_with": "s. 105(1)",
+  "code_words_matched": "17 of 19",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "The only security [-deposit-] {+deposits+} that a landlord may collect [-is-] {+are+} a rent deposit collected in accordance with section 106"
+ },
+ {
+  "id": "claude-opus-5-5__c20",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c20",
+  "clause_text": "Pets are welcome. The Tenant shall pay a refundable pet deposit of $250, which will be returned at the end of the tenancy if there is no pet damage.",
+  "clause_label": "void",
+  "label_section": "105",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 105",
+  "code_category": "not_in_act",
+  "code_lined_up_with": "nothing",
+  "code_words_matched": "",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "“A landlord shall not collect or require or attempt to collect or require a security deposit from a tenant except in accordance with this section.”"
+ },
+ {
+  "id": "claude-opus-5-5__c22",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c22",
+  "clause_text": "Rent is payable monthly. On signing, the Tenant shall pay a rent deposit equal to two months' rent, to be applied to the last two months of the tenancy.",
+  "clause_label": "void",
+  "label_section": "106",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 106",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 106(2)",
+  "code_words_matched": "30 of 33",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "The amount of a rent deposit shall not be more than the lesser of the amount of rent for one rent period and the amount of rent for {+a period of+} one month."
+ },
+ {
+  "id": "claude-opus-5-5__c23",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c23",
+  "clause_text": "At the end of the tenancy, the Landlord will apply the rent deposit to any unpaid utility bills and to the cost of cleaning the unit.",
+  "clause_label": "void",
+  "label_section": "106",
+  "also_accept": [
+   "4",
+   "105"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 106",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 106(10)",
+  "code_words_matched": "32 of 34",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "[-A-] {+The+} landlord shall apply a rent deposit that a [-tenant-] {+person+} has paid to the landlord or to a former landlord in payment of the rent for the last rent period before the tenancy terminates."
+ },
+ {
+  "id": "claude-opus-5-5__c24",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c24",
+  "clause_text": "Rent is payable monthly. Whenever the rent is lawfully increased, the Landlord may require the Tenant to pay an additional amount so that the rent deposit equals the new monthly rent.",
+  "clause_label": "allowed",
+  "label_section": "106",
+  "also_accept": [],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 106",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 106(3)",
+  "code_words_matched": "18 of 20",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "the landlord may require the tenant to pay an additional amount to increase the [-rent-] deposit up to the [-amount permitted-] {+lawful rent+}"
+ },
+ {
+  "id": "claude-opus-5-5__c25",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c25",
+  "clause_text": "Before moving in, the Tenant shall give the Landlord twelve post-dated cheques covering the first year's rent.",
+  "clause_label": "void",
+  "label_section": "108",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 108",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 108",
+  "code_words_matched": "9 of 11",
+  "code_critical_words": "nor, not",
+  "quote_diff_against_lined_subsection": "[-a-] {+A+} landlord [-nor a tenancy agreement-] shall {+not+} require a tenant or prospective tenant to"
+ },
+ {
+  "id": "claude-opus-5-5__c26",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c26",
+  "clause_text": "Rent shall be paid by pre-authorized debit from the Tenant's bank account on the first day of each month.",
+  "clause_label": "void",
+  "label_section": "108",
+  "also_accept": [
+   "4"
+  ],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 108",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 108",
+  "code_words_matched": "21 of 23",
+  "code_critical_words": "nor, not",
+  "quote_diff_against_lined_subsection": "[-a-] {+A+} landlord [-nor a tenancy agreement-] shall {+not+} require a tenant or prospective tenant to [-, (a)-] provide post-dated cheques or other negotiable instruments for payment of rent"
+ },
+ {
+  "id": "claude-opus-5-5__c27",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c27",
+  "clause_text": "The Tenant may pay rent by post-dated cheques or by pre-authorized debit if the Tenant wishes, but is not required to use either method.",
+  "clause_label": "allowed",
+  "label_section": "108",
+  "also_accept": [],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 108",
+  "code_category": "content_words_differ",
+  "code_lined_up_with": "s. 108",
+  "code_words_matched": "8 of 10",
+  "code_critical_words": "nor, not",
+  "quote_diff_against_lined_subsection": "[-a-] {+A+} landlord [-nor a tenancy agreement-] shall {+not+} require a tenant or prospective tenant"
+ },
+ {
+  "id": "claude-opus-5-5__c37",
+  "model": "Claude Opus 5.5",
+  "clause_id": "c37",
+  "clause_text": "After either party has given notice to end the tenancy, the Landlord may show the unit to prospective tenants between 8 a.m. and 8 p.m. without written notice, but before each showing will tell the Tenant, or make a reasonable effort to tell the Tenant, that it intends to enter.",
+  "clause_label": "allowed",
+  "label_section": "26",
+  "also_accept": [],
+  "model_verdict_correct": "right",
+  "model_cited": "s. 26",
+  "code_category": "cosmetic",
+  "code_lined_up_with": "s. 26(3)",
+  "code_words_matched": "17 of 18",
+  "code_critical_words": "",
+  "quote_diff_against_lined_subsection": "A landlord may enter [-the-] {+a+} rental unit without written notice to show the unit to prospective tenants if"
+ }
+]

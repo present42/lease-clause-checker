@@ -1,60 +1,60 @@
 model,clause,category,hand_check,meaning_changed,misleads_here,note
-claude-haiku-5-5,c02,no_quote,,,,
-claude-haiku-5-5,c04,not_in_act,,,,
-claude-haiku-5-5,c05,not_in_act,,,,
-claude-haiku-5-5,c06,content_words_differ,,,,
-claude-haiku-5-5,c07,not_in_act,,,,
-claude-haiku-5-5,c08,not_in_act,,,,
-claude-haiku-5-5,c10,content_words_differ,,,,
-claude-haiku-5-5,c11,content_words_differ,,,,
-claude-haiku-5-5,c12,not_in_act,,,,
-claude-haiku-5-5,c15,content_words_differ,,,,
-claude-haiku-5-5,c16,content_words_differ,,,,
-claude-haiku-5-5,c18,not_in_act,,,,
-claude-haiku-5-5,c19,not_in_act,,,,
-claude-haiku-5-5,c20,not_in_act,,,,
-claude-haiku-5-5,c25,content_words_differ,,,,
-claude-haiku-5-5,c28,not_in_act,,,,
-claude-haiku-5-5,c29,content_words_differ,,,,
-claude-haiku-5-5,c30,wrong_cite,,,,
-claude-haiku-5-5,c32,wrong_cite,,,,
-claude-haiku-5-5,c34,content_words_differ,,,,
-claude-haiku-5-5,c35,content_words_differ,,,,
-claude-haiku-5-5,c36,not_in_act,,,,
-claude-opus-5-5,c05,content_words_differ,,,,
-claude-opus-5-5,c07,cosmetic,,,,
-claude-opus-5-5,c16,content_words_differ,,,,
-claude-opus-5-5,c18,cosmetic,,,,
-claude-opus-5-5,c19,cosmetic,,,,
-claude-opus-5-5,c20,not_in_act,,,,
-claude-opus-5-5,c22,content_words_differ,,,,
-claude-opus-5-5,c23,content_words_differ,,,,
-claude-opus-5-5,c24,content_words_differ,,,,
-claude-opus-5-5,c25,content_words_differ,,,,
-claude-opus-5-5,c26,content_words_differ,,,,
-claude-opus-5-5,c27,content_words_differ,,,,
-claude-opus-5-5,c37,cosmetic,,,,
-gemini-3.8-flash,c05,content_words_differ,,,,
-gemini-3.8-flash,c06,conventions,,,,
-gemini-3.8-flash,c09,cosmetic,,,,
-gemini-3.8-flash,c10,cosmetic,,,,
-gemini-3.8-flash,c11,conventions,,,,
-gemini-3.8-flash,c12,content_words_differ,,,,
-gemini-3.8-flash,c15,content_words_differ,,,,
-gemini-3.8-flash,c18,content_words_differ,,,,
-gemini-3.8-flash,c20,not_in_act,,,,
-gemini-3.8-flash,c22,not_in_act,,,,
-gemini-3.8-flash,c23,content_words_differ,,,,
-gemini-3.8-flash,c25,cosmetic,,,,
-gemini-3.8-flash,c26,content_words_differ,,,,
-gemini-3.8-flash,c28,content_words_differ,,,,
-gemini-3.8-flash,c29,content_words_differ,,,,
-gemini-3.8-flash,c32,content_words_differ,,,,
-gemini-3.8-flash,c33,conventions,,,,
-gemini-3.8-flash,c34,conventions,,,,
-gemini-3.8-flash,c38,cosmetic,,,,
-gemini-4-argon,c17,content_words_differ,,,,
-gemini-4-argon,c18,not_in_act,,,,
-gemini-4-argon,c24,content_words_differ,,,,
-gemini-4-argon,c33,wrong_cite,,,,
-gemini-4-argon,c37,cosmetic,,,,
+claude-haiku-5-5,c02,no_quote,agree,,,
+claude-haiku-5-5,c04,not_in_act,agree,,,
+claude-haiku-5-5,c05,not_in_act,agree,,,
+claude-haiku-5-5,c06,content_words_differ,agree,yes,no,"Drops “except Part V.1”, an exception, and adds “other arrangement”, which the Act doesn’t say."
+claude-haiku-5-5,c07,not_in_act,content_words_differ,yes,no,A reworded s. 3(1) (“This Act … applies … despite any agreement or waiver to the contrary”). It drops “except Part V.1” and adds “or assignment”.
+claude-haiku-5-5,c08,not_in_act,content_words_differ,yes,no,A reworded s. 3(1) (“This Act … applies … despite any agreement or waiver to the contrary”). It drops “except Part V.1” and adds “or other arrangement”.
+claude-haiku-5-5,c10,content_words_differ,agree,yes,no,"Same as Haiku c06, and adds “release”."
+claude-haiku-5-5,c11,content_words_differ,too_short,,,"“A landlord may enter a rental unit without the tenant’s consent only if” stops at “only if”, so it states no rule, like Haiku c35. “Without the tenant’s consent” isn’t in s. 27(1) either."
+claude-haiku-5-5,c12,not_in_act,content_words_differ,yes,no,"A reworded s. 3(1) (“This Act … applies … despite any agreement or waiver to the contrary”). It drops “except Part V.1”, adds “or other arrangement” and reorders it."
+claude-haiku-5-5,c15,content_words_differ,agree,yes,yes,"The quote stops at “by the tenant”. The Act goes on to name “another occupant of the rental unit or a person permitted in the residential complex”, and the quote also drops “the repair of”. A narrower rule than the Act’s."
+claude-haiku-5-5,c16,content_words_differ,agree,no,,"Adds “done” and drops “the repair of”, then breaks off at a dangling “by”. Visibly cut off, so it doesn’t state a different rule (Rule 4)."
+claude-haiku-5-5,c18,not_in_act,wrong_cite,yes,no,"“Any waiver by a tenant or landlord of a right under this Act is void” is a loose restatement of s. 3(1)’s “despite any … waiver to the contrary”, cited as s. 5, and it drops “except Part V.1”. Low confidence: “not in the Act” is also arguable."
+claude-haiku-5-5,c19,not_in_act,content_words_differ,yes,no,"A loose s. 105(1) (“The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106”). It drops the rent-deposit exception, so it bans every security deposit."
+claude-haiku-5-5,c20,not_in_act,wrong_cite,yes,no,"The s. 105(1) rule in other words, cited as s. 106. “Or any other amount in addition to the rent deposit” is broader than the Act. “Not in the Act” is also arguable."
+claude-haiku-5-5,c25,content_words_differ,wrong_cite,yes,yes,"Corrected after a closer look. The code lined it up with s. 106(4) through stock words, but the distinctive part, “provide a postdated cheque”, is s. 108: “Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to, (a) provide post-dated cheques or other negotiable instruments for payment of rent”. So it is s. 108’s rule, cited as s. 106, and it drops “nor a tenancy agreement”, like Opus c25."
+claude-haiku-5-5,c28,not_in_act,wrong_cite,yes,no,"A reworded s. 3(1) (“This Act … applies … despite any agreement or waiver to the contrary”). It drops “except Part V.1” and adds “or other arrangement”. Cited as s. 4, so wrong section."
+claude-haiku-5-5,c29,content_words_differ,agree,yes,yes,"Stops at “increase the rent for a rental unit”, before “without first giving the tenant at least 90 days written notice”. Read alone, it is a flat ban on rent increases."
+claude-haiku-5-5,c30,wrong_cite,agree,yes,no,"s. 119(1)’s 12-month rule, cited as s. 116. It drops the lead-in “may do so only if”, the condition “if there has been a previous increase” and clause (b), so it states a narrower rule."
+claude-haiku-5-5,c32,wrong_cite,agree,no,,"“No landlord shall” became “a landlord shall not”. The code flags the negation words, yet the meaning is the same. Words from s. 110, cited as s. 116. A good stage example of why a person decides."
+claude-haiku-5-5,c34,content_words_differ,agree,yes,no,"Drops “except Part V.1” and “with respect to rental units in residential complexes, despite any other Act”. Under A that is a dropped exception; whether it matters here is the second question."
+claude-haiku-5-5,c35,content_words_differ,too_short,,,"A nine-word fragment, “A landlord may enter a rental unit only if”. It stops before stating any rule."
+claude-haiku-5-5,c36,not_in_act,wrong_cite,yes,no,"Opens with s. 3(1)’s “despite any agreement, waiver”, then states the effect in its own words and only for tenants; drops “except Part V.1”. Cited as s. 4. “Not in the Act” is also arguable."
+claude-opus-5-5,c05,content_words_differ,agree,yes,yes,"Only the middle of s. 15: “all or part of the remaining rent … becomes due and payable if the tenant defaults in the payment of rent due”. It drops “A provision in a tenancy agreement providing that” and “… is void”, so read alone it states acceleration as the rule, the opposite of the Act."
+claude-opus-5-5,c07,cosmetic,agree,yes,no,"“Apply” for “applies” is cosmetic, but the quote stops as a complete statement and drops “or a contravention of a standard before entering into the tenancy agreement” (Rule 4)."
+claude-opus-5-5,c16,content_words_differ,agree,yes,no,"Adds “its” (harmless), but ends at “conduct of the tenant”, dropping “another occupant of the rental unit or a person permitted in the residential complex by the tenant”. Narrower."
+claude-opus-5-5,c18,cosmetic,too_short,,,"The whole quote is “as a condition of entering into a tenancy agreement”, a fragment of s. 37(4)(b) without the rule it belongs to."
+claude-opus-5-5,c19,cosmetic,agree,no,,
+claude-opus-5-5,c20,not_in_act,content_words_differ,yes,yes,An invented sentence for the s. 105(1) rule. “Except in accordance with this section” replaces what the section actually says: the only deposit allowed is a rent deposit under s. 106.
+claude-opus-5-5,c22,content_words_differ,agree,no,,Adds “a period of” before “one month”. Same meaning.
+claude-opus-5-5,c23,content_words_differ,agree,no,,"“A person has paid” for “a tenant has paid”, and “The landlord” for “A landlord”. Slightly broader wording, the same rule in practice. I lean no."
+claude-opus-5-5,c24,content_words_differ,agree,yes,no,“Up to the lawful rent” for “up to the amount permitted by subsection (2)”. That loses the “lesser of one rent period and one month” cap.
+claude-opus-5-5,c25,content_words_differ,too_short,,,"The whole quote is “A landlord shall not require a tenant or prospective tenant to”. It stops at “to”, before saying what can’t be required, so it states no rule. (It also drops “nor a tenancy agreement”, but there is no rule left to judge.)"
+claude-opus-5-5,c26,content_words_differ,agree,yes,yes,Same as Opus c25: “nor a tenancy agreement” is gone.
+claude-opus-5-5,c27,content_words_differ,too_short,,,The whole quote is “A landlord shall not require a tenant or prospective tenant”. Stock opening only; it states no rule.
+claude-opus-5-5,c37,cosmetic,agree,no,,
+gemini-3.8-flash,c05,content_words_differ,agree,yes,no,"Heavily rewritten s. 15. Among other changes it drops “or a specific sum”, which narrows the rule."
+gemini-3.8-flash,c06,conventions,agree,yes,no,"Passes with quoting conventions, but leaves out the opening “Subject to subsection 12.1 (11) and section 194,”, an exception (Rule 2)."
+gemini-3.8-flash,c09,cosmetic,agree,yes,yes,"Only “a”/“the” differs inside the matched span, but the quote stops at “at any time without written notice”, dropping “(a) in cases of emergency; or (b) if the tenant consents”. Read alone, it is an unconditional right of entry (Rule 4)."
+gemini-3.8-flash,c10,cosmetic,agree,yes,yes,"Only “a”/“the” differs inside the matched span, but the quote ends at “at regular intervals”, dropping “and, (a) the landlord enters the unit at the times specified in the tenancy agreement; or (b) … between 8 a.m. and 8 p.m.” (Rule 4)."
+gemini-3.8-flash,c11,conventions,agree,yes,no,"Passes with quoting conventions, but leaves out the opening “Subject to subsection 12.1 (11) and section 194,”, an exception (Rule 2)."
+gemini-3.8-flash,c12,content_words_differ,agree,yes,no,"Adds “specific” to “a time of entry”, a stricter requirement than the Act’s, and drops “under subsection (1) or (2)”."
+gemini-3.8-flash,c15,content_words_differ,agree,no,,Adds “rental unit or” before “residential complex”. Same rule.
+gemini-3.8-flash,c18,content_words_differ,agree,no,,"Corrected after a closer look. The code lined it up with s. 37(10), but the quote, “A notice of termination given by a tenant is void if it is given,” is a rewording of s. 37(4): “A tenant’s notice to terminate a tenancy is void if it is given,”. Right section, words changed, same rule. Open “All of s. 37” below to compare."
+gemini-3.8-flash,c20,not_in_act,content_words_differ,yes,no,A reworded s. 105(1). “Of a kind described in section 106” is looser than “collected in accordance with section 106”. Low confidence.
+gemini-3.8-flash,c22,not_in_act,content_words_differ,yes,no,"A reworded s. 106(2). It replaces “the lesser of … one rent period and … one month” with two cases (monthly or less often: one month; weekly: one week), leaving out other periods."
+gemini-3.8-flash,c23,content_words_differ,agree,yes,no,Drops “or to a former landlord” and adds “under subsection (1) or (2)”. A narrower rule than the Act’s.
+gemini-3.8-flash,c25,cosmetic,agree,no,,
+gemini-3.8-flash,c26,content_words_differ,agree,yes,yes,"Replaces “automatic charging of a credit card or any other form of automatic payment” with “credit union or caisse populaire”. It also starts at “permit automatic debiting”, without the “Neither a landlord nor a tenancy agreement shall require … to” that makes it a prohibition."
+gemini-3.8-flash,c28,content_words_differ,agree,yes,no,"Drops “written”. Read alone, any notice would seem to do."
+gemini-3.8-flash,c29,content_words_differ,agree,yes,no,"Drops “written”, and adds “existing” and “in the approved form”."
+gemini-3.8-flash,c32,content_words_differ,agree,yes,no,"Drops “during the term of their tenancy”. Read alone, the guideline cap seems to cover more increases than the Act says."
+gemini-3.8-flash,c33,conventions,agree,yes,no,"Passes with quoting conventions, but leaves out the opening “Subject to subsection 12.1 (11) and section 194,”, an exception (Rule 2)."
+gemini-3.8-flash,c34,conventions,agree,yes,no,"Passes with quoting conventions, but leaves out the opening “Subject to subsection 12.1 (11) and section 194,”, an exception (Rule 2)."
+gemini-3.8-flash,c38,cosmetic,agree,no,,
+gemini-4-argon,c17,content_words_differ,agree,yes,no,"Joins s. 37(3) and s. 37(5) into one sentence and ends after limb (a), dropping (b) “as a condition of entering into the tenancy agreement”."
+gemini-4-argon,c18,not_in_act,content_words_differ,yes,no,"A splice of s. 37(3), (5) and (4) in its own words. It goes further than the Act: “a landlord or a tenant shall not give a notice of termination”, where s. 37(4) voids only a tenant’s notice."
+gemini-4-argon,c24,content_words_differ,agree,yes,yes,"A rewording of s. 106(3), not 106(1) as the code says. It drops the cap “up to the amount permitted by subsection (2)”."
+gemini-4-argon,c33,wrong_cite,agree,yes,no,"Words from s. 86, cited as s. 134, with “rental” added. It also ends before “by order, notice or agreement”, which widens the rule slightly."
+gemini-4-argon,c37,cosmetic,agree,no,,

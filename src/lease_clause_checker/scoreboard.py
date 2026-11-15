@@ -16,7 +16,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Literal, TypeVar
 
-from lease_clause_checker import baseline, pipeline, quotereview, verify
+from lease_clause_checker import baseline, handcheck, pipeline, quotereview, verify
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.closedbook import CLOSED_BOOK_PROMPT
 from lease_clause_checker.evaluation import baseline_run, pipeline_run
@@ -86,6 +86,8 @@ class Board:
     """The closed-book run on the main set, by model key; a model not run is left out."""
     quote_checks: quotereview.HandChecks = field(default_factory=dict)
     """The hand checks of the closed-book quotes that are not word for word."""
+    hand_check_record: handcheck.Record | None = None
+    """How the closed-book quotes' hand checks were made (`handcheck`); None if not recorded."""
     sections: dict[str, Section] = field(default_factory=dict)
     """The Act's sections, for `verify.ending`; with none, the stops-early line is left out."""
 
@@ -901,12 +903,17 @@ def _closed_book_table(board: Board) -> str:
     if len(complete) == len(MODELS) and board.sections:
         lines.append(_stops_early_line(board, complete))
     if len(complete) == len(MODELS):
-        lines += ["", _failed_quotes(complete, board.quote_checks)]
+        lines += ["", _failed_quotes(complete, board.quote_checks, board.hand_check_record)]
     return "\n".join(lines)
 
 
-def _failed_quotes(runs: list[ModelRun], checks: quotereview.HandChecks) -> str:
-    review = f"results/{runs[0].records[0].prompt_version}/{quotereview.REVIEW_FILE}"
+def _failed_quotes(
+    runs: list[ModelRun],
+    checks: quotereview.HandChecks,
+    record: handcheck.Record | None = None,
+) -> str:
+    folder = f"results/{runs[0].records[0].prompt_version}"
+    review = f"{folder}/{quotereview.REVIEW_FILE}"
     definitions = (
         "Each closed-book quote that failed the strict check against the section it cites, "
         "sorted by code ([quotediff.py](src/lease_clause_checker/quotediff.py)) into the first "
@@ -938,10 +945,30 @@ def _failed_quotes(runs: list[ModelRun], checks: quotereview.HandChecks) -> str:
         [
             "#### How the quotes that failed the check differ from the Act",
             "",
-            definitions + quotereview.hand_check_line(runs, checks),
+            definitions
+            + _hand_check_method(record, folder)
+            + quotereview.hand_check_line(runs, checks),
             "",
             quotereview.summary_table(runs),
         ]
+    )
+
+
+def _hand_check_method(record: handcheck.Record | None, folder: str) -> str:
+    """How the hand check was done, from its record; "" if there is none."""
+    if record is None:
+        return ""
+    if sorted(record.rounds) != [1, 2]:
+        raise ReportDataError(f"the hand-check record has rounds {sorted(record.rounds)}, not 1, 2")
+    rows, agreed = record.rows, record.agreed(2)
+    where = f"{folder}/{handcheck.RECORD_DIR}"
+    return (
+        "I worked four rows by hand to set four written rules "
+        f"([{handcheck.RULES}]({where}/{handcheck.RULES})). Claude suggested an answer for every "
+        "row; in two rounds, fresh Claude Opus reviewers judged the rows blind, each row by one "
+        f"reviewer per round ([the record]({where}/{handcheck.MANIFEST})). Under the rules, round "
+        f"2 agreed with the suggestions on {agreed} of {rows} rows; on {record.adopted(2)} of the "
+        f"other {rows - agreed} the reviewer's answer was adopted. The owner approved the result. "
     )
 
 

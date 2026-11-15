@@ -1,0 +1,240 @@
+{
+ "reviewer": "reviewer-1b",
+ "round": "round1",
+ "model": "claude-opus-5-5 (Claude Opus 5.5), fresh context, no web",
+ "started_utc": "2026-11-15T00:43:29.781Z",
+ "prompt_file": "reviewer-1b_prompt.txt",
+ "prompt_sha256": "daffae011c347a3763e1a338711b274c1815aefe0de2e56776665a164baf464f",
+ "input_file": "rows_B.json",
+ "rules_file": null,
+ "blind": "did not see Claude's suggestions or the owner's calls",
+ "rows": 24,
+ "answers": [
+  {
+   "id": "gemini-3.8-flash__c05",
+   "source": "s. 15",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "A loose rewording of s. 15 ('on default in payment of rent on the due date or on default of any other obligation' for 'upon a default ... in paying rent due or in carrying out an obligation') that drops 'or a specific sum', which narrows the rule. That doesn't matter here, because the clause accelerates the remaining rent for the term, and the quote still covers that."
+  },
+  {
+   "id": "gemini-3.8-flash__c06",
+   "source": "s. 4(1)",
+   "category": "conventions",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "Quote is s. 4(1) from 'a provision...' onward with an unbracketed capital 'A' and the opening 'Subject to subsection 12.1 (11) and section 194,' left out; otherwise exact, so '[A]' would make it a proper quote. Strictly that drops the s. 194 mediated-settlement exception (yes on q1, low-medium weight); it has nothing to do with this clause."
+  },
+  {
+   "id": "gemini-3.8-flash__c09",
+   "source": "s. 26(1)",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "The only change is 'the' for 'a'. The quote stops before '(a) in cases of emergency; or (b) if the tenant consents', so on its own it reads as an unconditional right to enter, but that is a cut before the list of conditions, not a reworded rule."
+  },
+  {
+   "id": "gemini-3.8-flash__c10",
+   "source": "s. 26(2)",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "The only change is 'the' for 'a'. The quote is cut off before 'and, (a) ... at the times specified ... or (b) ... between 8 a.m. and 8 p.m.', which is a cut before the conditions list."
+  },
+  {
+   "id": "gemini-3.8-flash__c11",
+   "source": "s. 4(1)",
+   "category": "conventions",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "Quote is s. 4(1) from 'a provision...' onward with an unbracketed capital 'A' and the opening 'Subject to subsection 12.1 (11) and section 194,' left out; otherwise exact, so '[A]' would make it a proper quote. Strictly that drops the s. 194 mediated-settlement exception (yes on q1, low-medium weight); it has nothing to do with this clause."
+  },
+  {
+   "id": "gemini-3.8-flash__c12",
+   "source": "s. 27(3)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "medium",
+   "reason": "Drops 'under subsection (1) or (2)' (no other written entry notice exists, so nothing changes) and adds 'specific' before 'time of entry'. The 8 a.m. to 8 p.m. window that decides this clause is kept. 'Specific' could be read as ruling out a time window, but I read it as the same rule."
+  },
+  {
+   "id": "gemini-3.8-flash__c15",
+   "source": "s. 34",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "The only change is the added 'rental unit or' in 'a person permitted in the rental unit or residential complex'. The rental unit is part of the residential complex, so the rule is the same."
+  },
+  {
+   "id": "gemini-3.8-flash__c18",
+   "source": "s. 37(4)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "medium",
+   "reason": "The code's match to s. 37(10) is wrong. The quote 'A notice of termination given by a tenant is void if it is given,' rewords s. 37(4) ('A tenant's notice to terminate a tenancy is void if it is given,') and stops before (a)/(b). It is the same rule cut off before its conditions, though it comes close to too_short because neither voiding condition is stated."
+  },
+  {
+   "id": "gemini-3.8-flash__c20",
+   "source": "s. 105(1)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "medium",
+   "reason": "Not not_in_act: 'shall not require or receive a security deposit ... other than a rent deposit of a kind described in section 106' is a clear paraphrase of s. 105(1) ('The only security deposit that a landlord may collect is a rent deposit collected in accordance with section 106'). It's the same rule, though adding 'require' slightly widens 'collect' (low weight; harmless for this pet-deposit clause)."
+  },
+  {
+   "id": "gemini-3.8-flash__c22",
+   "source": "s. 106(2)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "Not not_in_act: this paraphrases s. 106(2)'s cap ('the lesser of ... one rent period and ... one month'). It replaces the general rule with two cases (monthly-or-longer means one month, weekly means one week) and says nothing about other periods such as biweekly. For this monthly-rent clause it gives the right one-month cap."
+  },
+  {
+   "id": "gemini-3.8-flash__c23",
+   "source": "s. 106(10)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "high",
+   "reason": "Swaps 'has paid to the landlord or to a former landlord' for 'provides to the landlord under subsection (1) or (2)', which drops deposits paid to a former landlord (narrower). The part that decides this clause, 'in payment of the rent for the last rent period', is kept."
+  },
+  {
+   "id": "gemini-3.8-flash__c25",
+   "source": "s. 108(a)",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "Verbatim apart from dropping the ', (a)' paragraph marker and adding a final period. It keeps 'nor a tenancy agreement shall require', which voids this term."
+  },
+  {
+   "id": "gemini-3.8-flash__c26",
+   "source": "s. 108(b)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "This is s. 108(b) with 'automatic charging of a credit card or any other form of automatic payment' replaced by 'credit union or caisse populaire', so it narrows the rule. The clause is pre-authorized debit from a bank account, which is still covered. Note that the quote also leaves out the stem 'Neither a landlord nor a tenancy agreement shall require', so on its own it states no prohibition."
+  },
+  {
+   "id": "gemini-3.8-flash__c28",
+   "source": "s. 116(1)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "high",
+   "reason": "Drops 'written' from '90 days written notice', which widens the rule to any notice. This clause fails on 30 days versus 90, which the quote keeps."
+  },
+  {
+   "id": "gemini-3.8-flash__c29",
+   "source": [
+    "s. 116(1)",
+    "s. 116(3)"
+   ],
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "high",
+   "reason": "Drops 'written', adds 'existing', and tacks on 'in the approved form' (paraphrasing s. 116(3) 'in a form approved by the Board'). The missing 'written' widens the rule but doesn't affect this clause, which already gives 90 days' written notice in the Board's form."
+  },
+  {
+   "id": "gemini-3.8-flash__c32",
+   "source": "s. 120(1)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "high",
+   "reason": "Drops 'during the term of their tenancy', which widens the cap to cover new tenancies, and stops before 'except in accordance with section 126 or 127 or an agreement under section 121 or 123'. Neither change affects a clause that promises in-tenancy increases will stay within the guideline."
+  },
+  {
+   "id": "gemini-3.8-flash__c33",
+   "source": "s. 4(1)",
+   "category": "conventions",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "Quote is s. 4(1) from 'a provision...' onward with an unbracketed capital 'A' and the opening 'Subject to subsection 12.1 (11) and section 194,' left out; otherwise exact, so '[A]' would make it a proper quote. Strictly that drops the s. 194 mediated-settlement exception (yes on q1, low-medium weight); it has nothing to do with this clause."
+  },
+  {
+   "id": "gemini-3.8-flash__c34",
+   "source": "s. 4(1)",
+   "category": "conventions",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "Quote is s. 4(1) from 'a provision...' onward with an unbracketed capital 'A' and the opening 'Subject to subsection 12.1 (11) and section 194,' left out; otherwise exact, so '[A]' would make it a proper quote. Strictly that drops the s. 194 mediated-settlement exception (yes on q1, low-medium weight); it has nothing to do with this clause."
+  },
+  {
+   "id": "gemini-3.8-flash__c38",
+   "source": "s. 37(3)",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "Verbatim except 'a tenant' became 'tenant'."
+  },
+  {
+   "id": "gemini-4-argon__c17",
+   "source": [
+    "s. 37(3)",
+    "s. 37(5)(a)"
+   ],
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "Splices s. 37(3) to s. 37(5)(a) and ends with a period, dropping '(b) as a condition of entering into the tenancy agreement' (narrower). The clause says 'As a condition', which is the dropped limb, but it is also written into the lease, so (a) on its own still voids it. Reading the clause as hinging on (b) would make q2 'yes'."
+  },
+  {
+   "id": "gemini-4-argon__c18",
+   "source": [
+    "s. 37(3)",
+    "s. 37(5)",
+    "s. 37(4)"
+   ],
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "Not not_in_act: this is a loose splice of s. 37(3), (5) and (4). It goes beyond the Act by saying 'a landlord or a tenant shall not give a notice of termination' at signing and that 'any such notice is void', where s. 37(4) voids only a tenant's notice. This clause is a tenant's notice signed with the lease, so the quote still gets it right."
+  },
+  {
+   "id": "gemini-4-argon__c24",
+   "source": "s. 106(3)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "yes",
+   "confidence": "low",
+   "reason": "The code's match to s. 106(1) is wrong. 'may require a tenant to pay more to the rent deposit if the lawful rent increases' paraphrases s. 106(3) but drops the tail limit 'up to the amount permitted by subsection (2)'. The clause ('Rent is payable monthly ... equals the new monthly rent') is allowed because the top-up stays within that cap, so a reader of the quote can't see why the amount is lawful. Another reading: the clause sits at the cap, not over it, so the missing limit is harmless."
+  },
+  {
+   "id": "gemini-4-argon__c33",
+   "source": "s. 86",
+   "category": "wrong_cite",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "'A landlord is entitled to compensation for the use and occupation of a rental unit by a tenant who does not vacate ...' is s. 86, not the cited s. 134. It also ends early, dropping the tail 'by order, notice or agreement'. That widens the rule slightly but is irrelevant to charging rent after the tenant has moved out (s. 134(1.1))."
+  },
+  {
+   "id": "gemini-4-argon__c37",
+   "source": "s. 26(3)",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "The only change is 'a' for 'the'. The quote ends at 'if,', before conditions (a) to (c), so it is cut before the conditions list."
+  }
+ ]
+}

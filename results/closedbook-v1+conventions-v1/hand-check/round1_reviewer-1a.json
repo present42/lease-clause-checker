@@ -1,0 +1,329 @@
+{
+ "reviewer": "reviewer-1a",
+ "round": "round1",
+ "model": "claude-opus-5-5 (Claude Opus 5.5), fresh context, no web",
+ "started_utc": "2026-11-15T00:43:16.217Z",
+ "prompt_file": "reviewer-1a_prompt.txt",
+ "prompt_sha256": "ecde20079c422d6b5e15295802aa7eb79f77a95f577a3b45c46bf441dbdc1276",
+ "input_file": "rows_A.json",
+ "rules_file": null,
+ "blind": "did not see Claude's suggestions or the owner's calls",
+ "rows": 35,
+ "answers": [
+  {
+   "id": "claude-haiku-5-5__c02",
+   "source": "none",
+   "category": "no_quote",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "The model gave no quote and cited no section."
+  },
+  {
+   "id": "claude-haiku-5-5__c04",
+   "source": "none",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "medium",
+   "reason": "'purports to alter the rights, obligations or restrictions in this Act' appears nowhere in the Act; s. 14 says only that no-pet provisions are void. It is at most a loose echo of the idea in s. 4(1) ('inconsistent with this Act'), with no distinctive words from it."
+  },
+  {
+   "id": "claude-haiku-5-5__c05",
+   "source": "none",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "'any attempt to do so does not affect the rights under this Act' is not in s. 4, s. 15 or anywhere else in the Act, and it does not match the acceleration rule in s. 15."
+  },
+  {
+   "id": "claude-haiku-5-5__c06",
+   "source": "s. 3(1)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "This is s. 3(1) reworded: it adds 'or other arrangement' and drops 'except Part V.1' and 'with respect to rental units ... despite any other Act', so it states a broader rule with the Part V.1 exception gone. For a no-repair lease term the agreement is caught either way, so the change does not matter here."
+  },
+  {
+   "id": "claude-haiku-5-5__c07",
+   "source": "s. 3(1)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "'this Act applies despite any agreement, waiver ... to the contrary' is clearly s. 3(1), the cited section, even though the code found no match. It adds 'or assignment' and drops 'except Part V.1' and the scope words. The clause is an agreement and is caught either way, and what decides it is s. 20(2)."
+  },
+  {
+   "id": "claude-haiku-5-5__c08",
+   "source": "s. 3(1)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "This is s. 3(1) with 'or other arrangement' added and 'except Part V.1' and 'despite any other Act' dropped, which is broader and loses the exception. For a lease term that shifts all repairs to the tenant, the agreement is caught under either wording."
+  },
+  {
+   "id": "claude-haiku-5-5__c10",
+   "source": "s. 3(1)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "This is s. 3(1) with 'or release' added and 'except Part V.1' and the scope words dropped. The clause turns on s. 26(2), the cleaning-entry rule, which s. 3 does not decide, so the change does not affect it."
+  },
+  {
+   "id": "claude-haiku-5-5__c11",
+   "source": "none",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "low",
+   "reason": "Apart from the stock opening 'A landlord may enter a rental unit', the words 'without the tenant's consent only if' are not in s. 27(1) or anywhere else. It ends at 'only if', so too_short is also a fair reading."
+  },
+  {
+   "id": "claude-haiku-5-5__c12",
+   "source": "s. 3(1)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "'Despite any agreement, waiver or other arrangement to the contrary, this Act applies' is s. 3(1) reordered, even though the code found no match. It adds 'other arrangement' and drops 'except Part V.1'. The clause fails because of the 8 a.m.-8 p.m. window in s. 27(3), which the change does not touch."
+  },
+  {
+   "id": "claude-haiku-5-5__c15",
+   "source": "s. 34",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "yes",
+   "confidence": "high",
+   "reason": "The quote ends 'caused wilfully or negligently by the tenant' and drops 'another occupant of the rental unit or a person permitted in the residential complex by the tenant'. It also drops 'the repair of'. The clause expressly makes the tenant pay for damage by an occupant or guest, and the dropped words are what allow that."
+  },
+  {
+   "id": "claude-haiku-5-5__c16",
+   "source": "s. 34",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "medium",
+   "reason": "The quote adds 'done', drops 'the repair of', and breaks off at a dangling 'by' before the wilful-or-negligent condition. It is cut off mid-sentence rather than stating a different rule."
+  },
+  {
+   "id": "claude-haiku-5-5__c18",
+   "source": "none",
+   "category": "not_in_act",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "medium",
+   "reason": "No section says 'Any waiver by a tenant or landlord of a right under this Act is void'. The nearest is the 'despite any agreement or waiver' wording in s. 3(1), but only 'waiver' and 'this Act' are shared, and s. 5 (exemptions) says nothing like it."
+  },
+  {
+   "id": "claude-haiku-5-5__c19",
+   "source": "s. 105(1)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "This loosely paraphrases s. 105(1), the cited section. 'shall not collect ... any other security deposit' drops the exception 'a rent deposit collected in accordance with section 106' and so bans every security deposit. A $500 damage deposit is void under either wording."
+  },
+  {
+   "id": "claude-haiku-5-5__c20",
+   "source": "s. 105(1)",
+   "category": "wrong_cite",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "low",
+   "reason": "The rule that nothing beyond a rent deposit may be taken as security is s. 105(1), not s. 106 as cited, wrapped in s. 134-style wording ('No landlord shall collect or require'). 'or any other amount in addition to the rent deposit' is broader than s. 105, but a refundable pet deposit is void either way. It could also be read as not_in_act."
+  },
+  {
+   "id": "claude-haiku-5-5__c25",
+   "source": "s. 108(a)",
+   "category": "wrong_cite",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "yes",
+   "confidence": "high",
+   "reason": "'shall not require a tenant to provide a postdated cheque' is s. 108's rule, not s. 106(4). It drops 'nor a tenancy agreement' and 'or prospective tenant'. This lease term requires post-dated cheques, and 'nor a tenancy agreement' is what voids it."
+  },
+  {
+   "id": "claude-haiku-5-5__c28",
+   "source": "s. 3(1)",
+   "category": "wrong_cite",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "'the Act applies despite any agreement, waiver or other arrangement to the contrary' is s. 3(1), not s. 4 as cited. It adds 'other arrangement' and drops 'except Part V.1'. The clause fails on the 90-day notice in s. 116(1), which the change does not touch."
+  },
+  {
+   "id": "claude-haiku-5-5__c29",
+   "source": "s. 116(1)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "yes",
+   "confidence": "medium",
+   "reason": "'a landlord is not permitted to increase the rent for a rental unit' stops before 'without first giving the tenant at least 90 days written notice', so it reads as a flat ban on increases. That dropped condition is exactly why this 90-day-notice clause is allowed."
+  },
+  {
+   "id": "claude-haiku-5-5__c30",
+   "source": "s. 119(1)(a)",
+   "category": "wrong_cite",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "'at least 12 months have elapsed since the last rent increase' is s. 119(1)(a), but the model cited s. 116. Dropping 'the day of' does not change the rule."
+  },
+  {
+   "id": "claude-haiku-5-5__c32",
+   "source": "s. 110",
+   "category": "wrong_cite",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "medium",
+   "reason": "'except in accordance with this Part' marks this as s. 110, not s. 116 as cited. 'that is charged under a tenancy agreement or otherwise' replaces 'charged to a tenant', but the rule is the same."
+  },
+  {
+   "id": "claude-haiku-5-5__c34",
+   "source": "s. 3(1)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "This is s. 3(1) with 'except Part V.1' and 'with respect to rental units in residential complexes, despite any other Act and' dropped, which loses the exception. The clause is decided by s. 25 and ss. 26-27, so the change does not affect it."
+  },
+  {
+   "id": "claude-haiku-5-5__c35",
+   "source": "none",
+   "category": "too_short",
+   "q1_says_something_the_act_doesnt": "",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "'A landlord may enter a rental unit only if' is the stock opening (closest to s. 25) and stops before any condition, so it states no rule."
+  },
+  {
+   "id": "claude-haiku-5-5__c36",
+   "source": "s. 3(1)",
+   "category": "wrong_cite",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "low",
+   "reason": "'Despite any agreement, waiver' comes from s. 3(1) (cited as s. 4). The rest, 'a tenant ... cannot waive any of the rights ... any such waiver is void', is invented wording for s. 3(1)'s effect. It applies only to tenants and drops 'except Part V.1'. The clause is decided by s. 40, the ban on seizing belongings. not_in_act is also arguable."
+  },
+  {
+   "id": "claude-opus-5-5__c05",
+   "source": "s. 15",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "medium",
+   "reason": "The quote rewords 'upon a default of the tenant in paying rent due' as 'and payable if the tenant defaults in the payment of rent due', shortens 'period of a tenancy', and stops before 'or in carrying out an obligation'. It is a cut-off description of the provision, not a different rule."
+  },
+  {
+   "id": "claude-opus-5-5__c07",
+   "source": "s. 20(2)",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "The only change is 'applies' to 'apply' (grammatical number). The quote ends at 'state of non-repair', a plain cut-off before 'or a contravention ... before entering into the tenancy agreement'."
+  },
+  {
+   "id": "claude-opus-5-5__c16",
+   "source": "s. 34",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "'its' is added (not an article), which is harmless. But the quote ends 'conduct of the tenant' and drops 'another occupant ... or a person permitted ... by the tenant', narrowing who the tenant answers for. This clause is about the tenant's own carelessness, so that does not matter here."
+  },
+  {
+   "id": "claude-opus-5-5__c18",
+   "source": "s. 37(4)(b)",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "low",
+   "reason": "The only change is 'the' to 'a' before 'tenancy agreement' in s. 37(4)(b), and the same words appear in s. 37(5)(b). The fragment never says what is void, so too_short is a fair alternative."
+  },
+  {
+   "id": "claude-opus-5-5__c19",
+   "source": "s. 105(1)",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "The only change is singular to plural: 'deposit is' became 'deposits are'."
+  },
+  {
+   "id": "claude-opus-5-5__c20",
+   "source": "s. 105(1)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "low",
+   "reason": "The rule on security deposits is s. 105(1), the cited section, but the wording 'collect or require or attempt to collect or require' is borrowed from s. 134. 'except in accordance with this section' drops that the only allowed deposit is a rent deposit under s. 106. A refundable pet deposit is void either way. not_in_act is also arguable."
+  },
+  {
+   "id": "claude-opus-5-5__c22",
+   "source": "s. 106(2)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "Adding 'a period of' before 'one month' does not change the cap."
+  },
+  {
+   "id": "claude-opus-5-5__c23",
+   "source": "s. 106(10)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "medium",
+   "reason": "'a person has paid' replaces 'a tenant has paid', and 'The' replaces 'A'. A rent deposit is by definition paid by or for the tenant, so the rule to apply it to the last rent period is unchanged."
+  },
+  {
+   "id": "claude-opus-5-5__c24",
+   "source": "s. 106(3)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "medium",
+   "reason": "'up to the lawful rent' replaces 'up to the amount permitted by subsection (2)', which loses the 'lesser of one rent period and one month' cap that matters for periods longer than a month. With monthly rent the two caps are the same, so this clause is unaffected."
+  },
+  {
+   "id": "claude-opus-5-5__c25",
+   "source": "s. 108",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "yes",
+   "confidence": "medium",
+   "reason": "The quote drops 'nor a tenancy agreement' (and 'Neither') and ends at 'to' before the list. This lease term requires post-dated cheques, and the dropped words are what void such a term."
+  },
+  {
+   "id": "claude-opus-5-5__c26",
+   "source": "s. 108(a)",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "yes",
+   "confidence": "high",
+   "reason": "The quote drops 'nor a tenancy agreement', the words that void a lease requirement. It also quotes the post-dated-cheques paragraph (a) when this clause, which requires pre-authorized debit, falls under (b)."
+  },
+  {
+   "id": "claude-opus-5-5__c27",
+   "source": "s. 108",
+   "category": "content_words_differ",
+   "q1_says_something_the_act_doesnt": "yes",
+   "q2_misleads_on_this_clause": "no",
+   "confidence": "high",
+   "reason": "The quote drops 'nor a tenancy agreement' and stops after 'prospective tenant'. This clause only offers post-dated cheques or debit as options, so the missing words do not affect it."
+  },
+  {
+   "id": "claude-opus-5-5__c37",
+   "source": "s. 26(3)",
+   "category": "cosmetic",
+   "q1_says_something_the_act_doesnt": "no",
+   "q2_misleads_on_this_clause": "",
+   "confidence": "high",
+   "reason": "The only change is 'the' to 'a' before 'rental unit', and the quote stops before the conditions list."
+  }
+ ]
+}

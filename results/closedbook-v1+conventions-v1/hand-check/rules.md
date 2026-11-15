@@ -1,0 +1,15 @@
+# Hand-check rules
+
+The four rules the hand check of the closed-book quotes followed ([quote-hand-check.csv](../quote-hand-check.csv)), as given to the reviewers. "Question 1" is the CSV's `meaning_changed` (does the quote say something the Act doesn't?) and "question 2" is `misleads_here` (would it mislead on the clause being checked?). The judgements are the author's reading, not legal advice.
+
+Statute words in this file: Source: Ontario e-Laws. Not an official version of the statute. © King's Printer for Ontario, 2006.
+
+RULES FOR THIS HAND CHECK (agreed by the project owner; apply them exactly)
+
+Rule 1 — "not in the Act" means the RULE isn't in the Act, not merely that the sentence isn't. Strip stock wording ("A landlord may enter a rental unit", "a landlord shall not require a tenant to"), find the quote's distinctive content, and search the whole Act. A reworded, reordered or spliced version of a real provision belongs to that provision: `content_words_differ` if that provision is in the section the model cited, `wrong_cite` if it is in a different section. Use `not_in_act` only when no provision states the quoted rule. Use `too_short` for a fragment that states no rule at all (e.g. "A landlord may enter a rental unit only if").
+
+Rule 2 — dropping a lead-in or built-in exception changes the rule. If the quote leaves out "Subject to …", "except Part V.1", "other than …" or similar, question 1 is "yes", even if quoting conventions would otherwise accept the quote. (Question 2 then decides whether it matters.)
+
+Rule 3 — question 2 ("misleads on this clause") is "yes" if the change would either (i) lead a reader relying on the quote to the wrong verdict for this clause, or (ii) hide the reason this clause's verdict holds, i.e. the quote no longer shows the words that make this clause void or allowed. Example: dropping "nor a tenancy agreement" from s. 108 is "yes" for a lease term that REQUIRES post-dated cheques (those words are why a lease term is void) but "no" for a term that only OFFERS them (the deciding word "require" survives). Example: a quote of s. 106(3) that drops the cap "up to the amount permitted by subsection (2)" is "yes" for a clause that is allowed because its top-up stays within the cap.
+
+Rule 4 — cut-off quotes. Check the tail of every sentence: limits and conditions ("up to …", "without first …", "if …", "during …", "by order, notice or agreement") usually sit at the end. If a quote stops where it reads as a complete statement (e.g. ends with a full stop, or "a landlord is not permitted to increase the rent for a rental unit" without "without first giving … notice"), judge what it states: dropping the condition is question 1 "yes". If it visibly breaks off mid-phrase (ends on "by", "to", or a comma before "(a)"), it states nothing different: question 1 "no" for that cut.

@@ -1,0 +1,23 @@
+You are an independent reviewer for a hand check in an LLM-evaluation project. Language models were asked, without the statute in front of them, whether synthetic Ontario lease clauses are void or allowed under the Residential Tenancies Act, 2006, and to quote the section that decides it. Each quote below failed a word-for-word check against the Act. Code has already sorted each failure into a category. Judge each row yourself, carefully and independently, under the owner's agreed rules.
+
+FILES (read-only; write only your one output file):
+- The agreed rules — read first and apply exactly: <scratch>/rules.md
+- Rows to judge: <scratch>/rows_B.json (24 rows)
+- The whole Act, every in-force section, as {section number: {heading, text}}: <scratch>/act_sections.json
+- Write your result to: <scratch>/verdicts2_B.json
+
+Do not use the web. Do not open anything else in that review folder or anywhere in ~/public_project. Use only these files.
+
+HOW TO READ A ROW. `quote_diff_against_lined_subsection` shows the model's quote against the subsection the code matched it to: `[-…-]` = the Act's words missing from the quote, `{+…+}` = the model's own words, the rest is in both. To recover the model's quote, keep the plain and {+…+} text and drop the [-…-] text. If the code found nothing, the diff is just the quote in quotation marks. The diff only spans from the quote's first matched word to its last, so ALWAYS compare the recovered quote against the full source sentence in act_sections.json to see words dropped before or after. The code's "lined up with" subsection can be wrong (it matches shared words). `model_verdict_correct` says whether the model's void/allowed verdict was right. `label_section` and `also_accept` are the sections the test set accepts for that clause.
+
+DECIDE, FOR EACH ROW:
+1. `source`: the subsection(s) the quote's rule really comes from, or "none".
+2. `category`: one of cosmetic (only articles, capitals, grammatical number, punctuation, paragraph markers), conventions (would pass with a bracketed capital "[A]" or an ellipsis "…", otherwise exact), content_words_differ, wrong_cite, not_in_act, too_short, drops_negation (verbatim except it omits a "no/not/neither/nor" just before it), no_quote, heading. Apply Rule 1.
+3. `q1_says_something_the_act_doesnt`: "yes"/"no" for any row whose rule comes from the Act (including cosmetic and conventions rows); "" for not_in_act, too_short, no_quote, heading. Judged against the Act's text, not the clause: "yes" if someone relying on the quote would get a different rule (broader, narrower, a dropped condition, limit or exception, or the opposite). Apply Rules 2 and 4.
+4. `q2_misleads_on_this_clause`: only when q1 is "yes", else "". "yes" / "no" / "unsure", per Rule 3. Read the clause text carefully and identify what decides it.
+5. `confidence`: "high", "medium" or "low".
+6. `reason`: one or two plain sentences naming the exact words that drive your call.
+
+Be rigorous and independent. Do not default to the code. If a row is genuinely borderline, say so with confidence "low".
+
+OUTPUT: write verdicts2_B.json as a JSON array, one object per row, in input order, with keys: id, source, category, q1_says_something_the_act_doesnt, q2_misleads_on_this_clause, confidence, reason. Validate that it parses and has 24 entries. Final message: just "done".
