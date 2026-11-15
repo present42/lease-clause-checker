@@ -32,8 +32,9 @@ Type "clear" Enter
 Sleep 300ms
 Show
 
-# Without it: Claude Opus 5.5's closed-book quote for clause c05, which fails.
-Type@12ms 'uv run lcc quote check 15 "all or part of the remaining rent for a term or tenancy, or a specific sum, becomes due and payable if the tenant defaults in the payment of rent due"'
+# Without it: Gemini 3.8 Flash's closed-book quote for clause c09, which fails and leaves out
+# the two cases in which s. 26(1) allows entry without written notice.
+Type@20ms 'uv run lcc quote check 26 "A landlord may enter the rental unit at any time without written notice"'
 Sleep 400ms
 Enter
 Sleep 9s

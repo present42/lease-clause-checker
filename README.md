@@ -38,11 +38,11 @@ uv run lcc check samples/lease_short.txt    # replays the saved answers: no API 
 ```
 
 ![lcc check replaying the saved answers for the sample lease, with a warning on clauses 3 and 5
-that a verbatim quote may stop before the deciding words; then lcc quote check failing Claude
-Opus 5.5's closed-book quote of s. 15 and naming the words it leaves out](demo/check.gif)
+that a verbatim quote may stop before the deciding words; then lcc quote check failing Gemini
+3.8 Flash's closed-book quote of s. 26 and naming the words it leaves out](demo/check.gif)
 
 `lcc check` on [the sample lease](samples/lease_short.txt), replaying its saved answers, then
-`lcc quote check` on Claude Opus 5.5's closed-book quote for clause c05 (recorded with
+`lcc quote check` on Gemini 3.8 Flash's closed-book quote for clause c09 (recorded with
 [demo/check.tape](demo/check.tape); see [Check a lease](docs/details.md#check-a-lease) and
 [Check a quote](docs/details.md#check-a-quote)).
 
