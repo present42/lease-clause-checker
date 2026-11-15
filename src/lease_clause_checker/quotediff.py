@@ -270,10 +270,12 @@ class Alignment:
         """The aligned stretch as (kind, tokens) pieces: "same" for tokens in both (as the Act
         has them), "del" for the Act's tokens that the quote drops or changes, "ins" for the
         quote's own. With `whole`, the rest of the subsection too, as "del", so the words left
-        out before and after the quote show as dropped."""
+        out before and after the quote show as dropped; the subsection's own marker ("(1)") is
+        left out, but the list items' markers and line breaks are kept."""
         pieces: list[tuple[str, tuple[Token, ...]]] = []
         before, after = self.outside if whole else ((), ())
-        before = tuple(_without_paragraph_markers(before))
+        if before and _marker_size(before, 0):
+            before = before[_marker_size(before, 0) :]
         if before:
             pieces.append(("del", before))
         for region in self.regions:

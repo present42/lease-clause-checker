@@ -425,3 +425,20 @@ def test_left_out_names_the_words_of_the_quote_s_sentence_it_leaves_out(
 
     assert alignment is not None
     assert alignment.left_out == left_out
+
+
+def test_a_whole_redline_keeps_list_markers_but_not_the_subsection_s_own() -> None:
+    item = align("end a tenancy unless it is terminated under this Act.", SECTIONS["60"])
+    whole = align(
+        "The written notice under subsection (1) shall specify the reasons for entry.",
+        SECTIONS["27"],
+    )
+
+    assert item is not None
+    assert whole is not None
+    assert item.wdiff(whole=True) == (
+        "[-A landlord shall not, (i) seize property for arrears under subsection 59 (1); or (ii)-] "
+        "end a tenancy unless it is terminated under this Act."
+    )
+    assert whole.subsection == "(2)"
+    assert not whole.wdiff(whole=True).startswith("[-")  # "(2)" is layout, not a dropped word
