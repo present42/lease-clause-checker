@@ -9,7 +9,7 @@ import pytest
 from lease_clause_checker import check, cli
 from lease_clause_checker.models import ModelSpec, model_by_key
 from lease_clause_checker.pipeline import Attempt, assess, load_pipeline_prompt
-from lease_clause_checker.providers import Completion
+from lease_clause_checker.providers import Complete, Completion, MissingKeyError
 from lease_clause_checker.runs import RunRecord
 from lease_clause_checker.statute import Section
 
@@ -259,6 +259,32 @@ def test_cli_check_runs_the_pipeline_then_reuses_the_saved_answers(
     assert "3 clauses: 3 void, 0 allowed, 0 unsure." in out
     assert "Not legal advice" in out
     assert "Not checked (no clause number): “SAMPLE LEASE”, “Rent is $1,000 a month.”" in out
+
+
+def test_cli_check_replays_saved_answers_without_making_the_models(
+    tmp_path: Path,
+    monkeypatch: pytest.MonkeyPatch,
+    capsys: pytest.CaptureFixture[str],
+    cache_dir: Path,
+) -> None:
+    lease, rules = write_inputs(tmp_path)
+    argv = ["--cache-dir", str(cache_dir), "check", str(lease), "--rules", str(rules)]
+    monkeypatch.setattr(
+        cli,
+        "live_models",
+        lambda specs: (
+            lambda spec, request: Completion(answer(), spec.model_id, "end_turn", 1000, 100, {})
+        ),
+    )
+    assert cli.main(argv) == 0
+
+    def no_key(specs: list[ModelSpec]) -> Complete:
+        raise MissingKeyError("ANTHROPIC_API_KEY is not set")
+
+    monkeypatch.setattr(cli, "live_models", no_key)
+
+    assert cli.main(argv) == 0  # every answer is saved, so no key is needed
+    assert "0 new calls, 3 saved answers reused" in capsys.readouterr().out
 
 
 def test_cli_check_exits_1_and_says_which_clauses_went_unanswered(

@@ -11,8 +11,11 @@ from lease_clause_checker.config import Settings
 from lease_clause_checker.models import MODELS, model_by_key
 from lease_clause_checker.providers import (
     API_RETRIES,
+    Complete,
+    Completion,
     LiveModels,
     MissingKeyError,
+    OnFirstCall,
     anthropic_request,
     from_anthropic,
     from_gemini,
@@ -221,3 +224,19 @@ def test_a_dropped_model_can_still_be_looked_up() -> None:
 def test_unknown_model_names_the_known_ones() -> None:
     with pytest.raises(KeyError, match="claude-opus-5-5"):
         model_by_key("gpt-x")
+
+
+def test_on_first_call_makes_the_models_once_and_only_when_called() -> None:
+    made: list[int] = []
+
+    def make() -> Complete:
+        made.append(1)
+        return lambda spec, request: Completion("t", spec.model_id, "end_turn", 1, 1, {})
+
+    models = OnFirstCall(make)
+    assert made == []
+
+    spec = model_by_key("claude-haiku-5-5")
+    models(spec, {})
+    models(spec, {})
+    assert made == [1]

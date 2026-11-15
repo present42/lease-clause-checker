@@ -6,6 +6,7 @@ fallbacks to other models are deliberately not enabled: an answer must come from
 being scored.
 """
 
+import threading
 from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
@@ -105,6 +106,22 @@ def _gemini_finish_reason(candidate: types.Candidate | None) -> str:
     if candidate is None:
         return "no candidate"
     return candidate.finish_reason.name if candidate.finish_reason else "unknown"
+
+
+class OnFirstCall:
+    """Makes the models (`LiveModels`, say) only when the first call comes, so a run whose
+    answers are all saved needs no API key. Safe to call from several threads."""
+
+    def __init__(self, make: Callable[[], Complete]) -> None:
+        self._make = make
+        self._models: Complete | None = None
+        self._lock = threading.Lock()
+
+    def __call__(self, spec: ModelSpec, request: dict[str, Any]) -> Completion:
+        with self._lock:
+            if self._models is None:
+                self._models = self._make()
+        return self._models(spec, request)
 
 
 class LiveModels:

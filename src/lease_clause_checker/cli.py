@@ -33,7 +33,7 @@ from lease_clause_checker.clauses import (
 from lease_clause_checker.config import Settings
 from lease_clause_checker.evaluation import baseline_run, closedbook_run, pipeline_run
 from lease_clause_checker.models import DROPPED_MODELS, MODELS, ModelSpec, model_by_key
-from lease_clause_checker.providers import Complete, LiveModels, MissingKeyError
+from lease_clause_checker.providers import Complete, LiveModels, MissingKeyError, OnFirstCall
 from lease_clause_checker.report import (
     ModelRun,
     closedbook_table,
@@ -514,7 +514,13 @@ def _check_lease(args: argparse.Namespace) -> int:
     prompt, sections = _pipeline_prompt(args)
     store = check.store_for(text, args.cache_dir, prompt.version)
     findings, summary = check.check(
-        clauses, spec, prompt, sections, store, live_models([spec]), workers=args.workers
+        clauses,
+        spec,
+        prompt,
+        sections,
+        store,
+        OnFirstCall(lambda: live_models([spec])),  # a replay of saved answers needs no key
+        workers=args.workers,
     )
     color = check.use_color(args.color, sys.stdout.isatty())
     width = check.terminal_width()
