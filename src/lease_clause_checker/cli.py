@@ -65,7 +65,9 @@ from lease_clause_checker.verify import (
     dropped_negation,
     first_difference,
     normalise,
+    subsection_marker,
     subsection_of,
+    subsections,
 )
 
 DEFAULT_CACHE_DIR = Path(".cache")
@@ -692,7 +694,8 @@ def _check_quote(cache_dir: Path, section_arg: str, quote: str) -> int:
     else:
         print(f"NOT VERIFIED: {QUOTE_PROBLEMS[result].format(section=section)}")
     if result == "not_found":
-        difference = first_difference(quote, sections[section].text)
+        lined_up = (tool.left_out_in or "").removeprefix(f"s. {section}")
+        difference = _first_difference_in(quote, sections[section].text, lined_up)
         if difference is not None:
             print(_difference_line(difference, section, sections[section].text))
     if result == "drops_negation":
@@ -707,6 +710,19 @@ def _check_quote(cache_dir: Path, section_arg: str, quote: str) -> int:
     print(elaws.NOTICE)
     print("Not legal advice: this checks the wording only, not what it means.")
     return 0 if result == "verified" else 1
+
+
+def _first_difference_in(quote: str, section_text: str, lined_up: str) -> Difference | None:
+    """Where the quote leaves the subsection it lines up with, marked `lined_up` ("(1)"; the
+    one whose words it leaves out are named), so the two lines speak of one subsection; in the
+    whole section if no subsection has that marker or not even the quote's first word is in it
+    (a quote that runs on into the next subsection)."""
+    for part in subsections(section_text):
+        if lined_up and subsection_marker(part) == lined_up:
+            within = first_difference(quote, part)
+            if within is not None and within.matched:
+                return within
+    return first_difference(quote, section_text)
 
 
 def _difference_line(difference: Difference, section: str, section_text: str) -> str:

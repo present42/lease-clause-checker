@@ -7,6 +7,7 @@ import pytest
 from lease_clause_checker import cli, elaws
 from lease_clause_checker.cli import main
 from lease_clause_checker.models import MODELS
+from lease_clause_checker.verify import Difference
 
 
 def mock_elaws(monkeypatch: pytest.MonkeyPatch, content_html: str) -> list[httpx.Request]:
@@ -308,3 +309,33 @@ def test_quote_check_names_the_words_a_failed_quote_leaves_out_of_its_sentence(
         "Words of its sentence in s. 2.1(1) that it leaves out: before it, “A landlord may "
         "require a gadget deposit if”."
     ) in out
+
+
+# Synthetic wording: the quote's opening words run longer in (2) than in (1), which it lines up
+# with.
+VISITS = (
+    "(1) A landlord may visit a unit at any hour without notice,\n(a) in an emergency.\n"
+    "(2) A landlord may visit the unit to show it."
+)
+
+
+@pytest.mark.parametrize(
+    ("lined_up", "difference"),
+    [
+        ("(1)", Difference(4, "the", "a", "(1)")),
+        ("", Difference(6, "at", "to", "(2)")),  # lines up with no subsection
+        ("(9)", Difference(6, "at", "to", "(2)")),  # no such subsection
+    ],
+)
+def test_a_failed_quote_is_compared_with_the_subsection_it_lines_up_with(
+    lined_up: str, difference: Difference
+) -> None:
+    quote = "A landlord may visit the unit at any hour without notice"
+
+    assert cli._first_difference_in(quote, VISITS, lined_up) == difference
+
+
+def test_a_quote_whose_first_word_is_not_in_its_subsection_is_compared_with_the_section() -> None:
+    quote = "the unit to show it. (1) A landlord"
+
+    assert cli._first_difference_in(quote, VISITS, "(1)") == Difference(5, "(1)", None, "(2)")
