@@ -893,8 +893,9 @@ def _failed_quotes(runs: list[ModelRun], checks: quotereview.HandChecks) -> str:
         "up with no subsection of the Act. A quote lines up with a subsection when at least "
         "half its words match it in order and they make up at least a quarter of the Act's "
         "words they span. The categories describe wording, not law: a cosmetic difference is "
-        "not a wrong statement of the law. Whether a different word changes what the Act says "
-        "is to be judged by hand and reported apart from these counts. Every quote, with its "
+        "not a wrong statement of the law. Whether a different word changes what the Act says, "
+        "and if so whether the quote would mislead on the clause being checked, is judged by "
+        "hand and reported apart from these counts. Every quote, with its "
         f"difference from the Act, is in [{quotereview.REVIEW_FILE}]({review}) "
         "(`uv run lcc closedbook quotes`). "
     )

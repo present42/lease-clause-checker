@@ -65,26 +65,28 @@ def test_regenerating_keeps_the_hand_checks_and_refreshes_the_category(tmp_path:
     quotereview.write_review([run], tmp_path, "NOTICE", "cb-v1")
     checks_file = tmp_path / quotereview.CHECKS_FILE
     assert checks_file.read_text() == (
-        "model,clause,category,hand_check,meaning_changed,note\n"
-        "claude-haiku-5-5,c01,not_in_act,,,\n"
+        "model,clause,category,hand_check,meaning_changed,misleads_here,note\n"
+        "claude-haiku-5-5,c01,not_in_act,,,,\n"
     )
     checks_file.write_text(
-        "model,clause,category,hand_check,meaning_changed,note\n"
-        "claude-haiku-5-5,c01,cosmetic,agree,yes,invented wording\n"
+        "model,clause,category,hand_check,meaning_changed,misleads_here,note\n"
+        "claude-haiku-5-5,c01,cosmetic,agree,yes,unsure,invented wording\n"
     )
 
     checks = quotereview.write_review([run], tmp_path, "NOTICE", "cb-v1")
 
     assert checks_file.read_text() == (
-        "model,clause,category,hand_check,meaning_changed,note\n"
-        "claude-haiku-5-5,c01,not_in_act,agree,yes,invented wording\n"
+        "model,clause,category,hand_check,meaning_changed,misleads_here,note\n"
+        "claude-haiku-5-5,c01,not_in_act,agree,yes,unsure,invented wording\n"
     )
     assert quotereview.hand_check_line([run], checks) == (
         "1 of the 1 categories have been checked by hand; the hand check agreed with 1 of them. "
-        "Read by hand for meaning, 1 of 1 quotes change what the Act says."
+        "Read by hand for meaning, 1 of 1 quotes change what the Act says. Whether each would "
+        "mislead on the clause being checked, in the author's reading (not legal advice): yes 0, "
+        "unsure 1, no 0."
     )
     page = (tmp_path / quotereview.REVIEW_FILE).read_text()
-    assert "| agree; meaning changed: yes; invented wording |" in page
+    assert "| agree; meaning changed: yes; misleads here: unsure; invented wording |" in page
 
 
 @pytest.mark.parametrize(
@@ -103,7 +105,8 @@ def test_regenerating_keeps_the_hand_checks_and_refreshes_the_category(tmp_path:
             "",
             "yes",
             "not yet been checked by hand. Read by hand for meaning, 1 of 1 quotes change what "
-            "the Act says.",
+            "the Act says. Whether each would mislead on the clause being checked has not yet been "
+            "judged.",
         ),
     ],
 )
@@ -146,7 +149,7 @@ def test_a_file_from_before_the_meaning_column_still_loads(tmp_path: Path) -> No
 
     [check] = quotereview.load_checks(path).values()
 
-    assert check == quotereview.HandCheck("agree", "", "n")
+    assert check == quotereview.HandCheck("agree", "", "", "n")
 
 
 def test_meaning_changes_are_also_counted_among_content_words_differ(tmp_path: Path) -> None:
@@ -180,3 +183,60 @@ def test_a_partial_hand_check_says_so_far(tmp_path: Path) -> None:
     line = quotereview.hand_check_line(runs, quotereview.load_checks(path))
 
     assert line.startswith("1 of the 2 categories have been checked by hand so far; the hand")
+
+
+@pytest.mark.parametrize("meaning", ["", "no"])
+def test_misleads_here_is_only_for_a_quote_that_changes_the_meaning(
+    tmp_path: Path, meaning: str
+) -> None:
+    path = tmp_path / quotereview.CHECKS_FILE
+    path.write_text(
+        "model,clause,category,hand_check,meaning_changed,misleads_here,note\n"
+        f"claude-haiku-5-5,c01,x,agree,{meaning},no,\n"
+    )
+
+    with pytest.raises(quotereview.HandCheckError, match="only for a quote whose meaning_changed"):
+        quotereview.load_checks(path)
+
+
+def test_misleads_here_must_be_yes_no_or_unsure(tmp_path: Path) -> None:
+    path = tmp_path / quotereview.CHECKS_FILE
+    path.write_text(
+        "model,clause,category,hand_check,meaning_changed,misleads_here,note\n"
+        "claude-haiku-5-5,c01,x,agree,yes,maybe,\n"
+    )
+
+    with pytest.raises(quotereview.HandCheckError, match="'maybe' is not 'yes', 'no' or 'unsure'"):
+        quotereview.load_checks(path)
+
+
+@pytest.mark.parametrize(
+    ("misleads", "line"),
+    [
+        (
+            ("yes", "unsure", "no"),
+            "3 of 3 quotes change what the Act says. Whether each would mislead on the clause "
+            "being checked, in the author's reading (not legal advice): yes 1, unsure 1, no 1.",
+        ),
+        (
+            ("yes", "Yes", ""),
+            "(not legal advice): yes 2, unsure 0, no 0, not yet judged 1.",
+        ),
+    ],
+)
+def test_the_hand_check_line_counts_the_quotes_that_mislead_on_the_clause(
+    tmp_path: Path, misleads: tuple[str, ...], line: str
+) -> None:
+    specs = MODELS[:3]
+    path = tmp_path / quotereview.CHECKS_FILE
+    path.write_text(
+        "model,clause,category,hand_check,meaning_changed,misleads_here,note\n"
+        + "".join(
+            f"{spec.key},c01,not_in_act,,yes,{misled},\n"
+            for spec, misled in zip(specs, misleads, strict=True)
+        )
+    )
+
+    runs = [run_with_quote("x y z w v", spec) for spec in specs]
+
+    assert quotereview.hand_check_line(runs, quotereview.load_checks(path)).endswith(line)

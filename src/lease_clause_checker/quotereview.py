@@ -5,9 +5,10 @@ from the Act, and the hand check of each.
 The hand checks live in their own file, `CHECKS_FILE`, beside the page: one row per quote, keyed
 by model and clause. A person fills in `hand_check` with "agree" or the category they would
 give instead, and `meaning_changed` with "yes" or "no": the code sorts wording, and only a
-reader can say whether a different word changes what the provision means. Writing the page
-adds a row for any new quote and keeps every hand check already written, so regenerating never
-erases one.
+reader can say whether a different word changes what the provision means. Where it does,
+`misleads_here` says whether the quote would mislead on the clause being checked ("yes", "no"
+or "unsure"): the author's reading, not legal advice. Writing the page adds a row for any new
+quote and keeps every hand check already written, so regenerating never erases one.
 """
 
 import csv
@@ -24,7 +25,15 @@ from lease_clause_checker.report import ModelRun
 
 REVIEW_FILE = "quote-review.md"
 CHECKS_FILE = "quote-hand-check.csv"
-CHECKS_COLUMNS = ("model", "clause", "category", "hand_check", "meaning_changed", "note")
+CHECKS_COLUMNS = (
+    "model",
+    "clause",
+    "category",
+    "hand_check",
+    "meaning_changed",
+    "misleads_here",
+    "note",
+)
 LABELS: dict[Category, str] = {c: label for c, label in quotediff.LABELS.items() if c != "verbatim"}
 """Every category but `verbatim`, as the table's columns."""
 ALWAYS_SHOWN: tuple[Category, ...] = (
@@ -46,6 +55,9 @@ class HandCheck:
     """"" if not checked yet, "agree", or the category the checker would give instead."""
     meaning_changed: str
     """"" if not judged yet, "yes" or "no": whether the quote changes what the Act says."""
+    misleads_here: str
+    """"" if not judged yet, "yes", "no" or "unsure": whether a quote that changes what the Act
+    says would mislead on the clause being checked. Only for `meaning_changed` "yes"."""
     note: str
 
     def agrees(self, category: Category) -> bool:
@@ -54,6 +66,7 @@ class HandCheck:
 
 HandChecks = dict[tuple[str, str], HandCheck]
 """By (model key, clause id)."""
+NOT_CHECKED = HandCheck("", "", "", "")
 
 
 def failed(run: ModelRun) -> list[tuple[ClosedBookResult, Classified]]:
@@ -96,7 +109,8 @@ def summary_table(runs: Sequence[ModelRun]) -> str:
 def hand_check_line(runs: Sequence[ModelRun], checks: HandChecks) -> str:
     """How many quotes have had their category checked by hand, and how many of those the check
     agreed with; then how many were read for meaning, and how many of those change what the Act
-    says, also among those the code sorted as "content words differ"."""
+    says, also among those the code sorted as "content words differ"; then how many of those
+    would mislead on the clause being checked, and how many are unsure."""
     rows = [(run.spec.key, result.clause.id, q) for run in runs for result, q in failed(run)]
     found = [(checks[m, c], q) for m, c, q in rows if (m, c) in checks]
     done = [(check, q) for check, q in found if check.hand_check]
@@ -120,7 +134,23 @@ def hand_check_line(runs: Sequence[ModelRun], checks: HandChecks) -> str:
             f" ({content.count('yes')} of the {len(content)} that the code sorted as "
             f"{LABELS['content_words_differ']})"
         )
-    return line + "."
+    return f"{line}.{_misleads_line(found, changes)}"
+
+
+def _misleads_line(found: list[tuple[HandCheck, Classified]], changes: int) -> str:
+    """For the quotes that change what the Act says, how many would mislead on the clause being
+    checked, how many would not, and how many are unsure; "" if none changes it."""
+    if not changes:
+        return ""
+    judged = [check.misleads_here for check, _ in found if check.misleads_here]
+    question = "Whether each would mislead on the clause being checked"
+    if not judged:
+        return f" {question} has not yet been judged."
+    waiting = "" if len(judged) == changes else f", not yet judged {changes - len(judged)}"
+    return (
+        f" {question}, in the author's reading (not legal advice): yes {judged.count('yes')}, "
+        f"unsure {judged.count('unsure')}, no {judged.count('no')}{waiting}."
+    )
 
 
 def write_review(
@@ -139,9 +169,17 @@ def write_review(
     writer = csv.writer(out, lineterminator="\n")
     writer.writerow(CHECKS_COLUMNS)
     for model, clause, category in rows:
-        check = checks.get((model, clause), HandCheck("", "", ""))
+        check = checks.get((model, clause), NOT_CHECKED)
         writer.writerow(
-            (model, clause, category, check.hand_check, check.meaning_changed, check.note)
+            (
+                model,
+                clause,
+                category,
+                check.hand_check,
+                check.meaning_changed,
+                check.misleads_here,
+                check.note,
+            )
         )
     path.write_text(out.getvalue(), encoding="utf-8")
     (folder / REVIEW_FILE).write_text(
@@ -165,7 +203,18 @@ def load_checks(path: Path) -> HandChecks:
             meaning = (row.get("meaning_changed") or "").strip().lower()
             if meaning not in ("", "yes", "no"):
                 raise HandCheckError(f"{where}: meaning_changed {meaning!r} is not 'yes' or 'no'")
-            checks[row["model"], row["clause"]] = HandCheck(hand, meaning, row["note"].strip())
+            misleads = (row.get("misleads_here") or "").strip().lower()
+            if misleads not in ("", "yes", "no", "unsure"):
+                raise HandCheckError(
+                    f"{where}: misleads_here {misleads!r} is not 'yes', 'no' or 'unsure'"
+                )
+            if misleads and meaning != "yes":
+                raise HandCheckError(
+                    f"{where}: misleads_here is only for a quote whose meaning_changed is 'yes'"
+                )
+            checks[row["model"], row["clause"]] = HandCheck(
+                hand, meaning, misleads, row["note"].strip()
+            )
     return checks
 
 
@@ -191,7 +240,9 @@ def review_page(
         "`agree` or the category you would give instead (one of "
         + ", ".join(f"`{c}`" for c in LABELS)
         + "), `meaning_changed` with `yes` or `no` (does the quote change what the Act says?), "
-        "add a note if useful, and regenerate. " + hand_check_line(runs, checks),
+        "and, only where it does, `misleads_here` with `yes`, `no` or `unsure` (would it "
+        "mislead on the clause being checked? the author's reading, not legal advice); add a "
+        "note if useful, and regenerate. " + hand_check_line(runs, checks),
         "",
         "In the **quote vs the Act** column, `[-…-]` marks the Act's words that the quote drops "
         "or replaces and `{+…+}` the quote's own words; the rest is in both. It runs from the "
@@ -216,7 +267,7 @@ def review_page(
             "|---|---|---|---|---|---|---|---|---|",
         ]
         for result, quote in rows:
-            check = checks.get((run.spec.key, result.clause.id), HandCheck("", "", ""))
+            check = checks.get((run.spec.key, result.clause.id), NOT_CHECKED)
             lines.append(_row(result, quote, check))
     return "\n".join(lines) + "\n"
 
@@ -241,6 +292,7 @@ def _row(result: ClosedBookResult, quote: Classified, check: HandCheck) -> str:
     parts = [
         check.hand_check,
         f"meaning changed: {check.meaning_changed}" if check.meaning_changed else "",
+        f"misleads here: {check.misleads_here}" if check.misleads_here else "",
         check.note,
     ]
     hand = "; ".join(part for part in parts if part)
