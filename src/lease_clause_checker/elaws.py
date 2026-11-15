@@ -1,7 +1,7 @@
 """Download the Residential Tenancies Act, 2006 from Ontario e-Laws and cache it on disk.
 
 The cache holds the full statute text, so it lives in a gitignored directory and is never
-committed. See the README section "Statute source and copyright".
+committed. See "Statute source and copyright" in docs/details.md.
 """
 
 import hashlib

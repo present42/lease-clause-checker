@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="730" height="298" viewBox="0 0 730 298" role="img" aria-labelledby="title desc" font-family="system-ui, sans-serif" font-size="12">
 <title id="title">Main test set, 38 clauses: counts with 95% bootstrap intervals</title>
-<desc id="desc">For each model, the number of clauses with the right verdict and with the exact deciding section, by the baseline (circles) and the pipeline (diamonds). The README's tables give the same numbers.</desc>
+<desc id="desc">For each model, the number of clauses with the right verdict and with the exact deciding section, by the baseline (circles) and the pipeline (diamonds). The tables in docs/details.md give the same numbers.</desc>
 <style>
 .bg{fill:#fcfcfb}.t1{fill:#0b0b0b}.t2{fill:#52514e}.grid{stroke:#e4e3df}.baseline{fill:#2a78d6;stroke:#2a78d6}.pipeline{fill:#eb6834;stroke:#eb6834}.ring{stroke:#fcfcfb}
 @media (prefers-color-scheme: dark){.bg{fill:#1a1a19}.t1{fill:#f0efec}.t2{fill:#c3c2b7}.grid{stroke:#3a3a38}.baseline{fill:#3987e5;stroke:#3987e5}.pipeline{fill:#d95926;stroke:#d95926}.ring{stroke:#1a1a19}}

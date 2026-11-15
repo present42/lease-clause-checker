@@ -69,6 +69,7 @@ STRESS_CANDIDATES_PATH = Path("data/stress_candidates.jsonl")
 STRESS_CANDIDATES_RESULTS = Path("results/stress-candidates")
 SELECTION_MODEL = "claude-haiku-5-5"
 DEFAULT_README = Path("README.md")
+DEFAULT_DETAILS = Path(scoreboard.DETAILS)
 DEFAULT_CHART = Path("results/scoreboard.svg")
 DEFAULT_PROMPTS_DIR = Path("prompts")
 # Each frozen set's saved answers have their own directory, so the sets never mix.
@@ -217,9 +218,12 @@ def _parser() -> argparse.ArgumentParser:
     quote_check.add_argument("quote", help="the words to look for, in quotation marks")
 
     report_all = commands.add_parser(
-        "report", help="regenerate the README's results and chart from saved answers (offline)"
+        "report",
+        help="regenerate the README's short version, the results in docs/details.md and the chart "
+        "from saved answers (offline)",
     )
     report_all.add_argument("--readme", type=Path, default=DEFAULT_README)
+    report_all.add_argument("--details", type=Path, default=DEFAULT_DETAILS)
     report_all.add_argument("--chart", type=Path, default=DEFAULT_CHART)
     report_all.add_argument("--prompts", type=Path, default=DEFAULT_PROMPTS_DIR)
     report_all.add_argument("--rules", type=Path, default=DEFAULT_RULES_PATH)
@@ -407,18 +411,33 @@ def _report_pipeline(args: argparse.Namespace, specs: list[ModelSpec]) -> int:
 
 
 def _write_report(args: argparse.Namespace) -> int:
-    """Score every saved answer and rewrite the README's results block and the chart."""
+    """Score every saved answer and rewrite the README's short version, the results and TL;DR
+    blocks in the details page, and the chart."""
     board, _, _ = _load_board(args)
-    chart_link = Path(os.path.relpath(args.chart, args.readme.parent)).as_posix()
     readme = args.readme.read_text(encoding="utf-8")
-    block = scoreboard.render(board, chart_link)
-    readme = scoreboard.replace_block(readme, block)
     readme = scoreboard.replace_block(
-        readme, scoreboard.render_tldr(board), scoreboard.TLDR_START, scoreboard.TLDR_END
+        readme,
+        scoreboard.render_short(board, elaws.NOTICE),
+        scoreboard.SHORT_START,
+        scoreboard.SHORT_END,
     )
     args.readme.write_text(readme, encoding="utf-8")
+    # The details page is one folder down, so its links to repo files need a prefix.
+    prefix = Path(os.path.relpath(".", args.details.parent)).as_posix() + "/"
+    chart_link = Path(os.path.relpath(args.chart, args.details.parent)).as_posix()
+    details = args.details.read_text(encoding="utf-8")
+    details = scoreboard.replace_block(
+        details, scoreboard.relink(scoreboard.render(board, chart_link), prefix)
+    )
+    details = scoreboard.replace_block(
+        details,
+        scoreboard.relink(scoreboard.render_tldr(board), prefix),
+        scoreboard.TLDR_START,
+        scoreboard.TLDR_END,
+    )
+    args.details.write_text(details, encoding="utf-8")
     args.chart.write_text(scoreboard.render_chart(board.main), encoding="utf-8")
-    print(f"Wrote the results in {args.readme} and the chart {args.chart}.")
+    print(f"Wrote {args.readme}, the results in {args.details} and the chart {args.chart}.")
     print(NOT_LEGAL_ADVICE)
     return 0
 

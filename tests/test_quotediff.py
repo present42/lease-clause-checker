@@ -229,3 +229,42 @@ def test_only_cosmetic_opening_words_are_looked_behind_for_a_negation() -> None:
     assert cosmetic is not None
     assert changed.dropped_negation is None
     assert cosmetic.dropped_negation == "not"
+
+
+@pytest.mark.parametrize(
+    ("quote", "section", "whole"),
+    [
+        (
+            "A landlord may enter a rental unit in accordance with oral notice given",
+            "27",  # no "(1)" marker before it, and the rest of (1) after it
+            "A landlord may enter a rental unit in accordance with [-written-] {+oral+} notice "
+            "given [-to the tenant at least 24 hours before the time of entry.-]",
+        ),
+        (
+            "landlord shall, without legal process, seize",
+            "40",
+            "[-No-] landlord shall, without legal process, seize [-a tenant’s property for "
+            "default in the payment of rent.-]",
+        ),
+        (  # "Every" already stands against "No", so "No" is not dropped twice
+            "Every landlord shall, without legal process, seize a tenant’s property",
+            "40",
+            "[-No-] {+Every+} landlord shall, without legal process, seize a tenant’s property "
+            "[-for default in the payment of rent.-]",
+        ),
+        (  # "now" already stands against the full stop
+            "No landlord shall, without legal process, seize a tenant’s property for default in "
+            "the payment of rent now",
+            "40",
+            "No landlord shall, without legal process, seize a tenant’s property for default in "
+            "the payment of rent [-.-] {+now+}",
+        ),
+    ],
+)
+def test_a_whole_wdiff_shows_what_the_quote_leaves_out_at_its_ends(
+    quote: str, section: str, whole: str
+) -> None:
+    alignment = align(quote, SECTIONS[section])
+
+    assert alignment is not None
+    assert alignment.wdiff(whole=True) == whole

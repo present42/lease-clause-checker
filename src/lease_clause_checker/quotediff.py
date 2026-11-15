@@ -222,10 +222,28 @@ class Alignment:
         before = " ".join(token.key for token in self.act[:start])
         return verify.negation_before(before, len(before))
 
-    def wdiff(self) -> str:
+    @property
+    def outside(self) -> tuple[tuple[Token, ...], tuple[Token, ...]]:
+        """The subsection's tokens before and after the stretch `regions` covers: what the
+        quote leaves out at its two ends, if it quotes less than the whole subsection."""
+        first_a, first_b, _ = self.blocks[0]
+        lead = self.quote[:first_b]
+        start = max(0, first_a - first_b) if first_b and _has_word(lead) else first_a
+        last_a, last_b, last_size = self.blocks[-1]
+        end_a, end_b = last_a + last_size, last_b + last_size
+        tail = self.quote[end_b:]
+        end = end_a + len(tail) if end_b < len(self.quote) and _has_word(tail) else end_a
+        return self.act[:start], self.act[end:]
+
+    def wdiff(self, *, whole: bool = False) -> str:
         """The aligned stretch as text: the Act's words that the quote drops or changes as
-        `[-…-]`, the quote's own as `{+…+}`."""
+        `[-…-]`, the quote's own as `{+…+}`. With `whole`, the rest of the subsection too, so
+        the words left out before and after the quote show as dropped."""
         parts = []
+        before, after = self.outside if whole else ((), ())
+        before = tuple(_without_paragraph_markers(before))
+        if before:
+            parts.append(f"[-{_join(before)}-]")
         for region in self.regions:
             if region.same:
                 parts.append(_join(region.act))
@@ -234,6 +252,8 @@ class Alignment:
                 parts.append(f"[-{_join(region.act)}-]")
             if region.quote:
                 parts.append(f"{{+{_join(region.quote)}+}}")
+        if after:
+            parts.append(f"[-{_join(after)}-]")
         return " ".join(parts)
 
 

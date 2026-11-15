@@ -17,7 +17,7 @@ saved record needs a new `PIPELINE_PROMPT` version, as a change to the prompt fi
 Re-check every saved answer after such a change. What shows if one is missed: a changed retry
 note makes saved retry records stale, which is caught; a stricter check that fails a saved
 first answer leaves its clause without a retry record, so `load_results` drops the clause and
-the README's tables show the run as partial; a looser check that passes a saved first answer
+the result tables show the run as partial; a looser check that passes a saved first answer
 makes its saved retry unnecessary, which nothing catches.
 """
 

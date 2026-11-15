@@ -17,6 +17,7 @@ format:
 	uv run --locked ruff check --fix .
 	uv run --locked ruff format .
 
-# Regenerates the README's results and chart from saved answers; needs `uv run lcc statute fetch`.
+# Regenerates the README's short version, docs/details.md's results and the chart from saved
+# answers; needs `uv run lcc statute fetch`.
 report:
 	uv run --locked lcc report

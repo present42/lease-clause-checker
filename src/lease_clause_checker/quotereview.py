@@ -112,6 +112,39 @@ def summary_table(runs: Sequence[ModelRun]) -> str:
     return "\n".join(lines)
 
 
+@dataclass(frozen=True)
+class Judged:
+    """A finished hand check: every quote checked, read for meaning where it states a rule, and
+    judged for misleading where it changes what the Act says."""
+
+    quotes: int
+    rules: int
+    """Quotes that state a rule from the Act (their hand category is not in `NOT_A_RULE`)."""
+    changes: int
+    """Of those, the quotes that change what the Act says."""
+    misleads: int
+    """Of those, the quotes that would mislead on the clause being checked."""
+    unsure: int
+
+
+def judged(runs: Sequence[ModelRun], checks: HandChecks) -> Judged | None:
+    """The finished hand check's counts; None while any part of it is missing."""
+    rows = [(checks.get((run.spec.key, r.clause.id)), q) for run in runs for r, q in failed(run)]
+    if not rows or any(check is None or not check.hand_check for check, _ in rows):
+        return None
+    done = [(check, quote) for check, quote in rows if check is not None]
+    rules = [check for check, quote in done if check.category(quote.category) not in NOT_A_RULE]
+    changes = [check for check in rules if check.meaning_changed == "yes"]
+    if any(not check.meaning_changed for check in rules) or any(
+        not check.misleads_here for check in changes
+    ):
+        return None
+    misleads = [check.misleads_here for check in changes]
+    return Judged(
+        len(done), len(rules), len(changes), misleads.count("yes"), misleads.count("unsure")
+    )
+
+
 def failed_categories(runs: Sequence[ModelRun]) -> dict[tuple[str, str], Category]:
     """The code's category of every quote that failed the check, by (model key, clause id)."""
     return {

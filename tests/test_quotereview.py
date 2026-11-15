@@ -285,3 +285,39 @@ def test_the_hand_check_line_counts_the_quotes_that_mislead_on_the_clause(
     runs = [run_with_quote("x y z w v", spec) for spec in specs]
 
     assert quotereview.hand_check_line(runs, quotereview.load_checks(path)).endswith(line)
+
+
+@pytest.mark.parametrize(
+    ("rows", "counts"),
+    [
+        (
+            [("agree", "yes", "yes"), ("agree", "yes", "unsure"), ("too_short", "", "")],
+            quotereview.Judged(3, 2, 2, 1, 1),
+        ),
+        ([("agree", "yes", "yes"), ("agree", "no", "")], quotereview.Judged(2, 2, 1, 1, 0)),
+        ([("agree", "no", ""), ("", "", "")], None),  # a category not checked
+        ([("agree", "", ""), ("agree", "no", "")], None),  # a rule not read for meaning
+        ([("agree", "yes", ""), ("agree", "no", "")], None),  # a change not judged
+    ],
+)
+def test_judged_counts_only_a_finished_hand_check(
+    tmp_path: Path, rows: list[tuple[str, str, str]], counts: quotereview.Judged | None
+) -> None:
+    specs = MODELS[: len(rows)]
+    path = tmp_path / quotereview.CHECKS_FILE
+    path.write_text(
+        "model,clause,category,hand_check,meaning_changed,misleads_here,note\n"
+        + "".join(
+            f"{spec.key},c01,cosmetic,{hand},{meaning},{misled},\n"
+            for spec, (hand, meaning, misled) in zip(specs, rows, strict=True)
+        )
+    )
+    runs = []
+    for spec in specs:
+        run = run_with_quote("x y z w v", spec)
+        [result] = run.closed_book
+        assert result.quote is not None
+        cosmetic = replace(result, quote=replace(result.quote, category="cosmetic"))
+        runs.append(replace(run, closed_book=[cosmetic]))
+
+    assert quotereview.judged(runs, quotereview.load_checks(path)) == counts

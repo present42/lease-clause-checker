@@ -8,12 +8,12 @@ from unittest.mock import Mock
 
 import pytest
 
-from lease_clause_checker import handcheck, scoreboard
+from lease_clause_checker import handcheck, quotereview, scoreboard
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.closedbook import ClosedBookResult
 from lease_clause_checker.models import MODELS, ModelSpec, model_by_key
 from lease_clause_checker.pipeline import Attempt, PipelineAnswer, Result
-from lease_clause_checker.quotediff import Category, Classified
+from lease_clause_checker.quotediff import Category, Classified, classify
 from lease_clause_checker.report import ModelRun
 from lease_clause_checker.runs import RunRecord
 from lease_clause_checker.scoring import Answer, Score, Verdict, score_answer
@@ -1031,3 +1031,74 @@ def test_the_hand_check_method_describes_two_rounds() -> None:
 
     with pytest.raises(scoreboard.ReportDataError, match="rounds \\[1, 2, 3\\]"):
         scoreboard._failed_quotes(runs, {}, hand_check_record((1, 2, 3)))
+
+
+@pytest.mark.parametrize(
+    ("markdown", "relinked"),
+    [
+        ("[a](results/x.md) and ![b](demo/c.gif)", "[a](../results/x.md) and ![b](../demo/c.gif)"),
+        ("[a](#notes), [b](https://e.org/x), [c](../README.md)", None),  # left as they are
+        ("[two\nlines](src/a.py#L1)", "[two\nlines](../src/a.py#L1)"),
+    ],
+)
+def test_relink_prefixes_links_to_repo_files_only(markdown: str, relinked: str | None) -> None:
+    assert scoreboard.relink(markdown, "../") == (relinked or markdown)
+
+
+def short_board(misleads: str = "yes") -> scoreboard.Board:
+    """`tldr_board`, with Argon's pipeline wrong on one clause, Opus's closed-book c05 quote
+    lined up with s. 14, and every failed closed-book quote hand-checked: all change what the
+    Act says, and one (Opus c01) would mislead."""
+    b = tldr_board({("pipeline", ARGON.key): closed_book_run(ARGON, wrong=1)})
+    act = "A provision in a tenancy agreement prohibiting widgets is void."
+    section = Section("14", "Pets", act, "BK14")
+    opus = b.closed_book[OPUS.key]
+    quote = classify(act.replace("widgets", "gadgets"), "14", {"14": section})
+    results = [replace(r, quote=quote) if r.clause.id == "c05" else r for r in opus.closed_book]
+    closed_book = b.closed_book | {OPUS.key: replace(opus, closed_book=results)}
+    runs = list(closed_book.values())
+    checks = {
+        key: quotereview.HandCheck(
+            "agree", "yes", misleads if key == (OPUS.key, "c01") else "no", ""
+        )
+        for key in quotereview.failed_categories(runs)
+    }
+    checks[OPUS.key, "c05"] = quotereview.HandCheck("agree", "yes", "no", "Widgets, not gadgets.")
+    return replace(b, closed_book=closed_book, quote_checks=checks)
+
+
+def test_the_short_version_gives_three_numbers_and_one_answer(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    monkeypatch.setattr(scoreboard, "SHORT_EXAMPLE", (OPUS.key, "c05"))
+
+    text = scoreboard.render_short(short_board(), "NOTICE")
+
+    lines = text.splitlines()
+    assert (lines[0], lines[-1]) == (scoreboard.SHORT_START, scoreboard.SHORT_END)
+    assert (
+        "- **With the statute in the prompt and every quote checked:** Claude Haiku 5.5, Claude "
+        "Opus 5.5 and Gemini 3.8 Flash each got 24 of 24 verdicts right (Gemini 4 Argon: 23 of "
+        "24)." in lines
+    )
+    assert (
+        "- **Without it (closed book):** Claude Opus 5.5 still got 24 of 24 verdicts right, but "
+        "only 20 of its 24 quotes were word for word in the section it cited." in lines
+    )
+    assert (
+        "- **Hand check of the 14 closed-book quotes that failed:** 14 state a real provision of "
+        "the Act; 14 of those change the rule, and 1 would mislead about the clause they were "
+        "quoted for (the author's reading, not legal advice)." in lines
+    )
+    assert (
+        "A provision in a tenancy agreement prohibiting [-widgets-] {+gadgets+} is void." in lines
+    )
+    assert "Hand check: Widgets, not gadgets." in lines
+    assert "Statute words: NOTICE" in lines
+
+
+def test_the_short_version_needs_a_finished_hand_check(monkeypatch: pytest.MonkeyPatch) -> None:
+    monkeypatch.setattr(scoreboard, "SHORT_EXAMPLE", (OPUS.key, "c05"))
+
+    with pytest.raises(scoreboard.ReportDataError, match="hand check is not finished"):
+        scoreboard.render_short(short_board(misleads=""), "NOTICE")
