@@ -473,10 +473,6 @@ prompt.
   and could fail at that step.
 - Saved pipeline records replace the statute text in the prompt with a reference (the
   section numbers and the SHA-256 of their text), so the repo doesn't redistribute the Act.
-- The quote check accepts a quote that starts or ends anywhere inside a subsection, so a quote
-  that leaves out a leading "No" or "Neither" still passes ("landlord shall, without legal
-  process, seize a tenant's property" is in s. 40, whose subsection begins "No landlord
-  shall"). The check shows that the words are in the Act, not that they are quoted in full.
   Re-scoring them needs the same text of those 18 sections in `.cache/`. `lcc statute fetch`
   can only download the current consolidation, so once any of the 18 sections is amended,
   `lcc pipeline report` stops with an error instead of scoring against different text.
@@ -485,6 +481,12 @@ prompt.
   Regulations made under the Act are not included.
 - The fetcher relies on an undocumented e-Laws endpoint and on e-Laws' HTML classes. The parser
   stops with an error on markup it does not recognise rather than silently dropping text.
+- The quote check accepts a quote that starts or ends anywhere inside a subsection. It fails
+  a quote that starts right after a "no", "not", "neither" or "nor" that it leaves out
+  ("landlord shall, without legal process, seize a tenant's property" against s. 40, whose
+  subsection begins "No landlord shall"), but it looks only at that one word: "shall, without
+  legal process, seize a tenant's property" still passes. The check shows that the words are
+  in the Act, not that they are quoted in full.
 - The quote check proves that a quote appears in the cited section. It does not prove that the
   legal reasoning is right, or that the section is the one that decides the clause.
   A quote of five words or more passes even when it stops short of the decisive words, such as
