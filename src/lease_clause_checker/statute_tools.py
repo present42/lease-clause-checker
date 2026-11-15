@@ -138,6 +138,13 @@ class QuoteResult(_Documented):
     """For a wrong citation: the sections that hold the words."""
     dropped_negation: str | None
     """For drops_negation: the negating word the quote leaves out."""
+    completeness: verify.Completeness | None
+    """For a verbatim quote, a rough sign beside the strict check, which it doesn't change:
+    stops_early if the quote may stop before the end of what it quotes (a list item follows it
+    in its subsection, or it ends on a comma or a word such as "to" or "if"); else ends_cleanly.
+    None if the quote is not verbatim."""
+    warning: str | None
+    """For stops_early: what the Act goes on to say, as a warning; else None."""
     scope: str = SCOPE
     source: Source
 
@@ -230,6 +237,11 @@ class Statutes:
         aligned_with = (
             f"s. {alignment.section}{alignment.subsection}" if alignment is not None else None
         )
+        ending = (
+            verify.ending(quote, number, self.sections, marker)
+            if result.strict == "verified"
+            else None
+        )
         return QuoteResult(
             section=number,
             cited_subsection=marker,
@@ -248,6 +260,8 @@ class Statutes:
             critical_words=list(result.critical),
             found_in=list(result.found_in),
             dropped_negation=result.dropped_negation,
+            completeness=ending.completeness if ending else None,
+            warning=_warning(ending),
             source=self.source,
         )
 
@@ -274,7 +288,7 @@ class Statutes:
             status, said, result = "other_statute", _not_checked(citation), None
         else:
             result = self.verify_quote(self.act.title, citation.cited, quotation.text)
-            status, said = "checked", result.summary
+            status, said = "checked", _with_warning(result)
         return Finding(
             line=draft.line(quotation.start),
             citation=citation.cited if citation else None,
@@ -309,7 +323,7 @@ class Statutes:
                 f" and {len(others) - _LISTED} more" if len(others) > _LISTED else ""
             )
             where = f"its words are in s. {closest} (checked here) and also {listed}"
-        return f"No citation goes with it; {where}. {result.summary}", result
+        return f"No citation goes with it; {where}. {_with_warning(result)}", result
 
     def _check_citation(self, draft: drafts.Draft, citation: drafts.Citation) -> Finding:
         status: Status
@@ -446,8 +460,25 @@ def _tally(findings: list[Finding]) -> str:
     by_label = ", ".join(f"{label} {n}" for label, n in labels.most_common())
     statuses = Counter(f.status for f in findings)
     parts = [f"Quotes: {len(quotes)}" + (f" ({by_label})." if by_label else ".")]
+    early = sum(f.result is not None and f.result.warning is not None for f in quotes)
+    if early:
+        parts.append(f"Verbatim quotes that may stop before the deciding words: {early}.")
     parts += [f"{label}: {statuses[status]}." for status, label in _UNCHECKED if statuses[status]]
     return " ".join(parts) + " Wording only: no verdict on any clause."
+
+
+def _warning(ending: verify.Ending | None) -> str | None:
+    """For a quote that stops early, what the Act goes on to say; else None."""
+    if ending is None or ending.completeness != "stops_early":
+        return None
+    return (
+        "Warning: word for word, but it may stop before the words that decide it. The Act goes "
+        f"on: \u201c{ending.goes_on}\u201d"
+    )
+
+
+def _with_warning(result: QuoteResult) -> str:
+    return f"{result.summary} {result.warning}" if result.warning else result.summary
 
 
 def _no_section(number: str) -> str:

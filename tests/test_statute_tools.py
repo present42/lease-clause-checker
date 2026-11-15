@@ -388,3 +388,47 @@ def test_an_unpaired_quotation_mark_hides_no_quote_in_the_next_paragraph(
     assert stray.summary.startswith('A quotation mark (") with no partner in its paragraph')
     assert quote.result is not None
     assert (quote.line, quote.citation, quote.result.category) == (3, "s. 1", "verbatim")
+
+
+def test_a_verbatim_quote_that_stops_early_gets_a_warning(statutes: Statutes) -> None:
+    result = statutes.verify_quote("RTA", "2.1", "A landlord may require a gadget deposit if,")
+
+    assert (result.verbatim, result.completeness) == (True, "stops_early")
+    assert result.warning == (
+        "Warning: word for word, but it may stop before the words that decide it. The Act goes "
+        "on: \u201c(a) the tenant agrees in writing; and (b) the deposit is returned at the end of "
+        "the tenancy.\u201d"
+    )
+    whole = statutes.verify_quote("RTA", "1", VERBATIM)
+    assert (whole.completeness, whole.warning) == ("ends_cleanly", None)
+    changed = statutes.verify_quote("RTA", "2.1", "A landlord may require a widget deposit if,")
+    assert (changed.completeness, changed.warning) == (None, None)
+    negated = statutes.verify_quote("RTA", "2.1", "exceed one month’s rent.")  # found, not verbatim
+    assert (negated.strict, negated.completeness) == ("drops_negation", None)
+    short = statutes.verify_quote("RTA", "2.1", "A landlord may")
+    assert (short.strict, short.completeness) == ("too_short", None)
+
+
+def test_verify_quote_reads_the_ending_in_the_cited_subsection(statutes: Statutes) -> None:
+    text = "(1) A tenant may pay the rent,\n(a) by cheque.\n(2) A tenant may pay the rent in cash."
+    more = replace(statutes, sections={**statutes.sections, "7": Section("7", "Pay", text, "BK7")})
+
+    assert more.verify_quote("RTA", "s. 7", "A tenant may pay the rent").warning is not None
+    assert more.verify_quote("RTA", "s. 7(2)", "A tenant may pay the rent").warning is None
+
+
+def test_check_text_shows_the_warning_and_counts_it(statutes: Statutes) -> None:
+    checked = statutes.check_text('Section 2.1 says "A landlord may require a gadget deposit if,".')
+
+    [finding] = checked.findings
+    assert finding.result is not None
+    assert finding.result.warning is not None
+    assert finding.summary.endswith(finding.result.warning)
+    assert "Verbatim quotes that may stop before the deciding words: 1." in checked.summary
+    [uncited] = statutes.check_text(
+        'The rule: "A landlord may require a gadget deposit if,"'
+    ).findings
+    assert uncited.status == "uncited"
+    assert uncited.result is not None
+    assert uncited.result.warning is not None
+    assert uncited.summary.endswith(uncited.result.warning)

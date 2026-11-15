@@ -50,18 +50,21 @@ VERIFY_QUOTE = cleandoc(
     quoting conventions (an ellipsis, cosmetic changes in brackets, a changed first capital),
     cosmetic (articles, punctuation, case, singular and plural), wrong section cited, content
     words differ, or not in the Act; with a word-level diff. The whole section is searched,
-    and a note says if the quote is in another subsection than the one cited. {SCOPE}
+    and a note says if the quote is in another subsection than the one cited. A verbatim quote
+    that may stop before the words that decide it (a list item follows it in its subsection, or
+    it ends on a comma or a word such as "to" or "if") gets a warning with what the Act goes
+    on to say; the warning doesn't change the check. {SCOPE}
     """
 )
 CHECK_TEXT = cleandoc(
     f"""
     Find every quote and section citation of the Residential Tenancies Act, 2006 (Ontario) in a
-    draft, such as a memo, and check each quote as verify_quote does. A quote goes with the
-    citation right after it in its sentence ('"… is void" (s. 14)'), else the nearest one before
-    it in the sentence; a quote with no citation is checked against the section whose wording
-    is closest. Citations with no quote are reported too: whether the section or subsection is
-    in force, or of another statute (not checked). It reports wording only and gives no verdict
-    on any clause or tenancy term. {SCOPE}
+    draft, such as a memo, and check each quote as verify_quote does, warnings included. A quote
+    goes with the citation right after it in its sentence ('"… is void" (s. 14)'), else the
+    nearest one before it in the sentence; a quote with no citation is checked against the
+    section whose wording is closest. Citations with no quote are reported too: whether the
+    section or subsection is in force, or of another statute (not checked). It reports wording
+    only and gives no verdict on any clause or tenancy term. {SCOPE}
     """
 )
 Act = Annotated[str, Field(description='The Act: "RTA" (Residential Tenancies Act, 2006).')]

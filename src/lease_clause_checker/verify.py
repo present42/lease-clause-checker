@@ -8,6 +8,10 @@ added or dropped word, a changed letter case or an ellipsis means the quote is n
 Quoting a section's heading or a subsection's headnote is reported separately from a quote
 that appears nowhere: headings are e-Laws' labels, not the operative text that decides a case.
 
+A verified quote can still stop before the words that decide a case, such as the opening of a
+list without the item that applies. `ending` flags that beside the check, as a warning; it
+never changes what "verified" means.
+
 The parser drops repealed provisions. Splitting by subsection keeps a quote from bridging a
 dropped subsection, but not a dropped paragraph inside one: if (b) were repealed, a quote
 running from (a) into (c) would verify. No rule section has such a gap today.
@@ -71,6 +75,65 @@ def check_quote(quote: str, section_number: str, sections: dict[str, Section]) -
     if any(_contains(heading, wanted) for heading in (section.heading, *section.headnotes)):
         return "heading"
     return "not_found"
+
+
+Completeness = Literal["ends_cleanly", "stops_early"]
+"""`stops_early`: the quote is word for word, but a list item (a line of its subsection that
+starts "(a)", "(i)", "1." and so on) begins after it, or it ends on a comma or on a word that
+needs what follows (`OPEN_ENDINGS`) with more of the subsection after it. `ends_cleanly`:
+neither. Every word-for-word quote that stops before a list item is flagged, but so is one that
+ends inside a list after the item that applies, so the flag over-counts; and a quote that stops
+at a full statement before a condition that is not a list item is not flagged."""
+OPEN_ENDINGS = frozenset(
+    {"a", "an", "and", "are", "by", "for", "if", "in", "into", "is", "may", "of", "on", "or"}
+    | {"shall", "that", "the", "to", "which", "who", "with"}
+)
+# A clause or paragraph at the start of a line: "(a) ", "(iv) ", "1. ". Not a subsection.
+LIST_ITEM = re.compile(r"(?:\([a-z]+(?:\.\d+)?\)|\d+(?:\.\d+)?\.)\s")
+# How many of the Act's words after a quote that stops early are shown.
+GOES_ON_WORDS = 20
+
+
+@dataclass(frozen=True)
+class Ending:
+    completeness: Completeness
+    goes_on: str
+    """The Act's words after the quote in its subsection, without a leading comma, colon or
+    semicolon, up to `GOES_ON_WORDS` with "…" if more follow; "" if no word follows."""
+
+
+def ending(
+    quote: str, section_number: str, sections: dict[str, Section], subsection: str | None = None
+) -> Ending | None:
+    """Whether a word-for-word quote stops before the end of what it quotes (see
+    `Completeness`), where it passes the check: the first place it appears that does not follow
+    a negating word it leaves out (`negation_before`), in the cited `subsection` (such as "(2)")
+    if it is there, else in the first subsection that holds it. None if no subsection holds it
+    that way."""
+    section = sections.get(section_number)
+    wanted = normalise(quote).strip('"')
+    if section is None or not wanted:
+        return None
+    parts = subsections(section.text)
+    parts.sort(key=lambda part: subsection is None or subsection_marker(part) != subsection)
+    for part in parts:
+        lines = [normalise(line) for line in part.split("\n") if line.strip()]
+        text = " ".join(lines)
+        starts = [sum(len(line) + 1 for line in lines[:i]) for i in range(len(lines))]
+        items = [start for start, line in zip(starts, lines, strict=True) if LIST_ITEM.match(line)]
+        for found in re.finditer(rf"(?<!\w){re.escape(wanted)}(?!\w)", text):
+            if negation_before(text, found.start()) is not None:
+                continue
+            rest = text[found.end() :]
+            if not WORD.search(rest):
+                return Ending("ends_cleanly", "")
+            words = rest.lstrip(" ,:;").split()
+            goes_on = " ".join(words[:GOES_ON_WORDS]) + (" …" if len(words) > GOES_ON_WORDS else "")
+            last = WORD.findall(wanted)[-1].lower()
+            open_end = wanted.endswith(",") or last in OPEN_ENDINGS
+            before_item = any(start >= found.end() for start in items)
+            return Ending("stops_early" if open_end or before_item else "ends_cleanly", goes_on)
+    return None
 
 
 def word_count(quote: str) -> int:

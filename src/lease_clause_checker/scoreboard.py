@@ -16,7 +16,7 @@ from datetime import date
 from pathlib import Path
 from typing import Any, Literal, TypeVar
 
-from lease_clause_checker import baseline, pipeline, quotereview
+from lease_clause_checker import baseline, pipeline, quotereview, verify
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.closedbook import CLOSED_BOOK_PROMPT
 from lease_clause_checker.evaluation import baseline_run, pipeline_run
@@ -86,6 +86,8 @@ class Board:
     """The closed-book run on the main set, by model key; a model not run is left out."""
     quote_checks: quotereview.HandChecks = field(default_factory=dict)
     """The hand checks of the closed-book quotes that are not word for word."""
+    sections: dict[str, Section] = field(default_factory=dict)
+    """The Act's sections, for `verify.ending`; with none, the stops-early line is left out."""
 
 
 @dataclass(frozen=True)
@@ -361,6 +363,37 @@ def _closed_book_runs(board: Board) -> list[ModelRun]:
             raise ReportDataError(f"TL;DR: {spec.name}'s closed-book run is not complete")
         runs.append(run)
     return runs
+
+
+def _stops_early_line(board: Board, closed_book: list[ModelRun]) -> str:
+    """How many passing quotes `verify.ending` flags as stopping early: every model's first
+    pipeline answer on the main set, and the closed-book answers."""
+    pipeline_first = [
+        result.attempts[0] for spec in MODELS for result in board.main.run("pipeline", spec).results
+    ]
+    closed = [result.attempt for run in closed_book for result in run.closed_book]
+    (p_early, p_passed), (c_early, c_passed) = (
+        _stops_early(attempts, board.sections) for attempts in (pipeline_first, closed)
+    )
+    return (
+        "- A quote that passes the word-for-word check can still stop before the list item "
+        "that decides the clause. A rough rule in code (`verify.ending`, shown as a warning by "
+        f"the MCP tools) flags {p_early} of the {p_passed} passing first pipeline quotes and "
+        f"{c_early} of the {c_passed} passing closed-book quotes as possibly stopping early. "
+        "These are upper limits, not counts: the rule flags every passing quote with a list "
+        "item after it, including quotes that already hold the item that applies. They have "
+        "not yet been checked by hand."
+    )
+
+
+def _stops_early(
+    attempts: Iterable[pipeline.Attempt], sections: dict[str, Section]
+) -> tuple[int, int]:
+    """(flagged as stopping early, passed) over the attempts whose quote passed."""
+    passed = [a.answer for a in attempts if a.check == "verified" and a.answer is not None]
+    endings = [verify.ending(answer.quote, answer.cited_section, sections) for answer in passed]
+    early = sum(e is not None and e.completeness == "stops_early" for e in endings)
+    return early, len(passed)
 
 
 def _first_pipeline_checks(board: Board) -> tuple[int, int]:
@@ -865,6 +898,8 @@ def _closed_book_table(board: Board) -> str:
         )
     runs = [board.closed_book.get(spec.key) for spec in MODELS]
     complete = [run for run in runs if run is not None and len(run.scores) == n]
+    if len(complete) == len(MODELS) and board.sections:
+        lines.append(_stops_early_line(board, complete))
     if len(complete) == len(MODELS):
         lines += ["", _failed_quotes(complete, board.quote_checks)]
     return "\n".join(lines)

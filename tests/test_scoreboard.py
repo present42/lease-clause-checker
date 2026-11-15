@@ -18,6 +18,7 @@ from lease_clause_checker.report import ModelRun
 from lease_clause_checker.runs import RunRecord
 from lease_clause_checker.scoring import Answer, Score, Verdict, score_answer
 from lease_clause_checker.stats import difference_interval
+from lease_clause_checker.statute import Section
 from lease_clause_checker.verify import QuoteCheck
 
 HAIKU = model_by_key("claude-haiku-5-5")
@@ -971,3 +972,24 @@ def test_the_closed_book_section_sorts_the_failed_quotes_once_every_model_has_ru
     del partial[ARGON.key]
     text = scoreboard.render(replace(full_board(), closed_book=partial), "chart.svg")
     assert "How the quotes that failed the check" not in text
+
+
+def test_passing_quotes_that_stop_early_are_counted_as_an_upper_limit() -> None:
+    assert "rough rule in code" not in scoreboard._closed_book_table(tldr_board())
+    # Every quote is word for word in its section: the pipeline's, and "q" closed book. s. 14
+    # goes on with a list, s. 4 doesn't.
+    quote = "A provision in a tenancy agreement prohibiting animals is void."
+    sections = {
+        "14": Section("14", "Pets", f"{quote} q\n(a) Widgets too.", "BK14"),
+        "4": Section("4", "Other", quote, "BK4"),
+    }
+    b = replace(tldr_board(), sections=sections)
+
+    text = scoreboard._closed_book_table(b)
+
+    # Haiku's first pipeline answers: c14 fails and is left out, and 3 cite s. 4, where the
+    # quote ends cleanly; the other models' 24 each pass and are flagged.
+    assert (
+        "flags 92 of the 95 passing first pipeline quotes and 77 of the 77 passing closed-book "
+        "quotes as possibly stopping early" in text
+    )

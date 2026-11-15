@@ -6,6 +6,7 @@ from lease_clause_checker.verify import (
     check_quote,
     check_quote_with_conventions,
     dropped_negation,
+    ending,
     first_difference,
     quote_in_text,
     subsection_of,
@@ -269,3 +270,118 @@ def test_conventions_do_not_let_an_ellipsis_piece_drop_a_negation() -> None:
     assert check_quote_with_conventions(dropped, "90", NEGATED) == "not_found"
     assert check_quote_with_conventions(kept, "90", NEGATED) == "verified"
     assert check_quote_with_conventions(carried, "90", NEGATED) == "verified"
+
+
+ENTRY = {
+    "9": Section(
+        "9",
+        "Entry",
+        "(1) A landlord may enter without notice:\n(a) in an emergency.\n"
+        "(2) A landlord may enter under the following circumstances:\n1. To repair the unit.\n"
+        "(3) A landlord may enter, with notice, at any time.\n"
+        "(4) A landlord may enter only if,",  # as if its clauses were repealed
+        "BK9",
+    )
+}
+
+
+@pytest.mark.parametrize(
+    ("quote", "completeness", "goes_on"),
+    [
+        (
+            "A landlord may require a gadget deposit if,",
+            "stops_early",
+            "(a) the tenant agrees in writing; and (b) the deposit is returned at the end of the "
+            "tenancy.",
+        ),
+        (
+            "may require a gadget deposit if, (a) the tenant agrees in writing; and",
+            "stops_early",  # ends on "and": the next item is left out
+            "(b) the deposit is returned at the end of the tenancy.",
+        ),
+        (  # 21 words follow, so the last is cut
+            "A landlord may require a",
+            "stops_early",
+            "gadget deposit if, (a) the tenant agrees in writing; and (b) the deposit is returned "
+            "at the end of the …",
+        ),
+        ("The deposit shall not exceed one month’s rent.", "ends_cleanly", ""),
+        ("the deposit is returned at the end of the tenancy.", "ends_cleanly", ""),  # (1) ends
+        (  # before "(a)", though not right before it
+            "A landlord may require a gadget deposit",
+            "stops_early",
+            "if, (a) the tenant agrees in writing; and (b) the deposit is returned at the end of "
+            "the tenancy.",
+        ),
+        (  # the comma after the quote is not shown
+            "A landlord may require a gadget deposit if",
+            "stops_early",
+            "(a) the tenant agrees in writing; and (b) the deposit is returned at the end of the "
+            "tenancy.",
+        ),
+        # Stopping mid-phrase, with no list item after it, is not flagged.
+        ("The deposit shall not exceed", "ends_cleanly", "one month's rent."),
+        ("the deposit is returned at the end", "ends_cleanly", "of the tenancy."),  # in (b)
+    ],
+)
+def test_ending_flags_a_quote_that_stops_before_what_completes_it(
+    sections: dict[str, Section], quote: str, completeness: str, goes_on: str
+) -> None:
+    found = ending(quote, "2.1", sections)
+
+    assert found is not None
+    assert (found.completeness, found.goes_on) == (completeness, goes_on)
+
+
+@pytest.mark.parametrize(
+    ("quote", "completeness"),
+    [
+        ("A landlord may enter without notice", "stops_early"),  # before "(a)"
+        ("may enter under the following circumstances", "stops_early"),  # before "1."
+        ("A landlord may enter, with notice,", "stops_early"),  # on a comma
+        ("A landlord may enter only if,", "ends_cleanly"),  # nothing follows in (4)
+    ],
+)
+def test_ending_flags_a_quote_that_stops_before_a_list_or_on_a_comma(
+    quote: str, completeness: str
+) -> None:
+    found = ending(quote, "9", ENTRY)
+
+    assert found is not None
+    assert found.completeness == completeness
+
+
+TWICE = {
+    "7": Section(
+        "7",
+        "Twice",
+        "(1) No landlord may enter the unit,\n(a) at night.\n"
+        "(2) A landlord may enter the unit with notice.\n"
+        "(3) A tenant may pay the rent,\n(a) by cheque.\n"
+        "(4) A tenant may pay the rent in cash.",
+        "BK7",
+    )
+}
+
+
+def test_ending_reads_the_quote_where_it_passes_the_check() -> None:
+    # In (1) the quote follows "No", so it passes on (2), which ends cleanly.
+    assert check_quote("landlord may enter the unit", "7", TWICE) == "verified"
+    found = ending("landlord may enter the unit", "7", TWICE)
+    assert found is not None
+    assert found.completeness == "ends_cleanly"
+
+
+@pytest.mark.parametrize(
+    ("subsection", "completeness"), [(None, "stops_early"), ("(4)", "ends_cleanly")]
+)
+def test_ending_prefers_the_cited_subsection(subsection: str | None, completeness: str) -> None:
+    found = ending("A tenant may pay the rent", "7", TWICE, subsection)
+
+    assert found is not None
+    assert found.completeness == completeness
+
+
+def test_ending_is_none_for_a_quote_not_in_the_section(sections: dict[str, Section]) -> None:
+    assert ending("A landlord may require a widget deposit", "2.1", sections) is None
+    assert ending("A landlord may require a gadget deposit", "99", sections) is None

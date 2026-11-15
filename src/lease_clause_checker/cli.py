@@ -472,6 +472,7 @@ def _load_board(
         scoreboard.restrict(selection, stress_set.clauses),
         closed_book_runs,
         checks,
+        sections,
     )
     versions = {
         "baseline": prompts[0].version,
