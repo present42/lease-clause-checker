@@ -95,11 +95,12 @@ and labelling conventions are the same as in `clauses.jsonl`.
 How it was made:
 
 1. 31 candidates were written as variants of the main set's near-miss patterns. Before any
-   model saw them, a second reviewer read every draft label against the Act. One candidate
-   ("Guests of the Tenant may not bring animals into the building") was dropped because s. 14
-   could fairly be read as protecting only the tenant's own animals. Four were reworded to
-   close a gap the reviewer found (s05, s18, s23 and s26 in the final numbering), three gained an
-   accepted section, and five were re-tagged `clear`. The remaining 30 were numbered s01–s30:
+   model under test answered them, a Claude Opus 5.5 reviewer agent read every draft label
+   against the Act (12 November 2026). One candidate ("Guests of the Tenant may not bring
+   animals into the building") was dropped because s. 14 could fairly be read as protecting
+   only the tenant's own animals. Four were reworded to close a gap the agent found (s05, s18,
+   s23 and s26 in the final numbering), three gained an accepted section, and five were
+   re-tagged `clear`. The remaining 30 were numbered s01–s30:
    `stress_candidates.jsonl`. They keep `reviewed: false`, because that flag means the
    two-person review, which only the clauses kept below had.
 
