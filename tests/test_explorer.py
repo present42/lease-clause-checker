@@ -5,7 +5,7 @@ from typing import Any
 
 import pytest
 
-from lease_clause_checker import explorer, scoreboard
+from lease_clause_checker import explorer, handcheck, scoreboard
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.closedbook import ClosedBookResult
 from lease_clause_checker.elaws import CachedAct
@@ -147,6 +147,9 @@ def mini_board() -> Board:
 @pytest.fixture(autouse=True)
 def short_example(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(scoreboard, "SHORT_EXAMPLE", (HAIKU.key, "c01"))
+    # The punchline's checks are scoreboard's (test_scoreboard.py); c01 here cites s. 27, not
+    # the deciding s. 14, which they would refuse.
+    monkeypatch.setattr(scoreboard, "short_punchline", lambda board, numbers: "it is narrower")
 
 
 def mini_data(board: Board | None = None) -> dict[str, Any]:
@@ -272,13 +275,23 @@ def test_a_quote_found_but_too_short_is_not_looked_up_and_states_no_rule() -> No
 def test_the_story_holds_the_short_versions_numbers_and_answer() -> None:
     story = mini_data()["story"]
 
-    assert story["pipeline_right"][0] == {"model": HAIKU.name, "right": 2}
-    assert story["closed_book"] == {
-        "model": HAIKU.key,
-        "right": 2,
-        "with_verdict": 2,
-        "verified": 0,
-    }
+    haiku = story["rows"][0]
+    assert (haiku["model"], haiku["with_right"], haiku["with_unsure"]) == (HAIKU.name, 2, 0)
+    assert (haiku["without_right"], haiku["without_verified"], haiku["without_with_verdict"]) == (
+        2,
+        0,
+        2,
+    )
+    assert [row["model"] for row in story["rows"]] == [spec.name for spec in MODELS]
+    assert story["punchline"] == "it is narrower"
+    assert story["columns"] == list(scoreboard.SHORT_COLUMNS)
+    assert story["table_note"] == scoreboard.SHORT_TABLE_NOTE
+    assert story["failed_from"] == scoreboard.failed_from(
+        [scoreboard.ShortRow(**row) for row in story["rows"]]
+    )
+    first = mini_data()["pipeline_first_checks"]
+    assert sum(row["with_verified"] for row in story["rows"]) == first["verified"]
+    assert sum(row["with_checked"] for row in story["rows"]) == first["checked"]
     assert story["hand_check"] == {
         "quotes": 8,
         "rules": 8,
@@ -388,6 +401,8 @@ def test_the_hand_check_links_to_its_record_and_csv() -> None:
     hand = mini_data(replace(mini_board(), hand_check_record=record))["hand_check"]
 
     assert hand["method"].startswith("I worked four rows by hand with Claude")
+    assert hand["labels"] == handcheck.label_note(record)
+    assert hand["recheck"] == handcheck.RECHECK_NOTE
     assert hand["record"] == f"{explorer.REPOSITORY}/tree/main/results/c-v1/hand-check"
     assert hand["csv"] == f"{explorer.REPOSITORY}/blob/main/results/c-v1/quote-hand-check.csv"
 

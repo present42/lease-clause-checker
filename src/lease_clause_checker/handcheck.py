@@ -104,6 +104,23 @@ def method_sentence(record: Record) -> str:
     )
 
 
+def label_note(record: Record) -> str:
+    """Who made the labels (category, meaning changed, misleads), in the owner's words, with
+    round 2's agreement from the record."""
+    return (
+        "Claude drafted the labels, Claude Opus reviewed them blind in two rounds "
+        f"({record.agreed(2)} of {record.rows} agreed independently), and the author approved "
+        "them; not reviewed by a lawyer."
+    )
+
+
+RECHECK_NOTE = (
+    "Still to come: the author's own re-check of 20 rows. It is not fully blind, as the author "
+    "had seen some of Claude's suggestions."
+)
+"""The slot for the author's re-check, until its results are in the record."""
+
+
 def load_record(folder: Path) -> Record | None:
     """The record in `folder`, or None if there is none; `RecordError` if it is incomplete or
     inconsistent."""

@@ -243,8 +243,6 @@ details.answer > .card { margin: 0 0 12px; }
 .caveats li { margin: 2px 0; }
 .view-heading:focus, h3:focus { outline: none; }
 .view-heading:focus-visible, h3:focus-visible { outline: 2px solid var(--accent, currentColor); outline-offset: 2px; }
-.numbers { max-width: 75ch; padding-left: 20px; margin: 0 0 20px; }
-.numbers li { margin: 6px 0; }
 .story .statute { margin: 6px 0 0; }
 .warning { margin: 0 0 10px; font-size: 15px; border-left: 3px solid var(--bad); padding-left: 8px; }
 .hand-line { margin: 10px 0 0; font-size: 14px; }

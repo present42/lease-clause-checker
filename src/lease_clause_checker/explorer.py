@@ -18,6 +18,7 @@ import re
 import shutil
 from collections import Counter
 from collections.abc import Iterator
+from dataclasses import asdict
 from pathlib import Path
 from typing import Any
 from urllib.parse import quote
@@ -225,15 +226,11 @@ def _story(board: Board) -> dict[str, Any]:
     judged = numbers.hand_check
     return {
         "clauses": numbers.clauses,
-        "pipeline_right": [
-            {"model": name, "right": right} for name, right in numbers.pipeline_right.items()
-        ],
-        "closed_book": {
-            "model": numbers.closed_book.spec.key,
-            "right": numbers.closed_right,
-            "with_verdict": numbers.closed_with_verdict,
-            "verified": numbers.closed_verified,
-        },
+        "rows": [asdict(row) for row in numbers.rows],
+        "columns": list(scoreboard.SHORT_COLUMNS),
+        "table_note": scoreboard.SHORT_TABLE_NOTE,
+        "failed_from": scoreboard.failed_from(numbers.rows),
+        "punchline": scoreboard.short_punchline(board, numbers),
         "hand_check": {
             "quotes": judged.quotes,
             "rules": judged.rules,
@@ -267,6 +264,8 @@ def _hand_check(board: Board, folder: str) -> dict[str, Any] | None:
     where = quote(folder)
     return {
         "method": handcheck.method_sentence(record),
+        "labels": handcheck.label_note(record),
+        "recheck": handcheck.RECHECK_NOTE,
         "record": f"{REPOSITORY}/tree/main/{where}/{handcheck.RECORD_DIR}",
         "csv": f"{REPOSITORY}/blob/main/{where}/{quotereview.CHECKS_FILE}",
     }

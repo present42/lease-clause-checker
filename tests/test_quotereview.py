@@ -225,7 +225,7 @@ def test_the_hand_check_line_counts_several_quotes(tmp_path: Path) -> None:
     assert quotereview.hand_check_line(runs, quotereview.load_checks(path)) == (
         "3 of the 3 categories have been checked by hand; the hand check agreed with the code's "
         "category for 1. Of the 3 quotes, 2 state a rule from the Act, 2 change what it says, "
-        "and 1 would mislead on the clause being checked (the author's reading, not legal "
+        "and 1 would mislead on the clause being checked (not legal "
         "advice; 0 marked unsure)."
     )
 
@@ -261,11 +261,11 @@ def test_misleads_here_must_be_yes_no_or_unsure(tmp_path: Path) -> None:
         (
             ("yes", "unsure", "no"),
             "3 of 3 quotes change what the Act says, and 1 would mislead on the clause being "
-            "checked (the author's reading, not legal advice; 1 marked unsure).",
+            "checked (not legal advice; 1 marked unsure).",
         ),
         (
             ("yes", "Yes", ""),
-            "(the author's reading, not legal advice; 0 marked unsure, 1 not yet judged).",
+            "(not legal advice; 0 marked unsure, 1 not yet judged).",
         ),
     ],
 )

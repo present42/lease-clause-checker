@@ -996,8 +996,8 @@ def test_passing_quotes_that_stop_early_are_counted_as_an_upper_limit() -> None:
 
 
 def hand_check_record(rounds: tuple[int, ...] = (1, 2)) -> handcheck.Record:
-    """Four rows; round 2 agrees with its suggestions on one, and on two of the other three the
-    final answer is the reviewer's."""
+    """Four rows; round 1 agrees with its suggestions on none, round 2 on one, and on two of
+    round 2's other three the final answer is the reviewer's."""
     same, other = (
         handcheck.Judgement("cosmetic", "no", ""),
         handcheck.Judgement("wrong_cite", "", ""),
@@ -1007,7 +1007,7 @@ def hand_check_record(rounds: tuple[int, ...] = (1, 2)) -> handcheck.Record:
     final = {"a": same, "b": other, "c": other, "d": same}
     return handcheck.Record(
         {"round1": suggested, "round2": suggested, "final": final},
-        dict.fromkeys(rounds, reviewed),
+        {n: reviewed if n > 1 else dict.fromkeys("abcd", other) for n in rounds},
     )
 
 
@@ -1023,6 +1023,11 @@ def test_the_hand_check_method_comes_from_its_record() -> None:
     )
     assert f"({folder}/{handcheck.RULES})" in text
     assert f"({folder}/{handcheck.MANIFEST})" in text
+    assert f"I approved the result. ([The rules]({folder}/{handcheck.RULES})" in text
+    assert (
+        f"[the full record]({folder}/{handcheck.MANIFEST}).) Not reviewed by a lawyer. "
+        f"{handcheck.RECHECK_NOTE} " in text
+    )
     assert "I worked four rows by hand with Claude" not in scoreboard._failed_quotes(runs, {})
 
 
@@ -1046,10 +1051,17 @@ def test_relink_prefixes_links_to_repo_files_only(markdown: str, relinked: str |
 
 
 def short_board(misleads: str = "yes") -> scoreboard.Board:
-    """`tldr_board`, with Argon's pipeline wrong on one clause, Opus's closed-book c05 quote
-    lined up with s. 14, and every failed closed-book quote hand-checked: all change what the
-    Act says, and one (Opus c01) would mislead."""
-    b = tldr_board({("pipeline", ARGON.key): closed_book_run(ARGON, wrong=1)})
+    """`tldr_board`, with Argon's pipeline wrong on one clause, Flash's pipeline unsure on c01,
+    Opus's closed-book c05 quote lined up with s. 14, and every failed closed-book quote
+    hand-checked: all change what the Act says, and one (Opus c01) would mislead."""
+    flash = tldr_board().main.run("pipeline", FLASH)
+    unsure = unsure_result(CLAUSES[0], FLASH, gave_up=False)
+    flash = replace(
+        with_result(flash, 0, unsure), scores=[unsure.score({"4", "14"}), *flash.scores[1:]]
+    )
+    b = tldr_board(
+        {("pipeline", ARGON.key): closed_book_run(ARGON, wrong=1), ("pipeline", FLASH.key): flash}
+    )
     act = "A provision in a tenancy agreement prohibiting widgets is void."
     section = Section("14", "Pets", act, "BK14")
     opus = b.closed_book[OPUS.key]
@@ -1064,39 +1076,88 @@ def short_board(misleads: str = "yes") -> scoreboard.Board:
         for key in quotereview.failed_categories(runs)
     }
     checks[OPUS.key, "c05"] = quotereview.HandCheck("agree", "yes", "no", "Widgets, not gadgets.")
-    return replace(b, closed_book=closed_book, quote_checks=checks)
+    return replace(
+        b, closed_book=closed_book, quote_checks=checks, hand_check_record=hand_check_record()
+    )
 
 
-def test_the_short_version_gives_three_numbers_and_one_answer(
-    monkeypatch: pytest.MonkeyPatch,
-) -> None:
+@pytest.fixture
+def short_example(monkeypatch: pytest.MonkeyPatch) -> None:
     monkeypatch.setattr(scoreboard, "SHORT_EXAMPLE", (OPUS.key, "c05"))
+    monkeypatch.setattr(scoreboard, "SHORT_PUNCHLINE", ("14", "read alone, it bans gadgets"))
 
+
+@pytest.mark.usefixtures("short_example")
+def test_the_short_version_gives_one_answer_a_table_and_the_hand_check() -> None:
     text = scoreboard.render_short(short_board(), "NOTICE")
     # First pipeline quotes: Argon's run stands in from the closed book, with no pipeline
-    # attempts, so 3 models x 24; Haiku's first c14 quote fails.
+    # attempts; Haiku's first c14 quote fails.
 
     lines = text.splitlines()
     assert (lines[0], lines[-1]) == (scoreboard.SHORT_START, scoreboard.SHORT_END)
-    assert (
-        "- **With the statute in the prompt (each quote checked, one retry if it fails):** "
-        "Claude Haiku 5.5, Claude Opus 5.5 and Gemini 3.8 Flash each got 24 of 24 verdicts right "
-        "(Gemini 4 Argon: 23 of 24); 71 of 72 first answers' quotes passed the check." in lines
+    assert lines[1] == (
+        "**Claude Opus 5.5 called clause c05 void under s. 14, which is right. But read alone, "
+        "it bans gadgets.**"
     )
-    assert (
-        "- **Without it (closed book):** Claude Opus 5.5 still got 24 of 24 verdicts right, but "
-        "only 20 of its 24 quotes were word for word in the section it cited." in lines
+    assert lines[3] == (
+        "> A provision in a tenancy agreement prohibiting ~~widgets~~ **gadgets** is void."
     )
-    assert (
-        "- **Hand check of the 14 closed-book quotes that failed:** 14 state a real provision of "
-        "the Act; 14 of those change the rule, and 1 of those 14 would mislead about the clause "
-        "they were quoted for (the author's reading, not legal advice)." in lines
+    assert lines[5].startswith("Redline of s. 14 against the quote, from a run with no statute")
+    assert lines[5].endswith("\u201d NOTICE")
+    table = lines.index("| " + " | ".join(scoreboard.SHORT_COLUMNS) + " |")
+    assert lines[table - 2].startswith("**Four models, 24 synthetic lease clauses**")
+    assert lines[table + 2 : table + 6] == [
+        "| Claude Haiku 5.5 | 24 of 24 | 23 of 24 | 18 of 24 (6 unsure) | **18 of 18** |",
+        "| Claude Opus 5.5 | 24 of 24 | 24 of 24 | 24 of 24 | **20 of 24** |",
+        "| Gemini 3.8 Flash | 23 of 24 (1 unsure) | 23 of 23 | 24 of 24 | **17 of 24** |",
+        "| Gemini 4 Argon | 23 of 24 | 0 of 0 | 23 of 24 | **22 of 24** |",
+    ]
+    assert lines[table + 7] == scoreboard.SHORT_TABLE_NOTE
+    assert lines[-2] == (
+        "**The 14 closed-book quotes that failed,** from 3 of the 4 models: 14 state a real "
+        "provision of the Act; 14 of those change the rule, and 1 of those 14 would mislead "
+        "about the clause they were quoted for. Claude drafted the labels, Claude Opus reviewed "
+        "them blind in two rounds (1 of 4 agreed independently), and the author approved them; "
+        "not reviewed by a lawyer. " + handcheck.RECHECK_NOTE
     )
-    assert (
-        "> A provision in a tenancy agreement prohibiting ~~widgets~~ **gadgets** is void." in lines
-    )
-    assert "Hand check: Widgets, not gadgets." in lines
-    assert lines[-2] == "NOTICE"
+
+
+@pytest.mark.usefixtures("short_example")
+@pytest.mark.parametrize(
+    ("change", "error"),
+    [
+        ({"hand_check_record": None}, "no record of how it was made"),
+        ({"SHORT_PUNCHLINE": ("15", "anything")}, "about s. 15; the answer cites s. 14"),
+        ({"_verdict_right": lambda score: False}, "a right verdict citing the deciding section"),
+        ({"meaning_changed": "no"}, "finding the quote changes the rule"),
+        ({"section_result": "also_accepted"}, "a right verdict citing the deciding section"),
+    ],
+)
+def test_the_short_version_refuses_what_the_answers_do_not_support(
+    monkeypatch: pytest.MonkeyPatch, change: dict[str, object], error: str
+) -> None:
+    board = short_board()
+    if "hand_check_record" in change:
+        board = replace(board, hand_check_record=None)
+    if "section_result" in change:
+        opus = board.closed_book[OPUS.key]
+        scores = [
+            replace(sc, section_result="also_accepted") if sc.clause.id == "c05" else sc
+            for sc in opus.scores
+        ]
+        board = replace(
+            board, closed_book=board.closed_book | {OPUS.key: replace(opus, scores=scores)}
+        )
+    if "meaning_changed" in change:
+        key = (OPUS.key, "c05")
+        check = replace(board.quote_checks[key], meaning_changed="no", misleads_here="")
+        board = replace(board, quote_checks=board.quote_checks | {key: check})
+    for name in ("SHORT_PUNCHLINE", "_verdict_right"):
+        if name in change:
+            monkeypatch.setattr(scoreboard, name, change[name])
+
+    with pytest.raises(scoreboard.ReportDataError, match=error):
+        scoreboard.render_short(board, "NOTICE")
 
 
 def test_the_short_version_needs_a_finished_hand_check(monkeypatch: pytest.MonkeyPatch) -> None:

@@ -7,7 +7,7 @@ by model and clause. A person fills in `hand_check` with "agree" or the category
 give instead, and `meaning_changed` with "yes" or "no": the code sorts wording, and only a
 reader can say whether a different word changes what the provision means. Where it does,
 `misleads_here` says whether the quote would mislead on the clause being checked ("yes", "no"
-or "unsure"): the author's reading, not legal advice. Writing the page adds a row for any new
+or "unsure"): a reader's judgement, not legal advice. Writing the page adds a row for any new
 quote and keeps every hand check already written, so regenerating never erases one.
 """
 
@@ -224,7 +224,7 @@ def _misleads_line(checks: list[HandCheck]) -> str:
     unsure = changes.count("unsure")
     waiting = changes.count("")
     return (
-        f", and {changes.count('yes')} {question} (the author's reading, not legal advice; "
+        f", and {changes.count('yes')} {question} (not legal advice; "
         f"{unsure} marked unsure" + (f", {waiting} not yet judged" if waiting else "") + ")."
     )
 
@@ -317,7 +317,7 @@ def review_page(
         + ", ".join(f"`{c}`" for c in LABELS)
         + "), `meaning_changed` with `yes` or `no` (does the quote change what the Act says?), "
         "and, only where it does, `misleads_here` with `yes`, `no` or `unsure` (would it "
-        "mislead on the clause being checked? the author's reading, not legal advice); add a "
+        "mislead on the clause being checked? not legal advice); add a "
         "note if useful, and regenerate. " + hand_check_line(runs, checks),
         "",
         "In the **quote vs the Act** column, `[-…-]` marks the Act's words that the quote drops "

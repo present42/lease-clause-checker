@@ -331,39 +331,58 @@ function storyView() {
   const clause = INDEX.clauses.get(ex.clause);
   const model = INDEX.models.get(ex.model);
   const n = story.clauses;
-  const perfect = story.pipeline_right.filter((p) => p.right === n).map((p) => p.model);
-  const others = story.pipeline_right.filter((p) => p.right !== n).map((p) => `${p.model}: ${p.right} of ${n}`);
-  const cb = story.closed_book;
   const hc = story.hand_check;
-  const cbModel = INDEX.models.get(cb.model);
+  const hand = DATA.hand_check;
+  const right = (count, unsure) => `${count} of ${n}` + (unsure ? ` (${unsure} unsure)` : "");
   return [
     heading("Right verdicts, quotes not word for word"),
     el(
       "p",
       { class: "intro" },
-      `${DATA.models.length} models judged ${n} synthetic Ontario lease clauses under the Residential Tenancies Act, 2006. In the pipeline and closed-book runs each answer quoted the section that decides the clause, and code checked every quote word for word against the Act.`,
+      `${DATA.models.length} models judged ${n} synthetic Ontario lease clauses under the Residential Tenancies Act, 2006, each quoting the section that decides the clause: once with the statute in the prompt, and once without it (closed book).`,
     ),
     el(
-      "ul",
-      { class: "numbers" },
+      "table",
+      { class: "grid numbers-table" },
       el(
-        "li",
+        "thead",
         {},
-        el("b", {}, "With the statute in the prompt (each quote checked, one retry if it fails): "),
-        `${andList(perfect)}${perfect.length > 1 ? " each" : ""} got ${n} of ${n} verdicts right`,
-        others.length ? ` (${others.join("; ")})` : "",
-        `; ${DATA.pipeline_first_checks.verified} of ${DATA.pipeline_first_checks.checked} first answers' quotes passed the check.`,
+        el(
+          "tr",
+          {},
+          story.columns.map((h) => el("th", { scope: "col" }, h)),
+        ),
       ),
-      el("li", {}, el("b", {}, "Without it (closed book): "), `${cbModel.name} still got ${cb.right} of ${n} verdicts right, but only ${cb.verified} of its ${cb.with_verdict} quotes were word for word in the section it cited.`),
       el(
-        "li",
+        "tbody",
         {},
-        el("b", {}, `Hand check of the ${hc.quotes} closed-book quotes that failed: `),
-        `${hc.rules} state a real provision of the Act; ${hc.changes} of those change the rule, and ${hc.misleads} of those ${hc.changes} would mislead about the clause they were quoted for`,
-        hc.unsure ? ` (${hc.unsure} unsure)` : "",
-        " (the author's reading, not legal advice). ",
-        el("a", { href: "#/hand" }, "See the hand check"),
+        story.rows.map((r) =>
+          el(
+            "tr",
+            {},
+            el("th", { scope: "row" }, r.model),
+            el("td", {}, right(r.with_right, r.with_unsure)),
+            el("td", {}, `${r.with_verified} of ${r.with_checked}`),
+            el("td", {}, right(r.without_right, r.without_unsure)),
+            el("td", {}, el("b", {}, `${r.without_verified} of ${r.without_with_verdict}`)),
+          ),
+        ),
       ),
+    ),
+    el(
+      "p",
+      { class: "note" },
+      story.table_note,
+    ),
+    el(
+      "p",
+      {},
+      el("b", {}, `The ${hc.quotes} closed-book quotes that failed, `),
+      `${story.failed_from}: ${hc.rules} state a real provision of the Act; ${hc.changes} of those change the rule, and ${hc.misleads} of those ${hc.changes} would mislead about the clause they were quoted for`,
+      hc.unsure ? ` (${hc.unsure} unsure)` : "",
+      ". ",
+      hand ? `${hand.labels} ${hand.recheck} ` : "",
+      el("a", { href: "#/hand" }, "See the hand check"),
     ),
     el("h3", {}, `One closed-book answer: ${model.name} on ${clause.id}`),
     el("article", { class: "card story" },
@@ -636,7 +655,7 @@ function handView(filter) {
     el(
       "p",
       { class: "intro" },
-      `The ${hc.quotes} closed-book quotes that failed the word-for-word check, read by hand: does the quote state a rule from the Act, does it change what the Act says, and would it mislead on the clause it was quoted for? Of the ${hc.quotes}, ${hc.rules} state a rule; ${hc.changes} of those change it, and ${hc.misleads} would mislead${hc.unsure ? ` (${hc.unsure} unsure)` : ""}. The judgements are the author's reading, not legal advice.`,
+      `The ${hc.quotes} closed-book quotes that failed the word-for-word check, read by hand: does the quote state a rule from the Act, does it change what the Act says, and would it mislead on the clause it was quoted for? Of the ${hc.quotes}, ${hc.rules} state a rule; ${hc.changes} of those change it, and ${hc.misleads} would mislead${hc.unsure ? ` (${hc.unsure} unsure)` : ""}. Not legal advice.${hand ? ` ${hand.labels} ${hand.recheck}` : ""}`,
     ),
     hand ? el("p", { class: "method" }, el("b", {}, "How it was done. "), hand.method, " ", el("a", { href: hand.record }, "The full record"), ", ", el("a", { href: hand.csv }, "the CSV"), ".") : null,
     el(
