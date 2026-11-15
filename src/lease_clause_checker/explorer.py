@@ -13,6 +13,7 @@ words and the headings of the sections cited; the models' own quotes and reasons
 the Act's words. The page shows the King's Printer notice beside them.
 """
 
+import html
 import json
 import re
 import shutil
@@ -48,6 +49,8 @@ PAGES = "https://present42.github.io/lease-clause-checker/"
 """Where the page will be published (GitHub Pages), for the preview image's absolute link."""
 PAGES_SLOT = "{{pages}}"
 """Where the page's HTML names that address; `write` fills it in."""
+OG_ALT_SLOT = "{{og_alt}}"
+"""Where the page's HTML describes the preview image (`og_alt`); `write` fills it in."""
 MARKER = ".lcc-site"
 """A file `write` leaves in the folder, so the next export knows it may replace the folder."""
 
@@ -209,12 +212,25 @@ def write(data: dict[str, Any], out: Path) -> None:
         if asset.suffix == ".html":
             text = asset.read_text(encoding="utf-8").replace(REPOSITORY_SLOT, repository)
             text = text.replace(PAGES_SLOT, data["settings"]["pages"])
+            text = text.replace(OG_ALT_SLOT, html.escape(og_alt(data)))
             (out / asset.name).write_text(text, encoding="utf-8")
         elif asset.is_file():
             (out / asset.name).write_bytes(asset.read_bytes())
     text = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     (out / "data.json").write_text(text + "\n", encoding="utf-8")
     (out / MARKER).write_text("Written by `lcc site`; the next export replaces this folder.\n")
+
+
+def og_alt(data: dict[str, Any]) -> str:
+    """What the preview image (the #/card view) shows, for its alt text: the first exhibit."""
+    first = data["story"]["exhibits"][0]
+    [name] = [m["name"] for m in data["models"] if m["key"] == first["model"]]
+    where = f"s. {first['alignment']['section']}{first['alignment']['subsection']}"
+    return (
+        f"{name}'s closed-book quote of {where} of the Residential Tenancies Act, 2006, as a "
+        "redline against the Act: the Act's words it leaves out are struck in red, its own "
+        "words underlined in blue."
+    )
 
 
 def _check_hand_rows(answers: list[dict[str, Any]], counts: dict[str, int]) -> None:

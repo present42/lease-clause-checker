@@ -252,8 +252,20 @@ uv run lcc site                                  # writes site/ (gitignored)
 python3 -m http.server 8000 --directory site     # then open http://localhost:8000
 ```
 
-It opens on the short version at the top of the README: Claude Opus 5.5's closed-book answer on
-c05 as a redline of s. 15, then the four-model table. Its other views:
+It opens on three closed-book answers with a right verdict and a quote that, by the hand check,
+changes what the Act says and would mislead on the clause: Gemini 3.8 Flash on c09, Claude
+Opus 5.5 on c26 and Claude Haiku 5.5 on c29, named with a label and a punchline in
+[exhibits.yaml](../src/lease_clause_checker/exhibits.yaml). `make report` and `lcc site` refuse
+an exhibit unless its verdict is right, its hand check says yes to both questions, and its
+punchline starts by stating the verdict; the README leads with the first. Each shows the clause
+and the verdict, the Act's subsection, and below it a box that starts as a copy of the
+subsection and replays the model's edits one at a time, in reading order: the dropped words
+strike through and fold away (and are marked in the Act's box), the added words type in. The
+edits come from the same alignment as the redline (`exhibits.replay`, from `Alignment.runs`),
+and the export stops unless they end at the saved quote, token for token. Each replay plays
+once when it comes into view; Replay plays it again, and Next change, or the right arrow key,
+steps one edit at a time (the left arrow steps back). With reduced motion the page shows the
+finished state. Then come the four-model table and the hand check's counts. Its other views:
 - **Misquotes**: the closed-book answers with a right verdict whose quote is not word for word,
   by model;
 - **Grid**: every closed-book verdict and quote check;
@@ -265,12 +277,13 @@ c05 as a redline of s. 15, then the four-model table. Its other views:
 Every quote is shown as one redline against the whole subsection it lines up with, the same one
 the README shows (`Alignment.pieces(whole=True)`): the Act's words that the quote leaves out or
 replaces struck through in red, including those before and after it, and the quote's own words
-underlined in blue. A one-line strip under the title gives the caveats (not legal advice; checks
+underlined in blue. A one-line bar under the header gives the caveats (not legal advice; checks
 wording, not legal meaning; word for word is not complete; not an official version), and the
-opening view and the foot of every page give them in full.
+opening view and the foot of every other page give them in full. The page loads its fonts
+(Source Serif 4, IBM Plex Sans and IBM Plex Mono) from Google Fonts.
 
-The preview image for links to the page, `explorer_assets/og.png`, is the page's `#/card` view;
-`make og` remakes it (it needs Google Chrome).
+The preview image for links to the page, `explorer_assets/og.png`, is the page's `#/card` view:
+the first exhibit's redline and punchline. `make og` remakes it (it needs Google Chrome).
 
 `lcc site` builds it from the same scored answers as `make report`: the four models' answers on
 the main and stress sets, by every method. It leaves out Gemini 4 Carbon's records, the

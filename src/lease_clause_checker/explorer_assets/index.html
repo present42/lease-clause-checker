@@ -12,22 +12,22 @@
 <meta property="og:image" content="{{pages}}og.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Claude Opus 5.5's quote of s. 15 of the Residential Tenancies Act as a redline: the opening and closing words that make the provision void are struck out.">
+<meta property="og:image:alt" content="{{og_alt}}">
 <meta name="twitter:card" content="summary_large_image">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231f5f8b'/%3E%3Cpath d='M7 11h18M7 16h12M7 21h15' stroke='%23fff' stroke-width='2.5'/%3E%3Cpath d='M6 16h15' stroke='%23e0524a' stroke-width='2'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='3' fill='%23121519'/%3E%3Cpath d='M7 11h18M7 16h12M7 21h15' stroke='%23fff' stroke-width='2.5'/%3E%3Cpath d='M6 16h15' stroke='%23e0524a' stroke-width='2.2'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap">
 <link rel="stylesheet" href="explorer.css">
 <script src="explorer.js" defer></script>
 </head>
-<body>
-<header class="site-header">
+<body data-view="story">
+<header class="masthead">
   <div class="wrap">
-    <p class="eyebrow"><a href="{{repository}}">Lease Clause Checker</a></p>
-    <h1>Right verdict, misquoted law</h1>
-    <p class="lede">Four language models judged invented Ontario lease clauses, quoting the
-      Residential Tenancies Act, 2006. Their saved answers, replayed: no model is called here.</p>
-    <p class="caveat-strip">Not legal advice · checks wording, not legal meaning · word for word
-      is not complete · not an official version of the Act. The caveats in full are at the foot
-      of the page.</p>
+    <a class="brand" href="{{repository}}">
+      <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="3" fill="currentColor"/><path d="M7 11h18M7 16h12M7 21h15" stroke="var(--sheet)" stroke-width="2.5"/><path d="M6 16h15" stroke="#e0524a" stroke-width="2.2"/></svg>
+      Lease Clause Checker
+    </a>
     <nav class="tabs" aria-label="Views">
       <a href="#/story" data-view="story">Summary</a>
       <a href="#/exhibit" data-view="exhibit">Misquotes</a>
@@ -37,6 +37,17 @@
     </nav>
   </div>
 </header>
+<div class="notice-bar">
+  <div class="wrap"><strong>Not legal advice</strong> · checks wording, not legal meaning · word
+    for word is not complete · not an official version of the Act.
+    <a href="#caveats" class="to-caveats">The caveats in full</a></div>
+</div>
+<section class="wrap hero" aria-labelledby="title">
+  <p class="eyebrow">AI evaluation · Ontario Residential Tenancies Act, 2006</p>
+  <h1 id="title">Right verdict, misquoted law</h1>
+  <p class="lede">Four language models judged invented Ontario lease clauses, quoting the
+    Residential Tenancies Act, 2006. Their saved answers, replayed: no model is called here.</p>
+</section>
 <p class="sr-only" id="status" role="status" aria-live="polite"></p>
 <main class="wrap" id="main" tabindex="-1">
   <p class="loading">Loading the saved answers…</p>

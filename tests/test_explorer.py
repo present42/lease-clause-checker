@@ -508,6 +508,10 @@ def test_write_replaces_an_earlier_export_and_names_the_repository(tmp_path: Pat
     data: dict[str, Any] = {
         "settings": {"repository": "https://example.org/repo", "pages": "https://example.org/p/"},
         "answers": [1],
+        "models": [{"key": "m", "name": "Model & Co"}],
+        "story": {
+            "exhibits": [{"model": "m", "alignment": {"section": "26", "subsection": "(1)"}}]
+        },
     }
     explorer.write(data, site)
     (site / "old-asset.js").write_text("stale")
@@ -528,6 +532,8 @@ def test_write_replaces_an_earlier_export_and_names_the_repository(tmp_path: Pat
     assert explorer.PAGES_SLOT not in page
     assert 'href="https://example.org/repo"' in page
     assert 'content="https://example.org/p/og.png"' in page
+    assert explorer.OG_ALT_SLOT not in page
+    assert 'content="Model &amp; Co&#x27;s closed-book quote of s. 26(1) of the Residential' in page
 
 
 def test_write_refuses_a_folder_with_no_earlier_export(tmp_path: Path) -> None:

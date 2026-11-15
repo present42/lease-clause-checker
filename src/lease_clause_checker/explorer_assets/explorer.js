@@ -353,7 +353,7 @@ const CAVEATS = [
 ];
 
 function caveatsList() {
-  return el("ul", { class: "caveats" }, CAVEATS.map(([head, text]) => el("li", {}, el("strong", {}, head), " ", text)));
+  return el("ol", { class: "caveats" }, CAVEATS.map(([head, text]) => el("li", {}, el("div", {}, el("strong", {}, head), " ", text))));
 }
 
 // A table in a box that scrolls sideways, with a hint shown when it doesn't fit (`markOverflow`).
@@ -374,22 +374,323 @@ function markOverflow() {
   }
 }
 
-function storyView() {
-  const story = DATA.story;
-  const ex = story.example;
+// ---- Exhibits: a quote replayed as edits of the Act ---------------------------------------------
+
+// The export's edits (`exhibits.replay` in Python) turn a copy of the Act's subsection into the
+// model's quote: each drops the Act's words, adds the quote's own, or both. The page only plays
+// them: it decides nothing about what changed.
+const REDUCED = window.matchMedia("(prefers-reduced-motion: reduce)");
+const STOP = Symbol("stop");
+let PLAYERS = [];
+let ACTIVE = null;
+let OBSERVERS = [];
+
+// "Flash" for "Gemini 3.8 Flash", "Opus" for "Claude Opus 5.5".
+function shortModel(name) {
+  return name.split(" ").filter((word) => !/^(Claude|Gemini|[\d.]+)$/.test(word)).join(" ");
+}
+
+// The text of tokens [text, before], with the space or line break before each but the first
+// when `first`.
+function tokenNodes(tokens, first, unstruck = false) {
+  const out = [];
+  tokens.forEach(([text, before], i) => {
+    if (!(first && i === 0)) {
+      // A dropped stretch's opening space folds with it but is not struck through.
+      if (before === "\n") out.push(el("br"));
+      else if (before) out.push(unstruck && i === 0 ? el("span", { class: "sp" }, " ") : " ");
+    }
+    out.push(text);
+  });
+  return out;
+}
+
+function tokenText(tokens, first) {
+  return tokens.map(([text, before], i) => (first && i === 0 ? "" : before ? " " : "") + text).join("");
+}
+
+class Player {
+  constructor(ex) {
+    this.ex = ex;
+    this.edits = ex.replay.edits.map((edit) => ({ ...edit, lost: [] }));
+    this.pos = 0;
+    this.run = 0;
+    this.animating = null;
+    const alignment = ex.alignment;
+    this.act = DATA.act.sections[alignment.section].subsections[alignment.subsection];
+    this.actBox = this.buildAct();
+    this.quoteBox = this.buildQuote();
+  }
+
+  // The Act box: every token its own span, so an edit can mark the words it drops.
+  buildAct() {
+    const [start, end] = this.ex.replay.act;
+    const tag = this.ex.replay.tag;
+    const owner = new Map();
+    this.edits.forEach((edit, k) => {
+      if (edit.drop) for (let i = edit.drop[0]; i < edit.drop[1]; i++) owner.set(i, k);
+    });
+    const p = el("p", { class: "statute" });
+    let span = null;
+    for (let i = start; i < end; i++) {
+      const [text, before] = this.act[i];
+      const tagged = tag && i >= tag[0] && i < tag[1];
+      const k = owner.has(i) ? owner.get(i) : -1;
+      // A token joins the span before it if the same edit drops both, so a mark is unbroken.
+      const joins = span && span.dataset.edit === String(k) && k >= 0 && before !== "\n" && span.dataset.tagged === String(Boolean(tagged));
+      if (!joins) {
+        if (i > start) p.append(before === "\n" ? el("br") : before ? " " : "");
+        if (tag && i === tag[0]) p.append(el("span", { class: "item-tag" }, this.ex.replay.tag_note));
+        span = el("span", { class: tagged ? "tok tagged" : "tok", "data-edit": String(k), "data-tagged": String(Boolean(tagged)) });
+        p.append(span);
+        if (k >= 0) this.edits[k].lost.push(span);
+        span.append(text);
+      } else span.append(before ? " " : "", text);
+    }
+    return p;
+  }
+
+  // The quote box: the Act's words, with each edit's dropped words and (empty) added words.
+  buildQuote() {
+    const quote = this.ex.alignment.quote;
+    const p = el("p", { class: "statute" });
+    this.ex.replay.box.forEach(([kind, a, b], j) => {
+      if (kind === "same") {
+        p.append(...tokenNodes(this.act.slice(a, b), j === 0));
+        return;
+      }
+      const edit = this.edits[a];
+      edit.del = el("del", {}, edit.drop ? tokenNodes(this.act.slice(edit.drop[0], edit.drop[1]), j === 0, true) : []);
+      edit.ins = el("ins");
+      edit.full = edit.add ? tokenText(quote.slice(edit.add[0], edit.add[1]), edit.add[0] === 0) : "";
+      p.append(edit.del, edit.ins);
+    });
+    return p;
+  }
+
+  attach(article) {
+    this.status = article.querySelector(".replay-status");
+    this.punch = article.querySelector(".punchline");
+    this.nextButton = article.querySelector(".next");
+    article.querySelector(".replay").addEventListener("click", () => this.play());
+    this.nextButton.addEventListener("click", () => this.next());
+    article.addEventListener("focusin", () => (ACTIVE = this));
+    article.addEventListener("pointerdown", () => (ACTIVE = this));
+    this.render(REDUCED.matches ? this.edits.length : 0);
+  }
+
+  setEdit(k, done) {
+    const edit = this.edits[k];
+    edit.del.className = done ? "gone" : "";
+    edit.ins.textContent = done ? edit.full : "";
+    edit.ins.classList.remove("typing");
+    for (const span of edit.lost) span.classList.toggle("lost", done);
+  }
+
+  say(k) {
+    const n = this.edits.length;
+    this.status.textContent =
+      k < 0 ? `${n} edits turn the Act's words into the quote.` : k >= n ? `All ${n} edits made: the box now holds the quote, word for word.` : `Edit ${k + 1} of ${n}: ${this.edits[k].said}`;
+  }
+
+  render(pos) {
+    this.pos = pos;
+    this.animating = null;
+    this.edits.forEach((_, k) => this.setEdit(k, k < pos));
+    const n = this.edits.length;
+    this.punch.classList.toggle("waiting", pos < n);
+    this.nextButton.disabled = pos >= n;
+    this.say(pos >= n ? n : pos - 1);
+  }
+
+  wait(ms, run) {
+    return new Promise((resolve, reject) => setTimeout(() => (run === this.run ? resolve() : reject(STOP)), ms));
+  }
+
+  async animate(k, run) {
+    const edit = this.edits[k];
+    this.animating = k;
+    this.say(k);
+    for (const span of edit.lost) span.classList.add("lost");
+    if (edit.drop) {
+      edit.del.className = "striking";
+      await this.wait(800, run);
+      edit.del.className = "striking folding";
+      await this.wait(450, run);
+      edit.del.className = "gone";
+    }
+    if (edit.full) {
+      edit.ins.classList.add("typing");
+      const step = Math.min(45, 900 / edit.full.length);
+      for (let i = 1; i <= edit.full.length; i++) {
+        edit.ins.textContent = edit.full.slice(0, i);
+        await this.wait(step, run);
+      }
+      edit.ins.classList.remove("typing");
+    }
+    this.render(k + 1);
+  }
+
+  // From the Act's text to the quote, one edit at a time; without motion if the reader asks.
+  async play() {
+    const run = ++this.run;
+    this.render(0);
+    try {
+      await this.wait(700, run);
+      for (let k = 0; k < this.edits.length; k++) {
+        if (REDUCED.matches) {
+          this.render(k + 1);
+          await this.wait(1400, run);
+        } else {
+          await this.animate(k, run);
+          await this.wait(550, run);
+        }
+      }
+    } catch (error) {
+      if (error !== STOP) throw error;
+    }
+  }
+
+  // One edit on (finishing the one in progress, if any) or back.
+  next() {
+    const doing = this.animating;
+    this.run++;
+    if (doing !== null) return this.render(doing + 1);
+    if (this.pos >= this.edits.length) return;
+    if (REDUCED.matches) return this.render(this.pos + 1);
+    const run = this.run;
+    this.animate(this.pos, run).catch((error) => {
+      if (error !== STOP) throw error;
+    });
+  }
+
+  prev() {
+    this.run++;
+    this.render(Math.max(0, (this.animating !== null ? this.animating + 1 : this.pos) - 1));
+  }
+
+  stop() {
+    this.run++;
+  }
+}
+
+function exhibitArticle(ex, n, lead) {
   const clause = INDEX.clauses.get(ex.clause);
-  const n = story.clauses;
-  const hc = story.hand_check;
-  const hand = DATA.hand_check;
-  const right = (count, unsure) => [`${count} of ${n}`, unsure ? el("span", { class: "unsure-note" }, ` (${unsure} unsure)`) : null];
+  const model = INDEX.models.get(ex.model);
+  const who = shortModel(model.name);
+  const alignment = ex.alignment;
+  const where = `s. ${alignment.section}${alignment.subsection}`;
+  const player = new Player(ex);
+  const article = el(
+    "article",
+    { class: lead ? "exhibit lead" : "exhibit", "aria-labelledby": `exhibit-${n}` },
+    el("p", { class: "label" }, `Exhibit ${n} · `, el("b", {}, model.name), ` · clause ${clause.id} · closed book`),
+    el("h2", { id: `exhibit-${n}`, tabindex: "-1" }, ex.label),
+    el("blockquote", { class: "clause" }, `“${clause.text}”`),
+    el("p", { class: "verdict-line" }, `${who}'s verdict: `, el("b", {}, ex.verdict), ", ", el("span", { class: "right" }, "right")),
+    el("figure", { class: "box act-box" }, el("figcaption", {}, el("b", {}, `The Act, ${where}`), el("span", {}, DATA.act.sections[alignment.section].heading)), player.actBox),
+    el("figure", { class: "box quote quote-box" }, el("figcaption", {}, el("b", {}, `What ${who} quoted`), el("span", {}, "from memory")), player.quoteBox),
+    el(
+      "div",
+      { class: "replay-bar" },
+      el("button", { type: "button", class: "replay" }, "Replay"),
+      el("button", { type: "button", class: "next", "aria-keyshortcuts": "ArrowRight" }, "Next change"),
+      el("p", { class: "replay-status", "aria-live": "polite" }),
+    ),
+    el("p", { class: "punchline waiting" }, ex.punchline),
+    el("p", { class: "notice" }, "In the Act, ", el("span", { class: "lost-key" }, "red"), " marks the words the quote leaves out; in the quote, ", el("ins", {}, "blue"), " words are its own. ", DATA.notice),
+    el("p", { class: "more" }, el("a", { href: `#/closed/${ex.clause}/${ex.model}` }, "This answer in the grid"), el("a", { href: `#/exhibit/${ex.model}` }, `${model.name}'s other misquotes`)),
+  );
+  player.attach(article);
+  PLAYERS.push(player);
+  return { article, player };
+}
+
+// Each exhibit plays once when its quote box comes into view; the arrow keys step the one the
+// reader last used, or else the one most in view.
+function watchExhibits() {
+  const seen = new Map();
+  const ratios = new Map();
+  const once = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) {
+        const player = PLAYERS.find((p) => p.quoteBox === entry.target);
+        if (entry.isIntersecting && player && !seen.has(player)) {
+          seen.set(player, true);
+          if (!REDUCED.matches) player.play();
+        }
+      }
+    },
+    { threshold: 0.6 },
+  );
+  const view = new IntersectionObserver(
+    (entries) => {
+      for (const entry of entries) ratios.set(entry.target, entry.intersectionRatio);
+    },
+    { threshold: [0, 0.25, 0.5, 0.75, 1] },
+  );
+  for (const player of PLAYERS) {
+    once.observe(player.quoteBox);
+    view.observe(player.quoteBox);
+  }
+  OBSERVERS = [once, view];
+  activePlayer.ratios = ratios;
+}
+
+function activePlayer() {
+  const ratios = activePlayer.ratios || new Map();
+  if (ACTIVE && PLAYERS.includes(ACTIVE) && (ratios.get(ACTIVE.quoteBox) || 0) > 0) return ACTIVE;
+  let best = null;
+  for (const player of PLAYERS) {
+    const ratio = ratios.get(player.quoteBox) || 0;
+    if (ratio > 0 && (!best || ratio > (ratios.get(best.quoteBox) || 0))) best = player;
+  }
+  return best;
+}
+
+function onKey(event) {
+  if (event.key !== "ArrowRight" && event.key !== "ArrowLeft") return;
+  if (event.altKey || event.ctrlKey || event.metaKey || event.shiftKey) return;
+  const target = event.target;
+  if (target instanceof Element && target.closest("input, select, textarea, [contenteditable]")) return;
+  const player = activePlayer();
+  if (!player) return;
+  event.preventDefault();
+  if (event.key === "ArrowRight") player.next();
+  else player.prev();
+}
+
+function stopExhibits() {
+  for (const player of PLAYERS) player.stop();
+  for (const observer of OBSERVERS) observer.disconnect();
+  PLAYERS = [];
+  OBSERVERS = [];
+  ACTIVE = null;
+}
+
+// ---- The opening view -------------------------------------------------------------------------
+
+function numbersTable(story) {
   const groups = story.column_groups;
-  const table = el(
+  const short = groups.map(([group]) => group.split(" ")[0]);
+  const label = (g, h) => `${short[g]}: ${groups[g][1][h].toLowerCase()}`;
+  const cell = (count, of, unsure, g, h, cls) =>
+    el(
+      "td",
+      { class: cls, "data-label": label(g, h) },
+      el("span", { class: "n" }, `${count} of ${of}`),
+      unsure ? el("span", { class: "unsure" }, `${unsure} unsure`) : null,
+      g === 1 ? el("span", { class: "bar", "aria-hidden": "true" }, el("i", { style: `width:${of ? ((100 * count) / of).toFixed(1) : 0}%` })) : null,
+    );
+  const n = story.clauses;
+  return el(
     "table",
-    { class: "grid numbers-table" },
+    { class: "numbers" },
+    el("caption", { class: "sr-only" }, story.table_title),
     el(
       "thead",
       {},
-      el("tr", {}, el("td", {}), groups.map(([group, headings]) => el("th", { scope: "colgroup", colspan: headings.length }, group))),
+      el("tr", { class: "groups" }, el("td"), groups.map(([group, headings], g) => el("th", { scope: "colgroup", colspan: headings.length, class: g === 1 ? "closed" : null }, el("span", {}, group)))),
       el("tr", {}, el("th", { scope: "col" }, "Model"), groups.map(([, headings]) => headings.map((h) => el("th", { scope: "col" }, h)))),
     ),
     el(
@@ -399,45 +700,77 @@ function storyView() {
         el(
           "tr",
           {},
-          el("th", { scope: "row" }, modelName(r.model)),
-          el("td", {}, right(r.with_right, r.with_unsure)),
-          el("td", {}, `${r.with_verified} of ${r.with_checked}`),
-          el("td", {}, right(r.without_right, r.without_unsure)),
-          el("td", {}, el("b", {}, `${r.without_verified} of ${r.without_with_verdict}`)),
+          el("th", { scope: "row" }, r.model),
+          cell(r.with_right, n, r.with_unsure, 0, 0, null),
+          cell(r.with_verified, r.with_checked, 0, 0, 1, null),
+          cell(r.without_right, n, r.without_unsure, 1, 0, "closed-col verdict-col"),
+          cell(r.without_verified, r.without_with_verdict, 0, 1, 1, "closed-col key"),
         ),
       ),
     ),
   );
+}
+
+function storyView() {
+  const story = DATA.story;
+  const hc = story.hand_check;
+  const hand = DATA.hand_check;
+  const sum = (key) => story.rows.reduce((total, row) => total + row[key], 0);
+  const exhibits = story.exhibits.map((ex, i) => exhibitArticle(ex, i + 1, i === 0).article);
   return [
-    el("h2", { tabindex: "-1", class: "view-heading lead" }, story.lead),
-    el("p", { class: "clause-line" }, el("b", {}, `Clause ${clause.id}: `), `“${clause.text}” `, el("span", { class: "muted" }, "The model had no statute text in its prompt (closed book).")),
+    el("section", { class: "exhibits", "aria-label": "Answers replayed as edits of the Act" }, exhibits),
     el(
-      "article",
-      { class: "card story" },
-      redline(ex.alignment),
-      legend(),
-      el("p", { class: "card-links" }, el("a", { href: `#/closed/${ex.clause}/${ex.model}` }, "This answer in the grid"), " · ", el("a", { href: "#/hand/misleads" }, `The ${hc.misleads} quotes that would mislead`)),
+      "section",
+      { class: "band", "aria-labelledby": "numbers-title" },
+      el(
+        "div",
+        { class: "numbers-head" },
+        el("div", {}, el("p", { class: "label" }, "The numbers"), el("h2", { class: "section-title", id: "numbers-title" }, story.table_title)),
+        el(
+          "div",
+          { class: "contrast" },
+          el("p", { class: "fig quiet" }, el("span", { class: "v" }, `${sum("with_verified")} `, el("small", {}, `of ${sum("with_checked")}`)), el("span", { class: "k" }, "quotes word for word with the statute in the prompt (first try)")),
+          el("p", { class: "fig" }, el("span", { class: "v" }, `${sum("without_verified")} `, el("small", {}, `of ${sum("without_with_verdict")}`)), el("span", { class: "k" }, "quotes word for word without it (closed book)")),
+        ),
+      ),
+      numbersTable(story),
+      el("p", { class: "table-note" }, story.table_note),
+      el(
+        "div",
+        { class: "funnel-wrap" },
+        el(
+          "div",
+          {},
+          el("h3", { class: "sub-title" }, `The ${hc.quotes} closed-book quotes that failed, ${story.failed_from}`),
+          el("p", { class: "method" }, "For each one: does it state a rule from the Act, does it change what the Act says, and would it mislead on the clause it was quoted for?"),
+        ),
+        el(
+          "div",
+          {},
+          el(
+            "ol",
+            { class: "funnel" },
+            el("li", {}, el("b", {}, hc.quotes), el("span", {}, "quotes failed the word-for-word check")),
+            el("li", {}, el("b", {}, hc.rules), el("span", {}, "state a real provision of the Act")),
+            el("li", {}, el("b", {}, hc.changes), el("span", {}, "of those change the rule")),
+            el("li", { class: "hit" }, el("b", {}, hc.misleads), el("span", {}, `of those ${hc.changes} would mislead about the clause they were quoted for${hc.unsure ? ` (${hc.unsure} unsure)` : ""}`)),
+          ),
+          el("p", { class: "method" }, hand ? [el("strong", {}, hand.labels), " ", hand.recheck, " "] : null, el("a", { href: "#/hand" }, "See the hand check"), " · ", el("a", { href: "#/hand/misleads" }, `The ${hc.misleads} that would mislead`)),
+        ),
+      ),
     ),
-    el("h3", {}, story.table_title),
-    tableBox(table, story.table_title),
-    el("p", { class: "note" }, story.table_note),
     el(
-      "p",
-      {},
-      el("b", {}, `The ${hc.quotes} closed-book quotes that failed, `),
-      `${story.failed_from}: ${hc.rules} state a real provision of the Act; ${hc.changes} of those change the rule, and ${hc.misleads} of those ${hc.changes} would mislead about the clause they were quoted for`,
-      hc.unsure ? ` (${hc.unsure} unsure)` : "",
-      ". ",
-      hand ? `${hand.labels} ${hand.recheck} ` : "",
-      el("a", { href: "#/hand" }, "See the hand check"),
-    ),
-    el("h3", {}, "Read before you rely on anything here"),
-    caveatsList(),
-    el(
-      "p",
-      { class: "explore" },
-      "Explore all answers: ",
-      Object.keys(HEADINGS).map((view, i) => [i ? " · " : "", el("a", { href: `#/${view}` }, HEADINGS[view])]),
+      "section",
+      { class: "caveats-sec", id: "caveats", "aria-labelledby": "cv-title" },
+      el("p", { class: "label" }, "Notes to the reader"),
+      el("h2", { class: "section-title", id: "cv-title" }, "Read before you rely on anything here"),
+      caveatsList(),
+      el("p", { class: "label", style: "margin-top:72px" }, "Explore all answers"),
+      el(
+        "ul",
+        { class: "toc" },
+        Object.keys(HEADINGS).map((view) => el("li", {}, el("a", { href: `#/${view}` }, el("span", { class: "v" }, VIEWS[view]), el("span", { class: "d" }, HEADINGS[view]), el("span", { class: "arr", "aria-hidden": "true" }, "→")))),
+      ),
     ),
   ];
 }
@@ -471,7 +804,7 @@ function minorLine(c) {
 function exhibitView(modelKey) {
   const models = closedModels();
   const counts = new Map(models.map((m) => [m.key, exhibitCounts(m.key)]));
-  if (!counts.has(modelKey)) modelKey = DATA.story.example.model;
+  if (!counts.has(modelKey)) modelKey = DATA.story.exhibits[0].model;
   const chosen = counts.get(modelKey);
   const model = INDEX.models.get(modelKey);
   const pipe = DATA.pipeline_first_checks;
@@ -715,19 +1048,20 @@ function handView(filter) {
       el("a", { href: "#/hand", "aria-current": filter !== "misleads" ? "true" : null }, el("span", { class: "name" }, `All ${hc.quotes}`)),
       el("a", { href: "#/hand/misleads", "aria-current": filter === "misleads" ? "true" : null }, el("span", { class: "name" }, `The ${hc.misleads} that would mislead`)),
     ),
-    tableBox(table, "The hand-checked quotes"),
+    tableBox(table, "The hand check, row by row"),
   ];
 }
 
-// The preview image's layout (#/card, not in the tabs): the opening line and redline alone, at
-// 1200 by 630 pixels; `make og` saves it as og.png.
+// The preview image's layout (#/card, not in the tabs): the first exhibit's quote against the
+// Act as one redline, at 1200 by 630 pixels; `make og` saves it as og.png.
 function cardView() {
-  const story = DATA.story;
+  const ex = DATA.story.exhibits[0];
+  const model = INDEX.models.get(ex.model);
   return [
-    el("p", { class: "card-eyebrow" }, "Right verdict, misquoted law · Lease Clause Checker"),
-    el("h2", { tabindex: "-1", class: "view-heading lead" }, story.lead),
-    redline(story.example.alignment),
-    el("p", { class: "card-foot" }, el("del", {}, "Struck red"), ": in the Act, not in the quote · ", el("ins", {}, "underlined blue"), ": the quote's own · not legal advice"),
+    el("p", { class: "card-eyebrow" }, `Lease Clause Checker · ${model.name} · clause ${ex.clause} · closed book`),
+    el("h2", { tabindex: "-1", class: "card-title view-heading" }, "Right verdict, misquoted law"),
+    redline(ex.alignment),
+    el("p", { class: "card-foot" }, ex.punchline, el("span", { class: "small" }, el("del", {}, "Struck red"), ": in the Act, not in the quote · ", el("ins", {}, "underlined blue"), ": the quote's own · not legal advice")),
   ];
 }
 
@@ -739,6 +1073,7 @@ function route(event) {
   // What the reader was on, to give it focus again if the new view has it (a picker or filter).
   const active = document.activeElement;
   const was = active && main.contains(active) ? active.getAttribute("href") || active.id : null;
+  stopExhibits();
   let nodes;
   let current = view;
   if (view === "exhibit") nodes = exhibitView(a);
@@ -752,6 +1087,8 @@ function route(event) {
   }
   main.replaceChildren(...nodes.flat().filter(Boolean));
   document.body.classList.toggle("card-mode", current === "card");
+  document.body.dataset.view = current;
+  if (current === "story") watchExhibits();
   markOverflow();
   for (const tab of document.querySelectorAll(".tabs a")) {
     if (tab.dataset.view === current) {
@@ -768,7 +1105,7 @@ function route(event) {
     (view === "closed" && a && document.getElementById("selected-heading")) ||
     (view === "clauses" && a && !again && document.getElementById("clause-heading")) ||
     again ||
-    main.querySelector(".view-heading");
+    main.querySelector(".view-heading, h2");
   target.focus({ preventScroll: true });
   // Scroll only if the target is out of sight, or on a narrow screen where the detail sits
   // below the list.
@@ -823,6 +1160,12 @@ async function start() {
   route();
   window.addEventListener("hashchange", route);
   window.addEventListener("resize", markOverflow);
+  document.addEventListener("keydown", onKey);
+  // The notice bar's link: the caveats in full, on this view or at the foot of the page.
+  document.querySelector(".to-caveats").addEventListener("click", (event) => {
+    event.preventDefault();
+    (document.getElementById("caveats") || document.getElementById("footer")).scrollIntoView({ block: "start" });
+  });
 }
 
 start();
