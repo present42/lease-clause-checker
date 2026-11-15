@@ -1,7 +1,7 @@
 """The record of how the closed-book quotes that failed the check were judged by hand
 (`RECORD_DIR`, described in its MANIFEST.md), and the agreement figures computed from it.
 
-Claude suggested an answer for every quote (`suggestions_<stage>.json`); in each round, fresh
+Claude suggested an answer for every quote (`claude_suggestions_<stage>.json`); in each round, fresh
 reviewers judged the quotes blind, each quote by one reviewer (`round<n>_reviewer-*.json`); the
 final suggestions are what `quotereview.CHECKS_FILE` holds. A reviewer's answer agrees with a
 suggestion under `agrees`, the rule in MANIFEST.md.
@@ -34,7 +34,7 @@ class RecordError(ValueError):
 class Judgement:
     category: str
     meaning_changed: str
-    """"" for a category that states no rule (`NOT_A_RULE`), whatever was written."""
+    """Blank for a category that states no rule (`NOT_A_RULE`), whatever was written."""
     misleads_here: str
 
 
@@ -88,9 +88,19 @@ class Record:
 
 
 def load_record(folder: Path) -> Record | None:
-    """The record in `folder`, or None if there is none; `RecordError` if it is incomplete."""
+    """The record in `folder`, or None if there is none; `RecordError` if it is incomplete or
+    inconsistent."""
     if not (folder / MANIFEST).exists():
         return None
+    try:
+        return _load(folder)
+    except (OSError, KeyError, TypeError, ValueError) as error:
+        if isinstance(error, RecordError):
+            raise
+        raise RecordError(f"{folder}: {type(error).__name__}: {error}") from error
+
+
+def _load(folder: Path) -> Record:
     suggestions = {
         stage: _by_row(_read(folder / f"claude_suggestions_{stage}.json")["suggestions"], stage)
         for stage in STAGES
@@ -99,7 +109,12 @@ def load_record(folder: Path) -> Record | None:
     for path in sorted(folder.glob("round*_reviewer-*.json")):
         data = _read(path)
         number = int(data["round"].removeprefix("round"))
+        if not path.name.startswith(f"{data['round']}_"):
+            raise RecordError(f"{path.name}: its round is {data['round']!r}")
         answers = _by_row(data["answers"], path.name)
+        given = [row["id"] for row in _read(folder / data["input_file"])]
+        if list(answers) != given:
+            raise RecordError(f"{path.name}: its answers are not the rows in {data['input_file']}")
         if len(answers) != data["rows"]:
             raise RecordError(f"{path.name}: {len(answers)} answers, but rows says {data['rows']}")
         shared = rounds.setdefault(number, {}).keys() & answers.keys()

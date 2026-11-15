@@ -8,7 +8,9 @@ from lease_clause_checker import handcheck, quotereview
 from lease_clause_checker.handcheck import Judgement, RecordError, agrees, load_record
 from lease_clause_checker.quotediff import Category
 
-RECORD = Path("results/closedbook-v1+conventions-v1") / handcheck.RECORD_DIR
+RECORD = (
+    Path(__file__).parents[1] / "results" / "closedbook-v1+conventions-v1" / handcheck.RECORD_DIR
+)
 
 
 @pytest.mark.parametrize(
@@ -63,7 +65,14 @@ def write_record(folder: Path, rounds: dict[str, tuple[int, list[dict[str, str]]
         path = folder / f"claude_suggestions_{stage}.json"
         path.write_text(json.dumps({"suggestions": entries}))
     for name, (number, answers) in rounds.items():
-        data = {"round": f"round{number}", "rows": len(answers), "answers": answers}
+        rows = f"rows_{name}.json"
+        (folder / rows).write_text(json.dumps([{"id": answer["id"]} for answer in answers]))
+        data = {
+            "round": f"round{number}",
+            "rows": len(answers),
+            "input_file": rows,
+            "answers": answers,
+        }
         (folder / f"round{number}_{name}.json").write_text(json.dumps(data))
     return folder
 
@@ -126,6 +135,29 @@ FINAL: quotereview.HandChecks = {
 }
 
 
+def test_a_reviewer_file_must_name_its_round_and_answer_the_rows_it_was_given(
+    tmp_path: Path,
+) -> None:
+    folder = write_record(tmp_path / "r", ROUNDS)
+    path = folder / "round2_reviewer-2b.json"
+    path.rename(folder / "round1_reviewer-2b.json")
+    with pytest.raises(RecordError, match="its round is 'round2'"):
+        load_record(folder)
+
+    folder = write_record(tmp_path / "s", ROUNDS)
+    (folder / "rows_reviewer-2b.json").write_text(json.dumps([{"id": "m__d"}]))
+    with pytest.raises(RecordError, match=r"not the rows in rows_reviewer-2b\.json"):
+        load_record(folder)
+
+
+def test_a_missing_file_is_a_record_error(tmp_path: Path) -> None:
+    folder = write_record(tmp_path / "r", ROUNDS)
+    (folder / "claude_suggestions_round2.json").unlink()
+
+    with pytest.raises(RecordError, match="FileNotFoundError"):
+        load_record(folder)
+
+
 def test_the_final_suggestions_must_be_the_hand_checks(tmp_path: Path) -> None:
     record = load_record(write_record(tmp_path / "r", ROUNDS))
     assert record is not None
@@ -136,6 +168,9 @@ def test_the_final_suggestions_must_be_the_hand_checks(tmp_path: Path) -> None:
         record.check_against(changed, CATEGORIES)
     with pytest.raises(RecordError, match="not the quotes that failed"):
         record.check_against(FINAL, CATEGORIES | {("m", "d"): "cosmetic"})
+    missing = {key: check for key, check in FINAL.items() if key != ("m", "c")}
+    with pytest.raises(RecordError, match="m c: the hand check is not the final suggestion"):
+        record.check_against(missing, CATEGORIES)
 
 
 def test_the_saved_record_gives_the_published_agreement() -> None:

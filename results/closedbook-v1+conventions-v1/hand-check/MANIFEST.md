@@ -1,6 +1,6 @@
 # Hand check of the 59 failed closed-book quotes: full record
 
-Assembled 2026-11-15 from the session that ran the check. Times are UTC in the files.
+Assembled 2026-11-15 from the session that ran the check. The reviewers' start times are UTC; the `stage` notes in Claude's suggestions give Toronto times.
 
 ## What happened, in order
 
@@ -10,11 +10,11 @@ Assembled 2026-11-15 from the session that ran the check. Times are UTC in the f
 3. **Claude's second suggestions** (`claude_suggestions_round2.json`), revised under the four rules (`rules.md`).
 4. **Round 2 review** (2026-11-15 01:15 UTC). Two more fresh reviewers (reviewer-2a, reviewer-2b), blind, same split, with `rules.md`.
    - Agreement with `claude_suggestions_round2.json`: **46 of 59 rows** (13 differ). On 12 of the 13, the reviewer's answer was adopted; on Haiku c34 Claude's category was kept (both questions agreed).
-5. **Final** (`claude_suggestions_final.json`), approved by the owner on 2026-11-15. It matches round 2's reviewers on 58 of 59 rows, **after** adopting their 12 answers, so 58 of 59 is not an independent agreement figure. The independent figure is 46 of 59.
+5. **Final** (`claude_suggestions_final.json`), approved by the owner on 2026-11-15. Because it adopts those 12 answers, it differs from round 2's reviewers only on Haiku c34; that is not an independent agreement figure. The independent figure is 46 of 59.
 
 ## How rows were compared
 
-A row agrees when the category matches, question 1 matches (blank for not_in_act, no_quote, too_short, heading), and, where both said yes to question 1, question 2 matches. In round 1, Claude's "your call" rows count as q1 "unsure".
+Question 1 is `meaning_changed` in `../quote-hand-check.csv` (does the quote say something the Act doesn't?) and question 2 is `misleads_here` (would it mislead on the clause being checked?). A row agrees when the category matches, question 1 matches (blank for not_in_act, no_quote, too_short, heading), and, where both said yes to question 1, question 2 matches. In round 1, Claude's "your call" rows count as q1 "unsure".
 
 ## Files
 
@@ -25,7 +25,7 @@ A row agrees when the category matches, question 1 matches (blank for not_in_act
 | `reviewer-*_prompt.txt` | Each reviewer's exact prompt, with the local scratch directory replaced by `<scratch>/`. The `prompt_sha256` in each reviewer's file is the hash of the original, unredacted prompt. |
 | `round*_reviewer-*.json` | Each reviewer's answers, with reviewer, round, model, start time, prompt hash and input file |
 | `claude_suggestions_*.json` | Claude's suggestions at each stage |
-| `act_source.json` | The Act copy the reviewers searched: consolidation, retrieval date, SHA-256, notice. The full text itself is not included; it is the repo's cached e-Laws copy with that SHA-256 |
+| `act_source.json` | The Act copy the reviewers searched: consolidation, retrieval date, SHA-256, notice. The full text itself is not included; it is the repo's cached e-Laws copy whose content has that SHA-256 (`content_sha256` in the cache) |
 
 Model for every reviewer and for the suggestions: Claude Opus 5.5 (`claude-opus-5-5`).
 

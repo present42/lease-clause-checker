@@ -1,9 +1,3 @@
-# Hand-check rules
-
-The four rules the hand check of the closed-book quotes followed ([quote-hand-check.csv](../quote-hand-check.csv)), as given to the reviewers. "Question 1" is the CSV's `meaning_changed` (does the quote say something the Act doesn't?) and "question 2" is `misleads_here` (would it mislead on the clause being checked?). The judgements are the author's reading, not legal advice.
-
-Statute words in this file: Source: Ontario e-Laws. Not an official version of the statute. © King's Printer for Ontario, 2006.
-
 RULES FOR THIS HAND CHECK (agreed by the project owner; apply them exactly)
 
 Rule 1 — "not in the Act" means the RULE isn't in the Act, not merely that the sentence isn't. Strip stock wording ("A landlord may enter a rental unit", "a landlord shall not require a tenant to"), find the quote's distinctive content, and search the whole Act. A reworded, reordered or spliced version of a real provision belongs to that provision: `content_words_differ` if that provision is in the section the model cited, `wrong_cite` if it is in a different section. Use `not_in_act` only when no provision states the quoted rule. Use `too_short` for a fragment that states no rule at all (e.g. "A landlord may enter a rental unit only if").

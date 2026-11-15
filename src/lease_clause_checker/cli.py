@@ -137,6 +137,7 @@ def main(argv: Sequence[str] | None = None) -> int:
         scoreboard.ReportDataError,
         scoreboard.MissingMarkersError,
         quotereview.HandCheckError,
+        handcheck.RecordError,
         check.LeaseFormatError,
         UnknownSectionError,
     ) as error:
