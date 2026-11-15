@@ -709,8 +709,8 @@ def _difference_line(difference: Difference, section: str, section_text: str) ->
         return f"{line}."
     words = "word matches" if difference.matched == 1 else "words match"
     line = (
-        f"The first {difference.matched} {words} the Act; then the quote has "
-        f"“{difference.quote_word}”"
+        f"The first {difference.matched} {words} s. {section}{difference.subsection}; then the "
+        f"quote has “{difference.quote_word}”"
     )
     if difference.act_word is None:
         return f"{line} where the subsection ends."

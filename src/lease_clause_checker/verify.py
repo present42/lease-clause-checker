@@ -307,6 +307,9 @@ class Difference:
     act_word: str | None
     """The word that follows the matched words in the Act; None if they end the subsection or
     no words matched."""
+    subsection: str = ""
+    """The marker of the subsection the matched words were found in, such as "(3)"; "" if the
+    section has none or no words matched."""
 
 
 def first_difference(quote: str, section_text: str) -> Difference | None:
@@ -321,15 +324,15 @@ def first_difference(quote: str, section_text: str) -> Difference | None:
         matched += 1
     if matched == len(words):
         return None
-    act_word = None
+    act_word, marker = None, ""
     if matched:
         prefix = " ".join(words[:matched])
         for part in subsections(section_text):
             found = re.search(rf"(?<!\w){re.escape(prefix)}(?!\w)\s*(\S+)?", normalise(part))
             if found:
-                act_word = found.group(1)
+                act_word, marker = found.group(1), subsection_marker(part)
                 break
-    return Difference(matched, words[matched], act_word)
+    return Difference(matched, words[matched], act_word, marker)
 
 
 def normalise(text: str, *, fold_quotation_marks: bool = True) -> str:

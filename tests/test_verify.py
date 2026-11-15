@@ -100,12 +100,14 @@ def test_a_section_not_in_the_act_is_reported(sections: dict[str, Section]) -> N
     ("quote", "difference"),
     [
         # A changed word: the Act's word is named.
-        ("A landlord may require a deposit if,", Difference(5, "deposit", "gadget")),
+        ("A landlord may require a deposit if,", Difference(5, "deposit", "gadget", "(1)")),
         # Running past the end of subsection (1) into (2).
         (
             "the deposit is returned at the end of the tenancy. (2) The deposit",
-            Difference(10, "(2)", None),
+            Difference(10, "(2)", None, "(1)"),
         ),
+        # Found in subsection (2), which is named.
+        ("The deposit shall not exceed two months", Difference(5, "two", "one", "(2)")),
         # Not even the first word.
         ("Landlords may require a gadget deposit", Difference(0, "Landlords", None)),
     ],

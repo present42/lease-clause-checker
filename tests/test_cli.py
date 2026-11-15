@@ -215,7 +215,8 @@ def test_quote_check_names_the_first_tampered_word(
     assert exit_code == 1
     assert out.splitlines()[:2] == [
         "NOT VERIFIED: The quote does not appear word for word in section 2.1.",
-        "The first 5 words match the Act; then the quote has “deposit” where the Act has “gadget”.",
+        "The first 5 words match s. 2.1(1); then the quote has “deposit” where the Act has "
+        "“gadget”.",
     ]
     assert "Not legal advice" in out
 

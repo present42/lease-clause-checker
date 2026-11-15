@@ -155,7 +155,7 @@ before and after it. Changing one word of the s. 14 quote above:
 ```text
 $ uv run lcc quote check 14 "A provision in a tenancy agreement prohibiting the presence of dogs in or about the residential complex is void."
 NOT VERIFIED: The quote does not appear word for word in section 14.
-The first 10 words match the Act; then the quote has “dogs” where the Act has “animals”.
+The first 10 words match s. 14; then the quote has “dogs” where the Act has “animals”.
 Source: Ontario e-Laws. Not an official version of the statute. © King's Printer for Ontario, 2006.
 Not legal advice: this checks the wording only, not what it means.
 ```
@@ -169,7 +169,7 @@ nor the quote's category.
 ```text
 $ uv run lcc quote check 15 "all or part of the remaining rent for a term or tenancy, or a specific sum, becomes due and payable if the tenant defaults in the payment of rent due"
 NOT VERIFIED: The quote does not appear word for word in section 15.
-The first 11 words match the Act; then the quote has “tenancy,” where the Act has “period”.
+The first 11 words match s. 15; then the quote has “tenancy,” where the Act has “period”.
 Words of its sentence in s. 15 that it leaves out: before it, “A provision in a
 tenancy agreement providing that”; after it, “or in carrying out an obligation
 is void”.
