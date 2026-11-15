@@ -510,6 +510,26 @@ prompt.
   legal reasoning is right, or that the section is the one that decides the clause.
   A quote of five words or more passes even when it stops short of the decisive words, such as
   the opening words of a list without the item that applies.
+- The quote categories have known gaps, found by reading the 59 closed-book quotes by hand and
+  in two independent reviews. None is fixed yet:
+  - Words a quote leaves out before or after the words it matches are neither shown nor checked
+    ([#1](https://github.com/present42/lease-clause-checker/issues/1)). Gemini 3.8 Flash's c09 quote of s. 26(1) is sorted as cosmetic although it
+    stops before "(a) in cases of emergency; or (b) if the tenant consents".
+  - Openings shared by many provisions can line a quote up with the wrong subsection, or hide
+    its source ([#2](https://github.com/present42/lease-clause-checker/issues/2)): Claude Haiku 5.5's c25 quote about a postdated cheque lines up
+    with s. 106(4), not s. 108.
+  - A fragment that states no rule ("A landlord may enter a rental unit only if") is sorted like
+    a full quote, not as too short ([#3](https://github.com/present42/lease-clause-checker/issues/3)).
+  - A word hyphenated differently from the Act ("postdated" for "post-dated") counts as a
+    changed content word ([#4](https://github.com/present42/lease-clause-checker/issues/4)).
+  - A quote spliced from two subsections (Gemini 4 Argon's c17, from s. 37(3) and 37(5)) has no
+    flag of its own ([#5](https://github.com/present42/lease-clause-checker/issues/5)).
+
+  Fixing them could move the closed-book category table and the summary's count of quotes that
+  differ only cosmetically or by quoting conventions. If #1 or #3 became a condition of passing
+  the strict check, the verified-quote counts could move too, including the 150 of 151 pipeline
+  answers, and the pipeline would need a new run for the retries. No verdict or section score
+  depends on the categories.
 - 38 clauses are few. When two methods both score 38 of 38, the test set can't tell them
   apart, and a perfect score still allows an error rate of several per cent (see Notes under
   Results).
