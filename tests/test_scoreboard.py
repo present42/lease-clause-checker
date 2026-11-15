@@ -961,7 +961,7 @@ def test_the_closed_book_comparison_leaves_out_unsure_pipeline_answers() -> None
 def test_the_closed_book_section_sorts_the_failed_quotes_once_every_model_has_run() -> None:
     text = scoreboard.render(replace(full_board(), closed_book=tldr_closed_book()), "chart.svg")
 
-    assert "The categories have not yet been checked by hand." in text
+    assert "No category has a label yet." in text
     assert "#### How the quotes that failed the check differ from the Act" in text
     assert "(results/test-v1/quote-review.md)" in text
     [opus] = table_rows(text, "Claude Opus 5.5 | 24 | 4")
@@ -1118,9 +1118,13 @@ def test_the_short_version_gives_the_exhibit_a_table_and_the_hand_check() -> Non
     assert lines[-2] == (
         "**The 14 closed-book quotes that failed,** from 3 of the 4 models: 14 state a real "
         "provision of the Act; 14 of those change the rule, and 2 of those 14 would mislead "
-        "about the clause they were quoted for. Claude drafted the hand-check labels, Claude Opus "
-        "reviewed them blind in two rounds (1 of 4 agreed independently), and the author approved "
-        "them; not reviewed by a lawyer. " + handcheck.RECHECK_NOTE
+        "about the clause they were quoted for. At least 2 of the 89 right closed-book verdicts "
+        f"came with a quote that would mislead: {scoreboard.MISLEADS_MEANS}. Only the 14 quotes "
+        "that failed the word-for-word check were judged. Claude drafted the hand-check "
+        "labels, Claude Opus reviewed them blind in two rounds, and the author approved them; not "
+        "reviewed by a lawyer. 1 of 4 matched a fresh Claude Opus reviewer in round 2 (the same "
+        "model family drafted the labels, and the rules were written after round 1 on these "
+        "rows). " + handcheck.RECHECK_NOTE
     )
 
 
@@ -1157,6 +1161,38 @@ def test_the_short_version_refuses_an_exhibit_the_answers_do_not_support(
 
     with pytest.raises(scoreboard.ReportDataError, match=re.escape(error)):
         scoreboard.render_short(board, "NOTICE", (exhibit,))
+
+
+def test_the_base_rate_counts_misleading_quotes_on_right_verdicts_as_the_funnel_does(
+    monkeypatch: pytest.MonkeyPatch,
+) -> None:
+    board = short_board()
+    numbers = scoreboard.short_numbers(board, (EXHIBIT,))
+    assert (numbers.right_misleading, numbers.right_closed) == (2, 89)
+    assert numbers.right_misleading == numbers.hand_check.misleads
+
+    # Opus's c01 verdict wrong: its misleading quote no longer counts, nor does the verdict.
+    right = scoreboard._verdict_right
+    monkeypatch.setattr(
+        scoreboard,
+        "_verdict_right",
+        lambda score: right(score) and not (score.clause.id == "c01" and score is opus_c01(board)),
+    )
+    numbers = scoreboard.short_numbers(board, (EXHIBIT,))
+    assert (numbers.right_misleading, numbers.right_closed) == (1, 88)
+
+    # A yes/yes on a quote that states no rule is not counted, as the funnel doesn't count it.
+    monkeypatch.setattr(scoreboard, "_verdict_right", right)
+    key = (OPUS.key, "c01")
+    no_rule = replace(board.quote_checks[key], hand_check="too_short")
+    board = replace(board, quote_checks=board.quote_checks | {key: no_rule})
+    numbers = scoreboard.short_numbers(board, (EXHIBIT,))
+    assert (numbers.right_misleading, numbers.hand_check.misleads) == (1, 1)
+
+
+def opus_c01(board: scoreboard.Board) -> object:
+    [score] = [s for s in board.closed_book[OPUS.key].scores if s.clause.id == "c01"]
+    return score
 
 
 def test_the_short_version_needs_a_finished_hand_check() -> None:

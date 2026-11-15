@@ -72,6 +72,19 @@ class HandCheck:
 
 HandChecks = dict[tuple[str, str], HandCheck]
 """By (model key, clause id)."""
+
+
+def misleads(check: HandCheck | None, category: Category) -> bool:
+    """Whether the hand check found that a quote the code sorted as `category` states a rule
+    from the Act, changes what the Act says, and would mislead on the clause: the quotes
+    `judged` counts as misleading."""
+    return (
+        check is not None
+        and check.category(category) not in NOT_A_RULE
+        and (check.meaning_changed, check.misleads_here) == ("yes", "yes")
+    )
+
+
 NOT_CHECKED = HandCheck("", "", "", "")
 
 
@@ -154,8 +167,9 @@ def failed_categories(runs: Sequence[ModelRun]) -> dict[tuple[str, str], Categor
     }
 
 
-def hand_check_line(runs: Sequence[ModelRun], checks: HandChecks) -> str:
-    """How many quotes have had their category checked by hand, and how many of those the check
+def hand_check_line(runs: Sequence[ModelRun], checks: HandChecks, labelled_by: str = "") -> str:
+    """How many quotes' categories have a label, and, once all have, how the labels were made
+    (`labelled_by`, from the hand check's record; none if there is no record); how many the check
     agreed with; then, from the hand check alone, how many state a rule from the Act, how many
     of those change what it says, and how many of those would mislead on the clause being
     checked. A meaning judgement on a quote that states no rule is not counted, and said so."""
@@ -163,7 +177,7 @@ def hand_check_line(runs: Sequence[ModelRun], checks: HandChecks) -> str:
     found = [(checks[m, c], q) for m, c, q in rows if (m, c) in checks]
     done = [(check, q) for check, q in found if check.hand_check]
     if not done:
-        line = "The categories have not yet been checked by hand."
+        line = "No category has a label yet."
         meanings = [check.meaning_changed for check, _ in found if check.meaning_changed]
         if not meanings:
             return f"{line} No quote has yet been read by hand for meaning."
@@ -188,8 +202,16 @@ def hand_check_line(runs: Sequence[ModelRun], checks: HandChecks) -> str:
         else f"Of the {_quotes(len(done))} checked so far"
     )
     line = (
-        f"{len(done)} of the {len(rows)} categories have been checked by hand"
-        f"{'' if complete else ' so far'}; the hand check agreed with the code's category for "
+        (
+            (
+                f"Every category has a reviewed label: {labelled_by}"
+                if labelled_by
+                else "Every category has a label"
+            )
+            if complete
+            else f"{len(done)} of the {len(rows)} categories have a label so far"
+        )
+        + "; the hand check agreed with the code's category for "
         f"{agreed}. {scope}, {len(rules)} {_verb(len(rules), 'state')} a rule from the Act"
         + (f" ({unread} not yet read for meaning)" if unread else "")
         + f", {changes} {_verb(changes, 'change')} what it says"
@@ -230,10 +252,15 @@ def _misleads_line(checks: list[HandCheck]) -> str:
 
 
 def write_review(
-    runs: Sequence[ModelRun], folder: Path, notice: str, prompt_version: str
+    runs: Sequence[ModelRun],
+    folder: Path,
+    notice: str,
+    prompt_version: str,
+    labelled_by: str = "",
 ) -> HandChecks:
     """Write `REVIEW_FILE` and bring `CHECKS_FILE` up to date in `folder`: a row for each failed
-    quote, its category refreshed, its hand check and note kept. Returns the hand checks."""
+    quote, its category refreshed, its hand check and note kept. Returns the hand checks.
+    `labelled_by` is as for `hand_check_line`."""
     path = folder / CHECKS_FILE
     checks = load_checks(path)
     rows = [
@@ -259,7 +286,7 @@ def write_review(
         )
     path.write_text(out.getvalue(), encoding="utf-8")
     (folder / REVIEW_FILE).write_text(
-        review_page(runs, checks, notice, prompt_version), encoding="utf-8"
+        review_page(runs, checks, notice, prompt_version, labelled_by), encoding="utf-8"
     )
     return checks
 
@@ -295,10 +322,14 @@ def load_checks(path: Path) -> HandChecks:
 
 
 def review_page(
-    runs: Sequence[ModelRun], checks: HandChecks, notice: str, prompt_version: str
+    runs: Sequence[ModelRun],
+    checks: HandChecks,
+    notice: str,
+    prompt_version: str,
+    labelled_by: str = "",
 ) -> str:
     """Every quote that is not verbatim, with its category, its difference from the Act and its
-    hand check, by model."""
+    hand check, by model. `labelled_by` is as for `hand_check_line`."""
     total = sum(len(failed(run)) for run in runs)
     lines = [
         "# Closed-book quotes that failed the check",
@@ -318,7 +349,7 @@ def review_page(
         + "), `meaning_changed` with `yes` or `no` (does the quote change what the Act says?), "
         "and, only where it does, `misleads_here` with `yes`, `no` or `unsure` (would it "
         "mislead on the clause being checked? not legal advice); add a "
-        "note if useful, and regenerate. " + hand_check_line(runs, checks),
+        "note if useful, and regenerate. " + hand_check_line(runs, checks, labelled_by),
         "",
         "In the **quote vs the Act** column, `[-…-]` marks the Act's words that the quote drops "
         "or replaces and `{+…+}` the quote's own words; the rest is in both. It runs from the "

@@ -631,6 +631,8 @@ function exhibitArticle(ex, n, lead) {
         el("p", { class: "replay-status", "aria-live": "polite" }),
       ),
       el("p", { class: "punchline waiting" }, ex.punchline),
+      ex.note ? el("p", { class: "exhibit-note" }, ex.note) : null,
+      el("details", { class: "exhibit-reason" }, el("summary", {}, "The model's reason"), el("blockquote", {}, ex.reason)),
       el("p", { class: "more" }, el("a", { href: `#/closed/${ex.clause}/${ex.model}` }, "This answer in the grid"), el("a", { href: `#/exhibit/${ex.model}` }, `${model.name}'s other misquotes`)),
     ),
   );
@@ -764,6 +766,8 @@ function storyView() {
   const exhibits = story.exhibits.map((ex, i) => exhibitArticle(ex, i + 1, i === 0).article);
   const misleading = DATA.answers.filter((a) => a.method === "closedbook" && a.attempts[0].hand_check && a.attempts[0].hand_check.meaning_changed === "yes" && a.attempts[0].hand_check.misleads_here === "yes");
   const split = DATA.models.map((m) => `${shortModel(m.name)} ${misleading.filter((a) => a.model === m.key).length}`).join(", ");
+  const rate = story.base_rate;
+  document.getElementById("base-rate").replaceChildren(el("b", {}, `At least ${rate.misleading} of the ${rate.right} right closed-book verdicts`), " came with a quote that ", el("dfn", {}, "would mislead"), `: ${rate.means}. Only the ${rate.judged} quotes that failed the word-for-word check were judged.`);
   return [
     el("section", { class: "exhibits", "aria-label": "Answers replayed as edits of the Act" }, exhibits),
     el(

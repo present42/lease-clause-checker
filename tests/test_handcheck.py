@@ -184,6 +184,10 @@ def test_the_saved_record_gives_the_published_agreement() -> None:
             (row["model"], row["clause"]): row["category"] for row in csv.DictReader(file)
         }
     record.check_against(quotereview.load_checks(path), categories)  # type: ignore[arg-type]
+    assert [a.row for a in record.amendments] == [
+        "claude-opus-5-5__c26",
+        "claude-opus-5-5__c23",
+    ]
 
 
 def test_a_meaning_written_for_a_quote_that_states_no_rule_is_read_as_blank() -> None:
@@ -192,3 +196,41 @@ def test_a_meaning_written_for_a_quote_that_states_no_rule_is_read_as_blank() ->
     record.check_against(
         {("m", "a"): quotereview.HandCheck("agree", "yes", "", "")}, {("m", "a"): "too_short"}
     )
+
+
+def amend(row: str, before: str, after: str) -> dict[str, str]:
+    return {"row": row, "before": before, "after": after, "by": "a", "date": "d", "why": "w"}
+
+
+def test_an_amended_note_must_read_as_its_last_amendment_left_it(tmp_path: Path) -> None:
+    folder = write_record(tmp_path / "r", ROUNDS)
+    amendments = [amend("m__b", "old", "draft"), amend("m__b", "draft", "note")]
+    (folder / handcheck.AMENDMENTS).write_text(json.dumps({"amendments": amendments}))
+    record = load_record(folder)
+    assert record is not None
+    record.check_against(FINAL, CATEGORIES)
+
+    reverted = FINAL | {("m", "b"): quotereview.HandCheck("cosmetic", "yes", "yes", "draft")}
+    with pytest.raises(RecordError, match="m b: the note is not as its last amendment left it"):
+        record.check_against(reverted, CATEGORIES)
+
+
+@pytest.mark.parametrize(
+    ("amendments", "error"),
+    [
+        ([amend("m__x", "a", "b")], r"rows not in the record: \['m__x'\]"),
+        ([amend("m__b", "same", "same")], "m__b: the amendment changes nothing"),
+        (
+            [amend("m__b", "old", "draft"), amend("m__b", "old", "note")],
+            "m__b: does not start from the last amendment's note",
+        ),
+    ],
+)
+def test_a_malformed_amendment_is_a_record_error(
+    tmp_path: Path, amendments: list[dict[str, str]], error: str
+) -> None:
+    folder = write_record(tmp_path / "r", ROUNDS)
+    (folder / handcheck.AMENDMENTS).write_text(json.dumps({"amendments": amendments}))
+
+    with pytest.raises(RecordError, match=error):
+        load_record(folder)

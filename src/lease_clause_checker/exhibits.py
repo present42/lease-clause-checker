@@ -47,6 +47,8 @@ class Exhibit(BaseModel):
     punchline: str
     """What the quote does, in the owner's words, starting "Verdict: <verdict>, right. "."""
     tag: Tag | None = None
+    note: str = ""
+    """One line about the exhibit, shown under it; none if empty."""
 
 
 def load(path: Path = FILE) -> tuple[Exhibit, ...]:

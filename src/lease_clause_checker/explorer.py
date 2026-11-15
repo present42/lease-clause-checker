@@ -216,6 +216,8 @@ def write(data: dict[str, Any], out: Path) -> None:
             (out / asset.name).write_text(text, encoding="utf-8")
         elif asset.is_file():
             (out / asset.name).write_bytes(asset.read_bytes())
+        elif asset.is_dir() and asset.name != "__pycache__":
+            shutil.copytree(asset, out / asset.name)
     text = json.dumps(data, ensure_ascii=False, separators=(",", ":"))
     (out / "data.json").write_text(text + "\n", encoding="utf-8")
     (out / MARKER).write_text("Written by `lcc site`; the next export replaces this folder.\n")
@@ -264,6 +266,12 @@ def _story(
         "table_note": scoreboard.SHORT_TABLE_NOTE,
         "failed_from": scoreboard.failed_from(numbers.rows),
         "table_title": scoreboard.short_table_title(numbers),
+        "base_rate": {
+            "right": numbers.right_closed,
+            "misleading": numbers.right_misleading,
+            "judged": judged.quotes,
+            "means": scoreboard.MISLEADS_MEANS,
+        },
         "hand_check": {
             "quotes": judged.quotes,
             "rules": judged.rules,
@@ -279,12 +287,17 @@ def _exhibit(
     shown: scoreboard.ShownExhibit, used: dict[SubsectionKey, list[quotediff.Token]]
 ) -> dict[str, Any]:
     exhibit, replay = shown.exhibit, shown.replay
+    given = shown.result.attempt.answer
+    if given is None:  # an exhibit's verdict was checked right, so its answer was read
+        raise SiteExportError(f"exhibit {shown.spec.key} {exhibit.clause}: no readable answer")
     return {
         "model": shown.spec.key,
         "clause": shown.result.clause.id,
         "label": exhibit.label,
         "punchline": exhibit.punchline,
+        "note": exhibit.note,
         "verdict": shown.result.answer.verdict,
+        "reason": given.reason,
         "alignment": _alignment(shown.alignment, used),
         "replay": {
             "act": list(replay.act),

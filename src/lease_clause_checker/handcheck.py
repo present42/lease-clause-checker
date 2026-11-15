@@ -4,7 +4,8 @@
 Claude suggested an answer for every quote (`claude_suggestions_<stage>.json`); in each round, fresh
 reviewers judged the quotes blind, each quote by one reviewer (`round<n>_reviewer-*.json`); the
 final suggestions are what `quotereview.CHECKS_FILE` holds. A reviewer's answer agrees with a
-suggestion under `agrees`, the rule in MANIFEST.md.
+suggestion under `agrees`, the rule in MANIFEST.md. Later changes the author made to a row's note
+are listed in `AMENDMENTS`, dated, so the reviewers' inputs stay as they were.
 """
 
 import json
@@ -20,6 +21,7 @@ RECORD_DIR = "hand-check"
 """Beside `quotereview.CHECKS_FILE`."""
 MANIFEST = "MANIFEST.md"
 RULES = "rules.md"
+AMENDMENTS = "amendments.json"
 STAGES = ("round1", "round2", "final")
 """Claude's suggestions: before round 1, before round 2 (under the rules), and final."""
 MEANING = "q1_says_something_the_act_doesnt"
@@ -47,11 +49,27 @@ def agrees(first: Judgement, second: Judgement) -> bool:
 
 
 @dataclass(frozen=True)
+class Amendment:
+    """A change the author made to a row's note in `quotereview.CHECKS_FILE` after the record
+    was assembled."""
+
+    row: str
+    """"<model key>__<clause id>"."""
+    before: str
+    after: str
+    by: str
+    date: str
+    why: str
+
+
+@dataclass(frozen=True)
 class Record:
     suggestions: Mapping[str, Mapping[str, Judgement]]
     """By stage (`STAGES`), then by row id ("<model key>__<clause id>")."""
     rounds: Mapping[int, Mapping[str, Judgement]]
     """Every reviewer's answers in each round, by row id."""
+    amendments: tuple[Amendment, ...] = ()
+    """In the order they were made."""
 
     @property
     def rows(self) -> int:
@@ -76,8 +94,9 @@ class Record:
     def check_against(
         self, checks: HandChecks, categories: Mapping[tuple[str, str], Category]
     ) -> None:
-        """Raise `RecordError` unless the final suggestions are the hand checks, row for row.
-        `categories` gives the code's category of each row, which "agree" stands for."""
+        """Raise `RecordError` unless the final suggestions are the hand checks, row for row, and
+        each amended note reads as its last amendment left it. `categories` gives the code's
+        category of each row, which "agree" stands for."""
         final = self.suggestions["final"]
         if set(final) != {_row_id(key) for key in categories}:
             raise RecordError("the final suggestions are not the quotes that failed the check")
@@ -85,6 +104,12 @@ class Record:
             check = checks.get(key)
             if check is None or _from_check(check, category) != final[_row_id(key)]:
                 raise RecordError(f"{key[0]} {key[1]}: the hand check is not the final suggestion")
+        latest = {amendment.row: amendment.after for amendment in self.amendments}
+        for key, check in checks.items():
+            if _row_id(key) in latest and check.note != latest[_row_id(key)]:
+                raise RecordError(
+                    f"{key[0]} {key[1]}: the note is not as its last amendment left it"
+                )
 
 
 def method_sentence(record: Record) -> str:
@@ -105,13 +130,19 @@ def method_sentence(record: Record) -> str:
 
 
 def label_note(record: Record) -> str:
-    """Who made the labels (category, meaning changed, misleads), in the owner's words, with
-    round 2's agreement from the record."""
+    """Who made the labels (category, meaning changed, misleads), and round 2's agreement from
+    the record with what limits it, in the owner's words."""
     return (
-        "Claude drafted the hand-check labels, Claude Opus reviewed them blind in two rounds "
-        f"({record.agreed(2)} of {record.rows} agreed independently), and the author approved "
-        "them; not reviewed by a lawyer."
+        "Claude drafted the hand-check labels, Claude Opus reviewed them blind in two rounds, and "
+        f"the author approved them; not reviewed by a lawyer. {record.agreed(2)} of {record.rows} "
+        "matched a fresh Claude Opus reviewer in round 2 (the same model family drafted the "
+        "labels, and the rules were written after round 1 on these rows)."
     )
+
+
+LABELLED_BY = "Claude drafted, Claude Opus reviewed, the author approved"
+"""How the labels in the record were made, in the owner's words, for
+`quotereview.hand_check_line`."""
 
 
 RECHECK_NOTE = (
@@ -155,11 +186,33 @@ def _load(folder: Path) -> Record:
         if shared:
             raise RecordError(f"{path.name}: rows judged twice in round {number}: {sorted(shared)}")
         rounds[number].update(answers)
+    amendments = _amendments(folder / AMENDMENTS)
     rows = set(suggestions["final"])
+    unknown = sorted({a.row for a in amendments} - rows)
+    if unknown:
+        raise RecordError(f"{AMENDMENTS}: rows not in the record: {unknown}")
     for name, judged in [*suggestions.items(), *((f"round {n}", r) for n, r in rounds.items())]:
         if set(judged) != rows:
             raise RecordError(f"{name} does not cover the same rows as the final suggestions")
-    return Record(suggestions, rounds)
+    return Record(suggestions, rounds, amendments)
+
+
+def _amendments(path: Path) -> tuple[Amendment, ...]:
+    """The amendments in `path`, none if there is no such file; each must change the note it
+    starts from, and start from what the one before it on the same row left."""
+    if not path.exists():
+        return ()
+    amendments = tuple(Amendment(**entry) for entry in _read(path)["amendments"])
+    left: dict[str, str] = {}
+    for amendment in amendments:
+        if amendment.before == amendment.after:
+            raise RecordError(f"{AMENDMENTS}: {amendment.row}: the amendment changes nothing")
+        if left.get(amendment.row, amendment.before) != amendment.before:
+            raise RecordError(
+                f"{AMENDMENTS}: {amendment.row}: does not start from the last amendment's note"
+            )
+        left[amendment.row] = amendment.after
+    return amendments
 
 
 def _read(path: Path) -> Any:

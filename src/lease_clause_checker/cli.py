@@ -401,9 +401,13 @@ def _write_quote_review(args: argparse.Namespace) -> int:
         for spec in MODELS
     ]
     folder = RESULTS_DIRS[FROZEN_CLAUSES_SHA256] / prompt.version
-    checks = quotereview.write_review(runs, folder, elaws.NOTICE, prompt.version)
+    record = handcheck.load_record(folder / handcheck.RECORD_DIR)
+    labelled_by = handcheck.LABELLED_BY if record else ""
+    checks = quotereview.write_review(runs, folder, elaws.NOTICE, prompt.version, labelled_by)
+    if record is not None:
+        record.check_against(checks, quotereview.failed_categories(runs))
     print(quotereview.summary_table(runs))
-    print(f"\n{quotereview.hand_check_line(runs, checks)}")
+    print(f"\n{quotereview.hand_check_line(runs, checks, labelled_by)}")
     print(f"Wrote {folder / quotereview.REVIEW_FILE}; hand checks in {quotereview.CHECKS_FILE}.")
     print(NOT_LEGAL_ADVICE)
     return 0
@@ -539,8 +543,14 @@ def _load_board(
     if len(closed_book_runs) == len(MODELS):
         folder = RESULTS_DIRS[FROZEN_CLAUSES_SHA256] / closed_book_prompt.version
         runs = list(closed_book_runs.values())
-        checks = quotereview.write_review(runs, folder, elaws.NOTICE, closed_book_prompt.version)
         record = handcheck.load_record(folder / handcheck.RECORD_DIR)
+        checks = quotereview.write_review(
+            runs,
+            folder,
+            elaws.NOTICE,
+            closed_book_prompt.version,
+            handcheck.LABELLED_BY if record else "",
+        )
         if record is not None:
             record.check_against(checks, quotereview.failed_categories(runs))
     board = scoreboard.Board(

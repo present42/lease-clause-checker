@@ -123,5 +123,5 @@ def test_the_committed_exhibits_are_the_three_chosen_answers() -> None:
     assert [(e.model, e.clause, e.label) for e in loaded] == [
         ("gemini-3.8-flash", "c09", "Dropped the limits"),
         ("claude-opus-5-5", "c26", "Quoted the wrong rule"),
-        ("claude-haiku-5-5", "c29", "Turned a condition into a ban"),
+        ("claude-haiku-5-5", "c15", "Left out who's covered"),
     ]

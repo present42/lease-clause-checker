@@ -1,5 +1,7 @@
+import re
 from dataclasses import replace
 from datetime import UTC, datetime
+from html.parser import HTMLParser
 from pathlib import Path
 from typing import Any
 
@@ -149,6 +151,7 @@ EXHIBIT = exhibits.Exhibit(
     clause="c01",
     label="Narrowed it",
     punchline="Verdict: void, right. It is narrower.",
+    note="Caught in round 2.",
 )
 
 
@@ -323,13 +326,23 @@ def test_the_story_holds_the_short_versions_numbers_and_answer() -> None:
         "misleads": 1,
         "unsure": 0,
     }
+    # The one misleading quote (the exhibit's) came with a right closed-book verdict.
+    assert story["base_rate"] == {
+        "right": sum(row["without_right"] for row in story["rows"]),
+        "misleading": 1,
+        "judged": 8,
+        "means": scoreboard.MISLEADS_MEANS,
+    }
     [example] = story["exhibits"]
-    assert {k: example[k] for k in ("model", "clause", "label", "punchline", "verdict")} == {
+    keys = ("model", "clause", "label", "punchline", "note", "verdict", "reason")
+    assert {k: example[k] for k in keys} == {
         "model": HAIKU.key,
         "clause": "c01",
         "label": "Narrowed it",
         "punchline": "Verdict: void, right. It is narrower.",
+        "note": "Caught in round 2.",
         "verdict": "void",
+        "reason": "r",  # the saved answer's own reason
     }
     assert example["alignment"]["section"] == "27"
     assert example["alignment"]["subsection"] == "(2)"
@@ -523,6 +536,7 @@ def test_write_replaces_an_earlier_export_and_names_the_repository(tmp_path: Pat
         "data.json",
         "explorer.css",
         "explorer.js",
+        "fonts",
         "index.html",
         "og.png",
     ]
@@ -534,6 +548,53 @@ def test_write_replaces_an_earlier_export_and_names_the_repository(tmp_path: Pat
     assert 'content="https://example.org/p/og.png"' in page
     assert explorer.OG_ALT_SLOT not in page
     assert 'content="Model &amp; Co&#x27;s closed-book quote of s. 26(1) of the Residential' in page
+
+
+class FetchedByPage(HTMLParser):
+    """The URLs a page's markup makes the browser fetch."""
+
+    def __init__(self) -> None:
+        super().__init__()
+        self.urls: list[str] = []
+
+    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
+        wanted = {"link": "href", "script": "src", "img": "src"}.get(tag)
+        found = dict(attrs).get(wanted) if wanted else None
+        if found:
+            self.urls.append(found)
+
+
+def test_the_page_loads_nothing_from_another_site_and_every_file_it_loads_is_exported(
+    tmp_path: Path,
+) -> None:
+    site = tmp_path / "site"
+    data: dict[str, Any] = {
+        "settings": {"repository": "https://example.org/repo", "pages": "https://example.org/p/"},
+        "models": [{"key": "m", "name": "M"}],
+        "story": {
+            "exhibits": [{"model": "m", "alignment": {"section": "26", "subsection": "(1)"}}]
+        },
+    }
+    explorer.write(data, site)
+    # What the browser fetches: every <link>, <script>, <img> and the stylesheet's url()s and
+    # @imports, and what the script fetch()es; not links a reader follows or the og: tags.
+    fetched = FetchedByPage()
+    fetched.feed((site / "index.html").read_text())
+    css = (site / "explorer.css").read_text()
+    fonts = re.findall(r"url\(\s*['\"]?([^'\")\s]+)", css)
+    script = (site / "explorer.js").read_text()
+    fetches = re.findall(r"fetch\(\s*['\"`]([^'\"`]+)", script)
+    assert "@import" not in css
+    assert len(fonts) == 8
+    assert fetches == ["data.json"]
+    assert "fonts/SourceSerif4-Latin.woff2" in fetched.urls
+    for path in [*fetched.urls, *fonts]:
+        if path.startswith("data:"):
+            continue
+        assert "//" not in path, path
+        assert (site / path).is_file(), path
+    for licence in ("OFL-SourceSerif4.txt", "OFL-IBMPlex.txt"):
+        assert "SIL Open Font License" in (site / "fonts" / licence).read_text()
 
 
 def test_write_refuses_a_folder_with_no_earlier_export(tmp_path: Path) -> None:

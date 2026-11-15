@@ -23,7 +23,7 @@ Redline of s. 26(1) against the quote, from a run with no statute text in the pr
 
 With the statute in the prompt, every quote is checked and the model is asked once more if it fails: the verdicts are the final answers, the quotes the first. Quotes count only answers with a verdict, and word for word means in the section the answer cites.
 
-**The 59 closed-book quotes that failed,** from all four models: 51 state a real provision of the Act; 40 of those change the rule, and 10 of those 40 would mislead about the clause they were quoted for. Claude drafted the hand-check labels, Claude Opus reviewed them blind in two rounds (46 of 59 agreed independently), and the author approved them; not reviewed by a lawyer. Still to come, by Wednesday 18 November 2026: the author's own re-check of 20 rows. It is not fully blind, as the author had seen some of Claude's suggestions.
+**The 59 closed-book quotes that failed,** from all four models: 51 state a real provision of the Act; 40 of those change the rule, and 10 of those 40 would mislead about the clause they were quoted for. At least 10 of the 133 right closed-book verdicts came with a quote that would mislead: one that leads to the wrong verdict for that clause, or hides the reason the verdict is right. Only the 59 quotes that failed the word-for-word check were judged. Claude drafted the hand-check labels, Claude Opus reviewed them blind in two rounds, and the author approved them; not reviewed by a lawyer. 46 of 59 matched a fresh Claude Opus reviewer in round 2 (the same model family drafted the labels, and the rules were written after round 1 on these rows). Still to come, by Wednesday 18 November 2026: the author's own re-check of 20 rows. It is not fully blind, as the author had seen some of Claude's suggestions.
 <!-- short:end -->
 
 **[The explorer](docs/details.md#explore-the-saved-answers)**: every saved answer, each quote set
@@ -76,5 +76,7 @@ content words.
   `get_section`, `verify_quote` and `check_text`.
 - [Full details](docs/details.md): the method, every result table, the hand check, related
   work and limitations.
-- Licence: [MIT](LICENSE). Statute text: © King's Printer for Ontario, 2006, not an official
+- Licence: [MIT](LICENSE), except the explorer's fonts in
+  [explorer_assets/fonts/](src/lease_clause_checker/explorer_assets/fonts/), which are under the
+  SIL Open Font License 1.1. Statute text: © King's Printer for Ontario, 2006, not an official
   version.

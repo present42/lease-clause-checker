@@ -2,7 +2,7 @@
 # leads with the first. `make report` and `lcc site` refuse each unless its verdict is right and
 # the hand check found that its quote changes what the Act says and would mislead on the clause,
 # and unless its punchline starts by stating that verdict. `tag` marks one list item of the
-# Act's subsection with a note.
+# Act's subsection with a note; `note` is one line shown under the exhibit.
 - model: gemini-3.8-flash
   clause: c09
   label: Dropped the limits
@@ -10,6 +10,9 @@
     Verdict: allowed, right. Read alone, the quote lets a landlord walk in at any time; the Act
     allows entry at any time without written notice only in an emergency or with the tenant's
     consent.
+  note: >-
+    Round 1 judged this a harmless cut; a round-2 reviewer, under the new rules on sentence
+    endings, found it misleads (borderline, medium confidence).
 - model: claude-opus-5-5
   clause: c26
   label: Quoted the wrong rule
@@ -20,8 +23,9 @@
     item: (b)
     note: what this clause is about
 - model: claude-haiku-5-5
-  clause: c29
-  label: Turned a condition into a ban
+  clause: c15
+  label: Left out who's covered
   punchline: >-
-    Verdict: allowed, right. Read alone, the quote bans rent increases outright; s. 116(1) only
-    requires at least 90 days' written notice first.
+    Verdict: allowed, right. Read alone, the quote makes the tenant answer only for their own
+    conduct; s. 34, like this clause, also covers another occupant and a person the tenant lets
+    in.

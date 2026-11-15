@@ -1,6 +1,16 @@
 /* The marked-up statute: cool paper, black ink and hairlines. The only colour is the markup
    (red for the Act's words a quote leaves out, blue for the quote's own) and one green for a
    right verdict. */
+/* Fonts served with the page (fonts/README.md says where each comes from), so it renders
+   offline and asks no font service for anything. */
+@font-face { font-family: "Source Serif 4"; font-style: normal; font-weight: 200 900; font-display: swap; src: url("fonts/SourceSerif4-Latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "Source Serif 4"; font-style: italic; font-weight: 200 900; font-display: swap; src: url("fonts/SourceSerif4-Italic-Latin.woff2") format("woff2"); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/IBMPlexSans-Regular-Latin1.woff2") format("woff2"); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
+@font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/IBMPlexSans-Medium-Latin1.woff2") format("woff2"); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
+@font-face { font-family: "IBM Plex Sans"; font-style: normal; font-weight: 600; font-display: swap; src: url("fonts/IBMPlexSans-SemiBold-Latin1.woff2") format("woff2"); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
+@font-face { font-family: "IBM Plex Sans"; font-style: italic; font-weight: 400; font-display: swap; src: url("fonts/IBMPlexSans-Italic-Latin1.woff2") format("woff2"); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
+@font-face { font-family: "IBM Plex Mono"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/IBMPlexMono-Regular-Latin1.woff2") format("woff2"); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
+@font-face { font-family: "IBM Plex Mono"; font-style: normal; font-weight: 500; font-display: swap; src: url("fonts/IBMPlexMono-Medium-Latin1.woff2") format("woff2"); unicode-range: U+0000, U+000D, U+0020-007E, U+00A0-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2013-2014, U+2018-201A, U+201C-201E, U+2020-2022, U+2026, U+2030, U+2039-203A, U+2044, U+2074, U+20AC, U+2122, U+2212, U+FB01-FB02; }
 :root {
   color-scheme: light dark;
   --paper: #f3f4f6;
@@ -78,12 +88,17 @@ main:focus { outline: none; }
 .hero { padding-top: var(--s6); padding-bottom: var(--s5); }
 h1 { margin: 0; font: 600 clamp(38px, 5.4vw, 60px)/1.04 var(--serif); letter-spacing: -0.015em; }
 .lede { margin: var(--s3) 0 0; max-width: 72ch; font-size: 18px; line-height: 1.55; color: var(--graphite); }
-body[data-view="story"] .hero { padding-top: var(--s5); padding-bottom: var(--s4); }
+body[data-view="story"] .hero { padding-top: var(--s4); padding-bottom: var(--s3); }
 body[data-view="story"] h1 { font-size: clamp(36px, 4.2vw, 54px); }
 /* On the other views the title is a quiet line, so the view's own heading leads. */
 body:not([data-view="story"]) .hero { padding-top: var(--s4); padding-bottom: 0; }
 body:not([data-view="story"]) .hero h1 { font: 500 12px/1.4 var(--mono); letter-spacing: 0.06em; text-transform: uppercase; color: var(--graphite); }
-body:not([data-view="story"]) .hero .lede, body:not([data-view="story"]) .hero .eyebrow { display: none; }
+/* The base rate, with what "would mislead" means, on the first screen. */
+.base-rate { margin: var(--s2) 0 0; max-width: 72ch; font-size: 15px; line-height: 1.45; color: var(--graphite); }
+.base-rate:empty { display: none; }
+.base-rate b { color: var(--ink); font-weight: 600; }
+.base-rate dfn { font-style: italic; color: var(--ink); }
+body:not([data-view="story"]) .hero .lede, body:not([data-view="story"]) .hero .eyebrow, body:not([data-view="story"]) .hero .base-rate { display: none; }
 @media (max-width: 600px) {
   .hero { padding-top: var(--s5); padding-bottom: var(--s4); }
   .lede { font-size: 16px; }
@@ -169,6 +184,13 @@ h3 { margin: var(--s6) 0 var(--s2); font: 600 20px/1.3 var(--serif); }
 .punchline { margin: var(--s4) 0 0; padding: var(--s3) 0 0; border-top: 2px solid var(--ink); font: 400 19px/1.5 var(--serif); transition: opacity 0.6s ease; }
 .exhibit:not(.lead) .punchline { font-size: 17px; }
 .punchline.waiting { opacity: 0; }
+.exhibit-note { margin: var(--s2) 0 0; font-size: 14px; line-height: 1.5; color: var(--graphite); transition: opacity 0.6s ease; }
+/* The note is about the punchline, so it waits for it. */
+.punchline.waiting + .exhibit-note { opacity: 0; }
+.exhibit-reason { margin: var(--s3) 0 0; font-size: 14px; }
+.exhibit-reason summary { cursor: pointer; width: fit-content; font: 500 13px/1.4 var(--sans); color: var(--ink); }
+.exhibit-reason summary:focus-visible { outline: 2px solid var(--insert); outline-offset: 2px; }
+.exhibit-reason blockquote { margin: var(--s2) 0 0; padding: var(--s2) var(--s3); border-left: 2px solid var(--rule); font: 400 15px/1.55 var(--serif); color: var(--ink); }
 .more { margin: var(--s3) 0 0; font-size: 14px; display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); }
 .exhibits-note { margin: 0 0 var(--s8); max-width: 90ch; font-size: 14px; color: var(--graphite); }
 @media (max-width: 600px) { .exhibits-note { margin-bottom: var(--s7); } }
@@ -177,9 +199,10 @@ h3 { margin: var(--s6) 0 var(--s2); font: 600 20px/1.3 var(--serif); }
   .replay-bar button { min-height: 44px; }
   .replay-status { padding-top: 12px; }
   .more a, .notice-bar a, .method a, .exhibits-note a { display: inline-block; padding-block: 11px; }
+  .exhibit-reason summary { padding-block: 12px; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .quote-box del, .quote-box ins, .act-box .tok, .punchline { transition: none; }
+  .quote-box del, .quote-box ins, .act-box .tok, .punchline, .exhibit-note { transition: none; }
 }
 
 /* ---- The numbers band ---- */
