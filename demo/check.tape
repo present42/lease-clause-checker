@@ -32,9 +32,9 @@ Type "clear" Enter
 Sleep 300ms
 Show
 
-# Without it: Gemini 3.8 Flash's closed-book quote for clause c09, which fails and leaves out
-# the two cases in which s. 26(1) allows entry without written notice.
-Type@20ms 'uv run lcc quote check 26 "A landlord may enter the rental unit at any time without written notice"'
+# Without it: Claude Opus 5.5's closed-book quote for clause c26, which fails: it rewords the
+# start of s. 108 and leaves out paragraph (b), on automatic debiting, which the clause is about.
+Type@20ms 'uv run lcc quote check 108 "A landlord shall not require a tenant or prospective tenant to provide post-dated cheques or other negotiable instruments for payment of rent"'
 Sleep 400ms
 Enter
 Sleep 9s

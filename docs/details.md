@@ -253,8 +253,8 @@ python3 -m http.server 8000 --directory site     # then open http://localhost:80
 ```
 
 It opens on three closed-book answers with a right verdict and a quote that, by the hand check,
-changes what the Act says and would mislead on the clause: Gemini 3.8 Flash on c09, Claude
-Opus 5.5 on c26 and Claude Haiku 5.5 on c15, named with a label and a punchline in
+changes what the Act says and would mislead on the clause: Claude Opus 5.5 on c26, Gemini
+3.8 Flash on c09 and Claude Haiku 5.5 on c15, named with a label and a punchline in
 [exhibits.yaml](../src/lease_clause_checker/exhibits.yaml). `make report` and `lcc site` refuse
 an exhibit unless its verdict is right, its hand check says yes to both questions, and its
 punchline starts by stating the verdict; the README leads with the first. Each shows the clause

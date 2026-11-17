@@ -1,3 +1,5 @@
+import json
+import re
 from pathlib import Path
 
 import pytest
@@ -17,6 +19,7 @@ VISITS = Section(
     "BK32",
 )
 STOPS_EARLY = "A landlord may visit the unit at any hour without notice"
+ROOT = Path(__file__).parents[1]
 
 
 def replayed(quote: str, tag: Tag | None = None) -> tuple[quotediff.Alignment, exhibits.Replay]:
@@ -121,7 +124,19 @@ def test_the_committed_exhibits_are_the_three_chosen_answers() -> None:
     loaded = exhibits.load()
 
     assert [(e.model, e.clause, e.label) for e in loaded] == [
-        ("gemini-3.8-flash", "c09", "Dropped the limits"),
         ("claude-opus-5-5", "c26", "Quoted the wrong rule"),
+        ("gemini-3.8-flash", "c09", "Dropped the limits"),
         ("claude-haiku-5-5", "c15", "Left out who's covered"),
     ]
+
+
+def test_the_demo_gif_checks_the_lead_exhibits_saved_quote() -> None:
+    """The README leads with the first exhibit, and its GIF ends on `lcc quote check`: the two
+    must show the same answer."""
+    lead = exhibits.load()[0]
+    tape = (ROOT / "demo" / "check.tape").read_text(encoding="utf-8")
+    [(section, quote)] = re.findall(r'lcc quote check (\S+) "([^"]+)"', tape)
+    record = ROOT / "results" / "closedbook-v1+conventions-v1" / lead.model / f"{lead.clause}.json"
+    answer = json.loads(json.loads(record.read_text(encoding="utf-8"))["text"])
+
+    assert (section, quote) == (answer["section"], answer["quote"])
