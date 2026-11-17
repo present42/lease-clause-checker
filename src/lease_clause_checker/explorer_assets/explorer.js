@@ -607,6 +607,14 @@ function exhibitArticle(ex, n, lead) {
   const alignment = ex.alignment;
   const where = `s. ${alignment.section}${alignment.subsection}`;
   const player = new Player(ex);
+  // What follows the replay. The lead keeps it in a block of its own, which a wide screen sets
+  // under the clause, beside the boxes, so that the punchline is on the first screen.
+  const after = [
+    el("p", { class: "punchline waiting" }, ex.punchline),
+    ex.note ? el("p", { class: "exhibit-note" }, ex.note) : null,
+    el("details", { class: "exhibit-reason" }, el("summary", {}, "The model's reason"), el("blockquote", {}, ex.reason)),
+    el("p", { class: "more" }, el("a", { href: `#/closed/${ex.clause}/${ex.model}` }, "This answer in the grid"), el("a", { href: `#/exhibit/${ex.model}` }, `${model.name}'s other misquotes`)),
+  ];
   const article = el(
     "article",
     { class: lead ? "exhibit lead" : "exhibit", "aria-labelledby": `exhibit-${n}` },
@@ -630,11 +638,9 @@ function exhibitArticle(ex, n, lead) {
         el("button", { type: "button", class: "next", "aria-keyshortcuts": "ArrowRight" }, "Next change"),
         el("p", { class: "replay-status", "aria-live": "polite" }),
       ),
-      el("p", { class: "punchline waiting" }, ex.punchline),
-      ex.note ? el("p", { class: "exhibit-note" }, ex.note) : null,
-      el("details", { class: "exhibit-reason" }, el("summary", {}, "The model's reason"), el("blockquote", {}, ex.reason)),
-      el("p", { class: "more" }, el("a", { href: `#/closed/${ex.clause}/${ex.model}` }, "This answer in the grid"), el("a", { href: `#/exhibit/${ex.model}` }, `${model.name}'s other misquotes`)),
+      ...(lead ? [] : after),
     ),
+    lead ? el("div", { class: "exhibit-after" }, ...after) : null,
   );
   player.attach(article);
   PLAYERS.push(player);
@@ -661,14 +667,17 @@ function watchExhibits() {
     (entries) => {
       for (const entry of entries) {
         const player = PLAYERS.find((p) => p.quoteBox === entry.target);
-        if (entry.isIntersecting && player && !seen.has(player)) {
+        // In view: 60% of the box, or 100 pixels of it (about three lines) when it is taller:
+        // the lead's box starts as a full copy of its subsection, and shrinks as the edits play.
+        const shown = entry.intersectionRect.height >= Math.min(100, 0.6 * entry.boundingClientRect.height);
+        if (entry.isIntersecting && shown && player && !seen.has(player)) {
           seen.set(player, true);
           if (!REDUCED.matches) queue.push(player);
         }
       }
       playNext();
     },
-    { threshold: 0.6 },
+    { threshold: Array.from({ length: 21 }, (_, i) => i / 20) },
   );
   const view = new IntersectionObserver(
     (entries) => {
@@ -1127,6 +1136,22 @@ function cardView() {
   ];
 }
 
+// Shrinks the card's type, in steps, until the whole card fits its 630 pixels: a long subsection
+// would otherwise run off the image. Measured once the card's three fonts have loaded.
+const CARD_FONTS = ['500 20px "IBM Plex Mono"', '600 54px "Source Serif 4"', '400 18px "IBM Plex Sans"'];
+function fitCard(main) {
+  const padding = parseFloat(getComputedStyle(main).paddingTop) + parseFloat(getComputedStyle(main).paddingBottom);
+  const room = main.clientHeight - padding;
+  const used = () => main.lastElementChild.getBoundingClientRect().bottom - main.firstElementChild.getBoundingClientRect().top;
+  let scale = 1;
+  main.style.setProperty("--card-scale", scale);
+  while (used() > room && scale > 0.5) {
+    scale = Math.round((scale - 0.05) * 100) / 100;
+    main.style.setProperty("--card-scale", scale);
+  }
+  if (used() > room) console.warn("The card does not fit 1200 by 630 pixels even at half size.");
+}
+
 // ---- Routing ----------------------------------------------------------------------------------
 
 function route(event) {
@@ -1151,6 +1176,14 @@ function route(event) {
   document.body.classList.toggle("card-mode", current === "card");
   document.body.dataset.view = current;
   if (current === "story") watchExhibits();
+  if (current === "card") {
+    Promise.all(CARD_FONTS.map((font) => document.fonts.load(font)))
+      .then(() => document.fonts.ready)
+      .then(() => {
+        if (document.body.dataset.view === "card") fitCard(main);
+      });
+  }
+  else main.style.removeProperty("--card-scale");
   markOverflow();
   for (const tab of document.querySelectorAll(".tabs a")) {
     if (tab.dataset.view === current) {

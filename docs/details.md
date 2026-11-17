@@ -290,7 +290,8 @@ IBM Plex Sans and IBM Plex Mono, under the SIL Open Font License) are served wit
 file comes from.
 
 The preview image for links to the page, `explorer_assets/og.png`, is the page's `#/card` view:
-the first exhibit's redline and punchline. `make og` remakes it (it needs Google Chrome).
+the first exhibit's redline and punchline, its type made smaller in steps until the whole card
+fits 1200 by 630 pixels. `make og` remakes it (it needs Google Chrome).
 
 `lcc site` builds it from the same scored answers as `make report`: the four models' answers on
 the main and stress sets, by every method. It leaves out Gemini 4 Carbon's records, the
