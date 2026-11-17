@@ -26,9 +26,9 @@ With the statute in the prompt, every quote is checked and the model is asked on
 **The 59 closed-book quotes that failed,** from all four models: 51 state a real provision of the Act; 40 of those change the rule, and 10 of those 40 would mislead about the clause they were quoted for. At least 10 of the 133 right closed-book verdicts came with a quote that would mislead: one that leads to the wrong verdict for that clause, or hides the reason the verdict is right. Only the 59 quotes that failed the word-for-word check were judged. Claude drafted the hand-check labels, Claude Opus reviewed them blind in two rounds, and the author approved them; not reviewed by a lawyer. 46 of 59 matched a fresh Claude Opus reviewer in round 2 (the same model family drafted the labels, and the rules were written after round 1 on these rows). Still to come, by Wednesday 18 November 2026: the author's own re-check of 20 rows. It is not fully blind, as the author had seen some of Claude's suggestions.
 <!-- short:end -->
 
-**[The explorer](docs/details.md#explore-the-saved-answers)**: every saved answer, each quote set
-against the Act, and the hand check, in the browser (not published yet; run it locally as that
-section says).
+**[The explorer](https://present42.github.io/lease-clause-checker/)**: every saved answer, each
+quote set against the Act, and the hand check, in the browser. It replays the saved answers and
+calls no model ([how it is built](docs/details.md#explore-the-saved-answers)).
 
 ## Try it
 

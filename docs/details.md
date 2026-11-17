@@ -244,8 +244,10 @@ not see your shell's `PATH`, so give the full path to `uv` (from `which uv`):
 
 ### Explore the saved answers
 
-The explorer is a static page that replays the saved answers; it calls no model. It is not
-published yet. To view it locally:
+The explorer is a static page that replays the saved answers; it calls no model. It is
+published at <https://present42.github.io/lease-clause-checker/>: the `gh-pages` branch holds
+the `lcc site` export of a commit on `main` (with a `.nojekyll` file), and a new export pushed
+there replaces it at the same address. To view it locally:
 
 ```sh
 uv run lcc site                                  # writes site/ (gitignored)
