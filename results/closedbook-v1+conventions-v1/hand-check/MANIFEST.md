@@ -11,7 +11,7 @@ Assembled 2026-11-15 from the session that ran the check. The reviewers' start t
 4. **Round 2 review** (2026-11-15 01:15 UTC). Two more fresh reviewers (reviewer-2a, reviewer-2b), blind, same split, with `rules.md`.
    - Agreement with `claude_suggestions_round2.json`: **46 of 59 rows** (13 differ). On 12 of the 13, the reviewer's answer was adopted; on Haiku c34 Claude's category was kept (both questions agreed).
 5. **Final** (`claude_suggestions_final.json`), approved by the owner on 2026-11-15. Because it adopts those 12 answers, it differs from round 2's reviewers only on Haiku c34; that is not an agreement figure. The figure to report is round 2's 46 of 59, with its limits: the same model family drafted the labels, and the rules were written after round 1 on these rows.
-6. **Amendments by the author** (`amendments.json`), 2026-11-15, after the record was assembled. Two notes in `../quote-hand-check.csv` were reworded: Opus c26's, to record that the quote gives paragraph (a) of s. 108 for a clause about paragraph (b), and Opus c23's, out of the first person. Each entry keeps the note before and after. No category or answer changed, and every file above is as it was.
+6. **Amendments by the author** (`amendments.json`), after the record was assembled. On 2026-11-15 two notes in `../quote-hand-check.csv` were reworded: Opus c26's, to record that the quote gives paragraph (a) of s. 108 for a clause about paragraph (b), and Opus c23's, out of the first person. On 2026-11-16 Haiku c25's note dropped its comparison with Opus c25, whose quote stops before any rule, and now describes the omission on its own. Each entry keeps the note before and after. No category or answer changed, and every file above is as it was.
 
 ## How rows were compared
 

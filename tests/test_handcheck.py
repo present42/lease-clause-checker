@@ -187,6 +187,7 @@ def test_the_saved_record_gives_the_published_agreement() -> None:
     assert [a.row for a in record.amendments] == [
         "claude-opus-5-5__c26",
         "claude-opus-5-5__c23",
+        "claude-haiku-5-5__c25",
     ]
 
 

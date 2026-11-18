@@ -15,6 +15,14 @@
    "by": "the author",
    "date": "2026-11-15",
    "why": "Reworded from the first person: the notes are Claude's drafts, approved by the author."
+  },
+  {
+   "row": "claude-haiku-5-5__c25",
+   "before": "Corrected after a closer look. The code lined it up with s. 106(4) through stock words, but the distinctive part, “provide a postdated cheque”, is s. 108: “Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to, (a) provide post-dated cheques or other negotiable instruments for payment of rent”. So it is s. 108’s rule, cited as s. 106, and it drops “nor a tenancy agreement”, like Opus c25.",
+   "after": "Corrected after a closer look. The code lined it up with s. 106(4) through stock words, but the distinctive part, “provide a postdated cheque”, is s. 108: “Neither a landlord nor a tenancy agreement shall require a tenant or prospective tenant to, (a) provide post-dated cheques or other negotiable instruments for payment of rent”. So it is s. 108’s rule, cited as s. 106. It leaves out “nor a tenancy agreement”, the words that cover a lease term such as this clause.",
+   "by": "the author",
+   "date": "2026-11-16",
+   "why": "The note compared the quote with Opus c25, whose quote stops before any rule; it now describes the omission on its own."
   }
  ]
 }
