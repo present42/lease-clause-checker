@@ -331,6 +331,7 @@ table.numbers { width: 100%; border-collapse: collapse; font-size: 15px; font-va
 .unsure { color: var(--graphite); }
 .check-line { margin: 0 0 10px; font-size: 15px; }
 .check-line.warning { border-left: 3px solid var(--strike); padding-left: 8px; }
+.redline .gap-line { margin: 0 0 var(--s2); }
 .redline { border: 1px solid var(--rule); border-left: 3px solid var(--ink); padding: var(--s3) var(--s4); min-width: 0; background: var(--sheet); }
 .redline .statute { font-size: 18px; }
 .redline-title { margin: 0 0 var(--s1); font: 500 12px/1.5 var(--mono); letter-spacing: 0.03em; color: var(--graphite); }

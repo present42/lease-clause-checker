@@ -25,6 +25,7 @@ from typing import Any
 from urllib.parse import quote
 
 from lease_clause_checker import (
+    alignment_gaps,
     elaws,
     exhibits,
     handcheck,
@@ -71,13 +72,15 @@ def build(
     rule_sections: int,
     closed_book_folder: str,
     configured: Sequence[exhibits.Exhibit],
+    gaps: alignment_gaps.Gaps,
 ) -> dict[str, Any]:
     """Everything the page shows: the opening story with its exhibits (`configured`), clauses,
     answers with their alignments, the hand check, the subsections the alignments use, and the
     heading and link of every section cited. `prompts` holds each method's prompt version;
     `rule_sections` is how many sections the pipeline's prompt holds; `closed_book_folder` is
     where the closed-book answers and their hand check are, relative to the repository, such as
-    "results/closedbook-v1"."""
+    "results/closedbook-v1". `gaps` lists the reviewed quotes whose redline lines up with a
+    different provision than the review names; each gets the review's provision and the issue."""
     if not board.closed_book:
         raise SiteExportError("no closed-book run is saved, so the explorer has no story")
     ids = [c.id for scored in (board.main, board.stress) for c in scored.clauses]
@@ -89,6 +92,7 @@ def build(
         for set_name, scored in (("main", board.main), ("stress", board.stress))
         for answer in _set_answers(set_name, scored, board, sections, used)
     ]
+    _mark_gaps(answers, gaps, configured)
     clauses = [
         _clause(clause, set_name)
         for set_name, scored in (("main", board.main), ("stress", board.stress))
@@ -414,6 +418,53 @@ def _set_answers(
             yield _answer(set_name, "closedbook", spec.key, s) | {"attempts": [attempt]}
 
 
+def _mark_gaps(
+    answers: list[dict[str, Any]],
+    gaps: alignment_gaps.Gaps,
+    configured: Sequence[exhibits.Exhibit],
+) -> None:
+    """Give each listed quote's review the provision it names and the issue; raise unless the
+    quote is reviewed, its redline is shown, the note names that provision, the code's
+    alignment is with neither that provision nor one inside it or around it, and the quote is
+    not an exhibit (whose replay has no room for the line)."""
+    shown = {(e.model, e.clause) for e in configured}
+    reviewed = {
+        (a["model"], a["clause"]): a["attempts"][0]
+        for a in answers
+        if a["method"] == "closedbook" and "hand_check" in a["attempts"][0]
+    }
+    for gap in gaps.quotes:
+        where = f"{gap.model} {gap.clause}"
+        if (gap.model, gap.clause) in shown:
+            raise SiteExportError(f"{where} is an exhibit, which can't show the alignment gap")
+        attempt = reviewed.get((gap.model, gap.clause))
+        if attempt is None:
+            raise SiteExportError(f"{where} is listed as an alignment gap but was not reviewed")
+        alignment = attempt.get("alignment")
+        if alignment is None or not (alignment["lined_up"] or attempt["check"] == "verified"):
+            raise SiteExportError(f"{where}: no redline is shown, so there is no alignment gap")
+        code = f"{alignment['section']}{alignment['subsection']}"
+        if _nested(code, gap.review):
+            raise SiteExportError(
+                f"{where}: the code lines it up with s. {code}, which holds or is part of "
+                f"s. {gap.review}"
+            )
+        named = re.compile(rf"s\. {re.escape(gap.review)}(?![\d(])")
+        if not named.search(attempt["hand_check"]["note"]):
+            raise SiteExportError(f"{where}: the review's note doesn't name s. {gap.review}")
+        attempt["hand_check"]["realigned"] = {
+            "review": gap.review,
+            "issue": gaps.issue,
+            "issue_url": f"{REPOSITORY}/issues/{gaps.issue}",
+        }
+
+
+def _nested(a: str, b: str) -> bool:
+    """Whether provisions `a` and `b`, such as "37(4)" and "37(4)(b)", are one and the same or
+    one holds the other."""
+    return a == b or a.startswith(f"{b}(") or b.startswith(f"{a}(")
+
+
 def _answer(set_name: str, method: str, model: str, score: Score) -> dict[str, Any]:
     return {
         "set": set_name,
@@ -492,7 +543,7 @@ def _redline(alignment: Alignment) -> list[list[Any]]:
     return [list(run) for run in alignment.runs(whole=True)]
 
 
-def _hand(check: quotereview.HandCheck, classified: Classified) -> dict[str, str]:
+def _hand(check: quotereview.HandCheck, classified: Classified) -> dict[str, Any]:
     category = check.category(classified.category)
     return {
         "code_category": quotediff.LABELS[classified.category],

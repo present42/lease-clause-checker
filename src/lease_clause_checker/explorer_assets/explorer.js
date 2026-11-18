@@ -235,9 +235,24 @@ function redline(alignment, attempt) {
   return el(
     "div",
     { class: "redline" },
+    gapLine(alignment, attempt),
     el("p", { class: "redline-title" }, title),
     el("p", { class: "statute" }, renderRuns(tokens, (i) => tokens[i][2])),
     el("p", { class: "notice" }, legendShort(), " ", DATA.notice),
+  );
+}
+
+// Where the code lined a reviewed quote up with another provision than the review names (a known
+// gap, listed in the export), one line says so above the redline, which still shows.
+function gapLine(alignment, attempt) {
+  const gap = attempt && attempt.hand_check && attempt.hand_check.realigned;
+  if (!gap) return null;
+  return el(
+    "p",
+    { class: "check-line warning gap-line" },
+    `The code lined this quote up with s.\u00a0${alignment.section}${alignment.subsection}; the review reads it as s.\u00a0${gap.review}. Known gap: issue `,
+    el("a", { href: gap.issue_url }, `#${gap.issue}`),
+    ".",
   );
 }
 

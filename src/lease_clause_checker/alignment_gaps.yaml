@@ -1,0 +1,15 @@
+# Reviewed closed-book quotes whose redline the code lines up with a different provision than
+# the review's note names: the stock-phrase gap in issue 2. The explorer says so in one line
+# above each of these redlines and still shows the redline. `review` is the provision the note
+# names; the export checks that the note names it and that the code's provision differs.
+issue: 2
+quotes:
+  - model: claude-haiku-5-5
+    clause: c25
+    review: "108"
+  - model: gemini-3.8-flash
+    clause: c18
+    review: "37(4)"
+  - model: gemini-4-argon
+    clause: c24
+    review: "106(3)"

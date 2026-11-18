@@ -7,7 +7,14 @@ from typing import Any
 
 import pytest
 
-from lease_clause_checker import exhibits, explorer, handcheck, quotediff, scoreboard
+from lease_clause_checker import (
+    alignment_gaps,
+    exhibits,
+    explorer,
+    handcheck,
+    quotediff,
+    scoreboard,
+)
 from lease_clause_checker.clauses import Clause
 from lease_clause_checker.closedbook import ClosedBookResult
 from lease_clause_checker.elaws import CachedAct
@@ -155,9 +162,12 @@ EXHIBIT = exhibits.Exhibit(
 )
 
 
+NO_GAPS = alignment_gaps.Gaps(issue=2, quotes=())
+
+
 def mini_data(board: Board | None = None) -> dict[str, Any]:
     return explorer.build(
-        board or mini_board(), SECTIONS, ACT, PROMPTS, 18, "results/c-v1", (EXHIBIT,)
+        board or mini_board(), SECTIONS, ACT, PROMPTS, 18, "results/c-v1", (EXHIBIT,), NO_GAPS
     )
 
 
@@ -699,3 +709,101 @@ def test_an_export_stops_if_a_model_has_no_saved_calls() -> None:
 
     with pytest.raises(explorer.SiteExportError, match="no saved calls"):
         mini_data(replace(board, main=replace(board.main, runs=runs), closed_book=closed))
+
+
+OPUS = MODELS[1]
+
+
+def gap_data(note: str, clause_id: str, review: str, model: str = OPUS.key) -> dict[str, Any]:
+    """The mini export, with Opus's c01 review note set to `note`, listing `model`'s
+    `clause_id` as lined up with another provision than the review's `review`. The exhibit is
+    Haiku's c01."""
+    board = mini_board()
+    checks = dict(board.quote_checks)
+    checks[OPUS.key, "c01"] = replace(checks[OPUS.key, "c01"], note=note)
+    gaps = alignment_gaps.Gaps(
+        issue=2, quotes=(alignment_gaps.Gap(model=model, clause=clause_id, review=review),)
+    )
+    return explorer.build(
+        replace(board, quote_checks=checks),
+        SECTIONS,
+        ACT,
+        PROMPTS,
+        18,
+        "results/c-v1",
+        (EXHIBIT,),
+        gaps,
+    )
+
+
+def test_a_listed_alignment_gap_gives_the_reviews_provision_and_the_issue() -> None:
+    data = gap_data("A rewording of s. 27(1).", "c01", "27(1)")
+
+    [listed] = answer(data, "closedbook", "c01", OPUS.key)["attempts"]
+    assert (listed["alignment"]["section"], listed["alignment"]["subsection"]) == ("27", "(2)")
+    assert listed["hand_check"]["realigned"] == {
+        "review": "27(1)",
+        "issue": 2,
+        "issue_url": f"{explorer.REPOSITORY}/issues/2",
+    }
+    marked = [
+        (a["model"], a["clause"])
+        for a in data["answers"]
+        if "realigned" in a.get("attempts", [{}])[0].get("hand_check", {})
+    ]
+    assert marked == [(OPUS.key, "c01")]
+
+
+@pytest.mark.parametrize(
+    ("note", "clause_id", "review", "model", "match"),
+    [
+        ("s. 27(1).", "c09", "27(1)", OPUS.key, "was not reviewed"),
+        ("s. 27(1).", "c01", "27(1)", HAIKU.key, "is an exhibit"),
+        ("A rewording of s. 27(2).", "c01", "27(2)", OPUS.key, r"s\. 27\(2\), which holds or"),
+        ("A rewording of s. 27.", "c01", "27", OPUS.key, r"s\. 27\(2\), which holds or"),
+        ("Words of s. 27(2)(a).", "c01", "27(2)(a)", OPUS.key, r"s\. 27\(2\), which holds"),
+        ("A narrower rule.", "c01", "27(1)", OPUS.key, r"doesn't name s\. 27\(1\)$"),
+        ("A rewording of s. 27(1)(a).", "c01", "27(1)", OPUS.key, r"doesn't name s\. 27\(1\)$"),
+        ("A rewording of s. 27(1).", "c01", "2", OPUS.key, r"doesn't name s\. 2$"),
+    ],
+)
+def test_an_alignment_gap_that_the_data_does_not_bear_out_stops_the_export(
+    note: str, clause_id: str, review: str, model: str, match: str
+) -> None:
+    with pytest.raises(explorer.SiteExportError, match=match):
+        gap_data(note, clause_id, review, model)
+
+
+@pytest.mark.parametrize(
+    "alignment", [None, {"section": "27", "subsection": "(2)", "lined_up": False}]
+)
+def test_an_alignment_gap_on_a_quote_with_no_redline_shown_stops_the_export(
+    alignment: dict[str, Any] | None,
+) -> None:
+    attempt: dict[str, Any] = {"check": "not_found", "hand_check": {"note": "s. 27(1)."}}
+    if alignment is not None:
+        attempt["alignment"] = alignment
+    answers = [{"method": "closedbook", "model": HAIKU.key, "clause": "c01", "attempts": [attempt]}]
+    gaps = alignment_gaps.Gaps(
+        issue=2, quotes=(alignment_gaps.Gap(model=HAIKU.key, clause="c01", review="27(1)"),)
+    )
+
+    with pytest.raises(explorer.SiteExportError, match="no redline is shown"):
+        explorer._mark_gaps(answers, gaps, ())
+
+
+def test_a_verified_quote_shows_its_redline_so_its_alignment_gap_is_marked() -> None:
+    alignment = {"section": "27", "subsection": "(2)", "lined_up": False}
+    attempt: dict[str, Any] = {
+        "check": "verified",
+        "alignment": alignment,
+        "hand_check": {"note": "s. 27(1)."},
+    }
+    answers = [{"method": "closedbook", "model": HAIKU.key, "clause": "c01", "attempts": [attempt]}]
+    gaps = alignment_gaps.Gaps(
+        issue=2, quotes=(alignment_gaps.Gap(model=HAIKU.key, clause="c01", review="27(1)"),)
+    )
+
+    explorer._mark_gaps(answers, gaps, ())
+
+    assert attempt["hand_check"]["realigned"]["review"] == "27(1)"

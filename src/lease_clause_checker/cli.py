@@ -11,6 +11,7 @@ from pathlib import Path
 import httpx
 
 from lease_clause_checker import (
+    alignment_gaps,
     baseline,
     check,
     closedbook,
@@ -480,6 +481,7 @@ def _write_site(args: argparse.Namespace) -> int:
         len(load_rules(args.rules)),
         closed_book.as_posix(),
         exhibits.load(),
+        alignment_gaps.load(),
     )
     sets = {"main": board.main.clauses, "stress": board.stress.clauses}
     folders = {
