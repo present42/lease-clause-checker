@@ -17,7 +17,7 @@ import html
 import json
 import re
 import shutil
-from collections import Counter
+from collections import Counter, defaultdict
 from collections.abc import Iterator, Sequence
 from dataclasses import asdict
 from pathlib import Path
@@ -37,6 +37,7 @@ from lease_clause_checker.clauses import Clause
 from lease_clause_checker.models import DROPPED_MODELS, MODELS
 from lease_clause_checker.pipeline import RETRY_SUFFIX, Attempt
 from lease_clause_checker.quotediff import Alignment, Classified
+from lease_clause_checker.runs import RunRecord
 from lease_clause_checker.scoreboard import Board, ScoredSet
 from lease_clause_checker.scoring import Score
 from lease_clause_checker.statute import Section
@@ -127,6 +128,7 @@ def build(
             "min_quote_words": verify.MIN_QUOTE_WORDS,
         },
         "pipeline_first_checks": {"verified": verified, "checked": checked},
+        "runs": _runs(board),
         "story": story,
         "hand_check": _hand_check(board, closed_book_folder),
         "act": {
@@ -232,6 +234,56 @@ def og_alt(data: dict[str, Any]) -> str:
         f"{name}'s closed-book quote of {where} of the Residential Tenancies Act, 2006, as a "
         "redline against the Act: the Act's words it leaves out are struck in red, its own "
         "words underlined in blue."
+    )
+
+
+def _runs(board: Board) -> dict[str, Any]:
+    """How the saved answers were asked for, read from the saved calls: each model's settings
+    (one set per model, or the export stops) and the most answers any clause has from one model
+    by one method (retries aside)."""
+    calls: dict[str, list[RunRecord]] = defaultdict(list)
+    answers: Counter[tuple[str, str, str, str]] = Counter()
+    keys = {spec.key for spec in MODELS}
+    runs = [
+        (set_name, method, key, run)
+        for set_name, scored in (("main", board.main), ("stress", board.stress))
+        for (method, key), run in scored.runs.items()
+    ] + [("main", "closedbook", key, run) for key, run in board.closed_book.items()]
+    for set_name, method, key, run in runs:
+        if key not in keys:
+            continue
+        calls[key] += run.records
+        answers.update((set_name, method, key, s.clause.id) for s in run.scores)
+    models = {}
+    for spec in MODELS:
+        found = {_call_settings(r.request) for r in calls[spec.key]}
+        if len(found) != 1:
+            raise SiteExportError(
+                f"{spec.key}: the saved calls were made with {len(found)} different settings"
+                if found
+                else f"{spec.key}: no saved calls, so no settings to show"
+            )
+        tokens, effort, thinking, temperature = found.pop()
+        models[spec.key] = {
+            "max_output_tokens": tokens,
+            "effort": effort,
+            "thinking": thinking,
+            "temperature": temperature,
+        }
+    return {"models": models, "answers_per_question": max(answers.values(), default=0)}
+
+
+def _call_settings(request: dict[str, Any]) -> tuple[Any, ...]:
+    """From a saved request, Claude's or Gemini's: the output-token cap, Claude's effort, the
+    thinking setting (as JSON, None if the provider's default) and the temperature (None if not
+    set)."""
+    config = request.get("config", {})
+    thinking = request.get("thinking", config.get("thinking_config"))
+    return (
+        request.get("max_tokens", config.get("max_output_tokens")),
+        request.get("output_config", {}).get("effort"),
+        None if thinking is None else json.dumps(thinking, sort_keys=True),
+        request.get("temperature", config.get("temperature")),
     )
 
 

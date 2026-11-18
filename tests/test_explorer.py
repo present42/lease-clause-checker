@@ -399,6 +399,11 @@ def test_the_page_settings_and_the_pipeline_count_come_from_the_data() -> None:
         "min_quote_words": 5,
     }
     assert data["pipeline_first_checks"] == {"verified": 4, "checked": 8}
+    unset = {"max_output_tokens": None, "effort": None, "thinking": None, "temperature": None}
+    assert data["runs"] == {
+        "models": {spec.key: unset for spec in MODELS},
+        "answers_per_question": 1,
+    }
     assert data["hand_check"] is None  # no record on the board
     assert data["dropped_models"] == ["Gemini 4 Carbon"]
 
@@ -621,3 +626,76 @@ def test_every_redline_is_the_quote_against_its_whole_subsection() -> None:
         assert python is not None
         expected = [(t.text, kind) for kind, tokens in python.pieces(whole=True) for t in tokens]
         assert redline(data, exported) == expected
+
+
+def with_requests(board: Board, *requests: dict[str, Any]) -> Board:
+    """`board` with Haiku's closed-book calls made with `requests`, in turn."""
+    run = board.closed_book[HAIKU.key]
+    records = [
+        r.model_copy(update={"request": q}) for r, q in zip(run.records, requests, strict=True)
+    ]
+    return replace(
+        board, closed_book={**board.closed_book, HAIKU.key: replace(run, records=records)}
+    )
+
+
+CLAUDE_CALL = {"model": "m", "max_tokens": 16000, "output_config": {"effort": "medium"}}
+GEMINI_CALL = {"model": "m", "config": {"max_output_tokens": 8000, "temperature": 0.2}}
+
+
+@pytest.mark.parametrize(
+    ("request_", "settings"),
+    [
+        (CLAUDE_CALL, (16000, "medium", None, None)),
+        (
+            CLAUDE_CALL | {"thinking": {"type": "adaptive"}},
+            (16000, "medium", '{"type": "adaptive"}', None),
+        ),
+        (GEMINI_CALL, (8000, None, None, 0.2)),
+        (
+            GEMINI_CALL | {"config": {"thinking_config": {"thinking_level": "high"}}},
+            (None, None, '{"thinking_level": "high"}', None),
+        ),
+    ],
+)
+def test_the_run_settings_are_read_from_each_providers_request(
+    request_: dict[str, Any], settings: tuple[Any, ...]
+) -> None:
+    board = with_requests(mini_board(), request_, request_)
+    # The pipeline's calls have no settings, so only Haiku's closed-book calls carry them.
+    board = replace(
+        board,
+        main=replace(
+            board.main, runs={key: replace(run, records=[]) for key, run in board.main.runs.items()}
+        ),
+    )
+    found = mini_data(board)["runs"]["models"][HAIKU.key]
+
+    assert tuple(found.values()) == settings
+
+
+def test_an_export_stops_if_a_models_calls_were_made_with_different_settings() -> None:
+    board = with_requests(mini_board(), CLAUDE_CALL, CLAUDE_CALL | {"temperature": 0})
+
+    with pytest.raises(explorer.SiteExportError, match="different settings"):
+        mini_data(board)
+
+
+def test_a_clause_answered_twice_by_one_model_and_method_is_counted() -> None:
+    board = mini_board()
+    score = board.main.run("pipeline", HAIKU).scores[0]
+    twice = ModelRun(HAIKU, [record(score.clause.id, "Void under s. 14.")], [score, score])
+    runs = {**board.main.runs, ("baseline", HAIKU.key): twice}
+
+    data = mini_data(replace(board, main=replace(board.main, runs=runs)))
+
+    assert data["runs"]["answers_per_question"] == 2
+
+
+def test_an_export_stops_if_a_model_has_no_saved_calls() -> None:
+    board = mini_board()
+    runs = {key: replace(run, records=[]) for key, run in board.main.runs.items()}
+    closed = {key: replace(run, records=[]) for key, run in board.closed_book.items()}
+
+    with pytest.raises(explorer.SiteExportError, match="no saved calls"):
+        mini_data(replace(board, main=replace(board.main, runs=runs), closed_book=closed))
