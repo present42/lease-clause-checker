@@ -1120,7 +1120,7 @@ def test_the_short_version_gives_the_exhibit_a_table_and_the_hand_check() -> Non
         "provision of the Act; 14 of those change the rule, and 2 of those 14 would mislead "
         "about the clause they were quoted for. At least 2 of the 89 right closed-book verdicts "
         f"came with a quote that would mislead: {scoreboard.MISLEADS_MEANS}. Only the 14 quotes "
-        "that failed the word-for-word check were judged. Claude drafted the hand-check "
+        "that failed the word-for-word check were judged. Claude drafted the review "
         "labels, Claude Opus reviewed them blind in two rounds, and the author approved them; not "
         "reviewed by a lawyer. 1 of 4 matched a fresh Claude Opus reviewer in round 2 (the same "
         "model family drafted the labels, and the rules were written after round 1 on these "

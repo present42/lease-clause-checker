@@ -133,7 +133,7 @@ def label_note(record: Record) -> str:
     """Who made the labels (category, meaning changed, misleads), and round 2's agreement from
     the record with what limits it, in the owner's words."""
     return (
-        "Claude drafted the hand-check labels, Claude Opus reviewed them blind in two rounds, and "
+        "Claude drafted the review labels, Claude Opus reviewed them blind in two rounds, and "
         f"the author approved them; not reviewed by a lawyer. {record.agreed(2)} of {record.rows} "
         "matched a fresh Claude Opus reviewer in round 2 (the same model family drafted the "
         "labels, and the rules were written after round 1 on these rows)."
