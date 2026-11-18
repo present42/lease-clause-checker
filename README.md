@@ -27,8 +27,9 @@ With the statute in the prompt, every quote is checked and the model is asked on
 <!-- short:end -->
 
 **[The explorer](https://present42.github.io/lease-clause-checker/)**: every saved answer, each
-quote set against the Act, and the hand check, in the browser. It replays the saved answers and
-calls no model ([how it is built](docs/details.md#explore-the-saved-answers)).
+quote set against the Act, and the review of the quotes that failed, in the browser. It replays
+the saved answers and calls no model
+([how it is built](docs/details.md#explore-the-saved-answers)).
 
 ## Try it
 
@@ -75,7 +76,7 @@ content words.
 
 - [Use the quote check from Claude (MCP)](docs/details.md#use-the-quote-check-from-claude-mcp):
   `get_section`, `verify_quote` and `check_text`.
-- [Full details](docs/details.md): the method, every result table, the hand check, related
+- [Full details](docs/details.md): the method, every result table, the review, related
   work and limitations.
 - Licence: [MIT](LICENSE), except the explorer's fonts in
   [explorer_assets/fonts/](src/lease_clause_checker/explorer_assets/fonts/), which are under the

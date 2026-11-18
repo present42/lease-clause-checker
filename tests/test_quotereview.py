@@ -80,7 +80,7 @@ def test_regenerating_keeps_the_hand_checks_and_refreshes_the_category(tmp_path:
         "claude-haiku-5-5,c01,not_in_act,agree,yes,unsure,invented wording\n"
     )
     assert quotereview.hand_check_line([run], checks) == (
-        "Every category has a label; the hand check agreed with the code's "
+        "Every category has a label; the review agreed with the code's "
         "category for 1. Of the 1 quote, 0 state a rule from the Act, 0 change what it says. A "
         "meaning judgement on 1 quote that states no rule is not counted."
     )
@@ -99,7 +99,7 @@ def test_regenerating_keeps_the_hand_checks_and_refreshes_the_category(tmp_path:
         (
             "cosmetic",
             "",
-            "the hand check agreed with the code's category for 0. Of the 1 quote, 1 states a "
+            "the review agreed with the code's category for 0. Of the 1 quote, 1 states a "
             "rule from the Act (1 not yet read for meaning), 0 change what it says.",
         ),
         (
@@ -199,7 +199,7 @@ def test_a_partial_hand_check_says_so_far(tmp_path: Path) -> None:
     line = quotereview.hand_check_line(runs, quotereview.load_checks(path))
 
     assert line == (
-        "1 of the 2 categories have a label so far; the hand check agreed with the "
+        "1 of the 2 categories have a label so far; the review agreed with the "
         "code's category for 1. Of the 1 quote checked so far, 0 state a rule from the Act, 0 "
         "change what it says."
     )
@@ -223,7 +223,7 @@ def test_the_hand_check_line_counts_several_quotes(tmp_path: Path) -> None:
 
     # Who made the labels is said only when the caller has the record that shows it.
     assert quotereview.hand_check_line(runs, quotereview.load_checks(path), "made by L") == (
-        "Every category has a reviewed label: made by L; the hand check agreed with the code's "
+        "Every category has a reviewed label: made by L; the review agreed with the code's "
         "category for 1. Of the 3 quotes, 2 state a rule from the Act, 2 change what it says, "
         "and 1 would mislead on the clause being checked (not legal "
         "advice; 0 marked unsure)."

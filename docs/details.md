@@ -90,7 +90,7 @@ Work in progress. These exist:
   ([mcp_server.py](../src/lease_clause_checker/mcp_server.py); see
   [Use the quote check from Claude](#use-the-quote-check-from-claude-mcp)).
 
-- a static explorer of the four models' saved answers and the hand check, `lcc site`
+- a static explorer of the four models' saved answers and the review, `lcc site`
   ([explorer.py](../src/lease_clause_checker/explorer.py); see
   [Explore the saved answers](#explore-the-saved-answers)).
 
@@ -254,38 +254,54 @@ uv run lcc site                                  # writes site/ (gitignored)
 python3 -m http.server 8000 --directory site     # then open http://localhost:8000
 ```
 
-It opens on three closed-book answers with a right verdict and a quote that, by the hand check,
-changes what the Act says and would mislead on the clause: Claude Opus 5.5 on c26, Gemini
-3.8 Flash on c09 and Claude Haiku 5.5 on c15, named with a label and a punchline in
-[exhibits.yaml](../src/lease_clause_checker/exhibits.yaml). `make report` and `lcc site` refuse
-an exhibit unless its verdict is right, its hand check says yes to both questions, and its
-punchline starts by stating the verdict; the README leads with the first. Each shows the clause
-and the verdict, the Act's subsection, and below it a box that starts as a copy of the
-subsection and replays the model's edits one at a time, in reading order: the dropped words
-strike through and fold away (and are marked in the Act's box), the added words type in. The
-edits come from the same alignment as the redline (`exhibits.replay`, from `Alignment.runs`),
-and the export stops unless they end at the saved quote, token for token. Each replay plays
-once when it comes into view, one at a time; Replay plays it again, and Next change, or the right arrow key,
-steps one edit at a time (the left arrow steps back). With reduced motion the page shows the
-finished state. Under each exhibit, "The model's reason" (closed at first) gives the answer's
-own reason, word for word, and an optional one-line note from the configuration says more about
-the exhibit. Above them, the opening screen gives the base rate (how many right closed-book
-verdicts came with a quote that would mislead) and what "would mislead" means. Then come the
-four-model table and the hand check's counts. Its other views:
-- **Misquotes**: the closed-book answers with a right verdict whose quote is not word for word,
-  by model;
-- **Grid**: every closed-book verdict and quote check;
-- **By clause**: every answer to each clause, by method and model, for the main test set and the
-  hard cases (the stress set);
-- **Hand check**: the closed-book quotes that failed, with how the check was made; the ones that
-  would mislead are highlighted.
+It reads as four numbered chapters and an appendix, each opening with the reader's question
+and a one-sentence headline counted from the data, and ending with a card that leads to the
+next. Older addresses (`#/closed`, `#/exhibit`, `#/hand`) open the views that replaced them.
+
+1. **Finding** (`#/story`): the lesson in one line, the base rate (how many right closed-book
+   verdicts came with a quote that would mislead) and what "would mislead" means, and a short
+   "How this was made" strip: the clauses, the models and ways of asking, the run settings read
+   from the saved calls (`runs` in `data.json`), the quote check and the review. Then three
+   closed-book answers with a right verdict and a quote that, by the review, changes what the
+   Act says and would mislead on the clause: Claude Opus 5.5 on c26, Gemini 3.8 Flash on c09
+   and Claude Haiku 5.5 on c15, named with a label and a punchline in
+   [exhibits.yaml](../src/lease_clause_checker/exhibits.yaml). `make report` and `lcc site`
+   refuse an exhibit unless its verdict is right, its review says yes to both questions, and
+   its punchline starts by stating the verdict; the README leads with the first. Each opens
+   finished: the clause and the verdict, the Act's subsection with the words the quote leaves
+   out marked, and the quote with its own words underlined. "Watch how the quote was changed"
+   replays the edits that turn the subsection into the quote, one at a time, in reading order:
+   the dropped words strike through and fold away, the added words type in. Next change, or the
+   right arrow key, steps one edit at a time (the left arrow steps back); with reduced motion the
+   steps show without animation. The edits come from the same alignment as the redline
+   (`exhibits.replay`, from `Alignment.runs`), and the export stops unless they end at the saved
+   quote, token for token. Under each exhibit, "The model's reason" (closed at first) gives the
+   answer's own reason, word for word, and an optional one-line note from the configuration says
+   more about the exhibit. Then come the four-model table, the review's counts and the caveats.
+2. **Pattern** (`#/pattern`): every closed-book answer on the main set as one square, models by
+   clauses, with a legend counted from the data, the most misquoted clauses first or in order,
+   and a switch to the same grid with the statute in the prompt. A square opens its answer below
+   the grid; the arrow keys move between squares.
+3. **Misquotes** (`#/misquotes`): the closed-book quotes that failed, sorted by the review into
+   what they do to the rule, worst first, beside how the review's labels were made (word for
+   word as `hand_check` in `data.json` gives it). Each row says how the code and the review
+   sorted the quote ("code: cosmetic · review: would mislead on this clause") and opens to its
+   redline. The code's categories are defined in plain words above the rows.
+4. **Method** (`#/method`): the three ways of asking with their main-set totals, the run
+   settings, the word-for-word check and its "may stop early" flag, the words used, the review in
+   full with every row, and the caveats.
+
+**All answers** (`#/clauses`), the appendix, gives every answer to each clause, by method and
+model, for the main test set and the hard cases (the stress set). In the site's own copy the hand
+check is called the review; the files, the record and the labels sentence it quotes word for
+word keep their names.
 
 Every quote is shown as one redline against the whole subsection it lines up with, the same one
 the README shows (`Alignment.pieces(whole=True)`): the Act's words that the quote leaves out or
 replaces struck through in red, including those before and after it, and the quote's own words
 underlined in blue. A one-line bar under the header gives the caveats (not legal advice; checks
-wording, not legal meaning; word for word is not complete; not an official version), and the
-opening view and the foot of every other page give them in full. Its fonts (Source Serif 4,
+wording, not legal meaning; word for word is not complete; not an official version), and
+Finding, Method and the foot of every other page give them in full. Its fonts (Source Serif 4,
 IBM Plex Sans and IBM Plex Mono, under the SIL Open Font License) are served with it from
 `explorer_assets/fonts/`, so the page asks no other site for anything and works offline;
 [fonts/README.md](../src/lease_clause_checker/explorer_assets/fonts/README.md) says where each
@@ -389,7 +405,7 @@ Main test set, 38 clauses. The pipeline's question and JSON answer with no statu
 
 #### How the quotes that failed the check differ from the Act
 
-Each closed-book quote that failed the strict check against the section it cites, sorted by code ([quotediff.py](../src/lease_clause_checker/quotediff.py)) into the first category that fits. **Drops a negation** (shown only if a quote does): word for word, or but for cosmetic differences, but starting right after a "no", "not", "neither" or "nor" that it leaves out; a narrow check of the one word before the quote, not of a negation's scope. **Passes with quoting conventions**: word for word once an ellipsis, brackets around a cosmetic change, or a changed first capital are read as the marks of a quotation. **Cosmetic**: lines up with the cited section and differs only in articles, punctuation, case, grammatical number (a plural and its verb) or paragraph markers. Number counts as cosmetic because Ontario statutes are read that way: “Words in the singular include the plural and words in the plural include the singular” ([Legislation Act, 2006, s. 67](https://www.ontario.ca/laws/statute/06l21#BK79); e-Laws consolidation from 11 December 2025, read on 14 November 2026; not an official version of the statute, © King's Printer for Ontario, 2006). That is a rule for reading a statute, not for quoting one. **Wrong section cited**: a version of another section, not of the cited one. **Content words differ**: lines up with the cited section, but a content word is changed, added or dropped. **Not in the Act**: lines up with no subsection of the Act. A quote lines up with a subsection when at least half its words match it in order and they make up at least a quarter of the Act's words they span. The categories describe wording, not law: a cosmetic difference is not a wrong statement of the law. Whether a different word changes what the Act says, and if so whether the quote would mislead on the clause being checked, is judged by hand and reported apart from these counts. Every quote, with its difference from the Act, is in [quote-review.md](../results/closedbook-v1+conventions-v1/quote-review.md) (`uv run lcc closedbook quotes`). I worked four rows by hand with Claude to set the approach. Claude then suggested an answer for every row. A first round of blind Claude Opus review, each row judged by one reviewer, surfaced three unclear points, which I settled as written rules; a fourth rule came from rows where the reviewers caught dropped sentence endings. Under the four rules, a second blind round agreed with the suggestions on 46 of 59 rows; on 12 of the other 13 the reviewer's answer was adopted. I approved the result. ([The rules](../results/closedbook-v1+conventions-v1/hand-check/rules.md); [the full record](../results/closedbook-v1+conventions-v1/hand-check/MANIFEST.md).) Not reviewed by a lawyer. Still to come, by Wednesday 18 November 2026: the author's own re-check of 20 rows. It is not fully blind, as the author had seen some of Claude's suggestions. Every category has a reviewed label: Claude drafted, Claude Opus reviewed, the author approved; the hand check agreed with the code's category for 41. Of the 59 quotes, 51 state a rule from the Act, 40 change what it says, and 10 would mislead on the clause being checked (not legal advice; 0 marked unsure).
+Each closed-book quote that failed the strict check against the section it cites, sorted by code ([quotediff.py](../src/lease_clause_checker/quotediff.py)) into the first category that fits. **Drops a negation** (shown only if a quote does): word for word, or but for cosmetic differences, but starting right after a "no", "not", "neither" or "nor" that it leaves out; a narrow check of the one word before the quote, not of a negation's scope. **Passes with quoting conventions**: word for word once an ellipsis, brackets around a cosmetic change, or a changed first capital are read as the marks of a quotation. **Cosmetic**: lines up with the cited section and differs only in articles, punctuation, case, grammatical number (a plural and its verb) or paragraph markers. Number counts as cosmetic because Ontario statutes are read that way: “Words in the singular include the plural and words in the plural include the singular” ([Legislation Act, 2006, s. 67](https://www.ontario.ca/laws/statute/06l21#BK79); e-Laws consolidation from 11 December 2025, read on 14 November 2026; not an official version of the statute, © King's Printer for Ontario, 2006). That is a rule for reading a statute, not for quoting one. **Wrong section cited**: a version of another section, not of the cited one. **Content words differ**: lines up with the cited section, but a content word is changed, added or dropped. **Not in the Act**: lines up with no subsection of the Act. A quote lines up with a subsection when at least half its words match it in order and they make up at least a quarter of the Act's words they span. The categories describe wording, not law: a cosmetic difference is not a wrong statement of the law. Whether a different word changes what the Act says, and if so whether the quote would mislead on the clause being checked, is judged by hand and reported apart from these counts. Every quote, with its difference from the Act, is in [quote-review.md](../results/closedbook-v1+conventions-v1/quote-review.md) (`uv run lcc closedbook quotes`). I worked four rows by hand with Claude to set the approach. Claude then suggested an answer for every row. A first round of blind Claude Opus review, each row judged by one reviewer, surfaced three unclear points, which I settled as written rules; a fourth rule came from rows where the reviewers caught dropped sentence endings. Under the four rules, a second blind round agreed with the suggestions on 46 of 59 rows; on 12 of the other 13 the reviewer's answer was adopted. I approved the result. ([The rules](../results/closedbook-v1+conventions-v1/hand-check/rules.md); [the full record](../results/closedbook-v1+conventions-v1/hand-check/MANIFEST.md).) Not reviewed by a lawyer. Still to come, by Wednesday 18 November 2026: the author's own re-check of 20 rows. It is not fully blind, as the author had seen some of Claude's suggestions. Every category has a reviewed label: Claude drafted, Claude Opus reviewed, the author approved; the review agreed with the code's category for 41. Of the 59 quotes, 51 state a rule from the Act, 40 change what it says, and 10 would mislead on the clause being checked (not legal advice; 0 marked unsure).
 
 | model | answers with a verdict | failed the check | passes with quoting conventions | cosmetic | wrong section cited | content words differ | not in the Act | no quote |
 |---|---|---|---|---|---|---|---|---|
@@ -610,7 +626,7 @@ prompt.
   legal reasoning is right, or that the section is the one that decides the clause.
   A quote of five words or more passes even when it stops short of the decisive words, such as
   the opening words of a list without the item that applies.
-- The quote categories have known gaps, found in the hand check of the 59 closed-book quotes.
+- The quote categories have known gaps, found in the review of the 59 closed-book quotes.
   None is fixed yet; #1 is reported and, for verbatim quotes, #1 and #3 are partly covered by a
   warning (below):
   - Words a quote leaves out before or after the words it matches don't count in its category
@@ -620,7 +636,9 @@ prompt.
     lines up with a subsection, as a report only.
   - Openings shared by many provisions can line a quote up with the wrong subsection, or hide
     its source ([#2](https://github.com/present42/lease-clause-checker/issues/2)): Claude Haiku 5.5's c25 quote about a postdated cheque lines up
-    with s. 106(4), not s. 108.
+    with s. 106(4), not s. 108; Gemini 3.8 Flash's c18 with s. 37(10), not 37(4); Gemini 4
+    Argon's c24 with s. 106(1), not 106(3). The review names the right provision for each, and
+    the explorer says so above each of these redlines (listed in `alignment_gaps.yaml`).
   - A fragment that states no rule ("A landlord may enter a rental unit only if") is sorted like
     a full quote, not as too short ([#3](https://github.com/present42/lease-clause-checker/issues/3)).
   - A word hyphenated differently from the Act ("postdated" for "post-dated") counts as a

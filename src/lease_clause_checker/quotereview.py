@@ -211,7 +211,7 @@ def hand_check_line(runs: Sequence[ModelRun], checks: HandChecks, labelled_by: s
             if complete
             else f"{len(done)} of the {len(rows)} categories have a label so far"
         )
-        + "; the hand check agreed with the code's category for "
+        + "; the review agreed with the code's category for "
         f"{agreed}. {scope}, {len(rules)} {_verb(len(rules), 'state')} a rule from the Act"
         + (f" ({unread} not yet read for meaning)" if unread else "")
         + f", {changes} {_verb(changes, 'change')} what it says"
