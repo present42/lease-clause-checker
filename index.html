@@ -21,35 +21,32 @@
 <script src="explorer.js" defer></script>
 </head>
 <body data-view="story">
+<a class="skip" href="#main">Skip to the content</a>
 <header class="masthead">
   <div class="wrap">
     <a class="brand" href="https://github.com/present42/lease-clause-checker">
       <svg width="22" height="22" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="3" fill="currentColor"/><path d="M7 11h18M7 16h12M7 21h15" stroke="var(--sheet)" stroke-width="2.5"/><path d="M6 16h15" stroke="#e0524a" stroke-width="2.2"/></svg>
       Lease Clause Checker
     </a>
-    <nav class="tabs" aria-label="Views">
-      <a href="#/story" data-view="story">Summary</a>
-      <a href="#/exhibit" data-view="exhibit">Misquotes</a>
-      <a href="#/closed" data-view="closed">Grid</a>
-      <a href="#/clauses" data-view="clauses">By clause</a>
-      <a href="#/hand" data-view="hand">Hand check</a>
+    <nav class="tabs" aria-label="Chapters">
+      <div class="chapters">
+        <a href="#/story" data-view="story"><span class="n">1</span>Finding</a>
+        <a href="#/pattern" data-view="pattern"><span class="n">2</span>Pattern</a>
+        <a href="#/misquotes" data-view="misquotes"><span class="n">3</span>Misquotes</a>
+        <a href="#/method" data-view="method"><span class="n">4</span>Method</a>
+      </div>
+      <a href="#/clauses" data-view="clauses" class="appendix">All answers</a>
     </nav>
   </div>
 </header>
 <div class="notice-bar">
-  <div class="wrap"><strong>Not legal advice</strong> · checks wording, not legal meaning · word
-    for word is not complete · not an official version of the Act.
-    <a href="#caveats" class="to-caveats">The caveats in full</a></div>
+  <div class="wrap"><strong>Not legal advice</strong><span class="notice-more"> · checks wording,
+    not legal meaning · word for word is not complete · not an official version of the Act.</span>
+    <a href="#/method/caveats">The caveats in full</a></div>
 </div>
-<section class="wrap hero" aria-labelledby="title">
-  <p class="eyebrow">AI evaluation · Ontario Residential Tenancies Act, 2006</p>
-  <h1 id="title">Right verdict, misquoted law</h1>
-  <p class="lede">Four language models judged invented Ontario lease clauses, quoting the
-    Residential Tenancies Act, 2006. Their saved answers, replayed: no model is called here.</p>
-  <p class="base-rate" id="base-rate"></p>
-</section>
 <p class="sr-only" id="status" role="status" aria-live="polite"></p>
 <main class="wrap" id="main" tabindex="-1">
+  <h1 class="view-heading">Right verdict, misquoted law</h1>
   <p class="loading">Loading the saved answers…</p>
   <noscript><p>This page needs JavaScript to show the answers. The raw answers are in the
     repository's <a href="https://github.com/present42/lease-clause-checker/tree/main/results">results folder</a>.</p></noscript>
