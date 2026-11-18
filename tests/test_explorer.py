@@ -1,4 +1,8 @@
+import json
+import os
 import re
+import shutil
+import subprocess
 from dataclasses import replace
 from datetime import UTC, datetime
 from html.parser import HTMLParser
@@ -548,6 +552,7 @@ def test_write_replaces_an_earlier_export_and_names_the_repository(tmp_path: Pat
     names = sorted(p.name for p in site.iterdir())
     assert names == [
         ".lcc-site",
+        "counts.js",
         "data.json",
         "explorer.css",
         "explorer.js",
@@ -807,3 +812,44 @@ def test_a_verified_quote_shows_its_redline_so_its_alignment_gap_is_marked() -> 
     explorer._mark_gaps(answers, gaps, ())
 
     assert attempt["hand_check"]["realigned"]["review"] == "27(1)"
+
+
+JS_TESTS = Path(__file__).parent / "js"
+
+
+def test_the_pages_review_counts_match_an_export_in_node(tmp_path: Path) -> None:
+    """The explorer's JavaScript tests (tests/js), with the Misquotes counts checked against the
+    mini export, as CI has no cached Act to export the real answers. Needs Node.js; skipped
+    without it, except on CI."""
+    node = shutil.which("node")
+    if node is None:
+        if os.environ.get("CI"):
+            pytest.fail("CI needs Node.js for the explorer's JavaScript tests")
+        pytest.skip("Node.js is not installed")
+    board = mini_board()
+    checks = dict(board.quote_checks)  # one quote stating no rule, one the review is unsure of
+    checks[OPUS.key, "c02"] = HandCheck("not_in_act", "", "", "")
+    checks[OPUS.key, "c01"] = HandCheck("agree", "yes", "unsure", "")
+    data = mini_data(replace(board, quote_checks=checks))
+    assert data["story"]["hand_check"] == {
+        "quotes": 8,
+        "rules": 7,
+        "changes": 4,
+        "misleads": 1,
+        "unsure": 1,
+    }
+    path = tmp_path / "data.json"
+    path.write_text(json.dumps(data), encoding="utf-8")
+
+    result = subprocess.run(
+        [node, "--test", "--test-reporter=tap", *map(str, sorted(JS_TESTS.glob("*.test.mjs")))],
+        env=os.environ | {"LCC_DATA": str(path)},
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=60,
+    )
+
+    assert result.returncode == 0, result.stdout + result.stderr
+    ran = re.search(r"^ok \d+ - the Misquotes counts match data\.json$", result.stdout, re.M)
+    assert ran, result.stdout

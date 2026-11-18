@@ -1,5 +1,5 @@
 # Single source of truth for checks; CI runs these same targets.
-.PHONY: check lint typecheck test format report og
+.PHONY: check lint typecheck test test-js format report og
 
 check: lint typecheck test
 
@@ -12,6 +12,11 @@ typecheck:
 
 test:
 	uv run --locked pytest
+
+# The explorer's JavaScript tests, in Node's built-in runner, with the Misquotes counts checked
+# against site/data.json (`uv run lcc site`). `make test` runs them on a mini export.
+test-js:
+	node --test tests/js/*.test.mjs
 
 format:
 	uv run --locked ruff check --fix .

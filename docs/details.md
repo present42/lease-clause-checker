@@ -535,6 +535,12 @@ cp .env.example .env   # only needed for live API runs
 run is offline and free. Tests that call a real API are marked `live` and run only with
 `uv run pytest -m live`.
 
+The explorer's review counts are in `explorer_assets/counts.js`, tested with Node's built-in
+runner (no npm packages). `make test` runs those tests on a small export, and skips them if Node
+isn't installed (CI requires it). After `uv run lcc site`, `make test-js` also checks the
+Misquotes page's counts (quotes, rules, changes, would mislead, unsure, each tier and each
+model) against the review's own counts in `site/data.json`.
+
 ## Related work
 
 Checking a legal quotation against its source is not new, and neither is serving Canadian law

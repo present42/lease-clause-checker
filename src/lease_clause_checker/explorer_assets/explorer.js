@@ -163,13 +163,7 @@ function tiers() {
 }
 const TIER_ORDER = ["mislead", "unsure", "changes", "same", "norule"];
 
-function tierOf(hand) {
-  if (!hand) return null;
-  if (hand.states_a_rule === "no") return "norule";
-  if (hand.meaning_changed !== "yes") return "same";
-  if (hand.misleads_here === "yes") return "mislead";
-  return hand.misleads_here === "unsure" ? "unsure" : "changes";
-}
+// `tierOf`, `reviewRows` and `reviewCounts` are in counts.js, loaded before this file.
 
 // "code: cosmetic · review: would mislead on this clause", with the review's own category when
 // it differs from the code's.
@@ -1276,13 +1270,6 @@ function patternCard(a, mode) {
 let OPEN_ROWS = new Set();
 let OPEN_TIERS = new Set(["mislead"]);
 
-function reviewRows() {
-  const order = DATA.models.map((m) => m.key);
-  return mainAnswers("closedbook")
-    .filter((a) => a.attempts[0].hand_check)
-    .sort((x, y) => x.clause.localeCompare(y.clause) || order.indexOf(x.model) - order.indexOf(y.model));
-}
-
 function rowKey(a) {
   return `${a.model}|${a.clause}`;
 }
@@ -1347,7 +1334,7 @@ function reviewRow(a, showSorted) {
 }
 
 function misquotesView(parts) {
-  const rows = reviewRows();
+  const rows = reviewRows(DATA);
   const models = DATA.models.map((m) => m.key);
   const filter = models.includes(parts[0]) ? parts[0] : "all";
   const [openClause, openModel] = parts.slice(1);
@@ -1355,7 +1342,7 @@ function misquotesView(parts) {
   const hand = DATA.hand_check;
   const TIERS = tiers();
   const tierRows = (t, list = rows) => list.filter((a) => tierOf(a.attempts[0].hand_check) === t);
-  const counts = { quotes: rows.length, rules: rows.filter((a) => tierOf(a.attempts[0].hand_check) !== "norule").length, changes: rows.filter((a) => ["mislead", "unsure", "changes"].includes(tierOf(a.attempts[0].hand_check))).length, misleads: tierRows("mislead").length };
+  const counts = reviewCounts(DATA);
   const opened = rows.find((a) => a.clause === openClause && a.model === openModel);
   if (opened) {
     OPEN_ROWS.add(rowKey(opened));
@@ -1384,7 +1371,7 @@ function misquotesView(parts) {
         "a",
         { class: `ugroup t-${t}`, href: `#tier-${t}`, style: `flex:${Math.max(list.length, 1)} 1 0` },
         el("span", { class: "sq", style: `grid-template-columns:repeat(${Math.max(list.length, 1)}, minmax(0,1fr))`, "aria-hidden": "true" }, list.map((a) => el("i", { class: filter === "all" || a.model === filter ? null : "dim", title: `${shortOf(a.model)} ${a.clause}` }, isRight(a) ? "" : "✗"))),
-        el("span", { class: "cap" }, el("b", {}, filter === "all" ? list.length : `${inFilter} of ${list.length}`), TIERS[t].name[0].toLowerCase() + TIERS[t].name.slice(1)),
+        el("span", { class: "cap" }, el("b", {}, filter === "all" ? counts.tiers[t] : `${inFilter} of ${counts.tiers[t]}`), TIERS[t].name[0].toLowerCase() + TIERS[t].name.slice(1)),
       );
       group.addEventListener("click", (event) => {
         event.preventDefault();
@@ -1405,7 +1392,7 @@ function misquotesView(parts) {
     { class: "filters", "aria-label": "Filter by model" },
     el("span", { class: "ctl-label" }, "Model"),
     el("a", { class: "chip", href: "#/misquotes", "aria-current": filter === "all" ? "true" : null }, `All ${rows.length}`),
-    models.map((m) => el("a", { class: "chip", href: `#/misquotes/${m}`, "aria-current": filter === m ? "true" : null }, shortOf(m), el("span", { class: "k" }, rows.filter((a) => a.model === m).length))),
+    models.map((m) => el("a", { class: "chip", href: `#/misquotes/${m}`, "aria-current": filter === m ? "true" : null }, shortOf(m), el("span", { class: "k" }, counts.byModel[m]))),
   );
   const vocab = el(
     "section",
@@ -1446,7 +1433,7 @@ function misquotesView(parts) {
       "figure",
       { class: "units-wrap" },
       units,
-      el("figcaption", { class: "units-note" }, "One square per quote that failed: the red squares of the pattern grid, sorted. ", el("b", {}, "✗"), " marks a wrong verdict. ", `${counts.rules} of the ${counts.quotes} state a real provision of the Act; ${counts.changes} of those change the rule; ${counts.misleads} of those ${counts.changes} would mislead${hc.unsure ? ` (${hc.unsure} unsure)` : ""}.`),
+      el("figcaption", { class: "units-note" }, "One square per quote that failed: the red squares of the pattern grid, sorted. ", el("b", {}, "✗"), " marks a wrong verdict. ", `${counts.rules} of the ${counts.quotes} state a real provision of the Act; ${counts.changes} of those change the rule; ${counts.misleads} of those ${counts.changes} would mislead${counts.unsure ? ` (${counts.unsure} unsure)` : ""}.`),
     ),
     vocab,
     cosmeticMisleads.length
@@ -1504,7 +1491,7 @@ function methodView() {
     );
   };
   const early = mainAnswers("closedbook").find((a) => isRight(a) && a.attempts[0].stops_early && a.attempts[0].alignment);
-  const reviewList = el("ul", { class: "rows" }, reviewRows().map((a) => reviewRow(a, true)));
+  const reviewList = el("ul", { class: "rows" }, reviewRows(DATA).map((a) => reviewRow(a, true)));
   return [
     viewTop(
       "method",
